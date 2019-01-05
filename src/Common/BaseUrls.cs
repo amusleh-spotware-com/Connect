@@ -26,10 +26,10 @@
                 case ApiType.Oauth:
                     return mode == Mode.Live ? OauthLiveUrl : OauthSandboxUrl;
 
-                case ApiType.Account:
+                case ApiType.RESTful:
                     return mode == Mode.Live ? AccountLiveUrl : AccountSandboxUrl;
 
-                case ApiType.Trading:
+                case ApiType.Protobuf:
                     {
                         string url = mode == Mode.Live ? TradingLiveUrl : TradingSandboxUrl;
 

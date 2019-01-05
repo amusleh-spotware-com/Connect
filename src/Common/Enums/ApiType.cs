@@ -4,7 +4,7 @@
     {
         None,
         Oauth,
-        Account,
-        Trading
+        RESTful,
+        Protobuf
     }
 }

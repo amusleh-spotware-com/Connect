@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9257A462-7A6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "src\Common\Common.csproj", "{5A818E31-090F-4067-9D78-5461196B3897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oauth", "src\Oauth\Oauth.csproj", "{94F80471-44CC-4294-96A8-4F8F1547D76F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oauth", "src\Oauth\Oauth.csproj", "{94F80471-44CC-4294-96A8-4F8F1547D76F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account", "src\Account\Account.csproj", "{EEE38200-3A85-4296-89E3-4E3B7BBA679D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTful", "src\RESTful\RESTful.csproj", "{EEE38200-3A85-4296-89E3-4E3B7BBA679D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trading", "src\Trading\Trading.csproj", "{188E3664-8CDC-49D6-A130-6DDF97E9C956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Protobuf", "src\Protobuf\Protobuf.csproj", "{188E3664-8CDC-49D6-A130-6DDF97E9C956}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
