@@ -245,13 +245,13 @@ namespace Connect.Protobuf
 
         private void InvokeMessageEvent(byte[] message)
         {
-            uint messagePayloadType = MessagesFactory.GetPayloadType(message);
+            ProtoMessage protoMessage = MessagesFactory.GetMessage(message);
 
-            switch (messagePayloadType)
+            switch (protoMessage.PayloadType)
             {
                 case (int)ProtoOAPayloadType.PROTO_OA_ERROR_RES:
                     {
-                        ProtoOAErrorRes protoErrorRes = MessagesFactory.GetErrorResponse(message);
+                        ProtoOAErrorRes protoErrorRes = MessagesFactory.GetErrorResponse(protoMessage.Payload);
 
                         _events.OnError(this, protoErrorRes);
 
@@ -259,7 +259,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoPayloadType.HEARTBEAT_EVENT:
                     {
-                        ProtoHeartbeatEvent protoHeartbeatEvent = MessagesFactory.GetHeartbeatEvent(message);
+                        ProtoHeartbeatEvent protoHeartbeatEvent = MessagesFactory.GetHeartbeatEvent(protoMessage.Payload);
 
                         _events.OnHeartbeat(this, protoHeartbeatEvent);
 
@@ -267,7 +267,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_RES:
                     {
-                        ProtoOAAccountAuthRes protoOAAccountAuthRes = MessagesFactory.GetAccountAuthorizationResponse(message);
+                        ProtoOAAccountAuthRes protoOAAccountAuthRes = MessagesFactory.GetAccountAuthorizationResponse(protoMessage.Payload);
 
                         _events.OnAccountAuthorizationResponse(this, protoOAAccountAuthRes);
 
@@ -275,7 +275,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_APPLICATION_AUTH_RES:
                     {
-                        ProtoOAApplicationAuthRes protoOAApplicationAuthRes = MessagesFactory.GetApplicationAuthorizationResponse(message);
+                        ProtoOAApplicationAuthRes protoOAApplicationAuthRes = MessagesFactory.GetApplicationAuthorizationResponse(protoMessage.Payload);
 
                         _isAuthorized = true;
 
@@ -285,7 +285,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_CLIENT_DISCONNECT_EVENT:
                     {
-                        ProtoOAClientDisconnectEvent protoOAClientDisconnect = MessagesFactory.GetClientDisconnectEvent(message);
+                        ProtoOAClientDisconnectEvent protoOAClientDisconnect = MessagesFactory.GetClientDisconnectEvent(protoMessage.Payload);
 
                         _events.OnClientDisconnected(this, protoOAClientDisconnect);
 
@@ -293,7 +293,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_DEAL_LIST_RES:
                     {
-                        ProtoOADealListRes protoOADealListRes = MessagesFactory.GetDealListResponse(message);
+                        ProtoOADealListRes protoOADealListRes = MessagesFactory.GetDealListResponse(protoMessage.Payload);
 
                         _events.OnDealListResponse(this, protoOADealListRes);
 
@@ -301,7 +301,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_RES:
                     {
-                        ProtoOAAssetListRes protoOAAssetListRes = MessagesFactory.GetAssetListResponse(message);
+                        ProtoOAAssetListRes protoOAAssetListRes = MessagesFactory.GetAssetListResponse(protoMessage.Payload);
 
                         _events.OnAssetListResponse(this, protoOAAssetListRes);
 
@@ -309,7 +309,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNTS_TOKEN_INVALIDATED_EVENT:
                     {
-                        ProtoOAAccountsTokenInvalidatedEvent protoOAAccountsTokenInvalidatedEvent = MessagesFactory.GetAccountsTokenInvalidatedEvent(message);
+                        ProtoOAAccountsTokenInvalidatedEvent protoOAAccountsTokenInvalidatedEvent = MessagesFactory.GetAccountsTokenInvalidatedEvent(protoMessage.Payload);
 
                         _events.OnAccountsTokenInvalidated(this, protoOAAccountsTokenInvalidatedEvent);
 
@@ -317,7 +317,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_CASH_FLOW_HISTORY_LIST_RES:
                     {
-                        ProtoOACashFlowHistoryListRes protoOACashFlowHistoryListRes = MessagesFactory.GetCashFlowHistoryListResponse(message);
+                        ProtoOACashFlowHistoryListRes protoOACashFlowHistoryListRes = MessagesFactory.GetCashFlowHistoryListResponse(protoMessage.Payload);
 
                         _events.OnCashFlowHistoryListResponse(this, protoOACashFlowHistoryListRes);
 
@@ -325,7 +325,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_EXECUTION_EVENT:
                     {
-                        ProtoOAExecutionEvent protoOAExecutionEvent = MessagesFactory.GetExecutionEvent(message);
+                        ProtoOAExecutionEvent protoOAExecutionEvent = MessagesFactory.GetExecutionEvent(protoMessage.Payload);
 
                         _events.OnExecution(this, protoOAExecutionEvent);
 
@@ -333,7 +333,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_EXPECTED_MARGIN_RES:
                     {
-                        ProtoOAExpectedMarginRes protoOAExpectedMarginRes = MessagesFactory.GetExpectedMarginResponse(message);
+                        ProtoOAExpectedMarginRes protoOAExpectedMarginRes = MessagesFactory.GetExpectedMarginResponse(protoMessage.Payload);
 
                         _events.OnExpectedMarginResponse(this, protoOAExpectedMarginRes);
 
@@ -341,7 +341,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES:
                     {
-                        ProtoOAGetAccountListByAccessTokenRes protoOAGetAccountListByAccessTokenRes = MessagesFactory.GetAccountListByAccessTokenResponse(message);
+                        ProtoOAGetAccountListByAccessTokenRes protoOAGetAccountListByAccessTokenRes = MessagesFactory.GetAccountListByAccessTokenResponse(protoMessage.Payload);
 
                         _events.OnGetAccountListByAccessTokenResponse(this, protoOAGetAccountListByAccessTokenRes);
 
@@ -349,7 +349,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_TICKDATA_RES:
                     {
-                        ProtoOAGetTickDataRes protoOAGetTickDataRes = MessagesFactory.GetTickDataResponse(message);
+                        ProtoOAGetTickDataRes protoOAGetTickDataRes = MessagesFactory.GetTickDataResponse(protoMessage.Payload);
 
                         _events.OnGetTickDataResponse(this, protoOAGetTickDataRes);
 
@@ -357,7 +357,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_TRENDBARS_RES:
                     {
-                        ProtoOAGetTrendbarsRes protoOAGetTrendbarsRes = MessagesFactory.GetTrendbarsResponse(message);
+                        ProtoOAGetTrendbarsRes protoOAGetTrendbarsRes = MessagesFactory.GetTrendbarsResponse(protoMessage.Payload);
 
                         _events.OnGetTrendbarsResponse(this, protoOAGetTrendbarsRes);
 
@@ -365,7 +365,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_MARGIN_CHANGED_EVENT:
                     {
-                        ProtoOAMarginChangedEvent protoOAMarginChangedEvent = MessagesFactory.GetMarginChangedEvent(message);
+                        ProtoOAMarginChangedEvent protoOAMarginChangedEvent = MessagesFactory.GetMarginChangedEvent(protoMessage.Payload);
 
                         _events.OnMarginChanged(this, protoOAMarginChangedEvent);
 
@@ -373,7 +373,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_ORDER_ERROR_EVENT:
                     {
-                        ProtoOAOrderErrorEvent protoOAOrderErrorEvent = MessagesFactory.GetOrderErrorEvent(message);
+                        ProtoOAOrderErrorEvent protoOAOrderErrorEvent = MessagesFactory.GetOrderErrorEvent(protoMessage.Payload);
 
                         _events.OnOrderError(this, protoOAOrderErrorEvent);
 
@@ -381,7 +381,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_RECONCILE_RES:
                     {
-                        ProtoOAReconcileRes protoOAReconcileRes = MessagesFactory.GetReconcileResponse(message);
+                        ProtoOAReconcileRes protoOAReconcileRes = MessagesFactory.GetReconcileResponse(protoMessage.Payload);
 
                         _events.OnReconcileResponse(this, protoOAReconcileRes);
 
@@ -389,7 +389,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_SPOT_EVENT:
                     {
-                        ProtoOASpotEvent protoOASpotEvent = MessagesFactory.GetSpotEvent(message);
+                        ProtoOASpotEvent protoOASpotEvent = MessagesFactory.GetSpotEvent(protoMessage.Payload);
 
                         _events.OnSpot(this, protoOASpotEvent);
 
@@ -397,7 +397,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_SPOTS_RES:
                     {
-                        ProtoOASubscribeSpotsRes protoOASubscribeSpotsRes = MessagesFactory.GetSubscribeSpotsResponse(message);
+                        ProtoOASubscribeSpotsRes protoOASubscribeSpotsRes = MessagesFactory.GetSubscribeSpotsResponse(protoMessage.Payload);
 
                         _events.OnSubscribeSpotsResponse(this, protoOASubscribeSpotsRes);
 
@@ -405,7 +405,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_FOR_CONVERSION_RES:
                     {
-                        ProtoOASymbolsForConversionRes protoOASymbolsForConversionRes = MessagesFactory.GetSymbolsForConversionResponse(message);
+                        ProtoOASymbolsForConversionRes protoOASymbolsForConversionRes = MessagesFactory.GetSymbolsForConversionResponse(protoMessage.Payload);
 
                         _events.OnSymbolsForConversionResponse(this, protoOASymbolsForConversionRes);
 
@@ -413,7 +413,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_LIST_RES:
                     {
-                        ProtoOASymbolsListRes protoOASymbolsListRes = MessagesFactory.GetSymbolsListResponse(message);
+                        ProtoOASymbolsListRes protoOASymbolsListRes = MessagesFactory.GetSymbolsListResponse(protoMessage.Payload);
 
                         _events.OnSymbolsListResponse(this, protoOASymbolsListRes);
 
@@ -421,7 +421,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_BY_ID_RES:
                     {
-                        ProtoOASymbolByIdRes protoOASymbolByIdRes = MessagesFactory.GetSymbolByIdResponse(message);
+                        ProtoOASymbolByIdRes protoOASymbolByIdRes = MessagesFactory.GetSymbolByIdResponse(protoMessage.Payload);
 
                         _events.OnSymbolByIdResponse(this, protoOASymbolByIdRes);
 
@@ -429,7 +429,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CHANGED_EVENT:
                     {
-                        ProtoOASymbolChangedEvent protoOASymbolChangedEvent = MessagesFactory.GetSymbolChangedEvent(message);
+                        ProtoOASymbolChangedEvent protoOASymbolChangedEvent = MessagesFactory.GetSymbolChangedEvent(protoMessage.Payload);
 
                         _events.OnSymbolChanged(this, protoOASymbolChangedEvent);
 
@@ -437,7 +437,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_TRADER_RES:
                     {
-                        ProtoOATraderRes protoOATraderRes = MessagesFactory.GetTraderResponse(message);
+                        ProtoOATraderRes protoOATraderRes = MessagesFactory.GetTraderResponse(protoMessage.Payload);
 
                         _events.OnTraderResponse(this, protoOATraderRes);
 
@@ -445,7 +445,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_TRADER_UPDATE_EVENT:
                     {
-                        ProtoOATraderUpdatedEvent protoOATraderUpdatedEvent = MessagesFactory.GetTraderUpdatedEvent(message);
+                        ProtoOATraderUpdatedEvent protoOATraderUpdatedEvent = MessagesFactory.GetTraderUpdatedEvent(protoMessage.Payload);
 
                         _events.OnTraderUpdated(this, protoOATraderUpdatedEvent);
 
@@ -453,7 +453,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_TRAILING_SL_CHANGED_EVENT:
                     {
-                        ProtoOATrailingSLChangedEvent protoOATrailingSLChangedEvent = MessagesFactory.GetTrailingSLChangedEvent(message);
+                        ProtoOATrailingSLChangedEvent protoOATrailingSLChangedEvent = MessagesFactory.GetTrailingSLChangedEvent(protoMessage.Payload);
 
                         _events.OnTrailingSLChanged(this, protoOATrailingSLChangedEvent);
 
@@ -461,7 +461,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_SPOTS_RES:
                     {
-                        ProtoOAUnsubscribeSpotsRes protoOAUnsubscribeSpotsRes = MessagesFactory.GetUnsubscribeSpotsResponse(message);
+                        ProtoOAUnsubscribeSpotsRes protoOAUnsubscribeSpotsRes = MessagesFactory.GetUnsubscribeSpotsResponse(protoMessage.Payload);
 
                         _events.OnUnsubscribeSpotsResponse(this, protoOAUnsubscribeSpotsRes);
 
@@ -469,7 +469,7 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_VERSION_RES:
                     {
-                        ProtoOAVersionRes protoOAVersionRes = MessagesFactory.GetVersionResponse(message);
+                        ProtoOAVersionRes protoOAVersionRes = MessagesFactory.GetVersionResponse(protoMessage.Payload);
 
                         _events.OnVersionResponse(this, protoOAVersionRes);
 
