@@ -33,7 +33,7 @@ namespace Connect.Protobuf
 
         public delegate void ExpectedMarginResponseEventHandler(object sender, ProtoOAExpectedMarginRes e);
 
-        public delegate void GetAccountListByAccessTokenResponseEventHandler(object sender, ProtoOAGetAccountListByAccessTokenRes e);
+        public delegate void AccountListResponseEventHandler(object sender, ProtoOAGetAccountListByAccessTokenRes e);
 
         public delegate void GetTickDataResponseEventHandler(object sender, ProtoOAGetTickDataRes e);
 
@@ -64,6 +64,8 @@ namespace Connect.Protobuf
         public delegate void UnsubscribeSpotsResponseEventHandler(object sender, ProtoOAUnsubscribeSpotsRes e);
 
         public delegate void VersionResponseEventHandler(object sender, ProtoOAVersionRes e);
+
+        public delegate void MessageReceivedEventHandler(object sender, ProtoMessage e);
 
         #endregion Delegates
 
@@ -97,7 +99,7 @@ namespace Connect.Protobuf
 
         public event ExpectedMarginResponseEventHandler ExpectedMarginResponseEvent;
 
-        public event GetAccountListByAccessTokenResponseEventHandler GetAccountListByAccessTokenResponseEvent;
+        public event AccountListResponseEventHandler AccountListResponseEvent;
 
         public event GetTickDataResponseEventHandler GetTickDataResponseEvent;
 
@@ -128,6 +130,8 @@ namespace Connect.Protobuf
         public event UnsubscribeSpotsResponseEventHandler UnsubscribeSpotsResponseEvent;
 
         public event VersionResponseEventHandler VersionResponseEvent;
+
+        public event MessageReceivedEventHandler MessageReceivedEvent;
 
         #endregion Events
 
@@ -203,9 +207,9 @@ namespace Connect.Protobuf
             ExpectedMarginResponseEvent?.Invoke(sender, e);
         }
 
-        public void OnGetAccountListByAccessTokenResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e)
+        public void OnAccountListResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e)
         {
-            GetAccountListByAccessTokenResponseEvent.Invoke(sender, e);
+            AccountListResponseEvent.Invoke(sender, e);
         }
 
         public void OnGetTickDataResponse(object sender, ProtoOAGetTickDataRes e)
@@ -281,6 +285,11 @@ namespace Connect.Protobuf
         public void OnVersionResponse(object sender, ProtoOAVersionRes e)
         {
             VersionResponseEvent?.Invoke(sender, e);
+        }
+
+        public void OnMessageReceived(object sender, ProtoMessage e)
+        {
+            MessageReceivedEvent?.Invoke(sender, e);
         }
 
         #endregion Methods

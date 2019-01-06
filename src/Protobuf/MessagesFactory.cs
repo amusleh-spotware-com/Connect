@@ -27,19 +27,9 @@ namespace Connect.Protobuf
             return ProtoOAErrorRes.CreateBuilder().MergeFrom(messagePayload).Build();
         }
 
-        public ProtoOAApplicationAuthReq GetApplicationAuthorizationRequest(ByteString messagePayload)
-        {
-            return ProtoOAApplicationAuthReq.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
         public ProtoOAApplicationAuthRes GetApplicationAuthorizationResponse(ByteString messagePayload)
         {
             return ProtoOAApplicationAuthRes.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
-        public ProtoOAAccountAuthReq GetAccountAuthorizationRequest(ByteString messagePayload)
-        {
-            return ProtoOAAccountAuthReq.CreateBuilder().MergeFrom(messagePayload).Build();
         }
 
         public ProtoOAAccountAuthRes GetAccountAuthorizationResponse(ByteString messagePayload)
@@ -77,7 +67,7 @@ namespace Connect.Protobuf
             return ProtoOAExpectedMarginRes.CreateBuilder().MergeFrom(messagePayload).Build();
         }
 
-        public ProtoOAGetAccountListByAccessTokenRes GetAccountListByAccessTokenResponse(ByteString messagePayload)
+        public ProtoOAGetAccountListByAccessTokenRes GetAccountListResponse(ByteString messagePayload)
         {
             return ProtoOAGetAccountListByAccessTokenRes.CreateBuilder().MergeFrom(messagePayload).Build();
         }
@@ -162,36 +152,6 @@ namespace Connect.Protobuf
             return ProtoOAExecutionEvent.CreateBuilder().MergeFrom(messagePayload).Build();
         }
 
-        public ProtoOANewOrderReq GetCreateOrderRequest(ByteString messagePayload)
-        {
-            return ProtoOANewOrderReq.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
-        public ProtoOACancelOrderReq GetCancelOrderRequest(ByteString messagePayload)
-        {
-            return ProtoOACancelOrderReq.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
-        public ProtoOAClosePositionReq GetClosePositionRequest(ByteString messagePayload)
-        {
-            return ProtoOAClosePositionReq.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
-        public ProtoOAAmendPositionSLTPReq GetAmendPositionStopLossTakeProfitRequest(ByteString messagePayload)
-        {
-            return ProtoOAAmendPositionSLTPReq.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
-        public ProtoOAAmendOrderReq GetAmendOrderRequest(ByteString messagePayload)
-        {
-            return ProtoOAAmendOrderReq.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
-        public ProtoOASubscribeSpotsReq GetSubscribeSpotsRequest(ByteString messagePayload)
-        {
-            return ProtoOASubscribeSpotsReq.CreateBuilder().MergeFrom(messagePayload).Build();
-        }
-
         public ProtoOASpotEvent GetSpotEvent(ByteString messagePayload)
         {
             return ProtoOASpotEvent.CreateBuilder().MergeFrom(messagePayload).Build();
@@ -254,8 +214,10 @@ namespace Connect.Protobuf
         public ProtoMessage CreateAppAuthorizationRequest(string clientId, string clientSecret, string clientMsgId = null)
         {
             var message = ProtoOAApplicationAuthReq.CreateBuilder();
+
             message.SetClientId(clientId);
             message.SetClientSecret(clientSecret);
+
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
@@ -267,8 +229,10 @@ namespace Connect.Protobuf
         public ProtoMessage CreateAccountAuthorizationRequest(string token, long accountId, string clientMsgId = null)
         {
             var message = ProtoOAAccountAuthReq.CreateBuilder();
+
             message.SetAccessToken(token);
             message.SetCtidTraderAccountId(accountId);
+            
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 

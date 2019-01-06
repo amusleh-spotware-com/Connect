@@ -12,7 +12,7 @@ namespace Connect.Protobuf
     {
         #region Fields
 
-        private readonly int _maxMessageSize = 10000;
+        private readonly int _maxMessageSize = 1000000;
 
         private readonly Events _events = new Events();
 
@@ -46,16 +46,16 @@ namespace Connect.Protobuf
 
         #region Connection
 
-        public async Task Connect(Mode mode = Mode.Live, Proxy proxy = Proxy.None)
+        public async Task Connect(Mode mode)
         {
             _apiClient = new TcpClient();
 
             _apiClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
             _apiClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
 
-            string apiURL = BaseUrls.GetBaseUrl(ApiType.Protobuf, mode, proxy);
+            string apiURL = BaseUrls.GetBaseUrl(ApiType.Protobuf, mode);
 
-            await _apiClient.ConnectAsync(apiURL, BaseUrls.TradingPort);
+            await _apiClient.ConnectAsync(apiURL, BaseUrls.ProtobufPort);
 
             _apiStream = new SslStream(
                 _apiClient.GetStream(),
@@ -93,7 +93,7 @@ namespace Connect.Protobuf
 
         public void StartHeartbeatSending(double interval = 10000)
         {
-            System.Timers.Timer heartbeatTimer = new System.Timers.Timer();
+            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(interval);
 
             heartbeatTimer.Interval = interval;
 
@@ -101,6 +101,8 @@ namespace Connect.Protobuf
             {
                 try
                 {
+                    (sender as System.Timers.Timer).Stop();
+
                     if (IsConnected && _heartbeatSenderStatus == ProcessStatus.Running || _heartbeatSenderStatus == ProcessStatus.WaitingToRun)
                     {
                         ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent();
@@ -113,6 +115,8 @@ namespace Connect.Protobuf
 
                         _heartbeatSenderStatus = ProcessStatus.Stopped;
                     }
+
+                    (sender as System.Timers.Timer).Start();
                 }
                 catch (Exception ex)
                 {
@@ -247,6 +251,8 @@ namespace Connect.Protobuf
         {
             ProtoMessage protoMessage = MessagesFactory.GetMessage(message);
 
+            _events.OnMessageReceived(this, protoMessage);
+
             switch (protoMessage.PayloadType)
             {
                 case (int)ProtoOAPayloadType.PROTO_OA_ERROR_RES:
@@ -341,9 +347,9 @@ namespace Connect.Protobuf
                     }
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES:
                     {
-                        ProtoOAGetAccountListByAccessTokenRes protoOAGetAccountListByAccessTokenRes = MessagesFactory.GetAccountListByAccessTokenResponse(protoMessage.Payload);
+                        ProtoOAGetAccountListByAccessTokenRes protoOAGetAccountListByAccessTokenRes = MessagesFactory.GetAccountListResponse(protoMessage.Payload);
 
-                        _events.OnGetAccountListByAccessTokenResponse(this, protoOAGetAccountListByAccessTokenRes);
+                        _events.OnAccountListResponse(this, protoOAGetAccountListByAccessTokenRes);
 
                         break;
                     }
