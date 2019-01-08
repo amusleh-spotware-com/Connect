@@ -481,6 +481,14 @@ namespace Connect.Protobuf
 
                         break;
                     }
+                case (int)ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES:
+                    {
+                        ProtoOAGetCtidProfileByTokenRes ctidProfileRes = MessagesFactory.GetCtidProfileResponse(protoMessage.Payload);
+
+                        _events.OnCtidProfileResponseEvent(this, ctidProfileRes);
+
+                        break;
+                    }
                 default:
                     break;
             }

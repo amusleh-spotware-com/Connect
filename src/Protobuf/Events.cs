@@ -67,6 +67,8 @@ namespace Connect.Protobuf
 
         public delegate void MessageReceivedEventHandler(object sender, ProtoMessage e);
 
+        public delegate void CtidProfileResponseEventHandler(object sender, ProtoOAGetCtidProfileByTokenRes e);
+
         #endregion Delegates
 
         #region Events
@@ -132,6 +134,8 @@ namespace Connect.Protobuf
         public event VersionResponseEventHandler VersionResponseEvent;
 
         public event MessageReceivedEventHandler MessageReceivedEvent;
+
+        public event CtidProfileResponseEventHandler CtidProfileResponseEvent;
 
         #endregion Events
 
@@ -290,6 +294,11 @@ namespace Connect.Protobuf
         public void OnMessageReceived(object sender, ProtoMessage e)
         {
             MessageReceivedEvent?.Invoke(sender, e);
+        }
+
+        public void OnCtidProfileResponseEvent(object sender, ProtoOAGetCtidProfileByTokenRes e)
+        {
+            CtidProfileResponseEvent?.Invoke(sender, e);
         }
 
         #endregion Methods

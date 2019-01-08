@@ -157,6 +157,11 @@ namespace Connect.Protobuf
             return ProtoOASpotEvent.CreateBuilder().MergeFrom(messagePayload).Build();
         }
 
+        public ProtoOAGetCtidProfileByTokenRes GetCtidProfileResponse(ByteString messagePayload)
+        {
+            return ProtoOAGetCtidProfileByTokenRes.CreateBuilder().MergeFrom(messagePayload).Build();
+        }
+
         #endregion Building Proto messages from Byte array methods
 
         #region Creating new Proto messages with parameters specified
@@ -325,7 +330,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_SYMBOLS_LIST_RES, ProtoOASymbolsListRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public ProtoMessage CreateTrendbarsRequest(int accountId, int symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOATrendbarPeriod period, string clientMsgId = null)
+        public ProtoMessage CreateTrendbarsRequest(long accountId, int symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOATrendbarPeriod period, string clientMsgId = null)
         {
             var message = ProtoOAGetTrendbarsReq.CreateBuilder();
 
@@ -343,7 +348,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_GET_TRENDBARS_RES, ProtoOAGetTrendbarsRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public ProtoMessage CreateTickDataRequest(int accountId, int symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOAQuoteType type, string clientMsgId = null)
+        public ProtoMessage CreateTickDataRequest(long accountId, int symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOAQuoteType type, string clientMsgId = null)
         {
             var message = ProtoOAGetTickDataReq.CreateBuilder();
 
@@ -657,7 +662,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public ProtoMessage CreateSubscribeForSpotsResponse(uint accountId, string clientMsgId = null)
+        public ProtoMessage CreateSubscribeForSpotsResponse(long accountId, string clientMsgId = null)
         {
             var message = ProtoOASubscribeSpotsRes.CreateBuilder();
 
@@ -666,12 +671,55 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public ProtoMessage CreateUnsubscribeFromSpotsRequest(int accountId, int symbolId, string clientMsgId = null)
+        public ProtoMessage CreateUnsubscribeFromSpotsRequest(long accountId, int symbolId, string clientMsgId = null)
         {
             var message = ProtoOAUnsubscribeSpotsReq.CreateBuilder();
 
             message.SetCtidTraderAccountId(accountId);
             message.AddSymbolId(symbolId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateTraderResponse(long accountId, string clientMsgId = null)
+        {
+            var message = ProtoOATraderRes.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateTraderRequest(long accountId, string clientMsgId = null)
+        {
+            var message = ProtoOATraderReq.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateTraderUpdatedEvent(long accountId, string clientMsgId = null)
+        {
+            var message = ProtoOATraderUpdatedEvent.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateCtidProfileResponse(string accessToken, string clientMsgId = null)
+        {
+            var message = ProtoOAGetCtidProfileByTokenRes.CreateBuilder();
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateCtidProfileRequest(string accessToken, string clientMsgId = null)
+        {
+            var message = ProtoOAGetCtidProfileByTokenReq.CreateBuilder();
+
+            message.SetAccessToken(accessToken);
 
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }

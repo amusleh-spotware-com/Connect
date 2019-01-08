@@ -20,6 +20,8 @@ public static partial class OpenApiModelMessages {
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbol, global::ProtoOASymbol.Builder> internal__static_ProtoOASymbol__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOALightSymbol__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOALightSymbol, global::ProtoOALightSymbol.Builder> internal__static_ProtoOALightSymbol__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOASymbolCategory__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolCategory, global::ProtoOASymbolCategory.Builder> internal__static_ProtoOASymbolCategory__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOAInterval__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAInterval, global::ProtoOAInterval.Builder> internal__static_ProtoOAInterval__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOATrader__Descriptor;
@@ -44,6 +46,14 @@ public static partial class OpenApiModelMessages {
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAExpectedMargin, global::ProtoOAExpectedMargin.Builder> internal__static_ProtoOAExpectedMargin__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOATickData__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOATickData, global::ProtoOATickData.Builder> internal__static_ProtoOATickData__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOACtidProfile__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOACtidProfile, global::ProtoOACtidProfile.Builder> internal__static_ProtoOACtidProfile__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOACtidTraderAccount__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOACtidTraderAccount, global::ProtoOACtidTraderAccount.Builder> internal__static_ProtoOACtidTraderAccount__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAAssetClass__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAAssetClass, global::ProtoOAAssetClass.Builder> internal__static_ProtoOAAssetClass__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOADepthQuote__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOADepthQuote, global::ProtoOADepthQuote.Builder> internal__static_ProtoOADepthQuote__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -74,196 +84,214 @@ public static partial class OpenApiModelMessages {
           "bWluQ29tbWlzc2lvbkFzc2V0GBcgASgJOgNVU0QSGgoScm9sbG92ZXJDb21t", 
           "aXNzaW9uGBggASgDEhgKEHNraXBSb2xsb3ZlckRheXMYGSABKAUSGAoQc2No", 
           "ZWR1bGVUaW1lWm9uZRgaIAEoCRIxCgt0cmFkaW5nTW9kZRgbIAEoDjITLlBy", 
-          "b3RvT0FUcmFkaW5nTW9kZToHRU5BQkxFRCJ2ChJQcm90b09BTGlnaHRTeW1i", 
-          "b2wSEAoIc3ltYm9sSWQYASACKAMSEgoKc3ltYm9sTmFtZRgCIAEoCRIPCgdl", 
-          "bmFibGVkGAMgASgIEhMKC2Jhc2VBc3NldElkGAQgASgDEhQKDHF1b3RlQXNz", 
-          "ZXRJZBgFIAEoAyI5Cg9Qcm90b09BSW50ZXJ2YWwSEwoLc3RhcnRTZWNvbmQY", 
-          "AyACKA0SEQoJZW5kU2Vjb25kGAQgAigNIuIDCg1Qcm90b09BVHJhZGVyEhsK", 
-          "E2N0aWRUcmFkZXJBY2NvdW50SWQYASACKAMSDwoHYmFsYW5jZRgCIAIoAxIW", 
-          "Cg5iYWxhbmNlVmVyc2lvbhgDIAEoAxIUCgxtYW5hZ2VyQm9udXMYBCABKAMS", 
-          "DwoHaWJCb251cxgFIAEoAxIcChRub25XaXRoZHJhd2FibGVCb251cxgGIAEo", 
-          "AxI3CgxhY2Nlc3NSaWdodHMYByABKA4yFC5Qcm90b09BQWNjZXNzUmlnaHRz", 
-          "OgtGVUxMX0FDQ0VTUxIWCg5kZXBvc2l0QXNzZXRJZBgIIAIoAxIQCghzd2Fw", 
-          "RnJlZRgJIAEoCBIXCg9sZXZlcmFnZUluQ2VudHMYCiABKA0SRgoadG90YWxN", 
-          "YXJnaW5DYWxjdWxhdGlvblR5cGUYCyABKA4yIi5Qcm90b09BVG90YWxNYXJn", 
-          "aW5DYWxjdWxhdGlvblR5cGUSEwoLbWF4TGV2ZXJhZ2UYDCABKA0SEgoKZnJl", 
-          "bmNoUmlzaxgNIAEoCBITCgt0cmFkZXJMb2dpbhgOIAEoAxIwCgthY2NvdW50", 
-          "VHlwZRgPIAEoDjITLlByb3RvT0FBY2NvdW50VHlwZToGSEVER0VEEhIKCmJy", 
-          "b2tlck5hbWUYECABKAkilQMKD1Byb3RvT0FQb3NpdGlvbhISCgpwb3NpdGlv", 
-          "bklkGAEgAigDEiQKCXRyYWRlRGF0YRgCIAIoCzIRLlByb3RvT0FUcmFkZURh", 
-          "dGESLgoOcG9zaXRpb25TdGF0dXMYAyACKA4yFi5Qcm90b09BUG9zaXRpb25T", 
-          "dGF0dXMSDAoEc3dhcBgEIAIoAxINCgVwcmljZRgFIAEoARIQCghzdG9wTG9z", 
-          "cxgGIAEoARISCgp0YWtlUHJvZml0GAcgASgBEh4KFnV0Y0xhc3RVcGRhdGVU", 
-          "aW1lc3RhbXAYCCABKAMSEgoKY29tbWlzc2lvbhgJIAEoAxISCgptYXJnaW5S", 
-          "YXRlGAogASgBEhsKE21pcnJvcmluZ0NvbW1pc3Npb24YCyABKAMSGgoSZ3Vh", 
-          "cmFudGVlZFN0b3BMb3NzGAwgASgIEhIKCnVzZWRNYXJnaW4YDSABKAQSQAoV", 
-          "c3RvcExvc3NUcmlnZ2VyTWV0aG9kGA4gASgOMhouUHJvdG9PQU9yZGVyVHJp", 
-          "Z2dlck1ldGhvZDoFVFJBREUinAEKEFByb3RvT0FUcmFkZURhdGESEAoIc3lt", 
-          "Ym9sSWQYASACKAMSDgoGdm9sdW1lGAIgAigDEiQKCXRyYWRlU2lkZRgDIAIo", 
-          "DjIRLlByb3RvT0FUcmFkZVNpZGUSFQoNb3BlblRpbWVzdGFtcBgEIAEoAxIN", 
-          "CgVsYWJlbBgFIAEoCRIaChJndWFyYW50ZWVkU3RvcExvc3MYBiABKAgipQUK", 
-          "DFByb3RvT0FPcmRlchIPCgdvcmRlcklkGAEgAigDEiQKCXRyYWRlRGF0YRgC", 
-          "IAIoCzIRLlByb3RvT0FUcmFkZURhdGESJAoJb3JkZXJUeXBlGAMgAigOMhEu", 
-          "UHJvdG9PQU9yZGVyVHlwZRIoCgtvcmRlclN0YXR1cxgEIAIoDjITLlByb3Rv", 
-          "T0FPcmRlclN0YXR1cxIbChNleHBpcmF0aW9uVGltZXN0YW1wGAYgASgDEhYK", 
-          "DmV4ZWN1dGlvblByaWNlGAcgASgBEhYKDmV4ZWN1dGVkVm9sdW1lGAggASgD", 
-          "Eh4KFnV0Y0xhc3RVcGRhdGVUaW1lc3RhbXAYCSABKAMSGQoRYmFzZVNsaXBw", 
-          "YWdlUHJpY2UYCiABKAESGAoQc2xpcHBhZ2VJblBvaW50cxgLIAEoAxIUCgxj", 
-          "bG9zaW5nT3JkZXIYDCABKAgSEgoKbGltaXRQcmljZRgNIAEoARIRCglzdG9w", 
-          "UHJpY2UYDiABKAESEAoIc3RvcExvc3MYDyABKAESEgoKdGFrZVByb2ZpdBgQ", 
-          "IAEoARIVCg1jbGllbnRPcmRlcklkGBEgASgJEj0KC3RpbWVJbkZvcmNlGBIg", 
-          "ASgOMhMuUHJvdG9PQVRpbWVJbkZvcmNlOhNJTU1FRElBVEVfT1JfQ0FOQ0VM", 
-          "EhIKCnBvc2l0aW9uSWQYEyABKAMSGAoQcmVsYXRpdmVTdG9wTG9zcxgUIAEo", 
-          "AxIaChJyZWxhdGl2ZVRha2VQcm9maXQYFSABKAMSEQoJaXNTdG9wT3V0GBYg", 
-          "ASgIEhgKEHRyYWlsaW5nU3RvcExvc3MYFyABKAgSPAoRc3RvcFRyaWdnZXJN", 
-          "ZXRob2QYGCABKA4yGi5Qcm90b09BT3JkZXJUcmlnZ2VyTWV0aG9kOgVUUkFE", 
-          "RSKEAgobUHJvdG9PQUJvbnVzRGVwb3NpdFdpdGhkcmF3Ei4KDW9wZXJhdGlv", 
-          "blR5cGUYASACKA4yFy5Qcm90b09BQ2hhbmdlQm9udXNUeXBlEhYKDmJvbnVz", 
-          "SGlzdG9yeUlkGAIgAigDEhQKDG1hbmFnZXJCb251cxgDIAIoAxIUCgxtYW5h", 
-          "Z2VyRGVsdGEYBCACKAMSDwoHaWJCb251cxgFIAIoAxIPCgdpYkRlbHRhGAYg", 
-          "AigDEhwKFGNoYW5nZUJvbnVzVGltZXN0YW1wGAcgAigDEhQKDGV4dGVybmFs", 
-          "Tm90ZRgIIAEoCRIbChNpbnRyb2R1Y2luZ0Jyb2tlcklkGAkgASgDIuIBChZQ", 
-          "cm90b09BRGVwb3NpdFdpdGhkcmF3EjAKDW9wZXJhdGlvblR5cGUYASACKA4y", 
-          "GS5Qcm90b09BQ2hhbmdlQmFsYW5jZVR5cGUSGAoQYmFsYW5jZUhpc3RvcnlJ", 
-          "ZBgCIAIoAxIPCgdiYWxhbmNlGAMgAigDEg0KBWRlbHRhGAQgAigDEh4KFmNo", 
-          "YW5nZUJhbGFuY2VUaW1lc3RhbXAYBSACKAMSFAoMZXh0ZXJuYWxOb3RlGAYg", 
-          "ASgJEhYKDmJhbGFuY2VWZXJzaW9uGAcgASgDEg4KBmVxdWl0eRgIIAEoAyK4", 
-          "AwoLUHJvdG9PQURlYWwSDgoGZGVhbElkGAEgAigDEg8KB29yZGVySWQYAiAC", 
-          "KAMSEgoKcG9zaXRpb25JZBgDIAIoAxIOCgZ2b2x1bWUYBCACKAMSFAoMZmls", 
-          "bGVkVm9sdW1lGAUgAigDEhAKCHN5bWJvbElkGAYgAigDEhcKD2NyZWF0ZVRp", 
-          "bWVzdGFtcBgHIAIoAxIaChJleGVjdXRpb25UaW1lc3RhbXAYCCACKAMSHgoW", 
-          "dXRjTGFzdFVwZGF0ZVRpbWVzdGFtcBgJIAEoAxIWCg5leGVjdXRpb25Qcmlj", 
-          "ZRgKIAEoARIkCgl0cmFkZVNpZGUYCyACKA4yES5Qcm90b09BVHJhZGVTaWRl", 
-          "EiYKCmRlYWxTdGF0dXMYDCACKA4yEi5Qcm90b09BRGVhbFN0YXR1cxISCgpt", 
-          "YXJnaW5SYXRlGA0gASgBEhIKCmNvbW1pc3Npb24YDiABKAMSHwoXYmFzZVRv", 
-          "VXNkQ29udmVyc2lvblJhdGUYDyABKAESOAoTY2xvc2VQb3NpdGlvbkRldGFp", 
-          "bBgQIAEoCzIbLlByb3RvT0FDbG9zZVBvc2l0aW9uRGV0YWlsIswBChpQcm90", 
-          "b09BQ2xvc2VQb3NpdGlvbkRldGFpbBISCgplbnRyeVByaWNlGAEgAigBEhMK", 
-          "C2dyb3NzUHJvZml0GAIgAigDEgwKBHN3YXAYAyACKAMSEgoKY29tbWlzc2lv", 
-          "bhgEIAIoAxIPCgdiYWxhbmNlGAUgAigDEiQKHHF1b3RlVG9EZXBvc2l0Q29u", 
-          "dmVyc2lvblJhdGUYBiABKAESFAoMY2xvc2VkVm9sdW1lGAcgASgDEhYKDmJh", 
-          "bGFuY2VWZXJzaW9uGAggASgDIrMBCg9Qcm90b09BVHJlbmRiYXISDgoGdm9s", 
-          "dW1lGAMgAigDEioKBnBlcmlvZBgEIAEoDjIWLlByb3RvT0FUcmVuZGJhclBl", 
-          "cmlvZDoCTTESCwoDbG93GAUgASgDEhEKCWRlbHRhT3BlbhgGIAEoBBISCgpk", 
-          "ZWx0YUNsb3NlGAcgASgEEhEKCWRlbHRhSGlnaBgIIAEoBBIdChV1dGNUaW1l", 
-          "c3RhbXBJbk1pbnV0ZXMYCSABKA0iTgoVUHJvdG9PQUV4cGVjdGVkTWFyZ2lu", 
-          "Eg4KBnZvbHVtZRgBIAIoAxIRCglidXlNYXJnaW4YAiACKAMSEgoKc2VsbE1h", 
-          "cmdpbhgDIAIoAyIyCg9Qcm90b09BVGlja0RhdGESEQoJdGltZXN0YW1wGAEg", 
-          "AigDEgwKBHRpY2sYAiACKAMq8Q0KElByb3RvT0FQYXlsb2FkVHlwZRIiCh1Q", 
-          "Uk9UT19PQV9BUFBMSUNBVElPTl9BVVRIX1JFURC0EBIiCh1QUk9UT19PQV9B", 
-          "UFBMSUNBVElPTl9BVVRIX1JFUxC1EBIeChlQUk9UT19PQV9BQ0NPVU5UX0FV", 
-          "VEhfUkVRELYQEh4KGVBST1RPX09BX0FDQ09VTlRfQVVUSF9SRVMQtxASGQoU", 
-          "UFJPVE9fT0FfVkVSU0lPTl9SRVEQuBASGQoUUFJPVE9fT0FfVkVSU0lPTl9S", 
-          "RVMQuRASGwoWUFJPVE9fT0FfTkVXX09SREVSX1JFURC6EBInCiJQUk9UT19P", 
-          "QV9UUkFJTElOR19TTF9DSEFOR0VEX0VWRU5UELsQEh4KGVBST1RPX09BX0NB", 
-          "TkNFTF9PUkRFUl9SRVEQvBASHQoYUFJPVE9fT0FfQU1FTkRfT1JERVJfUkVR", 
-          "EL0QEiUKIFBST1RPX09BX0FNRU5EX1BPU0lUSU9OX1NMVFBfUkVREL4QEiAK", 
-          "G1BST1RPX09BX0NMT1NFX1BPU0lUSU9OX1JFURC/EBIcChdQUk9UT19PQV9B", 
-          "U1NFVF9MSVNUX1JFURDAEBIcChdQUk9UT19PQV9BU1NFVF9MSVNUX1JFUxDB", 
-          "EBIeChlQUk9UT19PQV9TWU1CT0xTX0xJU1RfUkVREMIQEh4KGVBST1RPX09B", 
-          "X1NZTUJPTFNfTElTVF9SRVMQwxASHgoZUFJPVE9fT0FfU1lNQk9MX0JZX0lE", 
-          "X1JFURDEEBIeChlQUk9UT19PQV9TWU1CT0xfQllfSURfUkVTEMUQEigKI1BS", 
-          "T1RPX09BX1NZTUJPTFNfRk9SX0NPTlZFUlNJT05fUkVREMYQEigKI1BST1RP", 
-          "X09BX1NZTUJPTFNfRk9SX0NPTlZFUlNJT05fUkVTEMcQEiIKHVBST1RPX09B", 
-          "X1NZTUJPTF9DSEFOR0VEX0VWRU5UEMgQEhgKE1BST1RPX09BX1RSQURFUl9S", 
-          "RVEQyRASGAoTUFJPVE9fT0FfVFJBREVSX1JFUxDKEBIhChxQUk9UT19PQV9U", 
-          "UkFERVJfVVBEQVRFX0VWRU5UEMsQEhsKFlBST1RPX09BX1JFQ09OQ0lMRV9S", 
-          "RVEQzBASGwoWUFJPVE9fT0FfUkVDT05DSUxFX1JFUxDNEBIdChhQUk9UT19P", 
-          "QV9FWEVDVVRJT05fRVZFTlQQzhASIQocUFJPVE9fT0FfU1VCU0NSSUJFX1NQ", 
-          "T1RTX1JFURDPEBIhChxQUk9UT19PQV9TVUJTQ1JJQkVfU1BPVFNfUkVTENAQ", 
-          "EiMKHlBST1RPX09BX1VOU1VCU0NSSUJFX1NQT1RTX1JFURDREBIjCh5QUk9U", 
-          "T19PQV9VTlNVQlNDUklCRV9TUE9UU19SRVMQ0hASGAoTUFJPVE9fT0FfU1BP", 
-          "VF9FVkVOVBDTEBIfChpQUk9UT19PQV9PUkRFUl9FUlJPUl9FVkVOVBDUEBIb", 
-          "ChZQUk9UT19PQV9ERUFMX0xJU1RfUkVRENUQEhsKFlBST1RPX09BX0RFQUxf", 
-          "TElTVF9SRVMQ1hASKQokUFJPVE9fT0FfU1VCU0NSSUJFX0xJVkVfVFJFTkRC", 
-          "QVJfUkVRENcQEisKJlBST1RPX09BX1VOU1VCU0NSSUJFX0xJVkVfVFJFTkRC", 
-          "QVJfUkVRENgQEh8KGlBST1RPX09BX0dFVF9UUkVOREJBUlNfUkVRENkQEh8K", 
-          "GlBST1RPX09BX0dFVF9UUkVOREJBUlNfUkVTENoQEiEKHFBST1RPX09BX0VY", 
-          "UEVDVEVEX01BUkdJTl9SRVEQ2xASIQocUFJPVE9fT0FfRVhQRUNURURfTUFS", 
-          "R0lOX1JFUxDcEBIiCh1QUk9UT19PQV9NQVJHSU5fQ0hBTkdFRF9FVkVOVBDd", 
-          "EBIXChJQUk9UT19PQV9FUlJPUl9SRVMQ3hASKAojUFJPVE9fT0FfQ0FTSF9G", 
-          "TE9XX0hJU1RPUllfTElTVF9SRVEQ3xASKAojUFJPVE9fT0FfQ0FTSF9GTE9X", 
-          "X0hJU1RPUllfTElTVF9SRVMQ4BASHgoZUFJPVE9fT0FfR0VUX1RJQ0tEQVRB", 
-          "X1JFURDhEBIeChlQUk9UT19PQV9HRVRfVElDS0RBVEFfUkVTEOIQEi4KKVBS", 
-          "T1RPX09BX0FDQ09VTlRTX1RPS0VOX0lOVkFMSURBVEVEX0VWRU5UEOMQEiUK", 
-          "IFBST1RPX09BX0NMSUVOVF9ESVNDT05ORUNUX0VWRU5UEOQQEi4KKVBST1RP", 
-          "X09BX0dFVF9BQ0NPVU5UU19CWV9BQ0NFU1NfVE9LRU5fUkVREOUQEi4KKVBS", 
-          "T1RPX09BX0dFVF9BQ0NPVU5UU19CWV9BQ0NFU1NfVE9LRU5fUkVTEOYQKngK", 
-          "EFByb3RvT0FEYXlPZldlZWsSCAoETk9ORRAAEgoKBk1PTkRBWRABEgsKB1RV", 
-          "RVNEQVkQAhINCglXRURORVNEQVkQAxIMCghUSFVSU0RBWRAEEgoKBkZSSURB", 
-          "WRAFEgwKCFNBVFVSREFZEAYSCgoGU1VOREFZEAcqZAoVUHJvdG9PQUNvbW1p", 
-          "c3Npb25UeXBlEhMKD1VTRF9QRVJfTUlMX1VTRBABEg8KC1VTRF9QRVJfTE9U", 
-          "EAISDgoKUEVSQ0VOVEFHRRADEhUKEVFVT1RFX0NDWV9QRVJfTE9UEAQqXQoZ", 
-          "UHJvdG9PQVN5bWJvbERpc3RhbmNlVHlwZRIdChlTWU1CT0xfRElTVEFOQ0Vf", 
-          "SU5fUE9JTlRTEAESIQodU1lNQk9MX0RJU1RBTkNFX0lOX1BFUkNFTlRBR0UQ", 
-          "Aio8ChhQcm90b09BTWluQ29tbWlzc2lvblR5cGUSDAoIQ1VSUkVOQ1kQARIS", 
-          "Cg5RVU9URV9DVVJSRU5DWRACKoUBChJQcm90b09BVHJhZGluZ01vZGUSCwoH", 
-          "RU5BQkxFRBAAEicKI0RJU0FCTEVEX1dJVEhPVVRfUEVORElOR1NfRVhFQ1VU", 
-          "SU9OEAESJAogRElTQUJMRURfV0lUSF9QRU5ESU5HU19FWEVDVVRJT04QAhIT", 
-          "Cg9DTE9TRV9PTkxZX01PREUQAypUChNQcm90b09BQWNjZXNzUmlnaHRzEg8K", 
-          "C0ZVTExfQUNDRVNTEAASDgoKQ0xPU0VfT05MWRABEg4KCk5PX1RSQURJTkcQ", 
-          "AhIMCghOT19MT0dJThADKj4KIVByb3RvT0FUb3RhbE1hcmdpbkNhbGN1bGF0", 
-          "aW9uVHlwZRIHCgNNQVgQABIHCgNTVU0QARIHCgNORVQQAipAChJQcm90b09B", 
-          "QWNjb3VudFR5cGUSCgoGSEVER0VEEAASCgoGTkVUVEVEEAESEgoOU1BSRUFE", 
-          "X0JFVFRJTkcQAiqFAQoVUHJvdG9PQVBvc2l0aW9uU3RhdHVzEhgKFFBPU0lU", 
-          "SU9OX1NUQVRVU19PUEVOEAESGgoWUE9TSVRJT05fU1RBVFVTX0NMT1NFRBAC", 
-          "EhsKF1BPU0lUSU9OX1NUQVRVU19DUkVBVEVEEAMSGQoVUE9TSVRJT05fU1RB", 
-          "VFVTX0VSUk9SEAQqJQoQUHJvdG9PQVRyYWRlU2lkZRIHCgNCVVkQARIICgRT", 
-          "RUxMEAIqcAoQUHJvdG9PQU9yZGVyVHlwZRIKCgZNQVJLRVQQARIJCgVMSU1J", 
-          "VBACEggKBFNUT1AQAxIZChVTVE9QX0xPU1NfVEFLRV9QUk9GSVQQBBIQCgxN", 
-          "QVJLRVRfUkFOR0UQBRIOCgpTVE9QX0xJTUlUEAYqfQoSUHJvdG9PQVRpbWVJ", 
-          "bkZvcmNlEhIKDkdPT0RfVElMTF9EQVRFEAESFAoQR09PRF9USUxMX0NBTkNF", 
-          "TBACEhcKE0lNTUVESUFURV9PUl9DQU5DRUwQAxIQCgxGSUxMX09SX0tJTEwQ", 
-          "BBISCg5NQVJLRVRfT05fT1BFThAFKs4BChJQcm90b09BT3JkZXJTdGF0dXMS", 
-          "GAoUT1JERVJfU1RBVFVTX0NSRUFURUQQABIZChVPUkRFUl9TVEFUVVNfQUND", 
-          "RVBURUQQARIXChNPUkRFUl9TVEFUVVNfRklMTEVEEAISGQoVT1JERVJfU1RB", 
-          "VFVTX1JFSkVDVEVEEAMSGAoUT1JERVJfU1RBVFVTX0VYUElSRUQQBBIaChZP", 
-          "UkRFUl9TVEFUVVNfQ0FOQ0VMTEVEEAUSGQoVT1JERVJfU1RBVFVTX1JFU0VS", 
-          "VkVEEAYqWwoZUHJvdG9PQU9yZGVyVHJpZ2dlck1ldGhvZBIJCgVUUkFERRAB", 
-          "EgwKCE9QUE9TSVRFEAISEAoMRE9VQkxFX1RSQURFEAMSEwoPRE9VQkxFX09Q", 
-          "UE9TSVRFEAQq+wEKFFByb3RvT0FFeGVjdXRpb25UeXBlEhIKDk9SREVSX0FD", 
-          "Q0VQVEVEEAISEAoMT1JERVJfRklMTEVEEAMSEgoOT1JERVJfUkVQTEFDRUQQ", 
-          "BBITCg9PUkRFUl9DQU5DRUxMRUQQBRIRCg1PUkRFUl9FWFBJUkVEEAYSEgoO", 
-          "T1JERVJfUkVKRUNURUQQBxIZChVPUkRFUl9DQU5DRUxfUkVKRUNURUQQCBII", 
-          "CgRTV0FQEAkSFAoQREVQT1NJVF9XSVRIRFJBVxAKEhYKEk9SREVSX1BBUlRJ", 
-          "QUxfRklMTBALEhoKFkJPTlVTX0RFUE9TSVRfV0lUSERSQVcQDCo/ChZQcm90", 
-          "b09BQ2hhbmdlQm9udXNUeXBlEhEKDUJPTlVTX0RFUE9TSVQQABISCg5CT05V", 
-          "U19XSVRIRFJBVxABKukIChhQcm90b09BQ2hhbmdlQmFsYW5jZVR5cGUSEwoP", 
-          "QkFMQU5DRV9ERVBPU0lUEAASFAoQQkFMQU5DRV9XSVRIRFJBVxABEi0KKUJB", 
-          "TEFOQ0VfREVQT1NJVF9TVFJBVEVHWV9DT01NSVNTSU9OX0lOTkVSEAMSLgoq", 
-          "QkFMQU5DRV9XSVRIRFJBV19TVFJBVEVHWV9DT01NSVNTSU9OX0lOTkVSEAQS", 
-          "IgoeQkFMQU5DRV9ERVBPU0lUX0lCX0NPTU1JU1NJT05TEAUSKQolQkFMQU5D", 
-          "RV9XSVRIRFJBV19JQl9TSEFSRURfUEVSQ0VOVEFHRRAGEjQKMEJBTEFOQ0Vf", 
-          "REVQT1NJVF9JQl9TSEFSRURfUEVSQ0VOVEFHRV9GUk9NX1NVQl9JQhAHEjQK", 
-          "MEJBTEFOQ0VfREVQT1NJVF9JQl9TSEFSRURfUEVSQ0VOVEFHRV9GUk9NX0JS", 
-          "T0tFUhAIEhoKFkJBTEFOQ0VfREVQT1NJVF9SRUJBVEUQCRIbChdCQUxBTkNF", 
-          "X1dJVEhEUkFXX1JFQkFURRAKEi0KKUJBTEFOQ0VfREVQT1NJVF9TVFJBVEVH", 
-          "WV9DT01NSVNTSU9OX09VVEVSEAsSLgoqQkFMQU5DRV9XSVRIRFJBV19TVFJB", 
-          "VEVHWV9DT01NSVNTSU9OX09VVEVSEAwSJwojQkFMQU5DRV9XSVRIRFJBV19C", 
-          "T05VU19DT01QRU5TQVRJT04QDRIzCi9CQUxBTkNFX1dJVEhEUkFXX0lCX1NI", 
-          "QVJFRF9QRVJDRU5UQUdFX1RPX0JST0tFUhAOEh0KGUJBTEFOQ0VfREVQT1NJ", 
-          "VF9ESVZJREVORFMQDxIeChpCQUxBTkNFX1dJVEhEUkFXX0RJVklERU5EUxAQ", 
-          "Eh8KG0JBTEFOQ0VfV0lUSERSQVdfR1NMX0NIQVJHRRAREh0KGUJBTEFOQ0Vf", 
-          "V0lUSERSQVdfUk9MTE9WRVIQEhIpCiVCQUxBTkNFX0RFUE9TSVRfTk9OV0lU", 
-          "SERSQVdBQkxFX0JPTlVTEBMSKgomQkFMQU5DRV9XSVRIRFJBV19OT05XSVRI", 
-          "RFJBV0FCTEVfQk9OVVMQFBIYChRCQUxBTkNFX0RFUE9TSVRfU1dBUBAVEhkK", 
-          "FUJBTEFOQ0VfV0lUSERSQVdfU1dBUBAWEisKJ0JBTEFOQ0VfV0lUSERSQVdf", 
-          "SU5WRVNUTUVOVF9UT19TVFJBVEVHWRAXEiEKHUJBTEFOQ0VfREVQT1NJVF9G", 
-          "Uk9NX0lOVkVTVE9SEBgSJwojQkFMQU5DRV9ERVBPU0lUX1JFVFVSTkVEX0lO", 
-          "VkVTVE1FTlQQGRIgChxCQUxBTkNFX1dJVEhEUkFXX0JZX0lOVkVTVE9SEBoS", 
-          "IgoeQkFMQU5DRV9ERVBPU0lUX01BTkFHRU1FTlRfRkVFEBsSIwofQkFMQU5D", 
-          "RV9XSVRIRFJBV19NQU5BR0VNRU5UX0ZFRRAcEiMKH0JBTEFOQ0VfREVQT1NJ", 
-          "VF9QRVJGT1JNQU5DRV9GRUUQHSpzChFQcm90b09BRGVhbFN0YXR1cxIKCgZG", 
-          "SUxMRUQQAhIUChBQQVJUSUFMTFlfRklMTEVEEAMSDAoIUkVKRUNURUQQBBIX", 
-          "ChNJTlRFUk5BTExZX1JFSkVDVEVEEAUSCQoFRVJST1IQBhIKCgZNSVNTRUQQ", 
-          "ByqMAQoVUHJvdG9PQVRyZW5kYmFyUGVyaW9kEgYKAk0xEAESBgoCTTIQAhIG", 
-          "CgJNMxADEgYKAk00EAQSBgoCTTUQBRIHCgNNMTAQBhIHCgNNMTUQBxIHCgNN", 
-          "MzAQCBIGCgJIMRAJEgYKAkg0EAoSBwoDSDEyEAsSBgoCRDEQDBIGCgJXMRAN", 
-          "EgcKA01OMRAOKiQKEFByb3RvT0FRdW90ZVR5cGUSBwoDQklEEAESBwoDQVNL", 
-          "EAIqPwocUHJvdG9PQUNsaWVudFBlcm1pc3Npb25TY29wZRIOCgpTQ09QRV9W", 
-          "SUVXEAASDwoLU0NPUEVfVFJBREUQAUJNCiVjb20ueHRyYWRlci5wcm90b2Nv", 
-          "bC5vcGVuYXBpLnYyLm1vZGVsQh9Db250YWluZXJPcGVuQXBpVjJNb2RlbE1l", 
-        "c3NhZ2VzUAGgAQE="));
+          "b3RvT0FUcmFkaW5nTW9kZToHRU5BQkxFRCKlAQoSUHJvdG9PQUxpZ2h0U3lt", 
+          "Ym9sEhAKCHN5bWJvbElkGAEgAigDEhIKCnN5bWJvbE5hbWUYAiABKAkSDwoH", 
+          "ZW5hYmxlZBgDIAEoCBITCgtiYXNlQXNzZXRJZBgEIAEoAxIUCgxxdW90ZUFz", 
+          "c2V0SWQYBSABKAMSGAoQc3ltYm9sQ2F0ZWdvcnlJZBgGIAEoAxITCgtkZXNj", 
+          "cmlwdGlvbhgHIAEoCSJHChVQcm90b09BU3ltYm9sQ2F0ZWdvcnkSCgoCaWQY", 
+          "ASACKAMSFAoMYXNzZXRDbGFzc0lkGAIgAigDEgwKBG5hbWUYAyACKAkiOQoP", 
+          "UHJvdG9PQUludGVydmFsEhMKC3N0YXJ0U2Vjb25kGAMgAigNEhEKCWVuZFNl", 
+          "Y29uZBgEIAIoDSKBBAoNUHJvdG9PQVRyYWRlchIbChNjdGlkVHJhZGVyQWNj", 
+          "b3VudElkGAEgAigDEg8KB2JhbGFuY2UYAiACKAMSFgoOYmFsYW5jZVZlcnNp", 
+          "b24YAyABKAMSFAoMbWFuYWdlckJvbnVzGAQgASgDEg8KB2liQm9udXMYBSAB", 
+          "KAMSHAoUbm9uV2l0aGRyYXdhYmxlQm9udXMYBiABKAMSNwoMYWNjZXNzUmln", 
+          "aHRzGAcgASgOMhQuUHJvdG9PQUFjY2Vzc1JpZ2h0czoLRlVMTF9BQ0NFU1MS", 
+          "FgoOZGVwb3NpdEFzc2V0SWQYCCACKAMSEAoIc3dhcEZyZWUYCSABKAgSFwoP", 
+          "bGV2ZXJhZ2VJbkNlbnRzGAogASgNEkYKGnRvdGFsTWFyZ2luQ2FsY3VsYXRp", 
+          "b25UeXBlGAsgASgOMiIuUHJvdG9PQVRvdGFsTWFyZ2luQ2FsY3VsYXRpb25U", 
+          "eXBlEhMKC21heExldmVyYWdlGAwgASgNEhIKCmZyZW5jaFJpc2sYDSABKAgS", 
+          "EwoLdHJhZGVyTG9naW4YDiABKAMSMAoLYWNjb3VudFR5cGUYDyABKA4yEy5Q", 
+          "cm90b09BQWNjb3VudFR5cGU6BkhFREdFRBISCgpicm9rZXJOYW1lGBAgASgJ", 
+          "Eh0KFXJlZ2lzdHJhdGlvblRpbWVzdGFtcBgRIAEoAyKVAwoPUHJvdG9PQVBv", 
+          "c2l0aW9uEhIKCnBvc2l0aW9uSWQYASACKAMSJAoJdHJhZGVEYXRhGAIgAigL", 
+          "MhEuUHJvdG9PQVRyYWRlRGF0YRIuCg5wb3NpdGlvblN0YXR1cxgDIAIoDjIW", 
+          "LlByb3RvT0FQb3NpdGlvblN0YXR1cxIMCgRzd2FwGAQgAigDEg0KBXByaWNl", 
+          "GAUgASgBEhAKCHN0b3BMb3NzGAYgASgBEhIKCnRha2VQcm9maXQYByABKAES", 
+          "HgoWdXRjTGFzdFVwZGF0ZVRpbWVzdGFtcBgIIAEoAxISCgpjb21taXNzaW9u", 
+          "GAkgASgDEhIKCm1hcmdpblJhdGUYCiABKAESGwoTbWlycm9yaW5nQ29tbWlz", 
+          "c2lvbhgLIAEoAxIaChJndWFyYW50ZWVkU3RvcExvc3MYDCABKAgSEgoKdXNl", 
+          "ZE1hcmdpbhgNIAEoBBJAChVzdG9wTG9zc1RyaWdnZXJNZXRob2QYDiABKA4y", 
+          "Gi5Qcm90b09BT3JkZXJUcmlnZ2VyTWV0aG9kOgVUUkFERSKcAQoQUHJvdG9P", 
+          "QVRyYWRlRGF0YRIQCghzeW1ib2xJZBgBIAIoAxIOCgZ2b2x1bWUYAiACKAMS", 
+          "JAoJdHJhZGVTaWRlGAMgAigOMhEuUHJvdG9PQVRyYWRlU2lkZRIVCg1vcGVu", 
+          "VGltZXN0YW1wGAQgASgDEg0KBWxhYmVsGAUgASgJEhoKEmd1YXJhbnRlZWRT", 
+          "dG9wTG9zcxgGIAEoCCKlBQoMUHJvdG9PQU9yZGVyEg8KB29yZGVySWQYASAC", 
+          "KAMSJAoJdHJhZGVEYXRhGAIgAigLMhEuUHJvdG9PQVRyYWRlRGF0YRIkCglv", 
+          "cmRlclR5cGUYAyACKA4yES5Qcm90b09BT3JkZXJUeXBlEigKC29yZGVyU3Rh", 
+          "dHVzGAQgAigOMhMuUHJvdG9PQU9yZGVyU3RhdHVzEhsKE2V4cGlyYXRpb25U", 
+          "aW1lc3RhbXAYBiABKAMSFgoOZXhlY3V0aW9uUHJpY2UYByABKAESFgoOZXhl", 
+          "Y3V0ZWRWb2x1bWUYCCABKAMSHgoWdXRjTGFzdFVwZGF0ZVRpbWVzdGFtcBgJ", 
+          "IAEoAxIZChFiYXNlU2xpcHBhZ2VQcmljZRgKIAEoARIYChBzbGlwcGFnZUlu", 
+          "UG9pbnRzGAsgASgDEhQKDGNsb3NpbmdPcmRlchgMIAEoCBISCgpsaW1pdFBy", 
+          "aWNlGA0gASgBEhEKCXN0b3BQcmljZRgOIAEoARIQCghzdG9wTG9zcxgPIAEo", 
+          "ARISCgp0YWtlUHJvZml0GBAgASgBEhUKDWNsaWVudE9yZGVySWQYESABKAkS", 
+          "PQoLdGltZUluRm9yY2UYEiABKA4yEy5Qcm90b09BVGltZUluRm9yY2U6E0lN", 
+          "TUVESUFURV9PUl9DQU5DRUwSEgoKcG9zaXRpb25JZBgTIAEoAxIYChByZWxh", 
+          "dGl2ZVN0b3BMb3NzGBQgASgDEhoKEnJlbGF0aXZlVGFrZVByb2ZpdBgVIAEo", 
+          "AxIRCglpc1N0b3BPdXQYFiABKAgSGAoQdHJhaWxpbmdTdG9wTG9zcxgXIAEo", 
+          "CBI8ChFzdG9wVHJpZ2dlck1ldGhvZBgYIAEoDjIaLlByb3RvT0FPcmRlclRy", 
+          "aWdnZXJNZXRob2Q6BVRSQURFIoQCChtQcm90b09BQm9udXNEZXBvc2l0V2l0", 
+          "aGRyYXcSLgoNb3BlcmF0aW9uVHlwZRgBIAIoDjIXLlByb3RvT0FDaGFuZ2VC", 
+          "b251c1R5cGUSFgoOYm9udXNIaXN0b3J5SWQYAiACKAMSFAoMbWFuYWdlckJv", 
+          "bnVzGAMgAigDEhQKDG1hbmFnZXJEZWx0YRgEIAIoAxIPCgdpYkJvbnVzGAUg", 
+          "AigDEg8KB2liRGVsdGEYBiACKAMSHAoUY2hhbmdlQm9udXNUaW1lc3RhbXAY", 
+          "ByACKAMSFAoMZXh0ZXJuYWxOb3RlGAggASgJEhsKE2ludHJvZHVjaW5nQnJv", 
+          "a2VySWQYCSABKAMi4gEKFlByb3RvT0FEZXBvc2l0V2l0aGRyYXcSMAoNb3Bl", 
+          "cmF0aW9uVHlwZRgBIAIoDjIZLlByb3RvT0FDaGFuZ2VCYWxhbmNlVHlwZRIY", 
+          "ChBiYWxhbmNlSGlzdG9yeUlkGAIgAigDEg8KB2JhbGFuY2UYAyACKAMSDQoF", 
+          "ZGVsdGEYBCACKAMSHgoWY2hhbmdlQmFsYW5jZVRpbWVzdGFtcBgFIAIoAxIU", 
+          "CgxleHRlcm5hbE5vdGUYBiABKAkSFgoOYmFsYW5jZVZlcnNpb24YByABKAMS", 
+          "DgoGZXF1aXR5GAggASgDIrgDCgtQcm90b09BRGVhbBIOCgZkZWFsSWQYASAC", 
+          "KAMSDwoHb3JkZXJJZBgCIAIoAxISCgpwb3NpdGlvbklkGAMgAigDEg4KBnZv", 
+          "bHVtZRgEIAIoAxIUCgxmaWxsZWRWb2x1bWUYBSACKAMSEAoIc3ltYm9sSWQY", 
+          "BiACKAMSFwoPY3JlYXRlVGltZXN0YW1wGAcgAigDEhoKEmV4ZWN1dGlvblRp", 
+          "bWVzdGFtcBgIIAIoAxIeChZ1dGNMYXN0VXBkYXRlVGltZXN0YW1wGAkgASgD", 
+          "EhYKDmV4ZWN1dGlvblByaWNlGAogASgBEiQKCXRyYWRlU2lkZRgLIAIoDjIR", 
+          "LlByb3RvT0FUcmFkZVNpZGUSJgoKZGVhbFN0YXR1cxgMIAIoDjISLlByb3Rv", 
+          "T0FEZWFsU3RhdHVzEhIKCm1hcmdpblJhdGUYDSABKAESEgoKY29tbWlzc2lv", 
+          "bhgOIAEoAxIfChdiYXNlVG9Vc2RDb252ZXJzaW9uUmF0ZRgPIAEoARI4ChNj", 
+          "bG9zZVBvc2l0aW9uRGV0YWlsGBAgASgLMhsuUHJvdG9PQUNsb3NlUG9zaXRp", 
+          "b25EZXRhaWwizAEKGlByb3RvT0FDbG9zZVBvc2l0aW9uRGV0YWlsEhIKCmVu", 
+          "dHJ5UHJpY2UYASACKAESEwoLZ3Jvc3NQcm9maXQYAiACKAMSDAoEc3dhcBgD", 
+          "IAIoAxISCgpjb21taXNzaW9uGAQgAigDEg8KB2JhbGFuY2UYBSACKAMSJAoc", 
+          "cXVvdGVUb0RlcG9zaXRDb252ZXJzaW9uUmF0ZRgGIAEoARIUCgxjbG9zZWRW", 
+          "b2x1bWUYByABKAMSFgoOYmFsYW5jZVZlcnNpb24YCCABKAMiswEKD1Byb3Rv", 
+          "T0FUcmVuZGJhchIOCgZ2b2x1bWUYAyACKAMSKgoGcGVyaW9kGAQgASgOMhYu", 
+          "UHJvdG9PQVRyZW5kYmFyUGVyaW9kOgJNMRILCgNsb3cYBSABKAMSEQoJZGVs", 
+          "dGFPcGVuGAYgASgEEhIKCmRlbHRhQ2xvc2UYByABKAQSEQoJZGVsdGFIaWdo", 
+          "GAggASgEEh0KFXV0Y1RpbWVzdGFtcEluTWludXRlcxgJIAEoDSJOChVQcm90", 
+          "b09BRXhwZWN0ZWRNYXJnaW4SDgoGdm9sdW1lGAEgAigDEhEKCWJ1eU1hcmdp", 
+          "bhgCIAIoAxISCgpzZWxsTWFyZ2luGAMgAigDIjIKD1Byb3RvT0FUaWNrRGF0", 
+          "YRIRCgl0aW1lc3RhbXAYASACKAMSDAoEdGljaxgCIAIoAyIkChJQcm90b09B", 
+          "Q3RpZFByb2ZpbGUSDgoGdXNlcklkGAEgAigDIkcKGFByb3RvT0FDdGlkVHJh", 
+          "ZGVyQWNjb3VudBIbChNjdGlkVHJhZGVyQWNjb3VudElkGAEgAigEEg4KBmlz", 
+          "TGl2ZRgCIAEoCCItChFQcm90b09BQXNzZXRDbGFzcxIKCgJpZBgBIAEoAxIM", 
+          "CgRuYW1lGAIgASgJIkcKEVByb3RvT0FEZXB0aFF1b3RlEgoKAmlkGAEgAigE", 
+          "EgwKBHNpemUYAyACKAQSCwoDYmlkGAQgASgEEgsKA2FzaxgFIAEoBCrkEQoS", 
+          "UHJvdG9PQVBheWxvYWRUeXBlEiIKHVBST1RPX09BX0FQUExJQ0FUSU9OX0FV", 
+          "VEhfUkVRELQQEiIKHVBST1RPX09BX0FQUExJQ0FUSU9OX0FVVEhfUkVTELUQ", 
+          "Eh4KGVBST1RPX09BX0FDQ09VTlRfQVVUSF9SRVEQthASHgoZUFJPVE9fT0Ff", 
+          "QUNDT1VOVF9BVVRIX1JFUxC3EBIZChRQUk9UT19PQV9WRVJTSU9OX1JFURC4", 
+          "EBIZChRQUk9UT19PQV9WRVJTSU9OX1JFUxC5EBIbChZQUk9UT19PQV9ORVdf", 
+          "T1JERVJfUkVRELoQEicKIlBST1RPX09BX1RSQUlMSU5HX1NMX0NIQU5HRURf", 
+          "RVZFTlQQuxASHgoZUFJPVE9fT0FfQ0FOQ0VMX09SREVSX1JFURC8EBIdChhQ", 
+          "Uk9UT19PQV9BTUVORF9PUkRFUl9SRVEQvRASJQogUFJPVE9fT0FfQU1FTkRf", 
+          "UE9TSVRJT05fU0xUUF9SRVEQvhASIAobUFJPVE9fT0FfQ0xPU0VfUE9TSVRJ", 
+          "T05fUkVREL8QEhwKF1BST1RPX09BX0FTU0VUX0xJU1RfUkVREMAQEhwKF1BS", 
+          "T1RPX09BX0FTU0VUX0xJU1RfUkVTEMEQEh4KGVBST1RPX09BX1NZTUJPTFNf", 
+          "TElTVF9SRVEQwhASHgoZUFJPVE9fT0FfU1lNQk9MU19MSVNUX1JFUxDDEBIe", 
+          "ChlQUk9UT19PQV9TWU1CT0xfQllfSURfUkVREMQQEh4KGVBST1RPX09BX1NZ", 
+          "TUJPTF9CWV9JRF9SRVMQxRASKAojUFJPVE9fT0FfU1lNQk9MU19GT1JfQ09O", 
+          "VkVSU0lPTl9SRVEQxhASKAojUFJPVE9fT0FfU1lNQk9MU19GT1JfQ09OVkVS", 
+          "U0lPTl9SRVMQxxASIgodUFJPVE9fT0FfU1lNQk9MX0NIQU5HRURfRVZFTlQQ", 
+          "yBASGAoTUFJPVE9fT0FfVFJBREVSX1JFURDJEBIYChNQUk9UT19PQV9UUkFE", 
+          "RVJfUkVTEMoQEiEKHFBST1RPX09BX1RSQURFUl9VUERBVEVfRVZFTlQQyxAS", 
+          "GwoWUFJPVE9fT0FfUkVDT05DSUxFX1JFURDMEBIbChZQUk9UT19PQV9SRUNP", 
+          "TkNJTEVfUkVTEM0QEh0KGFBST1RPX09BX0VYRUNVVElPTl9FVkVOVBDOEBIh", 
+          "ChxQUk9UT19PQV9TVUJTQ1JJQkVfU1BPVFNfUkVREM8QEiEKHFBST1RPX09B", 
+          "X1NVQlNDUklCRV9TUE9UU19SRVMQ0BASIwoeUFJPVE9fT0FfVU5TVUJTQ1JJ", 
+          "QkVfU1BPVFNfUkVRENEQEiMKHlBST1RPX09BX1VOU1VCU0NSSUJFX1NQT1RT", 
+          "X1JFUxDSEBIYChNQUk9UT19PQV9TUE9UX0VWRU5UENMQEh8KGlBST1RPX09B", 
+          "X09SREVSX0VSUk9SX0VWRU5UENQQEhsKFlBST1RPX09BX0RFQUxfTElTVF9S", 
+          "RVEQ1RASGwoWUFJPVE9fT0FfREVBTF9MSVNUX1JFUxDWEBIpCiRQUk9UT19P", 
+          "QV9TVUJTQ1JJQkVfTElWRV9UUkVOREJBUl9SRVEQ1xASKwomUFJPVE9fT0Ff", 
+          "VU5TVUJTQ1JJQkVfTElWRV9UUkVOREJBUl9SRVEQ2BASHwoaUFJPVE9fT0Ff", 
+          "R0VUX1RSRU5EQkFSU19SRVEQ2RASHwoaUFJPVE9fT0FfR0VUX1RSRU5EQkFS", 
+          "U19SRVMQ2hASIQocUFJPVE9fT0FfRVhQRUNURURfTUFSR0lOX1JFURDbEBIh", 
+          "ChxQUk9UT19PQV9FWFBFQ1RFRF9NQVJHSU5fUkVTENwQEiIKHVBST1RPX09B", 
+          "X01BUkdJTl9DSEFOR0VEX0VWRU5UEN0QEhcKElBST1RPX09BX0VSUk9SX1JF", 
+          "UxDeEBIoCiNQUk9UT19PQV9DQVNIX0ZMT1dfSElTVE9SWV9MSVNUX1JFURDf", 
+          "EBIoCiNQUk9UT19PQV9DQVNIX0ZMT1dfSElTVE9SWV9MSVNUX1JFUxDgEBIe", 
+          "ChlQUk9UT19PQV9HRVRfVElDS0RBVEFfUkVREOEQEh4KGVBST1RPX09BX0dF", 
+          "VF9USUNLREFUQV9SRVMQ4hASLgopUFJPVE9fT0FfQUNDT1VOVFNfVE9LRU5f", 
+          "SU5WQUxJREFURURfRVZFTlQQ4xASJQogUFJPVE9fT0FfQ0xJRU5UX0RJU0NP", 
+          "Tk5FQ1RfRVZFTlQQ5BASLgopUFJPVE9fT0FfR0VUX0FDQ09VTlRTX0JZX0FD", 
+          "Q0VTU19UT0tFTl9SRVEQ5RASLgopUFJPVE9fT0FfR0VUX0FDQ09VTlRTX0JZ", 
+          "X0FDQ0VTU19UT0tFTl9SRVMQ5hASKwomUFJPVE9fT0FfR0VUX0NUSURfUFJP", 
+          "RklMRV9CWV9UT0tFTl9SRVEQ5xASKwomUFJPVE9fT0FfR0VUX0NUSURfUFJP", 
+          "RklMRV9CWV9UT0tFTl9SRVMQ6BASIgodUFJPVE9fT0FfQVNTRVRfQ0xBU1Nf", 
+          "TElTVF9SRVEQ6RASIgodUFJPVE9fT0FfQVNTRVRfQ0xBU1NfTElTVF9SRVMQ", 
+          "6hASGQoUUFJPVE9fT0FfREVQVEhfRVZFTlQQ6xASKAojUFJPVE9fT0FfU1VC", 
+          "U0NSSUJFX0RFUFRIX1FVT1RFU19SRVEQ7BASKAojUFJPVE9fT0FfU1VCU0NS", 
+          "SUJFX0RFUFRIX1FVT1RFU19SRVMQ7RASKgolUFJPVE9fT0FfVU5TVUJTQ1JJ", 
+          "QkVfREVQVEhfUVVPVEVTX1JFURDuEBIqCiVQUk9UT19PQV9VTlNVQlNDUklC", 
+          "RV9ERVBUSF9RVU9URVNfUkVTEO8QEiEKHFBST1RPX09BX1NZTUJPTF9DQVRF", 
+          "R09SWV9SRVEQ8BASIQocUFJPVE9fT0FfU1lNQk9MX0NBVEVHT1JZX1JFUxDx", 
+          "EBIgChtQUk9UT19PQV9BQ0NPVU5UX0xPR09VVF9SRVEQ8hASIAobUFJPVE9f", 
+          "T0FfQUNDT1VOVF9MT0dPVVRfUkVTEPMQKngKEFByb3RvT0FEYXlPZldlZWsS", 
+          "CAoETk9ORRAAEgoKBk1PTkRBWRABEgsKB1RVRVNEQVkQAhINCglXRURORVNE", 
+          "QVkQAxIMCghUSFVSU0RBWRAEEgoKBkZSSURBWRAFEgwKCFNBVFVSREFZEAYS", 
+          "CgoGU1VOREFZEAcqZAoVUHJvdG9PQUNvbW1pc3Npb25UeXBlEhMKD1VTRF9Q", 
+          "RVJfTUlMX1VTRBABEg8KC1VTRF9QRVJfTE9UEAISDgoKUEVSQ0VOVEFHRRAD", 
+          "EhUKEVFVT1RFX0NDWV9QRVJfTE9UEAQqXQoZUHJvdG9PQVN5bWJvbERpc3Rh", 
+          "bmNlVHlwZRIdChlTWU1CT0xfRElTVEFOQ0VfSU5fUE9JTlRTEAESIQodU1lN", 
+          "Qk9MX0RJU1RBTkNFX0lOX1BFUkNFTlRBR0UQAio8ChhQcm90b09BTWluQ29t", 
+          "bWlzc2lvblR5cGUSDAoIQ1VSUkVOQ1kQARISCg5RVU9URV9DVVJSRU5DWRAC", 
+          "KoUBChJQcm90b09BVHJhZGluZ01vZGUSCwoHRU5BQkxFRBAAEicKI0RJU0FC", 
+          "TEVEX1dJVEhPVVRfUEVORElOR1NfRVhFQ1VUSU9OEAESJAogRElTQUJMRURf", 
+          "V0lUSF9QRU5ESU5HU19FWEVDVVRJT04QAhITCg9DTE9TRV9PTkxZX01PREUQ", 
+          "AypUChNQcm90b09BQWNjZXNzUmlnaHRzEg8KC0ZVTExfQUNDRVNTEAASDgoK", 
+          "Q0xPU0VfT05MWRABEg4KCk5PX1RSQURJTkcQAhIMCghOT19MT0dJThADKj4K", 
+          "IVByb3RvT0FUb3RhbE1hcmdpbkNhbGN1bGF0aW9uVHlwZRIHCgNNQVgQABIH", 
+          "CgNTVU0QARIHCgNORVQQAipAChJQcm90b09BQWNjb3VudFR5cGUSCgoGSEVE", 
+          "R0VEEAASCgoGTkVUVEVEEAESEgoOU1BSRUFEX0JFVFRJTkcQAiqFAQoVUHJv", 
+          "dG9PQVBvc2l0aW9uU3RhdHVzEhgKFFBPU0lUSU9OX1NUQVRVU19PUEVOEAES", 
+          "GgoWUE9TSVRJT05fU1RBVFVTX0NMT1NFRBACEhsKF1BPU0lUSU9OX1NUQVRV", 
+          "U19DUkVBVEVEEAMSGQoVUE9TSVRJT05fU1RBVFVTX0VSUk9SEAQqJQoQUHJv", 
+          "dG9PQVRyYWRlU2lkZRIHCgNCVVkQARIICgRTRUxMEAIqcAoQUHJvdG9PQU9y", 
+          "ZGVyVHlwZRIKCgZNQVJLRVQQARIJCgVMSU1JVBACEggKBFNUT1AQAxIZChVT", 
+          "VE9QX0xPU1NfVEFLRV9QUk9GSVQQBBIQCgxNQVJLRVRfUkFOR0UQBRIOCgpT", 
+          "VE9QX0xJTUlUEAYqfQoSUHJvdG9PQVRpbWVJbkZvcmNlEhIKDkdPT0RfVElM", 
+          "TF9EQVRFEAESFAoQR09PRF9USUxMX0NBTkNFTBACEhcKE0lNTUVESUFURV9P", 
+          "Ul9DQU5DRUwQAxIQCgxGSUxMX09SX0tJTEwQBBISCg5NQVJLRVRfT05fT1BF", 
+          "ThAFKpkBChJQcm90b09BT3JkZXJTdGF0dXMSGQoVT1JERVJfU1RBVFVTX0FD", 
+          "Q0VQVEVEEAESFwoTT1JERVJfU1RBVFVTX0ZJTExFRBACEhkKFU9SREVSX1NU", 
+          "QVRVU19SRUpFQ1RFRBADEhgKFE9SREVSX1NUQVRVU19FWFBJUkVEEAQSGgoW", 
+          "T1JERVJfU1RBVFVTX0NBTkNFTExFRBAFKlsKGVByb3RvT0FPcmRlclRyaWdn", 
+          "ZXJNZXRob2QSCQoFVFJBREUQARIMCghPUFBPU0lURRACEhAKDERPVUJMRV9U", 
+          "UkFERRADEhMKD0RPVUJMRV9PUFBPU0lURRAEKvsBChRQcm90b09BRXhlY3V0", 
+          "aW9uVHlwZRISCg5PUkRFUl9BQ0NFUFRFRBACEhAKDE9SREVSX0ZJTExFRBAD", 
+          "EhIKDk9SREVSX1JFUExBQ0VEEAQSEwoPT1JERVJfQ0FOQ0VMTEVEEAUSEQoN", 
+          "T1JERVJfRVhQSVJFRBAGEhIKDk9SREVSX1JFSkVDVEVEEAcSGQoVT1JERVJf", 
+          "Q0FOQ0VMX1JFSkVDVEVEEAgSCAoEU1dBUBAJEhQKEERFUE9TSVRfV0lUSERS", 
+          "QVcQChIWChJPUkRFUl9QQVJUSUFMX0ZJTEwQCxIaChZCT05VU19ERVBPU0lU", 
+          "X1dJVEhEUkFXEAwqPwoWUHJvdG9PQUNoYW5nZUJvbnVzVHlwZRIRCg1CT05V", 
+          "U19ERVBPU0lUEAASEgoOQk9OVVNfV0lUSERSQVcQASrOBwoYUHJvdG9PQUNo", 
+          "YW5nZUJhbGFuY2VUeXBlEhMKD0JBTEFOQ0VfREVQT1NJVBAAEhQKEEJBTEFO", 
+          "Q0VfV0lUSERSQVcQARItCilCQUxBTkNFX0RFUE9TSVRfU1RSQVRFR1lfQ09N", 
+          "TUlTU0lPTl9JTk5FUhADEi4KKkJBTEFOQ0VfV0lUSERSQVdfU1RSQVRFR1lf", 
+          "Q09NTUlTU0lPTl9JTk5FUhAEEiIKHkJBTEFOQ0VfREVQT1NJVF9JQl9DT01N", 
+          "SVNTSU9OUxAFEikKJUJBTEFOQ0VfV0lUSERSQVdfSUJfU0hBUkVEX1BFUkNF", 
+          "TlRBR0UQBhI0CjBCQUxBTkNFX0RFUE9TSVRfSUJfU0hBUkVEX1BFUkNFTlRB", 
+          "R0VfRlJPTV9TVUJfSUIQBxI0CjBCQUxBTkNFX0RFUE9TSVRfSUJfU0hBUkVE", 
+          "X1BFUkNFTlRBR0VfRlJPTV9CUk9LRVIQCBIaChZCQUxBTkNFX0RFUE9TSVRf", 
+          "UkVCQVRFEAkSGwoXQkFMQU5DRV9XSVRIRFJBV19SRUJBVEUQChItCilCQUxB", 
+          "TkNFX0RFUE9TSVRfU1RSQVRFR1lfQ09NTUlTU0lPTl9PVVRFUhALEi4KKkJB", 
+          "TEFOQ0VfV0lUSERSQVdfU1RSQVRFR1lfQ09NTUlTU0lPTl9PVVRFUhAMEicK", 
+          "I0JBTEFOQ0VfV0lUSERSQVdfQk9OVVNfQ09NUEVOU0FUSU9OEA0SMwovQkFM", 
+          "QU5DRV9XSVRIRFJBV19JQl9TSEFSRURfUEVSQ0VOVEFHRV9UT19CUk9LRVIQ", 
+          "DhIdChlCQUxBTkNFX0RFUE9TSVRfRElWSURFTkRTEA8SHgoaQkFMQU5DRV9X", 
+          "SVRIRFJBV19ESVZJREVORFMQEBIfChtCQUxBTkNFX1dJVEhEUkFXX0dTTF9D", 
+          "SEFSR0UQERIdChlCQUxBTkNFX1dJVEhEUkFXX1JPTExPVkVSEBISKQolQkFM", 
+          "QU5DRV9ERVBPU0lUX05PTldJVEhEUkFXQUJMRV9CT05VUxATEioKJkJBTEFO", 
+          "Q0VfV0lUSERSQVdfTk9OV0lUSERSQVdBQkxFX0JPTlVTEBQSGAoUQkFMQU5D", 
+          "RV9ERVBPU0lUX1NXQVAQFRIZChVCQUxBTkNFX1dJVEhEUkFXX1NXQVAQFhIi", 
+          "Ch5CQUxBTkNFX0RFUE9TSVRfTUFOQUdFTUVOVF9GRUUQGxIjCh9CQUxBTkNF", 
+          "X1dJVEhEUkFXX01BTkFHRU1FTlRfRkVFEBwSIwofQkFMQU5DRV9ERVBPU0lU", 
+          "X1BFUkZPUk1BTkNFX0ZFRRAdKnMKEVByb3RvT0FEZWFsU3RhdHVzEgoKBkZJ", 
+          "TExFRBACEhQKEFBBUlRJQUxMWV9GSUxMRUQQAxIMCghSRUpFQ1RFRBAEEhcK", 
+          "E0lOVEVSTkFMTFlfUkVKRUNURUQQBRIJCgVFUlJPUhAGEgoKBk1JU1NFRBAH", 
+          "KowBChVQcm90b09BVHJlbmRiYXJQZXJpb2QSBgoCTTEQARIGCgJNMhACEgYK", 
+          "Ak0zEAMSBgoCTTQQBBIGCgJNNRAFEgcKA00xMBAGEgcKA00xNRAHEgcKA00z", 
+          "MBAIEgYKAkgxEAkSBgoCSDQQChIHCgNIMTIQCxIGCgJEMRAMEgYKAlcxEA0S", 
+          "BwoDTU4xEA4qJAoQUHJvdG9PQVF1b3RlVHlwZRIHCgNCSUQQARIHCgNBU0sQ", 
+          "Aio/ChxQcm90b09BQ2xpZW50UGVybWlzc2lvblNjb3BlEg4KClNDT1BFX1ZJ", 
+          "RVcQABIPCgtTQ09QRV9UUkFERRABKoMBChBQcm90b09BRXJyb3JDb2RlEhkK", 
+          "FU9BX0FVVEhfVE9LRU5fRVhQSVJFRBABEhoKFkFDQ09VTlRfTk9UX0FVVEhP", 
+          "UklaRUQQAhIYChRJTkNPUlJFQ1RfQk9VTkRBUklFUxAjEh4KGkNPTk5FQ1RJ", 
+          "T05TX0xJTUlUX0VYQ0VFREVEEENCTQolY29tLnh0cmFkZXIucHJvdG9jb2wu", 
+          "b3BlbmFwaS52Mi5tb2RlbEIfQ29udGFpbmVyT3BlbkFwaVYyTW9kZWxNZXNz", 
+        "YWdlc1ABoAEB"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_ProtoOAAsset__Descriptor = Descriptor.MessageTypes[0];
@@ -277,55 +305,75 @@ public static partial class OpenApiModelMessages {
       internal__static_ProtoOALightSymbol__Descriptor = Descriptor.MessageTypes[2];
       internal__static_ProtoOALightSymbol__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOALightSymbol, global::ProtoOALightSymbol.Builder>(internal__static_ProtoOALightSymbol__Descriptor,
-              new string[] { "SymbolId", "SymbolName", "Enabled", "BaseAssetId", "QuoteAssetId", });
-      internal__static_ProtoOAInterval__Descriptor = Descriptor.MessageTypes[3];
+              new string[] { "SymbolId", "SymbolName", "Enabled", "BaseAssetId", "QuoteAssetId", "SymbolCategoryId", "Description", });
+      internal__static_ProtoOASymbolCategory__Descriptor = Descriptor.MessageTypes[3];
+      internal__static_ProtoOASymbolCategory__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolCategory, global::ProtoOASymbolCategory.Builder>(internal__static_ProtoOASymbolCategory__Descriptor,
+              new string[] { "Id", "AssetClassId", "Name", });
+      internal__static_ProtoOAInterval__Descriptor = Descriptor.MessageTypes[4];
       internal__static_ProtoOAInterval__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAInterval, global::ProtoOAInterval.Builder>(internal__static_ProtoOAInterval__Descriptor,
               new string[] { "StartSecond", "EndSecond", });
-      internal__static_ProtoOATrader__Descriptor = Descriptor.MessageTypes[4];
+      internal__static_ProtoOATrader__Descriptor = Descriptor.MessageTypes[5];
       internal__static_ProtoOATrader__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOATrader, global::ProtoOATrader.Builder>(internal__static_ProtoOATrader__Descriptor,
-              new string[] { "CtidTraderAccountId", "Balance", "BalanceVersion", "ManagerBonus", "IbBonus", "NonWithdrawableBonus", "AccessRights", "DepositAssetId", "SwapFree", "LeverageInCents", "TotalMarginCalculationType", "MaxLeverage", "FrenchRisk", "TraderLogin", "AccountType", "BrokerName", });
-      internal__static_ProtoOAPosition__Descriptor = Descriptor.MessageTypes[5];
+              new string[] { "CtidTraderAccountId", "Balance", "BalanceVersion", "ManagerBonus", "IbBonus", "NonWithdrawableBonus", "AccessRights", "DepositAssetId", "SwapFree", "LeverageInCents", "TotalMarginCalculationType", "MaxLeverage", "FrenchRisk", "TraderLogin", "AccountType", "BrokerName", "RegistrationTimestamp", });
+      internal__static_ProtoOAPosition__Descriptor = Descriptor.MessageTypes[6];
       internal__static_ProtoOAPosition__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAPosition, global::ProtoOAPosition.Builder>(internal__static_ProtoOAPosition__Descriptor,
               new string[] { "PositionId", "TradeData", "PositionStatus", "Swap", "Price", "StopLoss", "TakeProfit", "UtcLastUpdateTimestamp", "Commission", "MarginRate", "MirroringCommission", "GuaranteedStopLoss", "UsedMargin", "StopLossTriggerMethod", });
-      internal__static_ProtoOATradeData__Descriptor = Descriptor.MessageTypes[6];
+      internal__static_ProtoOATradeData__Descriptor = Descriptor.MessageTypes[7];
       internal__static_ProtoOATradeData__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOATradeData, global::ProtoOATradeData.Builder>(internal__static_ProtoOATradeData__Descriptor,
               new string[] { "SymbolId", "Volume", "TradeSide", "OpenTimestamp", "Label", "GuaranteedStopLoss", });
-      internal__static_ProtoOAOrder__Descriptor = Descriptor.MessageTypes[7];
+      internal__static_ProtoOAOrder__Descriptor = Descriptor.MessageTypes[8];
       internal__static_ProtoOAOrder__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAOrder, global::ProtoOAOrder.Builder>(internal__static_ProtoOAOrder__Descriptor,
               new string[] { "OrderId", "TradeData", "OrderType", "OrderStatus", "ExpirationTimestamp", "ExecutionPrice", "ExecutedVolume", "UtcLastUpdateTimestamp", "BaseSlippagePrice", "SlippageInPoints", "ClosingOrder", "LimitPrice", "StopPrice", "StopLoss", "TakeProfit", "ClientOrderId", "TimeInForce", "PositionId", "RelativeStopLoss", "RelativeTakeProfit", "IsStopOut", "TrailingStopLoss", "StopTriggerMethod", });
-      internal__static_ProtoOABonusDepositWithdraw__Descriptor = Descriptor.MessageTypes[8];
+      internal__static_ProtoOABonusDepositWithdraw__Descriptor = Descriptor.MessageTypes[9];
       internal__static_ProtoOABonusDepositWithdraw__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOABonusDepositWithdraw, global::ProtoOABonusDepositWithdraw.Builder>(internal__static_ProtoOABonusDepositWithdraw__Descriptor,
               new string[] { "OperationType", "BonusHistoryId", "ManagerBonus", "ManagerDelta", "IbBonus", "IbDelta", "ChangeBonusTimestamp", "ExternalNote", "IntroducingBrokerId", });
-      internal__static_ProtoOADepositWithdraw__Descriptor = Descriptor.MessageTypes[9];
+      internal__static_ProtoOADepositWithdraw__Descriptor = Descriptor.MessageTypes[10];
       internal__static_ProtoOADepositWithdraw__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOADepositWithdraw, global::ProtoOADepositWithdraw.Builder>(internal__static_ProtoOADepositWithdraw__Descriptor,
               new string[] { "OperationType", "BalanceHistoryId", "Balance", "Delta", "ChangeBalanceTimestamp", "ExternalNote", "BalanceVersion", "Equity", });
-      internal__static_ProtoOADeal__Descriptor = Descriptor.MessageTypes[10];
+      internal__static_ProtoOADeal__Descriptor = Descriptor.MessageTypes[11];
       internal__static_ProtoOADeal__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOADeal, global::ProtoOADeal.Builder>(internal__static_ProtoOADeal__Descriptor,
               new string[] { "DealId", "OrderId", "PositionId", "Volume", "FilledVolume", "SymbolId", "CreateTimestamp", "ExecutionTimestamp", "UtcLastUpdateTimestamp", "ExecutionPrice", "TradeSide", "DealStatus", "MarginRate", "Commission", "BaseToUsdConversionRate", "ClosePositionDetail", });
-      internal__static_ProtoOAClosePositionDetail__Descriptor = Descriptor.MessageTypes[11];
+      internal__static_ProtoOAClosePositionDetail__Descriptor = Descriptor.MessageTypes[12];
       internal__static_ProtoOAClosePositionDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAClosePositionDetail, global::ProtoOAClosePositionDetail.Builder>(internal__static_ProtoOAClosePositionDetail__Descriptor,
               new string[] { "EntryPrice", "GrossProfit", "Swap", "Commission", "Balance", "QuoteToDepositConversionRate", "ClosedVolume", "BalanceVersion", });
-      internal__static_ProtoOATrendbar__Descriptor = Descriptor.MessageTypes[12];
+      internal__static_ProtoOATrendbar__Descriptor = Descriptor.MessageTypes[13];
       internal__static_ProtoOATrendbar__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOATrendbar, global::ProtoOATrendbar.Builder>(internal__static_ProtoOATrendbar__Descriptor,
               new string[] { "Volume", "Period", "Low", "DeltaOpen", "DeltaClose", "DeltaHigh", "UtcTimestampInMinutes", });
-      internal__static_ProtoOAExpectedMargin__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_ProtoOAExpectedMargin__Descriptor = Descriptor.MessageTypes[14];
       internal__static_ProtoOAExpectedMargin__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAExpectedMargin, global::ProtoOAExpectedMargin.Builder>(internal__static_ProtoOAExpectedMargin__Descriptor,
               new string[] { "Volume", "BuyMargin", "SellMargin", });
-      internal__static_ProtoOATickData__Descriptor = Descriptor.MessageTypes[14];
+      internal__static_ProtoOATickData__Descriptor = Descriptor.MessageTypes[15];
       internal__static_ProtoOATickData__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOATickData, global::ProtoOATickData.Builder>(internal__static_ProtoOATickData__Descriptor,
               new string[] { "Timestamp", "Tick", });
+      internal__static_ProtoOACtidProfile__Descriptor = Descriptor.MessageTypes[16];
+      internal__static_ProtoOACtidProfile__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOACtidProfile, global::ProtoOACtidProfile.Builder>(internal__static_ProtoOACtidProfile__Descriptor,
+              new string[] { "UserId", });
+      internal__static_ProtoOACtidTraderAccount__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_ProtoOACtidTraderAccount__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOACtidTraderAccount, global::ProtoOACtidTraderAccount.Builder>(internal__static_ProtoOACtidTraderAccount__Descriptor,
+              new string[] { "CtidTraderAccountId", "IsLive", });
+      internal__static_ProtoOAAssetClass__Descriptor = Descriptor.MessageTypes[18];
+      internal__static_ProtoOAAssetClass__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAAssetClass, global::ProtoOAAssetClass.Builder>(internal__static_ProtoOAAssetClass__Descriptor,
+              new string[] { "Id", "Name", });
+      internal__static_ProtoOADepthQuote__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_ProtoOADepthQuote__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOADepthQuote, global::ProtoOADepthQuote.Builder>(internal__static_ProtoOADepthQuote__Descriptor,
+              new string[] { "Id", "Size", "Bid", "Ask", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -388,6 +436,19 @@ public enum ProtoOAPayloadType {
   PROTO_OA_CLIENT_DISCONNECT_EVENT = 2148,
   PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_REQ = 2149,
   PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES = 2150,
+  PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ = 2151,
+  PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES = 2152,
+  PROTO_OA_ASSET_CLASS_LIST_REQ = 2153,
+  PROTO_OA_ASSET_CLASS_LIST_RES = 2154,
+  PROTO_OA_DEPTH_EVENT = 2155,
+  PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_REQ = 2156,
+  PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES = 2157,
+  PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_REQ = 2158,
+  PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES = 2159,
+  PROTO_OA_SYMBOL_CATEGORY_REQ = 2160,
+  PROTO_OA_SYMBOL_CATEGORY_RES = 2161,
+  PROTO_OA_ACCOUNT_LOGOUT_REQ = 2162,
+  PROTO_OA_ACCOUNT_LOGOUT_RES = 2163,
 }
 
 public enum ProtoOADayOfWeek {
@@ -474,13 +535,11 @@ public enum ProtoOATimeInForce {
 }
 
 public enum ProtoOAOrderStatus {
-  ORDER_STATUS_CREATED = 0,
   ORDER_STATUS_ACCEPTED = 1,
   ORDER_STATUS_FILLED = 2,
   ORDER_STATUS_REJECTED = 3,
   ORDER_STATUS_EXPIRED = 4,
   ORDER_STATUS_CANCELLED = 5,
-  ORDER_STATUS_RESERVED = 6,
 }
 
 public enum ProtoOAOrderTriggerMethod {
@@ -532,10 +591,6 @@ public enum ProtoOAChangeBalanceType {
   BALANCE_WITHDRAW_NONWITHDRAWABLE_BONUS = 20,
   BALANCE_DEPOSIT_SWAP = 21,
   BALANCE_WITHDRAW_SWAP = 22,
-  BALANCE_WITHDRAW_INVESTMENT_TO_STRATEGY = 23,
-  BALANCE_DEPOSIT_FROM_INVESTOR = 24,
-  BALANCE_DEPOSIT_RETURNED_INVESTMENT = 25,
-  BALANCE_WITHDRAW_BY_INVESTOR = 26,
   BALANCE_DEPOSIT_MANAGEMENT_FEE = 27,
   BALANCE_WITHDRAW_MANAGEMENT_FEE = 28,
   BALANCE_DEPOSIT_PERFORMANCE_FEE = 29,
@@ -575,6 +630,13 @@ public enum ProtoOAQuoteType {
 public enum ProtoOAClientPermissionScope {
   SCOPE_VIEW = 0,
   SCOPE_TRADE = 1,
+}
+
+public enum ProtoOAErrorCode {
+  OA_AUTH_TOKEN_EXPIRED = 1,
+  ACCOUNT_NOT_AUTHORIZED = 2,
+  INCORRECT_BOUNDARIES = 35,
+  CONNECTIONS_LIMIT_EXCEEDED = 67,
 }
 
 #endregion
@@ -2430,8 +2492,8 @@ public sealed partial class ProtoOASymbol : pb::GeneratedMessage<ProtoOASymbol, 
 public sealed partial class ProtoOALightSymbol : pb::GeneratedMessage<ProtoOALightSymbol, ProtoOALightSymbol.Builder> {
   private ProtoOALightSymbol() { }
   private static readonly ProtoOALightSymbol defaultInstance = new ProtoOALightSymbol().MakeReadOnly();
-  private static readonly string[] _protoOALightSymbolFieldNames = new string[] { "baseAssetId", "enabled", "quoteAssetId", "symbolId", "symbolName" };
-  private static readonly uint[] _protoOALightSymbolFieldTags = new uint[] { 32, 24, 40, 8, 18 };
+  private static readonly string[] _protoOALightSymbolFieldNames = new string[] { "baseAssetId", "description", "enabled", "quoteAssetId", "symbolCategoryId", "symbolId", "symbolName" };
+  private static readonly uint[] _protoOALightSymbolFieldTags = new uint[] { 32, 58, 24, 40, 48, 8, 18 };
   public static ProtoOALightSymbol DefaultInstance {
     get { return defaultInstance; }
   }
@@ -2502,6 +2564,26 @@ public sealed partial class ProtoOALightSymbol : pb::GeneratedMessage<ProtoOALig
     get { return quoteAssetId_; }
   }
   
+  public const int SymbolCategoryIdFieldNumber = 6;
+  private bool hasSymbolCategoryId;
+  private long symbolCategoryId_;
+  public bool HasSymbolCategoryId {
+    get { return hasSymbolCategoryId; }
+  }
+  public long SymbolCategoryId {
+    get { return symbolCategoryId_; }
+  }
+  
+  public const int DescriptionFieldNumber = 7;
+  private bool hasDescription;
+  private string description_ = "";
+  public bool HasDescription {
+    get { return hasDescription; }
+  }
+  public string Description {
+    get { return description_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasSymbolId) return false;
@@ -2513,19 +2595,25 @@ public sealed partial class ProtoOALightSymbol : pb::GeneratedMessage<ProtoOALig
     CalcSerializedSize();
     string[] field_names = _protoOALightSymbolFieldNames;
     if (hasSymbolId) {
-      output.WriteInt64(1, field_names[3], SymbolId);
+      output.WriteInt64(1, field_names[5], SymbolId);
     }
     if (hasSymbolName) {
-      output.WriteString(2, field_names[4], SymbolName);
+      output.WriteString(2, field_names[6], SymbolName);
     }
     if (hasEnabled) {
-      output.WriteBool(3, field_names[1], Enabled);
+      output.WriteBool(3, field_names[2], Enabled);
     }
     if (hasBaseAssetId) {
       output.WriteInt64(4, field_names[0], BaseAssetId);
     }
     if (hasQuoteAssetId) {
-      output.WriteInt64(5, field_names[2], QuoteAssetId);
+      output.WriteInt64(5, field_names[3], QuoteAssetId);
+    }
+    if (hasSymbolCategoryId) {
+      output.WriteInt64(6, field_names[4], SymbolCategoryId);
+    }
+    if (hasDescription) {
+      output.WriteString(7, field_names[1], Description);
     }
     UnknownFields.WriteTo(output);
   }
@@ -2558,6 +2646,12 @@ public sealed partial class ProtoOALightSymbol : pb::GeneratedMessage<ProtoOALig
     }
     if (hasQuoteAssetId) {
       size += pb::CodedOutputStream.ComputeInt64Size(5, QuoteAssetId);
+    }
+    if (hasSymbolCategoryId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(6, SymbolCategoryId);
+    }
+    if (hasDescription) {
+      size += pb::CodedOutputStream.ComputeStringSize(7, Description);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -2696,6 +2790,12 @@ public sealed partial class ProtoOALightSymbol : pb::GeneratedMessage<ProtoOALig
       if (other.HasQuoteAssetId) {
         QuoteAssetId = other.QuoteAssetId;
       }
+      if (other.HasSymbolCategoryId) {
+        SymbolCategoryId = other.SymbolCategoryId;
+      }
+      if (other.HasDescription) {
+        Description = other.Description;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -2757,6 +2857,14 @@ public sealed partial class ProtoOALightSymbol : pb::GeneratedMessage<ProtoOALig
           }
           case 40: {
             result.hasQuoteAssetId = input.ReadInt64(ref result.quoteAssetId_);
+            break;
+          }
+          case 48: {
+            result.hasSymbolCategoryId = input.ReadInt64(ref result.symbolCategoryId_);
+            break;
+          }
+          case 58: {
+            result.hasDescription = input.ReadString(ref result.description_);
             break;
           }
         }
@@ -2869,8 +2977,414 @@ public sealed partial class ProtoOALightSymbol : pb::GeneratedMessage<ProtoOALig
       result.quoteAssetId_ = 0L;
       return this;
     }
+    
+    public bool HasSymbolCategoryId {
+      get { return result.hasSymbolCategoryId; }
+    }
+    public long SymbolCategoryId {
+      get { return result.SymbolCategoryId; }
+      set { SetSymbolCategoryId(value); }
+    }
+    public Builder SetSymbolCategoryId(long value) {
+      PrepareBuilder();
+      result.hasSymbolCategoryId = true;
+      result.symbolCategoryId_ = value;
+      return this;
+    }
+    public Builder ClearSymbolCategoryId() {
+      PrepareBuilder();
+      result.hasSymbolCategoryId = false;
+      result.symbolCategoryId_ = 0L;
+      return this;
+    }
+    
+    public bool HasDescription {
+      get { return result.hasDescription; }
+    }
+    public string Description {
+      get { return result.Description; }
+      set { SetDescription(value); }
+    }
+    public Builder SetDescription(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasDescription = true;
+      result.description_ = value;
+      return this;
+    }
+    public Builder ClearDescription() {
+      PrepareBuilder();
+      result.hasDescription = false;
+      result.description_ = "";
+      return this;
+    }
   }
   static ProtoOALightSymbol() {
+    object.ReferenceEquals(global::OpenApiModelMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOASymbolCategory : pb::GeneratedMessage<ProtoOASymbolCategory, ProtoOASymbolCategory.Builder> {
+  private ProtoOASymbolCategory() { }
+  private static readonly ProtoOASymbolCategory defaultInstance = new ProtoOASymbolCategory().MakeReadOnly();
+  private static readonly string[] _protoOASymbolCategoryFieldNames = new string[] { "assetClassId", "id", "name" };
+  private static readonly uint[] _protoOASymbolCategoryFieldTags = new uint[] { 16, 8, 26 };
+  public static ProtoOASymbolCategory DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOASymbolCategory DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOASymbolCategory ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOASymbolCategory__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolCategory, ProtoOASymbolCategory.Builder> InternalFieldAccessors {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOASymbolCategory__FieldAccessorTable; }
+  }
+  
+  public const int IdFieldNumber = 1;
+  private bool hasId;
+  private long id_;
+  public bool HasId {
+    get { return hasId; }
+  }
+  public long Id {
+    get { return id_; }
+  }
+  
+  public const int AssetClassIdFieldNumber = 2;
+  private bool hasAssetClassId;
+  private long assetClassId_;
+  public bool HasAssetClassId {
+    get { return hasAssetClassId; }
+  }
+  public long AssetClassId {
+    get { return assetClassId_; }
+  }
+  
+  public const int NameFieldNumber = 3;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasId) return false;
+      if (!hasAssetClassId) return false;
+      if (!hasName) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOASymbolCategoryFieldNames;
+    if (hasId) {
+      output.WriteInt64(1, field_names[1], Id);
+    }
+    if (hasAssetClassId) {
+      output.WriteInt64(2, field_names[0], AssetClassId);
+    }
+    if (hasName) {
+      output.WriteString(3, field_names[2], Name);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(1, Id);
+    }
+    if (hasAssetClassId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, AssetClassId);
+    }
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Name);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOASymbolCategory ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASymbolCategory ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOASymbolCategory MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOASymbolCategory prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOASymbolCategory, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOASymbolCategory cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOASymbolCategory result;
+    
+    private ProtoOASymbolCategory PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOASymbolCategory original = result;
+        result = new ProtoOASymbolCategory();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOASymbolCategory MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOASymbolCategory.Descriptor; }
+    }
+    
+    public override ProtoOASymbolCategory DefaultInstanceForType {
+      get { return global::ProtoOASymbolCategory.DefaultInstance; }
+    }
+    
+    public override ProtoOASymbolCategory BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOASymbolCategory) {
+        return MergeFrom((ProtoOASymbolCategory) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOASymbolCategory other) {
+      if (other == global::ProtoOASymbolCategory.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasId) {
+        Id = other.Id;
+      }
+      if (other.HasAssetClassId) {
+        AssetClassId = other.AssetClassId;
+      }
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOASymbolCategoryFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOASymbolCategoryFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasId = input.ReadInt64(ref result.id_);
+            break;
+          }
+          case 16: {
+            result.hasAssetClassId = input.ReadInt64(ref result.assetClassId_);
+            break;
+          }
+          case 26: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasId {
+      get { return result.hasId; }
+    }
+    public long Id {
+      get { return result.Id; }
+      set { SetId(value); }
+    }
+    public Builder SetId(long value) {
+      PrepareBuilder();
+      result.hasId = true;
+      result.id_ = value;
+      return this;
+    }
+    public Builder ClearId() {
+      PrepareBuilder();
+      result.hasId = false;
+      result.id_ = 0L;
+      return this;
+    }
+    
+    public bool HasAssetClassId {
+      get { return result.hasAssetClassId; }
+    }
+    public long AssetClassId {
+      get { return result.AssetClassId; }
+      set { SetAssetClassId(value); }
+    }
+    public Builder SetAssetClassId(long value) {
+      PrepareBuilder();
+      result.hasAssetClassId = true;
+      result.assetClassId_ = value;
+      return this;
+    }
+    public Builder ClearAssetClassId() {
+      PrepareBuilder();
+      result.hasAssetClassId = false;
+      result.assetClassId_ = 0L;
+      return this;
+    }
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+  }
+  static ProtoOASymbolCategory() {
     object.ReferenceEquals(global::OpenApiModelMessages.Descriptor, null);
   }
 }
@@ -3205,8 +3719,8 @@ public sealed partial class ProtoOAInterval : pb::GeneratedMessage<ProtoOAInterv
 public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, ProtoOATrader.Builder> {
   private ProtoOATrader() { }
   private static readonly ProtoOATrader defaultInstance = new ProtoOATrader().MakeReadOnly();
-  private static readonly string[] _protoOATraderFieldNames = new string[] { "accessRights", "accountType", "balance", "balanceVersion", "brokerName", "ctidTraderAccountId", "depositAssetId", "frenchRisk", "ibBonus", "leverageInCents", "managerBonus", "maxLeverage", "nonWithdrawableBonus", "swapFree", "totalMarginCalculationType", "traderLogin" };
-  private static readonly uint[] _protoOATraderFieldTags = new uint[] { 56, 120, 16, 24, 130, 8, 64, 104, 40, 80, 32, 96, 48, 72, 88, 112 };
+  private static readonly string[] _protoOATraderFieldNames = new string[] { "accessRights", "accountType", "balance", "balanceVersion", "brokerName", "ctidTraderAccountId", "depositAssetId", "frenchRisk", "ibBonus", "leverageInCents", "managerBonus", "maxLeverage", "nonWithdrawableBonus", "registrationTimestamp", "swapFree", "totalMarginCalculationType", "traderLogin" };
+  private static readonly uint[] _protoOATraderFieldTags = new uint[] { 56, 120, 16, 24, 130, 8, 64, 104, 40, 80, 32, 96, 48, 136, 72, 88, 112 };
   public static ProtoOATrader DefaultInstance {
     get { return defaultInstance; }
   }
@@ -3389,6 +3903,16 @@ public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, 
     get { return brokerName_; }
   }
   
+  public const int RegistrationTimestampFieldNumber = 17;
+  private bool hasRegistrationTimestamp;
+  private long registrationTimestamp_;
+  public bool HasRegistrationTimestamp {
+    get { return hasRegistrationTimestamp; }
+  }
+  public long RegistrationTimestamp {
+    get { return registrationTimestamp_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCtidTraderAccountId) return false;
@@ -3426,13 +3950,13 @@ public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, 
       output.WriteInt64(8, field_names[6], DepositAssetId);
     }
     if (hasSwapFree) {
-      output.WriteBool(9, field_names[13], SwapFree);
+      output.WriteBool(9, field_names[14], SwapFree);
     }
     if (hasLeverageInCents) {
       output.WriteUInt32(10, field_names[9], LeverageInCents);
     }
     if (hasTotalMarginCalculationType) {
-      output.WriteEnum(11, field_names[14], (int) TotalMarginCalculationType, TotalMarginCalculationType);
+      output.WriteEnum(11, field_names[15], (int) TotalMarginCalculationType, TotalMarginCalculationType);
     }
     if (hasMaxLeverage) {
       output.WriteUInt32(12, field_names[11], MaxLeverage);
@@ -3441,13 +3965,16 @@ public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, 
       output.WriteBool(13, field_names[7], FrenchRisk);
     }
     if (hasTraderLogin) {
-      output.WriteInt64(14, field_names[15], TraderLogin);
+      output.WriteInt64(14, field_names[16], TraderLogin);
     }
     if (hasAccountType) {
       output.WriteEnum(15, field_names[1], (int) AccountType, AccountType);
     }
     if (hasBrokerName) {
       output.WriteString(16, field_names[4], BrokerName);
+    }
+    if (hasRegistrationTimestamp) {
+      output.WriteInt64(17, field_names[13], RegistrationTimestamp);
     }
     UnknownFields.WriteTo(output);
   }
@@ -3513,6 +4040,9 @@ public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, 
     }
     if (hasBrokerName) {
       size += pb::CodedOutputStream.ComputeStringSize(16, BrokerName);
+    }
+    if (hasRegistrationTimestamp) {
+      size += pb::CodedOutputStream.ComputeInt64Size(17, RegistrationTimestamp);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -3684,6 +4214,9 @@ public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, 
       if (other.HasBrokerName) {
         BrokerName = other.BrokerName;
       }
+      if (other.HasRegistrationTimestamp) {
+        RegistrationTimestamp = other.RegistrationTimestamp;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -3813,6 +4346,10 @@ public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, 
           }
           case 130: {
             result.hasBrokerName = input.ReadString(ref result.brokerName_);
+            break;
+          }
+          case 136: {
+            result.hasRegistrationTimestamp = input.ReadInt64(ref result.registrationTimestamp_);
             break;
           }
         }
@@ -4147,6 +4684,26 @@ public sealed partial class ProtoOATrader : pb::GeneratedMessage<ProtoOATrader, 
       PrepareBuilder();
       result.hasBrokerName = false;
       result.brokerName_ = "";
+      return this;
+    }
+    
+    public bool HasRegistrationTimestamp {
+      get { return result.hasRegistrationTimestamp; }
+    }
+    public long RegistrationTimestamp {
+      get { return result.RegistrationTimestamp; }
+      set { SetRegistrationTimestamp(value); }
+    }
+    public Builder SetRegistrationTimestamp(long value) {
+      PrepareBuilder();
+      result.hasRegistrationTimestamp = true;
+      result.registrationTimestamp_ = value;
+      return this;
+    }
+    public Builder ClearRegistrationTimestamp() {
+      PrepareBuilder();
+      result.hasRegistrationTimestamp = false;
+      result.registrationTimestamp_ = 0L;
       return this;
     }
   }
@@ -5598,7 +6155,7 @@ public sealed partial class ProtoOAOrder : pb::GeneratedMessage<ProtoOAOrder, Pr
   
   public const int OrderStatusFieldNumber = 4;
   private bool hasOrderStatus;
-  private global::ProtoOAOrderStatus orderStatus_ = global::ProtoOAOrderStatus.ORDER_STATUS_CREATED;
+  private global::ProtoOAOrderStatus orderStatus_ = global::ProtoOAOrderStatus.ORDER_STATUS_ACCEPTED;
   public bool HasOrderStatus {
     get { return hasOrderStatus; }
   }
@@ -6434,7 +6991,7 @@ public sealed partial class ProtoOAOrder : pb::GeneratedMessage<ProtoOAOrder, Pr
     public Builder ClearOrderStatus() {
       PrepareBuilder();
       result.hasOrderStatus = false;
-      result.orderStatus_ = global::ProtoOAOrderStatus.ORDER_STATUS_CREATED;
+      result.orderStatus_ = global::ProtoOAOrderStatus.ORDER_STATUS_ACCEPTED;
       return this;
     }
     
@@ -10838,6 +11395,1341 @@ public sealed partial class ProtoOATickData : pb::GeneratedMessage<ProtoOATickDa
     }
   }
   static ProtoOATickData() {
+    object.ReferenceEquals(global::OpenApiModelMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOACtidProfile : pb::GeneratedMessage<ProtoOACtidProfile, ProtoOACtidProfile.Builder> {
+  private ProtoOACtidProfile() { }
+  private static readonly ProtoOACtidProfile defaultInstance = new ProtoOACtidProfile().MakeReadOnly();
+  private static readonly string[] _protoOACtidProfileFieldNames = new string[] { "userId" };
+  private static readonly uint[] _protoOACtidProfileFieldTags = new uint[] { 8 };
+  public static ProtoOACtidProfile DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOACtidProfile DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOACtidProfile ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOACtidProfile__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOACtidProfile, ProtoOACtidProfile.Builder> InternalFieldAccessors {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOACtidProfile__FieldAccessorTable; }
+  }
+  
+  public const int UserIdFieldNumber = 1;
+  private bool hasUserId;
+  private long userId_;
+  public bool HasUserId {
+    get { return hasUserId; }
+  }
+  public long UserId {
+    get { return userId_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasUserId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOACtidProfileFieldNames;
+    if (hasUserId) {
+      output.WriteInt64(1, field_names[0], UserId);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasUserId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(1, UserId);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOACtidProfile ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOACtidProfile ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOACtidProfile MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOACtidProfile prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOACtidProfile, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOACtidProfile cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOACtidProfile result;
+    
+    private ProtoOACtidProfile PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOACtidProfile original = result;
+        result = new ProtoOACtidProfile();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOACtidProfile MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOACtidProfile.Descriptor; }
+    }
+    
+    public override ProtoOACtidProfile DefaultInstanceForType {
+      get { return global::ProtoOACtidProfile.DefaultInstance; }
+    }
+    
+    public override ProtoOACtidProfile BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOACtidProfile) {
+        return MergeFrom((ProtoOACtidProfile) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOACtidProfile other) {
+      if (other == global::ProtoOACtidProfile.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasUserId) {
+        UserId = other.UserId;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOACtidProfileFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOACtidProfileFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasUserId = input.ReadInt64(ref result.userId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasUserId {
+      get { return result.hasUserId; }
+    }
+    public long UserId {
+      get { return result.UserId; }
+      set { SetUserId(value); }
+    }
+    public Builder SetUserId(long value) {
+      PrepareBuilder();
+      result.hasUserId = true;
+      result.userId_ = value;
+      return this;
+    }
+    public Builder ClearUserId() {
+      PrepareBuilder();
+      result.hasUserId = false;
+      result.userId_ = 0L;
+      return this;
+    }
+  }
+  static ProtoOACtidProfile() {
+    object.ReferenceEquals(global::OpenApiModelMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOACtidTraderAccount : pb::GeneratedMessage<ProtoOACtidTraderAccount, ProtoOACtidTraderAccount.Builder> {
+  private ProtoOACtidTraderAccount() { }
+  private static readonly ProtoOACtidTraderAccount defaultInstance = new ProtoOACtidTraderAccount().MakeReadOnly();
+  private static readonly string[] _protoOACtidTraderAccountFieldNames = new string[] { "ctidTraderAccountId", "isLive" };
+  private static readonly uint[] _protoOACtidTraderAccountFieldTags = new uint[] { 8, 16 };
+  public static ProtoOACtidTraderAccount DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOACtidTraderAccount DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOACtidTraderAccount ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOACtidTraderAccount__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOACtidTraderAccount, ProtoOACtidTraderAccount.Builder> InternalFieldAccessors {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOACtidTraderAccount__FieldAccessorTable; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 1;
+  private bool hasCtidTraderAccountId;
+  private ulong ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  [global::System.CLSCompliant(false)]
+  public ulong CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public const int IsLiveFieldNumber = 2;
+  private bool hasIsLive;
+  private bool isLive_;
+  public bool HasIsLive {
+    get { return hasIsLive; }
+  }
+  public bool IsLive {
+    get { return isLive_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOACtidTraderAccountFieldNames;
+    if (hasCtidTraderAccountId) {
+      output.WriteUInt64(1, field_names[0], CtidTraderAccountId);
+    }
+    if (hasIsLive) {
+      output.WriteBool(2, field_names[1], IsLive);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeUInt64Size(1, CtidTraderAccountId);
+    }
+    if (hasIsLive) {
+      size += pb::CodedOutputStream.ComputeBoolSize(2, IsLive);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOACtidTraderAccount ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOACtidTraderAccount MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOACtidTraderAccount prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOACtidTraderAccount, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOACtidTraderAccount cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOACtidTraderAccount result;
+    
+    private ProtoOACtidTraderAccount PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOACtidTraderAccount original = result;
+        result = new ProtoOACtidTraderAccount();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOACtidTraderAccount MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOACtidTraderAccount.Descriptor; }
+    }
+    
+    public override ProtoOACtidTraderAccount DefaultInstanceForType {
+      get { return global::ProtoOACtidTraderAccount.DefaultInstance; }
+    }
+    
+    public override ProtoOACtidTraderAccount BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOACtidTraderAccount) {
+        return MergeFrom((ProtoOACtidTraderAccount) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOACtidTraderAccount other) {
+      if (other == global::ProtoOACtidTraderAccount.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      if (other.HasIsLive) {
+        IsLive = other.IsLive;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOACtidTraderAccountFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOACtidTraderAccountFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasCtidTraderAccountId = input.ReadUInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+          case 16: {
+            result.hasIsLive = input.ReadBool(ref result.isLive_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    [global::System.CLSCompliant(false)]
+    public ulong CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder SetCtidTraderAccountId(ulong value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0UL;
+      return this;
+    }
+    
+    public bool HasIsLive {
+      get { return result.hasIsLive; }
+    }
+    public bool IsLive {
+      get { return result.IsLive; }
+      set { SetIsLive(value); }
+    }
+    public Builder SetIsLive(bool value) {
+      PrepareBuilder();
+      result.hasIsLive = true;
+      result.isLive_ = value;
+      return this;
+    }
+    public Builder ClearIsLive() {
+      PrepareBuilder();
+      result.hasIsLive = false;
+      result.isLive_ = false;
+      return this;
+    }
+  }
+  static ProtoOACtidTraderAccount() {
+    object.ReferenceEquals(global::OpenApiModelMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAAssetClass : pb::GeneratedMessage<ProtoOAAssetClass, ProtoOAAssetClass.Builder> {
+  private ProtoOAAssetClass() { }
+  private static readonly ProtoOAAssetClass defaultInstance = new ProtoOAAssetClass().MakeReadOnly();
+  private static readonly string[] _protoOAAssetClassFieldNames = new string[] { "id", "name" };
+  private static readonly uint[] _protoOAAssetClassFieldTags = new uint[] { 8, 18 };
+  public static ProtoOAAssetClass DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAAssetClass DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAAssetClass ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOAAssetClass__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAssetClass, ProtoOAAssetClass.Builder> InternalFieldAccessors {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOAAssetClass__FieldAccessorTable; }
+  }
+  
+  public const int IdFieldNumber = 1;
+  private bool hasId;
+  private long id_;
+  public bool HasId {
+    get { return hasId; }
+  }
+  public long Id {
+    get { return id_; }
+  }
+  
+  public const int NameFieldNumber = 2;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAAssetClassFieldNames;
+    if (hasId) {
+      output.WriteInt64(1, field_names[0], Id);
+    }
+    if (hasName) {
+      output.WriteString(2, field_names[1], Name);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(1, Id);
+    }
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Name);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAAssetClass ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAssetClass ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAAssetClass MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAAssetClass prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAAssetClass, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAAssetClass cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAAssetClass result;
+    
+    private ProtoOAAssetClass PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAAssetClass original = result;
+        result = new ProtoOAAssetClass();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAAssetClass MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAAssetClass.Descriptor; }
+    }
+    
+    public override ProtoOAAssetClass DefaultInstanceForType {
+      get { return global::ProtoOAAssetClass.DefaultInstance; }
+    }
+    
+    public override ProtoOAAssetClass BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAAssetClass) {
+        return MergeFrom((ProtoOAAssetClass) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAAssetClass other) {
+      if (other == global::ProtoOAAssetClass.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasId) {
+        Id = other.Id;
+      }
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAAssetClassFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAAssetClassFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasId = input.ReadInt64(ref result.id_);
+            break;
+          }
+          case 18: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasId {
+      get { return result.hasId; }
+    }
+    public long Id {
+      get { return result.Id; }
+      set { SetId(value); }
+    }
+    public Builder SetId(long value) {
+      PrepareBuilder();
+      result.hasId = true;
+      result.id_ = value;
+      return this;
+    }
+    public Builder ClearId() {
+      PrepareBuilder();
+      result.hasId = false;
+      result.id_ = 0L;
+      return this;
+    }
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+  }
+  static ProtoOAAssetClass() {
+    object.ReferenceEquals(global::OpenApiModelMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOADepthQuote : pb::GeneratedMessage<ProtoOADepthQuote, ProtoOADepthQuote.Builder> {
+  private ProtoOADepthQuote() { }
+  private static readonly ProtoOADepthQuote defaultInstance = new ProtoOADepthQuote().MakeReadOnly();
+  private static readonly string[] _protoOADepthQuoteFieldNames = new string[] { "ask", "bid", "id", "size" };
+  private static readonly uint[] _protoOADepthQuoteFieldTags = new uint[] { 40, 32, 8, 24 };
+  public static ProtoOADepthQuote DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOADepthQuote DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOADepthQuote ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOADepthQuote__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOADepthQuote, ProtoOADepthQuote.Builder> InternalFieldAccessors {
+    get { return global::OpenApiModelMessages.internal__static_ProtoOADepthQuote__FieldAccessorTable; }
+  }
+  
+  public const int IdFieldNumber = 1;
+  private bool hasId;
+  private ulong id_;
+  public bool HasId {
+    get { return hasId; }
+  }
+  [global::System.CLSCompliant(false)]
+  public ulong Id {
+    get { return id_; }
+  }
+  
+  public const int SizeFieldNumber = 3;
+  private bool hasSize;
+  private ulong size_;
+  public bool HasSize {
+    get { return hasSize; }
+  }
+  [global::System.CLSCompliant(false)]
+  public ulong Size {
+    get { return size_; }
+  }
+  
+  public const int BidFieldNumber = 4;
+  private bool hasBid;
+  private ulong bid_;
+  public bool HasBid {
+    get { return hasBid; }
+  }
+  [global::System.CLSCompliant(false)]
+  public ulong Bid {
+    get { return bid_; }
+  }
+  
+  public const int AskFieldNumber = 5;
+  private bool hasAsk;
+  private ulong ask_;
+  public bool HasAsk {
+    get { return hasAsk; }
+  }
+  [global::System.CLSCompliant(false)]
+  public ulong Ask {
+    get { return ask_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasId) return false;
+      if (!hasSize) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOADepthQuoteFieldNames;
+    if (hasId) {
+      output.WriteUInt64(1, field_names[2], Id);
+    }
+    if (hasSize) {
+      output.WriteUInt64(3, field_names[3], Size);
+    }
+    if (hasBid) {
+      output.WriteUInt64(4, field_names[1], Bid);
+    }
+    if (hasAsk) {
+      output.WriteUInt64(5, field_names[0], Ask);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasId) {
+      size += pb::CodedOutputStream.ComputeUInt64Size(1, Id);
+    }
+    if (hasSize) {
+      size += pb::CodedOutputStream.ComputeUInt64Size(3, Size);
+    }
+    if (hasBid) {
+      size += pb::CodedOutputStream.ComputeUInt64Size(4, Bid);
+    }
+    if (hasAsk) {
+      size += pb::CodedOutputStream.ComputeUInt64Size(5, Ask);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOADepthQuote ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOADepthQuote ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOADepthQuote MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOADepthQuote prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOADepthQuote, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOADepthQuote cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOADepthQuote result;
+    
+    private ProtoOADepthQuote PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOADepthQuote original = result;
+        result = new ProtoOADepthQuote();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOADepthQuote MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOADepthQuote.Descriptor; }
+    }
+    
+    public override ProtoOADepthQuote DefaultInstanceForType {
+      get { return global::ProtoOADepthQuote.DefaultInstance; }
+    }
+    
+    public override ProtoOADepthQuote BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOADepthQuote) {
+        return MergeFrom((ProtoOADepthQuote) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOADepthQuote other) {
+      if (other == global::ProtoOADepthQuote.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasId) {
+        Id = other.Id;
+      }
+      if (other.HasSize) {
+        Size = other.Size;
+      }
+      if (other.HasBid) {
+        Bid = other.Bid;
+      }
+      if (other.HasAsk) {
+        Ask = other.Ask;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOADepthQuoteFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOADepthQuoteFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasId = input.ReadUInt64(ref result.id_);
+            break;
+          }
+          case 24: {
+            result.hasSize = input.ReadUInt64(ref result.size_);
+            break;
+          }
+          case 32: {
+            result.hasBid = input.ReadUInt64(ref result.bid_);
+            break;
+          }
+          case 40: {
+            result.hasAsk = input.ReadUInt64(ref result.ask_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasId {
+      get { return result.hasId; }
+    }
+    [global::System.CLSCompliant(false)]
+    public ulong Id {
+      get { return result.Id; }
+      set { SetId(value); }
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder SetId(ulong value) {
+      PrepareBuilder();
+      result.hasId = true;
+      result.id_ = value;
+      return this;
+    }
+    public Builder ClearId() {
+      PrepareBuilder();
+      result.hasId = false;
+      result.id_ = 0UL;
+      return this;
+    }
+    
+    public bool HasSize {
+      get { return result.hasSize; }
+    }
+    [global::System.CLSCompliant(false)]
+    public ulong Size {
+      get { return result.Size; }
+      set { SetSize(value); }
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder SetSize(ulong value) {
+      PrepareBuilder();
+      result.hasSize = true;
+      result.size_ = value;
+      return this;
+    }
+    public Builder ClearSize() {
+      PrepareBuilder();
+      result.hasSize = false;
+      result.size_ = 0UL;
+      return this;
+    }
+    
+    public bool HasBid {
+      get { return result.hasBid; }
+    }
+    [global::System.CLSCompliant(false)]
+    public ulong Bid {
+      get { return result.Bid; }
+      set { SetBid(value); }
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder SetBid(ulong value) {
+      PrepareBuilder();
+      result.hasBid = true;
+      result.bid_ = value;
+      return this;
+    }
+    public Builder ClearBid() {
+      PrepareBuilder();
+      result.hasBid = false;
+      result.bid_ = 0UL;
+      return this;
+    }
+    
+    public bool HasAsk {
+      get { return result.hasAsk; }
+    }
+    [global::System.CLSCompliant(false)]
+    public ulong Ask {
+      get { return result.Ask; }
+      set { SetAsk(value); }
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder SetAsk(ulong value) {
+      PrepareBuilder();
+      result.hasAsk = true;
+      result.ask_ = value;
+      return this;
+    }
+    public Builder ClearAsk() {
+      PrepareBuilder();
+      result.hasAsk = false;
+      result.ask_ = 0UL;
+      return this;
+    }
+  }
+  static ProtoOADepthQuote() {
     object.ReferenceEquals(global::OpenApiModelMessages.Descriptor, null);
   }
 }

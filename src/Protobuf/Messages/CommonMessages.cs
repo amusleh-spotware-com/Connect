@@ -7,7 +7,7 @@ using pbc = global::Google.ProtocolBuffers.Collections;
 using pbd = global::Google.ProtocolBuffers.Descriptors;
 using scg = global::System.Collections.Generic;
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public static partial class Commonmessages {
+public static partial class CommonMessages {
 
   #region Extension registration
   public static void RegisterAllExtensions(pb::ExtensionRegistry registry) {
@@ -31,10 +31,10 @@ public static partial class Commonmessages {
   }
   private static pbd::FileDescriptor descriptor;
   
-  static Commonmessages() {
+  static CommonMessages() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChRjb21tb25tZXNzYWdlcy5wcm90bxoZQ29tbW9uTW9kZWxNZXNzYWdlcy5w", 
+          "ChRDb21tb25NZXNzYWdlcy5wcm90bxoZQ29tbW9uTW9kZWxNZXNzYWdlcy5w", 
           "cm90byJJCgxQcm90b01lc3NhZ2USEwoLcGF5bG9hZFR5cGUYASACKA0SDwoH", 
           "cGF5bG9hZBgCIAEoDBITCgtjbGllbnRNc2dJZBgDIAEoCSJqCg1Qcm90b0Vy", 
           "cm9yUmVzEjEKC3BheWxvYWRUeXBlGAEgASgOMhEuUHJvdG9QYXlsb2FkVHlw", 
@@ -99,11 +99,11 @@ public sealed partial class ProtoMessage : pb::GeneratedMessage<ProtoMessage, Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Commonmessages.internal__static_ProtoMessage__Descriptor; }
+    get { return global::CommonMessages.internal__static_ProtoMessage__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoMessage, ProtoMessage.Builder> InternalFieldAccessors {
-    get { return global::Commonmessages.internal__static_ProtoMessage__FieldAccessorTable; }
+    get { return global::CommonMessages.internal__static_ProtoMessage__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -443,7 +443,7 @@ public sealed partial class ProtoMessage : pb::GeneratedMessage<ProtoMessage, Pr
     }
   }
   static ProtoMessage() {
-    object.ReferenceEquals(global::Commonmessages.Descriptor, null);
+    object.ReferenceEquals(global::CommonMessages.Descriptor, null);
   }
 }
 
@@ -466,11 +466,11 @@ public sealed partial class ProtoErrorRes : pb::GeneratedMessage<ProtoErrorRes, 
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Commonmessages.internal__static_ProtoErrorRes__Descriptor; }
+    get { return global::CommonMessages.internal__static_ProtoErrorRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoErrorRes, ProtoErrorRes.Builder> InternalFieldAccessors {
-    get { return global::Commonmessages.internal__static_ProtoErrorRes__FieldAccessorTable; }
+    get { return global::CommonMessages.internal__static_ProtoErrorRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -815,7 +815,7 @@ public sealed partial class ProtoErrorRes : pb::GeneratedMessage<ProtoErrorRes, 
     }
   }
   static ProtoErrorRes() {
-    object.ReferenceEquals(global::Commonmessages.Descriptor, null);
+    object.ReferenceEquals(global::CommonMessages.Descriptor, null);
   }
 }
 
@@ -838,11 +838,11 @@ public sealed partial class ProtoHeartbeatEvent : pb::GeneratedMessage<ProtoHear
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Commonmessages.internal__static_ProtoHeartbeatEvent__Descriptor; }
+    get { return global::CommonMessages.internal__static_ProtoHeartbeatEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoHeartbeatEvent, ProtoHeartbeatEvent.Builder> InternalFieldAccessors {
-    get { return global::Commonmessages.internal__static_ProtoHeartbeatEvent__FieldAccessorTable; }
+    get { return global::CommonMessages.internal__static_ProtoHeartbeatEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -1098,7 +1098,7 @@ public sealed partial class ProtoHeartbeatEvent : pb::GeneratedMessage<ProtoHear
     }
   }
   static ProtoHeartbeatEvent() {
-    object.ReferenceEquals(global::Commonmessages.Descriptor, null);
+    object.ReferenceEquals(global::CommonMessages.Descriptor, null);
   }
 }
 
@@ -1121,11 +1121,11 @@ public sealed partial class ProtoPingReq : pb::GeneratedMessage<ProtoPingReq, Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Commonmessages.internal__static_ProtoPingReq__Descriptor; }
+    get { return global::CommonMessages.internal__static_ProtoPingReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoPingReq, ProtoPingReq.Builder> InternalFieldAccessors {
-    get { return global::Commonmessages.internal__static_ProtoPingReq__FieldAccessorTable; }
+    get { return global::CommonMessages.internal__static_ProtoPingReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -1428,7 +1428,7 @@ public sealed partial class ProtoPingReq : pb::GeneratedMessage<ProtoPingReq, Pr
     }
   }
   static ProtoPingReq() {
-    object.ReferenceEquals(global::Commonmessages.Descriptor, null);
+    object.ReferenceEquals(global::CommonMessages.Descriptor, null);
   }
 }
 
@@ -1451,11 +1451,11 @@ public sealed partial class ProtoPingRes : pb::GeneratedMessage<ProtoPingRes, Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Commonmessages.internal__static_ProtoPingRes__Descriptor; }
+    get { return global::CommonMessages.internal__static_ProtoPingRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoPingRes, ProtoPingRes.Builder> InternalFieldAccessors {
-    get { return global::Commonmessages.internal__static_ProtoPingRes__FieldAccessorTable; }
+    get { return global::CommonMessages.internal__static_ProtoPingRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -1758,7 +1758,7 @@ public sealed partial class ProtoPingRes : pb::GeneratedMessage<ProtoPingRes, Pr
     }
   }
   static ProtoPingRes() {
-    object.ReferenceEquals(global::Commonmessages.Descriptor, null);
+    object.ReferenceEquals(global::CommonMessages.Descriptor, null);
   }
 }
 

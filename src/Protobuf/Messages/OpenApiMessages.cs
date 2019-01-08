@@ -64,6 +64,10 @@ public static partial class OpenApiMessages {
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolsForConversionRes, global::ProtoOASymbolsForConversionRes.Builder> internal__static_ProtoOASymbolsForConversionRes__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOASymbolChangedEvent__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolChangedEvent, global::ProtoOASymbolChangedEvent.Builder> internal__static_ProtoOASymbolChangedEvent__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAAssetClassListReq__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAAssetClassListReq, global::ProtoOAAssetClassListReq.Builder> internal__static_ProtoOAAssetClassListReq__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAAssetClassListRes__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAAssetClassListRes, global::ProtoOAAssetClassListRes.Builder> internal__static_ProtoOAAssetClassListRes__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOATraderReq__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOATraderReq, global::ProtoOATraderReq.Builder> internal__static_ProtoOATraderReq__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOATraderRes__Descriptor;
@@ -116,6 +120,28 @@ public static partial class OpenApiMessages {
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetTickDataReq, global::ProtoOAGetTickDataReq.Builder> internal__static_ProtoOAGetTickDataReq__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoOAGetTickDataRes__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetTickDataRes, global::ProtoOAGetTickDataRes.Builder> internal__static_ProtoOAGetTickDataRes__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAGetCtidProfileByTokenReq__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetCtidProfileByTokenReq, global::ProtoOAGetCtidProfileByTokenReq.Builder> internal__static_ProtoOAGetCtidProfileByTokenReq__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAGetCtidProfileByTokenRes__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetCtidProfileByTokenRes, global::ProtoOAGetCtidProfileByTokenRes.Builder> internal__static_ProtoOAGetCtidProfileByTokenRes__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOADepthEvent__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOADepthEvent, global::ProtoOADepthEvent.Builder> internal__static_ProtoOADepthEvent__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOASubscribeDepthQuotesReq__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASubscribeDepthQuotesReq, global::ProtoOASubscribeDepthQuotesReq.Builder> internal__static_ProtoOASubscribeDepthQuotesReq__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOASubscribeDepthQuotesRes__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASubscribeDepthQuotesRes, global::ProtoOASubscribeDepthQuotesRes.Builder> internal__static_ProtoOASubscribeDepthQuotesRes__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAUnsubscribeDepthQuotesReq__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAUnsubscribeDepthQuotesReq, global::ProtoOAUnsubscribeDepthQuotesReq.Builder> internal__static_ProtoOAUnsubscribeDepthQuotesReq__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAUnsubscribeDepthQuotesRes__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAUnsubscribeDepthQuotesRes, global::ProtoOAUnsubscribeDepthQuotesRes.Builder> internal__static_ProtoOAUnsubscribeDepthQuotesRes__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOASymbolCategoryListReq__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolCategoryListReq, global::ProtoOASymbolCategoryListReq.Builder> internal__static_ProtoOASymbolCategoryListReq__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOASymbolCategoryListRes__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolCategoryListRes, global::ProtoOASymbolCategoryListRes.Builder> internal__static_ProtoOASymbolCategoryListRes__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAAccountLogoutReq__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAAccountLogoutReq, global::ProtoOAAccountLogoutReq.Builder> internal__static_ProtoOAAccountLogoutReq__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_ProtoOAAccountLogoutRes__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoOAAccountLogoutRes, global::ProtoOAAccountLogoutRes.Builder> internal__static_ProtoOAAccountLogoutRes__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -190,156 +216,201 @@ public static partial class OpenApiMessages {
           "U3RvcExvc3MYCyABKAMSGgoScmVsYXRpdmVUYWtlUHJvZml0GAwgASgDEhoK", 
           "Emd1YXJhbnRlZWRTdG9wTG9zcxgNIAEoCBIYChB0cmFpbGluZ1N0b3BMb3Nz", 
           "GA4gASgIEjwKEXN0b3BUcmlnZ2VyTWV0aG9kGA8gASgOMhouUHJvdG9PQU9y", 
-          "ZGVyVHJpZ2dlck1ldGhvZDoFVFJBREUiyQIKG1Byb3RvT0FBbWVuZFBvc2l0", 
+          "ZGVyVHJpZ2dlck1ldGhvZDoFVFJBREUiuAIKG1Byb3RvT0FBbWVuZFBvc2l0", 
           "aW9uU0xUUFJlcRJKCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXls", 
           "b2FkVHlwZTogUFJPVE9fT0FfQU1FTkRfUE9TSVRJT05fU0xUUF9SRVESGwoT", 
           "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxISCgpwb3NpdGlvbklkGAMgAigD", 
-          "EhAKCHN0b3BMb3NzGAQgASgBEhIKCnRha2VQcm9maXQYBSABKAESDwoHY2hh", 
-          "bm5lbBgGIAEoCRIaChJndWFyYW50ZWVkU3RvcExvc3MYByABKAgSGAoQdHJh", 
-          "aWxpbmdTdG9wTG9zcxgIIAEoCBJAChVzdG9wTG9zc1RyaWdnZXJNZXRob2QY", 
-          "CSABKA4yGi5Qcm90b09BT3JkZXJUcmlnZ2VyTWV0aG9kOgVUUkFERSKhAQoX", 
-          "UHJvdG9PQUNsb3NlUG9zaXRpb25SZXESRQoLcGF5bG9hZFR5cGUYASABKA4y", 
-          "Ey5Qcm90b09BUGF5bG9hZFR5cGU6G1BST1RPX09BX0NMT1NFX1BPU0lUSU9O", 
-          "X1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhIKCnBvc2l0aW9u", 
-          "SWQYAyACKAMSDgoGdm9sdW1lGAQgAigDIuIBCh1Qcm90b09BVHJhaWxpbmdT", 
-          "TENoYW5nZWRFdmVudBJMCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQ", 
-          "YXlsb2FkVHlwZToiUFJPVE9fT0FfVFJBSUxJTkdfU0xfQ0hBTkdFRF9FVkVO", 
-          "VBIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhIKCnBvc2l0aW9uSWQY", 
-          "AyACKAMSDwoHb3JkZXJJZBgEIAIoAxIRCglzdG9wUHJpY2UYBSACKAESHgoW", 
-          "dXRjTGFzdFVwZGF0ZVRpbWVzdGFtcBgGIAIoAyJ1ChNQcm90b09BQXNzZXRM", 
-          "aXN0UmVxEkEKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRU", 
-          "eXBlOhdQUk9UT19PQV9BU1NFVF9MSVNUX1JFURIbChNjdGlkVHJhZGVyQWNj", 
-          "b3VudElkGAIgAigDIpMBChNQcm90b09BQXNzZXRMaXN0UmVzEkEKC3BheWxv", 
-          "YWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhdQUk9UT19PQV9B", 
-          "U1NFVF9MSVNUX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhwK", 
-          "BWFzc2V0GAMgAygLMg0uUHJvdG9PQUFzc2V0InkKFVByb3RvT0FTeW1ib2xz", 
-          "TGlzdFJlcRJDCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2Fk", 
-          "VHlwZToZUFJPVE9fT0FfU1lNQk9MU19MSVNUX1JFURIbChNjdGlkVHJhZGVy", 
-          "QWNjb3VudElkGAIgAigDIp4BChVQcm90b09BU3ltYm9sc0xpc3RSZXMSQwoL", 
-          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GVBST1RP", 
-          "X09BX1NZTUJPTFNfTElTVF9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgC", 
-          "IAIoAxIjCgZzeW1ib2wYAyADKAsyEy5Qcm90b09BTGlnaHRTeW1ib2wiigEK", 
-          "FFByb3RvT0FTeW1ib2xCeUlkUmVxEkMKC3BheWxvYWRUeXBlGAEgASgOMhMu", 
-          "UHJvdG9PQVBheWxvYWRUeXBlOhlQUk9UT19PQV9TWU1CT0xfQllfSURfUkVR", 
-          "EhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSEAoIc3ltYm9sSWQYAyAD", 
-          "KAMimAEKFFByb3RvT0FTeW1ib2xCeUlkUmVzEkMKC3BheWxvYWRUeXBlGAEg", 
-          "ASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhlQUk9UT19PQV9TWU1CT0xfQllf", 
-          "SURfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSHgoGc3ltYm9s", 
-          "GAMgAygLMg4uUHJvdG9PQVN5bWJvbCK3AQoeUHJvdG9PQVN5bWJvbHNGb3JD", 
-          "b252ZXJzaW9uUmVxEk0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBh", 
-          "eWxvYWRUeXBlOiNQUk9UT19PQV9TWU1CT0xTX0ZPUl9DT05WRVJTSU9OX1JF", 
-          "URIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhQKDGZpcnN0QXNzZXRJ", 
-          "ZBgDIAIoAxITCgtsYXN0QXNzZXRJZBgEIAIoAyKxAQoeUHJvdG9PQVN5bWJv", 
-          "bHNGb3JDb252ZXJzaW9uUmVzEk0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJv", 
-          "dG9PQVBheWxvYWRUeXBlOiNQUk9UT19PQV9TWU1CT0xTX0ZPUl9DT05WRVJT", 
-          "SU9OX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEiMKBnN5bWJv", 
-          "bBgDIAMoCzITLlByb3RvT0FMaWdodFN5bWJvbCKTAQoZUHJvdG9PQVN5bWJv", 
-          "bENoYW5nZWRFdmVudBJHCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQ", 
-          "YXlsb2FkVHlwZTodUFJPVE9fT0FfU1lNQk9MX0NIQU5HRURfRVZFTlQSGwoT", 
-          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAMoAyJu", 
-          "ChBQcm90b09BVHJhZGVyUmVxEj0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJv", 
-          "dG9PQVBheWxvYWRUeXBlOhNQUk9UT19PQV9UUkFERVJfUkVREhsKE2N0aWRU", 
-          "cmFkZXJBY2NvdW50SWQYAiACKAMijgEKEFByb3RvT0FUcmFkZXJSZXMSPQoL", 
-          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6E1BST1RP", 
-          "X09BX1RSQURFUl9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIe", 
-          "CgZ0cmFkZXIYAyACKAsyDi5Qcm90b09BVHJhZGVyIqABChlQcm90b09BVHJh", 
-          "ZGVyVXBkYXRlZEV2ZW50EkYKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9P", 
-          "QVBheWxvYWRUeXBlOhxQUk9UT19PQV9UUkFERVJfVVBEQVRFX0VWRU5UEhsK", 
-          "E2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSHgoGdHJhZGVyGAMgAigLMg4u", 
-          "UHJvdG9PQVRyYWRlciJ0ChNQcm90b09BUmVjb25jaWxlUmVxEkAKC3BheWxv", 
-          "YWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhZQUk9UT19PQV9S", 
-          "RUNPTkNJTEVfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMitgEK", 
-          "E1Byb3RvT0FSZWNvbmNpbGVSZXMSQAoLcGF5bG9hZFR5cGUYASABKA4yEy5Q", 
-          "cm90b09BUGF5bG9hZFR5cGU6FlBST1RPX09BX1JFQ09OQ0lMRV9SRVMSGwoT", 
-          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIiCghwb3NpdGlvbhgDIAMoCzIQ", 
-          "LlByb3RvT0FQb3NpdGlvbhIcCgVvcmRlchgEIAMoCzINLlByb3RvT0FPcmRl", 
-          "ciLIAQoWUHJvdG9PQU9yZGVyRXJyb3JFdmVudBJECgtwYXlsb2FkVHlwZRgB", 
-          "IAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToaUFJPVE9fT0FfT1JERVJfRVJS", 
-          "T1JfRVZFTlQSGwoTY3RpZFRyYWRlckFjY291bnRJZBgFIAIoAxIRCgllcnJv", 
-          "ckNvZGUYAiACKAkSDwoHb3JkZXJJZBgDIAEoAxISCgpwb3NpdGlvbklkGAYg", 
-          "ASgDEhMKC2Rlc2NyaXB0aW9uGAcgASgJIrABChJQcm90b09BRGVhbExpc3RS", 
-          "ZXESQAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6", 
-          "FlBST1RPX09BX0RFQUxfTElTVF9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJ", 
-          "ZBgCIAIoAxIVCg1mcm9tVGltZXN0YW1wGAMgAigDEhMKC3RvVGltZXN0YW1w", 
-          "GAQgAigDEg8KB21heFJvd3MYBSABKAUioAEKElByb3RvT0FEZWFsTGlzdFJl", 
-          "cxJACgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToW", 
-          "UFJPVE9fT0FfREVBTF9MSVNUX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElk", 
-          "GAIgAigDEhoKBGRlYWwYAyADKAsyDC5Qcm90b09BRGVhbBIPCgdoYXNNb3Jl", 
-          "GAQgAigIIqEBChhQcm90b09BRXhwZWN0ZWRNYXJnaW5SZXESRgoLcGF5bG9h", 
-          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HFBST1RPX09BX0VY", 
-          "UEVDVEVEX01BUkdJTl9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIo", 
-          "AxIQCghzeW1ib2xJZBgDIAIoAxIOCgZ2b2x1bWUYBCADKAMipwEKGFByb3Rv", 
-          "T0FFeHBlY3RlZE1hcmdpblJlcxJGCgtwYXlsb2FkVHlwZRgBIAEoDjITLlBy", 
-          "b3RvT0FQYXlsb2FkVHlwZTocUFJPVE9fT0FfRVhQRUNURURfTUFSR0lOX1JF", 
-          "UxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEiYKBm1hcmdpbhgDIAMo", 
-          "CzIWLlByb3RvT0FFeHBlY3RlZE1hcmdpbiKpAQoZUHJvdG9PQU1hcmdpbkNo", 
-          "YW5nZWRFdmVudBJHCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXls", 
-          "b2FkVHlwZTodUFJPVE9fT0FfTUFSR0lOX0NIQU5HRURfRVZFTlQSGwoTY3Rp", 
-          "ZFRyYWRlckFjY291bnRJZBgCIAIoAxISCgpwb3NpdGlvbklkGAMgAigEEhIK", 
-          "CnVzZWRNYXJnaW4YBCACKAQitwEKHVByb3RvT0FDYXNoRmxvd0hpc3RvcnlM", 
-          "aXN0UmVxEk0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRU", 
-          "eXBlOiNQUk9UT19PQV9DQVNIX0ZMT1dfSElTVE9SWV9MSVNUX1JFURIbChNj", 
-          "dGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhUKDWZyb21UaW1lc3RhbXAYAyAC", 
-          "KAMSEwoLdG9UaW1lc3RhbXAYBCACKAMivQEKHVByb3RvT0FDYXNoRmxvd0hp", 
-          "c3RvcnlMaXN0UmVzEk0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBh", 
-          "eWxvYWRUeXBlOiNQUk9UT19PQV9DQVNIX0ZMT1dfSElTVE9SWV9MSVNUX1JF", 
-          "UxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEjAKD2RlcG9zaXRXaXRo", 
-          "ZHJhdxgDIAMoCzIXLlByb3RvT0FEZXBvc2l0V2l0aGRyYXcikQEKJVByb3Rv", 
-          "T0FHZXRBY2NvdW50TGlzdEJ5QWNjZXNzVG9rZW5SZXESUwoLcGF5bG9hZFR5", 
-          "cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6KVBST1RPX09BX0dFVF9B", 
-          "Q0NPVU5UU19CWV9BQ0NFU1NfVE9LRU5fUkVREhMKC2FjY2Vzc1Rva2VuGAIg", 
-          "AigJIucBCiVQcm90b09BR2V0QWNjb3VudExpc3RCeUFjY2Vzc1Rva2VuUmVz", 
-          "ElMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOilQ", 
-          "Uk9UT19PQV9HRVRfQUNDT1VOVFNfQllfQUNDRVNTX1RPS0VOX1JFUxITCgth", 
-          "Y2Nlc3NUb2tlbhgCIAIoCRI2Cg9wZXJtaXNzaW9uU2NvcGUYAyABKA4yHS5Q", 
-          "cm90b09BQ2xpZW50UGVybWlzc2lvblNjb3BlEhwKFGN0aWRUcmFkZXJBY2Nv", 
-          "dW50SWRzGAQgAygDIpEBChhQcm90b09BU3Vic2NyaWJlU3BvdHNSZXESRgoL", 
-          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HFBST1RP", 
-          "X09BX1NVQlNDUklCRV9TUE9UU19SRVESGwoTY3RpZFRyYWRlckFjY291bnRJ", 
-          "ZBgCIAIoAxIQCghzeW1ib2xJZBgDIAMoAyJ/ChhQcm90b09BU3Vic2NyaWJl", 
-          "U3BvdHNSZXMSRgoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9h", 
-          "ZFR5cGU6HFBST1RPX09BX1NVQlNDUklCRV9TUE9UU19SRVMSGwoTY3RpZFRy", 
-          "YWRlckFjY291bnRJZBgCIAIoAyKVAQoaUHJvdG9PQVVuc3Vic2NyaWJlU3Bv", 
-          "dHNSZXESSAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5", 
-          "cGU6HlBST1RPX09BX1VOU1VCU0NSSUJFX1NQT1RTX1JFURIbChNjdGlkVHJh", 
-          "ZGVyQWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAygDIoMBChpQcm90", 
-          "b09BVW5zdWJzY3JpYmVTcG90c1JlcxJICgtwYXlsb2FkVHlwZRgBIAEoDjIT", 
-          "LlByb3RvT0FQYXlsb2FkVHlwZToeUFJPVE9fT0FfVU5TVUJTQ1JJQkVfU1BP", 
-          "VFNfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMivgEKEFByb3Rv", 
-          "T0FTcG90RXZlbnQSPQoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5", 
-          "bG9hZFR5cGU6E1BST1RPX09BX1NQT1RfRVZFTlQSGwoTY3RpZFRyYWRlckFj", 
-          "Y291bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAIoAxILCgNiaWQYBCABKAQS", 
-          "CwoDYXNrGAUgASgEEiIKCHRyZW5kYmFyGAYgAygLMhAuUHJvdG9PQVRyZW5k", 
-          "YmFyIsgBCh9Qcm90b09BU3Vic2NyaWJlTGl2ZVRyZW5kYmFyUmVxEk4KC3Bh", 
-          "eWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOiRQUk9UT19P", 
-          "QV9TVUJTQ1JJQkVfTElWRV9UUkVOREJBUl9SRVESGwoTY3RpZFRyYWRlckFj", 
-          "Y291bnRJZBgCIAIoAxImCgZwZXJpb2QYAyACKA4yFi5Qcm90b09BVHJlbmRi", 
-          "YXJQZXJpb2QSEAoIc3ltYm9sSWQYBCACKAMizAEKIVByb3RvT0FVbnN1YnNj", 
-          "cmliZUxpdmVUcmVuZGJhclJlcRJQCgtwYXlsb2FkVHlwZRgBIAEoDjITLlBy", 
-          "b3RvT0FQYXlsb2FkVHlwZTomUFJPVE9fT0FfVU5TVUJTQ1JJQkVfTElWRV9U", 
-          "UkVOREJBUl9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxImCgZw", 
-          "ZXJpb2QYAyACKA4yFi5Qcm90b09BVHJlbmRiYXJQZXJpb2QSEAoIc3ltYm9s", 
-          "SWQYBCACKAMi4QEKFlByb3RvT0FHZXRUcmVuZGJhcnNSZXESRAoLcGF5bG9h", 
-          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GlBST1RPX09BX0dF", 
-          "VF9UUkVOREJBUlNfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMS", 
-          "FQoNZnJvbVRpbWVzdGFtcBgDIAIoAxITCgt0b1RpbWVzdGFtcBgEIAIoAxIm", 
-          "CgZwZXJpb2QYBSACKA4yFi5Qcm90b09BVHJlbmRiYXJQZXJpb2QSEAoIc3lt", 
-          "Ym9sSWQYBiACKAMi7AEKFlByb3RvT0FHZXRUcmVuZGJhcnNSZXMSRAoLcGF5", 
-          "bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GlBST1RPX09B", 
-          "X0dFVF9UUkVOREJBUlNfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiAC", 
-          "KAMSJgoGcGVyaW9kGAMgAigOMhYuUHJvdG9PQVRyZW5kYmFyUGVyaW9kEhEK", 
-          "CXRpbWVzdGFtcBgEIAIoAxIiCgh0cmVuZGJhchgFIAMoCzIQLlByb3RvT0FU", 
-          "cmVuZGJhchIQCghzeW1ib2xJZBgGIAEoAyLYAQoVUHJvdG9PQUdldFRpY2tE", 
-          "YXRhUmVxEkMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRU", 
-          "eXBlOhlQUk9UT19PQV9HRVRfVElDS0RBVEFfUkVREhsKE2N0aWRUcmFkZXJB", 
-          "Y2NvdW50SWQYAiACKAMSEAoIc3ltYm9sSWQYAyACKAMSHwoEdHlwZRgEIAIo", 
-          "DjIRLlByb3RvT0FRdW90ZVR5cGUSFQoNZnJvbVRpbWVzdGFtcBgFIAIoAxIT", 
-          "Cgt0b1RpbWVzdGFtcBgGIAIoAyKuAQoVUHJvdG9PQUdldFRpY2tEYXRhUmVz", 
+          "EhAKCHN0b3BMb3NzGAQgASgBEhIKCnRha2VQcm9maXQYBSABKAESGgoSZ3Vh", 
+          "cmFudGVlZFN0b3BMb3NzGAcgASgIEhgKEHRyYWlsaW5nU3RvcExvc3MYCCAB", 
+          "KAgSQAoVc3RvcExvc3NUcmlnZ2VyTWV0aG9kGAkgASgOMhouUHJvdG9PQU9y", 
+          "ZGVyVHJpZ2dlck1ldGhvZDoFVFJBREUioQEKF1Byb3RvT0FDbG9zZVBvc2l0", 
+          "aW9uUmVxEkUKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRU", 
+          "eXBlOhtQUk9UT19PQV9DTE9TRV9QT1NJVElPTl9SRVESGwoTY3RpZFRyYWRl", 
+          "ckFjY291bnRJZBgCIAIoAxISCgpwb3NpdGlvbklkGAMgAigDEg4KBnZvbHVt", 
+          "ZRgEIAIoAyLiAQodUHJvdG9PQVRyYWlsaW5nU0xDaGFuZ2VkRXZlbnQSTAoL", 
+          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6IlBST1RP", 
+          "X09BX1RSQUlMSU5HX1NMX0NIQU5HRURfRVZFTlQSGwoTY3RpZFRyYWRlckFj", 
+          "Y291bnRJZBgCIAIoAxISCgpwb3NpdGlvbklkGAMgAigDEg8KB29yZGVySWQY", 
+          "BCACKAMSEQoJc3RvcFByaWNlGAUgAigBEh4KFnV0Y0xhc3RVcGRhdGVUaW1l", 
+          "c3RhbXAYBiACKAMidQoTUHJvdG9PQUFzc2V0TGlzdFJlcRJBCgtwYXlsb2Fk", 
+          "VHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToXUFJPVE9fT0FfQVNT", 
+          "RVRfTElTVF9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKTAQoT", 
+          "UHJvdG9PQUFzc2V0TGlzdFJlcxJBCgtwYXlsb2FkVHlwZRgBIAEoDjITLlBy", 
+          "b3RvT0FQYXlsb2FkVHlwZToXUFJPVE9fT0FfQVNTRVRfTElTVF9SRVMSGwoT", 
+          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIcCgVhc3NldBgDIAMoCzINLlBy", 
+          "b3RvT0FBc3NldCJ5ChVQcm90b09BU3ltYm9sc0xpc3RSZXESQwoLcGF5bG9h", 
+          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GVBST1RPX09BX1NZ", 
+          "TUJPTFNfTElTVF9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKe", 
+          "AQoVUHJvdG9PQVN5bWJvbHNMaXN0UmVzEkMKC3BheWxvYWRUeXBlGAEgASgO", 
+          "MhMuUHJvdG9PQVBheWxvYWRUeXBlOhlQUk9UT19PQV9TWU1CT0xTX0xJU1Rf", 
+          "UkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSIwoGc3ltYm9sGAMg", 
+          "AygLMhMuUHJvdG9PQUxpZ2h0U3ltYm9sIooBChRQcm90b09BU3ltYm9sQnlJ", 
+          "ZFJlcRJDCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlw", 
+          "ZToZUFJPVE9fT0FfU1lNQk9MX0JZX0lEX1JFURIbChNjdGlkVHJhZGVyQWNj", 
+          "b3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAygDIpgBChRQcm90b09BU3lt", 
+          "Ym9sQnlJZFJlcxJDCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXls", 
+          "b2FkVHlwZToZUFJPVE9fT0FfU1lNQk9MX0JZX0lEX1JFUxIbChNjdGlkVHJh", 
+          "ZGVyQWNjb3VudElkGAIgAigDEh4KBnN5bWJvbBgDIAMoCzIOLlByb3RvT0FT", 
+          "eW1ib2witwEKHlByb3RvT0FTeW1ib2xzRm9yQ29udmVyc2lvblJlcRJNCgtw", 
+          "YXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTojUFJPVE9f", 
+          "T0FfU1lNQk9MU19GT1JfQ09OVkVSU0lPTl9SRVESGwoTY3RpZFRyYWRlckFj", 
+          "Y291bnRJZBgCIAIoAxIUCgxmaXJzdEFzc2V0SWQYAyACKAMSEwoLbGFzdEFz", 
+          "c2V0SWQYBCACKAMisQEKHlByb3RvT0FTeW1ib2xzRm9yQ29udmVyc2lvblJl", 
+          "cxJNCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToj", 
+          "UFJPVE9fT0FfU1lNQk9MU19GT1JfQ09OVkVSU0lPTl9SRVMSGwoTY3RpZFRy", 
+          "YWRlckFjY291bnRJZBgCIAIoAxIjCgZzeW1ib2wYAyADKAsyEy5Qcm90b09B", 
+          "TGlnaHRTeW1ib2wikwEKGVByb3RvT0FTeW1ib2xDaGFuZ2VkRXZlbnQSRwoL", 
+          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HVBST1RP", 
+          "X09BX1NZTUJPTF9DSEFOR0VEX0VWRU5UEhsKE2N0aWRUcmFkZXJBY2NvdW50", 
+          "SWQYAiACKAMSEAoIc3ltYm9sSWQYAyADKAMigAEKGFByb3RvT0FBc3NldENs", 
+          "YXNzTGlzdFJlcRJHCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXls", 
+          "b2FkVHlwZTodUFJPVE9fT0FfQVNTRVRfQ0xBU1NfTElTVF9SRVESGwoTY3Rp", 
+          "ZFRyYWRlckFjY291bnRJZBgCIAIoAyKoAQoYUHJvdG9PQUFzc2V0Q2xhc3NM", 
+          "aXN0UmVzEkcKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRU", 
+          "eXBlOh1QUk9UT19PQV9BU1NFVF9DTEFTU19MSVNUX1JFUxIbChNjdGlkVHJh", 
+          "ZGVyQWNjb3VudElkGAIgAigDEiYKCmFzc2V0Q2xhc3MYAyADKAsyEi5Qcm90", 
+          "b09BQXNzZXRDbGFzcyJuChBQcm90b09BVHJhZGVyUmVxEj0KC3BheWxvYWRU", 
+          "eXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhNQUk9UT19PQV9UUkFE", 
+          "RVJfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMijgEKEFByb3Rv", 
+          "T0FUcmFkZXJSZXMSPQoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5", 
+          "bG9hZFR5cGU6E1BST1RPX09BX1RSQURFUl9SRVMSGwoTY3RpZFRyYWRlckFj", 
+          "Y291bnRJZBgCIAIoAxIeCgZ0cmFkZXIYAyACKAsyDi5Qcm90b09BVHJhZGVy", 
+          "IqABChlQcm90b09BVHJhZGVyVXBkYXRlZEV2ZW50EkYKC3BheWxvYWRUeXBl", 
+          "GAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhxQUk9UT19PQV9UUkFERVJf", 
+          "VVBEQVRFX0VWRU5UEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSHgoG", 
+          "dHJhZGVyGAMgAigLMg4uUHJvdG9PQVRyYWRlciJ0ChNQcm90b09BUmVjb25j", 
+          "aWxlUmVxEkAKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRU", 
+          "eXBlOhZQUk9UT19PQV9SRUNPTkNJTEVfUkVREhsKE2N0aWRUcmFkZXJBY2Nv", 
+          "dW50SWQYAiACKAMitgEKE1Byb3RvT0FSZWNvbmNpbGVSZXMSQAoLcGF5bG9h", 
+          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6FlBST1RPX09BX1JF", 
+          "Q09OQ0lMRV9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIiCghw", 
+          "b3NpdGlvbhgDIAMoCzIQLlByb3RvT0FQb3NpdGlvbhIcCgVvcmRlchgEIAMo", 
+          "CzINLlByb3RvT0FPcmRlciLIAQoWUHJvdG9PQU9yZGVyRXJyb3JFdmVudBJE", 
+          "CgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToaUFJP", 
+          "VE9fT0FfT1JERVJfRVJST1JfRVZFTlQSGwoTY3RpZFRyYWRlckFjY291bnRJ", 
+          "ZBgFIAIoAxIRCgllcnJvckNvZGUYAiACKAkSDwoHb3JkZXJJZBgDIAEoAxIS", 
+          "Cgpwb3NpdGlvbklkGAYgASgDEhMKC2Rlc2NyaXB0aW9uGAcgASgJIrABChJQ", 
+          "cm90b09BRGVhbExpc3RSZXESQAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90", 
+          "b09BUGF5bG9hZFR5cGU6FlBST1RPX09BX0RFQUxfTElTVF9SRVESGwoTY3Rp", 
+          "ZFRyYWRlckFjY291bnRJZBgCIAIoAxIVCg1mcm9tVGltZXN0YW1wGAMgAigD", 
+          "EhMKC3RvVGltZXN0YW1wGAQgAigDEg8KB21heFJvd3MYBSABKAUioAEKElBy", 
+          "b3RvT0FEZWFsTGlzdFJlcxJACgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3Rv", 
+          "T0FQYXlsb2FkVHlwZToWUFJPVE9fT0FfREVBTF9MSVNUX1JFUxIbChNjdGlk", 
+          "VHJhZGVyQWNjb3VudElkGAIgAigDEhoKBGRlYWwYAyADKAsyDC5Qcm90b09B", 
+          "RGVhbBIPCgdoYXNNb3JlGAQgAigIIqEBChhQcm90b09BRXhwZWN0ZWRNYXJn", 
+          "aW5SZXESRgoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5", 
+          "cGU6HFBST1RPX09BX0VYUEVDVEVEX01BUkdJTl9SRVESGwoTY3RpZFRyYWRl", 
+          "ckFjY291bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAIoAxIOCgZ2b2x1bWUY", 
+          "BCADKAMipwEKGFByb3RvT0FFeHBlY3RlZE1hcmdpblJlcxJGCgtwYXlsb2Fk", 
+          "VHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTocUFJPVE9fT0FfRVhQ", 
+          "RUNURURfTUFSR0lOX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigD", 
+          "EiYKBm1hcmdpbhgDIAMoCzIWLlByb3RvT0FFeHBlY3RlZE1hcmdpbiKpAQoZ", 
+          "UHJvdG9PQU1hcmdpbkNoYW5nZWRFdmVudBJHCgtwYXlsb2FkVHlwZRgBIAEo", 
+          "DjITLlByb3RvT0FQYXlsb2FkVHlwZTodUFJPVE9fT0FfTUFSR0lOX0NIQU5H", 
+          "RURfRVZFTlQSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxISCgpwb3Np", 
+          "dGlvbklkGAMgAigEEhIKCnVzZWRNYXJnaW4YBCACKAQitwEKHVByb3RvT0FD", 
+          "YXNoRmxvd0hpc3RvcnlMaXN0UmVxEk0KC3BheWxvYWRUeXBlGAEgASgOMhMu", 
+          "UHJvdG9PQVBheWxvYWRUeXBlOiNQUk9UT19PQV9DQVNIX0ZMT1dfSElTVE9S", 
+          "WV9MSVNUX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhUKDWZy", 
+          "b21UaW1lc3RhbXAYAyACKAMSEwoLdG9UaW1lc3RhbXAYBCACKAMivQEKHVBy", 
+          "b3RvT0FDYXNoRmxvd0hpc3RvcnlMaXN0UmVzEk0KC3BheWxvYWRUeXBlGAEg", 
+          "ASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOiNQUk9UT19PQV9DQVNIX0ZMT1df", 
+          "SElTVE9SWV9MSVNUX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigD", 
+          "EjAKD2RlcG9zaXRXaXRoZHJhdxgDIAMoCzIXLlByb3RvT0FEZXBvc2l0V2l0", 
+          "aGRyYXcikQEKJVByb3RvT0FHZXRBY2NvdW50TGlzdEJ5QWNjZXNzVG9rZW5S", 
+          "ZXESUwoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6", 
+          "KVBST1RPX09BX0dFVF9BQ0NPVU5UU19CWV9BQ0NFU1NfVE9LRU5fUkVREhMK", 
+          "C2FjY2Vzc1Rva2VuGAIgAigJIv8BCiVQcm90b09BR2V0QWNjb3VudExpc3RC", 
+          "eUFjY2Vzc1Rva2VuUmVzElMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9P", 
+          "QVBheWxvYWRUeXBlOilQUk9UT19PQV9HRVRfQUNDT1VOVFNfQllfQUNDRVNT", 
+          "X1RPS0VOX1JFUxITCgthY2Nlc3NUb2tlbhgCIAIoCRI2Cg9wZXJtaXNzaW9u", 
+          "U2NvcGUYAyABKA4yHS5Qcm90b09BQ2xpZW50UGVybWlzc2lvblNjb3BlEjQK", 
+          "EWN0aWRUcmFkZXJBY2NvdW50GAQgAygLMhkuUHJvdG9PQUN0aWRUcmFkZXJB", 
+          "Y2NvdW50IpEBChhQcm90b09BU3Vic2NyaWJlU3BvdHNSZXESRgoLcGF5bG9h", 
+          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HFBST1RPX09BX1NV", 
+          "QlNDUklCRV9TUE9UU19SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIo", 
+          "AxIQCghzeW1ib2xJZBgDIAMoAyJ/ChhQcm90b09BU3Vic2NyaWJlU3BvdHNS", 
+          "ZXMSRgoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6", 
+          "HFBST1RPX09BX1NVQlNDUklCRV9TUE9UU19SRVMSGwoTY3RpZFRyYWRlckFj", 
+          "Y291bnRJZBgCIAIoAyKVAQoaUHJvdG9PQVVuc3Vic2NyaWJlU3BvdHNSZXES", 
+          "SAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HlBS", 
+          "T1RPX09BX1VOU1VCU0NSSUJFX1NQT1RTX1JFURIbChNjdGlkVHJhZGVyQWNj", 
+          "b3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAygDIoMBChpQcm90b09BVW5z", 
+          "dWJzY3JpYmVTcG90c1JlcxJICgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3Rv", 
+          "T0FQYXlsb2FkVHlwZToeUFJPVE9fT0FfVU5TVUJTQ1JJQkVfU1BPVFNfUkVT", 
+          "EhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMivgEKEFByb3RvT0FTcG90", 
+          "RXZlbnQSPQoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5", 
+          "cGU6E1BST1RPX09BX1NQT1RfRVZFTlQSGwoTY3RpZFRyYWRlckFjY291bnRJ", 
+          "ZBgCIAIoAxIQCghzeW1ib2xJZBgDIAIoAxILCgNiaWQYBCABKAQSCwoDYXNr", 
+          "GAUgASgEEiIKCHRyZW5kYmFyGAYgAygLMhAuUHJvdG9PQVRyZW5kYmFyIsgB", 
+          "Ch9Qcm90b09BU3Vic2NyaWJlTGl2ZVRyZW5kYmFyUmVxEk4KC3BheWxvYWRU", 
+          "eXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOiRQUk9UT19PQV9TVUJT", 
+          "Q1JJQkVfTElWRV9UUkVOREJBUl9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJ", 
+          "ZBgCIAIoAxImCgZwZXJpb2QYAyACKA4yFi5Qcm90b09BVHJlbmRiYXJQZXJp", 
+          "b2QSEAoIc3ltYm9sSWQYBCACKAMizAEKIVByb3RvT0FVbnN1YnNjcmliZUxp", 
+          "dmVUcmVuZGJhclJlcRJQCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQ", 
+          "YXlsb2FkVHlwZTomUFJPVE9fT0FfVU5TVUJTQ1JJQkVfTElWRV9UUkVOREJB", 
+          "Ul9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxImCgZwZXJpb2QY", 
+          "AyACKA4yFi5Qcm90b09BVHJlbmRiYXJQZXJpb2QSEAoIc3ltYm9sSWQYBCAC", 
+          "KAMi4QEKFlByb3RvT0FHZXRUcmVuZGJhcnNSZXESRAoLcGF5bG9hZFR5cGUY", 
+          "ASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GlBST1RPX09BX0dFVF9UUkVO", 
+          "REJBUlNfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSFQoNZnJv", 
+          "bVRpbWVzdGFtcBgDIAIoAxITCgt0b1RpbWVzdGFtcBgEIAIoAxImCgZwZXJp", 
+          "b2QYBSACKA4yFi5Qcm90b09BVHJlbmRiYXJQZXJpb2QSEAoIc3ltYm9sSWQY", 
+          "BiACKAMi7AEKFlByb3RvT0FHZXRUcmVuZGJhcnNSZXMSRAoLcGF5bG9hZFR5", 
+          "cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GlBST1RPX09BX0dFVF9U", 
+          "UkVOREJBUlNfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSJgoG", 
+          "cGVyaW9kGAMgAigOMhYuUHJvdG9PQVRyZW5kYmFyUGVyaW9kEhEKCXRpbWVz", 
+          "dGFtcBgEIAIoAxIiCgh0cmVuZGJhchgFIAMoCzIQLlByb3RvT0FUcmVuZGJh", 
+          "chIQCghzeW1ib2xJZBgGIAEoAyLYAQoVUHJvdG9PQUdldFRpY2tEYXRhUmVx", 
           "EkMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhlQ", 
-          "Uk9UT19PQV9HRVRfVElDS0RBVEFfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50", 
-          "SWQYAiACKAMSIgoIdGlja0RhdGEYAyADKAsyEC5Qcm90b09BVGlja0RhdGES", 
-          "DwoHaGFzTW9yZRgEIAIoCEJCCh9jb20ueHRyYWRlci5wcm90b2NvbC5vcGVu", 
-        "YXBpLnYyQhpDb250YWluZXJPcGVuQXBpVjJNZXNzYWdlc1ABoAEB"));
+          "Uk9UT19PQV9HRVRfVElDS0RBVEFfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50", 
+          "SWQYAiACKAMSEAoIc3ltYm9sSWQYAyACKAMSHwoEdHlwZRgEIAIoDjIRLlBy", 
+          "b3RvT0FRdW90ZVR5cGUSFQoNZnJvbVRpbWVzdGFtcBgFIAIoAxITCgt0b1Rp", 
+          "bWVzdGFtcBgGIAIoAyKuAQoVUHJvdG9PQUdldFRpY2tEYXRhUmVzEkMKC3Bh", 
+          "eWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhlQUk9UT19P", 
+          "QV9HRVRfVElDS0RBVEFfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiAC", 
+          "KAMSIgoIdGlja0RhdGEYAyADKAsyEC5Qcm90b09BVGlja0RhdGESDwoHaGFz", 
+          "TW9yZRgEIAIoCCKIAQofUHJvdG9PQUdldEN0aWRQcm9maWxlQnlUb2tlblJl", 
+          "cRJQCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTom", 
+          "UFJPVE9fT0FfR0VUX0NUSURfUFJPRklMRV9CWV9UT0tFTl9SRVESEwoLYWNj", 
+          "ZXNzVG9rZW4YAiACKAkimQEKH1Byb3RvT0FHZXRDdGlkUHJvZmlsZUJ5VG9r", 
+          "ZW5SZXMSUAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5", 
+          "cGU6JlBST1RPX09BX0dFVF9DVElEX1BST0ZJTEVfQllfVE9LRU5fUkVTEiQK", 
+          "B3Byb2ZpbGUYAiACKAsyEy5Qcm90b09BQ3RpZFByb2ZpbGUixAEKEVByb3Rv", 
+          "T0FEZXB0aEV2ZW50Ej4KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBh", 
+          "eWxvYWRUeXBlOhRQUk9UT19PQV9ERVBUSF9FVkVOVBIbChNjdGlkVHJhZGVy", 
+          "QWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAigEEiUKCW5ld1F1b3Rl", 
+          "cxgEIAMoCzISLlByb3RvT0FEZXB0aFF1b3RlEhkKDWRlbGV0ZWRRdW90ZXMY", 
+          "BSADKARCAhABIp4BCh5Qcm90b09BU3Vic2NyaWJlRGVwdGhRdW90ZXNSZXES", 
+          "TQoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6I1BS", 
+          "T1RPX09BX1NVQlNDUklCRV9ERVBUSF9RVU9URVNfUkVREhsKE2N0aWRUcmFk", 
+          "ZXJBY2NvdW50SWQYAiACKAMSEAoIc3ltYm9sSWQYAyADKAMijAEKHlByb3Rv", 
+          "T0FTdWJzY3JpYmVEZXB0aFF1b3Rlc1JlcxJNCgtwYXlsb2FkVHlwZRgBIAEo", 
+          "DjITLlByb3RvT0FQYXlsb2FkVHlwZTojUFJPVE9fT0FfU1VCU0NSSUJFX0RF", 
+          "UFRIX1FVT1RFU19SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKi", 
+          "AQogUHJvdG9PQVVuc3Vic2NyaWJlRGVwdGhRdW90ZXNSZXESTwoLcGF5bG9h", 
+          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6JVBST1RPX09BX1VO", 
+          "U1VCU0NSSUJFX0RFUFRIX1FVT1RFU19SRVESGwoTY3RpZFRyYWRlckFjY291", 
+          "bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAMoAyKQAQogUHJvdG9PQVVuc3Vi", 
+          "c2NyaWJlRGVwdGhRdW90ZXNSZXMSTwoLcGF5bG9hZFR5cGUYASABKA4yEy5Q", 
+          "cm90b09BUGF5bG9hZFR5cGU6JVBST1RPX09BX1VOU1VCU0NSSUJFX0RFUFRI", 
+          "X1FVT1RFU19SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKDAQoc", 
+          "UHJvdG9PQVN5bWJvbENhdGVnb3J5TGlzdFJlcRJGCgtwYXlsb2FkVHlwZRgB", 
+          "IAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTocUFJPVE9fT0FfU1lNQk9MX0NB", 
+          "VEVHT1JZX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDIrMBChxQ", 
+          "cm90b09BU3ltYm9sQ2F0ZWdvcnlMaXN0UmVzEkYKC3BheWxvYWRUeXBlGAEg", 
+          "ASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhxQUk9UT19PQV9TWU1CT0xfQ0FU", 
+          "RUdPUllfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSLgoOc3lt", 
+          "Ym9sQ2F0ZWdvcnkYAyADKAsyFi5Qcm90b09BU3ltYm9sQ2F0ZWdvcnkifQoX", 
+          "UHJvdG9PQUFjY291bnRMb2dvdXRSZXESRQoLcGF5bG9hZFR5cGUYASABKA4y", 
+          "Ey5Qcm90b09BUGF5bG9hZFR5cGU6G1BST1RPX09BX0FDQ09VTlRfTE9HT1VU", 
+          "X1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDIn0KF1Byb3RvT0FB", 
+          "Y2NvdW50TG9nb3V0UmVzEkUKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9P", 
+          "QVBheWxvYWRUeXBlOhtQUk9UT19PQV9BQ0NPVU5UX0xPR09VVF9SRVMSGwoT", 
+          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoA0JCCh9jb20ueHRyYWRlci5wcm90", 
+          "b2NvbC5vcGVuYXBpLnYyQhpDb250YWluZXJPcGVuQXBpVjJNZXNzYWdlc1AB", 
+        "oAEB"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_ProtoOAApplicationAuthReq__Descriptor = Descriptor.MessageTypes[0];
@@ -397,7 +468,7 @@ public static partial class OpenApiMessages {
       internal__static_ProtoOAAmendPositionSLTPReq__Descriptor = Descriptor.MessageTypes[13];
       internal__static_ProtoOAAmendPositionSLTPReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAAmendPositionSLTPReq, global::ProtoOAAmendPositionSLTPReq.Builder>(internal__static_ProtoOAAmendPositionSLTPReq__Descriptor,
-              new string[] { "PayloadType", "CtidTraderAccountId", "PositionId", "StopLoss", "TakeProfit", "Channel", "GuaranteedStopLoss", "TrailingStopLoss", "StopLossTriggerMethod", });
+              new string[] { "PayloadType", "CtidTraderAccountId", "PositionId", "StopLoss", "TakeProfit", "GuaranteedStopLoss", "TrailingStopLoss", "StopLossTriggerMethod", });
       internal__static_ProtoOAClosePositionReq__Descriptor = Descriptor.MessageTypes[14];
       internal__static_ProtoOAClosePositionReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAClosePositionReq, global::ProtoOAClosePositionReq.Builder>(internal__static_ProtoOAClosePositionReq__Descriptor,
@@ -442,110 +513,162 @@ public static partial class OpenApiMessages {
       internal__static_ProtoOASymbolChangedEvent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolChangedEvent, global::ProtoOASymbolChangedEvent.Builder>(internal__static_ProtoOASymbolChangedEvent__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", });
-      internal__static_ProtoOATraderReq__Descriptor = Descriptor.MessageTypes[25];
+      internal__static_ProtoOAAssetClassListReq__Descriptor = Descriptor.MessageTypes[25];
+      internal__static_ProtoOAAssetClassListReq__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAAssetClassListReq, global::ProtoOAAssetClassListReq.Builder>(internal__static_ProtoOAAssetClassListReq__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", });
+      internal__static_ProtoOAAssetClassListRes__Descriptor = Descriptor.MessageTypes[26];
+      internal__static_ProtoOAAssetClassListRes__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAAssetClassListRes, global::ProtoOAAssetClassListRes.Builder>(internal__static_ProtoOAAssetClassListRes__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", "AssetClass", });
+      internal__static_ProtoOATraderReq__Descriptor = Descriptor.MessageTypes[27];
       internal__static_ProtoOATraderReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOATraderReq, global::ProtoOATraderReq.Builder>(internal__static_ProtoOATraderReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", });
-      internal__static_ProtoOATraderRes__Descriptor = Descriptor.MessageTypes[26];
+      internal__static_ProtoOATraderRes__Descriptor = Descriptor.MessageTypes[28];
       internal__static_ProtoOATraderRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOATraderRes, global::ProtoOATraderRes.Builder>(internal__static_ProtoOATraderRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Trader", });
-      internal__static_ProtoOATraderUpdatedEvent__Descriptor = Descriptor.MessageTypes[27];
+      internal__static_ProtoOATraderUpdatedEvent__Descriptor = Descriptor.MessageTypes[29];
       internal__static_ProtoOATraderUpdatedEvent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOATraderUpdatedEvent, global::ProtoOATraderUpdatedEvent.Builder>(internal__static_ProtoOATraderUpdatedEvent__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Trader", });
-      internal__static_ProtoOAReconcileReq__Descriptor = Descriptor.MessageTypes[28];
+      internal__static_ProtoOAReconcileReq__Descriptor = Descriptor.MessageTypes[30];
       internal__static_ProtoOAReconcileReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAReconcileReq, global::ProtoOAReconcileReq.Builder>(internal__static_ProtoOAReconcileReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", });
-      internal__static_ProtoOAReconcileRes__Descriptor = Descriptor.MessageTypes[29];
+      internal__static_ProtoOAReconcileRes__Descriptor = Descriptor.MessageTypes[31];
       internal__static_ProtoOAReconcileRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAReconcileRes, global::ProtoOAReconcileRes.Builder>(internal__static_ProtoOAReconcileRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Position", "Order", });
-      internal__static_ProtoOAOrderErrorEvent__Descriptor = Descriptor.MessageTypes[30];
+      internal__static_ProtoOAOrderErrorEvent__Descriptor = Descriptor.MessageTypes[32];
       internal__static_ProtoOAOrderErrorEvent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAOrderErrorEvent, global::ProtoOAOrderErrorEvent.Builder>(internal__static_ProtoOAOrderErrorEvent__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "ErrorCode", "OrderId", "PositionId", "Description", });
-      internal__static_ProtoOADealListReq__Descriptor = Descriptor.MessageTypes[31];
+      internal__static_ProtoOADealListReq__Descriptor = Descriptor.MessageTypes[33];
       internal__static_ProtoOADealListReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOADealListReq, global::ProtoOADealListReq.Builder>(internal__static_ProtoOADealListReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "FromTimestamp", "ToTimestamp", "MaxRows", });
-      internal__static_ProtoOADealListRes__Descriptor = Descriptor.MessageTypes[32];
+      internal__static_ProtoOADealListRes__Descriptor = Descriptor.MessageTypes[34];
       internal__static_ProtoOADealListRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOADealListRes, global::ProtoOADealListRes.Builder>(internal__static_ProtoOADealListRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Deal", "HasMore", });
-      internal__static_ProtoOAExpectedMarginReq__Descriptor = Descriptor.MessageTypes[33];
+      internal__static_ProtoOAExpectedMarginReq__Descriptor = Descriptor.MessageTypes[35];
       internal__static_ProtoOAExpectedMarginReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAExpectedMarginReq, global::ProtoOAExpectedMarginReq.Builder>(internal__static_ProtoOAExpectedMarginReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", "Volume", });
-      internal__static_ProtoOAExpectedMarginRes__Descriptor = Descriptor.MessageTypes[34];
+      internal__static_ProtoOAExpectedMarginRes__Descriptor = Descriptor.MessageTypes[36];
       internal__static_ProtoOAExpectedMarginRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAExpectedMarginRes, global::ProtoOAExpectedMarginRes.Builder>(internal__static_ProtoOAExpectedMarginRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Margin", });
-      internal__static_ProtoOAMarginChangedEvent__Descriptor = Descriptor.MessageTypes[35];
+      internal__static_ProtoOAMarginChangedEvent__Descriptor = Descriptor.MessageTypes[37];
       internal__static_ProtoOAMarginChangedEvent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAMarginChangedEvent, global::ProtoOAMarginChangedEvent.Builder>(internal__static_ProtoOAMarginChangedEvent__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "PositionId", "UsedMargin", });
-      internal__static_ProtoOACashFlowHistoryListReq__Descriptor = Descriptor.MessageTypes[36];
+      internal__static_ProtoOACashFlowHistoryListReq__Descriptor = Descriptor.MessageTypes[38];
       internal__static_ProtoOACashFlowHistoryListReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOACashFlowHistoryListReq, global::ProtoOACashFlowHistoryListReq.Builder>(internal__static_ProtoOACashFlowHistoryListReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "FromTimestamp", "ToTimestamp", });
-      internal__static_ProtoOACashFlowHistoryListRes__Descriptor = Descriptor.MessageTypes[37];
+      internal__static_ProtoOACashFlowHistoryListRes__Descriptor = Descriptor.MessageTypes[39];
       internal__static_ProtoOACashFlowHistoryListRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOACashFlowHistoryListRes, global::ProtoOACashFlowHistoryListRes.Builder>(internal__static_ProtoOACashFlowHistoryListRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "DepositWithdraw", });
-      internal__static_ProtoOAGetAccountListByAccessTokenReq__Descriptor = Descriptor.MessageTypes[38];
+      internal__static_ProtoOAGetAccountListByAccessTokenReq__Descriptor = Descriptor.MessageTypes[40];
       internal__static_ProtoOAGetAccountListByAccessTokenReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetAccountListByAccessTokenReq, global::ProtoOAGetAccountListByAccessTokenReq.Builder>(internal__static_ProtoOAGetAccountListByAccessTokenReq__Descriptor,
               new string[] { "PayloadType", "AccessToken", });
-      internal__static_ProtoOAGetAccountListByAccessTokenRes__Descriptor = Descriptor.MessageTypes[39];
+      internal__static_ProtoOAGetAccountListByAccessTokenRes__Descriptor = Descriptor.MessageTypes[41];
       internal__static_ProtoOAGetAccountListByAccessTokenRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetAccountListByAccessTokenRes, global::ProtoOAGetAccountListByAccessTokenRes.Builder>(internal__static_ProtoOAGetAccountListByAccessTokenRes__Descriptor,
-              new string[] { "PayloadType", "AccessToken", "PermissionScope", "CtidTraderAccountIds", });
-      internal__static_ProtoOASubscribeSpotsReq__Descriptor = Descriptor.MessageTypes[40];
+              new string[] { "PayloadType", "AccessToken", "PermissionScope", "CtidTraderAccount", });
+      internal__static_ProtoOASubscribeSpotsReq__Descriptor = Descriptor.MessageTypes[42];
       internal__static_ProtoOASubscribeSpotsReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOASubscribeSpotsReq, global::ProtoOASubscribeSpotsReq.Builder>(internal__static_ProtoOASubscribeSpotsReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", });
-      internal__static_ProtoOASubscribeSpotsRes__Descriptor = Descriptor.MessageTypes[41];
+      internal__static_ProtoOASubscribeSpotsRes__Descriptor = Descriptor.MessageTypes[43];
       internal__static_ProtoOASubscribeSpotsRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOASubscribeSpotsRes, global::ProtoOASubscribeSpotsRes.Builder>(internal__static_ProtoOASubscribeSpotsRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", });
-      internal__static_ProtoOAUnsubscribeSpotsReq__Descriptor = Descriptor.MessageTypes[42];
+      internal__static_ProtoOAUnsubscribeSpotsReq__Descriptor = Descriptor.MessageTypes[44];
       internal__static_ProtoOAUnsubscribeSpotsReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAUnsubscribeSpotsReq, global::ProtoOAUnsubscribeSpotsReq.Builder>(internal__static_ProtoOAUnsubscribeSpotsReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", });
-      internal__static_ProtoOAUnsubscribeSpotsRes__Descriptor = Descriptor.MessageTypes[43];
+      internal__static_ProtoOAUnsubscribeSpotsRes__Descriptor = Descriptor.MessageTypes[45];
       internal__static_ProtoOAUnsubscribeSpotsRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAUnsubscribeSpotsRes, global::ProtoOAUnsubscribeSpotsRes.Builder>(internal__static_ProtoOAUnsubscribeSpotsRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", });
-      internal__static_ProtoOASpotEvent__Descriptor = Descriptor.MessageTypes[44];
+      internal__static_ProtoOASpotEvent__Descriptor = Descriptor.MessageTypes[46];
       internal__static_ProtoOASpotEvent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOASpotEvent, global::ProtoOASpotEvent.Builder>(internal__static_ProtoOASpotEvent__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", "Bid", "Ask", "Trendbar", });
-      internal__static_ProtoOASubscribeLiveTrendbarReq__Descriptor = Descriptor.MessageTypes[45];
+      internal__static_ProtoOASubscribeLiveTrendbarReq__Descriptor = Descriptor.MessageTypes[47];
       internal__static_ProtoOASubscribeLiveTrendbarReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOASubscribeLiveTrendbarReq, global::ProtoOASubscribeLiveTrendbarReq.Builder>(internal__static_ProtoOASubscribeLiveTrendbarReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Period", "SymbolId", });
-      internal__static_ProtoOAUnsubscribeLiveTrendbarReq__Descriptor = Descriptor.MessageTypes[46];
+      internal__static_ProtoOAUnsubscribeLiveTrendbarReq__Descriptor = Descriptor.MessageTypes[48];
       internal__static_ProtoOAUnsubscribeLiveTrendbarReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAUnsubscribeLiveTrendbarReq, global::ProtoOAUnsubscribeLiveTrendbarReq.Builder>(internal__static_ProtoOAUnsubscribeLiveTrendbarReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Period", "SymbolId", });
-      internal__static_ProtoOAGetTrendbarsReq__Descriptor = Descriptor.MessageTypes[47];
+      internal__static_ProtoOAGetTrendbarsReq__Descriptor = Descriptor.MessageTypes[49];
       internal__static_ProtoOAGetTrendbarsReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetTrendbarsReq, global::ProtoOAGetTrendbarsReq.Builder>(internal__static_ProtoOAGetTrendbarsReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "FromTimestamp", "ToTimestamp", "Period", "SymbolId", });
-      internal__static_ProtoOAGetTrendbarsRes__Descriptor = Descriptor.MessageTypes[48];
+      internal__static_ProtoOAGetTrendbarsRes__Descriptor = Descriptor.MessageTypes[50];
       internal__static_ProtoOAGetTrendbarsRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetTrendbarsRes, global::ProtoOAGetTrendbarsRes.Builder>(internal__static_ProtoOAGetTrendbarsRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "Period", "Timestamp", "Trendbar", "SymbolId", });
-      internal__static_ProtoOAGetTickDataReq__Descriptor = Descriptor.MessageTypes[49];
+      internal__static_ProtoOAGetTickDataReq__Descriptor = Descriptor.MessageTypes[51];
       internal__static_ProtoOAGetTickDataReq__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetTickDataReq, global::ProtoOAGetTickDataReq.Builder>(internal__static_ProtoOAGetTickDataReq__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", "Type", "FromTimestamp", "ToTimestamp", });
-      internal__static_ProtoOAGetTickDataRes__Descriptor = Descriptor.MessageTypes[50];
+      internal__static_ProtoOAGetTickDataRes__Descriptor = Descriptor.MessageTypes[52];
       internal__static_ProtoOAGetTickDataRes__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetTickDataRes, global::ProtoOAGetTickDataRes.Builder>(internal__static_ProtoOAGetTickDataRes__Descriptor,
               new string[] { "PayloadType", "CtidTraderAccountId", "TickData", "HasMore", });
+      internal__static_ProtoOAGetCtidProfileByTokenReq__Descriptor = Descriptor.MessageTypes[53];
+      internal__static_ProtoOAGetCtidProfileByTokenReq__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetCtidProfileByTokenReq, global::ProtoOAGetCtidProfileByTokenReq.Builder>(internal__static_ProtoOAGetCtidProfileByTokenReq__Descriptor,
+              new string[] { "PayloadType", "AccessToken", });
+      internal__static_ProtoOAGetCtidProfileByTokenRes__Descriptor = Descriptor.MessageTypes[54];
+      internal__static_ProtoOAGetCtidProfileByTokenRes__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAGetCtidProfileByTokenRes, global::ProtoOAGetCtidProfileByTokenRes.Builder>(internal__static_ProtoOAGetCtidProfileByTokenRes__Descriptor,
+              new string[] { "PayloadType", "Profile", });
+      internal__static_ProtoOADepthEvent__Descriptor = Descriptor.MessageTypes[55];
+      internal__static_ProtoOADepthEvent__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOADepthEvent, global::ProtoOADepthEvent.Builder>(internal__static_ProtoOADepthEvent__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", "NewQuotes", "DeletedQuotes", });
+      internal__static_ProtoOASubscribeDepthQuotesReq__Descriptor = Descriptor.MessageTypes[56];
+      internal__static_ProtoOASubscribeDepthQuotesReq__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOASubscribeDepthQuotesReq, global::ProtoOASubscribeDepthQuotesReq.Builder>(internal__static_ProtoOASubscribeDepthQuotesReq__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", });
+      internal__static_ProtoOASubscribeDepthQuotesRes__Descriptor = Descriptor.MessageTypes[57];
+      internal__static_ProtoOASubscribeDepthQuotesRes__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOASubscribeDepthQuotesRes, global::ProtoOASubscribeDepthQuotesRes.Builder>(internal__static_ProtoOASubscribeDepthQuotesRes__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", });
+      internal__static_ProtoOAUnsubscribeDepthQuotesReq__Descriptor = Descriptor.MessageTypes[58];
+      internal__static_ProtoOAUnsubscribeDepthQuotesReq__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAUnsubscribeDepthQuotesReq, global::ProtoOAUnsubscribeDepthQuotesReq.Builder>(internal__static_ProtoOAUnsubscribeDepthQuotesReq__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", "SymbolId", });
+      internal__static_ProtoOAUnsubscribeDepthQuotesRes__Descriptor = Descriptor.MessageTypes[59];
+      internal__static_ProtoOAUnsubscribeDepthQuotesRes__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAUnsubscribeDepthQuotesRes, global::ProtoOAUnsubscribeDepthQuotesRes.Builder>(internal__static_ProtoOAUnsubscribeDepthQuotesRes__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", });
+      internal__static_ProtoOASymbolCategoryListReq__Descriptor = Descriptor.MessageTypes[60];
+      internal__static_ProtoOASymbolCategoryListReq__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolCategoryListReq, global::ProtoOASymbolCategoryListReq.Builder>(internal__static_ProtoOASymbolCategoryListReq__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", });
+      internal__static_ProtoOASymbolCategoryListRes__Descriptor = Descriptor.MessageTypes[61];
+      internal__static_ProtoOASymbolCategoryListRes__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOASymbolCategoryListRes, global::ProtoOASymbolCategoryListRes.Builder>(internal__static_ProtoOASymbolCategoryListRes__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", "SymbolCategory", });
+      internal__static_ProtoOAAccountLogoutReq__Descriptor = Descriptor.MessageTypes[62];
+      internal__static_ProtoOAAccountLogoutReq__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAAccountLogoutReq, global::ProtoOAAccountLogoutReq.Builder>(internal__static_ProtoOAAccountLogoutReq__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", });
+      internal__static_ProtoOAAccountLogoutRes__Descriptor = Descriptor.MessageTypes[63];
+      internal__static_ProtoOAAccountLogoutRes__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::ProtoOAAccountLogoutRes, global::ProtoOAAccountLogoutRes.Builder>(internal__static_ProtoOAAccountLogoutRes__Descriptor,
+              new string[] { "PayloadType", "CtidTraderAccountId", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -7014,8 +7137,8 @@ public sealed partial class ProtoOAAmendOrderReq : pb::GeneratedMessage<ProtoOAA
 public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<ProtoOAAmendPositionSLTPReq, ProtoOAAmendPositionSLTPReq.Builder> {
   private ProtoOAAmendPositionSLTPReq() { }
   private static readonly ProtoOAAmendPositionSLTPReq defaultInstance = new ProtoOAAmendPositionSLTPReq().MakeReadOnly();
-  private static readonly string[] _protoOAAmendPositionSLTPReqFieldNames = new string[] { "channel", "ctidTraderAccountId", "guaranteedStopLoss", "payloadType", "positionId", "stopLoss", "stopLossTriggerMethod", "takeProfit", "trailingStopLoss" };
-  private static readonly uint[] _protoOAAmendPositionSLTPReqFieldTags = new uint[] { 50, 16, 56, 8, 24, 33, 72, 41, 64 };
+  private static readonly string[] _protoOAAmendPositionSLTPReqFieldNames = new string[] { "ctidTraderAccountId", "guaranteedStopLoss", "payloadType", "positionId", "stopLoss", "stopLossTriggerMethod", "takeProfit", "trailingStopLoss" };
+  private static readonly uint[] _protoOAAmendPositionSLTPReqFieldTags = new uint[] { 16, 56, 8, 24, 33, 72, 41, 64 };
   public static ProtoOAAmendPositionSLTPReq DefaultInstance {
     get { return defaultInstance; }
   }
@@ -7086,16 +7209,6 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
     get { return takeProfit_; }
   }
   
-  public const int ChannelFieldNumber = 6;
-  private bool hasChannel;
-  private string channel_ = "";
-  public bool HasChannel {
-    get { return hasChannel; }
-  }
-  public string Channel {
-    get { return channel_; }
-  }
-  
   public const int GuaranteedStopLossFieldNumber = 7;
   private bool hasGuaranteedStopLoss;
   private bool guaranteedStopLoss_;
@@ -7138,31 +7251,28 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
     CalcSerializedSize();
     string[] field_names = _protoOAAmendPositionSLTPReqFieldNames;
     if (hasPayloadType) {
-      output.WriteEnum(1, field_names[3], (int) PayloadType, PayloadType);
+      output.WriteEnum(1, field_names[2], (int) PayloadType, PayloadType);
     }
     if (hasCtidTraderAccountId) {
-      output.WriteInt64(2, field_names[1], CtidTraderAccountId);
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
     }
     if (hasPositionId) {
-      output.WriteInt64(3, field_names[4], PositionId);
+      output.WriteInt64(3, field_names[3], PositionId);
     }
     if (hasStopLoss) {
-      output.WriteDouble(4, field_names[5], StopLoss);
+      output.WriteDouble(4, field_names[4], StopLoss);
     }
     if (hasTakeProfit) {
-      output.WriteDouble(5, field_names[7], TakeProfit);
-    }
-    if (hasChannel) {
-      output.WriteString(6, field_names[0], Channel);
+      output.WriteDouble(5, field_names[6], TakeProfit);
     }
     if (hasGuaranteedStopLoss) {
-      output.WriteBool(7, field_names[2], GuaranteedStopLoss);
+      output.WriteBool(7, field_names[1], GuaranteedStopLoss);
     }
     if (hasTrailingStopLoss) {
-      output.WriteBool(8, field_names[8], TrailingStopLoss);
+      output.WriteBool(8, field_names[7], TrailingStopLoss);
     }
     if (hasStopLossTriggerMethod) {
-      output.WriteEnum(9, field_names[6], (int) StopLossTriggerMethod, StopLossTriggerMethod);
+      output.WriteEnum(9, field_names[5], (int) StopLossTriggerMethod, StopLossTriggerMethod);
     }
     UnknownFields.WriteTo(output);
   }
@@ -7195,9 +7305,6 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
     }
     if (hasTakeProfit) {
       size += pb::CodedOutputStream.ComputeDoubleSize(5, TakeProfit);
-    }
-    if (hasChannel) {
-      size += pb::CodedOutputStream.ComputeStringSize(6, Channel);
     }
     if (hasGuaranteedStopLoss) {
       size += pb::CodedOutputStream.ComputeBoolSize(7, GuaranteedStopLoss);
@@ -7345,9 +7452,6 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
       if (other.HasTakeProfit) {
         TakeProfit = other.TakeProfit;
       }
-      if (other.HasChannel) {
-        Channel = other.Channel;
-      }
       if (other.HasGuaranteedStopLoss) {
         GuaranteedStopLoss = other.GuaranteedStopLoss;
       }
@@ -7426,10 +7530,6 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
           }
           case 41: {
             result.hasTakeProfit = input.ReadDouble(ref result.takeProfit_);
-            break;
-          }
-          case 50: {
-            result.hasChannel = input.ReadString(ref result.channel_);
             break;
           }
           case 56: {
@@ -7559,27 +7659,6 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
       PrepareBuilder();
       result.hasTakeProfit = false;
       result.takeProfit_ = 0D;
-      return this;
-    }
-    
-    public bool HasChannel {
-      get { return result.hasChannel; }
-    }
-    public string Channel {
-      get { return result.Channel; }
-      set { SetChannel(value); }
-    }
-    public Builder SetChannel(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasChannel = true;
-      result.channel_ = value;
-      return this;
-    }
-    public Builder ClearChannel() {
-      PrepareBuilder();
-      result.hasChannel = false;
-      result.channel_ = "";
       return this;
     }
     
@@ -12009,6 +12088,730 @@ public sealed partial class ProtoOASymbolChangedEvent : pb::GeneratedMessage<Pro
     }
   }
   static ProtoOASymbolChangedEvent() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAAssetClassListReq : pb::GeneratedMessage<ProtoOAAssetClassListReq, ProtoOAAssetClassListReq.Builder> {
+  private ProtoOAAssetClassListReq() { }
+  private static readonly ProtoOAAssetClassListReq defaultInstance = new ProtoOAAssetClassListReq().MakeReadOnly();
+  private static readonly string[] _protoOAAssetClassListReqFieldNames = new string[] { "ctidTraderAccountId", "payloadType" };
+  private static readonly uint[] _protoOAAssetClassListReqFieldTags = new uint[] { 16, 8 };
+  public static ProtoOAAssetClassListReq DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAAssetClassListReq DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAAssetClassListReq ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListReq__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAssetClassListReq, ProtoOAAssetClassListReq.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListReq__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_REQ;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAAssetClassListReqFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListReq ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAAssetClassListReq MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAAssetClassListReq prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAAssetClassListReq, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAAssetClassListReq cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAAssetClassListReq result;
+    
+    private ProtoOAAssetClassListReq PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAAssetClassListReq original = result;
+        result = new ProtoOAAssetClassListReq();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAAssetClassListReq MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAAssetClassListReq.Descriptor; }
+    }
+    
+    public override ProtoOAAssetClassListReq DefaultInstanceForType {
+      get { return global::ProtoOAAssetClassListReq.DefaultInstance; }
+    }
+    
+    public override ProtoOAAssetClassListReq BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAAssetClassListReq) {
+        return MergeFrom((ProtoOAAssetClassListReq) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAAssetClassListReq other) {
+      if (other == global::ProtoOAAssetClassListReq.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAAssetClassListReqFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAAssetClassListReqFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_REQ;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+  }
+  static ProtoOAAssetClassListReq() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAAssetClassListRes : pb::GeneratedMessage<ProtoOAAssetClassListRes, ProtoOAAssetClassListRes.Builder> {
+  private ProtoOAAssetClassListRes() { }
+  private static readonly ProtoOAAssetClassListRes defaultInstance = new ProtoOAAssetClassListRes().MakeReadOnly();
+  private static readonly string[] _protoOAAssetClassListResFieldNames = new string[] { "assetClass", "ctidTraderAccountId", "payloadType" };
+  private static readonly uint[] _protoOAAssetClassListResFieldTags = new uint[] { 26, 16, 8 };
+  public static ProtoOAAssetClassListRes DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAAssetClassListRes DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAAssetClassListRes ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListRes__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAssetClassListRes, ProtoOAAssetClassListRes.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListRes__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_RES;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public const int AssetClassFieldNumber = 3;
+  private pbc::PopsicleList<global::ProtoOAAssetClass> assetClass_ = new pbc::PopsicleList<global::ProtoOAAssetClass>();
+  public scg::IList<global::ProtoOAAssetClass> AssetClassList {
+    get { return assetClass_; }
+  }
+  public int AssetClassCount {
+    get { return assetClass_.Count; }
+  }
+  public global::ProtoOAAssetClass GetAssetClass(int index) {
+    return assetClass_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAAssetClassListResFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[2], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[1], CtidTraderAccountId);
+    }
+    if (assetClass_.Count > 0) {
+      output.WriteMessageArray(3, field_names[0], assetClass_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    foreach (global::ProtoOAAssetClass element in AssetClassList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(3, element);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAssetClassListRes ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAAssetClassListRes MakeReadOnly() {
+    assetClass_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAAssetClassListRes prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAAssetClassListRes, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAAssetClassListRes cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAAssetClassListRes result;
+    
+    private ProtoOAAssetClassListRes PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAAssetClassListRes original = result;
+        result = new ProtoOAAssetClassListRes();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAAssetClassListRes MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAAssetClassListRes.Descriptor; }
+    }
+    
+    public override ProtoOAAssetClassListRes DefaultInstanceForType {
+      get { return global::ProtoOAAssetClassListRes.DefaultInstance; }
+    }
+    
+    public override ProtoOAAssetClassListRes BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAAssetClassListRes) {
+        return MergeFrom((ProtoOAAssetClassListRes) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAAssetClassListRes other) {
+      if (other == global::ProtoOAAssetClassListRes.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      if (other.assetClass_.Count != 0) {
+        result.assetClass_.Add(other.assetClass_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAAssetClassListResFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAAssetClassListResFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+          case 26: {
+            input.ReadMessageArray(tag, field_name, result.assetClass_, global::ProtoOAAssetClass.DefaultInstance, extensionRegistry);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_RES;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<global::ProtoOAAssetClass> AssetClassList {
+      get { return PrepareBuilder().assetClass_; }
+    }
+    public int AssetClassCount {
+      get { return result.AssetClassCount; }
+    }
+    public global::ProtoOAAssetClass GetAssetClass(int index) {
+      return result.GetAssetClass(index);
+    }
+    public Builder SetAssetClass(int index, global::ProtoOAAssetClass value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.assetClass_[index] = value;
+      return this;
+    }
+    public Builder SetAssetClass(int index, global::ProtoOAAssetClass.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.assetClass_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddAssetClass(global::ProtoOAAssetClass value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.assetClass_.Add(value);
+      return this;
+    }
+    public Builder AddAssetClass(global::ProtoOAAssetClass.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.assetClass_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeAssetClass(scg::IEnumerable<global::ProtoOAAssetClass> values) {
+      PrepareBuilder();
+      result.assetClass_.Add(values);
+      return this;
+    }
+    public Builder ClearAssetClass() {
+      PrepareBuilder();
+      result.assetClass_.Clear();
+      return this;
+    }
+  }
+  static ProtoOAAssetClassListRes() {
     object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
@@ -17739,8 +18542,8 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::Generate
 public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::GeneratedMessage<ProtoOAGetAccountListByAccessTokenRes, ProtoOAGetAccountListByAccessTokenRes.Builder> {
   private ProtoOAGetAccountListByAccessTokenRes() { }
   private static readonly ProtoOAGetAccountListByAccessTokenRes defaultInstance = new ProtoOAGetAccountListByAccessTokenRes().MakeReadOnly();
-  private static readonly string[] _protoOAGetAccountListByAccessTokenResFieldNames = new string[] { "accessToken", "ctidTraderAccountIds", "payloadType", "permissionScope" };
-  private static readonly uint[] _protoOAGetAccountListByAccessTokenResFieldTags = new uint[] { 18, 32, 8, 24 };
+  private static readonly string[] _protoOAGetAccountListByAccessTokenResFieldNames = new string[] { "accessToken", "ctidTraderAccount", "payloadType", "permissionScope" };
+  private static readonly uint[] _protoOAGetAccountListByAccessTokenResFieldTags = new uint[] { 18, 34, 8, 24 };
   public static ProtoOAGetAccountListByAccessTokenRes DefaultInstance {
     get { return defaultInstance; }
   }
@@ -17791,21 +18594,24 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
     get { return permissionScope_; }
   }
   
-  public const int CtidTraderAccountIdsFieldNumber = 4;
-  private pbc::PopsicleList<long> ctidTraderAccountIds_ = new pbc::PopsicleList<long>();
-  public scg::IList<long> CtidTraderAccountIdsList {
-    get { return pbc::Lists.AsReadOnly(ctidTraderAccountIds_); }
+  public const int CtidTraderAccountFieldNumber = 4;
+  private pbc::PopsicleList<global::ProtoOACtidTraderAccount> ctidTraderAccount_ = new pbc::PopsicleList<global::ProtoOACtidTraderAccount>();
+  public scg::IList<global::ProtoOACtidTraderAccount> CtidTraderAccountList {
+    get { return ctidTraderAccount_; }
   }
-  public int CtidTraderAccountIdsCount {
-    get { return ctidTraderAccountIds_.Count; }
+  public int CtidTraderAccountCount {
+    get { return ctidTraderAccount_.Count; }
   }
-  public long GetCtidTraderAccountIds(int index) {
-    return ctidTraderAccountIds_[index];
+  public global::ProtoOACtidTraderAccount GetCtidTraderAccount(int index) {
+    return ctidTraderAccount_[index];
   }
   
   public override bool IsInitialized {
     get {
       if (!hasAccessToken) return false;
+      foreach (global::ProtoOACtidTraderAccount element in CtidTraderAccountList) {
+        if (!element.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -17822,8 +18628,8 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
     if (hasPermissionScope) {
       output.WriteEnum(3, field_names[3], (int) PermissionScope, PermissionScope);
     }
-    if (ctidTraderAccountIds_.Count > 0) {
-      output.WriteInt64Array(4, field_names[1], ctidTraderAccountIds_);
+    if (ctidTraderAccount_.Count > 0) {
+      output.WriteMessageArray(4, field_names[1], ctidTraderAccount_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -17851,13 +18657,8 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
     if (hasPermissionScope) {
       size += pb::CodedOutputStream.ComputeEnumSize(3, (int) PermissionScope);
     }
-    {
-      int dataSize = 0;
-      foreach (long element in CtidTraderAccountIdsList) {
-        dataSize += pb::CodedOutputStream.ComputeInt64SizeNoTag(element);
-      }
-      size += dataSize;
-      size += 1 * ctidTraderAccountIds_.Count;
+    foreach (global::ProtoOACtidTraderAccount element in CtidTraderAccountList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(4, element);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -17894,7 +18695,7 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private ProtoOAGetAccountListByAccessTokenRes MakeReadOnly() {
-    ctidTraderAccountIds_.MakeReadOnly();
+    ctidTraderAccount_.MakeReadOnly();
     return this;
   }
   
@@ -17991,8 +18792,8 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
       if (other.HasPermissionScope) {
         PermissionScope = other.PermissionScope;
       }
-      if (other.ctidTraderAccountIds_.Count != 0) {
-        result.ctidTraderAccountIds_.Add(other.ctidTraderAccountIds_);
+      if (other.ctidTraderAccount_.Count != 0) {
+        result.ctidTraderAccount_.Add(other.ctidTraderAccount_);
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -18065,9 +18866,8 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
             }
             break;
           }
-          case 34:
-          case 32: {
-            input.ReadInt64Array(tag, field_name, result.ctidTraderAccountIds_);
+          case 34: {
+            input.ReadMessageArray(tag, field_name, result.ctidTraderAccount_, global::ProtoOACtidTraderAccount.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -18141,33 +18941,47 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
       return this;
     }
     
-    public pbc::IPopsicleList<long> CtidTraderAccountIdsList {
-      get { return PrepareBuilder().ctidTraderAccountIds_; }
+    public pbc::IPopsicleList<global::ProtoOACtidTraderAccount> CtidTraderAccountList {
+      get { return PrepareBuilder().ctidTraderAccount_; }
     }
-    public int CtidTraderAccountIdsCount {
-      get { return result.CtidTraderAccountIdsCount; }
+    public int CtidTraderAccountCount {
+      get { return result.CtidTraderAccountCount; }
     }
-    public long GetCtidTraderAccountIds(int index) {
-      return result.GetCtidTraderAccountIds(index);
+    public global::ProtoOACtidTraderAccount GetCtidTraderAccount(int index) {
+      return result.GetCtidTraderAccount(index);
     }
-    public Builder SetCtidTraderAccountIds(int index, long value) {
+    public Builder SetCtidTraderAccount(int index, global::ProtoOACtidTraderAccount value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.ctidTraderAccountIds_[index] = value;
+      result.ctidTraderAccount_[index] = value;
       return this;
     }
-    public Builder AddCtidTraderAccountIds(long value) {
+    public Builder SetCtidTraderAccount(int index, global::ProtoOACtidTraderAccount.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.ctidTraderAccountIds_.Add(value);
+      result.ctidTraderAccount_[index] = builderForValue.Build();
       return this;
     }
-    public Builder AddRangeCtidTraderAccountIds(scg::IEnumerable<long> values) {
+    public Builder AddCtidTraderAccount(global::ProtoOACtidTraderAccount value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.ctidTraderAccountIds_.Add(values);
+      result.ctidTraderAccount_.Add(value);
       return this;
     }
-    public Builder ClearCtidTraderAccountIds() {
+    public Builder AddCtidTraderAccount(global::ProtoOACtidTraderAccount.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.ctidTraderAccountIds_.Clear();
+      result.ctidTraderAccount_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeCtidTraderAccount(scg::IEnumerable<global::ProtoOACtidTraderAccount> values) {
+      PrepareBuilder();
+      result.ctidTraderAccount_.Add(values);
+      return this;
+    }
+    public Builder ClearCtidTraderAccount() {
+      PrepareBuilder();
+      result.ctidTraderAccount_.Clear();
       return this;
     }
   }
@@ -22991,6 +23805,4020 @@ public sealed partial class ProtoOAGetTickDataRes : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOAGetTickDataRes() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::GeneratedMessage<ProtoOAGetCtidProfileByTokenReq, ProtoOAGetCtidProfileByTokenReq.Builder> {
+  private ProtoOAGetCtidProfileByTokenReq() { }
+  private static readonly ProtoOAGetCtidProfileByTokenReq defaultInstance = new ProtoOAGetCtidProfileByTokenReq().MakeReadOnly();
+  private static readonly string[] _protoOAGetCtidProfileByTokenReqFieldNames = new string[] { "accessToken", "payloadType" };
+  private static readonly uint[] _protoOAGetCtidProfileByTokenReqFieldTags = new uint[] { 18, 8 };
+  public static ProtoOAGetCtidProfileByTokenReq DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAGetCtidProfileByTokenReq DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAGetCtidProfileByTokenReq ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenReq__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetCtidProfileByTokenReq, ProtoOAGetCtidProfileByTokenReq.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenReq__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int AccessTokenFieldNumber = 2;
+  private bool hasAccessToken;
+  private string accessToken_ = "";
+  public bool HasAccessToken {
+    get { return hasAccessToken; }
+  }
+  public string AccessToken {
+    get { return accessToken_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasAccessToken) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAGetCtidProfileByTokenReqFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasAccessToken) {
+      output.WriteString(2, field_names[0], AccessToken);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasAccessToken) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, AccessToken);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenReq ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAGetCtidProfileByTokenReq MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAGetCtidProfileByTokenReq prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAGetCtidProfileByTokenReq, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAGetCtidProfileByTokenReq cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAGetCtidProfileByTokenReq result;
+    
+    private ProtoOAGetCtidProfileByTokenReq PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAGetCtidProfileByTokenReq original = result;
+        result = new ProtoOAGetCtidProfileByTokenReq();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAGetCtidProfileByTokenReq MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAGetCtidProfileByTokenReq.Descriptor; }
+    }
+    
+    public override ProtoOAGetCtidProfileByTokenReq DefaultInstanceForType {
+      get { return global::ProtoOAGetCtidProfileByTokenReq.DefaultInstance; }
+    }
+    
+    public override ProtoOAGetCtidProfileByTokenReq BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAGetCtidProfileByTokenReq) {
+        return MergeFrom((ProtoOAGetCtidProfileByTokenReq) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAGetCtidProfileByTokenReq other) {
+      if (other == global::ProtoOAGetCtidProfileByTokenReq.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasAccessToken) {
+        AccessToken = other.AccessToken;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAGetCtidProfileByTokenReqFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAGetCtidProfileByTokenReqFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 18: {
+            result.hasAccessToken = input.ReadString(ref result.accessToken_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ;
+      return this;
+    }
+    
+    public bool HasAccessToken {
+      get { return result.hasAccessToken; }
+    }
+    public string AccessToken {
+      get { return result.AccessToken; }
+      set { SetAccessToken(value); }
+    }
+    public Builder SetAccessToken(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasAccessToken = true;
+      result.accessToken_ = value;
+      return this;
+    }
+    public Builder ClearAccessToken() {
+      PrepareBuilder();
+      result.hasAccessToken = false;
+      result.accessToken_ = "";
+      return this;
+    }
+  }
+  static ProtoOAGetCtidProfileByTokenReq() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::GeneratedMessage<ProtoOAGetCtidProfileByTokenRes, ProtoOAGetCtidProfileByTokenRes.Builder> {
+  private ProtoOAGetCtidProfileByTokenRes() { }
+  private static readonly ProtoOAGetCtidProfileByTokenRes defaultInstance = new ProtoOAGetCtidProfileByTokenRes().MakeReadOnly();
+  private static readonly string[] _protoOAGetCtidProfileByTokenResFieldNames = new string[] { "payloadType", "profile" };
+  private static readonly uint[] _protoOAGetCtidProfileByTokenResFieldTags = new uint[] { 8, 18 };
+  public static ProtoOAGetCtidProfileByTokenRes DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAGetCtidProfileByTokenRes DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAGetCtidProfileByTokenRes ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenRes__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetCtidProfileByTokenRes, ProtoOAGetCtidProfileByTokenRes.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenRes__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int ProfileFieldNumber = 2;
+  private bool hasProfile;
+  private global::ProtoOACtidProfile profile_;
+  public bool HasProfile {
+    get { return hasProfile; }
+  }
+  public global::ProtoOACtidProfile Profile {
+    get { return profile_ ?? global::ProtoOACtidProfile.DefaultInstance; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasProfile) return false;
+      if (!Profile.IsInitialized) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAGetCtidProfileByTokenResFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[0], (int) PayloadType, PayloadType);
+    }
+    if (hasProfile) {
+      output.WriteMessage(2, field_names[1], Profile);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasProfile) {
+      size += pb::CodedOutputStream.ComputeMessageSize(2, Profile);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAGetCtidProfileByTokenRes ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAGetCtidProfileByTokenRes MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAGetCtidProfileByTokenRes prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAGetCtidProfileByTokenRes, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAGetCtidProfileByTokenRes cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAGetCtidProfileByTokenRes result;
+    
+    private ProtoOAGetCtidProfileByTokenRes PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAGetCtidProfileByTokenRes original = result;
+        result = new ProtoOAGetCtidProfileByTokenRes();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAGetCtidProfileByTokenRes MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAGetCtidProfileByTokenRes.Descriptor; }
+    }
+    
+    public override ProtoOAGetCtidProfileByTokenRes DefaultInstanceForType {
+      get { return global::ProtoOAGetCtidProfileByTokenRes.DefaultInstance; }
+    }
+    
+    public override ProtoOAGetCtidProfileByTokenRes BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAGetCtidProfileByTokenRes) {
+        return MergeFrom((ProtoOAGetCtidProfileByTokenRes) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAGetCtidProfileByTokenRes other) {
+      if (other == global::ProtoOAGetCtidProfileByTokenRes.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasProfile) {
+        MergeProfile(other.Profile);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAGetCtidProfileByTokenResFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAGetCtidProfileByTokenResFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 18: {
+            global::ProtoOACtidProfile.Builder subBuilder = global::ProtoOACtidProfile.CreateBuilder();
+            if (result.hasProfile) {
+              subBuilder.MergeFrom(Profile);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            Profile = subBuilder.BuildPartial();
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES;
+      return this;
+    }
+    
+    public bool HasProfile {
+     get { return result.hasProfile; }
+    }
+    public global::ProtoOACtidProfile Profile {
+      get { return result.Profile; }
+      set { SetProfile(value); }
+    }
+    public Builder SetProfile(global::ProtoOACtidProfile value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasProfile = true;
+      result.profile_ = value;
+      return this;
+    }
+    public Builder SetProfile(global::ProtoOACtidProfile.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasProfile = true;
+      result.profile_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeProfile(global::ProtoOACtidProfile value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasProfile &&
+          result.profile_ != global::ProtoOACtidProfile.DefaultInstance) {
+          result.profile_ = global::ProtoOACtidProfile.CreateBuilder(result.profile_).MergeFrom(value).BuildPartial();
+      } else {
+        result.profile_ = value;
+      }
+      result.hasProfile = true;
+      return this;
+    }
+    public Builder ClearProfile() {
+      PrepareBuilder();
+      result.hasProfile = false;
+      result.profile_ = null;
+      return this;
+    }
+  }
+  static ProtoOAGetCtidProfileByTokenRes() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOADepthEvent : pb::GeneratedMessage<ProtoOADepthEvent, ProtoOADepthEvent.Builder> {
+  private ProtoOADepthEvent() { }
+  private static readonly ProtoOADepthEvent defaultInstance = new ProtoOADepthEvent().MakeReadOnly();
+  private static readonly string[] _protoOADepthEventFieldNames = new string[] { "ctidTraderAccountId", "deletedQuotes", "newQuotes", "payloadType", "symbolId" };
+  private static readonly uint[] _protoOADepthEventFieldTags = new uint[] { 16, 42, 34, 8, 24 };
+  public static ProtoOADepthEvent DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOADepthEvent DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOADepthEvent ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOADepthEvent__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOADepthEvent, ProtoOADepthEvent.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOADepthEvent__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_DEPTH_EVENT;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public const int SymbolIdFieldNumber = 3;
+  private bool hasSymbolId;
+  private ulong symbolId_;
+  public bool HasSymbolId {
+    get { return hasSymbolId; }
+  }
+  [global::System.CLSCompliant(false)]
+  public ulong SymbolId {
+    get { return symbolId_; }
+  }
+  
+  public const int NewQuotesFieldNumber = 4;
+  private pbc::PopsicleList<global::ProtoOADepthQuote> newQuotes_ = new pbc::PopsicleList<global::ProtoOADepthQuote>();
+  public scg::IList<global::ProtoOADepthQuote> NewQuotesList {
+    get { return newQuotes_; }
+  }
+  public int NewQuotesCount {
+    get { return newQuotes_.Count; }
+  }
+  public global::ProtoOADepthQuote GetNewQuotes(int index) {
+    return newQuotes_[index];
+  }
+  
+  public const int DeletedQuotesFieldNumber = 5;
+  private int deletedQuotesMemoizedSerializedSize;
+  private pbc::PopsicleList<ulong> deletedQuotes_ = new pbc::PopsicleList<ulong>();
+  [global::System.CLSCompliant(false)]
+  public scg::IList<ulong> DeletedQuotesList {
+    get { return pbc::Lists.AsReadOnly(deletedQuotes_); }
+  }
+  public int DeletedQuotesCount {
+    get { return deletedQuotes_.Count; }
+  }
+  [global::System.CLSCompliant(false)]
+  public ulong GetDeletedQuotes(int index) {
+    return deletedQuotes_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      if (!hasSymbolId) return false;
+      foreach (global::ProtoOADepthQuote element in NewQuotesList) {
+        if (!element.IsInitialized) return false;
+      }
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOADepthEventFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[3], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    if (hasSymbolId) {
+      output.WriteUInt64(3, field_names[4], SymbolId);
+    }
+    if (newQuotes_.Count > 0) {
+      output.WriteMessageArray(4, field_names[2], newQuotes_);
+    }
+    if (deletedQuotes_.Count > 0) {
+      output.WritePackedUInt64Array(5, field_names[1], deletedQuotesMemoizedSerializedSize, deletedQuotes_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    if (hasSymbolId) {
+      size += pb::CodedOutputStream.ComputeUInt64Size(3, SymbolId);
+    }
+    foreach (global::ProtoOADepthQuote element in NewQuotesList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(4, element);
+    }
+    {
+      int dataSize = 0;
+      foreach (ulong element in DeletedQuotesList) {
+        dataSize += pb::CodedOutputStream.ComputeUInt64SizeNoTag(element);
+      }
+      size += dataSize;
+      if (deletedQuotes_.Count != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32SizeNoTag(dataSize);
+      }
+      deletedQuotesMemoizedSerializedSize = dataSize;
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOADepthEvent ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOADepthEvent ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOADepthEvent MakeReadOnly() {
+    newQuotes_.MakeReadOnly();
+    deletedQuotes_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOADepthEvent prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOADepthEvent, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOADepthEvent cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOADepthEvent result;
+    
+    private ProtoOADepthEvent PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOADepthEvent original = result;
+        result = new ProtoOADepthEvent();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOADepthEvent MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOADepthEvent.Descriptor; }
+    }
+    
+    public override ProtoOADepthEvent DefaultInstanceForType {
+      get { return global::ProtoOADepthEvent.DefaultInstance; }
+    }
+    
+    public override ProtoOADepthEvent BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOADepthEvent) {
+        return MergeFrom((ProtoOADepthEvent) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOADepthEvent other) {
+      if (other == global::ProtoOADepthEvent.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      if (other.HasSymbolId) {
+        SymbolId = other.SymbolId;
+      }
+      if (other.newQuotes_.Count != 0) {
+        result.newQuotes_.Add(other.newQuotes_);
+      }
+      if (other.deletedQuotes_.Count != 0) {
+        result.deletedQuotes_.Add(other.deletedQuotes_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOADepthEventFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOADepthEventFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+          case 24: {
+            result.hasSymbolId = input.ReadUInt64(ref result.symbolId_);
+            break;
+          }
+          case 34: {
+            input.ReadMessageArray(tag, field_name, result.newQuotes_, global::ProtoOADepthQuote.DefaultInstance, extensionRegistry);
+            break;
+          }
+          case 42:
+          case 40: {
+            input.ReadUInt64Array(tag, field_name, result.deletedQuotes_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_DEPTH_EVENT;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+    
+    public bool HasSymbolId {
+      get { return result.hasSymbolId; }
+    }
+    [global::System.CLSCompliant(false)]
+    public ulong SymbolId {
+      get { return result.SymbolId; }
+      set { SetSymbolId(value); }
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder SetSymbolId(ulong value) {
+      PrepareBuilder();
+      result.hasSymbolId = true;
+      result.symbolId_ = value;
+      return this;
+    }
+    public Builder ClearSymbolId() {
+      PrepareBuilder();
+      result.hasSymbolId = false;
+      result.symbolId_ = 0UL;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<global::ProtoOADepthQuote> NewQuotesList {
+      get { return PrepareBuilder().newQuotes_; }
+    }
+    public int NewQuotesCount {
+      get { return result.NewQuotesCount; }
+    }
+    public global::ProtoOADepthQuote GetNewQuotes(int index) {
+      return result.GetNewQuotes(index);
+    }
+    public Builder SetNewQuotes(int index, global::ProtoOADepthQuote value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.newQuotes_[index] = value;
+      return this;
+    }
+    public Builder SetNewQuotes(int index, global::ProtoOADepthQuote.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.newQuotes_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddNewQuotes(global::ProtoOADepthQuote value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.newQuotes_.Add(value);
+      return this;
+    }
+    public Builder AddNewQuotes(global::ProtoOADepthQuote.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.newQuotes_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeNewQuotes(scg::IEnumerable<global::ProtoOADepthQuote> values) {
+      PrepareBuilder();
+      result.newQuotes_.Add(values);
+      return this;
+    }
+    public Builder ClearNewQuotes() {
+      PrepareBuilder();
+      result.newQuotes_.Clear();
+      return this;
+    }
+    
+    [global::System.CLSCompliant(false)]
+    public pbc::IPopsicleList<ulong> DeletedQuotesList {
+      get { return PrepareBuilder().deletedQuotes_; }
+    }
+    public int DeletedQuotesCount {
+      get { return result.DeletedQuotesCount; }
+    }
+    [global::System.CLSCompliant(false)]
+    public ulong GetDeletedQuotes(int index) {
+      return result.GetDeletedQuotes(index);
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder SetDeletedQuotes(int index, ulong value) {
+      PrepareBuilder();
+      result.deletedQuotes_[index] = value;
+      return this;
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder AddDeletedQuotes(ulong value) {
+      PrepareBuilder();
+      result.deletedQuotes_.Add(value);
+      return this;
+    }
+    [global::System.CLSCompliant(false)]
+    public Builder AddRangeDeletedQuotes(scg::IEnumerable<ulong> values) {
+      PrepareBuilder();
+      result.deletedQuotes_.Add(values);
+      return this;
+    }
+    public Builder ClearDeletedQuotes() {
+      PrepareBuilder();
+      result.deletedQuotes_.Clear();
+      return this;
+    }
+  }
+  static ProtoOADepthEvent() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::GeneratedMessage<ProtoOASubscribeDepthQuotesReq, ProtoOASubscribeDepthQuotesReq.Builder> {
+  private ProtoOASubscribeDepthQuotesReq() { }
+  private static readonly ProtoOASubscribeDepthQuotesReq defaultInstance = new ProtoOASubscribeDepthQuotesReq().MakeReadOnly();
+  private static readonly string[] _protoOASubscribeDepthQuotesReqFieldNames = new string[] { "ctidTraderAccountId", "payloadType", "symbolId" };
+  private static readonly uint[] _protoOASubscribeDepthQuotesReqFieldTags = new uint[] { 16, 8, 24 };
+  public static ProtoOASubscribeDepthQuotesReq DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOASubscribeDepthQuotesReq DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOASubscribeDepthQuotesReq ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesReq__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeDepthQuotesReq, ProtoOASubscribeDepthQuotesReq.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesReq__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_REQ;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public const int SymbolIdFieldNumber = 3;
+  private pbc::PopsicleList<long> symbolId_ = new pbc::PopsicleList<long>();
+  public scg::IList<long> SymbolIdList {
+    get { return pbc::Lists.AsReadOnly(symbolId_); }
+  }
+  public int SymbolIdCount {
+    get { return symbolId_.Count; }
+  }
+  public long GetSymbolId(int index) {
+    return symbolId_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOASubscribeDepthQuotesReqFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    if (symbolId_.Count > 0) {
+      output.WriteInt64Array(3, field_names[2], symbolId_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    {
+      int dataSize = 0;
+      foreach (long element in SymbolIdList) {
+        dataSize += pb::CodedOutputStream.ComputeInt64SizeNoTag(element);
+      }
+      size += dataSize;
+      size += 1 * symbolId_.Count;
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesReq ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOASubscribeDepthQuotesReq MakeReadOnly() {
+    symbolId_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOASubscribeDepthQuotesReq prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOASubscribeDepthQuotesReq, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOASubscribeDepthQuotesReq cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOASubscribeDepthQuotesReq result;
+    
+    private ProtoOASubscribeDepthQuotesReq PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOASubscribeDepthQuotesReq original = result;
+        result = new ProtoOASubscribeDepthQuotesReq();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOASubscribeDepthQuotesReq MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOASubscribeDepthQuotesReq.Descriptor; }
+    }
+    
+    public override ProtoOASubscribeDepthQuotesReq DefaultInstanceForType {
+      get { return global::ProtoOASubscribeDepthQuotesReq.DefaultInstance; }
+    }
+    
+    public override ProtoOASubscribeDepthQuotesReq BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOASubscribeDepthQuotesReq) {
+        return MergeFrom((ProtoOASubscribeDepthQuotesReq) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOASubscribeDepthQuotesReq other) {
+      if (other == global::ProtoOASubscribeDepthQuotesReq.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      if (other.symbolId_.Count != 0) {
+        result.symbolId_.Add(other.symbolId_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOASubscribeDepthQuotesReqFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOASubscribeDepthQuotesReqFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+          case 26:
+          case 24: {
+            input.ReadInt64Array(tag, field_name, result.symbolId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_REQ;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<long> SymbolIdList {
+      get { return PrepareBuilder().symbolId_; }
+    }
+    public int SymbolIdCount {
+      get { return result.SymbolIdCount; }
+    }
+    public long GetSymbolId(int index) {
+      return result.GetSymbolId(index);
+    }
+    public Builder SetSymbolId(int index, long value) {
+      PrepareBuilder();
+      result.symbolId_[index] = value;
+      return this;
+    }
+    public Builder AddSymbolId(long value) {
+      PrepareBuilder();
+      result.symbolId_.Add(value);
+      return this;
+    }
+    public Builder AddRangeSymbolId(scg::IEnumerable<long> values) {
+      PrepareBuilder();
+      result.symbolId_.Add(values);
+      return this;
+    }
+    public Builder ClearSymbolId() {
+      PrepareBuilder();
+      result.symbolId_.Clear();
+      return this;
+    }
+  }
+  static ProtoOASubscribeDepthQuotesReq() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::GeneratedMessage<ProtoOASubscribeDepthQuotesRes, ProtoOASubscribeDepthQuotesRes.Builder> {
+  private ProtoOASubscribeDepthQuotesRes() { }
+  private static readonly ProtoOASubscribeDepthQuotesRes defaultInstance = new ProtoOASubscribeDepthQuotesRes().MakeReadOnly();
+  private static readonly string[] _protoOASubscribeDepthQuotesResFieldNames = new string[] { "ctidTraderAccountId", "payloadType" };
+  private static readonly uint[] _protoOASubscribeDepthQuotesResFieldTags = new uint[] { 16, 8 };
+  public static ProtoOASubscribeDepthQuotesRes DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOASubscribeDepthQuotesRes DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOASubscribeDepthQuotesRes ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesRes__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeDepthQuotesRes, ProtoOASubscribeDepthQuotesRes.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesRes__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOASubscribeDepthQuotesResFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASubscribeDepthQuotesRes ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOASubscribeDepthQuotesRes MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOASubscribeDepthQuotesRes prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOASubscribeDepthQuotesRes, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOASubscribeDepthQuotesRes cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOASubscribeDepthQuotesRes result;
+    
+    private ProtoOASubscribeDepthQuotesRes PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOASubscribeDepthQuotesRes original = result;
+        result = new ProtoOASubscribeDepthQuotesRes();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOASubscribeDepthQuotesRes MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOASubscribeDepthQuotesRes.Descriptor; }
+    }
+    
+    public override ProtoOASubscribeDepthQuotesRes DefaultInstanceForType {
+      get { return global::ProtoOASubscribeDepthQuotesRes.DefaultInstance; }
+    }
+    
+    public override ProtoOASubscribeDepthQuotesRes BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOASubscribeDepthQuotesRes) {
+        return MergeFrom((ProtoOASubscribeDepthQuotesRes) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOASubscribeDepthQuotesRes other) {
+      if (other == global::ProtoOASubscribeDepthQuotesRes.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOASubscribeDepthQuotesResFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOASubscribeDepthQuotesResFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+  }
+  static ProtoOASubscribeDepthQuotesRes() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::GeneratedMessage<ProtoOAUnsubscribeDepthQuotesReq, ProtoOAUnsubscribeDepthQuotesReq.Builder> {
+  private ProtoOAUnsubscribeDepthQuotesReq() { }
+  private static readonly ProtoOAUnsubscribeDepthQuotesReq defaultInstance = new ProtoOAUnsubscribeDepthQuotesReq().MakeReadOnly();
+  private static readonly string[] _protoOAUnsubscribeDepthQuotesReqFieldNames = new string[] { "ctidTraderAccountId", "payloadType", "symbolId" };
+  private static readonly uint[] _protoOAUnsubscribeDepthQuotesReqFieldTags = new uint[] { 16, 8, 24 };
+  public static ProtoOAUnsubscribeDepthQuotesReq DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAUnsubscribeDepthQuotesReq DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAUnsubscribeDepthQuotesReq ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesReq__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeDepthQuotesReq, ProtoOAUnsubscribeDepthQuotesReq.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesReq__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_REQ;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public const int SymbolIdFieldNumber = 3;
+  private pbc::PopsicleList<long> symbolId_ = new pbc::PopsicleList<long>();
+  public scg::IList<long> SymbolIdList {
+    get { return pbc::Lists.AsReadOnly(symbolId_); }
+  }
+  public int SymbolIdCount {
+    get { return symbolId_.Count; }
+  }
+  public long GetSymbolId(int index) {
+    return symbolId_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAUnsubscribeDepthQuotesReqFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    if (symbolId_.Count > 0) {
+      output.WriteInt64Array(3, field_names[2], symbolId_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    {
+      int dataSize = 0;
+      foreach (long element in SymbolIdList) {
+        dataSize += pb::CodedOutputStream.ComputeInt64SizeNoTag(element);
+      }
+      size += dataSize;
+      size += 1 * symbolId_.Count;
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesReq ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAUnsubscribeDepthQuotesReq MakeReadOnly() {
+    symbolId_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAUnsubscribeDepthQuotesReq prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAUnsubscribeDepthQuotesReq, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAUnsubscribeDepthQuotesReq cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAUnsubscribeDepthQuotesReq result;
+    
+    private ProtoOAUnsubscribeDepthQuotesReq PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAUnsubscribeDepthQuotesReq original = result;
+        result = new ProtoOAUnsubscribeDepthQuotesReq();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAUnsubscribeDepthQuotesReq MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAUnsubscribeDepthQuotesReq.Descriptor; }
+    }
+    
+    public override ProtoOAUnsubscribeDepthQuotesReq DefaultInstanceForType {
+      get { return global::ProtoOAUnsubscribeDepthQuotesReq.DefaultInstance; }
+    }
+    
+    public override ProtoOAUnsubscribeDepthQuotesReq BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAUnsubscribeDepthQuotesReq) {
+        return MergeFrom((ProtoOAUnsubscribeDepthQuotesReq) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAUnsubscribeDepthQuotesReq other) {
+      if (other == global::ProtoOAUnsubscribeDepthQuotesReq.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      if (other.symbolId_.Count != 0) {
+        result.symbolId_.Add(other.symbolId_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAUnsubscribeDepthQuotesReqFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAUnsubscribeDepthQuotesReqFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+          case 26:
+          case 24: {
+            input.ReadInt64Array(tag, field_name, result.symbolId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_REQ;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<long> SymbolIdList {
+      get { return PrepareBuilder().symbolId_; }
+    }
+    public int SymbolIdCount {
+      get { return result.SymbolIdCount; }
+    }
+    public long GetSymbolId(int index) {
+      return result.GetSymbolId(index);
+    }
+    public Builder SetSymbolId(int index, long value) {
+      PrepareBuilder();
+      result.symbolId_[index] = value;
+      return this;
+    }
+    public Builder AddSymbolId(long value) {
+      PrepareBuilder();
+      result.symbolId_.Add(value);
+      return this;
+    }
+    public Builder AddRangeSymbolId(scg::IEnumerable<long> values) {
+      PrepareBuilder();
+      result.symbolId_.Add(values);
+      return this;
+    }
+    public Builder ClearSymbolId() {
+      PrepareBuilder();
+      result.symbolId_.Clear();
+      return this;
+    }
+  }
+  static ProtoOAUnsubscribeDepthQuotesReq() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::GeneratedMessage<ProtoOAUnsubscribeDepthQuotesRes, ProtoOAUnsubscribeDepthQuotesRes.Builder> {
+  private ProtoOAUnsubscribeDepthQuotesRes() { }
+  private static readonly ProtoOAUnsubscribeDepthQuotesRes defaultInstance = new ProtoOAUnsubscribeDepthQuotesRes().MakeReadOnly();
+  private static readonly string[] _protoOAUnsubscribeDepthQuotesResFieldNames = new string[] { "ctidTraderAccountId", "payloadType" };
+  private static readonly uint[] _protoOAUnsubscribeDepthQuotesResFieldTags = new uint[] { 16, 8 };
+  public static ProtoOAUnsubscribeDepthQuotesRes DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAUnsubscribeDepthQuotesRes DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAUnsubscribeDepthQuotesRes ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesRes__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeDepthQuotesRes, ProtoOAUnsubscribeDepthQuotesRes.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesRes__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAUnsubscribeDepthQuotesResFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAUnsubscribeDepthQuotesRes ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAUnsubscribeDepthQuotesRes MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAUnsubscribeDepthQuotesRes prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAUnsubscribeDepthQuotesRes, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAUnsubscribeDepthQuotesRes cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAUnsubscribeDepthQuotesRes result;
+    
+    private ProtoOAUnsubscribeDepthQuotesRes PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAUnsubscribeDepthQuotesRes original = result;
+        result = new ProtoOAUnsubscribeDepthQuotesRes();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAUnsubscribeDepthQuotesRes MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAUnsubscribeDepthQuotesRes.Descriptor; }
+    }
+    
+    public override ProtoOAUnsubscribeDepthQuotesRes DefaultInstanceForType {
+      get { return global::ProtoOAUnsubscribeDepthQuotesRes.DefaultInstance; }
+    }
+    
+    public override ProtoOAUnsubscribeDepthQuotesRes BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAUnsubscribeDepthQuotesRes) {
+        return MergeFrom((ProtoOAUnsubscribeDepthQuotesRes) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAUnsubscribeDepthQuotesRes other) {
+      if (other == global::ProtoOAUnsubscribeDepthQuotesRes.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAUnsubscribeDepthQuotesResFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAUnsubscribeDepthQuotesResFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+  }
+  static ProtoOAUnsubscribeDepthQuotesRes() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOASymbolCategoryListReq : pb::GeneratedMessage<ProtoOASymbolCategoryListReq, ProtoOASymbolCategoryListReq.Builder> {
+  private ProtoOASymbolCategoryListReq() { }
+  private static readonly ProtoOASymbolCategoryListReq defaultInstance = new ProtoOASymbolCategoryListReq().MakeReadOnly();
+  private static readonly string[] _protoOASymbolCategoryListReqFieldNames = new string[] { "ctidTraderAccountId", "payloadType" };
+  private static readonly uint[] _protoOASymbolCategoryListReqFieldTags = new uint[] { 16, 8 };
+  public static ProtoOASymbolCategoryListReq DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOASymbolCategoryListReq DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOASymbolCategoryListReq ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListReq__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolCategoryListReq, ProtoOASymbolCategoryListReq.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListReq__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_REQ;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOASymbolCategoryListReqFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListReq ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOASymbolCategoryListReq MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOASymbolCategoryListReq prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOASymbolCategoryListReq, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOASymbolCategoryListReq cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOASymbolCategoryListReq result;
+    
+    private ProtoOASymbolCategoryListReq PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOASymbolCategoryListReq original = result;
+        result = new ProtoOASymbolCategoryListReq();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOASymbolCategoryListReq MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOASymbolCategoryListReq.Descriptor; }
+    }
+    
+    public override ProtoOASymbolCategoryListReq DefaultInstanceForType {
+      get { return global::ProtoOASymbolCategoryListReq.DefaultInstance; }
+    }
+    
+    public override ProtoOASymbolCategoryListReq BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOASymbolCategoryListReq) {
+        return MergeFrom((ProtoOASymbolCategoryListReq) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOASymbolCategoryListReq other) {
+      if (other == global::ProtoOASymbolCategoryListReq.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOASymbolCategoryListReqFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOASymbolCategoryListReqFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_REQ;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+  }
+  static ProtoOASymbolCategoryListReq() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOASymbolCategoryListRes : pb::GeneratedMessage<ProtoOASymbolCategoryListRes, ProtoOASymbolCategoryListRes.Builder> {
+  private ProtoOASymbolCategoryListRes() { }
+  private static readonly ProtoOASymbolCategoryListRes defaultInstance = new ProtoOASymbolCategoryListRes().MakeReadOnly();
+  private static readonly string[] _protoOASymbolCategoryListResFieldNames = new string[] { "ctidTraderAccountId", "payloadType", "symbolCategory" };
+  private static readonly uint[] _protoOASymbolCategoryListResFieldTags = new uint[] { 16, 8, 26 };
+  public static ProtoOASymbolCategoryListRes DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOASymbolCategoryListRes DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOASymbolCategoryListRes ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListRes__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolCategoryListRes, ProtoOASymbolCategoryListRes.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListRes__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_RES;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public const int SymbolCategoryFieldNumber = 3;
+  private pbc::PopsicleList<global::ProtoOASymbolCategory> symbolCategory_ = new pbc::PopsicleList<global::ProtoOASymbolCategory>();
+  public scg::IList<global::ProtoOASymbolCategory> SymbolCategoryList {
+    get { return symbolCategory_; }
+  }
+  public int SymbolCategoryCount {
+    get { return symbolCategory_.Count; }
+  }
+  public global::ProtoOASymbolCategory GetSymbolCategory(int index) {
+    return symbolCategory_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      foreach (global::ProtoOASymbolCategory element in SymbolCategoryList) {
+        if (!element.IsInitialized) return false;
+      }
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOASymbolCategoryListResFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    if (symbolCategory_.Count > 0) {
+      output.WriteMessageArray(3, field_names[2], symbolCategory_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    foreach (global::ProtoOASymbolCategory element in SymbolCategoryList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(3, element);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOASymbolCategoryListRes ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOASymbolCategoryListRes MakeReadOnly() {
+    symbolCategory_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOASymbolCategoryListRes prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOASymbolCategoryListRes, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOASymbolCategoryListRes cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOASymbolCategoryListRes result;
+    
+    private ProtoOASymbolCategoryListRes PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOASymbolCategoryListRes original = result;
+        result = new ProtoOASymbolCategoryListRes();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOASymbolCategoryListRes MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOASymbolCategoryListRes.Descriptor; }
+    }
+    
+    public override ProtoOASymbolCategoryListRes DefaultInstanceForType {
+      get { return global::ProtoOASymbolCategoryListRes.DefaultInstance; }
+    }
+    
+    public override ProtoOASymbolCategoryListRes BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOASymbolCategoryListRes) {
+        return MergeFrom((ProtoOASymbolCategoryListRes) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOASymbolCategoryListRes other) {
+      if (other == global::ProtoOASymbolCategoryListRes.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      if (other.symbolCategory_.Count != 0) {
+        result.symbolCategory_.Add(other.symbolCategory_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOASymbolCategoryListResFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOASymbolCategoryListResFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+          case 26: {
+            input.ReadMessageArray(tag, field_name, result.symbolCategory_, global::ProtoOASymbolCategory.DefaultInstance, extensionRegistry);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_RES;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<global::ProtoOASymbolCategory> SymbolCategoryList {
+      get { return PrepareBuilder().symbolCategory_; }
+    }
+    public int SymbolCategoryCount {
+      get { return result.SymbolCategoryCount; }
+    }
+    public global::ProtoOASymbolCategory GetSymbolCategory(int index) {
+      return result.GetSymbolCategory(index);
+    }
+    public Builder SetSymbolCategory(int index, global::ProtoOASymbolCategory value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.symbolCategory_[index] = value;
+      return this;
+    }
+    public Builder SetSymbolCategory(int index, global::ProtoOASymbolCategory.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.symbolCategory_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddSymbolCategory(global::ProtoOASymbolCategory value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.symbolCategory_.Add(value);
+      return this;
+    }
+    public Builder AddSymbolCategory(global::ProtoOASymbolCategory.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.symbolCategory_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeSymbolCategory(scg::IEnumerable<global::ProtoOASymbolCategory> values) {
+      PrepareBuilder();
+      result.symbolCategory_.Add(values);
+      return this;
+    }
+    public Builder ClearSymbolCategory() {
+      PrepareBuilder();
+      result.symbolCategory_.Clear();
+      return this;
+    }
+  }
+  static ProtoOASymbolCategoryListRes() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAAccountLogoutReq : pb::GeneratedMessage<ProtoOAAccountLogoutReq, ProtoOAAccountLogoutReq.Builder> {
+  private ProtoOAAccountLogoutReq() { }
+  private static readonly ProtoOAAccountLogoutReq defaultInstance = new ProtoOAAccountLogoutReq().MakeReadOnly();
+  private static readonly string[] _protoOAAccountLogoutReqFieldNames = new string[] { "ctidTraderAccountId", "payloadType" };
+  private static readonly uint[] _protoOAAccountLogoutReqFieldTags = new uint[] { 16, 8 };
+  public static ProtoOAAccountLogoutReq DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAAccountLogoutReq DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAAccountLogoutReq ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutReq__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountLogoutReq, ProtoOAAccountLogoutReq.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutReq__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_REQ;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAAccountLogoutReqFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutReq ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAAccountLogoutReq MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAAccountLogoutReq prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAAccountLogoutReq, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAAccountLogoutReq cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAAccountLogoutReq result;
+    
+    private ProtoOAAccountLogoutReq PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAAccountLogoutReq original = result;
+        result = new ProtoOAAccountLogoutReq();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAAccountLogoutReq MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAAccountLogoutReq.Descriptor; }
+    }
+    
+    public override ProtoOAAccountLogoutReq DefaultInstanceForType {
+      get { return global::ProtoOAAccountLogoutReq.DefaultInstance; }
+    }
+    
+    public override ProtoOAAccountLogoutReq BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAAccountLogoutReq) {
+        return MergeFrom((ProtoOAAccountLogoutReq) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAAccountLogoutReq other) {
+      if (other == global::ProtoOAAccountLogoutReq.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAAccountLogoutReqFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAAccountLogoutReqFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_REQ;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+  }
+  static ProtoOAAccountLogoutReq() {
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class ProtoOAAccountLogoutRes : pb::GeneratedMessage<ProtoOAAccountLogoutRes, ProtoOAAccountLogoutRes.Builder> {
+  private ProtoOAAccountLogoutRes() { }
+  private static readonly ProtoOAAccountLogoutRes defaultInstance = new ProtoOAAccountLogoutRes().MakeReadOnly();
+  private static readonly string[] _protoOAAccountLogoutResFieldNames = new string[] { "ctidTraderAccountId", "payloadType" };
+  private static readonly uint[] _protoOAAccountLogoutResFieldTags = new uint[] { 16, 8 };
+  public static ProtoOAAccountLogoutRes DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override ProtoOAAccountLogoutRes DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override ProtoOAAccountLogoutRes ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutRes__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountLogoutRes, ProtoOAAccountLogoutRes.Builder> InternalFieldAccessors {
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutRes__FieldAccessorTable; }
+  }
+  
+  public const int PayloadTypeFieldNumber = 1;
+  private bool hasPayloadType;
+  private global::ProtoOAPayloadType payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_RES;
+  public bool HasPayloadType {
+    get { return hasPayloadType; }
+  }
+  public global::ProtoOAPayloadType PayloadType {
+    get { return payloadType_; }
+  }
+  
+  public const int CtidTraderAccountIdFieldNumber = 2;
+  private bool hasCtidTraderAccountId;
+  private long ctidTraderAccountId_;
+  public bool HasCtidTraderAccountId {
+    get { return hasCtidTraderAccountId; }
+  }
+  public long CtidTraderAccountId {
+    get { return ctidTraderAccountId_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCtidTraderAccountId) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _protoOAAccountLogoutResFieldNames;
+    if (hasPayloadType) {
+      output.WriteEnum(1, field_names[1], (int) PayloadType, PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      output.WriteInt64(2, field_names[0], CtidTraderAccountId);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPayloadType) {
+      size += pb::CodedOutputStream.ComputeEnumSize(1, (int) PayloadType);
+    }
+    if (hasCtidTraderAccountId) {
+      size += pb::CodedOutputStream.ComputeInt64Size(2, CtidTraderAccountId);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static ProtoOAAccountLogoutRes ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private ProtoOAAccountLogoutRes MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(ProtoOAAccountLogoutRes prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<ProtoOAAccountLogoutRes, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(ProtoOAAccountLogoutRes cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private ProtoOAAccountLogoutRes result;
+    
+    private ProtoOAAccountLogoutRes PrepareBuilder() {
+      if (resultIsReadOnly) {
+        ProtoOAAccountLogoutRes original = result;
+        result = new ProtoOAAccountLogoutRes();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override ProtoOAAccountLogoutRes MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::ProtoOAAccountLogoutRes.Descriptor; }
+    }
+    
+    public override ProtoOAAccountLogoutRes DefaultInstanceForType {
+      get { return global::ProtoOAAccountLogoutRes.DefaultInstance; }
+    }
+    
+    public override ProtoOAAccountLogoutRes BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is ProtoOAAccountLogoutRes) {
+        return MergeFrom((ProtoOAAccountLogoutRes) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(ProtoOAAccountLogoutRes other) {
+      if (other == global::ProtoOAAccountLogoutRes.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPayloadType) {
+        PayloadType = other.PayloadType;
+      }
+      if (other.HasCtidTraderAccountId) {
+        CtidTraderAccountId = other.CtidTraderAccountId;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_protoOAAccountLogoutResFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _protoOAAccountLogoutResFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            object unknown;
+            if(input.ReadEnum(ref result.payloadType_, out unknown)) {
+              result.hasPayloadType = true;
+            } else if(unknown is int) {
+              if (unknownFields == null) {
+                unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+              }
+              unknownFields.MergeVarintField(1, (ulong)(int)unknown);
+            }
+            break;
+          }
+          case 16: {
+            result.hasCtidTraderAccountId = input.ReadInt64(ref result.ctidTraderAccountId_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPayloadType {
+     get { return result.hasPayloadType; }
+    }
+    public global::ProtoOAPayloadType PayloadType {
+      get { return result.PayloadType; }
+      set { SetPayloadType(value); }
+    }
+    public Builder SetPayloadType(global::ProtoOAPayloadType value) {
+      PrepareBuilder();
+      result.hasPayloadType = true;
+      result.payloadType_ = value;
+      return this;
+    }
+    public Builder ClearPayloadType() {
+      PrepareBuilder();
+      result.hasPayloadType = false;
+      result.payloadType_ = global::ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_RES;
+      return this;
+    }
+    
+    public bool HasCtidTraderAccountId {
+      get { return result.hasCtidTraderAccountId; }
+    }
+    public long CtidTraderAccountId {
+      get { return result.CtidTraderAccountId; }
+      set { SetCtidTraderAccountId(value); }
+    }
+    public Builder SetCtidTraderAccountId(long value) {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = true;
+      result.ctidTraderAccountId_ = value;
+      return this;
+    }
+    public Builder ClearCtidTraderAccountId() {
+      PrepareBuilder();
+      result.hasCtidTraderAccountId = false;
+      result.ctidTraderAccountId_ = 0L;
+      return this;
+    }
+  }
+  static ProtoOAAccountLogoutRes() {
     object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }

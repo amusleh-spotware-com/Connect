@@ -36,6 +36,7 @@ namespace ProtobufConsoleTesterApp
             _client.Events.AccountListResponseEvent += Events_AccountListResponseEvent;
             _client.Events.AccountAuthorizationResponseEvent += Events_AccountAuthorizationResponseEvent;
             _client.Events.SymbolsListResponseEvent += Events_SymbolsListResponseEvent;
+            _client.Events.TraderResponseEvent += Events_TraderResponseEvent; ;
 
             await _client.Connect(Mode.Live);
 
@@ -52,6 +53,13 @@ namespace ProtobufConsoleTesterApp
             Console.ReadKey();
         }
 
+        private static void Events_TraderResponseEvent(object sender, ProtoOATraderRes e)
+        {
+            Console.WriteLine($"TraderResponseEvent: {e.Trader}");
+
+            Console.WriteLine("--------------------------------------");
+        }
+
         private async static void Events_AccountAuthorizationResponseEvent(object sender, ProtoOAAccountAuthRes e)
         {
             Console.WriteLine($"AccountAuthorizationResponse: {e}");
@@ -60,7 +68,7 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending Account Symbols List Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateSymbolsListRequest(_accountId));
+            await _client.SendMessage(_client.MessagesFactory.CreateTraderRequest(_accountId));
 
             Console.WriteLine("--------------------------------------");
         }
@@ -127,7 +135,7 @@ namespace ProtobufConsoleTesterApp
 
         private static void Events_ErrorEvent(object sender, ProtoOAErrorRes e)
         {
-            Console.WriteLine($"Error: {e.Description}");
+            Console.WriteLine($"Error: {e}");
 
             Console.WriteLine("--------------------------------------");
         }

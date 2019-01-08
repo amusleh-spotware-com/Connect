@@ -20,8 +20,6 @@ public static partial class CommonModelMessages {
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoLongRange, global::ProtoLongRange.Builder> internal__static_ProtoLongRange__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_ProtoDoubleRange__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::ProtoDoubleRange, global::ProtoDoubleRange.Builder> internal__static_ProtoDoubleRange__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_ProtoGeoInfo__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::ProtoGeoInfo, global::ProtoGeoInfo.Builder> internal__static_ProtoGeoInfo__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -35,30 +33,18 @@ public static partial class CommonModelMessages {
           "ChlDb21tb25Nb2RlbE1lc3NhZ2VzLnByb3RvIikKDVByb3RvSW50UmFuZ2US", 
           "DAoEZnJvbRgBIAEoBRIKCgJ0bxgCIAEoBSIqCg5Qcm90b0xvbmdSYW5nZRIM", 
           "CgRmcm9tGAEgASgDEgoKAnRvGAIgASgDIiwKEFByb3RvRG91YmxlUmFuZ2US", 
-          "DAoEZnJvbRgBIAEoARIKCgJ0bxgCIAEoASI4CgxQcm90b0dlb0luZm8SFgoO", 
-          "Y291bnRyeUlzb0NvZGUYASABKAkSEAoIY2l0eU5hbWUYAiABKAkquQUKEFBy", 
-          "b3RvUGF5bG9hZFR5cGUSEQoNUFJPVE9fTUVTU0FHRRAFEiMKH1BST1RPX1NF", 
-          "UlZFUl9ERVBUSF9RVU9URVNfRVZFTlQQAhIbChdQUk9UT19TRVJWRVJfU1BP", 
-          "VF9FVkVOVBADEhwKGFBST1RPX1NFUlZFUl9ERVBUSF9FVkVOVBAEEioKJlBS", 
-          "T1RPX1NFUlZFUl9UUkFJTElOR19TTF9DSEFOR0VEX0VWRU5UEAYSDQoJRVJS", 
-          "T1JfUkVTEDISEwoPSEVBUlRCRUFUX0VWRU5UEDMSDAoIUElOR19SRVEQNBIM", 
-          "CghQSU5HX1JFUxA1EiMKH1JFR0lTVEVSX0NTRVJWRVJfQ09OTkVDVElPTl9S", 
-          "RVEQNhIjCh9SRUdJU1RFUl9DU0VSVkVSX0NPTk5FQ1RJT05fUkVTEDcSJQoh", 
-          "VU5SRUdJU1RFUl9DU0VSVkVSX0NPTk5FQ1RJT05fUkVREDgSJQohVU5SRUdJ", 
-          "U1RFUl9DU0VSVkVSX0NPTk5FQ1RJT05fUkVTEDkSHwobUkVHSVNURVJfQ0lE", 
-          "X0NPTk5FQ1RJT05fUkVREDoSHwobUkVHSVNURVJfQ0lEX0NPTk5FQ1RJT05f", 
-          "UkVTEDsSIQodVU5SRUdJU1RFUl9DSURfQ09OTkVDVElPTl9SRVEQPBIhCh1V", 
-          "TlJFR0lTVEVSX0NJRF9DT05ORUNUSU9OX1JFUxA9EicKI1JFR0lTVEVSX0pB", 
-          "VkFfTUlSUk9SX0NPTk5FQ1RJT05fUkVRED4SJwojUkVHSVNURVJfSkFWQV9N", 
-          "SVJST1JfQ09OTkVDVElPTl9SRVMQPxIpCiVVTlJFR0lTVEVSX0pBVkFfTUlS", 
-          "Uk9SX0NPTk5FQ1RJT05fUkVREEASKQolVU5SRUdJU1RFUl9KQVZBX01JUlJP", 
-          "Ul9DT05ORUNUSU9OX1JFUxBBKoQCCg5Qcm90b0Vycm9yQ29kZRIRCg1VTktO", 
-          "T1dOX0VSUk9SEAESFwoTVU5TVVBQT1JURURfTUVTU0FHRRACEhMKD0lOVkFM", 
-          "SURfUkVRVUVTVBADEhIKDldST05HX1BBU1NXT1JEEAQSEQoNVElNRU9VVF9F", 
-          "UlJPUhAFEhQKEEVOVElUWV9OT1RfRk9VTkQQBhIWChJDQU5UX1JPVVRFX1JF", 
-          "UVVFU1QQBxISCg5GUkFNRV9UT09fTE9ORxAIEhEKDU1BUktFVF9DTE9TRUQQ", 
-          "CRIbChdDT05DVVJSRU5UX01PRElGSUNBVElPThAKEhgKFEJMT0NLRURfUEFZ", 
-          "TE9BRF9UWVBFEAtCTQooY29tLnh0cmFkZXIucHJvdG9jb2wucHJvdG8uY29t", 
+          "DAoEZnJvbRgBIAEoARIKCgJ0bxgCIAEoASpSChBQcm90b1BheWxvYWRUeXBl", 
+          "Eg0KCUVSUk9SX1JFUxAyEhMKD0hFQVJUQkVBVF9FVkVOVBAzEgwKCFBJTkdf", 
+          "UkVREDQSDAoIUElOR19SRVMQNSrqAQoOUHJvdG9FcnJvckNvZGUSEQoNVU5L", 
+          "Tk9XTl9FUlJPUhABEhcKE1VOU1VQUE9SVEVEX01FU1NBR0UQAhITCg9JTlZB", 
+          "TElEX1JFUVVFU1QQAxISCg5XUk9OR19QQVNTV09SRBAEEhEKDVRJTUVPVVRf", 
+          "RVJST1IQBRIUChBFTlRJVFlfTk9UX0ZPVU5EEAYSFgoSQ0FOVF9ST1VURV9S", 
+          "RVFVRVNUEAcSEgoORlJBTUVfVE9PX0xPTkcQCBIRCg1NQVJLRVRfQ0xPU0VE", 
+          "EAkSGwoXQ09OQ1VSUkVOVF9NT0RJRklDQVRJT04QCiojCg5Qcm90b1RyYWRl", 
+          "U2lkZRIHCgNCVVkQARIICgRTRUxMEAIqIgoOUHJvdG9RdW90ZVR5cGUSBwoD", 
+          "QklEEAESBwoDQVNLEAIqVQoQUHJvdG9UaW1lSW5Gb3JjZRISCg5HT09EX1RJ", 
+          "TExfREFURRABEhQKEEdPT0RfVElMTF9DQU5DRUwQAhIXChNJTU1FRElBVEVf", 
+          "T1JfQ0FOQ0VMEANCTQooY29tLnh0cmFkZXIucHJvdG9jb2wucHJvdG8uY29t", 
         "bW9ucy5tb2RlbEIcQ29udGFpbmVyQ29tbW9uTW9kZWxNZXNzYWdlc1ABoAEB"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
@@ -74,10 +60,6 @@ public static partial class CommonModelMessages {
       internal__static_ProtoDoubleRange__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::ProtoDoubleRange, global::ProtoDoubleRange.Builder>(internal__static_ProtoDoubleRange__Descriptor,
               new string[] { "From", "To", });
-      internal__static_ProtoGeoInfo__Descriptor = Descriptor.MessageTypes[3];
-      internal__static_ProtoGeoInfo__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::ProtoGeoInfo, global::ProtoGeoInfo.Builder>(internal__static_ProtoGeoInfo__Descriptor,
-              new string[] { "CountryIsoCode", "CityName", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -89,27 +71,10 @@ public static partial class CommonModelMessages {
 }
 #region Enums
 public enum ProtoPayloadType {
-  PROTO_MESSAGE = 5,
-  PROTO_SERVER_DEPTH_QUOTES_EVENT = 2,
-  PROTO_SERVER_SPOT_EVENT = 3,
-  PROTO_SERVER_DEPTH_EVENT = 4,
-  PROTO_SERVER_TRAILING_SL_CHANGED_EVENT = 6,
   ERROR_RES = 50,
   HEARTBEAT_EVENT = 51,
   PING_REQ = 52,
   PING_RES = 53,
-  REGISTER_CSERVER_CONNECTION_REQ = 54,
-  REGISTER_CSERVER_CONNECTION_RES = 55,
-  UNREGISTER_CSERVER_CONNECTION_REQ = 56,
-  UNREGISTER_CSERVER_CONNECTION_RES = 57,
-  REGISTER_CID_CONNECTION_REQ = 58,
-  REGISTER_CID_CONNECTION_RES = 59,
-  UNREGISTER_CID_CONNECTION_REQ = 60,
-  UNREGISTER_CID_CONNECTION_RES = 61,
-  REGISTER_JAVA_MIRROR_CONNECTION_REQ = 62,
-  REGISTER_JAVA_MIRROR_CONNECTION_RES = 63,
-  UNREGISTER_JAVA_MIRROR_CONNECTION_REQ = 64,
-  UNREGISTER_JAVA_MIRROR_CONNECTION_RES = 65
 }
 
 public enum ProtoErrorCode {
@@ -123,7 +88,22 @@ public enum ProtoErrorCode {
   FRAME_TOO_LONG = 8,
   MARKET_CLOSED = 9,
   CONCURRENT_MODIFICATION = 10,
-  BLOCKED_PAYLOAD_TYPE = 11,
+}
+
+public enum ProtoTradeSide {
+  BUY = 1,
+  SELL = 2,
+}
+
+public enum ProtoQuoteType {
+  BID = 1,
+  ASK = 2,
+}
+
+public enum ProtoTimeInForce {
+  GOOD_TILL_DATE = 1,
+  GOOD_TILL_CANCEL = 2,
+  IMMEDIATE_OR_CANCEL = 3,
 }
 
 #endregion
@@ -1079,326 +1059,6 @@ public sealed partial class ProtoDoubleRange : pb::GeneratedMessage<ProtoDoubleR
     }
   }
   static ProtoDoubleRange() {
-    object.ReferenceEquals(global::CommonModelMessages.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class ProtoGeoInfo : pb::GeneratedMessage<ProtoGeoInfo, ProtoGeoInfo.Builder> {
-  private ProtoGeoInfo() { }
-  private static readonly ProtoGeoInfo defaultInstance = new ProtoGeoInfo().MakeReadOnly();
-  private static readonly string[] _protoGeoInfoFieldNames = new string[] { "cityName", "countryIsoCode" };
-  private static readonly uint[] _protoGeoInfoFieldTags = new uint[] { 18, 10 };
-  public static ProtoGeoInfo DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override ProtoGeoInfo DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override ProtoGeoInfo ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CommonModelMessages.internal__static_ProtoGeoInfo__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<ProtoGeoInfo, ProtoGeoInfo.Builder> InternalFieldAccessors {
-    get { return global::CommonModelMessages.internal__static_ProtoGeoInfo__FieldAccessorTable; }
-  }
-  
-  public const int CountryIsoCodeFieldNumber = 1;
-  private bool hasCountryIsoCode;
-  private string countryIsoCode_ = "";
-  public bool HasCountryIsoCode {
-    get { return hasCountryIsoCode; }
-  }
-  public string CountryIsoCode {
-    get { return countryIsoCode_; }
-  }
-  
-  public const int CityNameFieldNumber = 2;
-  private bool hasCityName;
-  private string cityName_ = "";
-  public bool HasCityName {
-    get { return hasCityName; }
-  }
-  public string CityName {
-    get { return cityName_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _protoGeoInfoFieldNames;
-    if (hasCountryIsoCode) {
-      output.WriteString(1, field_names[1], CountryIsoCode);
-    }
-    if (hasCityName) {
-      output.WriteString(2, field_names[0], CityName);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasCountryIsoCode) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, CountryIsoCode);
-    }
-    if (hasCityName) {
-      size += pb::CodedOutputStream.ComputeStringSize(2, CityName);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static ProtoGeoInfo ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static ProtoGeoInfo ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private ProtoGeoInfo MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(ProtoGeoInfo prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<ProtoGeoInfo, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(ProtoGeoInfo cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private ProtoGeoInfo result;
-    
-    private ProtoGeoInfo PrepareBuilder() {
-      if (resultIsReadOnly) {
-        ProtoGeoInfo original = result;
-        result = new ProtoGeoInfo();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override ProtoGeoInfo MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::ProtoGeoInfo.Descriptor; }
-    }
-    
-    public override ProtoGeoInfo DefaultInstanceForType {
-      get { return global::ProtoGeoInfo.DefaultInstance; }
-    }
-    
-    public override ProtoGeoInfo BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is ProtoGeoInfo) {
-        return MergeFrom((ProtoGeoInfo) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(ProtoGeoInfo other) {
-      if (other == global::ProtoGeoInfo.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasCountryIsoCode) {
-        CountryIsoCode = other.CountryIsoCode;
-      }
-      if (other.HasCityName) {
-        CityName = other.CityName;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_protoGeoInfoFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _protoGeoInfoFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasCountryIsoCode = input.ReadString(ref result.countryIsoCode_);
-            break;
-          }
-          case 18: {
-            result.hasCityName = input.ReadString(ref result.cityName_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasCountryIsoCode {
-      get { return result.hasCountryIsoCode; }
-    }
-    public string CountryIsoCode {
-      get { return result.CountryIsoCode; }
-      set { SetCountryIsoCode(value); }
-    }
-    public Builder SetCountryIsoCode(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCountryIsoCode = true;
-      result.countryIsoCode_ = value;
-      return this;
-    }
-    public Builder ClearCountryIsoCode() {
-      PrepareBuilder();
-      result.hasCountryIsoCode = false;
-      result.countryIsoCode_ = "";
-      return this;
-    }
-    
-    public bool HasCityName {
-      get { return result.hasCityName; }
-    }
-    public string CityName {
-      get { return result.CityName; }
-      set { SetCityName(value); }
-    }
-    public Builder SetCityName(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCityName = true;
-      result.cityName_ = value;
-      return this;
-    }
-    public Builder ClearCityName() {
-      PrepareBuilder();
-      result.hasCityName = false;
-      result.cityName_ = "";
-      return this;
-    }
-  }
-  static ProtoGeoInfo() {
     object.ReferenceEquals(global::CommonModelMessages.Descriptor, null);
   }
 }
