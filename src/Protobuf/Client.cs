@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Connect.Protobuf
 {
-    public class Client
+    public class Client: IDisposable
     {
         #region Fields
 
@@ -18,19 +18,29 @@ namespace Connect.Protobuf
 
         private readonly MessagesFactory _messagesFactory = new MessagesFactory();
 
-        private TcpClient _apiClient;
+        private TcpClient _liveClient, _demoClient;
 
-        private SslStream _apiStream;
+        private SslStream _liveStream, _demoStream;
 
-        private ProcessStatus _listenerStatus = ProcessStatus.None, _heartbeatSenderStatus = ProcessStatus.None;
+        private bool _isAuthorized, _stopSendingHeartbeats, _stopListening;
 
-        private bool _isAuthorized;
+        private ProcessStatus _liveListeningStatus, _demoListeningStatus, _sendingHeartbeatsStatus;
 
         #endregion Fields
 
         #region Properties
 
-        public bool IsConnected => _apiClient?.Client != null && _apiClient.Client.Connected;
+        public bool IsLiveConnected => _liveClient?.Client != null && _liveClient.Client.Connected;
+
+        public bool IsDemoConnected => _demoClient?.Client != null && _demoClient.Client.Connected;
+
+        public bool IsConnected => IsLiveConnected && IsDemoConnected;
+
+        public ProcessStatus LiveListeningStatus => _liveListeningStatus;
+
+        public ProcessStatus DemoListeningStatus => _demoListeningStatus;
+
+        public ProcessStatus SendingHeartbeatsStatus => _sendingHeartbeatsStatus;
 
         public bool IsAuthorized => _isAuthorized;
 
@@ -38,61 +48,65 @@ namespace Connect.Protobuf
 
         public MessagesFactory MessagesFactory => _messagesFactory;
 
-        public ProcessStatus ListenerStatus => _listenerStatus;
-
-        public ProcessStatus HeartbeatSenderStatus => _heartbeatSenderStatus;
-
         #endregion Properties
 
         #region Connection
 
-        public async Task Connect(Mode mode)
+        public async Task Connect()
         {
-            _apiClient = new TcpClient();
+            _liveClient = new TcpClient();
+            _demoClient = new TcpClient();
 
-            _apiClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
-            _apiClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            _liveClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            _liveClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            _demoClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            _demoClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
 
-            string apiURL = BaseUrls.GetBaseUrl(ApiType.Protobuf, mode);
+            string liveURL = BaseUrls.GetBaseUrl(ApiType.Protobuf, Mode.Live);
+            string demoURL = BaseUrls.GetBaseUrl(ApiType.Protobuf, Mode.Sandbox);
 
-            await _apiClient.ConnectAsync(apiURL, BaseUrls.ProtobufPort);
+            await _liveClient.ConnectAsync(liveURL, BaseUrls.ProtobufPort);
+            await _demoClient.ConnectAsync(demoURL, BaseUrls.ProtobufPort);
 
-            _apiStream = new SslStream(
-                _apiClient.GetStream(),
-                false,
-                new RemoteCertificateValidationCallback((
-                    object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) =>
-                {
-                    return sslPolicyErrors == SslPolicyErrors.None;
-                }),
+            _liveStream = new SslStream(_liveClient.GetStream(), false, new RemoteCertificateValidationCallback(CertificateValidationCallback),
                 null);
 
-            await _apiStream.AuthenticateAsClientAsync(apiURL);
+            _demoStream = new SslStream(_demoClient.GetStream(), false, new RemoteCertificateValidationCallback(CertificateValidationCallback),
+                null);
 
-            StartHeartbeatSending();
+            await _liveStream.AuthenticateAsClientAsync(liveURL);
+            await _demoStream.AuthenticateAsClientAsync(demoURL);
 
-            StartListener();
+            StartSendingHeartbeats();
+
+            StartListening(_liveStream, Mode.Live);
+            StartListening(_demoStream, Mode.Sandbox);
         }
 
         public async Task Disconnect()
         {
-            await StoptHeartbeatSending();
+            await StoptSendingHeartbeats();
 
-            await StoptListener();
+            StoptListening();
 
-            await _apiStream?.FlushAsync();
+            await _liveStream.FlushAsync();
+            await _demoStream.FlushAsync();
 
-            _apiStream?.Dispose();
+            _liveStream.Close();
+            _demoStream.Close();
 
-            _apiClient?.Close();
+            _liveClient.Close();
+            _demoClient.Close();
         }
 
         #endregion Connection
 
         #region Heart beat
 
-        public void StartHeartbeatSending(double interval = 10000)
+        private void StartSendingHeartbeats(double interval = 10000)
         {
+            _sendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
+
             System.Timers.Timer heartbeatTimer = new System.Timers.Timer(interval);
 
             heartbeatTimer.Interval = interval;
@@ -103,41 +117,40 @@ namespace Connect.Protobuf
                 {
                     (sender as System.Timers.Timer).Stop();
 
-                    if (IsConnected && _heartbeatSenderStatus == ProcessStatus.Running || _heartbeatSenderStatus == ProcessStatus.WaitingToRun)
+                    if (IsConnected && !_stopSendingHeartbeats)
                     {
                         ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent();
 
-                        await SendMessage(protoMessage);
+                        await SendMessage(protoMessage, Mode.Live);
+                        await SendMessage(protoMessage, Mode.Sandbox);
+
+                        (sender as System.Timers.Timer).Start();
                     }
                     else
                     {
-                        (sender as System.Timers.Timer).Stop();
-
-                        _heartbeatSenderStatus = ProcessStatus.Stopped;
+                        _sendingHeartbeatsStatus = ProcessStatus.Stopped;
                     }
-
-                    (sender as System.Timers.Timer).Start();
                 }
                 catch (Exception ex)
                 {
                     (sender as System.Timers.Timer).Stop();
 
-                    _heartbeatSenderStatus = ProcessStatus.Error;
+                    _sendingHeartbeatsStatus = ProcessStatus.Error;
 
                     Events.OnHeartbeatSendingStopped(this, ex);
                 }
             };
 
-            _heartbeatSenderStatus = ProcessStatus.WaitingToRun;
-
             heartbeatTimer.Start();
         }
 
-        public async Task StoptHeartbeatSending()
+        private async Task StoptSendingHeartbeats()
         {
-            _heartbeatSenderStatus = ProcessStatus.WaitingToStop;
+            _stopSendingHeartbeats = true;
 
-            while (_heartbeatSenderStatus != ProcessStatus.Stopped)
+            _sendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
+
+            while (_sendingHeartbeatsStatus != ProcessStatus.Stopped)
             {
                 await Task.Delay(10);
             }
@@ -147,77 +160,84 @@ namespace Connect.Protobuf
 
         #region Listener
 
-        public void StartListener()
+        private void StartListening(SslStream stream, Mode mode)
         {
-            _listenerStatus = ProcessStatus.WaitingToRun;
+            SetListeningStatus(mode, ProcessStatus.WaitingToRun);
 
-#pragma warning disable 4014
-            Task.Run(() =>
+            #pragma warning disable 4014
+            Task.Run(async () =>
             {
-                Listener();
-            });
-#pragma warning restore 4014
-        }
-
-        public async Task StoptListener()
-        {
-            _listenerStatus = ProcessStatus.WaitingToStop;
-
-            while (_listenerStatus != ProcessStatus.Stopped)
-            {
-                await Task.Delay(10);
-            }
-        }
-
-        private async void Listener()
-        {
-            try
-            {
-                while (IsConnected && _listenerStatus == ProcessStatus.Running || _listenerStatus == ProcessStatus.WaitingToRun)
+                try
                 {
-                    byte[] lengthArray = new byte[sizeof(int)];
+                    SetListeningStatus(mode, ProcessStatus.Running);
 
-                    int readBytes = 0;
-
-                    do
+                    while (IsConnected && !_stopListening)
                     {
-                        readBytes += await _apiStream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes);
+                        byte[] lengthArray = new byte[sizeof(int)];
+
+                        int readBytes = 0;
+
+                        do
+                        {
+                            readBytes += await stream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes);
+                        }
+                        while (readBytes < lengthArray.Length);
+
+                        int length = BitConverter.ToInt32(lengthArray.Reverse().ToArray(), 0);
+
+                        if (length <= 0)
+                        {
+                            continue;
+                        }
+                        else if (length > _maxMessageSize)
+                        {
+                            string exceptionMsg = $"Message length ({length}) is out of range (0 - {_maxMessageSize})";
+
+                            throw new ArgumentOutOfRangeException(exceptionMsg);
+                        }
+
+                        byte[] message = new byte[length];
+
+                        readBytes = 0;
+
+                        do
+                        {
+                            readBytes += await stream.ReadAsync(message, readBytes, message.Length - readBytes);
+                        }
+                        while (readBytes < length);
+
+                        InvokeMessageEvent(message);
                     }
-                    while (readBytes < lengthArray.Length);
 
-                    int length = BitConverter.ToInt32(lengthArray.Reverse().ToArray(), 0);
-
-                    if (length <= 0)
-                    {
-                        continue;
-                    }
-                    else if (length > _maxMessageSize)
-                    {
-                        string exceptionMsg = $"Message length ({length}) is out of range (0 - {_maxMessageSize})";
-
-                        throw new ArgumentOutOfRangeException(exceptionMsg);
-                    }
-
-                    byte[] message = new byte[length];
-
-                    readBytes = 0;
-
-                    do
-                    {
-                        readBytes += await _apiStream.ReadAsync(message, readBytes, message.Length - readBytes);
-                    }
-                    while (readBytes < length);
-
-                    InvokeMessageEvent(message);
+                    SetListeningStatus(mode, ProcessStatus.Stopped);
                 }
+                catch (Exception ex)
+                {
+                    SetListeningStatus(mode, ProcessStatus.Error);
 
-                _listenerStatus = ProcessStatus.Stopped;
-            }
-            catch (Exception ex)
+                    Events.OnListenerStopped(this, ex);
+                }
+            });
+            #pragma warning restore 4014
+        }
+
+        private void StoptListening()
+        {
+            _stopListening = true;
+
+            SetListeningStatus(Mode.Live, ProcessStatus.WaitingToStop);
+            SetListeningStatus(Mode.Sandbox, ProcessStatus.WaitingToStop);
+        }
+
+        private void SetListeningStatus(Mode mode, ProcessStatus processStatus)
+        {
+            if (mode == Mode.Live)
             {
-                _listenerStatus = ProcessStatus.Error;
-
-                Events.OnListenerStopped(this, ex);
+                _liveListeningStatus = processStatus;
+            }
+            else
+            {
+                _demoListeningStatus = processStatus;
             }
         }
 
@@ -225,7 +245,7 @@ namespace Connect.Protobuf
 
         #region Send message
 
-        public async Task SendMessage(ProtoMessage message)
+        public async Task SendMessage(ProtoMessage message, Mode mode)
         {
             if (IsConnected)
             {
@@ -233,9 +253,11 @@ namespace Connect.Protobuf
 
                 byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
 
-                await _apiStream.WriteAsync(length, 0, length.Length);
+                SslStream stream = mode == Mode.Live ? _liveStream : _demoStream;
 
-                await _apiStream.WriteAsync(messageByte, 0, messageByte.Length);
+                await stream.WriteAsync(length, 0, length.Length);
+
+                await stream.WriteAsync(messageByte, 0, messageByte.Length);
             }
             else
             {
@@ -485,13 +507,35 @@ namespace Connect.Protobuf
                     {
                         ProtoOAGetCtidProfileByTokenRes ctidProfileRes = MessagesFactory.GetCtidProfileResponse(protoMessage.Payload);
 
-                        _events.OnCtidProfileResponseEvent(this, ctidProfileRes);
+                        _events.OnCtidProfileResponse(this, ctidProfileRes);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_RES:
+                    {
+                        ProtoOASymbolCategoryListRes symbolCategoryListRes = MessagesFactory.GetSymbolCategoryListResponse(protoMessage.Payload);
+
+                        _events.OnSymbolCategoryListResponse(this, symbolCategoryListRes);
 
                         break;
                     }
                 default:
                     break;
             }
+        }
+
+        private bool CertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        {
+            return sslPolicyErrors == SslPolicyErrors.None;
+        }
+
+        public void Dispose()
+        {
+            _liveStream?.Dispose();
+            _demoStream?.Dispose();
+
+            _liveClient?.Dispose();
+            _demoClient?.Dispose();
         }
 
         #endregion

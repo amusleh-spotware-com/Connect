@@ -69,6 +69,8 @@ namespace Connect.Protobuf
 
         public delegate void CtidProfileResponseEventHandler(object sender, ProtoOAGetCtidProfileByTokenRes e);
 
+        public delegate void SymbolCategoryListResponseEventHandler(object sender, ProtoOASymbolCategoryListRes e);
+
         #endregion Delegates
 
         #region Events
@@ -136,6 +138,8 @@ namespace Connect.Protobuf
         public event MessageReceivedEventHandler MessageReceivedEvent;
 
         public event CtidProfileResponseEventHandler CtidProfileResponseEvent;
+
+        public event SymbolCategoryListResponseEventHandler SymbolCategoryListResponseEvent;
 
         #endregion Events
 
@@ -296,9 +300,14 @@ namespace Connect.Protobuf
             MessageReceivedEvent?.Invoke(sender, e);
         }
 
-        public void OnCtidProfileResponseEvent(object sender, ProtoOAGetCtidProfileByTokenRes e)
+        public void OnCtidProfileResponse(object sender, ProtoOAGetCtidProfileByTokenRes e)
         {
             CtidProfileResponseEvent?.Invoke(sender, e);
+        }
+
+        public void OnSymbolCategoryListResponse(object sender, ProtoOASymbolCategoryListRes e)
+        {
+            SymbolCategoryListResponseEvent?.Invoke(sender, e);
         }
 
         #endregion Methods

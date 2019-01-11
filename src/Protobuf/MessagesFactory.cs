@@ -162,6 +162,11 @@ namespace Connect.Protobuf
             return ProtoOAGetCtidProfileByTokenRes.CreateBuilder().MergeFrom(messagePayload).Build();
         }
 
+        public ProtoOASymbolCategoryListRes GetSymbolCategoryListResponse(ByteString messagePayload)
+        {
+            return ProtoOASymbolCategoryListRes.CreateBuilder().MergeFrom(messagePayload).Build();
+        }
+
         #endregion Building Proto messages from Byte array methods
 
         #region Creating new Proto messages with parameters specified
@@ -720,6 +725,76 @@ namespace Connect.Protobuf
             var message = ProtoOAGetCtidProfileByTokenReq.CreateBuilder();
 
             message.SetAccessToken(accessToken);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateSymbolByIdResponse(long accountId, int index, ProtoOASymbol symbol, string clientMsgId = null)
+        {
+            var message = ProtoOASymbolByIdRes.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+            message.SetSymbol(index, symbol);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateSymbolByIdRequest(long accountId, int index, long symbolId, string clientMsgId = null)
+        {
+            var message = ProtoOASymbolByIdReq.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+            message.SetSymbolId(index, symbolId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateSymbolsForConversionResponse(long accountId, int index, ProtoOALightSymbol lightSymbol, string clientMsgId = null)
+        {
+            var message = ProtoOASymbolsForConversionRes.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+            message.SetSymbol(index, lightSymbol);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateSymbolsForConversionRequest(long accountId, long firstAssetId, long lastAssetId, string clientMsgId = null)
+        {
+            var message = ProtoOASymbolsForConversionReq.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+            message.SetFirstAssetId(firstAssetId);
+            message.SetLastAssetId(lastAssetId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateSymbolCategoryListResponse(long accountId, int index, ProtoOASymbolCategory symbolCategory, string clientMsgId = null)
+        {
+            var message = ProtoOASymbolCategoryListRes.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+            message.SetSymbolCategory(index, symbolCategory);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateSymbolCategoryListRequest(long accountId, string clientMsgId = null)
+        {
+            var message = ProtoOASymbolCategoryListReq.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+        }
+
+        public ProtoMessage CreateSymbolChangedEvent(long accountId, int index, long symbolId, string clientMsgId = null)
+        {
+            var message = ProtoOASymbolChangedEvent.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+            message.SetSymbolId(index, symbolId);
 
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
