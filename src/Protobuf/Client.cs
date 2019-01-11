@@ -23,7 +23,7 @@ namespace Connect.Protobuf
 
         private SslStream _liveStream, _demoStream;
 
-        private bool _isAuthorized, _stopSendingHeartbeats, _stopListening;
+        private bool _isAuthorized, _stopSendingHeartbeats, _stopLiveListening, _stopDemoListening;
 
         private ProcessStatus _liveListeningStatus, _demoListeningStatus, _sendingHeartbeatsStatus;
 
@@ -87,13 +87,14 @@ namespace Connect.Protobuf
 
             StartSendingHeartbeats();
 
-            StartListening(_liveStream, Mode.Live);
-            StartListening(_demoStream, Mode.Sandbox);
+            StartListening(Mode.Live);
+            StartListening(Mode.Sandbox);
         }
 
         public async Task Disconnect()
         {
-            await StoptListening();
+            await StoptListening(Mode.Live);
+            await StoptListening(Mode.Sandbox);
 
             await StoptSendingHeartbeats();
 
@@ -166,7 +167,7 @@ namespace Connect.Protobuf
 
         #region Listener
 
-        private void StartListening(SslStream stream, Mode mode)
+        public void StartListening(Mode mode)
         {
             SetListeningStatus(mode, ProcessStatus.WaitingToRun);
 
@@ -182,7 +183,9 @@ namespace Connect.Protobuf
 
                     SetListeningStatus(mode, ProcessStatus.Running);
 
-                    while (!_stopListening)
+                    SslStream stream = mode == Mode.Live ? _liveStream : _demoStream;
+
+                    while (!GetStopListening(mode))
                     {
                         byte[] lengthArray = new byte[sizeof(int)];
 
@@ -232,14 +235,13 @@ namespace Connect.Protobuf
             #pragma warning restore 4014
         }
 
-        private async Task StoptListening()
+        public async Task StoptListening(Mode mode)
         {
-            _stopListening = true;
+            SetStopListening(mode, true);
 
-            SetListeningStatus(Mode.Live, ProcessStatus.WaitingToStop);
-            SetListeningStatus(Mode.Sandbox, ProcessStatus.WaitingToStop);
+            SetListeningStatus(mode, ProcessStatus.WaitingToStop);
 
-            while (_liveListeningStatus != ProcessStatus.Stopped || _demoListeningStatus != ProcessStatus.Stopped)
+            while (GetListeningStatus(mode) != ProcessStatus.Stopped)
             {
                 await Task.Delay(100);
             }
@@ -254,6 +256,28 @@ namespace Connect.Protobuf
             else
             {
                 _demoListeningStatus = processStatus;
+            }
+        }
+
+        private ProcessStatus GetListeningStatus(Mode mode)
+        {
+            return mode == Mode.Live ? _liveListeningStatus : _demoListeningStatus;
+        }
+
+        private bool GetStopListening(Mode mode)
+        {
+            return mode == Mode.Live ? _stopLiveListening : _stopDemoListening;
+        }
+
+        private void SetStopListening(Mode mode, bool value)
+        {
+            if (mode == Mode.Live)
+            {
+                _stopLiveListening = value;
+            }
+            else
+            {
+                _stopDemoListening = value;
             }
         }
 
