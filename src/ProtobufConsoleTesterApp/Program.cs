@@ -30,7 +30,7 @@ namespace ProtobufConsoleTesterApp
 
             _client.Events.HeartbeatEvent += Events_HeartbeatEvent;
             _client.Events.ErrorEvent += Events_ErrorEvent;
-            _client.Events.ListenerStoppedEvent += Events_ListenerStoppedEvent;
+            _client.Events.ListenerExceptionEvent += Events_ListenerExceptionEvent;
             _client.Events.ApplicationAuthResponseEvent += Events_ApplicationAuthResponseEvent;
             _client.Events.VersionResponseEvent += Events_VersionResponseEvent;
             _client.Events.AccountListResponseEvent += Events_AccountListResponseEvent;
@@ -39,6 +39,8 @@ namespace ProtobufConsoleTesterApp
             _client.Events.TraderResponseEvent += Events_TraderResponseEvent; ;
 
             await _client.Connect();
+
+            Console.WriteLine("--------------------------------------");
 
             Console.WriteLine("Client successfully connected");
 
@@ -55,20 +57,24 @@ namespace ProtobufConsoleTesterApp
 
         private async static void Events_TraderResponseEvent(object sender, ProtoOATraderRes e)
         {
-            Console.WriteLine($"TraderResponseEvent: {e.Trader}");
+            Console.WriteLine($"TraderResponseEvent:\n{e.Trader}");
 
             Console.WriteLine("--------------------------------------");
 
             Console.WriteLine("Disconnecting...");
 
+            Console.WriteLine("--------------------------------------");
+
             await _client.Disconnect();
 
             Console.WriteLine("Disconnected");
+
+            Console.WriteLine("--------------------------------------");
         }
 
         private async static void Events_AccountAuthorizationResponseEvent(object sender, ProtoOAAccountAuthRes e)
         {
-            Console.WriteLine($"AccountAuthorizationResponse: {e}");
+            Console.WriteLine($"AccountAuthorizationResponse:\n{e}");
 
             Console.WriteLine("--------------------------------------");
 
@@ -81,35 +87,35 @@ namespace ProtobufConsoleTesterApp
 
         private static void Events_SymbolsListResponseEvent(object sender, ProtoOASymbolsListRes e)
         {
-            Console.WriteLine($"SymbolsListResponse: {e}");
+            Console.WriteLine($"SymbolsListResponse:\n{e}");
 
             Console.WriteLine("--------------------------------------");
         }
 
         private static void Events_AccountListResponseEvent(object sender, ProtoOAGetAccountListByAccessTokenRes e)
         {
-            Console.WriteLine($"AccountListResponse: {e}");
+            Console.WriteLine($"AccountListResponse:\n{e}");
 
             Console.WriteLine("--------------------------------------");
         }
 
         private static void Events_VersionResponseEvent(object sender, ProtoOAVersionRes e)
         {
-            Console.WriteLine($"VersionResponse: {e}");
+            Console.WriteLine($"VersionResponse:\n{e}");
 
             Console.WriteLine("--------------------------------------");
         }
 
         private static void Events_MessageReceivedEvent(object sender, ProtoMessage e)
         {
-            Console.WriteLine($"MessageReceived: {e}");
+            Console.WriteLine($"MessageReceived:\n{e}");
 
             Console.WriteLine("--------------------------------------");
         }
 
         private async static void Events_ApplicationAuthResponseEvent(object sender, ProtoOAApplicationAuthRes e)
         {
-            Console.WriteLine($"ApplicationAuthResponse: {e}");
+            Console.WriteLine($"ApplicationAuthResponse:\n{e}");
 
             Console.WriteLine("--------------------------------------");
 
@@ -132,23 +138,26 @@ namespace ProtobufConsoleTesterApp
             Console.WriteLine("--------------------------------------");
         }
 
-        private static void Events_ListenerStoppedEvent(object sender, Exception ex)
+        private static void Events_ListenerExceptionEvent(object sender, Exception ex, Mode mode)
         {
-            Console.WriteLine($"ListenerStopped: {ex}");
+            Console.WriteLine($"ListenerExceptionEvent");
+            Console.WriteLine($"Exception\n: {ex}");
+            Console.WriteLine($"Exception\n: {ex}");
+            Console.WriteLine($"Mode\n: {mode}");
 
             Console.WriteLine("--------------------------------------");
         }
 
         private static void Events_ErrorEvent(object sender, ProtoOAErrorRes e)
         {
-            Console.WriteLine($"Error: {e}");
+            Console.WriteLine($"Error:\n{e}");
 
             Console.WriteLine("--------------------------------------");
         }
 
         private static void Events_HeartbeatEvent(object sender, ProtoHeartbeatEvent e)
         {
-            Console.WriteLine($"Heartbeat response received: {e}");
+            Console.WriteLine($"Heartbeat response received:\n{e}");
 
             Console.WriteLine("--------------------------------------");
         }

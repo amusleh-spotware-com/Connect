@@ -15,7 +15,9 @@ namespace Connect.Protobuf
 
         public delegate void ErrorHandler(object sender, ProtoOAErrorRes e);
 
-        public delegate void ExceptionHandler(object sender, Exception ex);
+        public delegate void HeartbeatSendingExceptionEventHandler(object sender, Exception ex);
+
+        public delegate void ListenerExceptionEventHandler(object sender, Exception ex, Mode mode);
 
         public delegate void HeartbeatEventHandler(object sender, ProtoHeartbeatEvent e);
 
@@ -83,9 +85,9 @@ namespace Connect.Protobuf
 
         public event ErrorHandler ErrorEvent;
 
-        public event ExceptionHandler ListenerStoppedEvent;
+        public event ListenerExceptionEventHandler ListenerExceptionEvent;
 
-        public event ExceptionHandler HeartbeatSendingStoppedEvent;
+        public event HeartbeatSendingExceptionEventHandler HeartbeatSendingExceptionEvent;
 
         public event HeartbeatEventHandler HeartbeatEvent;
 
@@ -165,14 +167,14 @@ namespace Connect.Protobuf
             ApplicationAuthResponseEvent?.Invoke(sender, e);
         }
 
-        public void OnListenerStopped(object sender, Exception ex)
+        public void OnListenerException(object sender, Exception ex, Mode mode)
         {
-            ListenerStoppedEvent?.Invoke(sender, ex);
+            ListenerExceptionEvent?.Invoke(sender, ex, mode);
         }
 
-        public void OnHeartbeatSendingStopped(object sender, Exception ex)
+        public void OnHeartbeatSendingException(object sender, Exception ex)
         {
-            HeartbeatSendingStoppedEvent?.Invoke(sender, ex);
+            HeartbeatSendingExceptionEvent?.Invoke(sender, ex);
         }
 
         public void OnHeartbeat(object sender, ProtoHeartbeatEvent e)

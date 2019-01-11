@@ -5,6 +5,7 @@ using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Connect.Protobuf
 {
@@ -59,6 +60,7 @@ namespace Connect.Protobuf
 
             _liveClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
             _liveClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+
             _demoClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
             _demoClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
 
@@ -74,6 +76,12 @@ namespace Connect.Protobuf
             _demoStream = new SslStream(_demoClient.GetStream(), false, new RemoteCertificateValidationCallback(CertificateValidationCallback),
                 null);
 
+            _liveStream.ReadTimeout = 20000;
+            _liveStream.WriteTimeout = 20000;
+
+            _demoStream.WriteTimeout = 20000;
+            _demoStream.ReadTimeout = 20000;
+
             await _liveStream.AuthenticateAsClientAsync(liveURL);
             await _demoStream.AuthenticateAsClientAsync(demoURL);
 
@@ -85,9 +93,9 @@ namespace Connect.Protobuf
 
         public async Task Disconnect()
         {
-            await StoptSendingHeartbeats();
+            await StoptListening();
 
-            StoptListening();
+            await StoptSendingHeartbeats();
 
             await _liveStream.FlushAsync();
             await _demoStream.FlushAsync();
@@ -103,13 +111,11 @@ namespace Connect.Protobuf
 
         #region Heart beat
 
-        private void StartSendingHeartbeats(double interval = 10000)
+        private void StartSendingHeartbeats()
         {
             _sendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
 
-            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(interval);
-
-            heartbeatTimer.Interval = interval;
+            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(10000);
 
             heartbeatTimer.Elapsed += async (object sender, System.Timers.ElapsedEventArgs e) =>
             {
@@ -137,7 +143,7 @@ namespace Connect.Protobuf
 
                     _sendingHeartbeatsStatus = ProcessStatus.Error;
 
-                    Events.OnHeartbeatSendingStopped(this, ex);
+                    Events.OnHeartbeatSendingException(this, ex);
                 }
             };
 
@@ -152,7 +158,7 @@ namespace Connect.Protobuf
 
             while (_sendingHeartbeatsStatus != ProcessStatus.Stopped)
             {
-                await Task.Delay(10);
+                await Task.Delay(100);
             }
         }
 
@@ -169,9 +175,14 @@ namespace Connect.Protobuf
             {
                 try
                 {
+                    if (!IsConnected)
+                    {
+                        throw new InvalidOperationException(ExceptionMessages.ClientNotConnected);
+                    }
+
                     SetListeningStatus(mode, ProcessStatus.Running);
 
-                    while (IsConnected && !_stopListening)
+                    while (!_stopListening)
                     {
                         byte[] lengthArray = new byte[sizeof(int)];
 
@@ -215,18 +226,23 @@ namespace Connect.Protobuf
                 {
                     SetListeningStatus(mode, ProcessStatus.Error);
 
-                    Events.OnListenerStopped(this, ex);
+                    Events.OnListenerException(this, ex, mode);
                 }
             });
             #pragma warning restore 4014
         }
 
-        private void StoptListening()
+        private async Task StoptListening()
         {
             _stopListening = true;
 
             SetListeningStatus(Mode.Live, ProcessStatus.WaitingToStop);
             SetListeningStatus(Mode.Sandbox, ProcessStatus.WaitingToStop);
+
+            while (_liveListeningStatus != ProcessStatus.Stopped || _demoListeningStatus != ProcessStatus.Stopped)
+            {
+                await Task.Delay(100);
+            }
         }
 
         private void SetListeningStatus(Mode mode, ProcessStatus processStatus)
@@ -247,22 +263,20 @@ namespace Connect.Protobuf
 
         public async Task SendMessage(ProtoMessage message, Mode mode)
         {
-            if (IsConnected)
-            {
-                byte[] messageByte = message.ToByteArray();
-
-                byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
-
-                SslStream stream = mode == Mode.Live ? _liveStream : _demoStream;
-
-                await stream.WriteAsync(length, 0, length.Length);
-
-                await stream.WriteAsync(messageByte, 0, messageByte.Length);
-            }
-            else
+            if (!IsConnected)
             {
                 throw new InvalidOperationException(ExceptionMessages.ClientNotConnected);
             }
+
+            byte[] messageByte = message.ToByteArray();
+
+            byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
+
+            SslStream stream = mode == Mode.Live ? _liveStream : _demoStream;
+
+            await stream.WriteAsync(length, 0, length.Length);
+
+            await stream.WriteAsync(messageByte, 0, messageByte.Length);
         }
 
         #endregion Others
