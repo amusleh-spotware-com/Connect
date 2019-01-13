@@ -38,7 +38,7 @@ namespace ProtobufConsoleTesterApp
             _client.Events.SymbolsListResponseEvent += Events_SymbolsListResponseEvent;
             _client.Events.TraderResponseEvent += Events_TraderResponseEvent; ;
 
-            await _client.Connect();
+            await _client.Connect(Mode.Live);
 
             Console.WriteLine("--------------------------------------");
 
@@ -50,7 +50,7 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("--------------------------------------");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateAppAuthorizationRequest(_appId, _appSecret), Mode.Live);
+            await _client.SendMessage(_client.MessagesFactory.CreateAppAuthorizationRequest(_appId, _appSecret));
 
             Console.ReadKey();
         }
@@ -80,7 +80,7 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending Account Symbols List Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateTraderRequest(_accountId), Mode.Live);
+            await _client.SendMessage(_client.MessagesFactory.CreateTraderRequest(_accountId));
 
             Console.WriteLine("--------------------------------------");
         }
@@ -121,29 +121,27 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending Version Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateVersionRequest(), Mode.Live);
+            await _client.SendMessage(_client.MessagesFactory.CreateVersionRequest());
 
             Console.WriteLine("--------------------------------------");
 
             Console.WriteLine("Sending Account List Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateAccountListRequest(_accessToken), Mode.Live);
+            await _client.SendMessage(_client.MessagesFactory.CreateAccountListRequest(_accessToken));
 
             Console.WriteLine("--------------------------------------");
 
             Console.WriteLine("Sending Account Auth Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateAccountAuthorizationRequest(_accessToken, _accountId), Mode.Live);
+            await _client.SendMessage(_client.MessagesFactory.CreateAccountAuthorizationRequest(_accessToken, _accountId));
 
             Console.WriteLine("--------------------------------------");
         }
 
-        private static void Events_ListenerExceptionEvent(object sender, Exception ex, Mode mode)
+        private static void Events_ListenerExceptionEvent(object sender, Exception ex)
         {
             Console.WriteLine($"ListenerExceptionEvent");
             Console.WriteLine($"Exception\n: {ex}");
-            Console.WriteLine($"Exception\n: {ex}");
-            Console.WriteLine($"Mode\n: {mode}");
 
             Console.WriteLine("--------------------------------------");
         }

@@ -19,29 +19,19 @@ namespace Connect.Protobuf
 
         private readonly MessagesFactory _messagesFactory = new MessagesFactory();
 
-        private TcpClient _liveClient, _demoClient;
+        private TcpClient _client;
 
-        private SslStream _liveStream, _demoStream;
+        private SslStream _stream;
 
-        private bool _isAuthorized, _stopSendingHeartbeats, _stopLiveListening, _stopDemoListening;
+        private bool _isAuthorized, _stopSendingHeartbeats, _stopListening;
 
-        private ProcessStatus _liveListeningStatus, _demoListeningStatus, _sendingHeartbeatsStatus;
+        private ProcessStatus _listeningStatus, _sendingHeartbeatsStatus;
 
         #endregion Fields
 
         #region Properties
 
-        public bool IsLiveConnected => _liveClient?.Client != null && _liveClient.Client.Connected;
-
-        public bool IsDemoConnected => _demoClient?.Client != null && _demoClient.Client.Connected;
-
-        public bool IsConnected => IsLiveConnected && IsDemoConnected;
-
-        public ProcessStatus LiveListeningStatus => _liveListeningStatus;
-
-        public ProcessStatus DemoListeningStatus => _demoListeningStatus;
-
-        public ProcessStatus SendingHeartbeatsStatus => _sendingHeartbeatsStatus;
+        public bool IsConnected => _client?.Client != null && _client.Client.Connected;
 
         public bool IsAuthorized => _isAuthorized;
 
@@ -53,59 +43,38 @@ namespace Connect.Protobuf
 
         #region Connection
 
-        public async Task Connect()
+        public async Task Connect(Mode mode)
         {
-            _liveClient = new TcpClient();
-            _demoClient = new TcpClient();
+            _client = new TcpClient();
 
-            _liveClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
-            _liveClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            _client.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            _client.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
 
-            _demoClient.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
-            _demoClient.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            string url = BaseUrls.GetBaseUrl(ApiType.Protobuf, mode);
 
-            string liveURL = BaseUrls.GetBaseUrl(ApiType.Protobuf, Mode.Live);
-            string demoURL = BaseUrls.GetBaseUrl(ApiType.Protobuf, Mode.Sandbox);
+            await _client.ConnectAsync(url, BaseUrls.ProtobufPort);
 
-            await _liveClient.ConnectAsync(liveURL, BaseUrls.ProtobufPort);
-            await _demoClient.ConnectAsync(demoURL, BaseUrls.ProtobufPort);
-
-            _liveStream = new SslStream(_liveClient.GetStream(), false, new RemoteCertificateValidationCallback(CertificateValidationCallback),
+            _stream = new SslStream(_client.GetStream(), false, new RemoteCertificateValidationCallback(CertificateValidationCallback),
                 null);
 
-            _demoStream = new SslStream(_demoClient.GetStream(), false, new RemoteCertificateValidationCallback(CertificateValidationCallback),
-                null);
-
-            _liveStream.ReadTimeout = 20000;
-            _liveStream.WriteTimeout = 20000;
-
-            _demoStream.WriteTimeout = 20000;
-            _demoStream.ReadTimeout = 20000;
-
-            await _liveStream.AuthenticateAsClientAsync(liveURL);
-            await _demoStream.AuthenticateAsClientAsync(demoURL);
+            await _stream.AuthenticateAsClientAsync(url);
 
             StartSendingHeartbeats();
 
-            StartListening(Mode.Live);
-            StartListening(Mode.Sandbox);
+            StartListening();
         }
 
         public async Task Disconnect()
         {
-            await StoptListening(Mode.Live);
-            await StoptListening(Mode.Sandbox);
+            await StoptListening();
 
             await StoptSendingHeartbeats();
 
-            await _liveStream.FlushAsync();
-            await _demoStream.FlushAsync();
+            await _stream.FlushAsync();
 
-            _liveStream.Close();
-            _demoStream.Close();
+            _stream.Close();
 
-            _liveClient.Close();
-            _demoClient.Close();
+            _client.Close();
         }
 
         #endregion Connection
@@ -124,12 +93,11 @@ namespace Connect.Protobuf
                 {
                     (sender as System.Timers.Timer).Stop();
 
-                    if (IsConnected && !_stopSendingHeartbeats)
+                    if (!_stopSendingHeartbeats)
                     {
                         ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent();
 
-                        await SendMessage(protoMessage, Mode.Live);
-                        await SendMessage(protoMessage, Mode.Sandbox);
+                        await SendMessage(protoMessage);
 
                         (sender as System.Timers.Timer).Start();
                     }
@@ -167,9 +135,9 @@ namespace Connect.Protobuf
 
         #region Listener
 
-        public void StartListening(Mode mode)
+        public void StartListening()
         {
-            SetListeningStatus(mode, ProcessStatus.WaitingToRun);
+            _listeningStatus = ProcessStatus.WaitingToRun;
 
             #pragma warning disable 4014
             Task.Run(async () =>
@@ -181,11 +149,9 @@ namespace Connect.Protobuf
                         throw new InvalidOperationException(ExceptionMessages.ClientNotConnected);
                     }
 
-                    SetListeningStatus(mode, ProcessStatus.Running);
+                    _listeningStatus = ProcessStatus.Running;
 
-                    SslStream stream = mode == Mode.Live ? _liveStream : _demoStream;
-
-                    while (!GetStopListening(mode))
+                    while (!_stopListening)
                     {
                         byte[] lengthArray = new byte[sizeof(int)];
 
@@ -193,7 +159,7 @@ namespace Connect.Protobuf
 
                         do
                         {
-                            readBytes += await stream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes);
+                            readBytes += await _stream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes);
                         }
                         while (readBytes < lengthArray.Length);
 
@@ -216,68 +182,34 @@ namespace Connect.Protobuf
 
                         do
                         {
-                            readBytes += await stream.ReadAsync(message, readBytes, message.Length - readBytes);
+                            readBytes += await _stream.ReadAsync(message, readBytes, message.Length - readBytes);
                         }
                         while (readBytes < length);
 
                         InvokeMessageEvent(message);
                     }
 
-                    SetListeningStatus(mode, ProcessStatus.Stopped);
+                    _listeningStatus = ProcessStatus.Stopped;
                 }
                 catch (Exception ex)
                 {
-                    SetListeningStatus(mode, ProcessStatus.Error);
+                    _listeningStatus = ProcessStatus.Error;
 
-                    Events.OnListenerException(this, ex, mode);
+                    Events.OnListenerException(this, ex);
                 }
             });
             #pragma warning restore 4014
         }
 
-        public async Task StoptListening(Mode mode)
+        public async Task StoptListening()
         {
-            SetStopListening(mode, true);
+            _stopListening = true;
 
-            SetListeningStatus(mode, ProcessStatus.WaitingToStop);
+            _listeningStatus = ProcessStatus.WaitingToStop;
 
-            while (GetListeningStatus(mode) != ProcessStatus.Stopped)
+            while (_listeningStatus != ProcessStatus.Stopped)
             {
                 await Task.Delay(100);
-            }
-        }
-
-        private void SetListeningStatus(Mode mode, ProcessStatus processStatus)
-        {
-            if (mode == Mode.Live)
-            {
-                _liveListeningStatus = processStatus;
-            }
-            else
-            {
-                _demoListeningStatus = processStatus;
-            }
-        }
-
-        private ProcessStatus GetListeningStatus(Mode mode)
-        {
-            return mode == Mode.Live ? _liveListeningStatus : _demoListeningStatus;
-        }
-
-        private bool GetStopListening(Mode mode)
-        {
-            return mode == Mode.Live ? _stopLiveListening : _stopDemoListening;
-        }
-
-        private void SetStopListening(Mode mode, bool value)
-        {
-            if (mode == Mode.Live)
-            {
-                _stopLiveListening = value;
-            }
-            else
-            {
-                _stopDemoListening = value;
             }
         }
 
@@ -285,7 +217,7 @@ namespace Connect.Protobuf
 
         #region Send message
 
-        public async Task SendMessage(ProtoMessage message, Mode mode)
+        public async Task SendMessage(ProtoMessage message)
         {
             if (!IsConnected)
             {
@@ -296,11 +228,9 @@ namespace Connect.Protobuf
 
             byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
 
-            SslStream stream = mode == Mode.Live ? _liveStream : _demoStream;
+            await _stream.WriteAsync(length, 0, length.Length);
 
-            await stream.WriteAsync(length, 0, length.Length);
-
-            await stream.WriteAsync(messageByte, 0, messageByte.Length);
+            await _stream.WriteAsync(messageByte, 0, messageByte.Length);
         }
 
         #endregion Others
@@ -569,11 +499,9 @@ namespace Connect.Protobuf
 
         public void Dispose()
         {
-            _liveStream?.Dispose();
-            _demoStream?.Dispose();
+            _stream?.Dispose();
 
-            _liveClient?.Dispose();
-            _demoClient?.Dispose();
+            _client?.Dispose();
         }
 
         #endregion

@@ -17,7 +17,7 @@ namespace Connect.Protobuf
 
         public delegate void HeartbeatSendingExceptionEventHandler(object sender, Exception ex);
 
-        public delegate void ListenerExceptionEventHandler(object sender, Exception ex, Mode mode);
+        public delegate void ListenerExceptionEventHandler(object sender, Exception ex);
 
         public delegate void HeartbeatEventHandler(object sender, ProtoHeartbeatEvent e);
 
@@ -167,9 +167,9 @@ namespace Connect.Protobuf
             ApplicationAuthResponseEvent?.Invoke(sender, e);
         }
 
-        public void OnListenerException(object sender, Exception ex, Mode mode)
+        public void OnListenerException(object sender, Exception ex)
         {
-            ListenerExceptionEvent?.Invoke(sender, ex, mode);
+            ListenerExceptionEvent?.Invoke(sender, ex);
         }
 
         public void OnHeartbeatSendingException(object sender, Exception ex)
