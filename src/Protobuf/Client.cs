@@ -17,8 +17,6 @@ namespace Connect.Protobuf
 
         private readonly Events _events = new Events();
 
-        private readonly MessagesFactory _messagesFactory = new MessagesFactory();
-
         private TcpClient _client;
 
         private SslStream _stream;
@@ -36,8 +34,6 @@ namespace Connect.Protobuf
         public bool IsAuthorized => _isAuthorized;
 
         public Events Events => _events;
-
-        public MessagesFactory MessagesFactory => _messagesFactory;
 
         #endregion Properties
 
