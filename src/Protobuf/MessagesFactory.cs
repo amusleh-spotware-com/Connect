@@ -251,14 +251,18 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_RES, ProtoOAAccountAuthRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateAssetClassListRequest(string clientMsgId = null)
+        public static ProtoMessage CreateAssetClassListRequest(long accountId, string clientMsgId = null)
         {
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, ProtoOAVersionReq.CreateBuilder().Build().ToByteString(), clientMsgId);
+            var message = ProtoOAAssetClassListReq.CreateBuilder();
+
+            message.SetCtidTraderAccountId(accountId);
+
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, message.Build().ToByteString(), clientMsgId);
         }
 
         public static ProtoMessage CreateAssetClassListResponse(string clientMsgId = null)
         {
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_RES, ProtoOAApplicationAuthRes.CreateBuilder().Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_RES, ProtoOAAssetClassListRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
         public static ProtoMessage CreateDealsListRequest(long accountId, DateTimeOffset from, DateTimeOffset to, string clientMsgId = null)
