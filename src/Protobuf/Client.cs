@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Threading;
+using Connect.Protobuf.Enums;
 
 namespace Connect.Protobuf
 {
@@ -39,14 +40,14 @@ namespace Connect.Protobuf
 
         #region Connection
 
-        public async Task Connect(Mode mode)
+        public async Task Connect(AccountType accountType)
         {
             _client = new TcpClient();
 
             _client.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
             _client.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
 
-            string url = BaseUrls.GetBaseUrl(ApiType.Protobuf, mode);
+            string url = BaseUrls.GetBaseUrl(ApiType.Protobuf, accountType == AccountType.Live ? Mode.Live : Mode.Sandbox);
 
             await _client.ConnectAsync(url, BaseUrls.ProtobufPort);
 
