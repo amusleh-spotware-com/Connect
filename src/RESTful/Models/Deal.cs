@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using Connect.Common;
+using Connect.RESTful.Enums;
 
-namespace Connect.RESTful
+namespace Connect.RESTful.Models
 {
     public class Deal
     {

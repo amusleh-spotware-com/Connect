@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Connect.RESTful
+namespace Connect.RESTful.Enums
 {
     public enum CashFlowType
     {

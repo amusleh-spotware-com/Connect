@@ -1,4 +1,6 @@
-﻿namespace Connect.RESTful.Request
+﻿using Connect.RESTful.Enums;
+
+namespace Connect.RESTful.Request
 {
     public static class Resources
     {

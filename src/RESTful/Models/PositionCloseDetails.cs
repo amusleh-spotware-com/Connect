@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Connect.RESTful
+namespace Connect.RESTful.Models
 {
     public class PositionCloseDetails
     {

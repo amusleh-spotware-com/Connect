@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Connect.RESTful.Models;
+using Connect.RESTful.Enums;
 
 namespace Connect.RESTful
 {

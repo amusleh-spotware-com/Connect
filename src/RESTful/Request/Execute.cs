@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using Connect.RESTful.Models;
 
 namespace Connect.RESTful.Request
 {

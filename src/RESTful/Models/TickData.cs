@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Connect.RESTful
+namespace Connect.RESTful.Models
 {
     public class TickData
     {

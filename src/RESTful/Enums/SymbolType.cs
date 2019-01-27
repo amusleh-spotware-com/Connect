@@ -1,4 +1,4 @@
-﻿namespace Connect.RESTful
+﻿namespace Connect.RESTful.Enums
 {
     public enum SymbolType
     {

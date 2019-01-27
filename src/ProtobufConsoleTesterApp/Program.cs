@@ -50,7 +50,7 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("--------------------------------------");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateAppAuthorizationRequest(_appId, _appSecret));
+            await _client.SendMessage(MessagesFactory.CreateAppAuthorizationRequest(_appId, _appSecret));
 
             Console.ReadKey();
         }
@@ -80,7 +80,7 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending Account Symbols List Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateTraderRequest(_accountId));
+            await _client.SendMessage(MessagesFactory.CreateTraderRequest(_accountId));
 
             Console.WriteLine("--------------------------------------");
         }
@@ -121,19 +121,19 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending Version Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateVersionRequest());
+            await _client.SendMessage(MessagesFactory.CreateVersionRequest());
 
             Console.WriteLine("--------------------------------------");
 
             Console.WriteLine("Sending Account List Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateAccountListRequest(_accessToken));
+            await _client.SendMessage(MessagesFactory.CreateAccountListRequest(_accessToken));
 
             Console.WriteLine("--------------------------------------");
 
             Console.WriteLine("Sending Account Auth Req...");
 
-            await _client.SendMessage(_client.MessagesFactory.CreateAccountAuthorizationRequest(_accessToken, _accountId));
+            await _client.SendMessage(MessagesFactory.CreateAccountAuthorizationRequest(_accessToken, _accountId));
 
             Console.WriteLine("--------------------------------------");
         }
