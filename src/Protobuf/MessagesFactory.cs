@@ -1,5 +1,7 @@
 ﻿using Google.ProtocolBuffers;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Connect.Protobuf
 {
@@ -733,22 +735,24 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateSymbolByIdResponse(long accountId, int index, ProtoOASymbol symbol, string clientMsgId = null)
+        public static ProtoMessage CreateSymbolByIdResponse(long accountId, List<ProtoOASymbol> symbols, string clientMsgId = null)
         {
             var message = ProtoOASymbolByIdRes.CreateBuilder();
 
             message.SetCtidTraderAccountId(accountId);
-            message.SetSymbol(index, symbol);
+
+            message.AddRangeSymbol(symbols);
 
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateSymbolByIdRequest(long accountId, int index, long symbolId, string clientMsgId = null)
+        public static ProtoMessage CreateSymbolByIdRequest(long accountId, List<long> symbolIds, string clientMsgId = null)
         {
             var message = ProtoOASymbolByIdReq.CreateBuilder();
 
             message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(index, symbolId);
+
+            message.AddRangeSymbolId(symbolIds);
 
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }

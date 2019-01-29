@@ -7,71 +7,71 @@ namespace Connect.Protobuf
     {
         #region Delegates
 
-        public delegate void ApplicationAuthResponseEventHandler(object sender, ProtoOAApplicationAuthRes e);
-
         public delegate void ExecutionEventHandler(object sender, ProtoOAExecutionEvent e);
 
         public delegate void SpotEventHandler(object sender, ProtoOASpotEvent e);
 
         public delegate void ErrorHandler(object sender, ProtoOAErrorRes e);
 
-        public delegate void HeartbeatSendingExceptionEventHandler(object sender, Exception ex);
-
-        public delegate void ListenerExceptionEventHandler(object sender, Exception ex);
-
         public delegate void HeartbeatEventHandler(object sender, ProtoHeartbeatEvent e);
-
-        public delegate void AccountAuthorizationResponseEventHandler(object sender, ProtoOAAccountAuthRes e);
-
-        public delegate void ClientDisconnectedEventHandler(object sender, ProtoOAClientDisconnectEvent e);
-
-        public delegate void DealListResponseEventHandler(object sender, ProtoOADealListRes e);
-
-        public delegate void AssetListResponseEventHandler(object sender, ProtoOAAssetListRes e);
-
-        public delegate void AccountsTokenInvalidatedEventHandler(object sender, ProtoOAAccountsTokenInvalidatedEvent e);
-
-        public delegate void CashFlowHistoryListResponseEventHandler(object sender, ProtoOACashFlowHistoryListRes e);
-
-        public delegate void ExpectedMarginResponseEventHandler(object sender, ProtoOAExpectedMarginRes e);
-
-        public delegate void AccountListResponseEventHandler(object sender, ProtoOAGetAccountListByAccessTokenRes e);
-
-        public delegate void GetTickDataResponseEventHandler(object sender, ProtoOAGetTickDataRes e);
-
-        public delegate void GetTrendbarsResponseEventHandler(object sender, ProtoOAGetTrendbarsRes e);
-
-        public delegate void MarginChangedEventHandler(object sender, ProtoOAMarginChangedEvent e);
 
         public delegate void OrderErrorEventHandler(object sender, ProtoOAOrderErrorEvent e);
 
-        public delegate void ReconcileResponseEventHandler(object sender, ProtoOAReconcileRes e);
+        public delegate void MarginChangedEventHandler(object sender, ProtoOAMarginChangedEvent e);
 
-        public delegate void SubscribeSpotsResponseEventHandler(object sender, ProtoOASubscribeSpotsRes e);
-
-        public delegate void SymbolsForConversionResponseEventHandler(object sender, ProtoOASymbolsForConversionRes e);
-
-        public delegate void SymbolsListResponseEventHandler(object sender, ProtoOASymbolsListRes e);
-
-        public delegate void SymbolByIdResponseEventHandler(object sender, ProtoOASymbolByIdRes e);
-
-        public delegate void SymbolChangedEventHandler(object sender, ProtoOASymbolChangedEvent e);
-
-        public delegate void TraderResponseEventHandler(object sender, ProtoOATraderRes e);
+        public delegate void ClientDisconnectedEventHandler(object sender, ProtoOAClientDisconnectEvent e);
 
         public delegate void TraderUpdatedEventHandler(object sender, ProtoOATraderUpdatedEvent e);
 
         public delegate void TrailingSLChangedEventHandler(object sender, ProtoOATrailingSLChangedEvent e);
 
-        public delegate void UnsubscribeSpotsResponseEventHandler(object sender, ProtoOAUnsubscribeSpotsRes e);
+        public delegate void AccountsTokenInvalidatedEventHandler(object sender, ProtoOAAccountsTokenInvalidatedEvent e);
 
-        public delegate void VersionResponseEventHandler(object sender, ProtoOAVersionRes e);
+        public delegate void ApplicationAuthResponseEventHandler(object sender, ProtoOAApplicationAuthRes e, string clientMsgId);
+
+        public delegate void AccountAuthorizationResponseEventHandler(object sender, ProtoOAAccountAuthRes e, string clientMsgId);
+
+        public delegate void DealListResponseEventHandler(object sender, ProtoOADealListRes e, string clientMsgId);
+
+        public delegate void AssetListResponseEventHandler(object sender, ProtoOAAssetListRes e, string clientMsgId);
+
+        public delegate void CashFlowHistoryListResponseEventHandler(object sender, ProtoOACashFlowHistoryListRes e, string clientMsgId);
+
+        public delegate void ExpectedMarginResponseEventHandler(object sender, ProtoOAExpectedMarginRes e, string clientMsgId);
+
+        public delegate void AccountListResponseEventHandler(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId);
+
+        public delegate void GetTickDataResponseEventHandler(object sender, ProtoOAGetTickDataRes e, string clientMsgId);
+
+        public delegate void GetTrendbarsResponseEventHandler(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId);
+
+        public delegate void ReconcileResponseEventHandler(object sender, ProtoOAReconcileRes e, string clientMsgId);
+
+        public delegate void SubscribeSpotsResponseEventHandler(object sender, ProtoOASubscribeSpotsRes e, string clientMsgId);
+
+        public delegate void SymbolsForConversionResponseEventHandler(object sender, ProtoOASymbolsForConversionRes e, string clientMsgId);
+
+        public delegate void SymbolsListResponseEventHandler(object sender, ProtoOASymbolsListRes e, string clientMsgId);
+
+        public delegate void SymbolByIdResponseEventHandler(object sender, ProtoOASymbolByIdRes e, string clientMsgId);
+
+        public delegate void SymbolChangedEventHandler(object sender, ProtoOASymbolChangedEvent e);
+
+        public delegate void TraderResponseEventHandler(object sender, ProtoOATraderRes e, string clientMsgId);
+
+        public delegate void UnsubscribeSpotsResponseEventHandler(object sender, ProtoOAUnsubscribeSpotsRes e, string clientMsgId);
+
+        public delegate void VersionResponseEventHandler(object sender, ProtoOAVersionRes e, string clientMsgId);
+
+        public delegate void CtidProfileResponseEventHandler(object sender, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId);
+
+        public delegate void SymbolCategoryListResponseEventHandler(object sender, ProtoOASymbolCategoryListRes e, string clientMsgId);
 
         public delegate void MessageReceivedEventHandler(object sender, ProtoMessage e);
 
-        public delegate void CtidProfileResponseEventHandler(object sender, ProtoOAGetCtidProfileByTokenRes e);
+        public delegate void HeartbeatSendingExceptionEventHandler(object sender, Exception ex);
 
-        public delegate void SymbolCategoryListResponseEventHandler(object sender, ProtoOASymbolCategoryListRes e);
+        public delegate void ListenerExceptionEventHandler(object sender, Exception ex);
 
         #endregion Delegates
 
@@ -162,9 +162,9 @@ namespace Connect.Protobuf
             ErrorEvent?.Invoke(sender, e);
         }
 
-        public void OnApplicationAuthResponse(object sender, ProtoOAApplicationAuthRes e)
+        public void OnApplicationAuthResponse(object sender, ProtoOAApplicationAuthRes e, string clientMsgId)
         {
-            ApplicationAuthResponseEvent?.Invoke(sender, e);
+            ApplicationAuthResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnListenerException(object sender, Exception ex)
@@ -182,9 +182,9 @@ namespace Connect.Protobuf
             HeartbeatEvent?.Invoke(sender, e);
         }
 
-        public void OnAccountAuthorizationResponse(object sender, ProtoOAAccountAuthRes e)
+        public void OnAccountAuthorizationResponse(object sender, ProtoOAAccountAuthRes e, string clientMsgId)
         {
-            AccountAuthorizationResponseEvent?.Invoke(sender, e);
+            AccountAuthorizationResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnClientDisconnected(object sender, ProtoOAClientDisconnectEvent e)
@@ -192,14 +192,14 @@ namespace Connect.Protobuf
             ClientDisconnectedEvent?.Invoke(sender, e);
         }
 
-        public void OnDealListResponse(object sender, ProtoOADealListRes e)
+        public void OnDealListResponse(object sender, ProtoOADealListRes e, string clientMsgId)
         {
-            DealListResponseEvent?.Invoke(sender, e);
+            DealListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnAssetListResponse(object sender, ProtoOAAssetListRes e)
+        public void OnAssetListResponse(object sender, ProtoOAAssetListRes e, string clientMsgId)
         {
-            AssetListResponseEvent?.Invoke(sender, e);
+            AssetListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnAccountsTokenInvalidated(object sender, ProtoOAAccountsTokenInvalidatedEvent e)
@@ -207,29 +207,29 @@ namespace Connect.Protobuf
             AccountsTokenInvalidatedEvent?.Invoke(sender, e);
         }
 
-        public void OnCashFlowHistoryListResponse(object sender, ProtoOACashFlowHistoryListRes e)
+        public void OnCashFlowHistoryListResponse(object sender, ProtoOACashFlowHistoryListRes e, string clientMsgId)
         {
-            CashFlowHistoryListResponseEvent?.Invoke(sender, e);
+            CashFlowHistoryListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnExpectedMarginResponse(object sender, ProtoOAExpectedMarginRes e)
+        public void OnExpectedMarginResponse(object sender, ProtoOAExpectedMarginRes e, string clientMsgId)
         {
-            ExpectedMarginResponseEvent?.Invoke(sender, e);
+            ExpectedMarginResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnAccountListResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e)
+        public void OnAccountListResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId)
         {
-            AccountListResponseEvent.Invoke(sender, e);
+            AccountListResponseEvent.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnGetTickDataResponse(object sender, ProtoOAGetTickDataRes e)
+        public void OnGetTickDataResponse(object sender, ProtoOAGetTickDataRes e, string clientMsgId)
         {
-            GetTickDataResponseEvent?.Invoke(sender, e);
+            GetTickDataResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnGetTrendbarsResponse(object sender, ProtoOAGetTrendbarsRes e)
+        public void OnGetTrendbarsResponse(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId)
         {
-            GetTrendbarsResponseEvent?.Invoke(sender, e);
+            GetTrendbarsResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnMarginChanged(object sender, ProtoOAMarginChangedEvent e)
@@ -242,29 +242,29 @@ namespace Connect.Protobuf
             OrderErrorEvent?.Invoke(sender, e);
         }
 
-        public void OnReconcileResponse(object sender, ProtoOAReconcileRes e)
+        public void OnReconcileResponse(object sender, ProtoOAReconcileRes e, string clientMsgId)
         {
-            ReconcileResponseEvent?.Invoke(sender, e);
+            ReconcileResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSubscribeSpotsResponse(object sender, ProtoOASubscribeSpotsRes e)
+        public void OnSubscribeSpotsResponse(object sender, ProtoOASubscribeSpotsRes e, string clientMsgId)
         {
-            SubscribeSpotsResponseEvent?.Invoke(sender, e);
+            SubscribeSpotsResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolsForConversionResponse(object sender, ProtoOASymbolsForConversionRes e)
+        public void OnSymbolsForConversionResponse(object sender, ProtoOASymbolsForConversionRes e, string clientMsgId)
         {
-            SymbolsForConversionResponseEvent?.Invoke(sender, e);
+            SymbolsForConversionResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolsListResponse(object sender , ProtoOASymbolsListRes e)
+        public void OnSymbolsListResponse(object sender , ProtoOASymbolsListRes e, string clientMsgId)
         {
-            SymbolsListResponseEvent?.Invoke(sender, e);
+            SymbolsListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolByIdResponse(object sender, ProtoOASymbolByIdRes e)
+        public void OnSymbolByIdResponse(object sender, ProtoOASymbolByIdRes e, string clientMsgId)
         {
-            SymbolByIdResponseEvent?.Invoke(sender, e);
+            SymbolByIdResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnSymbolChanged(object sender, ProtoOASymbolChangedEvent e)
@@ -272,9 +272,9 @@ namespace Connect.Protobuf
             SymbolChangedEvent?.Invoke(sender, e);
         }
 
-        public void OnTraderResponse(object sender, ProtoOATraderRes e)
+        public void OnTraderResponse(object sender, ProtoOATraderRes e, string clientMsgId)
         {
-            TraderResponseEvent?.Invoke(sender, e);
+            TraderResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnTraderUpdated(object sender, ProtoOATraderUpdatedEvent e)
@@ -287,29 +287,29 @@ namespace Connect.Protobuf
             TrailingSLChangedEvent?.Invoke(sender, e);
         }
 
-        public void OnUnsubscribeSpotsResponse(object sender, ProtoOAUnsubscribeSpotsRes e)
+        public void OnUnsubscribeSpotsResponse(object sender, ProtoOAUnsubscribeSpotsRes e, string clientMsgId)
         {
-            UnsubscribeSpotsResponseEvent?.Invoke(sender, e);
+            UnsubscribeSpotsResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnVersionResponse(object sender, ProtoOAVersionRes e)
+        public void OnVersionResponse(object sender, ProtoOAVersionRes e, string clientMsgId)
         {
-            VersionResponseEvent?.Invoke(sender, e);
+            VersionResponseEvent?.Invoke(sender, e, clientMsgId);
+        }
+
+        public void OnCtidProfileResponse(object sender, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId)
+        {
+            CtidProfileResponseEvent?.Invoke(sender, e, clientMsgId);
+        }
+
+        public void OnSymbolCategoryListResponse(object sender, ProtoOASymbolCategoryListRes e, string clientMsgId)
+        {
+            SymbolCategoryListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnMessageReceived(object sender, ProtoMessage e)
         {
             MessageReceivedEvent?.Invoke(sender, e);
-        }
-
-        public void OnCtidProfileResponse(object sender, ProtoOAGetCtidProfileByTokenRes e)
-        {
-            CtidProfileResponseEvent?.Invoke(sender, e);
-        }
-
-        public void OnSymbolCategoryListResponse(object sender, ProtoOASymbolCategoryListRes e)
-        {
-            SymbolCategoryListResponseEvent?.Invoke(sender, e);
         }
 
         #endregion Methods
