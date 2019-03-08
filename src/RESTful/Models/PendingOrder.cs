@@ -2,6 +2,7 @@
 using System;
 using Connect.Common;
 using Connect.RESTful.Enums;
+using Connect.Common.JsonConverters;
 
 namespace Connect.RESTful.Models
 {
@@ -33,11 +34,13 @@ namespace Connect.RESTful.Models
         [JsonProperty("takeProfit")]
         public double? TakeProfit { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("createTimestamp")]
-        public long CreateTimestamp { get; set; }
+        public long CreateTime { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("expirationTimestamp")]
-        public long? ExpirationTimestamp { get; set; }
+        public long? ExpirationTime { get; set; }
 
         [JsonProperty("currentPrice")]
         public double? CurrentPrice { get; set; }
@@ -55,11 +58,6 @@ namespace Connect.RESTful.Models
         public string Label { get; set; }
 
         public TradeType TradeType => Utility.ParseEnum(TradeSide, TradeType.None);
-
-        public DateTimeOffset CreateTime => DateTimeOffset.FromUnixTimeMilliseconds(CreateTimestamp);
-
-        public DateTimeOffset? ExpirationTime => ExpirationTimestamp.HasValue ?
-            (DateTimeOffset?)DateTimeOffset.FromUnixTimeMilliseconds(ExpirationTimestamp.Value) : null;
 
         public OrderType OrderType => Utility.ParseEnum(OrderTypeText, OrderType.None);
 

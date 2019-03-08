@@ -2,6 +2,7 @@
 using System;
 using Connect.Common;
 using Connect.RESTful.Enums;
+using Connect.Common.JsonConverters;
 
 namespace Connect.RESTful.Models
 {
@@ -24,10 +25,9 @@ namespace Connect.RESTful.Models
         [JsonProperty("balanceVersion")]
         public long BalanceVersion { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("changeTimestamp")]
-        public long ChangeTimestamp { get; set; }
-
-        public DateTimeOffset ChangeTime => DateTimeOffset.FromUnixTimeMilliseconds(ChangeTimestamp);
+        public DateTimeOffset ChangeTime { get; set; }
 
         public CashFlowType Type => Utility.ParseEnum(TypeText, CashFlowType.None);
 

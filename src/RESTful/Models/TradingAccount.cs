@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using Connect.RESTful.Enums;
+using Connect.Common.JsonConverters;
 
 namespace Connect.RESTful.Models
 {
@@ -26,8 +27,9 @@ namespace Connect.RESTful.Models
         [JsonProperty("depositCurrency")]
         public string Currency { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("traderRegistrationTimestamp")]
-        public long RegistrationTimestamp { get; set; }
+        public long RegistrationTime { get; set; }
 
         [JsonProperty("leverage")]
         public int Leverage { get; set; }
@@ -48,8 +50,6 @@ namespace Connect.RESTful.Models
         public bool IsSwapFree { get; set; }
 
         public TradingAccountType Type => IsLive ? TradingAccountType.Live : TradingAccountType.Demo;
-
-        public DateTimeOffset RegistrationTime => DateTimeOffset.FromUnixTimeMilliseconds(RegistrationTimestamp);
 
         #endregion Properties
 

@@ -2,6 +2,7 @@
 using System;
 using Connect.Common;
 using Connect.RESTful.Enums;
+using Connect.Common.JsonConverters;
 
 namespace Connect.RESTful.Models
 {
@@ -12,11 +13,13 @@ namespace Connect.RESTful.Models
         [JsonProperty("positionID")]
         public long Id { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("entryTimestamp")]
-        public long EntryTimestamp { get; set; }
+        public long EntryTime { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("utcLastUpdateTimestamp")]
-        public long UtcLastUpdateTimestamp { get; set; }
+        public long UtcLastUpdateTime { get; set; }
 
         [JsonProperty("symbolName")]
         public string SymbolName { get; set; }
@@ -62,10 +65,6 @@ namespace Connect.RESTful.Models
 
         [JsonProperty("label")]
         public string Label { get; set; }
-
-        public DateTimeOffset EntryTime => DateTimeOffset.FromUnixTimeMilliseconds(EntryTimestamp);
-
-        public DateTimeOffset UtcLastUpdateTime => DateTimeOffset.FromUnixTimeMilliseconds(UtcLastUpdateTimestamp);
 
         public TradeType TradeType => Utility.ParseEnum(TradeSide, TradeType.None);
 

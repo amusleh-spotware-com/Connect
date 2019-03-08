@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Connect.Common;
 using System;
+using Connect.Common.JsonConverters;
 
 namespace Connect.RESTful.Models
 {
@@ -8,13 +9,12 @@ namespace Connect.RESTful.Models
     {
         #region Properties
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("errorCode")]
-        public string CodeText { get; set; }
+        public ErrorCode Code { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
-
-        public ErrorCode Code => Utility.ParseEnum(CodeText, ErrorCode.None);
 
         #endregion Properties
     }

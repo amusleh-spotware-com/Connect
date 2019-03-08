@@ -1,12 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
+using Connect.Common.JsonConverters;
 
 namespace Connect.RESTful.Models
 {
     public class Trendbar
     {
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("timestamp")]
-        public long TimeStamp { get; set; }
+        public long Time { get; set; }
 
         [JsonProperty("high")]
         public double High { get; set; }
@@ -22,7 +24,5 @@ namespace Connect.RESTful.Models
 
         [JsonProperty("volume")]
         public double Volume { get; set; }
-
-        public DateTimeOffset Time => DateTimeOffset.FromUnixTimeMilliseconds(TimeStamp);
     }
 }

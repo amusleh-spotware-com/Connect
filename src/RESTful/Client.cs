@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using Connect.Common;
+using Connect.RESTful.Enums;
+using Connect.RESTful.Models;
+using Newtonsoft.Json;
 using RestSharp;
-using Connect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using Connect.RESTful.Models;
-using Connect.RESTful.Enums;
 
 namespace Connect.RESTful
 {
@@ -137,7 +137,7 @@ namespace Connect.RESTful
             return (await Request.Execute.Get<List<TickData>>(_client, request)).SelectMany(dList => dList).ToList();
         }
 
-        public async Task<List<Trendbar>> GetTrendbar(string accessToken, long accountId, string symbolName, TrendbarType type, 
+        public async Task<List<Trendbar>> GetTrendbar(string accessToken, long accountId, string symbolName, TrendbarType type,
             DateTimeOffset from, DateTimeOffset to)
         {
             string resource = Request.Resources.GetSymbolTrendbarResource(accountId, symbolName, type);

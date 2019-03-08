@@ -4,6 +4,8 @@ using Connect.Common;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Converters;
+using Connect.Common.JsonConverters;
 
 namespace Connect.Oauth
 {
@@ -14,8 +16,9 @@ namespace Connect.Oauth
         [JsonProperty("accessToken")]
         public string AccessToken { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("expiresIn")]
-        public long ExpiresInTimestamp { get; set; }
+        public DateTimeOffset ExpiresIn { get; set; }
 
         [JsonProperty("tokenType")]
         public string TokenType { get; set; }
@@ -23,15 +26,12 @@ namespace Connect.Oauth
         [JsonProperty("refreshToken")]
         public string RefreshToken { get; set; }
 
+        [JsonConverter(typeof(ErrorCodeConverter))]
         [JsonProperty("errorCode")]
-        public string ErrorCodeText { get; set; }
+        public string ErrorCode { get; set; }
 
         [JsonProperty("description")]
         public string ErrorDescription { get; set; }
-
-        public ErrorCode ErrorCode => Utility.ParseEnum(ErrorCodeText, ErrorCode.None);
-
-        public DateTimeOffset ExpiresIn => DateTimeOffset.FromUnixTimeMilliseconds(ExpiresInTimestamp);
 
         public Mode Mode { get; set; }
 

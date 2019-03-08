@@ -2,6 +2,7 @@
 using System;
 using Connect.Common;
 using Connect.RESTful.Enums;
+using Connect.Common.JsonConverters;
 
 namespace Connect.RESTful.Models
 {
@@ -51,18 +52,16 @@ namespace Connect.RESTful.Models
         [JsonProperty("comment")]
         public string Comment { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("createTimestamp")]
-        public long CreateTimestamp { get; set; }
+        public long CreateTime { get; set; }
 
+        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
         [JsonProperty("executionTimestamp")]
-        public long ExecutionTimestamp { get; set; }
+        public long ExecutionTime { get; set; }
 
         [JsonProperty("positionCloseDetails")]
         public PositionCloseDetails CloseDetails { get; set; }
-
-        public DateTimeOffset CreateTime => DateTimeOffset.FromUnixTimeMilliseconds(CreateTimestamp);
-
-        public DateTimeOffset ExecutionTime => DateTimeOffset.FromUnixTimeMilliseconds(ExecutionTimestamp);
 
         public TradeType TradeType => Utility.ParseEnum(TradeSide, TradeType.None);
 

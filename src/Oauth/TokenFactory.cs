@@ -115,13 +115,13 @@ namespace Connect.Oauth
         {
             oldToken.AccessToken = newtoken.AccessToken;
 
-            oldToken.ExpiresInTimestamp = newtoken.ExpiresInTimestamp;
+            oldToken.ExpiresIn = newtoken.ExpiresIn;
 
             oldToken.TokenType = newtoken.TokenType;
 
             oldToken.RefreshToken = newtoken.RefreshToken;
 
-            oldToken.ErrorCodeText = newtoken.ErrorCodeText;
+            oldToken.ErrorCode = newtoken.ErrorCode;
 
             oldToken.ErrorDescription = newtoken.ErrorDescription;
         }
