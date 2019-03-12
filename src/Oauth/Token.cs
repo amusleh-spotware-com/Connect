@@ -28,7 +28,7 @@ namespace Connect.Oauth
 
         [JsonConverter(typeof(ErrorCodeConverter))]
         [JsonProperty("errorCode")]
-        public string ErrorCode { get; set; }
+        public ErrorCode ErrorCode { get; set; }
 
         [JsonProperty("description")]
         public string ErrorDescription { get; set; }
