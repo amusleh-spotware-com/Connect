@@ -12,7 +12,7 @@ namespace Connect.Common.JsonConverters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            string value = reader.Value.ToString();
+            string value = reader.Value != null ? reader.Value.ToString() : string.Empty;
 
             if (string.IsNullOrEmpty(value))
             {

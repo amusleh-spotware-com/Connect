@@ -16,7 +16,7 @@ namespace Connect.Oauth
         [JsonProperty("accessToken")]
         public string AccessToken { get; set; }
 
-        [JsonConverter(typeof(UnixDateTimeOffsetConverter))]
+        [JsonConverter(typeof(RelativeSecondsDateTimeOffsetConverter))]
         [JsonProperty("expiresIn")]
         public DateTimeOffset ExpiresIn { get; set; }
 
