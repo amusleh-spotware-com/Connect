@@ -341,7 +341,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_SYMBOLS_LIST_RES, ProtoOASymbolsListRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateTrendbarsRequest(long accountId, int symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOATrendbarPeriod period, string clientMsgId = null)
+        public static ProtoMessage CreateTrendbarsRequest(long accountId, long symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOATrendbarPeriod period, string clientMsgId = null)
         {
             var message = ProtoOAGetTrendbarsReq.CreateBuilder();
 
@@ -359,7 +359,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_GET_TRENDBARS_RES, ProtoOAGetTrendbarsRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateTickDataRequest(long accountId, int symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOAQuoteType type, string clientMsgId = null)
+        public static ProtoMessage CreateTickDataRequest(long accountId, long symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOAQuoteType type, string clientMsgId = null)
         {
             var message = ProtoOAGetTickDataReq.CreateBuilder();
 
@@ -397,7 +397,7 @@ namespace Connect.Protobuf
             return CreateExecutionEvent(executionType, order.Build(), position == null ? null : position.Build(), reasonCode, clientMsgId);
         }
 
-        public static ProtoMessage CreateMarketOrderRequest(long accountId, int symbolId, ProtoOATradeSide tradeSide, long volume, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateMarketOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, long? positionId = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -427,10 +427,15 @@ namespace Connect.Protobuf
                 message.SetLabel(label);
             }
 
+            if (positionId.HasValue)
+            {
+                message.SetPositionId(positionId.Value);
+            }
+
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateMarketRangeOrderRequest(long accountId, int symbolId, ProtoOATradeSide tradeSide, long volume, double baseSlippagePrice, int slippageInPoints, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateMarketRangeOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double baseSlippagePrice, int slippageInPoints, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, long? positionId = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -462,10 +467,15 @@ namespace Connect.Protobuf
                 message.SetLabel(label);
             }
 
+            if (positionId.HasValue)
+            {
+                message.SetPositionId(positionId.Value);
+            }
+
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateLimitOrderRequest(long accountId, int symbolId, ProtoOATradeSide tradeSide, long volume, double price, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double price, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -504,7 +514,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateStopOrderRequest(long accountId, int symbolId, ProtoOATradeSide tradeSide, long volume, double price, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateStopOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double price, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -543,7 +553,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateStopLimitOrderRequest(long accountId, int symbolId, ProtoOATradeSide tradeSide, long volume, double stopPrice, int slippageInPoints, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateStopLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double stopPrice, int slippageInPoints, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -663,7 +673,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateSubscribeForSpotsRequest(long accountId, int symbolId, string clientMsgId = null)
+        public static ProtoMessage CreateSubscribeForSpotsRequest(long accountId, long symbolId, string clientMsgId = null)
         {
             var message = ProtoOASubscribeSpotsReq.CreateBuilder();
 
@@ -682,7 +692,7 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateUnsubscribeFromSpotsRequest(long accountId, int symbolId, string clientMsgId = null)
+        public static ProtoMessage CreateUnsubscribeFromSpotsRequest(long accountId, long symbolId, string clientMsgId = null)
         {
             var message = ProtoOAUnsubscribeSpotsReq.CreateBuilder();
 
