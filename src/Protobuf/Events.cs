@@ -37,9 +37,9 @@ namespace Connect.Protobuf
 
         public event AccountListResponseEventHandler AccountListResponseEvent;
 
-        public event GetTickDataResponseEventHandler GetTickDataResponseEvent;
+        public event TickDataResponseEventHandler TickDataResponseEvent;
 
-        public event GetTrendbarsResponseEventHandler GetTrendbarsResponseEvent;
+        public event TrendbarsResponseEventHandler TrendbarsResponseEvent;
 
         public event MarginChangedEventHandler MarginChangedEvent;
 
@@ -152,14 +152,14 @@ namespace Connect.Protobuf
             AccountListResponseEvent.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnGetTickDataResponse(object sender, ProtoOAGetTickDataRes e, string clientMsgId)
+        public void OnTickDataResponse(object sender, ProtoOAGetTickDataRes e, string clientMsgId)
         {
-            GetTickDataResponseEvent?.Invoke(sender, e, clientMsgId);
+            TickDataResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnGetTrendbarsResponse(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId)
+        public void OnTrendbarsResponse(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId)
         {
-            GetTrendbarsResponseEvent?.Invoke(sender, e, clientMsgId);
+            TrendbarsResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnMarginChanged(object sender, ProtoOAMarginChangedEvent e)

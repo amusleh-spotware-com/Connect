@@ -343,7 +343,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAGetTickDataRes protoOAGetTickDataRes = MessagesFactory.GetTickDataResponse(protoMessage.Payload);
 
-                        _events.OnGetTickDataResponse(this, protoOAGetTickDataRes, protoMessage.ClientMsgId);
+                        _events.OnTickDataResponse(this, protoOAGetTickDataRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -351,7 +351,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAGetTrendbarsRes protoOAGetTrendbarsRes = MessagesFactory.GetTrendbarsResponse(protoMessage.Payload);
 
-                        _events.OnGetTrendbarsResponse(this, protoOAGetTrendbarsRes, protoMessage.ClientMsgId);
+                        _events.OnTrendbarsResponse(this, protoOAGetTrendbarsRes, protoMessage.ClientMsgId);
 
                         break;
                     }

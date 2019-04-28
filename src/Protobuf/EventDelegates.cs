@@ -38,9 +38,9 @@ namespace Connect.Protobuf
 
     public delegate void AccountListResponseEventHandler(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId);
 
-    public delegate void GetTickDataResponseEventHandler(object sender, ProtoOAGetTickDataRes e, string clientMsgId);
+    public delegate void TickDataResponseEventHandler(object sender, ProtoOAGetTickDataRes e, string clientMsgId);
 
-    public delegate void GetTrendbarsResponseEventHandler(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId);
+    public delegate void TrendbarsResponseEventHandler(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId);
 
     public delegate void ReconcileResponseEventHandler(object sender, ProtoOAReconcileRes e, string clientMsgId);
 
