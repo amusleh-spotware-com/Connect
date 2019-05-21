@@ -397,7 +397,9 @@ namespace Connect.Protobuf
             return CreateExecutionEvent(executionType, order.Build(), position == null ? null : position.Build(), reasonCode, clientMsgId);
         }
 
-        public static ProtoMessage CreateMarketOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, long? positionId = null, string clientMsgId = null)
+        public static ProtoMessage CreateMarketOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
+            long? relativeStopLoss = null, long? relativeTakeProfit = null, string comment = null, string label = null,
+            long? positionId = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -407,14 +409,14 @@ namespace Connect.Protobuf
             message.SetTradeSide(tradeSide);
             message.SetVolume(volume);
 
-            if (stoploss.HasValue)
+            if (relativeStopLoss.HasValue)
             {
-                message.SetStopLoss(stoploss.Value);
+                message.SetRelativeStopLoss(relativeStopLoss.Value);
             }
 
-            if (takeProfit.HasValue)
+            if (relativeTakeProfit.HasValue)
             {
-                message.SetTakeProfit(takeProfit.Value);
+                message.SetRelativeTakeProfit(relativeTakeProfit.Value);
             }
 
             if (!string.IsNullOrEmpty(comment))
@@ -435,7 +437,9 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateMarketRangeOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double baseSlippagePrice, int slippageInPoints, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, long? positionId = null, string clientMsgId = null)
+        public static ProtoMessage CreateMarketRangeOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
+            double baseSlippagePrice, int slippageInPoints, long? relativeStopLoss = null, long? relativeTakeProfit = null, 
+            string comment = null, string label = null, long? positionId = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -447,14 +451,14 @@ namespace Connect.Protobuf
             message.SetBaseSlippagePrice(baseSlippagePrice);
             message.SetSlippageInPoints(slippageInPoints);
 
-            if (stoploss.HasValue)
+            if (relativeStopLoss.HasValue)
             {
-                message.SetStopLoss(stoploss.Value);
+                message.SetRelativeStopLoss(relativeStopLoss.Value);
             }
 
-            if (takeProfit.HasValue)
+            if (relativeTakeProfit.HasValue)
             {
-                message.SetTakeProfit(takeProfit.Value);
+                message.SetRelativeTakeProfit(relativeTakeProfit.Value);
             }
 
             if (!string.IsNullOrEmpty(comment))
@@ -475,7 +479,9 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double price, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
+            double price, DateTimeOffset? expirationTime = null, double? stoplossInPrice = null, double? takeProfitInPrice = null,
+            string comment = null, string label = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -491,14 +497,14 @@ namespace Connect.Protobuf
                 message.SetExpirationTimestamp(expirationTime.Value.ToUnixTimeMilliseconds());
             }
 
-            if (stoploss.HasValue)
+            if (stoplossInPrice.HasValue)
             {
-                message.SetStopLoss(stoploss.Value);
+                message.SetStopLoss(stoplossInPrice.Value);
             }
 
-            if (takeProfit.HasValue)
+            if (takeProfitInPrice.HasValue)
             {
-                message.SetTakeProfit(takeProfit.Value);
+                message.SetTakeProfit(takeProfitInPrice.Value);
             }
 
             if (!string.IsNullOrEmpty(comment))
@@ -514,7 +520,9 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateStopOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double price, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateStopOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
+            double price, DateTimeOffset? expirationTime = null, double? stoplossInPrice = null, double? takeProfitInPrice = null,
+            string comment = null, string label = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -530,14 +538,14 @@ namespace Connect.Protobuf
                 message.SetExpirationTimestamp(expirationTime.Value.ToUnixTimeMilliseconds());
             }
 
-            if (stoploss.HasValue)
+            if (stoplossInPrice.HasValue)
             {
-                message.SetStopLoss(stoploss.Value);
+                message.SetStopLoss(stoplossInPrice.Value);
             }
 
-            if (takeProfit.HasValue)
+            if (takeProfitInPrice.HasValue)
             {
-                message.SetTakeProfit(takeProfit.Value);
+                message.SetTakeProfit(takeProfitInPrice.Value);
             }
 
             if (!string.IsNullOrEmpty(comment))
@@ -553,7 +561,9 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateStopLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume, double stopPrice, int slippageInPoints, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string comment = null, string label = null, string clientMsgId = null)
+        public static ProtoMessage CreateStopLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
+            double stopPrice, int slippageInPoints, DateTimeOffset? expirationTime = null, double? stoplossInPrice = null,
+            double? takeProfitInPrice = null, string comment = null, string label = null, string clientMsgId = null)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
@@ -570,14 +580,14 @@ namespace Connect.Protobuf
                 message.SetExpirationTimestamp(expirationTime.Value.ToUnixTimeMilliseconds());
             }
 
-            if (stoploss.HasValue)
+            if (stoplossInPrice.HasValue)
             {
-                message.SetStopLoss(stoploss.Value);
+                message.SetStopLoss(stoplossInPrice.Value);
             }
 
-            if (takeProfit.HasValue)
+            if (takeProfitInPrice.HasValue)
             {
-                message.SetTakeProfit(takeProfit.Value);
+                message.SetTakeProfit(takeProfitInPrice.Value);
             }
 
             if (!string.IsNullOrEmpty(comment))
