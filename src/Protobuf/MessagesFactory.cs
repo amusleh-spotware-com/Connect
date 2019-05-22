@@ -1,7 +1,6 @@
-﻿using Google.ProtocolBuffers;
-using System;
+﻿using Connect.Protobuf.Models;
+using Google.ProtocolBuffers;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Connect.Protobuf
 {
@@ -197,14 +196,16 @@ namespace Connect.Protobuf
             return CreateMessage(messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreatePingRequest(ulong timestamp, string clientMsgId = null)
+        public static ProtoMessage CreatePingRequest(PingRequestMessageArgs messageArgs)
         {
-            return CreateMessage((uint)ProtoPayloadType.PING_REQ, ProtoPingReq.CreateBuilder().SetTimestamp(timestamp).Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)ProtoPayloadType.PING_REQ,
+                ProtoPingReq.CreateBuilder().SetTimestamp(messageArgs.Timestamp).Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreatePingResponse(ulong timestamp, string clientMsgId = null)
         {
-            return CreateMessage((uint)ProtoPayloadType.PING_REQ, ProtoPingRes.CreateBuilder().SetTimestamp(timestamp).Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)ProtoPayloadType.PING_REQ,
+                ProtoPingRes.CreateBuilder().SetTimestamp(timestamp).Build().ToByteString(), clientMsgId);
         }
 
         public static ProtoMessage CreateVersionRequest(string clientMsgId = null)
@@ -215,7 +216,8 @@ namespace Connect.Protobuf
 
         public static ProtoMessage CreateVersionResponse(string clientMsgId = null)
         {
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_VERSION_RES, ProtoOAApplicationAuthRes.CreateBuilder().Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_VERSION_RES,
+                ProtoOAApplicationAuthRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
         public static ProtoMessage CreateHeartbeatEvent(string clientMsgId = null)
@@ -223,14 +225,14 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoPayloadType.HEARTBEAT_EVENT, ProtoHeartbeatEvent.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateAppAuthorizationRequest(string clientId, string clientSecret, string clientMsgId = null)
+        public static ProtoMessage CreateAppAuthorizationRequest(AppAuthorizationRequestMessageArgs messageArgs)
         {
             var message = ProtoOAApplicationAuthReq.CreateBuilder();
 
-            message.SetClientId(clientId);
-            message.SetClientSecret(clientSecret);
+            message.SetClientId(messageArgs.ClientId);
+            message.SetClientSecret(messageArgs.ClientSecret);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateAppAuthorizationResponse(string clientMsgId = null)
@@ -238,14 +240,14 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_APPLICATION_AUTH_RES, ProtoOAApplicationAuthRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateAccountAuthorizationRequest(string token, long accountId, string clientMsgId = null)
+        public static ProtoMessage CreateAccountAuthorizationRequest(AccountAuthorizationRequestMessageArgs messageArgs)
         {
             var message = ProtoOAAccountAuthReq.CreateBuilder();
 
-            message.SetAccessToken(token);
-            message.SetCtidTraderAccountId(accountId);
+            message.SetAccessToken(messageArgs.Token);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateAccountAuthorizationResponse(string clientMsgId = null)
@@ -253,13 +255,13 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_RES, ProtoOAAccountAuthRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateAssetClassListRequest(long accountId, string clientMsgId = null)
+        public static ProtoMessage CreateAssetClassListRequest(AssetClassListRequestMessageArgs messageArgs)
         {
             var message = ProtoOAAssetClassListReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
 
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateAssetClassListResponse(string clientMsgId = null)
@@ -267,15 +269,15 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_RES, ProtoOAAssetClassListRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateDealsListRequest(long accountId, DateTimeOffset from, DateTimeOffset to, string clientMsgId = null)
+        public static ProtoMessage CreateDealsListRequest(DealsListRequestMessageArgs messageArgs)
         {
             var message = ProtoOADealListReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetFromTimestamp(from.ToUnixTimeMilliseconds());
-            message.SetToTimestamp(to.ToUnixTimeMilliseconds());
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
+            message.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateDealsListResponse(string clientMsgId = null)
@@ -297,15 +299,15 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_RECONCILE_RES, ProtoOAReconcileRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateCashflowHistoryRequest(long accountId, DateTimeOffset from, DateTimeOffset to, string clientMsgId = null)
+        public static ProtoMessage CreateCashflowHistoryRequest(CashflowHistoryRequestMessageArgs messageArgs)
         {
             var message = ProtoOACashFlowHistoryListReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetFromTimestamp(from.ToUnixTimeMilliseconds());
-            message.SetToTimestamp(to.ToUnixTimeMilliseconds());
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
+            message.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateCashflowHistoryResponse(string clientMsgId = null)
@@ -313,13 +315,13 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_CASH_FLOW_HISTORY_LIST_RES, ProtoOACashFlowHistoryListRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateAccountListRequest(string accessToken, string clientMsgId = null)
+        public static ProtoMessage CreateAccountListRequest(AccountListRequestMessageArgs messageArgs)
         {
             var message = ProtoOAGetAccountListByAccessTokenReq.CreateBuilder();
 
-            message.SetAccessToken(accessToken);
+            message.SetAccessToken(messageArgs.Token);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateAccountListResponse(string clientMsgId = null)
@@ -327,13 +329,13 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES, ProtoOAGetAccountListByAccessTokenRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateSymbolsListRequest(long accountId, string clientMsgId = null)
+        public static ProtoMessage CreateSymbolsListRequest(SymbolsListRequestMessageArgs messageArgs)
         {
             var message = ProtoOASymbolsListReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolsListResponse(string clientMsgId = null)
@@ -341,17 +343,17 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_SYMBOLS_LIST_RES, ProtoOASymbolsListRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateTrendbarsRequest(long accountId, long symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOATrendbarPeriod period, string clientMsgId = null)
+        public static ProtoMessage CreateTrendbarsRequest(TrendbarsRequestMessageArgs messageArgs)
         {
             var message = ProtoOAGetTrendbarsReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(symbolId);
-            message.SetFromTimestamp(from.ToUnixTimeMilliseconds());
-            message.SetToTimestamp(to.ToUnixTimeMilliseconds());
-            message.SetPeriod(period);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetSymbolId(messageArgs.SymbolId);
+            message.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
+            message.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
+            message.SetPeriod(messageArgs.Period);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateTrendbarsResponse(string clientMsgId = null)
@@ -359,17 +361,17 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_GET_TRENDBARS_RES, ProtoOAGetTrendbarsRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateTickDataRequest(long accountId, long symbolId, DateTimeOffset from, DateTimeOffset to, ProtoOAQuoteType type, string clientMsgId = null)
+        public static ProtoMessage CreateTickDataRequest(TickDataRequestMessageArgs messageArgs)
         {
             var message = ProtoOAGetTickDataReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(symbolId);
-            message.SetType(type);
-            message.SetFromTimestamp(from.ToUnixTimeMilliseconds());
-            message.SetToTimestamp(to.ToUnixTimeMilliseconds());
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetSymbolId(messageArgs.SymbolId);
+            message.SetType(messageArgs.QuoteType);
+            message.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
+            message.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateTickDataResponse(string clientMsgId = null)
@@ -377,320 +379,220 @@ namespace Connect.Protobuf
             return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_GET_TICKDATA_RES, ProtoOAGetTickDataRes.CreateBuilder().Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateExecutionEvent(ProtoOAExecutionType executionType, ProtoOAOrder order, ProtoOAPosition position = null, string reasonCode = null, string clientMsgId = null)
+        public static ProtoMessage CreateExecutionEvent(ExecutionEventMessageArgs messageArgs)
         {
             var message = ProtoOAExecutionEvent.CreateBuilder();
 
-            message.SetExecutionType(executionType);
-            message.SetOrder(order);
+            message.SetExecutionType(messageArgs.ExecutionType);
 
-            if (position != null)
+            if (messageArgs.Order != null)
             {
-                message.SetPosition(position);
+                message.SetOrder(messageArgs.Order);
+            }
+            else if (messageArgs.OrderBuilder != null)
+            {
+                message.SetOrder(messageArgs.OrderBuilder.Build());
             }
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            if (messageArgs.Position != null)
+            {
+                message.SetPosition(messageArgs.Position);
+            }
+            else if (messageArgs.PositionBuilder != null)
+            {
+                message.SetPosition(messageArgs.PositionBuilder.Build());
+            }
+
+            if (!string.IsNullOrEmpty(messageArgs.ErrorCode))
+            {
+                message.SetErrorCode(messageArgs.ErrorCode);
+            }
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
-        public static ProtoMessage CreateExecutionEvent(ProtoOAExecutionType executionType, ProtoOAOrder.Builder order, ProtoOAPosition.Builder position = null, string reasonCode = null, string clientMsgId = null)
-        {
-            return CreateExecutionEvent(executionType, order.Build(), position == null ? null : position.Build(), reasonCode, clientMsgId);
-        }
-
-        public static ProtoMessage CreateMarketOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
-            long? relativeStopLoss = null, long? relativeTakeProfit = null, string comment = null, string label = null,
-            long? positionId = null, string clientMsgId = null)
-        {
-            var message = ProtoOANewOrderReq.CreateBuilder();
-
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(symbolId);
-            message.SetOrderType(ProtoOAOrderType.MARKET);
-            message.SetTradeSide(tradeSide);
-            message.SetVolume(volume);
-
-            if (relativeStopLoss.HasValue)
-            {
-                message.SetRelativeStopLoss(relativeStopLoss.Value);
-            }
-
-            if (relativeTakeProfit.HasValue)
-            {
-                message.SetRelativeTakeProfit(relativeTakeProfit.Value);
-            }
-
-            if (!string.IsNullOrEmpty(comment))
-            {
-                message.SetComment(comment);
-            }
-
-            if (!string.IsNullOrEmpty(label))
-            {
-                message.SetLabel(label);
-            }
-
-            if (positionId.HasValue)
-            {
-                message.SetPositionId(positionId.Value);
-            }
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
-        }
-
-        public static ProtoMessage CreateMarketRangeOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
-            double baseSlippagePrice, int slippageInPoints, long? relativeStopLoss = null, long? relativeTakeProfit = null, 
-            string comment = null, string label = null, long? positionId = null, string clientMsgId = null)
+        public static ProtoMessage CreateOrderRequest(OrderRequestMessageArgs messageArgs)
         {
             var message = ProtoOANewOrderReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(symbolId);
-            message.SetOrderType(ProtoOAOrderType.MARKET_RANGE);
-            message.SetTradeSide(tradeSide);
-            message.SetVolume(volume);
-            message.SetBaseSlippagePrice(baseSlippagePrice);
-            message.SetSlippageInPoints(slippageInPoints);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetSymbolId(messageArgs.SymbolId);
+            message.SetOrderType(messageArgs.OrderType);
+            message.SetTradeSide(messageArgs.TradeSide);
+            message.SetVolume(messageArgs.Volume);
 
-            if (relativeStopLoss.HasValue)
+            if (!string.IsNullOrEmpty(messageArgs.Comment))
             {
-                message.SetRelativeStopLoss(relativeStopLoss.Value);
+                message.SetComment(messageArgs.Comment);
             }
 
-            if (relativeTakeProfit.HasValue)
+            if (!string.IsNullOrEmpty(messageArgs.Label))
             {
-                message.SetRelativeTakeProfit(relativeTakeProfit.Value);
+                message.SetLabel(messageArgs.Label);
             }
 
-            if (!string.IsNullOrEmpty(comment))
+            switch (messageArgs.OrderType)
             {
-                message.SetComment(comment);
+                case ProtoOAOrderType.MARKET:
+                case ProtoOAOrderType.MARKET_RANGE:
+                    MarketOrderRequestMessageArgs marketOrderMessageArgs = messageArgs as MarketOrderRequestMessageArgs;
+
+                    if (marketOrderMessageArgs.RelativeStopLoss.HasValue)
+                    {
+                        message.SetRelativeStopLoss(marketOrderMessageArgs.RelativeStopLoss.Value);
+                    }
+
+                    if (marketOrderMessageArgs.RelativeTakeProfit.HasValue)
+                    {
+                        message.SetRelativeTakeProfit(marketOrderMessageArgs.RelativeTakeProfit.Value);
+                    }
+
+                    if (marketOrderMessageArgs.PositionId.HasValue)
+                    {
+                        message.SetPositionId(marketOrderMessageArgs.PositionId.Value);
+                    }
+
+                    if (marketOrderMessageArgs.OrderType == ProtoOAOrderType.MARKET_RANGE)
+                    {
+                        MarketRangeOrderRequestMessageArgs marketRangeOrderMessageArgs = messageArgs as MarketRangeOrderRequestMessageArgs;
+
+                        message.SetBaseSlippagePrice(marketRangeOrderMessageArgs.BaseSlippagePrice);
+                        message.SetSlippageInPoints(marketRangeOrderMessageArgs.SlippageInPoints);
+                    }
+
+                    break;
+
+                case ProtoOAOrderType.LIMIT:
+                case ProtoOAOrderType.STOP:
+                case ProtoOAOrderType.STOP_LIMIT:
+                    PendingOrderRequestMessageArgs pendingOrderMessageArgs = messageArgs as PendingOrderRequestMessageArgs;
+
+                    if (pendingOrderMessageArgs.ExpirationTime.HasValue)
+                    {
+                        message.SetExpirationTimestamp(pendingOrderMessageArgs.ExpirationTime.Value.ToUnixTimeMilliseconds());
+                    }
+
+                    if (pendingOrderMessageArgs.StopLossInPrice.HasValue)
+                    {
+                        message.SetStopLoss(pendingOrderMessageArgs.StopLossInPrice.Value);
+                    }
+
+                    if (pendingOrderMessageArgs.TakeProfitInPrice.HasValue)
+                    {
+                        message.SetTakeProfit(pendingOrderMessageArgs.TakeProfitInPrice.Value);
+                    }
+
+                    if (pendingOrderMessageArgs.OrderType == ProtoOAOrderType.LIMIT)
+                    {
+                        message.SetLimitPrice(pendingOrderMessageArgs.Price);
+                    }
+                    else
+                    {
+                        message.SetStopPrice(pendingOrderMessageArgs.Price);
+
+                        if (pendingOrderMessageArgs.OrderType == ProtoOAOrderType.STOP_LIMIT)
+                        {
+                            StopLimitOrderRequestMessageArgs stopLimitOrderMessageArgs = pendingOrderMessageArgs as StopLimitOrderRequestMessageArgs;
+
+                            message.SetSlippageInPoints(stopLimitOrderMessageArgs.SlippageInPoints);
+                        }
+                    }
+
+                    break;
             }
 
-            if (!string.IsNullOrEmpty(label))
-            {
-                message.SetLabel(label);
-            }
-
-            if (positionId.HasValue)
-            {
-                message.SetPositionId(positionId.Value);
-            }
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
-        public static ProtoMessage CreateLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
-            double price, DateTimeOffset? expirationTime = null, double? stoplossInPrice = null, double? takeProfitInPrice = null,
-            string comment = null, string label = null, string clientMsgId = null)
-        {
-            var message = ProtoOANewOrderReq.CreateBuilder();
-
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(symbolId);
-            message.SetOrderType(ProtoOAOrderType.LIMIT);
-            message.SetTradeSide(tradeSide);
-            message.SetVolume(volume);
-            message.SetLimitPrice(price);
-
-            if (expirationTime.HasValue)
-            {
-                message.SetExpirationTimestamp(expirationTime.Value.ToUnixTimeMilliseconds());
-            }
-
-            if (stoplossInPrice.HasValue)
-            {
-                message.SetStopLoss(stoplossInPrice.Value);
-            }
-
-            if (takeProfitInPrice.HasValue)
-            {
-                message.SetTakeProfit(takeProfitInPrice.Value);
-            }
-
-            if (!string.IsNullOrEmpty(comment))
-            {
-                message.SetComment(comment);
-            }
-
-            if (!string.IsNullOrEmpty(label))
-            {
-                message.SetLabel(label);
-            }
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
-        }
-
-        public static ProtoMessage CreateStopOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
-            double price, DateTimeOffset? expirationTime = null, double? stoplossInPrice = null, double? takeProfitInPrice = null,
-            string comment = null, string label = null, string clientMsgId = null)
-        {
-            var message = ProtoOANewOrderReq.CreateBuilder();
-
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(symbolId);
-            message.SetOrderType(ProtoOAOrderType.STOP);
-            message.SetTradeSide(tradeSide);
-            message.SetVolume(volume);
-            message.SetLimitPrice(price);
-
-            if (expirationTime.HasValue)
-            {
-                message.SetExpirationTimestamp(expirationTime.Value.ToUnixTimeMilliseconds());
-            }
-
-            if (stoplossInPrice.HasValue)
-            {
-                message.SetStopLoss(stoplossInPrice.Value);
-            }
-
-            if (takeProfitInPrice.HasValue)
-            {
-                message.SetTakeProfit(takeProfitInPrice.Value);
-            }
-
-            if (!string.IsNullOrEmpty(comment))
-            {
-                message.SetComment(comment);
-            }
-
-            if (!string.IsNullOrEmpty(label))
-            {
-                message.SetLabel(label);
-            }
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
-        }
-
-        public static ProtoMessage CreateStopLimitOrderRequest(long accountId, long symbolId, ProtoOATradeSide tradeSide, long volume,
-            double stopPrice, int slippageInPoints, DateTimeOffset? expirationTime = null, double? stoplossInPrice = null,
-            double? takeProfitInPrice = null, string comment = null, string label = null, string clientMsgId = null)
-        {
-            var message = ProtoOANewOrderReq.CreateBuilder();
-
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(symbolId);
-            message.SetOrderType(ProtoOAOrderType.STOP_LIMIT);
-            message.SetTradeSide(tradeSide);
-            message.SetVolume(volume);
-            message.SetSlippageInPoints(slippageInPoints);
-            message.SetStopPrice(stopPrice);
-
-            if (expirationTime.HasValue)
-            {
-                message.SetExpirationTimestamp(expirationTime.Value.ToUnixTimeMilliseconds());
-            }
-
-            if (stoplossInPrice.HasValue)
-            {
-                message.SetStopLoss(stoplossInPrice.Value);
-            }
-
-            if (takeProfitInPrice.HasValue)
-            {
-                message.SetTakeProfit(takeProfitInPrice.Value);
-            }
-
-            if (!string.IsNullOrEmpty(comment))
-            {
-                message.SetComment(comment);
-            }
-
-            if (!string.IsNullOrEmpty(label))
-            {
-                message.SetLabel(label);
-            }
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
-        }
-
-        public static ProtoMessage CreateCancelOrderRequest(long accountId, long orderId, string clientMsgId = null)
+        public static ProtoMessage CreateCancelOrderRequest(CancelOrderRequestMessageArgs messageArgs)
         {
             var message = ProtoOACancelOrderReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetOrderId(orderId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetOrderId(messageArgs.OrderId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
-        public static ProtoMessage CreateClosePositionRequest(long accountId, long positionId, long volume, string clientMsgId = null)
+        public static ProtoMessage CreateClosePositionRequest(ClosePositionRequestMessageArgs messageArgs)
         {
             var message = ProtoOAClosePositionReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetPositionId(positionId);
-            message.SetVolume(volume);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetPositionId(messageArgs.PositionId);
+            message.SetVolume(messageArgs.Volume);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAmendPositionProtectionRequest(long accountId, long positionId, double? stopLossPrice = null, double? takeProfitPrice = null, string clientMsgId = null)
+        public static ProtoMessage CreateAmendPositionProtectionRequest(AmendPositionProtectionRequestMessageArgs messageArgs)
         {
             var message = ProtoOAAmendPositionSLTPReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetPositionId(positionId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetPositionId(messageArgs.PositionId);
 
-            if (stopLossPrice.HasValue)
+            if (messageArgs.StopLossPrice.HasValue)
             {
-                message.SetStopLoss(stopLossPrice.Value);
+                message.SetStopLoss(messageArgs.StopLossPrice.Value);
             }
 
-            if (takeProfitPrice.HasValue)
+            if (messageArgs.TakeProfitPrice.HasValue)
             {
-                message.SetTakeProfit(takeProfitPrice.Value);
+                message.SetTakeProfit(messageArgs.TakeProfitPrice.Value);
             }
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAmendPendingOrderRequest(long accountId, long orderId, ProtoOAOrderType orderType, double? price = null, DateTimeOffset? expirationTime = null, double? stoploss = null, double? takeProfit = null, string clientMsgId = null)
+        public static ProtoMessage CreateAmendPendingOrderRequest(AmendPendingOrderRequestMessageArgs messageArgs)
         {
             var message = ProtoOAAmendOrderReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetOrderId(orderId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetOrderId(messageArgs.OrderId);
 
-            if (price.HasValue)
+            if (messageArgs.Price.HasValue)
             {
-                switch (orderType)
+                switch (messageArgs.OrderType)
                 {
                     case ProtoOAOrderType.LIMIT:
-                        message.SetLimitPrice(price.Value);
+                        message.SetLimitPrice(messageArgs.Price.Value);
                         break;
+
                     case ProtoOAOrderType.STOP:
                     case ProtoOAOrderType.STOP_LIMIT:
-                        message.SetStopPrice(price.Value);
+                        message.SetStopPrice(messageArgs.Price.Value);
                         break;
                 }
             }
 
-            if (expirationTime.HasValue)
+            if (messageArgs.ExpirationTime.HasValue)
             {
-                message.SetExpirationTimestamp(expirationTime.Value.ToUnixTimeMilliseconds());
+                message.SetExpirationTimestamp(messageArgs.ExpirationTime.Value.ToUnixTimeMilliseconds());
             }
 
-            if (stoploss.HasValue)
+            if (messageArgs.StopLossPrice.HasValue)
             {
-                message.SetStopLoss(stoploss.Value);
+                message.SetStopLoss(messageArgs.StopLossPrice.Value);
             }
 
-            if (takeProfit.HasValue)
+            if (messageArgs.TakeProfitPrice.HasValue)
             {
-                message.SetTakeProfit(takeProfit.Value);
+                message.SetTakeProfit(messageArgs.TakeProfitPrice.Value);
             }
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSubscribeForSpotsRequest(long accountId, long symbolId, string clientMsgId = null)
+        public static ProtoMessage CreateSubscribeForSpotsRequest(SubscribeForSpotsRequestMessageArgs messageArgs)
         {
             var message = ProtoOASubscribeSpotsReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.AddSymbolId(symbolId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.AddSymbolId(messageArgs.SymbolId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateSubscribeForSpotsResponse(long accountId, string clientMsgId = null)
@@ -702,14 +604,23 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateUnsubscribeFromSpotsRequest(long accountId, long symbolId, string clientMsgId = null)
+        public static ProtoMessage CreateUnsubscribeFromSpotsRequest(SubscribeForSpotsRequestMessageArgs messageArgs)
         {
             var message = ProtoOAUnsubscribeSpotsReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.AddSymbolId(symbolId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.AddSymbolId(messageArgs.SymbolId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
+        }
+
+        public static ProtoMessage CreateTraderRequest(TraderRequestMessageArgs messageArgs)
+        {
+            var message = ProtoOATraderReq.CreateBuilder();
+
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateTraderResponse(long accountId, string clientMsgId = null)
@@ -721,22 +632,22 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateTraderRequest(long accountId, string clientMsgId = null)
-        {
-            var message = ProtoOATraderReq.CreateBuilder();
-
-            message.SetCtidTraderAccountId(accountId);
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
-        }
-
-        public static ProtoMessage CreateTraderUpdatedEvent(long accountId, string clientMsgId = null)
+        public static ProtoMessage CreateTraderUpdatedEvent(TraderUpdatedEventMessageArgs messageArgs)
         {
             var message = ProtoOATraderUpdatedEvent.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
+        }
+
+        public static ProtoMessage CreateCtidProfileRequest(CtidProfileRequestMessageArgs messageArgs)
+        {
+            var message = ProtoOAGetCtidProfileByTokenReq.CreateBuilder();
+
+            message.SetAccessToken(messageArgs.Token);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateCtidProfileResponse(string accessToken, string clientMsgId = null)
@@ -746,13 +657,15 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateCtidProfileRequest(string accessToken, string clientMsgId = null)
+        public static ProtoMessage CreateSymbolByIdRequest(SymbolByIdRequestMessageArgs messageArgs)
         {
-            var message = ProtoOAGetCtidProfileByTokenReq.CreateBuilder();
+            var message = ProtoOASymbolByIdReq.CreateBuilder();
 
-            message.SetAccessToken(accessToken);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            message.AddRangeSymbolId(messageArgs.SymbolIds);
+
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolByIdResponse(long accountId, List<ProtoOASymbol> symbols, string clientMsgId = null)
@@ -766,15 +679,15 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateSymbolByIdRequest(long accountId, List<long> symbolIds, string clientMsgId = null)
+        public static ProtoMessage CreateSymbolsForConversionRequest(SymbolsForConversionRequestMessageArgs messageArgs)
         {
-            var message = ProtoOASymbolByIdReq.CreateBuilder();
+            var message = ProtoOASymbolsForConversionReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetFirstAssetId(messageArgs.FirstAssetId);
+            message.SetLastAssetId(messageArgs.LastAssetId);
 
-            message.AddRangeSymbolId(symbolIds);
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolsForConversionResponse(long accountId, int index, ProtoOALightSymbol lightSymbol, string clientMsgId = null)
@@ -787,15 +700,13 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateSymbolsForConversionRequest(long accountId, long firstAssetId, long lastAssetId, string clientMsgId = null)
+        public static ProtoMessage CreateSymbolCategoryListRequest(SymbolCategoryListRequestMessageArgs messageArgs)
         {
-            var message = ProtoOASymbolsForConversionReq.CreateBuilder();
+            var message = ProtoOASymbolCategoryListReq.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetFirstAssetId(firstAssetId);
-            message.SetLastAssetId(lastAssetId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolCategoryListResponse(long accountId, int index, ProtoOASymbolCategory symbolCategory, string clientMsgId = null)
@@ -808,23 +719,14 @@ namespace Connect.Protobuf
             return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreateSymbolCategoryListRequest(long accountId, string clientMsgId = null)
-        {
-            var message = ProtoOASymbolCategoryListReq.CreateBuilder();
-
-            message.SetCtidTraderAccountId(accountId);
-
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
-        }
-
-        public static ProtoMessage CreateSymbolChangedEvent(long accountId, int index, long symbolId, string clientMsgId = null)
+        public static ProtoMessage CreateSymbolChangedEvent(SymbolChangedEventMessageArgs messageArgs)
         {
             var message = ProtoOASymbolChangedEvent.CreateBuilder();
 
-            message.SetCtidTraderAccountId(accountId);
-            message.SetSymbolId(index, symbolId);
+            message.SetCtidTraderAccountId(messageArgs.AccountId);
+            message.SetSymbolId(messageArgs.Index, messageArgs.SymbolId);
 
-            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), clientMsgId);
+            return CreateMessage((uint)message.PayloadType, message.Build().ToByteString(), messageArgs.ClientMessageId);
         }
 
         #endregion Creating new Proto messages with parameters specified
