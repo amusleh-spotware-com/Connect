@@ -263,7 +263,7 @@ namespace Connect.Protobuf
                     {
                         ProtoPingRes protoPingRes = MessagesFactory.GetPingResponse(protoMessage.Payload);
 
-                        _events.OnPingResponse(this, protoPingRes);
+                        _events.OnPingResponse(this, protoPingRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -314,6 +314,14 @@ namespace Connect.Protobuf
                         ProtoOAAssetListRes protoOAAssetListRes = MessagesFactory.GetAssetListResponse(protoMessage.Payload);
 
                         _events.OnAssetListResponse(this, protoOAAssetListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_RES:
+                    {
+                        ProtoOAAssetClassListRes protoOAAssetClassListRes = MessagesFactory.GetAssetClassListResponse(protoMessage.Payload);
+
+                        _events.OnAssetClassListResponse(this, protoOAAssetClassListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -498,6 +506,38 @@ namespace Connect.Protobuf
                         ProtoOASymbolCategoryListRes symbolCategoryListRes = MessagesFactory.GetSymbolCategoryListResponse(protoMessage.Payload);
 
                         _events.OnSymbolCategoryListResponse(this, symbolCategoryListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.PROTO_OA_DEPTH_EVENT:
+                    {
+                        ProtoOADepthEvent depthEvent = MessagesFactory.GetDepthEvent(protoMessage.Payload);
+
+                        _events.OnDepthQuotes(this, depthEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES:
+                    {
+                        ProtoOASubscribeDepthQuotesRes subscribeDepthQuotesRes = MessagesFactory.GetSubscribeDepthQuotesResponse(protoMessage.Payload);
+
+                        _events.OnSubscribeDepthQuotesResponse(this, subscribeDepthQuotesRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES:
+                    {
+                        ProtoOAUnsubscribeDepthQuotesRes unsubscribeDepthQuotesRes = MessagesFactory.GetUnsubscribeDepthQuotesResponse(protoMessage.Payload);
+
+                        _events.OnUnsubscribeDepthQuotesResponse(this, unsubscribeDepthQuotesRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_RES:
+                    {
+                        ProtoOAAccountLogoutRes accountLogoutRes = MessagesFactory.GetAccountLogoutResponse(protoMessage.Payload);
+
+                        _events.OnAccountLogoutResponse(this, accountLogoutRes, protoMessage.ClientMsgId);
 
                         break;
                     }

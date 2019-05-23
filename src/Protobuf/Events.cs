@@ -12,6 +12,12 @@ namespace Connect.Protobuf
 
         public event SpotEventHandler SpotEvent;
 
+        public event DepthQuotesEvnetHandler DepthQuotesEvent;
+
+        public event SubscribeDepthQuotesResponseEventHandler SubscribeDepthQuotesResponseEvent;
+
+        public event UnsubscribeDepthQuotesResponseEventHandler UnsubscribeDepthQuotesResponseEvent;
+
         public event ErrorHandler ErrorEvent;
 
         public event ListenerExceptionEventHandler ListenerExceptionEvent;
@@ -29,6 +35,8 @@ namespace Connect.Protobuf
         public event DealListResponseEventHandler DealListResponseEvent;
 
         public event AssetListResponseEventHandler AssetListResponseEvent;
+
+        public event AssetClassListResponseEventHandler AssetClassListResponseEvent;
 
         public event AccountsTokenInvalidatedEventHandler AccountsTokenInvalidatedEvent;
 
@@ -74,6 +82,8 @@ namespace Connect.Protobuf
 
         public event SymbolCategoryListResponseEventHandler SymbolCategoryListResponseEvent;
 
+        public event AccountLogoutResponseEventHandler AccountLogoutResponseEvent;
+
         #endregion Events
 
         #region Invoking Methods
@@ -88,6 +98,11 @@ namespace Connect.Protobuf
             SpotEvent?.Invoke(sender, spotEvent);
         }
 
+        public void OnDepthQuotes(object sender, ProtoOADepthEvent depthEvent)
+        {
+            DepthQuotesEvent?.Invoke(sender, depthEvent);
+        }
+
         public void OnError(object sender, ProtoOAErrorRes e)
         {
             ErrorEvent?.Invoke(sender, e);
@@ -96,6 +111,16 @@ namespace Connect.Protobuf
         public void OnApplicationAuthResponse(object sender, ProtoOAApplicationAuthRes e, string clientMsgId)
         {
             ApplicationAuthResponseEvent?.Invoke(sender, e, clientMsgId);
+        }
+
+        public void OnSubscribeDepthQuotesResponse(object sender, ProtoOASubscribeDepthQuotesRes e, string clientMsgId)
+        {
+            SubscribeDepthQuotesResponseEvent?.Invoke(sender, e, clientMsgId);
+        }
+
+        public void OnUnsubscribeDepthQuotesResponse(object sender, ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId)
+        {
+            UnsubscribeDepthQuotesResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnListenerException(object sender, Exception ex)
@@ -108,9 +133,9 @@ namespace Connect.Protobuf
             HeartbeatSendingExceptionEvent?.Invoke(sender, ex);
         }
 
-        public void OnPingResponse(object sender, ProtoPingRes e)
+        public void OnPingResponse(object sender, ProtoPingRes e, string clientMsgId)
         {
-            PingResponseEvent?.Invoke(sender, e);
+            PingResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnHeartbeat(object sender, ProtoHeartbeatEvent e)
@@ -136,6 +161,11 @@ namespace Connect.Protobuf
         public void OnAssetListResponse(object sender, ProtoOAAssetListRes e, string clientMsgId)
         {
             AssetListResponseEvent?.Invoke(sender, e, clientMsgId);
+        }
+
+        public void OnAssetClassListResponse(object sender, ProtoOAAssetClassListRes e, string clientMsgId)
+        {
+            AssetClassListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnAccountsTokenInvalidated(object sender, ProtoOAAccountsTokenInvalidatedEvent e)
@@ -241,6 +271,11 @@ namespace Connect.Protobuf
         public void OnSymbolCategoryListResponse(object sender, ProtoOASymbolCategoryListRes e, string clientMsgId)
         {
             SymbolCategoryListResponseEvent?.Invoke(sender, e, clientMsgId);
+        }
+
+        public void OnAccountLogoutResponse(object sender, ProtoOAAccountLogoutRes e, string clientMsgId)
+        {
+            AccountLogoutResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         public void OnMessageReceived(object sender, ProtoMessage e)

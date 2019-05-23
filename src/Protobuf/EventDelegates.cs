@@ -6,9 +6,11 @@ namespace Connect.Protobuf
 
     public delegate void SpotEventHandler(object sender, ProtoOASpotEvent e);
 
+    public delegate void DepthQuotesEvnetHandler(object sender, ProtoOADepthEvent e);
+
     public delegate void ErrorHandler(object sender, ProtoOAErrorRes e);
 
-    public delegate void PingResponseEventHandler(object sender, ProtoPingRes e);
+    public delegate void PingResponseEventHandler(object sender, ProtoPingRes e, string clientMsgId);
 
     public delegate void HeartbeatEventHandler(object sender, ProtoHeartbeatEvent e);
 
@@ -32,6 +34,8 @@ namespace Connect.Protobuf
 
     public delegate void AssetListResponseEventHandler(object sender, ProtoOAAssetListRes e, string clientMsgId);
 
+    public delegate void AssetClassListResponseEventHandler(object sender, ProtoOAAssetClassListRes e, string clientMsgId);
+
     public delegate void CashFlowHistoryListResponseEventHandler(object sender, ProtoOACashFlowHistoryListRes e, string clientMsgId);
 
     public delegate void ExpectedMarginResponseEventHandler(object sender, ProtoOAExpectedMarginRes e, string clientMsgId);
@@ -46,6 +50,8 @@ namespace Connect.Protobuf
 
     public delegate void SubscribeSpotsResponseEventHandler(object sender, ProtoOASubscribeSpotsRes e, string clientMsgId);
 
+    public delegate void SubscribeDepthQuotesResponseEventHandler(object sender, ProtoOASubscribeDepthQuotesRes e, string clientMsgId);
+
     public delegate void SymbolsForConversionResponseEventHandler(object sender, ProtoOASymbolsForConversionRes e, string clientMsgId);
 
     public delegate void SymbolsListResponseEventHandler(object sender, ProtoOASymbolsListRes e, string clientMsgId);
@@ -58,6 +64,8 @@ namespace Connect.Protobuf
 
     public delegate void UnsubscribeSpotsResponseEventHandler(object sender, ProtoOAUnsubscribeSpotsRes e, string clientMsgId);
 
+    public delegate void UnsubscribeDepthQuotesResponseEventHandler(object sender, ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId);
+
     public delegate void VersionResponseEventHandler(object sender, ProtoOAVersionRes e, string clientMsgId);
 
     public delegate void CtidProfileResponseEventHandler(object sender, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId);
@@ -69,4 +77,6 @@ namespace Connect.Protobuf
     public delegate void HeartbeatSendingExceptionEventHandler(object sender, Exception ex);
 
     public delegate void ListenerExceptionEventHandler(object sender, Exception ex);
+
+    public delegate void AccountLogoutResponseEventHandler(object sender, ProtoOAAccountLogoutRes e, string clientMsgId);
 }

@@ -12,8 +12,6 @@ namespace Connect.Protobuf.MessageArgs
 
         public long AccountId { get; set; }
 
-        public long SymbolId { get; set; }
-
-        public int Index { get; set; }
+        public List<long> SymbolIds { get; set; }
     }
 }
