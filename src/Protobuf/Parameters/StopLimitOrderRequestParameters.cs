@@ -6,9 +6,8 @@ namespace Connect.Protobuf.Parameters
 {
     public class StopLimitOrderRequestParameters : PendingOrderRequestParameters
     {
-        public StopLimitOrderRequestParameters()
+        public StopLimitOrderRequestParameters(): base(ProtoOAOrderType.STOP_LIMIT)
         {
-            OrderType = ProtoOAOrderType.STOP_LIMIT;
         }
 
         public int SlippageInPoints { get; set; }

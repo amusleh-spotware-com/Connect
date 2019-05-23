@@ -6,11 +6,12 @@ namespace Connect.Protobuf.Parameters
 {
     public class OrderRequestParameters : ParametersBase
     {
-        public OrderRequestParameters() : base((int)ProtoOAPayloadType.PROTO_OA_NEW_ORDER_REQ)
+        public OrderRequestParameters(ProtoOAOrderType orderType) : base((int)ProtoOAPayloadType.PROTO_OA_NEW_ORDER_REQ)
         {
+            OrderType = orderType;
         }
 
-        public ProtoOAOrderType OrderType { get; set; }
+        public ProtoOAOrderType OrderType { get; private set; }
 
         public long AccountId { get; set; }
 

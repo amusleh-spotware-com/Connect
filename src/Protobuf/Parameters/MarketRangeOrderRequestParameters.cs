@@ -6,9 +6,8 @@ namespace Connect.Protobuf.Parameters
 {
     public class MarketRangeOrderRequestParameters : MarketOrderRequestParameters
     {
-        public MarketRangeOrderRequestParameters()
+        public MarketRangeOrderRequestParameters(): base(ProtoOAOrderType.MARKET_RANGE)
         {
-            OrderType = ProtoOAOrderType.MARKET_RANGE;
         }
 
         public double BaseSlippagePrice { get; set; }

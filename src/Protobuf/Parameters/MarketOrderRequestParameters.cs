@@ -6,9 +6,12 @@ namespace Connect.Protobuf.Parameters
 {
     public class MarketOrderRequestParameters : OrderRequestParameters
     {
-        public MarketOrderRequestParameters()
+        public MarketOrderRequestParameters(): base(ProtoOAOrderType.MARKET)
         {
-            OrderType = ProtoOAOrderType.MARKET;
+        }
+
+        public MarketOrderRequestParameters(ProtoOAOrderType orderType) : base(orderType)
+        {
         }
 
         public long? RelativeStopLoss { get; set; }

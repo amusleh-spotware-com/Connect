@@ -6,6 +6,10 @@ namespace Connect.Protobuf.Parameters
 {
     public class PendingOrderRequestParameters : OrderRequestParameters
     {
+        public PendingOrderRequestParameters(ProtoOAOrderType orderType) : base(orderType)
+        {
+        }
+
         public double Price { get; set; }
 
         public double? StopLossInPrice { get; set; }
