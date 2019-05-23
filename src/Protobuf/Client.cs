@@ -92,7 +92,7 @@ namespace Connect.Protobuf
 
                     if (!_stopSendingHeartbeats)
                     {
-                        HeartbeatEventMessageArgs messageArgs = new HeartbeatEventMessageArgs();
+                        HeartbeatEventParameters messageArgs = new HeartbeatEventParameters();
 
                         ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent(messageArgs);
 
@@ -216,9 +216,9 @@ namespace Connect.Protobuf
 
         #region Send message
 
-        public async Task SendMessage(IMessageArgs messageArgs)
+        public async Task SendMessage(IParameters parameters)
         {
-            ProtoMessage protoMessage = MessagesFactory.CreateMessage(messageArgs);
+            ProtoMessage protoMessage = MessagesFactory.CreateMessage(parameters);
 
             await SendMessage(protoMessage);
         }

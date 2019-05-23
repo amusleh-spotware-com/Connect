@@ -198,108 +198,108 @@ namespace Connect.Protobuf
 
         #region Creating new Proto messages with parameters specified
 
-        public static ProtoMessage CreateMessage(IMessageArgs messageArgs)
+        public static ProtoMessage CreateMessage(IParameters parameters)
         {
-            switch (messageArgs.PayloadType)
+            switch (parameters.PayloadType)
             {
                 case (int)ProtoPayloadType.PING_REQ:
-                    return CreatePingRequest(messageArgs as PingRequestMessageArgs);
+                    return CreatePingRequest(parameters as PingRequestParameters);
 
                 case (int)ProtoPayloadType.HEARTBEAT_EVENT:
-                    return CreateHeartbeatEvent(messageArgs as HeartbeatEventMessageArgs);
+                    return CreateHeartbeatEvent(parameters as HeartbeatEventParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_VERSION_REQ:
-                    return CreateVersionRequest(messageArgs as VersionRequestMessageArgs);
+                    return CreateVersionRequest(parameters as VersionRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_APPLICATION_AUTH_REQ:
-                    return CreateAppAuthorizationRequest(messageArgs as AppAuthorizationRequestMessageArgs);
+                    return CreateAppAuthorizationRequest(parameters as AppAuthorizationRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_REQ:
-                    return CreateAccountAuthorizationRequest(messageArgs as AccountAuthorizationRequestMessageArgs);
+                    return CreateAccountAuthorizationRequest(parameters as AccountAuthorizationRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ:
-                    return CreateAssetListRequest(messageArgs as AssetListRequestMessageArgs);
+                    return CreateAssetListRequest(parameters as AssetListRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_REQ:
-                    return CreateAssetClassListRequest(messageArgs as AssetClassListRequestMessageArgs);
+                    return CreateAssetClassListRequest(parameters as AssetClassListRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_DEAL_LIST_REQ:
-                    return CreateDealsListRequest(messageArgs as DealsListRequestMessageArgs);
+                    return CreateDealsListRequest(parameters as DealsListRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_CASH_FLOW_HISTORY_LIST_REQ:
-                    return CreateCashflowHistoryRequest(messageArgs as CashflowHistoryRequestMessageArgs);
+                    return CreateCashflowHistoryRequest(parameters as CashflowHistoryRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_REQ:
-                    return CreateAccountListRequest(messageArgs as AccountListRequestMessageArgs);
+                    return CreateAccountListRequest(parameters as AccountListRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_LIST_REQ:
-                    return CreateSymbolsListRequest(messageArgs as SymbolsListRequestMessageArgs);
+                    return CreateSymbolsListRequest(parameters as SymbolsListRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_TRENDBARS_REQ:
-                    return CreateTrendbarsRequest(messageArgs as TrendbarsRequestMessageArgs);
+                    return CreateTrendbarsRequest(parameters as TrendbarsRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_TICKDATA_REQ:
-                    return CreateTickDataRequest(messageArgs as TickDataRequestMessageArgs);
+                    return CreateTickDataRequest(parameters as TickDataRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_NEW_ORDER_REQ:
-                    return CreateOrderRequest(messageArgs as OrderRequestMessageArgs);
+                    return CreateOrderRequest(parameters as OrderRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_CANCEL_ORDER_REQ:
-                    return CreateCancelOrderRequest(messageArgs as CancelOrderRequestMessageArgs);
+                    return CreateCancelOrderRequest(parameters as CancelOrderRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_CLOSE_POSITION_REQ:
-                    return CreateClosePositionRequest(messageArgs as ClosePositionRequestMessageArgs);
+                    return CreateClosePositionRequest(parameters as ClosePositionRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_AMEND_ORDER_REQ:
-                    return CreateAmendPendingOrderRequest(messageArgs as AmendPendingOrderRequestMessageArgs);
+                    return CreateAmendPendingOrderRequest(parameters as AmendPendingOrderRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_AMEND_POSITION_SLTP_REQ:
-                    return CreateAmendPositionProtectionRequest(messageArgs as AmendPositionProtectionRequestMessageArgs);
+                    return CreateAmendPositionProtectionRequest(parameters as AmendPositionProtectionRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_SPOTS_REQ:
-                    return CreateSubscribeForSpotsRequest(messageArgs as SpotsRequestMessageArgs);
+                    return CreateSubscribeForSpotsRequest(parameters as SpotsRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_SPOTS_REQ:
-                    return CreateUnsubscribeFromSpotsRequest(messageArgs as SpotsRequestMessageArgs);
+                    return CreateUnsubscribeFromSpotsRequest(parameters as SpotsRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_TRADER_REQ:
-                    return CreateTraderRequest(messageArgs as TraderRequestMessageArgs);
+                    return CreateTraderRequest(parameters as TraderRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_TRADER_UPDATE_EVENT:
-                    return CreateTraderUpdatedEvent(messageArgs as TraderUpdatedEventMessageArgs);
+                    return CreateTraderUpdatedEvent(parameters as TraderUpdatedEventParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ:
-                    return CreateCtidProfileRequest(messageArgs as CtidProfileRequestMessageArgs);
+                    return CreateCtidProfileRequest(parameters as CtidProfileRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_BY_ID_REQ:
-                    return CreateSymbolByIdRequest(messageArgs as SymbolByIdRequestMessageArgs);
+                    return CreateSymbolByIdRequest(parameters as SymbolByIdRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_FOR_CONVERSION_REQ:
-                    return CreateSymbolsForConversionRequest(messageArgs as SymbolsForConversionRequestMessageArgs);
+                    return CreateSymbolsForConversionRequest(parameters as SymbolsForConversionRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_REQ:
-                    return CreateSymbolCategoryListRequest(messageArgs as SymbolCategoryListRequestMessageArgs);
+                    return CreateSymbolCategoryListRequest(parameters as SymbolCategoryListRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CHANGED_EVENT:
-                    return CreateSymbolChangedEvent(messageArgs as SymbolChangedEventMessageArgs);
+                    return CreateSymbolChangedEvent(parameters as SymbolChangedEventParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_EXPECTED_MARGIN_REQ:
-                    return CreateExpectedMarginRequest(messageArgs as ExpectedMarginRequestMessageArgs);
+                    return CreateExpectedMarginRequest(parameters as ExpectedMarginRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_REQ:
-                    return CreateSubscribeForLiveTrendbarRequest(messageArgs as LiveTrendbarRequestMessageArgs);
+                    return CreateSubscribeForLiveTrendbarRequest(parameters as LiveTrendbarRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_LIVE_TRENDBAR_REQ:
-                    return CreateUnsubscribeForLiveTrendbarRequest(messageArgs as LiveTrendbarRequestMessageArgs);
+                    return CreateUnsubscribeForLiveTrendbarRequest(parameters as LiveTrendbarRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_REQ:
-                    return CreateSubscribeForDepthQuotesRequest(messageArgs as DepthQuotesRequestMessageArgs);
+                    return CreateSubscribeForDepthQuotesRequest(parameters as DepthQuotesRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_REQ:
-                    return CreateUnsubscribeForDepthQuotesRequest(messageArgs as DepthQuotesRequestMessageArgs);
+                    return CreateUnsubscribeForDepthQuotesRequest(parameters as DepthQuotesRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_REQ:
-                    return CreateAccountLogoutRequest(messageArgs as AccountLogoutRequestMessageArgs);
+                    return CreateAccountLogoutRequest(parameters as AccountLogoutRequestParameters);
 
                 default:
                     throw new InvalidOperationException("Unknown message payload type");
@@ -330,182 +330,182 @@ namespace Connect.Protobuf
             return CreateMessage(messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), clientMsgId);
         }
 
-        public static ProtoMessage CreatePingRequest(PingRequestMessageArgs messageArgs)
+        public static ProtoMessage CreatePingRequest(PingRequestParameters parameters)
         {
             return CreateMessage((uint)ProtoPayloadType.PING_REQ,
-                ProtoPingReq.CreateBuilder().SetTimestamp(messageArgs.Timestamp).Build().ToByteString(), messageArgs.ClientMessageId);
+                ProtoPingReq.CreateBuilder().SetTimestamp(parameters.Timestamp).Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateHeartbeatEvent(HeartbeatEventMessageArgs messageArgs)
+        public static ProtoMessage CreateHeartbeatEvent(HeartbeatEventParameters parameters)
         {
             return CreateMessage((uint)ProtoPayloadType.HEARTBEAT_EVENT, ProtoHeartbeatEvent.CreateBuilder().Build().ToByteString(),
-                messageArgs.ClientMessageId);
+                parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateVersionRequest(VersionRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateVersionRequest(VersionRequestParameters parameters)
         {
             var messageBuilder = ProtoOAVersionReq.CreateBuilder();
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAppAuthorizationRequest(AppAuthorizationRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAppAuthorizationRequest(AppAuthorizationRequestParameters parameters)
         {
             var messageBuilder = ProtoOAApplicationAuthReq.CreateBuilder();
 
-            messageBuilder.SetClientId(messageArgs.ClientId);
+            messageBuilder.SetClientId(parameters.ClientId);
 
-            messageBuilder.SetClientSecret(messageArgs.ClientSecret);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetClientSecret(parameters.ClientSecret);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAccountAuthorizationRequest(AccountAuthorizationRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAccountAuthorizationRequest(AccountAuthorizationRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAccountAuthReq.CreateBuilder();
 
-            messageBuilder.SetAccessToken(messageArgs.Token);
+            messageBuilder.SetAccessToken(parameters.Token);
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAssetListRequest(AssetListRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAssetListRequest(AssetListRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAssetListReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAssetClassListRequest(AssetClassListRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAssetClassListRequest(AssetClassListRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAssetClassListReq.CreateBuilder();
-            
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateDealsListRequest(DealsListRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateDealsListRequest(DealsListRequestParameters parameters)
         {
             var messageBuilder = ProtoOADealListReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
+            messageBuilder.SetFromTimestamp(parameters.From.ToUnixTimeMilliseconds());
 
-            messageBuilder.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateCashflowHistoryRequest(CashflowHistoryRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateCashflowHistoryRequest(CashflowHistoryRequestParameters parameters)
         {
             var messageBuilder = ProtoOACashFlowHistoryListReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
+            messageBuilder.SetFromTimestamp(parameters.From.ToUnixTimeMilliseconds());
 
-            messageBuilder.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAccountListRequest(AccountListRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAccountListRequest(AccountListRequestParameters parameters)
         {
             var messageBuilder = ProtoOAGetAccountListByAccessTokenReq.CreateBuilder();
 
-            messageBuilder.SetAccessToken(messageArgs.Token);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetAccessToken(parameters.Token);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSymbolsListRequest(SymbolsListRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateSymbolsListRequest(SymbolsListRequestParameters parameters)
         {
             var messageBuilder = ProtoOASymbolsListReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateTrendbarsRequest(TrendbarsRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateTrendbarsRequest(TrendbarsRequestParameters parameters)
         {
             var messageBuilder = ProtoOAGetTrendbarsReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetSymbolId(messageArgs.SymbolId);
-            messageBuilder.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
-            messageBuilder.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
-            messageBuilder.SetPeriod(messageArgs.Period);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetSymbolId(parameters.SymbolId);
+            messageBuilder.SetFromTimestamp(parameters.From.ToUnixTimeMilliseconds());
+            messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
+            messageBuilder.SetPeriod(parameters.Period);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateTickDataRequest(TickDataRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateTickDataRequest(TickDataRequestParameters parameters)
         {
             var messageBuilder = ProtoOAGetTickDataReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetSymbolId(messageArgs.SymbolId);
-            messageBuilder.SetType(messageArgs.QuoteType);
-            messageBuilder.SetFromTimestamp(messageArgs.From.ToUnixTimeMilliseconds());
-            messageBuilder.SetToTimestamp(messageArgs.To.ToUnixTimeMilliseconds());
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetSymbolId(parameters.SymbolId);
+            messageBuilder.SetType(parameters.QuoteType);
+            messageBuilder.SetFromTimestamp(parameters.From.ToUnixTimeMilliseconds());
+            messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateOrderRequest(OrderRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateOrderRequest(OrderRequestParameters parameters)
         {
             var messageBuilder = ProtoOANewOrderReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetSymbolId(messageArgs.SymbolId);
-            messageBuilder.SetOrderType(messageArgs.OrderType);
-            messageBuilder.SetTradeSide(messageArgs.TradeSide);
-            messageBuilder.SetVolume(messageArgs.Volume);
-            
-            if (!string.IsNullOrEmpty(messageArgs.Comment))
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetSymbolId(parameters.SymbolId);
+            messageBuilder.SetOrderType(parameters.OrderType);
+            messageBuilder.SetTradeSide(parameters.TradeSide);
+            messageBuilder.SetVolume(parameters.Volume);
+
+            if (!string.IsNullOrEmpty(parameters.Comment))
             {
-                messageBuilder.SetComment(messageArgs.Comment);
+                messageBuilder.SetComment(parameters.Comment);
             }
 
-            if (!string.IsNullOrEmpty(messageArgs.Label))
+            if (!string.IsNullOrEmpty(parameters.Label))
             {
-                messageBuilder.SetLabel(messageArgs.Label);
+                messageBuilder.SetLabel(parameters.Label);
             }
 
-            switch (messageArgs.OrderType)
+            switch (parameters.OrderType)
             {
                 case ProtoOAOrderType.MARKET:
                 case ProtoOAOrderType.MARKET_RANGE:
-                    MarketOrderRequestMessageArgs marketOrderMessageArgs = messageArgs as MarketOrderRequestMessageArgs;
+                    MarketOrderRequestParameters marketOrderParameters = parameters as MarketOrderRequestParameters;
 
-                    if (marketOrderMessageArgs.RelativeStopLoss.HasValue)
+                    if (marketOrderParameters.RelativeStopLoss.HasValue)
                     {
-                        messageBuilder.SetRelativeStopLoss(marketOrderMessageArgs.RelativeStopLoss.Value);
+                        messageBuilder.SetRelativeStopLoss(marketOrderParameters.RelativeStopLoss.Value);
                     }
 
-                    if (marketOrderMessageArgs.RelativeTakeProfit.HasValue)
+                    if (marketOrderParameters.RelativeTakeProfit.HasValue)
                     {
-                        messageBuilder.SetRelativeTakeProfit(marketOrderMessageArgs.RelativeTakeProfit.Value);
+                        messageBuilder.SetRelativeTakeProfit(marketOrderParameters.RelativeTakeProfit.Value);
                     }
 
-                    if (marketOrderMessageArgs.PositionId.HasValue)
+                    if (marketOrderParameters.PositionId.HasValue)
                     {
-                        messageBuilder.SetPositionId(marketOrderMessageArgs.PositionId.Value);
+                        messageBuilder.SetPositionId(marketOrderParameters.PositionId.Value);
                     }
 
-                    if (marketOrderMessageArgs.OrderType == ProtoOAOrderType.MARKET_RANGE)
+                    if (marketOrderParameters.OrderType == ProtoOAOrderType.MARKET_RANGE)
                     {
-                        MarketRangeOrderRequestMessageArgs marketRangeOrderMessageArgs = messageArgs as MarketRangeOrderRequestMessageArgs;
+                        MarketRangeOrderRequestParameters marketRangeOrderParameters = parameters as MarketRangeOrderRequestParameters;
 
-                        messageBuilder.SetBaseSlippagePrice(marketRangeOrderMessageArgs.BaseSlippagePrice);
-                        messageBuilder.SetSlippageInPoints(marketRangeOrderMessageArgs.SlippageInPoints);
+                        messageBuilder.SetBaseSlippagePrice(marketRangeOrderParameters.BaseSlippagePrice);
+                        messageBuilder.SetSlippageInPoints(marketRangeOrderParameters.SlippageInPoints);
                     }
 
                     break;
@@ -513,285 +513,285 @@ namespace Connect.Protobuf
                 case ProtoOAOrderType.LIMIT:
                 case ProtoOAOrderType.STOP:
                 case ProtoOAOrderType.STOP_LIMIT:
-                    PendingOrderRequestMessageArgs pendingOrderMessageArgs = messageArgs as PendingOrderRequestMessageArgs;
+                    PendingOrderRequestParameters pendingOrderParameters = parameters as PendingOrderRequestParameters;
 
-                    if (pendingOrderMessageArgs.ExpirationTime.HasValue)
+                    if (pendingOrderParameters.ExpirationTime.HasValue)
                     {
-                        messageBuilder.SetExpirationTimestamp(pendingOrderMessageArgs.ExpirationTime.Value.ToUnixTimeMilliseconds());
+                        messageBuilder.SetExpirationTimestamp(pendingOrderParameters.ExpirationTime.Value.ToUnixTimeMilliseconds());
                     }
 
-                    if (pendingOrderMessageArgs.StopLossInPrice.HasValue)
+                    if (pendingOrderParameters.StopLossInPrice.HasValue)
                     {
-                        messageBuilder.SetStopLoss(pendingOrderMessageArgs.StopLossInPrice.Value);
+                        messageBuilder.SetStopLoss(pendingOrderParameters.StopLossInPrice.Value);
                     }
 
-                    if (pendingOrderMessageArgs.TakeProfitInPrice.HasValue)
+                    if (pendingOrderParameters.TakeProfitInPrice.HasValue)
                     {
-                        messageBuilder.SetTakeProfit(pendingOrderMessageArgs.TakeProfitInPrice.Value);
+                        messageBuilder.SetTakeProfit(pendingOrderParameters.TakeProfitInPrice.Value);
                     }
 
-                    if (pendingOrderMessageArgs.OrderType == ProtoOAOrderType.LIMIT)
+                    if (pendingOrderParameters.OrderType == ProtoOAOrderType.LIMIT)
                     {
-                        messageBuilder.SetLimitPrice(pendingOrderMessageArgs.Price);
+                        messageBuilder.SetLimitPrice(pendingOrderParameters.Price);
                     }
                     else
                     {
-                        messageBuilder.SetStopPrice(pendingOrderMessageArgs.Price);
+                        messageBuilder.SetStopPrice(pendingOrderParameters.Price);
 
-                        if (pendingOrderMessageArgs.OrderType == ProtoOAOrderType.STOP_LIMIT)
+                        if (pendingOrderParameters.OrderType == ProtoOAOrderType.STOP_LIMIT)
                         {
-                            StopLimitOrderRequestMessageArgs stopLimitOrderMessageArgs = pendingOrderMessageArgs as StopLimitOrderRequestMessageArgs;
+                            StopLimitOrderRequestParameters stopLimitOrderParameters = pendingOrderParameters as StopLimitOrderRequestParameters;
 
-                            messageBuilder.SetSlippageInPoints(stopLimitOrderMessageArgs.SlippageInPoints);
+                            messageBuilder.SetSlippageInPoints(stopLimitOrderParameters.SlippageInPoints);
                         }
                     }
 
                     break;
             }
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateCancelOrderRequest(CancelOrderRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateCancelOrderRequest(CancelOrderRequestParameters parameters)
         {
             var messageBuilder = ProtoOACancelOrderReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetOrderId(messageArgs.OrderId);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetOrderId(parameters.OrderId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateClosePositionRequest(ClosePositionRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateClosePositionRequest(ClosePositionRequestParameters parameters)
         {
             var messageBuilder = ProtoOAClosePositionReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetPositionId(messageArgs.PositionId);
-            messageBuilder.SetVolume(messageArgs.Volume);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetPositionId(parameters.PositionId);
+            messageBuilder.SetVolume(parameters.Volume);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAmendPositionProtectionRequest(AmendPositionProtectionRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAmendPositionProtectionRequest(AmendPositionProtectionRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAmendPositionSLTPReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetPositionId(messageArgs.PositionId);
-            
-            if (messageArgs.StopLossPrice.HasValue)
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetPositionId(parameters.PositionId);
+
+            if (parameters.StopLossPrice.HasValue)
             {
-                messageBuilder.SetStopLoss(messageArgs.StopLossPrice.Value);
+                messageBuilder.SetStopLoss(parameters.StopLossPrice.Value);
             }
 
-            if (messageArgs.TakeProfitPrice.HasValue)
+            if (parameters.TakeProfitPrice.HasValue)
             {
-                messageBuilder.SetTakeProfit(messageArgs.TakeProfitPrice.Value);
+                messageBuilder.SetTakeProfit(parameters.TakeProfitPrice.Value);
             }
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAmendPendingOrderRequest(AmendPendingOrderRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAmendPendingOrderRequest(AmendPendingOrderRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAmendOrderReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetOrderId(messageArgs.OrderId);
-            
-            if (messageArgs.Price.HasValue)
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetOrderId(parameters.OrderId);
+
+            if (parameters.Price.HasValue)
             {
-                switch (messageArgs.OrderType)
+                switch (parameters.OrderType)
                 {
                     case ProtoOAOrderType.LIMIT:
-                        messageBuilder.SetLimitPrice(messageArgs.Price.Value);
+                        messageBuilder.SetLimitPrice(parameters.Price.Value);
                         break;
 
                     case ProtoOAOrderType.STOP:
                     case ProtoOAOrderType.STOP_LIMIT:
-                        messageBuilder.SetStopPrice(messageArgs.Price.Value);
+                        messageBuilder.SetStopPrice(parameters.Price.Value);
                         break;
                 }
             }
 
-            if (messageArgs.ExpirationTime.HasValue)
+            if (parameters.ExpirationTime.HasValue)
             {
-                messageBuilder.SetExpirationTimestamp(messageArgs.ExpirationTime.Value.ToUnixTimeMilliseconds());
+                messageBuilder.SetExpirationTimestamp(parameters.ExpirationTime.Value.ToUnixTimeMilliseconds());
             }
 
-            if (messageArgs.StopLossPrice.HasValue)
+            if (parameters.StopLossPrice.HasValue)
             {
-                messageBuilder.SetStopLoss(messageArgs.StopLossPrice.Value);
+                messageBuilder.SetStopLoss(parameters.StopLossPrice.Value);
             }
 
-            if (messageArgs.TakeProfitPrice.HasValue)
+            if (parameters.TakeProfitPrice.HasValue)
             {
-                messageBuilder.SetTakeProfit(messageArgs.TakeProfitPrice.Value);
+                messageBuilder.SetTakeProfit(parameters.TakeProfitPrice.Value);
             }
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSubscribeForSpotsRequest(SpotsRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateSubscribeForSpotsRequest(SpotsRequestParameters parameters)
         {
             var messageBuilder = ProtoOASubscribeSpotsReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.AddRangeSymbolId(messageArgs.SymbolIds);
+            messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateUnsubscribeFromSpotsRequest(SpotsRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateUnsubscribeFromSpotsRequest(SpotsRequestParameters parameters)
         {
             var messageBuilder = ProtoOAUnsubscribeSpotsReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.AddRangeSymbolId(messageArgs.SymbolIds);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateTraderRequest(TraderRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateTraderRequest(TraderRequestParameters parameters)
         {
             var messageBuilder = ProtoOATraderReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateTraderUpdatedEvent(TraderUpdatedEventMessageArgs messageArgs)
+        public static ProtoMessage CreateTraderUpdatedEvent(TraderUpdatedEventParameters parameters)
         {
             var messageBuilder = ProtoOATraderUpdatedEvent.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateCtidProfileRequest(CtidProfileRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateCtidProfileRequest(CtidProfileRequestParameters parameters)
         {
             var messageBuilder = ProtoOAGetCtidProfileByTokenReq.CreateBuilder();
 
-            messageBuilder.SetAccessToken(messageArgs.Token);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetAccessToken(parameters.Token);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSymbolByIdRequest(SymbolByIdRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateSymbolByIdRequest(SymbolByIdRequestParameters parameters)
         {
             var messageBuilder = ProtoOASymbolByIdReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.AddRangeSymbolId(messageArgs.SymbolIds);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSymbolsForConversionRequest(SymbolsForConversionRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateSymbolsForConversionRequest(SymbolsForConversionRequestParameters parameters)
         {
             var messageBuilder = ProtoOASymbolsForConversionReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            messageBuilder.SetFirstAssetId(messageArgs.FirstAssetId);
-            messageBuilder.SetLastAssetId(messageArgs.LastAssetId);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+            messageBuilder.SetFirstAssetId(parameters.FirstAssetId);
+            messageBuilder.SetLastAssetId(parameters.LastAssetId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSymbolCategoryListRequest(SymbolCategoryListRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateSymbolCategoryListRequest(SymbolCategoryListRequestParameters parameters)
         {
             var messageBuilder = ProtoOASymbolCategoryListReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
-            
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSymbolChangedEvent(SymbolChangedEventMessageArgs messageArgs)
+        public static ProtoMessage CreateSymbolChangedEvent(SymbolChangedEventParameters parameters)
         {
             var messageBuilder = ProtoOASymbolChangedEvent.CreateBuilder();
-            
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
 
-            messageBuilder.AddRangeSymbolId(messageArgs.SymbolIds);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateExpectedMarginRequest(ExpectedMarginRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateExpectedMarginRequest(ExpectedMarginRequestParameters parameters)
         {
             var messageBuilder = ProtoOAExpectedMarginReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.SetSymbolId(messageArgs.SymbolId);
+            messageBuilder.SetSymbolId(parameters.SymbolId);
 
-            messageBuilder.AddRangeVolume(messageArgs.Volumes);
+            messageBuilder.AddRangeVolume(parameters.Volumes);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSubscribeForLiveTrendbarRequest(LiveTrendbarRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateSubscribeForLiveTrendbarRequest(LiveTrendbarRequestParameters parameters)
         {
             var messageBuilder = ProtoOASubscribeLiveTrendbarReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.SetSymbolId(messageArgs.SymbolId);
+            messageBuilder.SetSymbolId(parameters.SymbolId);
 
-            messageBuilder.SetPeriod(messageArgs.Period);
+            messageBuilder.SetPeriod(parameters.Period);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateUnsubscribeForLiveTrendbarRequest(LiveTrendbarRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateUnsubscribeForLiveTrendbarRequest(LiveTrendbarRequestParameters parameters)
         {
             var messageBuilder = ProtoOAUnsubscribeLiveTrendbarReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.SetSymbolId(messageArgs.SymbolId);
+            messageBuilder.SetSymbolId(parameters.SymbolId);
 
-            messageBuilder.SetPeriod(messageArgs.Period);
+            messageBuilder.SetPeriod(parameters.Period);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateSubscribeForDepthQuotesRequest(DepthQuotesRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateSubscribeForDepthQuotesRequest(DepthQuotesRequestParameters parameters)
         {
             var messageBuilder = ProtoOASubscribeDepthQuotesReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.AddRangeSymbolId(messageArgs.SymbolIds);
+            messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateUnsubscribeForDepthQuotesRequest(DepthQuotesRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateUnsubscribeForDepthQuotesRequest(DepthQuotesRequestParameters parameters)
         {
             var messageBuilder = ProtoOAUnsubscribeDepthQuotesReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            messageBuilder.AddRangeSymbolId(messageArgs.SymbolIds);
+            messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAccountLogoutRequest(AccountLogoutRequestMessageArgs messageArgs)
+        public static ProtoMessage CreateAccountLogoutRequest(AccountLogoutRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAccountLogoutReq.CreateBuilder();
 
-            messageBuilder.SetCtidTraderAccountId(messageArgs.AccountId);
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), messageArgs.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
         #endregion Creating new Proto messages with parameters specified
