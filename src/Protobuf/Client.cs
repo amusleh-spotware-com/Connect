@@ -1,16 +1,16 @@
 ﻿using Connect.Common;
+using Connect.Protobuf.MessageArgs;
+using Connect.Protobuf.MessageArgs.Abstractions;
 using System;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using System.Threading;
-using Connect.Protobuf.Models;
 
 namespace Connect.Protobuf
 {
-    public class Client: IDisposable
+    public class Client : IDisposable
     {
         #region Fields
 
@@ -138,7 +138,7 @@ namespace Connect.Protobuf
         {
             _listeningStatus = ProcessStatus.WaitingToRun;
 
-            #pragma warning disable 4014
+#pragma warning disable 4014
             Task.Run(async () =>
             {
                 try
@@ -197,7 +197,7 @@ namespace Connect.Protobuf
                     Events.OnListenerException(this, ex);
                 }
             });
-            #pragma warning restore 4014
+#pragma warning restore 4014
         }
 
         public async Task StoptListening()
@@ -239,7 +239,7 @@ namespace Connect.Protobuf
             await _stream.WriteAsync(messageByte, 0, messageByte.Length);
         }
 
-        #endregion Others
+        #endregion Send message
 
         #region Others
 
@@ -259,10 +259,18 @@ namespace Connect.Protobuf
 
                         break;
                     }
+                case (int)ProtoPayloadType.PING_RES:
+                    {
+                        ProtoPingRes protoPingRes = MessagesFactory.GetPingResponse(protoMessage.Payload);
+
+                        _events.OnPingResponse(this, protoPingRes);
+
+                        break;
+                    }
                 case (int)ProtoPayloadType.HEARTBEAT_EVENT:
                     {
                         ProtoHeartbeatEvent protoHeartbeatEvent = MessagesFactory.GetHeartbeatEvent(protoMessage.Payload);
-                      
+
                         _events.OnHeartbeat(this, protoHeartbeatEvent);
 
                         break;
@@ -510,6 +518,6 @@ namespace Connect.Protobuf
             _client?.Dispose();
         }
 
-        #endregion
+        #endregion Others
     }
 }

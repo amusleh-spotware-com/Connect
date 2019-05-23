@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Connect.Protobuf
 {
@@ -9,6 +7,8 @@ namespace Connect.Protobuf
     public delegate void SpotEventHandler(object sender, ProtoOASpotEvent e);
 
     public delegate void ErrorHandler(object sender, ProtoOAErrorRes e);
+
+    public delegate void PingResponseEventHandler(object sender, ProtoPingRes e);
 
     public delegate void HeartbeatEventHandler(object sender, ProtoHeartbeatEvent e);
 

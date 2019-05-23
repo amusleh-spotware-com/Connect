@@ -1,6 +1,8 @@
-﻿using Connect.Protobuf.Models;
+﻿using Connect.Protobuf.MessageArgs;
+using Connect.Protobuf.MessageArgs.Abstractions;
 using Google.ProtocolBuffers;
 using System;
+
 namespace Connect.Protobuf
 {
     public static class MessagesFactory
@@ -177,58 +179,85 @@ namespace Connect.Protobuf
             {
                 case (int)ProtoPayloadType.PING_REQ:
                     return CreatePingRequest(messageArgs as PingRequestMessageArgs);
+
                 case (int)ProtoPayloadType.HEARTBEAT_EVENT:
                     return CreateHeartbeatEvent(messageArgs as HeartbeatEventMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_VERSION_REQ:
                     return CreateVersionRequest(messageArgs as VersionRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_APPLICATION_AUTH_REQ:
                     return CreateAppAuthorizationRequest(messageArgs as AppAuthorizationRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_REQ:
                     return CreateAccountAuthorizationRequest(messageArgs as AccountAuthorizationRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_REQ:
                     return CreateAssetClassListRequest(messageArgs as AssetClassListRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_DEAL_LIST_REQ:
                     return CreateDealsListRequest(messageArgs as DealsListRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_CASH_FLOW_HISTORY_LIST_REQ:
                     return CreateCashflowHistoryRequest(messageArgs as CashflowHistoryRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_REQ:
                     return CreateAccountListRequest(messageArgs as AccountListRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_LIST_REQ:
                     return CreateSymbolsListRequest(messageArgs as SymbolsListRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_TRENDBARS_REQ:
                     return CreateTrendbarsRequest(messageArgs as TrendbarsRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_TICKDATA_REQ:
                     return CreateTickDataRequest(messageArgs as TickDataRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_EXECUTION_EVENT:
                     return CreateExecutionEvent(messageArgs as ExecutionEventMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_NEW_ORDER_REQ:
                     return CreateOrderRequest(messageArgs as OrderRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_CANCEL_ORDER_REQ:
                     return CreateCancelOrderRequest(messageArgs as CancelOrderRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_CLOSE_POSITION_REQ:
                     return CreateClosePositionRequest(messageArgs as ClosePositionRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_AMEND_ORDER_REQ:
                     return CreateAmendPendingOrderRequest(messageArgs as AmendPendingOrderRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_AMEND_POSITION_SLTP_REQ:
                     return CreateAmendPositionProtectionRequest(messageArgs as AmendPositionProtectionRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_SPOTS_REQ:
                     return CreateSubscribeForSpotsRequest(messageArgs as SpotsRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_SPOTS_REQ:
                     return CreateUnsubscribeFromSpotsRequest(messageArgs as SpotsRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_TRADER_REQ:
                     return CreateTraderRequest(messageArgs as TraderRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_TRADER_UPDATE_EVENT:
                     return CreateTraderUpdatedEvent(messageArgs as TraderUpdatedEventMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ:
                     return CreateCtidProfileRequest(messageArgs as CtidProfileRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_BY_ID_REQ:
                     return CreateSymbolByIdRequest(messageArgs as SymbolByIdRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_FOR_CONVERSION_REQ:
                     return CreateSymbolsForConversionRequest(messageArgs as SymbolsForConversionRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_REQ:
                     return CreateSymbolCategoryListRequest(messageArgs as SymbolCategoryListRequestMessageArgs);
+
                 case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CHANGED_EVENT:
                     return CreateSymbolChangedEvent(messageArgs as SymbolChangedEventMessageArgs);
+
                 default:
                     throw new InvalidOperationException("Unknown message payload type");
             }

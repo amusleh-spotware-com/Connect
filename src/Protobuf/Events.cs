@@ -1,5 +1,4 @@
-﻿using Connect.Common;
-using System;
+﻿using System;
 
 namespace Connect.Protobuf
 {
@@ -18,6 +17,8 @@ namespace Connect.Protobuf
         public event ListenerExceptionEventHandler ListenerExceptionEvent;
 
         public event HeartbeatSendingExceptionEventHandler HeartbeatSendingExceptionEvent;
+
+        public event PingResponseEventHandler PingResponseEvent;
 
         public event HeartbeatEventHandler HeartbeatEvent;
 
@@ -107,6 +108,11 @@ namespace Connect.Protobuf
             HeartbeatSendingExceptionEvent?.Invoke(sender, ex);
         }
 
+        public void OnPingResponse(object sender, ProtoPingRes e)
+        {
+            PingResponseEvent?.Invoke(sender, e);
+        }
+
         public void OnHeartbeat(object sender, ProtoHeartbeatEvent e)
         {
             HeartbeatEvent?.Invoke(sender, e);
@@ -187,7 +193,7 @@ namespace Connect.Protobuf
             SymbolsForConversionResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolsListResponse(object sender , ProtoOASymbolsListRes e, string clientMsgId)
+        public void OnSymbolsListResponse(object sender, ProtoOASymbolsListRes e, string clientMsgId)
         {
             SymbolsListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
@@ -242,6 +248,6 @@ namespace Connect.Protobuf
             MessageReceivedEvent?.Invoke(sender, e);
         }
 
-        #endregion Methods
+        #endregion Invoking Methods
     }
 }
