@@ -1,6 +1,6 @@
 ﻿using Connect.Common;
-using Connect.Protobuf.MessageArgs;
-using Connect.Protobuf.MessageArgs.Abstractions;
+using Connect.Protobuf.Parameters;
+using Connect.Protobuf.Parameters.Abstractions;
 using System;
 using System.Linq;
 using System.Net.Security;

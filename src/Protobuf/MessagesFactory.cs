@@ -1,5 +1,5 @@
-﻿using Connect.Protobuf.MessageArgs;
-using Connect.Protobuf.MessageArgs.Abstractions;
+﻿using Connect.Protobuf.Parameters;
+using Connect.Protobuf.Parameters.Abstractions;
 using Google.ProtocolBuffers;
 using System;
 
