@@ -6,6 +6,10 @@ namespace Connect.Protobuf.Models
 {
     public class AccountListRequestMessageArgs : MessageArgsBase
     {
+        public AccountListRequestMessageArgs() : base((int)ProtoOAPayloadType.PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_REQ)
+        {
+        }
+
         public string Token { get; set; }
     }
 }

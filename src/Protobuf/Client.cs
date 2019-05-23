@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Threading;
+using Connect.Protobuf.Models;
 
 namespace Connect.Protobuf
 {
@@ -91,7 +92,9 @@ namespace Connect.Protobuf
 
                     if (!_stopSendingHeartbeats)
                     {
-                        ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent();
+                        HeartbeatEventMessageArgs messageArgs = new HeartbeatEventMessageArgs();
+
+                        ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent(messageArgs);
 
                         await SendMessage(protoMessage);
 
@@ -212,6 +215,13 @@ namespace Connect.Protobuf
         #endregion Listener
 
         #region Send message
+
+        public async Task SendMessage(IMessageArgs messageArgs)
+        {
+            ProtoMessage protoMessage = MessagesFactory.CreateMessage(messageArgs);
+
+            await SendMessage(protoMessage);
+        }
 
         public async Task SendMessage(ProtoMessage message)
         {

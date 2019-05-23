@@ -6,6 +6,10 @@ namespace Connect.Protobuf.Models
 {
     public class SymbolCategoryListRequestMessageArgs : MessageArgsBase
     {
+        public SymbolCategoryListRequestMessageArgs() : base((int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_REQ)
+        {
+        }
+
         public long AccountId { get; set; }
     }
 }

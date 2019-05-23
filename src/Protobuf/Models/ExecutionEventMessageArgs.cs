@@ -6,6 +6,10 @@ namespace Connect.Protobuf.Models
 {
     public class ExecutionEventMessageArgs : MessageArgsBase
     {
+        public ExecutionEventMessageArgs() : base((int)ProtoOAPayloadType.PROTO_OA_EXECUTION_EVENT)
+        {
+        }
+
         public ProtoOAExecutionType ExecutionType { get; set; }
 
         public ProtoOAOrder Order { get; set; }

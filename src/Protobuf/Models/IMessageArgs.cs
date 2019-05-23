@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Connect.Protobuf.Models
 {
-    interface IMessageArgs
+    public interface IMessageArgs
     {
-        string ClientMessageId { get; set; }
+        string ClientMessageId { get; }
+
+        int PayloadType { get; }
     }
 }

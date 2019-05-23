@@ -6,6 +6,10 @@ namespace Connect.Protobuf.Models
 {
     public class AmendPositionProtectionRequestMessageArgs : MessageArgsBase
     {
+        public AmendPositionProtectionRequestMessageArgs() : base((int)ProtoOAPayloadType.PROTO_OA_AMEND_POSITION_SLTP_REQ)
+        {
+        }
+
         public long AccountId { get; set; }
 
         public long PositionId { get; set; }
