@@ -6,7 +6,7 @@ namespace Connect.Protobuf.Parameters
 {
     public class AccountAuthorizationRequestParameters : ParametersBase
     {
-        public AccountAuthorizationRequestParameters(): base((int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_RES)
+        public AccountAuthorizationRequestParameters(): base((int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_REQ)
         {
         }
 
