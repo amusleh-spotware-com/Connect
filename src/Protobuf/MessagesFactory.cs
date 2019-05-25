@@ -301,6 +301,9 @@ namespace Connect.Protobuf
                 case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_REQ:
                     return CreateAccountLogoutRequest(parameters as AccountLogoutRequestParameters);
 
+                case (int)ProtoOAPayloadType.PROTO_OA_RECONCILE_REQ:
+                    return CreateReconcileRequest(parameters as ReconcileRequestParameters);
+
                 default:
                     throw new InvalidOperationException("Unknown message payload type");
             }
@@ -788,6 +791,15 @@ namespace Connect.Protobuf
         public static ProtoMessage CreateAccountLogoutRequest(AccountLogoutRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAccountLogoutReq.CreateBuilder();
+
+            messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
+
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+        }
+
+        public static ProtoMessage CreateReconcileRequest(ReconcileRequestParameters parameters)
+        {
+            var messageBuilder = ProtoOAReconcileReq.CreateBuilder();
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
