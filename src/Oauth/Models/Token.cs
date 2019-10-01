@@ -1,13 +1,9 @@
-﻿using Newtonsoft.Json;
-using RestSharp;
-using Connect.Common;
-using System;
-using System.Net;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Converters;
+﻿using Connect.Common;
 using Connect.Common.JsonConverters;
+using Newtonsoft.Json;
+using System;
 
-namespace Connect.Oauth
+namespace Connect.Oauth.Models
 {
     public class Token
     {

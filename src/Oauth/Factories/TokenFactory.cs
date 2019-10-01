@@ -1,11 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Connect.Common;
+using Connect.Oauth.Models;
+using Newtonsoft.Json;
 using RestSharp;
-using Connect.Common;
 using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Connect.Oauth
+namespace Connect.Oauth.Factories
 {
     public static class TokenFactory
     {
