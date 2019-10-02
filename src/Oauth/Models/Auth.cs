@@ -15,7 +15,7 @@ namespace Connect.Oauth.Models
 
             authURIBuilder.Path += "auth";
 
-            authURIBuilder.Query = $"client_id={App.ClientId}&redirect_uri={App.RedirectUri}&scope={Utility.GetEnumDescription(Scope)}";
+            authURIBuilder.Query = $"client_id={App.ClientId}&redirect_uri={App.RedirectUri}&scope={EnumTools.GetEnumDescription(Scope)}";
 
             AuthUri = authURIBuilder.Uri;
         }

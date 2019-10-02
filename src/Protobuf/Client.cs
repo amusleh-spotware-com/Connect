@@ -7,6 +7,8 @@ using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Connect.Protobuf.Helpers;
+using Connect.Common.Helpers;
 
 namespace Connect.Protobuf
 {

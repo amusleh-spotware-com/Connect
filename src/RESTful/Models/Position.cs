@@ -66,7 +66,7 @@ namespace Connect.RESTful.Models
         [JsonProperty("label")]
         public string Label { get; set; }
 
-        public TradeType TradeType => Utility.ParseEnum(TradeSide, TradeType.None);
+        public TradeType TradeType => EnumTools.ParseEnum(TradeSide, TradeType.None);
 
         #endregion Properties
 

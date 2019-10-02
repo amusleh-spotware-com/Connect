@@ -63,7 +63,7 @@ namespace Connect.RESTful.Models
         [JsonProperty("positionCloseDetails")]
         public PositionCloseDetails CloseDetails { get; set; }
 
-        public TradeType TradeType => Utility.ParseEnum(TradeSide, TradeType.None);
+        public TradeType TradeType => EnumTools.ParseEnum(TradeSide, TradeType.None);
 
         #endregion Properties
 

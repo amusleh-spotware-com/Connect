@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace Connect.Common
+namespace Connect.Common.Utils
 {
-    public static class Utility
+    public static class EnumTools
     {
         public static string GetEnumDescription(object enumObject)
         {
@@ -23,7 +19,6 @@ namespace Connect.Common
 
             return enumObject.ToString();
         }
-
 
         public static TEnum ParseEnum<TEnum>(string text, TEnum defaultValue, bool ignoreCase = true) where TEnum : struct
         {

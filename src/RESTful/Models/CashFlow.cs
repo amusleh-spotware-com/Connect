@@ -29,7 +29,7 @@ namespace Connect.RESTful.Models
         [JsonProperty("changeTimestamp")]
         public DateTimeOffset ChangeTime { get; set; }
 
-        public CashFlowType Type => Utility.ParseEnum(TypeText, CashFlowType.None);
+        public CashFlowType Type => EnumTools.ParseEnum(TypeText, CashFlowType.None);
 
         #endregion Properties
 

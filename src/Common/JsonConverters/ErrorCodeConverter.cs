@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Connect.Common.Utils;
+using Newtonsoft.Json;
 using System;
 
 namespace Connect.Common.JsonConverters
@@ -20,7 +21,7 @@ namespace Connect.Common.JsonConverters
             }
             else
             {
-                return Utility.ParseEnum(value, ErrorCode.None);
+                return EnumTools.ParseEnum(value, ErrorCode.None);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿namespace Connect.Common
+﻿namespace Connect.Common.Helpers
 {
     public static class BaseUrls
     {

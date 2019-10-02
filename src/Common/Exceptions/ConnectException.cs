@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Connect.Common
+namespace Connect.Common.Exceptions
 {
     public class ConnectException : Exception
     {
