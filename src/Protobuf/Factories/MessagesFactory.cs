@@ -1,5 +1,5 @@
-﻿using Connect.Protobuf.Parameters;
-using Connect.Protobuf.Parameters.Abstractions;
+﻿using Connect.Protobuf.Models.Parameters;
+using Connect.Protobuf.Models.Parameters.Abstractions;
 using Google.ProtocolBuffers;
 using System;
 
