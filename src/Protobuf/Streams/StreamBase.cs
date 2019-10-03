@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 
-namespace Connect.Protobuf.Helpers
+namespace Connect.Protobuf.Streams
 {
-    public class ObservableStream<T> : IObservable<T>, IDisposable
+    public abstract class StreamBase<T> : IObservable<T>
     {
         #region Fields
 
@@ -15,10 +15,8 @@ namespace Connect.Protobuf.Helpers
 
         #endregion Fields
 
-        public ObservableStream(List<IObserver<T>> observers)
+        public StreamBase()
         {
-            _observers = observers;
-
             _stream = Observable.Create<T>(OnSubscribe);
         }
 
@@ -29,17 +27,17 @@ namespace Connect.Protobuf.Helpers
             return _stream.Subscribe(observer);
         }
 
-        public void Next(T value, List<IObserver<T>> observers)
+        protected void OnNext(T value)
         {
-            foreach (var observer in observers)
+            foreach (var observer in _observers)
             {
                 observer.OnNext(value);
             }
         }
 
-        public void Error(Exception exception, List<IObserver<T>> observers)
+        protected void OnError(Exception exception)
         {
-            foreach (var observer in observers)
+            foreach (var observer in _observers)
             {
                 observer.OnError(exception);
             }
@@ -60,14 +58,6 @@ namespace Connect.Protobuf.Helpers
             if (_observers.Contains(observer))
             {
                 _observers.Remove(observer);
-            }
-        }
-
-        public void Dispose()
-        {
-            foreach (var observer in _observers)
-            {
-                OnDispose(observer);
             }
         }
 

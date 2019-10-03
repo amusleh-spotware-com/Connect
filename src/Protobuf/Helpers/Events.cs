@@ -88,197 +88,197 @@ namespace Connect.Protobuf
 
         #region Invoking Methods
 
-        public void OnExecution(object sender, ProtoOAExecutionEvent e)
+        internal void OnExecution(object sender, ProtoOAExecutionEvent e)
         {
             ExecutionEvent?.Invoke(sender, e);
         }
 
-        public void OnSpot(object sender, ProtoOASpotEvent spotEvent)
+        internal void OnSpot(object sender, ProtoOASpotEvent spotEvent)
         {
             SpotEvent?.Invoke(sender, spotEvent);
         }
 
-        public void OnDepthQuotes(object sender, ProtoOADepthEvent depthEvent)
+        internal void OnDepthQuotes(object sender, ProtoOADepthEvent depthEvent)
         {
             DepthQuotesEvent?.Invoke(sender, depthEvent);
         }
 
-        public void OnError(object sender, ProtoOAErrorRes e)
+        internal void OnError(object sender, ProtoOAErrorRes e)
         {
             ErrorEvent?.Invoke(sender, e);
         }
 
-        public void OnApplicationAuthResponse(object sender, ProtoOAApplicationAuthRes e, string clientMsgId)
+        internal void OnApplicationAuthResponse(object sender, ProtoOAApplicationAuthRes e, string clientMsgId)
         {
             ApplicationAuthResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSubscribeDepthQuotesResponse(object sender, ProtoOASubscribeDepthQuotesRes e, string clientMsgId)
+        internal void OnSubscribeDepthQuotesResponse(object sender, ProtoOASubscribeDepthQuotesRes e, string clientMsgId)
         {
             SubscribeDepthQuotesResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnUnsubscribeDepthQuotesResponse(object sender, ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId)
+        internal void OnUnsubscribeDepthQuotesResponse(object sender, ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId)
         {
             UnsubscribeDepthQuotesResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnListenerException(object sender, Exception ex)
+        internal void OnListenerException(object sender, Exception ex)
         {
             ListenerExceptionEvent?.Invoke(sender, ex);
         }
 
-        public void OnHeartbeatSendingException(object sender, Exception ex)
+        internal void OnHeartbeatSendingException(object sender, Exception ex)
         {
             HeartbeatSendingExceptionEvent?.Invoke(sender, ex);
         }
 
-        public void OnPingResponse(object sender, ProtoPingRes e, string clientMsgId)
+        internal void OnPingResponse(object sender, ProtoPingRes e, string clientMsgId)
         {
             PingResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnHeartbeat(object sender, ProtoHeartbeatEvent e)
+        internal void OnHeartbeat(object sender, ProtoHeartbeatEvent e)
         {
             HeartbeatEvent?.Invoke(sender, e);
         }
 
-        public void OnAccountAuthorizationResponse(object sender, ProtoOAAccountAuthRes e, string clientMsgId)
+        internal void OnAccountAuthorizationResponse(object sender, ProtoOAAccountAuthRes e, string clientMsgId)
         {
             AccountAuthorizationResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnClientDisconnected(object sender, ProtoOAClientDisconnectEvent e)
+        internal void OnClientDisconnected(object sender, ProtoOAClientDisconnectEvent e)
         {
             ClientDisconnectedEvent?.Invoke(sender, e);
         }
 
-        public void OnDealListResponse(object sender, ProtoOADealListRes e, string clientMsgId)
+        internal void OnDealListResponse(object sender, ProtoOADealListRes e, string clientMsgId)
         {
             DealListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnAssetListResponse(object sender, ProtoOAAssetListRes e, string clientMsgId)
+        internal void OnAssetListResponse(object sender, ProtoOAAssetListRes e, string clientMsgId)
         {
             AssetListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnAssetClassListResponse(object sender, ProtoOAAssetClassListRes e, string clientMsgId)
+        internal void OnAssetClassListResponse(object sender, ProtoOAAssetClassListRes e, string clientMsgId)
         {
             AssetClassListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnAccountsTokenInvalidated(object sender, ProtoOAAccountsTokenInvalidatedEvent e)
+        internal void OnAccountsTokenInvalidated(object sender, ProtoOAAccountsTokenInvalidatedEvent e)
         {
             AccountsTokenInvalidatedEvent?.Invoke(sender, e);
         }
 
-        public void OnCashFlowHistoryListResponse(object sender, ProtoOACashFlowHistoryListRes e, string clientMsgId)
+        internal void OnCashFlowHistoryListResponse(object sender, ProtoOACashFlowHistoryListRes e, string clientMsgId)
         {
             CashFlowHistoryListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnExpectedMarginResponse(object sender, ProtoOAExpectedMarginRes e, string clientMsgId)
+        internal void OnExpectedMarginResponse(object sender, ProtoOAExpectedMarginRes e, string clientMsgId)
         {
             ExpectedMarginResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnAccountListResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId)
+        internal void OnAccountListResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId)
         {
             AccountListResponseEvent.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnTickDataResponse(object sender, ProtoOAGetTickDataRes e, string clientMsgId)
+        internal void OnTickDataResponse(object sender, ProtoOAGetTickDataRes e, string clientMsgId)
         {
             TickDataResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnTrendbarsResponse(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId)
+        internal void OnTrendbarsResponse(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId)
         {
             TrendbarsResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnMarginChanged(object sender, ProtoOAMarginChangedEvent e)
+        internal void OnMarginChanged(object sender, ProtoOAMarginChangedEvent e)
         {
             MarginChangedEvent?.Invoke(sender, e);
         }
 
-        public void OnOrderError(object sender, ProtoOAOrderErrorEvent e)
+        internal void OnOrderError(object sender, ProtoOAOrderErrorEvent e)
         {
             OrderErrorEvent?.Invoke(sender, e);
         }
 
-        public void OnReconcileResponse(object sender, ProtoOAReconcileRes e, string clientMsgId)
+        internal void OnReconcileResponse(object sender, ProtoOAReconcileRes e, string clientMsgId)
         {
             ReconcileResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSubscribeSpotsResponse(object sender, ProtoOASubscribeSpotsRes e, string clientMsgId)
+        internal void OnSubscribeSpotsResponse(object sender, ProtoOASubscribeSpotsRes e, string clientMsgId)
         {
             SubscribeSpotsResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolsForConversionResponse(object sender, ProtoOASymbolsForConversionRes e, string clientMsgId)
+        internal void OnSymbolsForConversionResponse(object sender, ProtoOASymbolsForConversionRes e, string clientMsgId)
         {
             SymbolsForConversionResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolsListResponse(object sender, ProtoOASymbolsListRes e, string clientMsgId)
+        internal void OnSymbolsListResponse(object sender, ProtoOASymbolsListRes e, string clientMsgId)
         {
             SymbolsListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolByIdResponse(object sender, ProtoOASymbolByIdRes e, string clientMsgId)
+        internal void OnSymbolByIdResponse(object sender, ProtoOASymbolByIdRes e, string clientMsgId)
         {
             SymbolByIdResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolChanged(object sender, ProtoOASymbolChangedEvent e)
+        internal void OnSymbolChanged(object sender, ProtoOASymbolChangedEvent e)
         {
             SymbolChangedEvent?.Invoke(sender, e);
         }
 
-        public void OnTraderResponse(object sender, ProtoOATraderRes e, string clientMsgId)
+        internal void OnTraderResponse(object sender, ProtoOATraderRes e, string clientMsgId)
         {
             TraderResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnTraderUpdated(object sender, ProtoOATraderUpdatedEvent e)
+        internal void OnTraderUpdated(object sender, ProtoOATraderUpdatedEvent e)
         {
             TraderUpdatedEvent?.Invoke(sender, e);
         }
 
-        public void OnTrailingSLChanged(object sender, ProtoOATrailingSLChangedEvent e)
+        internal void OnTrailingSLChanged(object sender, ProtoOATrailingSLChangedEvent e)
         {
             TrailingSLChangedEvent?.Invoke(sender, e);
         }
 
-        public void OnUnsubscribeSpotsResponse(object sender, ProtoOAUnsubscribeSpotsRes e, string clientMsgId)
+        internal void OnUnsubscribeSpotsResponse(object sender, ProtoOAUnsubscribeSpotsRes e, string clientMsgId)
         {
             UnsubscribeSpotsResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnVersionResponse(object sender, ProtoOAVersionRes e, string clientMsgId)
+        internal void OnVersionResponse(object sender, ProtoOAVersionRes e, string clientMsgId)
         {
             VersionResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnCtidProfileResponse(object sender, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId)
+        internal void OnCtidProfileResponse(object sender, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId)
         {
             CtidProfileResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnSymbolCategoryListResponse(object sender, ProtoOASymbolCategoryListRes e, string clientMsgId)
+        internal void OnSymbolCategoryListResponse(object sender, ProtoOASymbolCategoryListRes e, string clientMsgId)
         {
             SymbolCategoryListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnAccountLogoutResponse(object sender, ProtoOAAccountLogoutRes e, string clientMsgId)
+        internal void OnAccountLogoutResponse(object sender, ProtoOAAccountLogoutRes e, string clientMsgId)
         {
             AccountLogoutResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        public void OnMessageReceived(object sender, ProtoMessage e)
+        internal void OnMessageReceived(object sender, ProtoMessage e)
         {
             MessageReceivedEvent?.Invoke(sender, e);
         }

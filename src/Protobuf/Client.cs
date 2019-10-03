@@ -1,14 +1,15 @@
 ﻿using Connect.Common;
+using Connect.Common.Helpers;
+using Connect.Protobuf.Helpers;
 using Connect.Protobuf.Models.Parameters;
 using Connect.Protobuf.Models.Parameters.Abstractions;
+using Connect.Protobuf.Streams;
 using System;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using Connect.Protobuf.Helpers;
-using Connect.Common.Helpers;
 
 namespace Connect.Protobuf
 {
@@ -18,25 +19,80 @@ namespace Connect.Protobuf
 
         private readonly int _maxMessageSize = 1000000;
 
-        private readonly Events _events = new Events();
-
         private TcpClient _client;
 
         private SslStream _stream;
 
-        private bool _isAuthorized, _stopSendingHeartbeats, _stopListening;
+        private bool _stopSendingHeartbeats, _stopListening;
 
         private ProcessStatus _listeningStatus, _sendingHeartbeatsStatus;
 
         #endregion Fields
 
+        public Client()
+        {
+            Events = new Events();
+
+            SpotStream = new SpotStream(Events);
+
+            HeartbeatStream = new HeartbeatStream(Events);
+
+            ExecutionStream = new ExecutionStream(Events);
+
+            MessageStream = new MessageStream(Events);
+
+            DepthQuotesStream = new DepthQuotesStream(Events);
+
+            TrailingSLChangedStream = new TrailingSLChangedStream(Events);
+
+            TraderUpdateStream = new TraderUpdateStream(Events);
+
+            SymbolChangeStream = new SymbolChangeStream(Events);
+
+            OrderErrorStream = new OrderErrorStream(Events);
+
+            MarginChangeStream = new MarginChangeStream(Events);
+
+            TokenInvalidatedStream = new TokenInvalidatedStream(Events);
+
+            ClientDisconnectedStream = new ClientDisconnectedStream(Events);
+
+            ErrorStream = new ErrorStream(Events);
+        }
+
         #region Properties
 
         public bool IsConnected => _client?.Client != null && _client.Client.Connected;
 
-        public bool IsAuthorized => _isAuthorized;
+        public bool IsAuthorized { get; private set; }
 
-        public Events Events => _events;
+        public Events Events { get; }
+
+        public SpotStream SpotStream { get; }
+
+        public HeartbeatStream HeartbeatStream { get; }
+
+        public ExecutionStream ExecutionStream { get; }
+
+        public MessageStream MessageStream { get; }
+
+        public DepthQuotesStream DepthQuotesStream { get; }
+
+        public TrailingSLChangedStream TrailingSLChangedStream { get; }
+
+        public TraderUpdateStream TraderUpdateStream { get; }
+
+        public SymbolChangeStream SymbolChangeStream { get; }
+
+        public OrderErrorStream OrderErrorStream { get; }
+
+        public MarginChangeStream MarginChangeStream { get; }
+
+        public TokenInvalidatedStream TokenInvalidatedStream { get; }
+
+        public ClientDisconnectedStream ClientDisconnectedStream { get; }
+
+        public ErrorStream ErrorStream { get; }
 
         #endregion Properties
 
@@ -249,7 +305,7 @@ namespace Connect.Protobuf
         {
             ProtoMessage protoMessage = MessagesFactory.GetMessage(message);
 
-            _events.OnMessageReceived(this, protoMessage);
+            Events.OnMessageReceived(this, protoMessage);
 
             switch (protoMessage.PayloadType)
             {
@@ -257,7 +313,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAErrorRes protoErrorRes = MessagesFactory.GetErrorResponse(protoMessage.Payload);
 
-                        _events.OnError(this, protoErrorRes);
+                        Events.OnError(this, protoErrorRes);
 
                         break;
                     }
@@ -265,7 +321,7 @@ namespace Connect.Protobuf
                     {
                         ProtoPingRes protoPingRes = MessagesFactory.GetPingResponse(protoMessage.Payload);
 
-                        _events.OnPingResponse(this, protoPingRes, protoMessage.ClientMsgId);
+                        Events.OnPingResponse(this, protoPingRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -273,7 +329,7 @@ namespace Connect.Protobuf
                     {
                         ProtoHeartbeatEvent protoHeartbeatEvent = MessagesFactory.GetHeartbeatEvent(protoMessage.Payload);
 
-                        _events.OnHeartbeat(this, protoHeartbeatEvent);
+                        Events.OnHeartbeat(this, protoHeartbeatEvent);
 
                         break;
                     }
@@ -281,7 +337,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAAccountAuthRes protoOAAccountAuthRes = MessagesFactory.GetAccountAuthorizationResponse(protoMessage.Payload);
 
-                        _events.OnAccountAuthorizationResponse(this, protoOAAccountAuthRes, protoMessage.ClientMsgId);
+                        Events.OnAccountAuthorizationResponse(this, protoOAAccountAuthRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -289,9 +345,9 @@ namespace Connect.Protobuf
                     {
                         ProtoOAApplicationAuthRes protoOAApplicationAuthRes = MessagesFactory.GetApplicationAuthorizationResponse(protoMessage.Payload);
 
-                        _isAuthorized = true;
+                        IsAuthorized = true;
 
-                        _events.OnApplicationAuthResponse(this, protoOAApplicationAuthRes, protoMessage.ClientMsgId);
+                        Events.OnApplicationAuthResponse(this, protoOAApplicationAuthRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -299,7 +355,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAClientDisconnectEvent protoOAClientDisconnect = MessagesFactory.GetClientDisconnectEvent(protoMessage.Payload);
 
-                        _events.OnClientDisconnected(this, protoOAClientDisconnect);
+                        Events.OnClientDisconnected(this, protoOAClientDisconnect);
 
                         break;
                     }
@@ -307,7 +363,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOADealListRes protoOADealListRes = MessagesFactory.GetDealListResponse(protoMessage.Payload);
 
-                        _events.OnDealListResponse(this, protoOADealListRes, protoMessage.ClientMsgId);
+                        Events.OnDealListResponse(this, protoOADealListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -315,7 +371,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAAssetListRes protoOAAssetListRes = MessagesFactory.GetAssetListResponse(protoMessage.Payload);
 
-                        _events.OnAssetListResponse(this, protoOAAssetListRes, protoMessage.ClientMsgId);
+                        Events.OnAssetListResponse(this, protoOAAssetListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -323,7 +379,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAAssetClassListRes protoOAAssetClassListRes = MessagesFactory.GetAssetClassListResponse(protoMessage.Payload);
 
-                        _events.OnAssetClassListResponse(this, protoOAAssetClassListRes, protoMessage.ClientMsgId);
+                        Events.OnAssetClassListResponse(this, protoOAAssetClassListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -331,7 +387,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAAccountsTokenInvalidatedEvent protoOAAccountsTokenInvalidatedEvent = MessagesFactory.GetAccountsTokenInvalidatedEvent(protoMessage.Payload);
 
-                        _events.OnAccountsTokenInvalidated(this, protoOAAccountsTokenInvalidatedEvent);
+                        Events.OnAccountsTokenInvalidated(this, protoOAAccountsTokenInvalidatedEvent);
 
                         break;
                     }
@@ -339,7 +395,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOACashFlowHistoryListRes protoOACashFlowHistoryListRes = MessagesFactory.GetCashFlowHistoryListResponse(protoMessage.Payload);
 
-                        _events.OnCashFlowHistoryListResponse(this, protoOACashFlowHistoryListRes, protoMessage.ClientMsgId);
+                        Events.OnCashFlowHistoryListResponse(this, protoOACashFlowHistoryListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -347,7 +403,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAExecutionEvent protoOAExecutionEvent = MessagesFactory.GetExecutionEvent(protoMessage.Payload);
 
-                        _events.OnExecution(this, protoOAExecutionEvent);
+                        Events.OnExecution(this, protoOAExecutionEvent);
 
                         break;
                     }
@@ -355,7 +411,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAExpectedMarginRes protoOAExpectedMarginRes = MessagesFactory.GetExpectedMarginResponse(protoMessage.Payload);
 
-                        _events.OnExpectedMarginResponse(this, protoOAExpectedMarginRes, protoMessage.ClientMsgId);
+                        Events.OnExpectedMarginResponse(this, protoOAExpectedMarginRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -363,7 +419,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAGetAccountListByAccessTokenRes protoOAGetAccountListByAccessTokenRes = MessagesFactory.GetAccountListResponse(protoMessage.Payload);
 
-                        _events.OnAccountListResponse(this, protoOAGetAccountListByAccessTokenRes, protoMessage.ClientMsgId);
+                        Events.OnAccountListResponse(this, protoOAGetAccountListByAccessTokenRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -371,7 +427,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAGetTickDataRes protoOAGetTickDataRes = MessagesFactory.GetTickDataResponse(protoMessage.Payload);
 
-                        _events.OnTickDataResponse(this, protoOAGetTickDataRes, protoMessage.ClientMsgId);
+                        Events.OnTickDataResponse(this, protoOAGetTickDataRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -379,7 +435,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAGetTrendbarsRes protoOAGetTrendbarsRes = MessagesFactory.GetTrendbarsResponse(protoMessage.Payload);
 
-                        _events.OnTrendbarsResponse(this, protoOAGetTrendbarsRes, protoMessage.ClientMsgId);
+                        Events.OnTrendbarsResponse(this, protoOAGetTrendbarsRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -387,7 +443,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAMarginChangedEvent protoOAMarginChangedEvent = MessagesFactory.GetMarginChangedEvent(protoMessage.Payload);
 
-                        _events.OnMarginChanged(this, protoOAMarginChangedEvent);
+                        Events.OnMarginChanged(this, protoOAMarginChangedEvent);
 
                         break;
                     }
@@ -395,7 +451,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAOrderErrorEvent protoOAOrderErrorEvent = MessagesFactory.GetOrderErrorEvent(protoMessage.Payload);
 
-                        _events.OnOrderError(this, protoOAOrderErrorEvent);
+                        Events.OnOrderError(this, protoOAOrderErrorEvent);
 
                         break;
                     }
@@ -403,7 +459,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAReconcileRes protoOAReconcileRes = MessagesFactory.GetReconcileResponse(protoMessage.Payload);
 
-                        _events.OnReconcileResponse(this, protoOAReconcileRes, protoMessage.ClientMsgId);
+                        Events.OnReconcileResponse(this, protoOAReconcileRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -411,7 +467,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASpotEvent protoOASpotEvent = MessagesFactory.GetSpotEvent(protoMessage.Payload);
 
-                        _events.OnSpot(this, protoOASpotEvent);
+                        Events.OnSpot(this, protoOASpotEvent);
 
                         break;
                     }
@@ -419,7 +475,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASubscribeSpotsRes protoOASubscribeSpotsRes = MessagesFactory.GetSubscribeSpotsResponse(protoMessage.Payload);
 
-                        _events.OnSubscribeSpotsResponse(this, protoOASubscribeSpotsRes, protoMessage.ClientMsgId);
+                        Events.OnSubscribeSpotsResponse(this, protoOASubscribeSpotsRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -427,7 +483,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASymbolsForConversionRes protoOASymbolsForConversionRes = MessagesFactory.GetSymbolsForConversionResponse(protoMessage.Payload);
 
-                        _events.OnSymbolsForConversionResponse(this, protoOASymbolsForConversionRes, protoMessage.ClientMsgId);
+                        Events.OnSymbolsForConversionResponse(this, protoOASymbolsForConversionRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -435,7 +491,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASymbolsListRes protoOASymbolsListRes = MessagesFactory.GetSymbolsListResponse(protoMessage.Payload);
 
-                        _events.OnSymbolsListResponse(this, protoOASymbolsListRes, protoMessage.ClientMsgId);
+                        Events.OnSymbolsListResponse(this, protoOASymbolsListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -443,7 +499,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASymbolByIdRes protoOASymbolByIdRes = MessagesFactory.GetSymbolByIdResponse(protoMessage.Payload);
 
-                        _events.OnSymbolByIdResponse(this, protoOASymbolByIdRes, protoMessage.ClientMsgId);
+                        Events.OnSymbolByIdResponse(this, protoOASymbolByIdRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -451,7 +507,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASymbolChangedEvent protoOASymbolChangedEvent = MessagesFactory.GetSymbolChangedEvent(protoMessage.Payload);
 
-                        _events.OnSymbolChanged(this, protoOASymbolChangedEvent);
+                        Events.OnSymbolChanged(this, protoOASymbolChangedEvent);
 
                         break;
                     }
@@ -459,7 +515,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOATraderRes protoOATraderRes = MessagesFactory.GetTraderResponse(protoMessage.Payload);
 
-                        _events.OnTraderResponse(this, protoOATraderRes, protoMessage.ClientMsgId);
+                        Events.OnTraderResponse(this, protoOATraderRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -467,7 +523,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOATraderUpdatedEvent protoOATraderUpdatedEvent = MessagesFactory.GetTraderUpdatedEvent(protoMessage.Payload);
 
-                        _events.OnTraderUpdated(this, protoOATraderUpdatedEvent);
+                        Events.OnTraderUpdated(this, protoOATraderUpdatedEvent);
 
                         break;
                     }
@@ -475,7 +531,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOATrailingSLChangedEvent protoOATrailingSLChangedEvent = MessagesFactory.GetTrailingSLChangedEvent(protoMessage.Payload);
 
-                        _events.OnTrailingSLChanged(this, protoOATrailingSLChangedEvent);
+                        Events.OnTrailingSLChanged(this, protoOATrailingSLChangedEvent);
 
                         break;
                     }
@@ -483,7 +539,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAUnsubscribeSpotsRes protoOAUnsubscribeSpotsRes = MessagesFactory.GetUnsubscribeSpotsResponse(protoMessage.Payload);
 
-                        _events.OnUnsubscribeSpotsResponse(this, protoOAUnsubscribeSpotsRes, protoMessage.ClientMsgId);
+                        Events.OnUnsubscribeSpotsResponse(this, protoOAUnsubscribeSpotsRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -491,7 +547,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAVersionRes protoOAVersionRes = MessagesFactory.GetVersionResponse(protoMessage.Payload);
 
-                        _events.OnVersionResponse(this, protoOAVersionRes, protoMessage.ClientMsgId);
+                        Events.OnVersionResponse(this, protoOAVersionRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -499,7 +555,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAGetCtidProfileByTokenRes ctidProfileRes = MessagesFactory.GetCtidProfileResponse(protoMessage.Payload);
 
-                        _events.OnCtidProfileResponse(this, ctidProfileRes, protoMessage.ClientMsgId);
+                        Events.OnCtidProfileResponse(this, ctidProfileRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -507,7 +563,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASymbolCategoryListRes symbolCategoryListRes = MessagesFactory.GetSymbolCategoryListResponse(protoMessage.Payload);
 
-                        _events.OnSymbolCategoryListResponse(this, symbolCategoryListRes, protoMessage.ClientMsgId);
+                        Events.OnSymbolCategoryListResponse(this, symbolCategoryListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -515,7 +571,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOADepthEvent depthEvent = MessagesFactory.GetDepthEvent(protoMessage.Payload);
 
-                        _events.OnDepthQuotes(this, depthEvent);
+                        Events.OnDepthQuotes(this, depthEvent);
 
                         break;
                     }
@@ -523,7 +579,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOASubscribeDepthQuotesRes subscribeDepthQuotesRes = MessagesFactory.GetSubscribeDepthQuotesResponse(protoMessage.Payload);
 
-                        _events.OnSubscribeDepthQuotesResponse(this, subscribeDepthQuotesRes, protoMessage.ClientMsgId);
+                        Events.OnSubscribeDepthQuotesResponse(this, subscribeDepthQuotesRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -531,7 +587,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAUnsubscribeDepthQuotesRes unsubscribeDepthQuotesRes = MessagesFactory.GetUnsubscribeDepthQuotesResponse(protoMessage.Payload);
 
-                        _events.OnUnsubscribeDepthQuotesResponse(this, unsubscribeDepthQuotesRes, protoMessage.ClientMsgId);
+                        Events.OnUnsubscribeDepthQuotesResponse(this, unsubscribeDepthQuotesRes, protoMessage.ClientMsgId);
 
                         break;
                     }
@@ -539,7 +595,7 @@ namespace Connect.Protobuf
                     {
                         ProtoOAAccountLogoutRes accountLogoutRes = MessagesFactory.GetAccountLogoutResponse(protoMessage.Payload);
 
-                        _events.OnAccountLogoutResponse(this, accountLogoutRes, protoMessage.ClientMsgId);
+                        Events.OnAccountLogoutResponse(this, accountLogoutRes, protoMessage.ClientMsgId);
 
                         break;
                     }
