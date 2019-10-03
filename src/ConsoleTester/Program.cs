@@ -1,42 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Connect.Common;
 using Connect.Protobuf;
-using Connect.Common;
+using Connect.Protobuf.Models.Parameters;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ProtobufConsoleTesterApp
 {
-    class Program
+    internal class Program
     {
-        private static string _appId = "154_Uww1S9ZakuuAoLpQdbJGP9FQ1hx5Ux8ks7di2p8ca067fLPise";
+        private static string _appId;
 
-        private static string _appSecret = "COGrdN08XFeTE21ZXa1KmGYWxixJfEndhhLeTIkZuUgHuCqAti";
+        private static string _appSecret;
 
-        private static string _accessToken = "agel0TOYYxjkEkNqfJ_4Nx_Vmx3a5wipBcZm0gJW0KY";
-
-        private static long _accountId = 7606472;
+        private static string _accessToken;
 
         private static Client _client;
 
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            Console.WriteLine("Connecting client...");
+            Console.WriteLine("Enter App ID");
+
+            _appId = Console.ReadLine();
+
+            Console.WriteLine("Enter App Secret");
+
+            _appSecret = Console.ReadLine();
+
+            Console.WriteLine("Enter Access Token");
+
+            _accessToken = Console.ReadLine();
 
             _client = new Client();
 
-            //_client.Events.MessageReceivedEvent += Events_MessageReceivedEvent;
-
-            _client.Events.HeartbeatEvent += Events_HeartbeatEvent;
+            _client.Events.MessageReceivedEvent += Events_MessageReceivedEvent;
             _client.Events.ErrorEvent += Events_ErrorEvent;
             _client.Events.ListenerExceptionEvent += Events_ListenerExceptionEvent;
-            _client.Events.ApplicationAuthResponseEvent += Events_ApplicationAuthResponseEvent;
-            _client.Events.VersionResponseEvent += Events_VersionResponseEvent;
-            _client.Events.AccountListResponseEvent += Events_AccountListResponseEvent;
-            _client.Events.AccountAuthorizationResponseEvent += Events_AccountAuthorizationResponseEvent;
-            _client.Events.SymbolsListResponseEvent += Events_SymbolsListResponseEvent;
-            _client.Events.TraderResponseEvent += Events_TraderResponseEvent; ;
+
+            Console.WriteLine("Connecting Client...");
 
             await _client.Connect(Mode.Live);
 
@@ -48,92 +49,28 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending App Auth Req...");
 
-            Console.WriteLine("--------------------------------------");
-
-            await _client.SendMessage(MessagesFactory.CreateAppAuthorizationRequest(_appId, _appSecret));
-
-            Console.ReadKey();
-        }
-
-        private async static void Events_TraderResponseEvent(object sender, ProtoOATraderRes e)
-        {
-            Console.WriteLine($"TraderResponseEvent:\n{e.Trader}");
+            Console.WriteLine("Please wait...");
 
             Console.WriteLine("--------------------------------------");
 
-            Console.WriteLine("Disconnecting...");
+            var parameters = new AppAuthorizationRequestParameters
+            {
+                ClientId = _appId,
+                ClientSecret = _appSecret,
+            };
 
-            Console.WriteLine("--------------------------------------");
+            await _client.SendMessage(MessagesFactory.CreateAppAuthorizationRequest(parameters));
 
-            await _client.Disconnect();
+            await Task.Delay(5000);
 
-            Console.WriteLine("Disconnected");
+            Console.WriteLine("You should see the application auth response message before entering any command");
 
-            Console.WriteLine("--------------------------------------");
-        }
-
-        private async static void Events_AccountAuthorizationResponseEvent(object sender, ProtoOAAccountAuthRes e)
-        {
-            Console.WriteLine($"AccountAuthorizationResponse:\n{e}");
-
-            Console.WriteLine("--------------------------------------");
-
-            Console.WriteLine("Sending Account Symbols List Req...");
-
-            await _client.SendMessage(MessagesFactory.CreateTraderRequest(_accountId));
-
-            Console.WriteLine("--------------------------------------");
-        }
-
-        private static void Events_SymbolsListResponseEvent(object sender, ProtoOASymbolsListRes e)
-        {
-            Console.WriteLine($"SymbolsListResponse:\n{e}");
-
-            Console.WriteLine("--------------------------------------");
-        }
-
-        private static void Events_AccountListResponseEvent(object sender, ProtoOAGetAccountListByAccessTokenRes e)
-        {
-            Console.WriteLine($"AccountListResponse:\n{e}");
-
-            Console.WriteLine("--------------------------------------");
-        }
-
-        private static void Events_VersionResponseEvent(object sender, ProtoOAVersionRes e)
-        {
-            Console.WriteLine($"VersionResponse:\n{e}");
-
-            Console.WriteLine("--------------------------------------");
+            GetCommand();
         }
 
         private static void Events_MessageReceivedEvent(object sender, ProtoMessage e)
         {
             Console.WriteLine($"MessageReceived:\n{e}");
-
-            Console.WriteLine("--------------------------------------");
-        }
-
-        private async static void Events_ApplicationAuthResponseEvent(object sender, ProtoOAApplicationAuthRes e)
-        {
-            Console.WriteLine($"ApplicationAuthResponse:\n{e}");
-
-            Console.WriteLine("--------------------------------------");
-
-            Console.WriteLine("Sending Version Req...");
-
-            await _client.SendMessage(MessagesFactory.CreateVersionRequest());
-
-            Console.WriteLine("--------------------------------------");
-
-            Console.WriteLine("Sending Account List Req...");
-
-            await _client.SendMessage(MessagesFactory.CreateAccountListRequest(_accessToken));
-
-            Console.WriteLine("--------------------------------------");
-
-            Console.WriteLine("Sending Account Auth Req...");
-
-            await _client.SendMessage(MessagesFactory.CreateAccountAuthorizationRequest(_accessToken, _accountId));
 
             Console.WriteLine("--------------------------------------");
         }
@@ -153,11 +90,122 @@ namespace ProtobufConsoleTesterApp
             Console.WriteLine("--------------------------------------");
         }
 
-        private static void Events_HeartbeatEvent(object sender, ProtoHeartbeatEvent e)
+        private async static void ProcessCommand(string command)
         {
-            Console.WriteLine($"Heartbeat response received:\n{e}");
+            var commandSplit = command.Split(' ');
 
-            Console.WriteLine("--------------------------------------");
+            switch (commandSplit[0].ToLowerInvariant())
+            {
+                case "help":
+                    Console.WriteLine("For getting accounts list type: accountlist\n");
+                    Console.WriteLine("For authorizing an account type: accountauth {Account ID}\n");
+                    Console.WriteLine("For getting an account symbols list type (Account authorization is required): symbolslist {Account ID}\n");
+                    Console.WriteLine("For subscribing to symbol(s) spot quotes type (Account authorization is required): subscribe symbolspot {Account ID} {Symbol ID,}\n");
+                    break;
+
+                case "accountlist":
+                    AccountListRequest();
+                    break;
+
+                case "accountauth":
+                    AccountAuthRequest(commandSplit);
+                    break;
+
+                case "symbolslist":
+                    SymbolListRequest(commandSplit);
+                    break;
+
+                case "subscribe":
+                    ProcessSubscriptionCommand(commandSplit);
+                    break;
+
+                default:
+                    Console.WriteLine($"'{command}' is not recognized as a command, please use help command to get all available commands list");
+                    break;
+            }
+
+            await Task.Delay(3000);
+
+            GetCommand();
+        }
+
+        private static void ProcessSubscriptionCommand(string[] commandSplit)
+        {
+            switch (commandSplit[1].ToLowerInvariant())
+            {
+                case "symbolspot":
+                    SubscribeToSymbolSpot(commandSplit);
+                    break;
+
+                default:
+                    Console.WriteLine($"'{commandSplit[1]}' is not recognized as a subscription command, please use help command to get all available commands list");
+                    break;
+            }
+        }
+
+        private async static void SubscribeToSymbolSpot(string[] commandSplit)
+        {
+            var accountId = long.Parse(commandSplit[2]);
+
+            Console.WriteLine("Subscribing to symbol spot event...");
+
+            var parameters = new SpotsRequestParameters(ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_SPOTS_REQ)
+            {
+                AccountId = accountId,
+                SymbolIds = commandSplit.Skip(3).Select(iSymbolId => long.Parse(iSymbolId)).ToList()
+            };
+
+            await _client.SendMessage(MessagesFactory.CreateSubscribeForSpotsRequest(parameters));
+        }
+
+        private async static void SymbolListRequest(string[] commandSplit)
+        {
+            var accountId = long.Parse(commandSplit[1]);
+
+            Console.WriteLine("Sending symbols list req...");
+
+            var parameters = new SymbolsListRequestParameters
+            {
+                AccountId = accountId,
+            };
+
+            await _client.SendMessage(MessagesFactory.CreateSymbolsListRequest(parameters));
+        }
+
+        private async static void AccountListRequest()
+        {
+            Console.WriteLine("Sending account list req...");
+
+            var parameters = new AccountListRequestParameters
+            {
+                Token = _accessToken
+            };
+
+            await _client.SendMessage(MessagesFactory.CreateAccountListRequest(parameters));
+        }
+
+        private async static void AccountAuthRequest(string[] commandSplit)
+        {
+            var accountId = long.Parse(commandSplit[1]);
+
+            Console.WriteLine("Sending account auth req...");
+
+            var parameters = new AccountAuthorizationRequestParameters
+            {
+                AccountId = accountId,
+                Token = _accessToken
+            };
+
+            await _client.SendMessage(MessagesFactory.CreateAccountAuthorizationRequest(parameters));
+        }
+
+        private static void GetCommand()
+        {
+            Console.WriteLine("Enter command, example: help");
+
+            string command = Console.ReadLine();
+
+            ProcessCommand(command);
         }
     }
 }

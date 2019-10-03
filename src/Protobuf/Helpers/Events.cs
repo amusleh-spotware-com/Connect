@@ -185,7 +185,7 @@ namespace Connect.Protobuf
 
         internal void OnAccountListResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId)
         {
-            AccountListResponseEvent.Invoke(sender, e, clientMsgId);
+            AccountListResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         internal void OnTickDataResponse(object sender, ProtoOAGetTickDataRes e, string clientMsgId)
