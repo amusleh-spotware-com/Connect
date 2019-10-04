@@ -1,5 +1,7 @@
 ﻿using Connect.Common;
 using System;
+using Connect.Common.Helpers;
+using Connect.Common.Utils;
 
 namespace Connect.Oauth.Models
 {

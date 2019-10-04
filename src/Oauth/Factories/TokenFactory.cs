@@ -5,6 +5,7 @@ using RestSharp;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using Connect.Common.Helpers;
 
 namespace Connect.Oauth.Factories
 {

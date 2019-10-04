@@ -1,20 +1,20 @@
 ﻿using Connect.Common;
+using Connect.Oauth.Factories;
+using Connect.Oauth.Models;
 using Connect.Protobuf;
+using Connect.Protobuf.Helpers;
 using Connect.Protobuf.Models.Parameters;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Connect.Protobuf.Helpers;
 
 namespace ProtobufConsoleTesterApp
 {
     internal class Program
     {
-        private static string _appId;
+        private static App _app;
 
-        private static string _appSecret;
-
-        private static string _accessToken;
+        private static Token _token;
 
         private static Client _client;
 
@@ -22,15 +22,25 @@ namespace ProtobufConsoleTesterApp
         {
             Console.WriteLine("Enter App ID");
 
-            _appId = Console.ReadLine();
+            string appId = Console.ReadLine();
 
             Console.WriteLine("Enter App Secret");
 
-            _appSecret = Console.ReadLine();
+            string appSecret = Console.ReadLine();
 
-            Console.WriteLine("Enter Access Token");
+            Console.WriteLine("Enter App Redirect URL");
 
-            _accessToken = Console.ReadLine();
+            string redirectUrl = Console.ReadLine();
+
+            _app = new App(appId, appSecret, redirectUrl);
+
+            Console.WriteLine("Enter Authentication Code");
+
+            string code = Console.ReadLine();
+
+            AuthCode authCode = new AuthCode(code, _app);
+
+            _token = TokenFactory.GetToken(authCode);
 
             _client = new Client();
 
@@ -38,9 +48,15 @@ namespace ProtobufConsoleTesterApp
             _client.Events.ErrorEvent += Events_ErrorEvent;
             _client.Events.ListenerExceptionEvent += Events_ListenerExceptionEvent;
 
+            Console.WriteLine("Enter Connection Mode (Live or Sandbox)");
+
+            string connectionMode = Console.ReadLine();
+
+            Mode mode = (Mode)Enum.Parse(typeof(Mode), connectionMode, true);
+
             Console.WriteLine("Connecting Client...");
 
-            await _client.Connect(Mode.Live);
+            await _client.Connect(mode);
 
             Console.WriteLine("--------------------------------------");
 
@@ -56,8 +72,8 @@ namespace ProtobufConsoleTesterApp
 
             var parameters = new AppAuthorizationRequestParameters
             {
-                ClientId = _appId,
-                ClientSecret = _appSecret,
+                ClientId = _app.ClientId,
+                ClientSecret = _app.Secret,
             };
 
             await _client.SendMessage(MessagesFactory.CreateAppAuthorizationRequest(parameters));
@@ -71,11 +87,12 @@ namespace ProtobufConsoleTesterApp
 
         private static void Events_MessageReceivedEvent(object sender, ProtoMessage e)
         {
-            var message = e.ToByteArray();
+            if (e.PayloadType == (int)ProtoPayloadType.HEARTBEAT_EVENT)
+            {
+                return;
+            }
 
-            var protoMessage =  MessagesFactory.GetMessage(message);
-
-            Console.WriteLine($"MessageReceived:\n{protoMessage.GetTextPresentation()}");
+            Console.WriteLine($"MessageReceived:\n{e.GetTextPresentation()}");
 
             Console.WriteLine("--------------------------------------");
         }
@@ -98,35 +115,54 @@ namespace ProtobufConsoleTesterApp
         private static void ProcessCommand(string command)
         {
             var commandSplit = command.Split(' ');
-
-            switch (commandSplit[0].ToLowerInvariant())
+            try
             {
-                case "help":
-                    Console.WriteLine("For getting accounts list type: accountlist\n");
-                    Console.WriteLine("For authorizing an account type: accountauth {Account ID}\n");
-                    Console.WriteLine("For getting an account symbols list type (Account authorization is required): symbolslist {Account ID}\n");
-                    Console.WriteLine("For subscribing to symbol(s) spot quotes type (Account authorization is required): subscribe symbolspot {Account ID} {Symbol ID,}\n");
-                    break;
+                switch (commandSplit[0].ToLowerInvariant())
+                {
+                    case "help":
+                        Console.WriteLine("For getting accounts list type: accountlist\n");
+                        Console.WriteLine("For authorizing an account type: accountauth {Account ID}\n");
+                        Console.WriteLine("For getting an account symbols list type (Requires account authorization): symbolslist {Account ID}\n");
+                        Console.WriteLine("For subscribing to symbol(s) spot quotes type (Requires account authorization): subscribe spot {Account ID} {Symbol ID,}\n");
+                        Console.WriteLine("For subscribing to symbol(s) trend bar type (Requires account authorization and spot subscription): subscribe trendbar {Period} {Account ID} {Symbol ID}\n");
+                        Console.WriteLine("For trend bar period parameter, you can use these values:");
 
-                case "accountlist":
-                    AccountListRequest();
-                    break;
+                        Enum.GetValues(typeof(ProtoOATrendbarPeriod)).Cast<ProtoOATrendbarPeriod>().ToList()
+                            .ForEach(iTrenBarPeriod => Console.WriteLine(iTrenBarPeriod));
 
-                case "accountauth":
-                    AccountAuthRequest(commandSplit);
-                    break;
+                        break;
 
-                case "symbolslist":
-                    SymbolListRequest(commandSplit);
-                    break;
+                    case "accountlist":
+                        AccountListRequest();
+                        break;
 
-                case "subscribe":
-                    ProcessSubscriptionCommand(commandSplit);
-                    break;
+                    case "accountauth":
+                        AccountAuthRequest(commandSplit);
+                        break;
 
-                default:
-                    Console.WriteLine($"'{command}' is not recognized as a command, please use help command to get all available commands list");
-                    break;
+                    case "symbolslist":
+                        SymbolListRequest(commandSplit);
+                        break;
+
+                    case "subscribe":
+                        ProcessSubscriptionCommand(commandSplit);
+                        break;
+
+                    default:
+                        Console.WriteLine($"'{command}' is not recognized as a command, please use help command to get all available commands list");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is FormatException || ex is IndexOutOfRangeException)
+                {
+                    Console.WriteLine(ex);
+                }
+                else
+                {
+                    throw;
+                }
             }
 
             Task.Delay(3000).Wait();
@@ -138,8 +174,11 @@ namespace ProtobufConsoleTesterApp
         {
             switch (commandSplit[1].ToLowerInvariant())
             {
-                case "symbolspot":
+                case "spot":
                     SubscribeToSymbolSpot(commandSplit);
+                    break;
+                case "trendbar":
+                    SubscribeToSymbolTrendBar(commandSplit);
                     break;
 
                 default:
@@ -148,16 +187,28 @@ namespace ProtobufConsoleTesterApp
             }
         }
 
+        private async static void SubscribeToSymbolTrendBar(string[] commandSplit)
+        {
+            Console.WriteLine("Subscribing to symbol trend bar event...");
+
+            var parameters = new LiveTrendbarRequestParameters(ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_REQ)
+            {
+                Period = (ProtoOATrendbarPeriod)Enum.Parse(typeof(ProtoOATrendbarPeriod), commandSplit[2], true),
+                AccountId = long.Parse(commandSplit[3]),
+                SymbolId = long.Parse(commandSplit[4]),
+            };
+
+            await _client.SendMessage(MessagesFactory.CreateSubscribeForLiveTrendbarRequest(parameters));
+        }
+
         private async static void SubscribeToSymbolSpot(string[] commandSplit)
         {
-            var accountId = long.Parse(commandSplit[2]);
-
             Console.WriteLine("Subscribing to symbol spot event...");
 
             var parameters = new SpotsRequestParameters(ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_SPOTS_REQ)
             {
-                AccountId = accountId,
-                SymbolIds = commandSplit.Skip(3).Select(iSymbolId => long.Parse(iSymbolId)).ToList()
+                AccountId = long.Parse(commandSplit[2]),
+                SymbolIds = commandSplit.Skip(3).Select(iSymbolId => long.Parse(iSymbolId)).ToList(),
             };
 
             await _client.SendMessage(MessagesFactory.CreateSubscribeForSpotsRequest(parameters));
@@ -183,7 +234,7 @@ namespace ProtobufConsoleTesterApp
 
             var parameters = new AccountListRequestParameters
             {
-                Token = _accessToken
+                Token = _token.AccessToken,
             };
 
             await _client.SendMessage(MessagesFactory.CreateAccountListRequest(parameters));
@@ -198,7 +249,7 @@ namespace ProtobufConsoleTesterApp
             var parameters = new AccountAuthorizationRequestParameters
             {
                 AccountId = accountId,
-                Token = _accessToken
+                Token = _token.AccessToken
             };
 
             await _client.SendMessage(MessagesFactory.CreateAccountAuthorizationRequest(parameters));

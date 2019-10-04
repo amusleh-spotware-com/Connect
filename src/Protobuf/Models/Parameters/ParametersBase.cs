@@ -11,6 +11,6 @@ namespace Connect.Protobuf.Models.Parameters
 
         public string ClientMessageId { get; set; }
 
-        public int PayloadType { get; private set; }
+        public int PayloadType { get; }
     }
 }
