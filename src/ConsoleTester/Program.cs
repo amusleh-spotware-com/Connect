@@ -4,6 +4,7 @@ using Connect.Protobuf.Models.Parameters;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Connect.Protobuf.Helpers;
 
 namespace ProtobufConsoleTesterApp
 {
@@ -70,7 +71,11 @@ namespace ProtobufConsoleTesterApp
 
         private static void Events_MessageReceivedEvent(object sender, ProtoMessage e)
         {
-            Console.WriteLine($"MessageReceived:\n{e}");
+            var message = e.ToByteArray();
+
+            var protoMessage =  MessagesFactory.GetMessage(message);
+
+            Console.WriteLine($"MessageReceived:\n{protoMessage.GetTextPresentation()}");
 
             Console.WriteLine("--------------------------------------");
         }
@@ -90,7 +95,7 @@ namespace ProtobufConsoleTesterApp
             Console.WriteLine("--------------------------------------");
         }
 
-        private async static void ProcessCommand(string command)
+        private static void ProcessCommand(string command)
         {
             var commandSplit = command.Split(' ');
 
@@ -124,7 +129,7 @@ namespace ProtobufConsoleTesterApp
                     break;
             }
 
-            await Task.Delay(3000);
+            Task.Delay(3000).Wait();
 
             GetCommand();
         }
