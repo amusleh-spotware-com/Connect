@@ -1,4 +1,4 @@
-﻿using Connect.Common;
+﻿using Connect.Common.Enums;
 using Connect.Common.JsonConverters;
 using Newtonsoft.Json;
 using System;

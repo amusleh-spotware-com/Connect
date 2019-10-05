@@ -1,4 +1,4 @@
-﻿using Connect.Common;
+﻿using Connect.Common.Enums;
 using System;
 using Connect.Common.Helpers;
 using Connect.Common.Utils;

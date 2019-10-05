@@ -1,4 +1,4 @@
-﻿using Connect.Common;
+﻿using Connect.Common.Enums;
 using Connect.Oauth.Models;
 using Newtonsoft.Json;
 using RestSharp;

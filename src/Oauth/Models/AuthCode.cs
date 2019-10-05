@@ -1,4 +1,4 @@
-﻿using Connect.Common;
+﻿using Connect.Common.Enums;
 
 namespace Connect.Oauth.Models
 {

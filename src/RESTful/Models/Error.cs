@@ -1,7 +1,6 @@
-﻿using Newtonsoft.Json;
-using Connect.Common;
-using System;
+﻿using Connect.Common.Enums;
 using Connect.Common.JsonConverters;
+using Newtonsoft.Json;
 
 namespace Connect.RESTful.Models
 {

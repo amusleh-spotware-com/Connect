@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Connect.Common
+namespace Connect.Common.Enums
 {
     public enum ErrorCode
     {

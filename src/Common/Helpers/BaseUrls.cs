@@ -1,4 +1,6 @@
-﻿namespace Connect.Common.Helpers
+﻿using Connect.Common.Enums;
+
+namespace Connect.Common.Helpers
 {
     public static class BaseUrls
     {

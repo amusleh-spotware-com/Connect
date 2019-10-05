@@ -1,14 +1,14 @@
-﻿using Newtonsoft.Json;
+﻿using Connect.Common.Exceptions;
+using Connect.RESTful.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
-using Connect.Common;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
-using Connect.RESTful.Models;
+using System.Threading.Tasks;
 
 namespace Connect.RESTful.Request
 {
@@ -20,7 +20,7 @@ namespace Connect.RESTful.Request
 
         private static SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
 
-        #endregion
+        #endregion Fields
 
         #region Methods
 
@@ -155,6 +155,6 @@ namespace Connect.RESTful.Request
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

@@ -1,8 +1,8 @@
-﻿using Connect.Common;
+﻿using Connect.Common.Enums;
+using Connect.Oauth.Models;
 using System;
 using System.Collections.Generic;
 using System.Web;
-using Connect.Oauth.Models;
 
 namespace Connect.Oauth.Factories
 {

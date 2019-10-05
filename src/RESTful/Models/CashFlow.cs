@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using Connect.Common;
+﻿using Connect.Common.JsonConverters;
+using Connect.Common.Utils;
 using Connect.RESTful.Enums;
-using Connect.Common.JsonConverters;
+using Newtonsoft.Json;
+using System;
 
 namespace Connect.RESTful.Models
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Connect.Common.Enums;
 
 namespace Connect.Common.Exceptions
 {

@@ -1,4 +1,4 @@
-﻿using Connect.Common;
+﻿using Connect.Common.Enums;
 using Connect.Common.Helpers;
 using Connect.Protobuf.Helpers;
 using Connect.Protobuf.Models.Parameters;

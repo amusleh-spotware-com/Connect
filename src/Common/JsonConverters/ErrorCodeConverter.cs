@@ -1,6 +1,7 @@
 ﻿using Connect.Common.Utils;
 using Newtonsoft.Json;
 using System;
+using Connect.Common.Enums;
 
 namespace Connect.Common.JsonConverters
 {

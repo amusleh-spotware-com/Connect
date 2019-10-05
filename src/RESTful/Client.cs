@@ -1,4 +1,5 @@
-﻿using Connect.Common;
+﻿using Connect.Common.Enums;
+using Connect.Common.Helpers;
 using Connect.RESTful.Enums;
 using Connect.RESTful.Models;
 using Newtonsoft.Json;
