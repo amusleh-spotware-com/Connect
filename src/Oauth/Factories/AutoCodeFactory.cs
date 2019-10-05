@@ -1,4 +1,5 @@
 ﻿using Connect.Common.Enums;
+using Connect.Oauth.Enums;
 using Connect.Oauth.Models;
 using System;
 using System.Collections.Generic;

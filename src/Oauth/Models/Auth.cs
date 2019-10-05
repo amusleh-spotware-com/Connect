@@ -1,7 +1,8 @@
 ﻿using Connect.Common.Enums;
-using System;
 using Connect.Common.Helpers;
 using Connect.Common.Utils;
+using Connect.Oauth.Enums;
+using System;
 
 namespace Connect.Oauth.Models
 {

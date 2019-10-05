@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Connect.Oauth
+namespace Connect.Oauth.Enums
 {
     public enum Scope
     {
