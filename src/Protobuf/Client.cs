@@ -248,6 +248,9 @@ namespace Connect.Protobuf
 
                     _listeningStatus = ProcessStatus.Stopped;
                 }
+                catch (ObjectDisposedException)
+                { 
+                }
                 catch (Exception ex)
                 {
                     _listeningStatus = ProcessStatus.Error;
