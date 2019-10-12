@@ -15,5 +15,7 @@ namespace Connect.Protobuf.Models.Parameters
         public DateTimeOffset From { get; set; }
 
         public DateTimeOffset To { get; set; }
+
+        public int MaxRows { get; set; }
     }
 }

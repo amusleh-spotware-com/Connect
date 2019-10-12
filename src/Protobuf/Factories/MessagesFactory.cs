@@ -402,6 +402,8 @@ namespace Connect.Protobuf
 
             messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
 
+            messageBuilder.SetMaxRows(parameters.MaxRows);
+
             return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
