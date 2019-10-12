@@ -402,7 +402,10 @@ namespace Connect.Protobuf
 
             messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
 
-            messageBuilder.SetMaxRows(parameters.MaxRows);
+            if (parameters.MaxRows.HasValue)
+            {
+                messageBuilder.SetMaxRows(parameters.MaxRows.Value);
+            }
 
             return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
