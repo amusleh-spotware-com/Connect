@@ -2,6 +2,7 @@
 using Connect.Oauth.Factories;
 using Connect.Oauth.Models;
 using Connect.Protobuf;
+using Connect.Protobuf.Factories;
 using Connect.Protobuf.Helpers;
 using Connect.Protobuf.Models.Parameters;
 using System;
@@ -177,6 +178,7 @@ namespace ProtobufConsoleTesterApp
                 case "spot":
                     SubscribeToSymbolSpot(commandSplit);
                     break;
+
                 case "trendbar":
                     SubscribeToSymbolTrendBar(commandSplit);
                     break;

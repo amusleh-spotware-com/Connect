@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Connect.Protobuf.Models.Parameters
 {
-    public class OrderRequestParameters : ParametersBase
+    public abstract class OrderRequestParameters : ParametersBase
     {
         public OrderRequestParameters(ProtoOAOrderType orderType) : base((int)ProtoOAPayloadType.PROTO_OA_NEW_ORDER_REQ)
         {
