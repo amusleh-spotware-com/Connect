@@ -1,5 +1,6 @@
 ﻿using Connect.Common.Enums;
 using Connect.Common.Helpers;
+using Connect.Protobuf.Factories;
 using Connect.Protobuf.Helpers;
 using Connect.Protobuf.Models.Parameters;
 using Connect.Protobuf.Models.Parameters.Abstractions;
@@ -249,7 +250,7 @@ namespace Connect.Protobuf
                     _listeningStatus = ProcessStatus.Stopped;
                 }
                 catch (ObjectDisposedException)
-                { 
+                {
                 }
                 catch (Exception ex)
                 {

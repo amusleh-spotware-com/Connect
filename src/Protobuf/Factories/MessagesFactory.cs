@@ -3,7 +3,7 @@ using Connect.Protobuf.Models.Parameters.Abstractions;
 using Google.ProtocolBuffers;
 using System;
 
-namespace Connect.Protobuf
+namespace Connect.Protobuf.Factories
 {
     public static class MessagesFactory
     {
