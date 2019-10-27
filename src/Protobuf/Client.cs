@@ -24,7 +24,7 @@ namespace Connect.Protobuf
 
         private SslStream _stream;
 
-        private bool _stopSendingHeartbeats, _stopListening;
+        private bool _stopSendingHeartbeats, _stopListening, _isDisposed;
 
         private ProcessStatus _listeningStatus, _sendingHeartbeatsStatus;
 
@@ -615,6 +615,13 @@ namespace Connect.Protobuf
 
         public void Dispose()
         {
+            if (_isDisposed)
+            {
+                return;
+            }
+
+            _isDisposed = true;
+
             _stream?.Dispose();
 
             _client?.Dispose();
