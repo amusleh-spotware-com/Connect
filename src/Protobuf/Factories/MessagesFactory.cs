@@ -494,7 +494,7 @@ namespace Connect.Protobuf.Factories
 
             if (parameters.GuaranteedStopLoss.HasValue)
             {
-                messageBuilder.SetTrailingStopLoss(parameters.GuaranteedStopLoss.Value);
+                messageBuilder.SetGuaranteedStopLoss(parameters.GuaranteedStopLoss.Value);
             }
 
             switch (parameters.OrderType)
