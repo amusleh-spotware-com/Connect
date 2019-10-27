@@ -251,7 +251,7 @@ namespace Connect.Protobuf.Factories
                     return CreateClosePositionRequest(parameters as ClosePositionRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_AMEND_ORDER_REQ:
-                    return CreateAmendPendingOrderRequest(parameters as AmendPendingOrderRequestParameters);
+                    return CreateAmendOrderRequest(parameters as AmendOrderRequestParameters);
 
                 case (int)ProtoOAPayloadType.PROTO_OA_AMEND_POSITION_SLTP_REQ:
                     return CreateAmendPositionProtectionRequest(parameters as AmendPositionProtectionRequestParameters);
@@ -477,6 +477,11 @@ namespace Connect.Protobuf.Factories
             messageBuilder.SetTradeSide(parameters.TradeSide);
             messageBuilder.SetVolume(parameters.Volume);
 
+            if (parameters.TimeInForce.HasValue)
+            {
+                messageBuilder.SetTimeInForce(parameters.TimeInForce.Value);
+            }
+
             if (!string.IsNullOrEmpty(parameters.Comment))
             {
                 messageBuilder.SetComment(parameters.Comment);
@@ -485,6 +490,11 @@ namespace Connect.Protobuf.Factories
             if (!string.IsNullOrEmpty(parameters.Label))
             {
                 messageBuilder.SetLabel(parameters.Label);
+            }
+
+            if (parameters.GuaranteedStopLoss.HasValue)
+            {
+                messageBuilder.SetTrailingStopLoss(parameters.GuaranteedStopLoss.Value);
             }
 
             switch (parameters.OrderType)
@@ -496,6 +506,11 @@ namespace Connect.Protobuf.Factories
                     if (marketOrderParameters.RelativeStopLoss.HasValue)
                     {
                         messageBuilder.SetRelativeStopLoss(marketOrderParameters.RelativeStopLoss.Value);
+
+                        if (marketOrderParameters.TrailingStopLoss.HasValue)
+                        {
+                            messageBuilder.SetTrailingStopLoss(marketOrderParameters.TrailingStopLoss.Value);
+                        }
                     }
 
                     if (marketOrderParameters.RelativeTakeProfit.HasValue)
@@ -531,6 +546,11 @@ namespace Connect.Protobuf.Factories
                     if (pendingOrderParameters.StopLossInPrice.HasValue)
                     {
                         messageBuilder.SetStopLoss(pendingOrderParameters.StopLossInPrice.Value);
+
+                        if (pendingOrderParameters.TrailingStopLoss.HasValue)
+                        {
+                            messageBuilder.SetTrailingStopLoss(pendingOrderParameters.TrailingStopLoss.Value);
+                        }
                     }
 
                     if (pendingOrderParameters.TakeProfitInPrice.HasValue)
@@ -545,6 +565,11 @@ namespace Connect.Protobuf.Factories
                     else
                     {
                         messageBuilder.SetStopPrice(pendingOrderParameters.Price);
+
+                        if (pendingOrderParameters.StopTriggerMethod.HasValue)
+                        {
+                            messageBuilder.SetStopTriggerMethod(pendingOrderParameters.StopTriggerMethod.Value);
+                        }
 
                         if (pendingOrderParameters.OrderType == ProtoOAOrderType.STOP_LIMIT)
                         {
@@ -591,6 +616,16 @@ namespace Connect.Protobuf.Factories
             if (parameters.StopLossPrice.HasValue)
             {
                 messageBuilder.SetStopLoss(parameters.StopLossPrice.Value);
+
+                if (parameters.TrailingStopLoss.HasValue)
+                {
+                    messageBuilder.SetTrailingStopLoss(parameters.TrailingStopLoss.Value);
+                }
+
+                if (parameters.StopLossTriggerMethod.HasValue)
+                {
+                    messageBuilder.SetStopLossTriggerMethod(parameters.StopLossTriggerMethod.Value);
+                }
             }
 
             if (parameters.TakeProfitPrice.HasValue)
@@ -598,29 +633,52 @@ namespace Connect.Protobuf.Factories
                 messageBuilder.SetTakeProfit(parameters.TakeProfitPrice.Value);
             }
 
+            if (parameters.GuaranteedStopLoss.HasValue)
+            {
+                messageBuilder.SetGuaranteedStopLoss(parameters.GuaranteedStopLoss.Value);
+            }
+
             return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
         }
 
-        public static ProtoMessage CreateAmendPendingOrderRequest(AmendPendingOrderRequestParameters parameters)
+        public static ProtoMessage CreateAmendOrderRequest(AmendOrderRequestParameters parameters)
         {
             var messageBuilder = ProtoOAAmendOrderReq.CreateBuilder();
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
             messageBuilder.SetOrderId(parameters.OrderId);
 
-            if (parameters.Price.HasValue)
+            if (parameters.Volume.HasValue)
             {
-                switch (parameters.OrderType)
-                {
-                    case ProtoOAOrderType.LIMIT:
-                        messageBuilder.SetLimitPrice(parameters.Price.Value);
-                        break;
+                messageBuilder.SetVolume(parameters.Volume.Value);
+            }
 
-                    case ProtoOAOrderType.STOP:
-                    case ProtoOAOrderType.STOP_LIMIT:
+            switch (parameters.OrderType)
+            {
+                case ProtoOAOrderType.LIMIT:
+                    if (parameters.Price.HasValue)
+                    {
+                        messageBuilder.SetLimitPrice(parameters.Price.Value);
+                    }
+                    break;
+
+                case ProtoOAOrderType.STOP:
+                case ProtoOAOrderType.STOP_LIMIT:
+                    if (parameters.Price.HasValue)
+                    {
                         messageBuilder.SetStopPrice(parameters.Price.Value);
-                        break;
-                }
+                    }
+
+                    if (parameters.StopTriggerMethod.HasValue)
+                    {
+                        messageBuilder.SetStopTriggerMethod(parameters.StopTriggerMethod.Value);
+                    }
+
+                    if (parameters.OrderType == ProtoOAOrderType.STOP_LIMIT && parameters.SlippageInPoints.HasValue)
+                    {
+                        messageBuilder.SetSlippageInPoints(parameters.SlippageInPoints.Value);
+                    }
+                    break;
             }
 
             if (parameters.ExpirationTime.HasValue)
@@ -631,11 +689,21 @@ namespace Connect.Protobuf.Factories
             if (parameters.StopLossPrice.HasValue)
             {
                 messageBuilder.SetStopLoss(parameters.StopLossPrice.Value);
+
+                if (parameters.TrailingStopLoss.HasValue)
+                {
+                    messageBuilder.SetTrailingStopLoss(parameters.TrailingStopLoss.Value);
+                }
             }
 
             if (parameters.TakeProfitPrice.HasValue)
             {
                 messageBuilder.SetTakeProfit(parameters.TakeProfitPrice.Value);
+            }
+
+            if (parameters.GuaranteedStopLoss.HasValue)
+            {
+                messageBuilder.SetGuaranteedStopLoss(parameters.GuaranteedStopLoss.Value);
             }
 
             return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);

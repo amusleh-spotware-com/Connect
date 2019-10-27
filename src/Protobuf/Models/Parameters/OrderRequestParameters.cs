@@ -24,5 +24,11 @@ namespace Connect.Protobuf.Models.Parameters
         public string Comment { get; set; }
 
         public string Label { get; set; }
+
+        public bool? GuaranteedStopLoss { get; set; }
+
+        public bool? TrailingStopLoss { get; set; }
+
+        public ProtoOATimeInForce? TimeInForce { get; set; }
     }
 }

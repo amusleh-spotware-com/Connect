@@ -17,5 +17,7 @@ namespace Connect.Protobuf.Models.Parameters
         public double? TakeProfitInPrice { get; set; }
 
         public DateTimeOffset? ExpirationTime { get; set; }
+
+        public ProtoOAOrderTriggerMethod? StopTriggerMethod { get; set; }
     }
 }

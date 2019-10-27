@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Connect.Protobuf.Models.Parameters
 {
-    public class AmendPendingOrderRequestParameters : ParametersBase
+    public class AmendOrderRequestParameters : ParametersBase
     {
-        public AmendPendingOrderRequestParameters() : base((int)ProtoOAPayloadType.PROTO_OA_AMEND_ORDER_REQ)
+        public AmendOrderRequestParameters() : base((int)ProtoOAPayloadType.PROTO_OA_AMEND_ORDER_REQ)
         {
         }
 
@@ -23,5 +23,15 @@ namespace Connect.Protobuf.Models.Parameters
         public double? StopLossPrice { get; set; }
 
         public double? TakeProfitPrice { get; set; }
+
+        public long? Volume { get; set; }
+
+        public int? SlippageInPoints { get; set; }
+
+        public bool? GuaranteedStopLoss { get; set; }
+
+        public bool? TrailingStopLoss { get; set; }
+
+        public ProtoOAOrderTriggerMethod? StopTriggerMethod { get; set; }
     }
 }

@@ -17,5 +17,11 @@ namespace Connect.Protobuf.Models.Parameters
         public double? StopLossPrice { get; set; }
 
         public double? TakeProfitPrice { get; set; }
+
+        public bool? GuaranteedStopLoss { get; set; }
+
+        public bool? TrailingStopLoss { get; set; }
+
+        public ProtoOAOrderTriggerMethod? StopLossTriggerMethod { get; set; }
     }
 }
