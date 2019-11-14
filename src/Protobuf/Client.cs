@@ -6,6 +6,7 @@ using Connect.Protobuf.Models.Parameters;
 using Connect.Protobuf.Models.Parameters.Abstractions;
 using Connect.Protobuf.Streams;
 using System;
+using System.IO;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
@@ -27,6 +28,8 @@ namespace Connect.Protobuf
         private bool _stopSendingHeartbeats, _stopListening, _isDisposed;
 
         private ProcessStatus _listeningStatus, _sendingHeartbeatsStatus;
+
+        private Mode _mode;
 
         #endregion Fields
 
@@ -101,6 +104,8 @@ namespace Connect.Protobuf
 
         public async Task Connect(Mode mode)
         {
+            _mode = mode;
+
             _client = new TcpClient();
 
             _client.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
@@ -155,9 +160,18 @@ namespace Connect.Protobuf
 
                         ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent(messageArgs);
 
-                        await SendMessage(protoMessage);
+                        if (!IsConnected)
+                        {
+                            await Disconnect();
 
-                        (sender as System.Timers.Timer).Start();
+                            await Connect(_mode);
+                        }
+                        else
+                        {
+                            await SendMessage(protoMessage);
+
+                            (sender as System.Timers.Timer).Start();
+                        }
                     }
                     else
                     {
@@ -254,9 +268,17 @@ namespace Connect.Protobuf
                 }
                 catch (Exception ex)
                 {
-                    _listeningStatus = ProcessStatus.Error;
+                    if (ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is InvalidOperationException ||
+                    ex is ArgumentException || ex is NotSupportedException || ex is IOException)
+                    {
+                        _listeningStatus = ProcessStatus.Error;
 
-                    Events.OnListenerException(this, ex);
+                        Events.OnListenerException(this, ex);
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
             });
 #pragma warning restore 4014
