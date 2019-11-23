@@ -74,9 +74,7 @@ namespace Connect.Protobuf
 
     public delegate void MessageReceivedEventHandler(object sender, ProtoMessage e);
 
-    public delegate void HeartbeatSendingExceptionEventHandler(object sender, Exception ex);
-
-    public delegate void ListenerExceptionEventHandler(object sender, Exception ex);
+    public delegate void ExceptionEventHandler(object sender, Exception ex);
 
     public delegate void AccountLogoutResponseEventHandler(object sender, ProtoOAAccountLogoutRes e, string clientMsgId);
 }

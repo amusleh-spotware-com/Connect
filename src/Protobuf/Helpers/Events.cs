@@ -20,9 +20,11 @@ namespace Connect.Protobuf
 
         public event ErrorHandler ErrorEvent;
 
-        public event ListenerExceptionEventHandler ListenerExceptionEvent;
+        public event ExceptionEventHandler ListenerExceptionEvent;
 
-        public event HeartbeatSendingExceptionEventHandler HeartbeatSendingExceptionEvent;
+        public event ExceptionEventHandler SenderExceptionEvent;
+
+        public event ExceptionEventHandler HeartbeatSendingExceptionEvent;
 
         public event PingResponseEventHandler PingResponseEvent;
 
@@ -126,6 +128,11 @@ namespace Connect.Protobuf
         internal void OnListenerException(object sender, Exception ex)
         {
             ListenerExceptionEvent?.Invoke(sender, ex);
+        }
+
+        internal void OnSenderException(object sender, Exception ex)
+        {
+            SenderExceptionEvent?.Invoke(sender, ex);
         }
 
         internal void OnHeartbeatSendingException(object sender, Exception ex)

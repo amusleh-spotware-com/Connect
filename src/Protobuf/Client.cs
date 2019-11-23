@@ -269,7 +269,7 @@ namespace Connect.Protobuf
                 catch (Exception ex)
                 {
                     if (ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is InvalidOperationException ||
-                    ex is ArgumentException || ex is NotSupportedException || ex is IOException)
+                    ex is ArgumentException || ex is NotSupportedException || ex is IOException || ex is ObjectDisposedException)
                     {
                         _listeningStatus = ProcessStatus.Error;
 
@@ -309,18 +309,28 @@ namespace Connect.Protobuf
 
         public async Task SendMessage(ProtoMessage message)
         {
-            if (!IsConnected)
+            try
             {
-                throw new InvalidOperationException(ExceptionMessages.ClientNotConnected);
+                byte[] messageByte = message.ToByteArray();
+
+                byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
+
+                await _stream.WriteAsync(length, 0, length.Length);
+
+                await _stream.WriteAsync(messageByte, 0, messageByte.Length);
             }
-
-            byte[] messageByte = message.ToByteArray();
-
-            byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
-
-            await _stream.WriteAsync(length, 0, length.Length);
-
-            await _stream.WriteAsync(messageByte, 0, messageByte.Length);
+            catch (Exception ex)
+            {
+                if (ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is InvalidOperationException ||
+                    ex is ArgumentException || ex is NotSupportedException || ex is IOException || ex is ObjectDisposedException)
+                {
+                    Events.OnSenderException(this, ex);
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         #endregion Send message
