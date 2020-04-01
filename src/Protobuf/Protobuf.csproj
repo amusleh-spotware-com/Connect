@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Google.ProtocolBuffers" Version="2.4.1.555" />
-    <PackageReference Include="System.Reactive" Version="4.1.6" />
+    <PackageReference Include="System.Reactive" Version="4.3.2" />
   </ItemGroup>
 
   <ItemGroup>
