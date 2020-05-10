@@ -31,6 +31,8 @@ namespace Connect.Protobuf
 
         private Mode _mode;
 
+        private DateTime _lastSentMessageTime;
+
         #endregion Fields
 
         public Client()
@@ -106,16 +108,18 @@ namespace Connect.Protobuf
         {
             _mode = mode;
 
-            _client = new TcpClient();
-
-            _client.ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
-            _client.SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds;
+            _client = new TcpClient
+            {
+                ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds,
+                SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds
+            };
 
             string url = BaseUrls.GetBaseUrl(ApiType.Protobuf, mode);
 
             await _client.ConnectAsync(url, BaseUrls.ProtobufPort);
 
-            _stream = new SslStream(_client.GetStream(), false, new RemoteCertificateValidationCallback(CertificateValidationCallback),
+            _stream = new SslStream(_client.GetStream(), false,
+                new RemoteCertificateValidationCallback(CertificateValidationCallback),
                 null);
 
             await _stream.AuthenticateAsClientAsync(url);
@@ -146,7 +150,11 @@ namespace Connect.Protobuf
         {
             _sendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
 
-            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(10000);
+            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000);
+
+            var messageArgs = new HeartbeatEventParameters();
+
+            var message = MessagesFactory.CreateHeartbeatEvent(messageArgs);
 
             heartbeatTimer.Elapsed += async (object sender, System.Timers.ElapsedEventArgs e) =>
             {
@@ -156,10 +164,6 @@ namespace Connect.Protobuf
 
                     if (!_stopSendingHeartbeats)
                     {
-                        HeartbeatEventParameters messageArgs = new HeartbeatEventParameters();
-
-                        ProtoMessage protoMessage = MessagesFactory.CreateHeartbeatEvent(messageArgs);
-
                         if (!IsConnected)
                         {
                             await Disconnect();
@@ -168,7 +172,10 @@ namespace Connect.Protobuf
                         }
                         else
                         {
-                            await SendMessage(protoMessage);
+                            if (DateTime.Now - _lastSentMessageTime >= TimeSpan.FromSeconds(10))
+                            {
+                                await SendMessage(message);
+                            }
 
                             (sender as System.Timers.Timer).Start();
                         }
@@ -314,6 +321,8 @@ namespace Connect.Protobuf
                 byte[] messageByte = message.ToByteArray();
 
                 byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
+
+                _lastSentMessageTime = DateTime.Now;
 
                 await _stream.WriteAsync(length, 0, length.Length);
 
