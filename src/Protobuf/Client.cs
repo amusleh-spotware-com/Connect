@@ -275,14 +275,11 @@ namespace Connect.Protobuf
                 }
                 catch (Exception ex)
                 {
-                    if (ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is InvalidOperationException ||
-                    ex is ArgumentException || ex is NotSupportedException || ex is IOException || ex is ObjectDisposedException)
-                    {
-                        _listeningStatus = ProcessStatus.Error;
+                    _listeningStatus = ProcessStatus.Error;
 
-                        Events.OnListenerException(this, ex);
-                    }
-                    else
+                    Events.OnListenerException(this, ex);
+
+                    if (!IsManagableException(ex))
                     {
                         throw;
                     }
@@ -330,12 +327,9 @@ namespace Connect.Protobuf
             }
             catch (Exception ex)
             {
-                if (ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is InvalidOperationException ||
-                    ex is ArgumentException || ex is NotSupportedException || ex is IOException || ex is ObjectDisposedException)
-                {
-                    Events.OnSenderException(this, ex);
-                }
-                else
+                Events.OnSenderException(this, ex);
+
+                if (!IsManagableException(ex))
                 {
                     throw;
                 }
@@ -666,6 +660,13 @@ namespace Connect.Protobuf
             _stream?.Dispose();
 
             _client?.Dispose();
+        }
+
+        private bool IsManagableException(Exception exception)
+        {
+            return exception is ArgumentNullException || exception is ArgumentOutOfRangeException ||
+                exception is InvalidOperationException || exception is ArgumentException ||
+                exception is NotSupportedException || exception is IOException || exception is ObjectDisposedException;
         }
 
         #endregion Others

@@ -29,17 +29,27 @@ namespace Connect.Protobuf.Streams
 
         protected void OnNext(T value)
         {
-            foreach (var observer in _observers)
+            var observersCopy = _observers.ToArray();
+
+            foreach (var observer in observersCopy)
             {
-                observer.OnNext(value);
+                if (_observers.Contains(observer))
+                {
+                    observer.OnNext(value);
+                }
             }
         }
 
         protected void OnError(Exception exception)
         {
-            foreach (var observer in _observers)
+            var observersCopy = _observers.ToArray();
+
+            foreach (var observer in observersCopy)
             {
-                observer.OnError(exception);
+                if (_observers.Contains(observer))
+                {
+                    observer.OnError(exception);
+                }
             }
         }
 
