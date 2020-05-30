@@ -270,9 +270,6 @@ namespace Connect.Protobuf
 
                     _listeningStatus = ProcessStatus.Stopped;
                 }
-                catch (ObjectDisposedException)
-                {
-                }
                 catch (Exception ex)
                 {
                     _listeningStatus = ProcessStatus.Error;
@@ -666,7 +663,8 @@ namespace Connect.Protobuf
         {
             return exception is ArgumentNullException || exception is ArgumentOutOfRangeException ||
                 exception is InvalidOperationException || exception is ArgumentException ||
-                exception is NotSupportedException || exception is IOException || exception is ObjectDisposedException;
+                exception is NotSupportedException || exception is IOException || exception is ObjectDisposedException ||
+                exception.InnerException is Google.ProtocolBuffers.UninitializedMessageException;
         }
 
         #endregion Others
