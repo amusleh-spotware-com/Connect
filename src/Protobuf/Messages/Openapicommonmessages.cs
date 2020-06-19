@@ -7,7 +7,7 @@ using pbc = global::Google.ProtocolBuffers.Collections;
 using pbd = global::Google.ProtocolBuffers.Descriptors;
 using scg = global::System.Collections.Generic;
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public static partial class Openapicommonmessages {
+public static partial class OpenApiCommonMessages {
 
   #region Extension registration
   public static void RegisterAllExtensions(pb::ExtensionRegistry registry) {
@@ -27,10 +27,10 @@ public static partial class Openapicommonmessages {
   }
   private static pbd::FileDescriptor descriptor;
   
-  static Openapicommonmessages() {
+  static OpenApiCommonMessages() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChtvcGVuYXBpY29tbW9ubWVzc2FnZXMucHJvdG8aIE9wZW5BcGlDb21tb25N", 
+          "ChtPcGVuQXBpQ29tbW9uTWVzc2FnZXMucHJvdG8aIE9wZW5BcGlDb21tb25N", 
           "b2RlbE1lc3NhZ2VzLnByb3RvIkkKDFByb3RvTWVzc2FnZRITCgtwYXlsb2Fk", 
           "VHlwZRgBIAIoDRIPCgdwYXlsb2FkGAIgASgMEhMKC2NsaWVudE1zZ0lkGAMg", 
           "ASgJIosBCg1Qcm90b0Vycm9yUmVzEjEKC3BheWxvYWRUeXBlGAEgASgOMhEu", 
@@ -84,11 +84,11 @@ public sealed partial class ProtoMessage : pb::GeneratedMessage<ProtoMessage, Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapicommonmessages.internal__static_ProtoMessage__Descriptor; }
+    get { return global::OpenApiCommonMessages.internal__static_ProtoMessage__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoMessage, ProtoMessage.Builder> InternalFieldAccessors {
-    get { return global::Openapicommonmessages.internal__static_ProtoMessage__FieldAccessorTable; }
+    get { return global::OpenApiCommonMessages.internal__static_ProtoMessage__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -428,7 +428,7 @@ public sealed partial class ProtoMessage : pb::GeneratedMessage<ProtoMessage, Pr
     }
   }
   static ProtoMessage() {
-    object.ReferenceEquals(global::Openapicommonmessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiCommonMessages.Descriptor, null);
   }
 }
 
@@ -451,11 +451,11 @@ public sealed partial class ProtoErrorRes : pb::GeneratedMessage<ProtoErrorRes, 
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapicommonmessages.internal__static_ProtoErrorRes__Descriptor; }
+    get { return global::OpenApiCommonMessages.internal__static_ProtoErrorRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoErrorRes, ProtoErrorRes.Builder> InternalFieldAccessors {
-    get { return global::Openapicommonmessages.internal__static_ProtoErrorRes__FieldAccessorTable; }
+    get { return global::OpenApiCommonMessages.internal__static_ProtoErrorRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -846,7 +846,7 @@ public sealed partial class ProtoErrorRes : pb::GeneratedMessage<ProtoErrorRes, 
     }
   }
   static ProtoErrorRes() {
-    object.ReferenceEquals(global::Openapicommonmessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiCommonMessages.Descriptor, null);
   }
 }
 
@@ -869,11 +869,11 @@ public sealed partial class ProtoHeartbeatEvent : pb::GeneratedMessage<ProtoHear
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapicommonmessages.internal__static_ProtoHeartbeatEvent__Descriptor; }
+    get { return global::OpenApiCommonMessages.internal__static_ProtoHeartbeatEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoHeartbeatEvent, ProtoHeartbeatEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapicommonmessages.internal__static_ProtoHeartbeatEvent__FieldAccessorTable; }
+    get { return global::OpenApiCommonMessages.internal__static_ProtoHeartbeatEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -1129,7 +1129,7 @@ public sealed partial class ProtoHeartbeatEvent : pb::GeneratedMessage<ProtoHear
     }
   }
   static ProtoHeartbeatEvent() {
-    object.ReferenceEquals(global::Openapicommonmessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiCommonMessages.Descriptor, null);
   }
 }
 

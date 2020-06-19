@@ -7,7 +7,7 @@ using pbc = global::Google.ProtocolBuffers.Collections;
 using pbd = global::Google.ProtocolBuffers.Descriptors;
 using scg = global::System.Collections.Generic;
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public static partial class Openapimessages {
+public static partial class OpenApiMessages {
 
   #region Extension registration
   public static void RegisterAllExtensions(pb::ExtensionRegistry registry) {
@@ -171,10 +171,10 @@ public static partial class Openapimessages {
   }
   private static pbd::FileDescriptor descriptor;
   
-  static Openapimessages() {
+  static OpenApiMessages() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChVvcGVuYXBpbWVzc2FnZXMucHJvdG8aGk9wZW5BcGlNb2RlbE1lc3NhZ2Vz", 
+          "ChVPcGVuQXBpTWVzc2FnZXMucHJvdG8aGk9wZW5BcGlNb2RlbE1lc3NhZ2Vz", 
           "LnByb3RvIowBChlQcm90b09BQXBwbGljYXRpb25BdXRoUmVxEkcKC3BheWxv", 
           "YWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOh1QUk9UT19PQV9B", 
           "UFBMSUNBVElPTl9BVVRIX1JFURIQCghjbGllbnRJZBgCIAIoCRIUCgxjbGll", 
@@ -776,7 +776,7 @@ public static partial class Openapimessages {
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
         new pbd::FileDescriptor[] {
-        global::Openapimodelmessages.Descriptor, 
+        global::OpenApiModelMessages.Descriptor, 
         }, assigner);
   }
   #endregion
@@ -802,11 +802,11 @@ public sealed partial class ProtoOAApplicationAuthReq : pb::GeneratedMessage<Pro
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAApplicationAuthReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAApplicationAuthReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAApplicationAuthReq, ProtoOAApplicationAuthReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAApplicationAuthReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAApplicationAuthReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -1152,7 +1152,7 @@ public sealed partial class ProtoOAApplicationAuthReq : pb::GeneratedMessage<Pro
     }
   }
   static ProtoOAApplicationAuthReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -1175,11 +1175,11 @@ public sealed partial class ProtoOAApplicationAuthRes : pb::GeneratedMessage<Pro
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAApplicationAuthRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAApplicationAuthRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAApplicationAuthRes, ProtoOAApplicationAuthRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAApplicationAuthRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAApplicationAuthRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -1435,7 +1435,7 @@ public sealed partial class ProtoOAApplicationAuthRes : pb::GeneratedMessage<Pro
     }
   }
   static ProtoOAApplicationAuthRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -1458,11 +1458,11 @@ public sealed partial class ProtoOAAccountAuthReq : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountAuthReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountAuthReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountAuthReq, ProtoOAAccountAuthReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountAuthReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountAuthReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -1807,7 +1807,7 @@ public sealed partial class ProtoOAAccountAuthReq : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOAAccountAuthReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -1830,11 +1830,11 @@ public sealed partial class ProtoOAAccountAuthRes : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountAuthRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountAuthRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountAuthRes, ProtoOAAccountAuthRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountAuthRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountAuthRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -2134,7 +2134,7 @@ public sealed partial class ProtoOAAccountAuthRes : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOAAccountAuthRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -2157,11 +2157,11 @@ public sealed partial class ProtoOAErrorRes : pb::GeneratedMessage<ProtoOAErrorR
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAErrorRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAErrorRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAErrorRes, ProtoOAErrorRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAErrorRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAErrorRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -2592,7 +2592,7 @@ public sealed partial class ProtoOAErrorRes : pb::GeneratedMessage<ProtoOAErrorR
     }
   }
   static ProtoOAErrorRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -2615,11 +2615,11 @@ public sealed partial class ProtoOAClientDisconnectEvent : pb::GeneratedMessage<
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAClientDisconnectEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAClientDisconnectEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAClientDisconnectEvent, ProtoOAClientDisconnectEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAClientDisconnectEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAClientDisconnectEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -2919,7 +2919,7 @@ public sealed partial class ProtoOAClientDisconnectEvent : pb::GeneratedMessage<
     }
   }
   static ProtoOAClientDisconnectEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -2942,11 +2942,11 @@ public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::Generated
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountsTokenInvalidatedEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountsTokenInvalidatedEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountsTokenInvalidatedEvent, ProtoOAAccountsTokenInvalidatedEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountsTokenInvalidatedEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountsTokenInvalidatedEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -3308,7 +3308,7 @@ public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::Generated
     }
   }
   static ProtoOAAccountsTokenInvalidatedEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -3331,11 +3331,11 @@ public sealed partial class ProtoOAVersionReq : pb::GeneratedMessage<ProtoOAVers
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAVersionReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAVersionReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAVersionReq, ProtoOAVersionReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAVersionReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAVersionReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -3591,7 +3591,7 @@ public sealed partial class ProtoOAVersionReq : pb::GeneratedMessage<ProtoOAVers
     }
   }
   static ProtoOAVersionReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -3614,11 +3614,11 @@ public sealed partial class ProtoOAVersionRes : pb::GeneratedMessage<ProtoOAVers
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAVersionRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAVersionRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAVersionRes, ProtoOAVersionRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAVersionRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAVersionRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -3919,7 +3919,7 @@ public sealed partial class ProtoOAVersionRes : pb::GeneratedMessage<ProtoOAVers
     }
   }
   static ProtoOAVersionRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -3942,11 +3942,11 @@ public sealed partial class ProtoOANewOrderReq : pb::GeneratedMessage<ProtoOANew
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOANewOrderReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOANewOrderReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOANewOrderReq, ProtoOANewOrderReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOANewOrderReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOANewOrderReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -5188,7 +5188,7 @@ public sealed partial class ProtoOANewOrderReq : pb::GeneratedMessage<ProtoOANew
     }
   }
   static ProtoOANewOrderReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -5211,11 +5211,11 @@ public sealed partial class ProtoOAExecutionEvent : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAExecutionEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAExecutionEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAExecutionEvent, ProtoOAExecutionEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAExecutionEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAExecutionEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -6009,7 +6009,7 @@ public sealed partial class ProtoOAExecutionEvent : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOAExecutionEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -6032,11 +6032,11 @@ public sealed partial class ProtoOACancelOrderReq : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOACancelOrderReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOACancelOrderReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOACancelOrderReq, ProtoOACancelOrderReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOACancelOrderReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOACancelOrderReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -6380,7 +6380,7 @@ public sealed partial class ProtoOACancelOrderReq : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOACancelOrderReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -6403,11 +6403,11 @@ public sealed partial class ProtoOAAmendOrderReq : pb::GeneratedMessage<ProtoOAA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAmendOrderReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAmendOrderReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAmendOrderReq, ProtoOAAmendOrderReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAmendOrderReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAmendOrderReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -7275,7 +7275,7 @@ public sealed partial class ProtoOAAmendOrderReq : pb::GeneratedMessage<ProtoOAA
     }
   }
   static ProtoOAAmendOrderReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -7298,11 +7298,11 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAmendPositionSLTPReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAmendPositionSLTPReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAmendPositionSLTPReq, ProtoOAAmendPositionSLTPReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAmendPositionSLTPReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAmendPositionSLTPReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -7869,7 +7869,7 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::GeneratedMessage<P
     }
   }
   static ProtoOAAmendPositionSLTPReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -7892,11 +7892,11 @@ public sealed partial class ProtoOAClosePositionReq : pb::GeneratedMessage<Proto
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAClosePositionReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAClosePositionReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAClosePositionReq, ProtoOAClosePositionReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAClosePositionReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAClosePositionReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -8284,7 +8284,7 @@ public sealed partial class ProtoOAClosePositionReq : pb::GeneratedMessage<Proto
     }
   }
   static ProtoOAClosePositionReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -8307,11 +8307,11 @@ public sealed partial class ProtoOATrailingSLChangedEvent : pb::GeneratedMessage
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOATrailingSLChangedEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATrailingSLChangedEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOATrailingSLChangedEvent, ProtoOATrailingSLChangedEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOATrailingSLChangedEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATrailingSLChangedEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -8787,7 +8787,7 @@ public sealed partial class ProtoOATrailingSLChangedEvent : pb::GeneratedMessage
     }
   }
   static ProtoOATrailingSLChangedEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -8810,11 +8810,11 @@ public sealed partial class ProtoOAAssetListReq : pb::GeneratedMessage<ProtoOAAs
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetListReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetListReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAssetListReq, ProtoOAAssetListReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetListReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetListReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -9114,7 +9114,7 @@ public sealed partial class ProtoOAAssetListReq : pb::GeneratedMessage<ProtoOAAs
     }
   }
   static ProtoOAAssetListReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -9137,11 +9137,11 @@ public sealed partial class ProtoOAAssetListRes : pb::GeneratedMessage<ProtoOAAs
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetListRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetListRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAssetListRes, ProtoOAAssetListRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetListRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetListRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -9514,7 +9514,7 @@ public sealed partial class ProtoOAAssetListRes : pb::GeneratedMessage<ProtoOAAs
     }
   }
   static ProtoOAAssetListRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -9537,11 +9537,11 @@ public sealed partial class ProtoOASymbolsListReq : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsListReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsListReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolsListReq, ProtoOASymbolsListReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsListReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsListReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -9841,7 +9841,7 @@ public sealed partial class ProtoOASymbolsListReq : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOASymbolsListReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -9864,11 +9864,11 @@ public sealed partial class ProtoOASymbolsListRes : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsListRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsListRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolsListRes, ProtoOASymbolsListRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsListRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsListRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -10241,7 +10241,7 @@ public sealed partial class ProtoOASymbolsListRes : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOASymbolsListRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -10264,11 +10264,11 @@ public sealed partial class ProtoOASymbolByIdReq : pb::GeneratedMessage<ProtoOAS
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolByIdReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolByIdReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolByIdReq, ProtoOASymbolByIdReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolByIdReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolByIdReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -10630,7 +10630,7 @@ public sealed partial class ProtoOASymbolByIdReq : pb::GeneratedMessage<ProtoOAS
     }
   }
   static ProtoOASymbolByIdReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -10653,11 +10653,11 @@ public sealed partial class ProtoOASymbolByIdRes : pb::GeneratedMessage<ProtoOAS
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolByIdRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolByIdRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolByIdRes, ProtoOASymbolByIdRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolByIdRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolByIdRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -11030,7 +11030,7 @@ public sealed partial class ProtoOASymbolByIdRes : pb::GeneratedMessage<ProtoOAS
     }
   }
   static ProtoOASymbolByIdRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -11053,11 +11053,11 @@ public sealed partial class ProtoOASymbolsForConversionReq : pb::GeneratedMessag
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsForConversionReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsForConversionReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolsForConversionReq, ProtoOASymbolsForConversionReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsForConversionReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsForConversionReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -11445,7 +11445,7 @@ public sealed partial class ProtoOASymbolsForConversionReq : pb::GeneratedMessag
     }
   }
   static ProtoOASymbolsForConversionReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -11468,11 +11468,11 @@ public sealed partial class ProtoOASymbolsForConversionRes : pb::GeneratedMessag
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsForConversionRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsForConversionRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolsForConversionRes, ProtoOASymbolsForConversionRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolsForConversionRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolsForConversionRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -11845,7 +11845,7 @@ public sealed partial class ProtoOASymbolsForConversionRes : pb::GeneratedMessag
     }
   }
   static ProtoOASymbolsForConversionRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -11868,11 +11868,11 @@ public sealed partial class ProtoOASymbolChangedEvent : pb::GeneratedMessage<Pro
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolChangedEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolChangedEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolChangedEvent, ProtoOASymbolChangedEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolChangedEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolChangedEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -12234,7 +12234,7 @@ public sealed partial class ProtoOASymbolChangedEvent : pb::GeneratedMessage<Pro
     }
   }
   static ProtoOASymbolChangedEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -12257,11 +12257,11 @@ public sealed partial class ProtoOAAssetClassListReq : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetClassListReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAssetClassListReq, ProtoOAAssetClassListReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetClassListReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -12561,7 +12561,7 @@ public sealed partial class ProtoOAAssetClassListReq : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOAAssetClassListReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -12584,11 +12584,11 @@ public sealed partial class ProtoOAAssetClassListRes : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetClassListRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAssetClassListRes, ProtoOAAssetClassListRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAssetClassListRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAssetClassListRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -12958,7 +12958,7 @@ public sealed partial class ProtoOAAssetClassListRes : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOAAssetClassListRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -12981,11 +12981,11 @@ public sealed partial class ProtoOATraderReq : pb::GeneratedMessage<ProtoOATrade
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOATraderReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATraderReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOATraderReq, ProtoOATraderReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOATraderReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATraderReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -13285,7 +13285,7 @@ public sealed partial class ProtoOATraderReq : pb::GeneratedMessage<ProtoOATrade
     }
   }
   static ProtoOATraderReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -13308,11 +13308,11 @@ public sealed partial class ProtoOATraderRes : pb::GeneratedMessage<ProtoOATrade
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOATraderRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATraderRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOATraderRes, ProtoOATraderRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOATraderRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATraderRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -13682,7 +13682,7 @@ public sealed partial class ProtoOATraderRes : pb::GeneratedMessage<ProtoOATrade
     }
   }
   static ProtoOATraderRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -13705,11 +13705,11 @@ public sealed partial class ProtoOATraderUpdatedEvent : pb::GeneratedMessage<Pro
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOATraderUpdatedEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATraderUpdatedEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOATraderUpdatedEvent, ProtoOATraderUpdatedEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOATraderUpdatedEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOATraderUpdatedEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -14079,7 +14079,7 @@ public sealed partial class ProtoOATraderUpdatedEvent : pb::GeneratedMessage<Pro
     }
   }
   static ProtoOATraderUpdatedEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -14102,11 +14102,11 @@ public sealed partial class ProtoOAReconcileReq : pb::GeneratedMessage<ProtoOARe
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAReconcileReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAReconcileReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAReconcileReq, ProtoOAReconcileReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAReconcileReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAReconcileReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -14406,7 +14406,7 @@ public sealed partial class ProtoOAReconcileReq : pb::GeneratedMessage<ProtoOARe
     }
   }
   static ProtoOAReconcileReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -14429,11 +14429,11 @@ public sealed partial class ProtoOAReconcileRes : pb::GeneratedMessage<ProtoOARe
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAReconcileRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAReconcileRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAReconcileRes, ProtoOAReconcileRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAReconcileRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAReconcileRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -14879,7 +14879,7 @@ public sealed partial class ProtoOAReconcileRes : pb::GeneratedMessage<ProtoOARe
     }
   }
   static ProtoOAReconcileRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -14902,11 +14902,11 @@ public sealed partial class ProtoOAOrderErrorEvent : pb::GeneratedMessage<ProtoO
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAOrderErrorEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAOrderErrorEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAOrderErrorEvent, ProtoOAOrderErrorEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAOrderErrorEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAOrderErrorEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -15381,7 +15381,7 @@ public sealed partial class ProtoOAOrderErrorEvent : pb::GeneratedMessage<ProtoO
     }
   }
   static ProtoOAOrderErrorEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -15404,11 +15404,11 @@ public sealed partial class ProtoOADealListReq : pb::GeneratedMessage<ProtoOADea
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOADealListReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOADealListReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOADealListReq, ProtoOADealListReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOADealListReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOADealListReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -15839,7 +15839,7 @@ public sealed partial class ProtoOADealListReq : pb::GeneratedMessage<ProtoOADea
     }
   }
   static ProtoOADealListReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -15862,11 +15862,11 @@ public sealed partial class ProtoOADealListRes : pb::GeneratedMessage<ProtoOADea
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOADealListRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOADealListRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOADealListRes, ProtoOADealListRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOADealListRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOADealListRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -16283,7 +16283,7 @@ public sealed partial class ProtoOADealListRes : pb::GeneratedMessage<ProtoOADea
     }
   }
   static ProtoOADealListRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -16306,11 +16306,11 @@ public sealed partial class ProtoOAExpectedMarginReq : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAExpectedMarginReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAExpectedMarginReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAExpectedMarginReq, ProtoOAExpectedMarginReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAExpectedMarginReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAExpectedMarginReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -16716,7 +16716,7 @@ public sealed partial class ProtoOAExpectedMarginReq : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOAExpectedMarginReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -16739,11 +16739,11 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAExpectedMarginRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAExpectedMarginRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAExpectedMarginRes, ProtoOAExpectedMarginRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAExpectedMarginRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAExpectedMarginRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -17116,7 +17116,7 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOAExpectedMarginRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -17139,11 +17139,11 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::GeneratedMessage<Pro
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginChangedEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginChangedEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAMarginChangedEvent, ProtoOAMarginChangedEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginChangedEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginChangedEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -17537,7 +17537,7 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::GeneratedMessage<Pro
     }
   }
   static ProtoOAMarginChangedEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -17560,11 +17560,11 @@ public sealed partial class ProtoOACashFlowHistoryListReq : pb::GeneratedMessage
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOACashFlowHistoryListReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOACashFlowHistoryListReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOACashFlowHistoryListReq, ProtoOACashFlowHistoryListReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOACashFlowHistoryListReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOACashFlowHistoryListReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -17952,7 +17952,7 @@ public sealed partial class ProtoOACashFlowHistoryListReq : pb::GeneratedMessage
     }
   }
   static ProtoOACashFlowHistoryListReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -17975,11 +17975,11 @@ public sealed partial class ProtoOACashFlowHistoryListRes : pb::GeneratedMessage
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOACashFlowHistoryListRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOACashFlowHistoryListRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOACashFlowHistoryListRes, ProtoOACashFlowHistoryListRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOACashFlowHistoryListRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOACashFlowHistoryListRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -18352,7 +18352,7 @@ public sealed partial class ProtoOACashFlowHistoryListRes : pb::GeneratedMessage
     }
   }
   static ProtoOACashFlowHistoryListRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -18375,11 +18375,11 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::Generate
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetAccountListByAccessTokenReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetAccountListByAccessTokenReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetAccountListByAccessTokenReq, ProtoOAGetAccountListByAccessTokenReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetAccountListByAccessTokenReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetAccountListByAccessTokenReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -18680,7 +18680,7 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::Generate
     }
   }
   static ProtoOAGetAccountListByAccessTokenReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -18703,11 +18703,11 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetAccountListByAccessTokenRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetAccountListByAccessTokenRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetAccountListByAccessTokenRes, ProtoOAGetAccountListByAccessTokenRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetAccountListByAccessTokenRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetAccountListByAccessTokenRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -19132,7 +19132,7 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::Generate
     }
   }
   static ProtoOAGetAccountListByAccessTokenRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -19155,11 +19155,11 @@ public sealed partial class ProtoOARefreshTokenReq : pb::GeneratedMessage<ProtoO
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOARefreshTokenReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOARefreshTokenReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOARefreshTokenReq, ProtoOARefreshTokenReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOARefreshTokenReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOARefreshTokenReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -19460,7 +19460,7 @@ public sealed partial class ProtoOARefreshTokenReq : pb::GeneratedMessage<ProtoO
     }
   }
   static ProtoOARefreshTokenReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -19483,11 +19483,11 @@ public sealed partial class ProtoOARefreshTokenRes : pb::GeneratedMessage<ProtoO
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOARefreshTokenRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOARefreshTokenRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOARefreshTokenRes, ProtoOARefreshTokenRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOARefreshTokenRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOARefreshTokenRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -19922,7 +19922,7 @@ public sealed partial class ProtoOARefreshTokenRes : pb::GeneratedMessage<ProtoO
     }
   }
   static ProtoOARefreshTokenRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -19945,11 +19945,11 @@ public sealed partial class ProtoOASubscribeSpotsReq : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeSpotsReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeSpotsReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeSpotsReq, ProtoOASubscribeSpotsReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeSpotsReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeSpotsReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -20311,7 +20311,7 @@ public sealed partial class ProtoOASubscribeSpotsReq : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOASubscribeSpotsReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -20334,11 +20334,11 @@ public sealed partial class ProtoOASubscribeSpotsRes : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeSpotsRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeSpotsRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeSpotsRes, ProtoOASubscribeSpotsRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeSpotsRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeSpotsRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -20638,7 +20638,7 @@ public sealed partial class ProtoOASubscribeSpotsRes : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOASubscribeSpotsRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -20661,11 +20661,11 @@ public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::GeneratedMessage<Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeSpotsReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeSpotsReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeSpotsReq, ProtoOAUnsubscribeSpotsReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeSpotsReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeSpotsReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -21027,7 +21027,7 @@ public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::GeneratedMessage<Pr
     }
   }
   static ProtoOAUnsubscribeSpotsReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -21050,11 +21050,11 @@ public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::GeneratedMessage<Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeSpotsRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeSpotsRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeSpotsRes, ProtoOAUnsubscribeSpotsRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeSpotsRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeSpotsRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -21354,7 +21354,7 @@ public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::GeneratedMessage<Pr
     }
   }
   static ProtoOAUnsubscribeSpotsRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -21377,11 +21377,11 @@ public sealed partial class ProtoOASpotEvent : pb::GeneratedMessage<ProtoOASpotE
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASpotEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASpotEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASpotEvent, ProtoOASpotEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASpotEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASpotEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -21936,7 +21936,7 @@ public sealed partial class ProtoOASpotEvent : pb::GeneratedMessage<ProtoOASpotE
     }
   }
   static ProtoOASpotEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -21959,11 +21959,11 @@ public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::GeneratedMessa
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeLiveTrendbarReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeLiveTrendbarReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeLiveTrendbarReq, ProtoOASubscribeLiveTrendbarReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeLiveTrendbarReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeLiveTrendbarReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -22359,7 +22359,7 @@ public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::GeneratedMessa
     }
   }
   static ProtoOASubscribeLiveTrendbarReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -22382,11 +22382,11 @@ public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::GeneratedMessa
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeLiveTrendbarRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeLiveTrendbarRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeLiveTrendbarRes, ProtoOASubscribeLiveTrendbarRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeLiveTrendbarRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeLiveTrendbarRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -22686,7 +22686,7 @@ public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::GeneratedMessa
     }
   }
   static ProtoOASubscribeLiveTrendbarRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -22709,11 +22709,11 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::GeneratedMes
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeLiveTrendbarReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeLiveTrendbarReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeLiveTrendbarReq, ProtoOAUnsubscribeLiveTrendbarReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeLiveTrendbarReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeLiveTrendbarReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -23109,7 +23109,7 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::GeneratedMes
     }
   }
   static ProtoOAUnsubscribeLiveTrendbarReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -23132,11 +23132,11 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::GeneratedMes
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeLiveTrendbarRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeLiveTrendbarRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeLiveTrendbarRes, ProtoOAUnsubscribeLiveTrendbarRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeLiveTrendbarRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeLiveTrendbarRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -23436,7 +23436,7 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::GeneratedMes
     }
   }
   static ProtoOAUnsubscribeLiveTrendbarRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -23459,11 +23459,11 @@ public sealed partial class ProtoOAGetTrendbarsReq : pb::GeneratedMessage<ProtoO
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTrendbarsReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTrendbarsReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetTrendbarsReq, ProtoOAGetTrendbarsReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTrendbarsReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTrendbarsReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -23947,7 +23947,7 @@ public sealed partial class ProtoOAGetTrendbarsReq : pb::GeneratedMessage<ProtoO
     }
   }
   static ProtoOAGetTrendbarsReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -23970,11 +23970,11 @@ public sealed partial class ProtoOAGetTrendbarsRes : pb::GeneratedMessage<ProtoO
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTrendbarsRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTrendbarsRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetTrendbarsRes, ProtoOAGetTrendbarsRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTrendbarsRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTrendbarsRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -24486,7 +24486,7 @@ public sealed partial class ProtoOAGetTrendbarsRes : pb::GeneratedMessage<ProtoO
     }
   }
   static ProtoOAGetTrendbarsRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -24509,11 +24509,11 @@ public sealed partial class ProtoOAGetTickDataReq : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTickDataReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTickDataReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetTickDataReq, ProtoOAGetTickDataReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTickDataReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTickDataReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -24997,7 +24997,7 @@ public sealed partial class ProtoOAGetTickDataReq : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOAGetTickDataReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -25020,11 +25020,11 @@ public sealed partial class ProtoOAGetTickDataRes : pb::GeneratedMessage<ProtoOA
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTickDataRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTickDataRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetTickDataRes, ProtoOAGetTickDataRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetTickDataRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetTickDataRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -25441,7 +25441,7 @@ public sealed partial class ProtoOAGetTickDataRes : pb::GeneratedMessage<ProtoOA
     }
   }
   static ProtoOAGetTickDataRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -25464,11 +25464,11 @@ public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::GeneratedMessa
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetCtidProfileByTokenReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetCtidProfileByTokenReq, ProtoOAGetCtidProfileByTokenReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetCtidProfileByTokenReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -25769,7 +25769,7 @@ public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::GeneratedMessa
     }
   }
   static ProtoOAGetCtidProfileByTokenReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -25792,11 +25792,11 @@ public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::GeneratedMessa
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAGetCtidProfileByTokenRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAGetCtidProfileByTokenRes, ProtoOAGetCtidProfileByTokenRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAGetCtidProfileByTokenRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAGetCtidProfileByTokenRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -26122,7 +26122,7 @@ public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::GeneratedMessa
     }
   }
   static ProtoOAGetCtidProfileByTokenRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -26145,11 +26145,11 @@ public sealed partial class ProtoOADepthEvent : pb::GeneratedMessage<ProtoOADept
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOADepthEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOADepthEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOADepthEvent, ProtoOADepthEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOADepthEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOADepthEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -26642,7 +26642,7 @@ public sealed partial class ProtoOADepthEvent : pb::GeneratedMessage<ProtoOADept
     }
   }
   static ProtoOADepthEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -26665,11 +26665,11 @@ public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::GeneratedMessag
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeDepthQuotesReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeDepthQuotesReq, ProtoOASubscribeDepthQuotesReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeDepthQuotesReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -27031,7 +27031,7 @@ public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::GeneratedMessag
     }
   }
   static ProtoOASubscribeDepthQuotesReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -27054,11 +27054,11 @@ public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::GeneratedMessag
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeDepthQuotesRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASubscribeDepthQuotesRes, ProtoOASubscribeDepthQuotesRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASubscribeDepthQuotesRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASubscribeDepthQuotesRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -27358,7 +27358,7 @@ public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::GeneratedMessag
     }
   }
   static ProtoOASubscribeDepthQuotesRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -27381,11 +27381,11 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::GeneratedMess
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeDepthQuotesReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeDepthQuotesReq, ProtoOAUnsubscribeDepthQuotesReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeDepthQuotesReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -27747,7 +27747,7 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::GeneratedMess
     }
   }
   static ProtoOAUnsubscribeDepthQuotesReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -27770,11 +27770,11 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::GeneratedMess
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeDepthQuotesRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAUnsubscribeDepthQuotesRes, ProtoOAUnsubscribeDepthQuotesRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAUnsubscribeDepthQuotesRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAUnsubscribeDepthQuotesRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -28074,7 +28074,7 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::GeneratedMess
     }
   }
   static ProtoOAUnsubscribeDepthQuotesRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -28097,11 +28097,11 @@ public sealed partial class ProtoOASymbolCategoryListReq : pb::GeneratedMessage<
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolCategoryListReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolCategoryListReq, ProtoOASymbolCategoryListReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolCategoryListReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -28401,7 +28401,7 @@ public sealed partial class ProtoOASymbolCategoryListReq : pb::GeneratedMessage<
     }
   }
   static ProtoOASymbolCategoryListReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -28424,11 +28424,11 @@ public sealed partial class ProtoOASymbolCategoryListRes : pb::GeneratedMessage<
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolCategoryListRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOASymbolCategoryListRes, ProtoOASymbolCategoryListRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOASymbolCategoryListRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOASymbolCategoryListRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -28801,7 +28801,7 @@ public sealed partial class ProtoOASymbolCategoryListRes : pb::GeneratedMessage<
     }
   }
   static ProtoOASymbolCategoryListRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -28824,11 +28824,11 @@ public sealed partial class ProtoOAAccountLogoutReq : pb::GeneratedMessage<Proto
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountLogoutReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountLogoutReq, ProtoOAAccountLogoutReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountLogoutReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -29128,7 +29128,7 @@ public sealed partial class ProtoOAAccountLogoutReq : pb::GeneratedMessage<Proto
     }
   }
   static ProtoOAAccountLogoutReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -29151,11 +29151,11 @@ public sealed partial class ProtoOAAccountLogoutRes : pb::GeneratedMessage<Proto
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountLogoutRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountLogoutRes, ProtoOAAccountLogoutRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountLogoutRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountLogoutRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -29455,7 +29455,7 @@ public sealed partial class ProtoOAAccountLogoutRes : pb::GeneratedMessage<Proto
     }
   }
   static ProtoOAAccountLogoutRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -29478,11 +29478,11 @@ public sealed partial class ProtoOAAccountDisconnectEvent : pb::GeneratedMessage
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountDisconnectEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountDisconnectEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAAccountDisconnectEvent, ProtoOAAccountDisconnectEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAAccountDisconnectEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAAccountDisconnectEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -29782,7 +29782,7 @@ public sealed partial class ProtoOAAccountDisconnectEvent : pb::GeneratedMessage
     }
   }
   static ProtoOAAccountDisconnectEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -29805,11 +29805,11 @@ public sealed partial class ProtoOAMarginCallListReq : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallListReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallListReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAMarginCallListReq, ProtoOAMarginCallListReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallListReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallListReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -30109,7 +30109,7 @@ public sealed partial class ProtoOAMarginCallListReq : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOAMarginCallListReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -30132,11 +30132,11 @@ public sealed partial class ProtoOAMarginCallListRes : pb::GeneratedMessage<Prot
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallListRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallListRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAMarginCallListRes, ProtoOAMarginCallListRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallListRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallListRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -30465,7 +30465,7 @@ public sealed partial class ProtoOAMarginCallListRes : pb::GeneratedMessage<Prot
     }
   }
   static ProtoOAMarginCallListRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -30488,11 +30488,11 @@ public sealed partial class ProtoOAMarginCallUpdateReq : pb::GeneratedMessage<Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallUpdateReq__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallUpdateReq__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAMarginCallUpdateReq, ProtoOAMarginCallUpdateReq.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallUpdateReq__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallUpdateReq__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -30862,7 +30862,7 @@ public sealed partial class ProtoOAMarginCallUpdateReq : pb::GeneratedMessage<Pr
     }
   }
   static ProtoOAMarginCallUpdateReq() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -30885,11 +30885,11 @@ public sealed partial class ProtoOAMarginCallUpdateRes : pb::GeneratedMessage<Pr
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallUpdateRes__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallUpdateRes__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAMarginCallUpdateRes, ProtoOAMarginCallUpdateRes.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallUpdateRes__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallUpdateRes__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -31145,7 +31145,7 @@ public sealed partial class ProtoOAMarginCallUpdateRes : pb::GeneratedMessage<Pr
     }
   }
   static ProtoOAMarginCallUpdateRes() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -31168,11 +31168,11 @@ public sealed partial class ProtoOAMarginCallUpdateEvent : pb::GeneratedMessage<
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallUpdateEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallUpdateEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAMarginCallUpdateEvent, ProtoOAMarginCallUpdateEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallUpdateEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallUpdateEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -31542,7 +31542,7 @@ public sealed partial class ProtoOAMarginCallUpdateEvent : pb::GeneratedMessage<
     }
   }
   static ProtoOAMarginCallUpdateEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
@@ -31565,11 +31565,11 @@ public sealed partial class ProtoOAMarginCallTriggerEvent : pb::GeneratedMessage
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallTriggerEvent__Descriptor; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallTriggerEvent__Descriptor; }
   }
   
   protected override pb::FieldAccess.FieldAccessorTable<ProtoOAMarginCallTriggerEvent, ProtoOAMarginCallTriggerEvent.Builder> InternalFieldAccessors {
-    get { return global::Openapimessages.internal__static_ProtoOAMarginCallTriggerEvent__FieldAccessorTable; }
+    get { return global::OpenApiMessages.internal__static_ProtoOAMarginCallTriggerEvent__FieldAccessorTable; }
   }
   
   public const int PayloadTypeFieldNumber = 1;
@@ -31939,7 +31939,7 @@ public sealed partial class ProtoOAMarginCallTriggerEvent : pb::GeneratedMessage
     }
   }
   static ProtoOAMarginCallTriggerEvent() {
-    object.ReferenceEquals(global::Openapimessages.Descriptor, null);
+    object.ReferenceEquals(global::OpenApiMessages.Descriptor, null);
   }
 }
 
