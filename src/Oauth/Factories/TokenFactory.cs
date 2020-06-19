@@ -19,7 +19,7 @@ namespace Connect.Oauth.Factories
 
             RestRequest request = GetTokenRequest(authCode);
 
-            IRestResponse response = await client.ExecuteGetTaskAsync(request);
+            IRestResponse response = await client.ExecuteGetAsync(request);
 
             Token token = DeserializeToken(response);
 
@@ -49,7 +49,7 @@ namespace Connect.Oauth.Factories
 
             RestRequest request = GetRefreshTokenRequest(app, token.RefreshToken);
 
-            IRestResponse response = await client.ExecuteGetTaskAsync(request);
+            IRestResponse response = await client.ExecuteGetAsync(request);
 
             Token newToken = DeserializeToken(response);
 
