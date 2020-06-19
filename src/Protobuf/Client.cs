@@ -353,14 +353,6 @@ namespace Connect.Protobuf
 
                         break;
                     }
-                case (int)ProtoPayloadType.PING_RES:
-                    {
-                        ProtoPingRes protoPingRes = MessagesFactory.GetPingResponse(protoMessage.Payload);
-
-                        Events.OnPingResponse(this, protoPingRes, protoMessage.ClientMsgId);
-
-                        break;
-                    }
                 case (int)ProtoPayloadType.HEARTBEAT_EVENT:
                     {
                         ProtoHeartbeatEvent protoHeartbeatEvent = MessagesFactory.GetHeartbeatEvent(protoMessage.Payload);

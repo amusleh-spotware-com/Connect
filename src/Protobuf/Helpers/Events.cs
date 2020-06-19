@@ -26,8 +26,6 @@ namespace Connect.Protobuf
 
         public event ExceptionEventHandler HeartbeatSendingExceptionEvent;
 
-        public event PingResponseEventHandler PingResponseEvent;
-
         public event HeartbeatEventHandler HeartbeatEvent;
 
         public event AccountAuthorizationResponseEventHandler AccountAuthorizationResponseEvent;
@@ -138,11 +136,6 @@ namespace Connect.Protobuf
         internal void OnHeartbeatSendingException(object sender, Exception ex)
         {
             HeartbeatSendingExceptionEvent?.Invoke(sender, ex);
-        }
-
-        internal void OnPingResponse(object sender, ProtoPingRes e, string clientMsgId)
-        {
-            PingResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
         internal void OnHeartbeat(object sender, ProtoHeartbeatEvent e)

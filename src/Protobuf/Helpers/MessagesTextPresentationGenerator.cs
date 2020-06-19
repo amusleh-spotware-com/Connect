@@ -12,18 +12,8 @@ namespace Connect.Protobuf.Helpers
             var _str = "ProtoMessage{";
             switch ((ProtoPayloadType)msg.PayloadType)
             {
-                case ProtoPayloadType.PING_REQ:
-                    var _ping_req = ProtoPingReq.CreateBuilder().MergeFrom(msg.Payload).Build();
-                    _str += "PingRequest{timestamp:" + _ping_req.Timestamp.ToString() + "}";
-                    break;
-
-                case ProtoPayloadType.PING_RES:
-                    var _ping_res = ProtoPingRes.CreateBuilder().MergeFrom(msg.Payload).Build();
-                    _str += "PingResponse{timestamp:" + _ping_res.Timestamp + "}";
-                    break;
-
                 case ProtoPayloadType.HEARTBEAT_EVENT:
-                    var _hb = ProtoHeartbeatEvent.CreateBuilder().MergeFrom(msg.Payload).Build();
+                    _ = ProtoHeartbeatEvent.CreateBuilder().MergeFrom(msg.Payload).Build();
                     _str += "Heartbeat";
                     break;
 

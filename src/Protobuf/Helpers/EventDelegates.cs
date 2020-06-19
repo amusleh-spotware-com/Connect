@@ -10,8 +10,6 @@ namespace Connect.Protobuf
 
     public delegate void ErrorHandler(object sender, ProtoOAErrorRes e);
 
-    public delegate void PingResponseEventHandler(object sender, ProtoPingRes e, string clientMsgId);
-
     public delegate void HeartbeatEventHandler(object sender, ProtoHeartbeatEvent e);
 
     public delegate void OrderErrorEventHandler(object sender, ProtoOAOrderErrorEvent e);

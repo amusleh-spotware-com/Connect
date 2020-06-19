@@ -14,11 +14,6 @@ namespace Connect.Protobuf.Factories
             return ProtoMessage.CreateBuilder().MergeFrom(message).BuildPartial(); ;
         }
 
-        public static ProtoPingRes GetPingResponse(ByteString messagePayload)
-        {
-            return ProtoPingRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
-        }
-
         public static ProtoHeartbeatEvent GetHeartbeatEvent(ByteString messagePayload)
         {
             return ProtoHeartbeatEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
@@ -202,9 +197,6 @@ namespace Connect.Protobuf.Factories
         {
             switch (parameters.PayloadType)
             {
-                case (int)ProtoPayloadType.PING_REQ:
-                    return CreatePingRequest(parameters as PingRequestParameters);
-
                 case (int)ProtoPayloadType.HEARTBEAT_EVENT:
                     return CreateHeartbeatEvent(parameters as HeartbeatEventParameters);
 
@@ -331,13 +323,6 @@ namespace Connect.Protobuf.Factories
         public static ProtoMessage CreateMessage(ProtoMessage.Builder messageBuilder, string clientMsgId = null)
         {
             return CreateMessage(messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), clientMsgId);
-        }
-
-        public static ProtoMessage CreatePingRequest(PingRequestParameters parameters)
-        {
-            return CreateMessage((uint)ProtoPayloadType.PING_REQ,
-                ProtoPingReq.CreateBuilder().SetTimestamp(parameters.Timestamp).BuildPartial().ToByteString(),
-                parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateHeartbeatEvent(HeartbeatEventParameters parameters)
