@@ -11,187 +11,187 @@ namespace Connect.Protobuf.Factories
 
         public static ProtoMessage GetMessage(byte[] message)
         {
-            return ProtoMessage.CreateBuilder().MergeFrom(message).Build(); ;
+            return ProtoMessage.CreateBuilder().MergeFrom(message).BuildPartial(); ;
         }
 
         public static ProtoPingRes GetPingResponse(ByteString messagePayload)
         {
-            return ProtoPingRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoPingRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoHeartbeatEvent GetHeartbeatEvent(ByteString messagePayload)
         {
-            return ProtoHeartbeatEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoHeartbeatEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAErrorRes GetErrorResponse(ByteString messagePayload)
         {
-            return ProtoOAErrorRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAErrorRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAApplicationAuthRes GetApplicationAuthorizationResponse(ByteString messagePayload)
         {
-            return ProtoOAApplicationAuthRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAApplicationAuthRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAAccountAuthRes GetAccountAuthorizationResponse(ByteString messagePayload)
         {
-            return ProtoOAAccountAuthRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAAccountAuthRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOADealListRes GetDealListResponse(ByteString messagePayload)
         {
-            return ProtoOADealListRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOADealListRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAAssetListRes GetAssetListResponse(ByteString messagePayload)
         {
-            return ProtoOAAssetListRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAAssetListRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAAssetClassListRes GetAssetClassListResponse(ByteString messagePayload)
         {
-            return ProtoOAAssetClassListRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAAssetClassListRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAClientDisconnectEvent GetClientDisconnectEvent(ByteString messagePayload)
         {
-            return ProtoOAClientDisconnectEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAClientDisconnectEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAAccountsTokenInvalidatedEvent GetAccountsTokenInvalidatedEvent(ByteString messagePayload)
         {
-            return ProtoOAAccountsTokenInvalidatedEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAAccountsTokenInvalidatedEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOACashFlowHistoryListRes GetCashFlowHistoryListResponse(ByteString messagePayload)
         {
-            return ProtoOACashFlowHistoryListRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOACashFlowHistoryListRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAExpectedMarginRes GetExpectedMarginResponse(ByteString messagePayload)
         {
-            return ProtoOAExpectedMarginRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAExpectedMarginRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAGetAccountListByAccessTokenRes GetAccountListResponse(ByteString messagePayload)
         {
-            return ProtoOAGetAccountListByAccessTokenRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAGetAccountListByAccessTokenRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAGetTickDataRes GetTickDataResponse(ByteString messagePayload)
         {
-            return ProtoOAGetTickDataRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAGetTickDataRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAGetTrendbarsRes GetTrendbarsResponse(ByteString messagePayload)
         {
-            return ProtoOAGetTrendbarsRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAGetTrendbarsRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAMarginChangedEvent GetMarginChangedEvent(ByteString messagePayload)
         {
-            return ProtoOAMarginChangedEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAMarginChangedEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAOrderErrorEvent GetOrderErrorEvent(ByteString messagePayload)
         {
-            return ProtoOAOrderErrorEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAOrderErrorEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAReconcileRes GetReconcileResponse(ByteString messagePayload)
         {
-            return ProtoOAReconcileRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAReconcileRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASubscribeSpotsRes GetSubscribeSpotsResponse(ByteString messagePayload)
         {
-            return ProtoOASubscribeSpotsRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASubscribeSpotsRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASymbolsForConversionRes GetSymbolsForConversionResponse(ByteString messagePayload)
         {
-            return ProtoOASymbolsForConversionRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASymbolsForConversionRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASymbolsListRes GetSymbolsListResponse(ByteString messagePayload)
         {
-            return ProtoOASymbolsListRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASymbolsListRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASymbolByIdRes GetSymbolByIdResponse(ByteString messagePayload)
         {
-            return ProtoOASymbolByIdRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASymbolByIdRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASymbolChangedEvent GetSymbolChangedEvent(ByteString messagePayload)
         {
-            return ProtoOASymbolChangedEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASymbolChangedEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOATraderRes GetTraderResponse(ByteString messagePayload)
         {
-            return ProtoOATraderRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOATraderRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOATraderUpdatedEvent GetTraderUpdatedEvent(ByteString messagePayload)
         {
-            return ProtoOATraderUpdatedEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOATraderUpdatedEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOATrailingSLChangedEvent GetTrailingSLChangedEvent(ByteString messagePayload)
         {
-            return ProtoOATrailingSLChangedEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOATrailingSLChangedEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAUnsubscribeSpotsRes GetUnsubscribeSpotsResponse(ByteString messagePayload)
         {
-            return ProtoOAUnsubscribeSpotsRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAUnsubscribeSpotsRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAVersionRes GetVersionResponse(ByteString messagePayload)
         {
-            return ProtoOAVersionRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAVersionRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAExecutionEvent GetExecutionEvent(ByteString messagePayload = null)
         {
-            return ProtoOAExecutionEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAExecutionEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASpotEvent GetSpotEvent(ByteString messagePayload)
         {
-            return ProtoOASpotEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASpotEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAGetCtidProfileByTokenRes GetCtidProfileResponse(ByteString messagePayload)
         {
-            return ProtoOAGetCtidProfileByTokenRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAGetCtidProfileByTokenRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASymbolCategoryListRes GetSymbolCategoryListResponse(ByteString messagePayload)
         {
-            return ProtoOASymbolCategoryListRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASymbolCategoryListRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOADepthEvent GetDepthEvent(ByteString messagePayload)
         {
-            return ProtoOADepthEvent.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOADepthEvent.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOASubscribeDepthQuotesRes GetSubscribeDepthQuotesResponse(ByteString messagePayload)
         {
-            return ProtoOASubscribeDepthQuotesRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOASubscribeDepthQuotesRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAUnsubscribeDepthQuotesRes GetUnsubscribeDepthQuotesResponse(ByteString messagePayload)
         {
-            return ProtoOAUnsubscribeDepthQuotesRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAUnsubscribeDepthQuotesRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         public static ProtoOAAccountLogoutRes GetAccountLogoutResponse(ByteString messagePayload)
         {
-            return ProtoOAAccountLogoutRes.CreateBuilder().MergeFrom(messagePayload).Build();
+            return ProtoOAAccountLogoutRes.CreateBuilder().MergeFrom(messagePayload).BuildPartial();
         }
 
         #endregion Building Proto messages from Byte array methods
@@ -325,23 +325,24 @@ namespace Connect.Protobuf.Factories
                 messageBuilder.SetClientMsgId(clientMsgId);
             }
 
-            return messageBuilder.Build();
+            return messageBuilder.BuildPartial();
         }
 
         public static ProtoMessage CreateMessage(ProtoMessage.Builder messageBuilder, string clientMsgId = null)
         {
-            return CreateMessage(messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), clientMsgId);
+            return CreateMessage(messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), clientMsgId);
         }
 
         public static ProtoMessage CreatePingRequest(PingRequestParameters parameters)
         {
             return CreateMessage((uint)ProtoPayloadType.PING_REQ,
-                ProtoPingReq.CreateBuilder().SetTimestamp(parameters.Timestamp).Build().ToByteString(), parameters.ClientMessageId);
+                ProtoPingReq.CreateBuilder().SetTimestamp(parameters.Timestamp).BuildPartial().ToByteString(),
+                parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateHeartbeatEvent(HeartbeatEventParameters parameters)
         {
-            return CreateMessage((uint)ProtoPayloadType.HEARTBEAT_EVENT, ProtoHeartbeatEvent.CreateBuilder().Build().ToByteString(),
+            return CreateMessage((uint)ProtoPayloadType.HEARTBEAT_EVENT, ProtoHeartbeatEvent.CreateBuilder().BuildPartial().ToByteString(),
                 parameters.ClientMessageId);
         }
 
@@ -349,7 +350,7 @@ namespace Connect.Protobuf.Factories
         {
             var messageBuilder = ProtoOAVersionReq.CreateBuilder();
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAppAuthorizationRequest(AppAuthorizationRequestParameters parameters)
@@ -360,7 +361,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetClientSecret(parameters.ClientSecret);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAccountAuthorizationRequest(AccountAuthorizationRequestParameters parameters)
@@ -371,7 +372,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAssetListRequest(AssetListRequestParameters parameters)
@@ -380,7 +381,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAssetClassListRequest(AssetClassListRequestParameters parameters)
@@ -389,7 +390,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_REQ, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateDealsListRequest(DealsListRequestParameters parameters)
@@ -407,7 +408,7 @@ namespace Connect.Protobuf.Factories
                 messageBuilder.SetMaxRows(parameters.MaxRows.Value);
             }
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateCashflowHistoryRequest(CashflowHistoryRequestParameters parameters)
@@ -420,7 +421,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAccountListRequest(AccountListRequestParameters parameters)
@@ -429,7 +430,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetAccessToken(parameters.Token);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolsListRequest(SymbolsListRequestParameters parameters)
@@ -438,7 +439,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateTrendbarsRequest(TrendbarsRequestParameters parameters)
@@ -451,7 +452,7 @@ namespace Connect.Protobuf.Factories
             messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
             messageBuilder.SetPeriod(parameters.Period);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateTickDataRequest(TickDataRequestParameters parameters)
@@ -464,7 +465,7 @@ namespace Connect.Protobuf.Factories
             messageBuilder.SetFromTimestamp(parameters.From.ToUnixTimeMilliseconds());
             messageBuilder.SetToTimestamp(parameters.To.ToUnixTimeMilliseconds());
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateOrderRequest(OrderRequestParameters parameters)
@@ -582,7 +583,7 @@ namespace Connect.Protobuf.Factories
                     break;
             }
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateCancelOrderRequest(CancelOrderRequestParameters parameters)
@@ -592,7 +593,7 @@ namespace Connect.Protobuf.Factories
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
             messageBuilder.SetOrderId(parameters.OrderId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateClosePositionRequest(ClosePositionRequestParameters parameters)
@@ -603,7 +604,7 @@ namespace Connect.Protobuf.Factories
             messageBuilder.SetPositionId(parameters.PositionId);
             messageBuilder.SetVolume(parameters.Volume);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAmendPositionProtectionRequest(AmendPositionProtectionRequestParameters parameters)
@@ -638,7 +639,7 @@ namespace Connect.Protobuf.Factories
                 messageBuilder.SetGuaranteedStopLoss(parameters.GuaranteedStopLoss.Value);
             }
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAmendOrderRequest(AmendOrderRequestParameters parameters)
@@ -706,7 +707,7 @@ namespace Connect.Protobuf.Factories
                 messageBuilder.SetGuaranteedStopLoss(parameters.GuaranteedStopLoss.Value);
             }
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSubscribeForSpotsRequest(SpotsRequestParameters parameters)
@@ -717,7 +718,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateUnsubscribeFromSpotsRequest(SpotsRequestParameters parameters)
@@ -728,7 +729,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateTraderRequest(TraderRequestParameters parameters)
@@ -737,7 +738,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateTraderUpdatedEvent(TraderUpdatedEventParameters parameters)
@@ -746,7 +747,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateCtidProfileRequest(CtidProfileRequestParameters parameters)
@@ -755,7 +756,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetAccessToken(parameters.Token);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolByIdRequest(SymbolByIdRequestParameters parameters)
@@ -766,7 +767,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolsForConversionRequest(SymbolsForConversionRequestParameters parameters)
@@ -777,7 +778,7 @@ namespace Connect.Protobuf.Factories
             messageBuilder.SetFirstAssetId(parameters.FirstAssetId);
             messageBuilder.SetLastAssetId(parameters.LastAssetId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolCategoryListRequest(SymbolCategoryListRequestParameters parameters)
@@ -786,7 +787,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSymbolChangedEvent(SymbolChangedEventParameters parameters)
@@ -797,7 +798,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateExpectedMarginRequest(ExpectedMarginRequestParameters parameters)
@@ -810,7 +811,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.AddRangeVolume(parameters.Volumes);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSubscribeForLiveTrendbarRequest(LiveTrendbarRequestParameters parameters)
@@ -823,7 +824,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetPeriod(parameters.Period);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateUnsubscribeForLiveTrendbarRequest(LiveTrendbarRequestParameters parameters)
@@ -836,7 +837,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetPeriod(parameters.Period);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateSubscribeForDepthQuotesRequest(DepthQuotesRequestParameters parameters)
@@ -847,7 +848,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateUnsubscribeForDepthQuotesRequest(DepthQuotesRequestParameters parameters)
@@ -858,7 +859,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.AddRangeSymbolId(parameters.SymbolIds);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateAccountLogoutRequest(AccountLogoutRequestParameters parameters)
@@ -867,7 +868,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         public static ProtoMessage CreateReconcileRequest(ReconcileRequestParameters parameters)
@@ -876,7 +877,7 @@ namespace Connect.Protobuf.Factories
 
             messageBuilder.SetCtidTraderAccountId(parameters.AccountId);
 
-            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.Build().ToByteString(), parameters.ClientMessageId);
+            return CreateMessage((uint)messageBuilder.PayloadType, messageBuilder.BuildPartial().ToByteString(), parameters.ClientMessageId);
         }
 
         #endregion Creating new Proto messages with parameters specified
