@@ -29,8 +29,6 @@ namespace Connect.Protobuf
 
         private ProcessStatus _listeningStatus, _sendingHeartbeatsStatus;
 
-        private Mode _mode;
-
         private DateTime _lastSentMessageTime;
 
         #endregion Fields
@@ -72,6 +70,8 @@ namespace Connect.Protobuf
 
         public bool IsAuthorized { get; private set; }
 
+        public Mode Mode { get; private set; }
+
         public Events Events { get; }
 
         public SpotStream SpotStream { get; }
@@ -106,7 +106,7 @@ namespace Connect.Protobuf
 
         public async Task Connect(Mode mode)
         {
-            _mode = mode;
+            Mode = mode;
 
             _client = new TcpClient
             {
@@ -129,20 +129,36 @@ namespace Connect.Protobuf
             StartListening();
         }
 
-        public async Task Disconnect()
+        #endregion Connection
+
+        #region Disposing
+
+        public void Dispose()
         {
+            DisposeAsync().Wait();
+        }
+
+        public async Task DisposeAsync()
+        {
+            if (_isDisposed)
+            {
+                return;
+            }
+
             await StoptListening();
 
             await StoptSendingHeartbeats();
 
             await _stream.FlushAsync();
 
-            _stream.Close();
+            _isDisposed = true;
 
-            _client.Close();
+            _stream?.Dispose();
+
+            _client?.Dispose();
         }
 
-        #endregion Connection
+        #endregion Disposing
 
         #region Heart beat
 
@@ -162,23 +178,14 @@ namespace Connect.Protobuf
                 {
                     (sender as System.Timers.Timer).Stop();
 
-                    if (!_stopSendingHeartbeats)
+                    if (!_stopSendingHeartbeats && IsConnected)
                     {
-                        if (!IsConnected)
+                        if (DateTime.Now - _lastSentMessageTime >= TimeSpan.FromSeconds(10))
                         {
-                            await Disconnect();
-
-                            await Connect(_mode);
+                            await SendMessage(message);
                         }
-                        else
-                        {
-                            if (DateTime.Now - _lastSentMessageTime >= TimeSpan.FromSeconds(10))
-                            {
-                                await SendMessage(message);
-                            }
 
-                            (sender as System.Timers.Timer).Start();
-                        }
+                        (sender as System.Timers.Timer).Start();
                     }
                     else
                     {
@@ -200,9 +207,9 @@ namespace Connect.Protobuf
 
         private async Task StoptSendingHeartbeats()
         {
-            _stopSendingHeartbeats = true;
-
             _sendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
+
+            _stopSendingHeartbeats = true;
 
             while (_sendingHeartbeatsStatus != ProcessStatus.Stopped)
             {
@@ -287,9 +294,9 @@ namespace Connect.Protobuf
 
         public async Task StoptListening()
         {
-            _stopListening = true;
-
             _listeningStatus = ProcessStatus.WaitingToStop;
+
+            _stopListening = true;
 
             while (_listeningStatus != ProcessStatus.Stopped)
             {
@@ -635,20 +642,6 @@ namespace Connect.Protobuf
         private bool CertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
         {
             return sslPolicyErrors == SslPolicyErrors.None;
-        }
-
-        public void Dispose()
-        {
-            if (_isDisposed)
-            {
-                return;
-            }
-
-            _isDisposed = true;
-
-            _stream?.Dispose();
-
-            _client?.Dispose();
         }
 
         private bool IsManagableException(Exception exception)
