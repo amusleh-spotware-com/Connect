@@ -2,9 +2,8 @@
 using Connect.Oauth.Factories;
 using Connect.Oauth.Models;
 using Connect.Protobuf;
-using Connect.Protobuf.Factories;
 using Connect.Protobuf.Helpers;
-using Connect.Protobuf.Models.Parameters;
+using Google.Protobuf;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +18,7 @@ namespace ProtobufConsoleTesterApp
 
         private static Client _client;
 
-        private static async Task Main(string[] args)
+        private static async Task Main()
         {
             Console.WriteLine("Enter App ID");
 
@@ -71,13 +70,16 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("--------------------------------------");
 
-            var parameters = new AppAuthorizationRequestParameters
+            var applicationAuthReq = new ProtoOAApplicationAuthReq
             {
                 ClientId = _app.ClientId,
                 ClientSecret = _app.Secret,
             };
 
-            await _client.SendMessage(MessagesFactory.CreateAppAuthorizationRequest(parameters));
+            var protoMessage = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaApplicationAuthReq,
+                applicationAuthReq.ToByteString());
+
+            await _client.SendMessage(protoMessage);
 
             await Task.Delay(5000);
 
@@ -88,12 +90,12 @@ namespace ProtobufConsoleTesterApp
 
         private static void Events_MessageReceivedEvent(object sender, ProtoMessage e)
         {
-            if (e.PayloadType == (int)ProtoPayloadType.HEARTBEAT_EVENT)
+            if (e.PayloadType == (int)ProtoPayloadType.HeartbeatEvent)
             {
                 return;
             }
 
-            Console.WriteLine($"MessageReceived:\n{e.GetTextPresentation()}");
+            Console.WriteLine($"MessageReceived:\n{e}");
 
             Console.WriteLine("--------------------------------------");
         }
@@ -193,27 +195,34 @@ namespace ProtobufConsoleTesterApp
         {
             Console.WriteLine("Subscribing to symbol trend bar event...");
 
-            var parameters = new LiveTrendbarRequestParameters(ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_REQ)
+            var subscribeLiveTrendbarReq = new ProtoOASubscribeLiveTrendbarReq()
             {
                 Period = (ProtoOATrendbarPeriod)Enum.Parse(typeof(ProtoOATrendbarPeriod), commandSplit[2], true),
-                AccountId = long.Parse(commandSplit[3]),
+                CtidTraderAccountId = long.Parse(commandSplit[3]),
                 SymbolId = long.Parse(commandSplit[4]),
             };
 
-            await _client.SendMessage(MessagesFactory.CreateSubscribeForLiveTrendbarRequest(parameters));
+            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarReq,
+                subscribeLiveTrendbarReq.ToByteString());
+
+            await _client.SendMessage(message);
         }
 
         private async static void SubscribeToSymbolSpot(string[] commandSplit)
         {
             Console.WriteLine("Subscribing to symbol spot event...");
 
-            var parameters = new SpotsRequestParameters(ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_SPOTS_REQ)
+            var subscribeSpotsReq = new ProtoOASubscribeSpotsReq()
             {
-                AccountId = long.Parse(commandSplit[2]),
-                SymbolIds = commandSplit.Skip(3).Select(iSymbolId => long.Parse(iSymbolId)).ToList(),
+                CtidTraderAccountId = long.Parse(commandSplit[2]),
             };
 
-            await _client.SendMessage(MessagesFactory.CreateSubscribeForSpotsRequest(parameters));
+            subscribeSpotsReq.SymbolId.AddRange(commandSplit.Skip(3).Select(iSymbolId => long.Parse(iSymbolId)));
+
+            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaSubscribeSpotsReq,
+                subscribeSpotsReq.ToByteString());
+
+            await _client.SendMessage(message);
         }
 
         private async static void SymbolListRequest(string[] commandSplit)
@@ -222,24 +231,30 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending symbols list req...");
 
-            var parameters = new SymbolsListRequestParameters
+            var symbolsListReq = new ProtoOASymbolsListReq
             {
-                AccountId = accountId,
+                CtidTraderAccountId = accountId,
             };
 
-            await _client.SendMessage(MessagesFactory.CreateSymbolsListRequest(parameters));
+            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaSymbolsListReq,
+                symbolsListReq.ToByteString());
+
+            await _client.SendMessage(message);
         }
 
         private async static void AccountListRequest()
         {
             Console.WriteLine("Sending account list req...");
 
-            var parameters = new AccountListRequestParameters
+            var accountListByAccessTokenReq = new ProtoOAGetAccountListByAccessTokenReq
             {
-                Token = _token.AccessToken,
+                AccessToken = _token.AccessToken,
             };
 
-            await _client.SendMessage(MessagesFactory.CreateAccountListRequest(parameters));
+            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenReq,
+                accountListByAccessTokenReq.ToByteString());
+
+            await _client.SendMessage(message);
         }
 
         private async static void AccountAuthRequest(string[] commandSplit)
@@ -248,13 +263,16 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("Sending account auth req...");
 
-            var parameters = new AccountAuthorizationRequestParameters
+            var accountAuthReq = new ProtoOAAccountAuthReq
             {
-                AccountId = accountId,
-                Token = _token.AccessToken
+                CtidTraderAccountId = accountId,
+                AccessToken = _token.AccessToken
             };
 
-            await _client.SendMessage(MessagesFactory.CreateAccountAuthorizationRequest(parameters));
+            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaAccountAuthReq,
+                accountAuthReq.ToByteString());
+
+            await _client.SendMessage(message);
         }
 
         private static void GetCommand()
