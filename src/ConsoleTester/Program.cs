@@ -20,21 +20,40 @@ namespace ProtobufConsoleTesterApp
 
         private static async Task Main()
         {
-            Console.WriteLine("Enter App ID");
+            Console.Write("Enter App ID: ");
 
             string appId = Console.ReadLine();
 
-            Console.WriteLine("Enter App Secret");
+            Console.Write("Enter App Secret: ");
 
             string appSecret = Console.ReadLine();
 
-            Console.WriteLine("Enter App Redirect URL");
+            Console.Write("Enter App Redirect URL: ");
 
             string redirectUrl = Console.ReadLine();
 
             _app = new App(appId, appSecret, redirectUrl);
 
-            Console.WriteLine("Enter Authentication Code");
+            Console.Write("Enter Connection Mode (Live or Sandbox): ");
+
+            string connectionMode = Console.ReadLine();
+
+            var mode = (Mode)Enum.Parse(typeof(Mode), connectionMode, true);
+
+            var auth = new Auth(_app, mode: mode);
+
+            System.Diagnostics.Process.Start(auth.AuthUri.ToString());
+
+            ShowDashLine();
+
+            Console.WriteLine("Follow the authentication steps on your browser, then copy the authentication code from redirect" +
+                " URL and paste it here.");
+
+            Console.WriteLine("The authentication code is at the end of redirect URL and it starts after '?code=' parameter.");
+
+            ShowDashLine();
+
+            Console.Write("Enter Authentication Code: ");
 
             string code = Console.ReadLine();
 
@@ -42,33 +61,31 @@ namespace ProtobufConsoleTesterApp
 
             _token = TokenFactory.GetToken(authCode);
 
+            Console.WriteLine("Access token generated");
+
+            ShowDashLine();
+
             _client = new Client();
 
             _client.Events.MessageReceivedEvent += Events_MessageReceivedEvent;
             _client.Events.ErrorEvent += Events_ErrorEvent;
             _client.Events.ListenerExceptionEvent += Events_ListenerExceptionEvent;
 
-            Console.WriteLine("Enter Connection Mode (Live or Sandbox)");
-
-            string connectionMode = Console.ReadLine();
-
-            Mode mode = (Mode)Enum.Parse(typeof(Mode), connectionMode, true);
-
             Console.WriteLine("Connecting Client...");
 
             await _client.Connect(mode);
 
-            Console.WriteLine("--------------------------------------");
+            ShowDashLine();
 
             Console.WriteLine("Client successfully connected");
 
-            Console.WriteLine("--------------------------------------");
+            ShowDashLine();
 
             Console.WriteLine("Sending App Auth Req...");
 
             Console.WriteLine("Please wait...");
 
-            Console.WriteLine("--------------------------------------");
+            ShowDashLine();
 
             var applicationAuthReq = new ProtoOAApplicationAuthReq
             {
@@ -85,6 +102,10 @@ namespace ProtobufConsoleTesterApp
 
             Console.WriteLine("You should see the application auth response message before entering any command");
 
+            Console.WriteLine("For commands list and description use 'help' command");
+
+            ShowDashLine();
+
             GetCommand();
         }
 
@@ -95,9 +116,9 @@ namespace ProtobufConsoleTesterApp
                 return;
             }
 
-            Console.WriteLine($"MessageReceived:\n{e}");
+            Console.WriteLine($"MessageReceived:\n{e.GetTextPresentation()}");
 
-            Console.WriteLine("--------------------------------------");
+            ShowDashLine();
         }
 
         private static void Events_ListenerExceptionEvent(object sender, Exception ex)
@@ -105,14 +126,14 @@ namespace ProtobufConsoleTesterApp
             Console.WriteLine($"ListenerExceptionEvent");
             Console.WriteLine($"Exception\n: {ex}");
 
-            Console.WriteLine("--------------------------------------");
+            ShowDashLine();
         }
 
         private static void Events_ErrorEvent(object sender, ProtoOAErrorRes e)
         {
             Console.WriteLine($"Error:\n{e}");
 
-            Console.WriteLine("--------------------------------------");
+            ShowDashLine();
         }
 
         private static void ProcessCommand(string command)
@@ -277,11 +298,13 @@ namespace ProtobufConsoleTesterApp
 
         private static void GetCommand()
         {
-            Console.WriteLine("Enter command, example: help");
+            Console.Write("Enter command: ");
 
             string command = Console.ReadLine();
 
             ProcessCommand(command);
         }
+
+        private static void ShowDashLine() => Console.WriteLine("--------------------------------------------------");
     }
 }

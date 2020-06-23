@@ -18,12 +18,18 @@ namespace Connect.Protobuf.Helpers
 
         public static ProtoMessage GetProtoMessage(uint payloadType, ByteString payload, string clientMessageId = null)
         {
-            return new ProtoMessage
+            var message = new ProtoMessage
             {
                 PayloadType = payloadType,
                 Payload = payload,
-                ClientMsgId = clientMessageId
             };
+
+            if (!string.IsNullOrEmpty(clientMessageId))
+            {
+                message.ClientMsgId = clientMessageId;
+            }
+
+            return message;
         }
     }
 }
