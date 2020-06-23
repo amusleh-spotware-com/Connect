@@ -14,7 +14,7 @@ namespace Connect.Oauth.Models
             Scope = scope;
             Mode = mode;
 
-            UriBuilder authURIBuilder = new UriBuilder(BaseUrls.GetBaseUrl(ApiType.Oauth, mode));
+            var authURIBuilder = new UriBuilder(BaseUrls.OauthUrl);
 
             authURIBuilder.Path += "auth";
 

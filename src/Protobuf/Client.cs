@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace Connect.Protobuf
@@ -62,15 +61,7 @@ namespace Connect.Protobuf
             ErrorStream = new ErrorStream(Events);
         }
 
-        #region Properties
-
-        public bool IsConnected => _client?.Client != null && _client.Client.Connected;
-
-        public bool IsAuthorized { get; private set; }
-
-        public Mode Mode { get; private set; }
-
-        public Events Events { get; }
+        #region Streams
 
         public SpotStream SpotStream { get; }
 
@@ -98,7 +89,19 @@ namespace Connect.Protobuf
 
         public ErrorStream ErrorStream { get; }
 
-        #endregion Properties
+        #endregion Streams
+
+        #region Other properties
+
+        public bool IsConnected => _client?.Client != null && _client.Client.Connected;
+
+        public bool IsAppAuthorized { get; private set; }
+
+        public Mode Mode { get; private set; }
+
+        public Events Events { get; }
+
+        #endregion Other properties
 
         #region Connection
 
@@ -112,13 +115,11 @@ namespace Connect.Protobuf
                 SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds
             };
 
-            string url = BaseUrls.GetBaseUrl(ApiType.Protobuf, mode);
+            var url = BaseUrls.GetBaseUrl(mode);
 
             await _client.ConnectAsync(url, BaseUrls.ProtobufPort);
 
-            _stream = new SslStream(_client.GetStream(), false,
-                new RemoteCertificateValidationCallback(CertificateValidationCallback),
-                null);
+            _stream = new SslStream(_client.GetStream(), false);
 
             await _stream.AuthenticateAsClientAsync(url);
 
@@ -152,8 +153,6 @@ namespace Connect.Protobuf
             _isDisposed = true;
 
             _stream?.Dispose();
-
-            _client?.Dispose();
         }
 
         #endregion Disposing
@@ -372,7 +371,7 @@ namespace Connect.Protobuf
                     {
                         var protoOAApplicationAuthRes = ProtoOAApplicationAuthRes.Parser.ParseFrom(payload);
 
-                        IsAuthorized = true;
+                        IsAppAuthorized = true;
 
                         Events.OnApplicationAuthResponse(this, protoOAApplicationAuthRes, protoMessage.ClientMsgId);
 
@@ -629,11 +628,6 @@ namespace Connect.Protobuf
                 default:
                     break;
             }
-        }
-
-        private bool CertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
-        {
-            return sslPolicyErrors == SslPolicyErrors.None;
         }
 
         private bool IsManagableException(Exception exception)

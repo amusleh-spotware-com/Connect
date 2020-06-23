@@ -34,7 +34,7 @@ namespace ProtobufConsoleTesterApp
 
             _app = new App(appId, appSecret, redirectUrl);
 
-            Console.Write("Enter Connection Mode (Live or Sandbox): ");
+            Console.Write("Enter Connection Mode (Live or Demo): ");
 
             string connectionMode = Console.ReadLine();
 

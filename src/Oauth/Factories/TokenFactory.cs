@@ -15,7 +15,7 @@ namespace Connect.Oauth.Factories
 
         public static async Task<Token> GetTokenAsync(AuthCode authCode)
         {
-            RestClient client = new RestClient(BaseUrls.GetBaseUrl(ApiType.Oauth, authCode.Mode));
+            RestClient client = new RestClient(BaseUrls.OauthUrl);
 
             RestRequest request = GetTokenRequest(authCode);
 
@@ -30,7 +30,7 @@ namespace Connect.Oauth.Factories
 
         public static Token GetToken(AuthCode authCode)
         {
-            RestClient client = new RestClient(BaseUrls.GetBaseUrl(ApiType.Oauth, authCode.Mode));
+            RestClient client = new RestClient(BaseUrls.OauthUrl);
 
             RestRequest request = GetTokenRequest(authCode);
 
@@ -45,7 +45,7 @@ namespace Connect.Oauth.Factories
 
         public static async Task RefreshTokenAsync(Token token, App app)
         {
-            RestClient client = new RestClient(BaseUrls.GetBaseUrl(ApiType.Oauth, token.Mode));
+            RestClient client = new RestClient(BaseUrls.OauthUrl);
 
             RestRequest request = GetRefreshTokenRequest(app, token.RefreshToken);
 
@@ -58,7 +58,7 @@ namespace Connect.Oauth.Factories
 
         public static void RefreshToken(Token token, App app)
         {
-            RestClient client = new RestClient(BaseUrls.GetBaseUrl(ApiType.Oauth, token.Mode));
+            RestClient client = new RestClient(BaseUrls.OauthUrl);
 
             RestRequest request = GetRefreshTokenRequest(app, token.RefreshToken);
 

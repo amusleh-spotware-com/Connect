@@ -3,7 +3,7 @@
     public enum Mode
     {
         None,
-        Sandbox,
+        Demo,
         Live
     }
 }
