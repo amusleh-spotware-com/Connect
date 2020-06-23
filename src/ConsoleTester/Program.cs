@@ -8,9 +8,9 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProtobufConsoleTesterApp
+namespace ConsoleTester
 {
-    internal class Program
+    class Program
     {
         private static App _app;
 
@@ -42,7 +42,7 @@ namespace ProtobufConsoleTesterApp
 
             var auth = new Auth(_app, mode: mode);
 
-            System.Diagnostics.Process.Start(auth.AuthUri.ToString());
+            System.Diagnostics.Process.Start("explorer.exe", $"\"{auth.AuthUri}\"");
 
             ShowDashLine();
 
@@ -158,7 +158,7 @@ namespace ProtobufConsoleTesterApp
                         var isFirst = true;
 
                         foreach (var trendBar in trendbars)
-                        {    
+                        {
                             Console.Write(isFirst ? $"{trendBar}" : $", {trendBar}");
 
                             if (isFirst) { isFirst = false; }
