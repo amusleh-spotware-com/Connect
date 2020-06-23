@@ -138,6 +138,8 @@ namespace ProtobufConsoleTesterApp
 
         private static void ProcessCommand(string command)
         {
+            Console.WriteLine();
+
             var commandSplit = command.Split(' ');
             try
             {
@@ -149,10 +151,24 @@ namespace ProtobufConsoleTesterApp
                         Console.WriteLine("For getting an account symbols list type (Requires account authorization): symbolslist {Account ID}\n");
                         Console.WriteLine("For subscribing to symbol(s) spot quotes type (Requires account authorization): subscribe spot {Account ID} {Symbol ID,}\n");
                         Console.WriteLine("For subscribing to symbol(s) trend bar type (Requires account authorization and spot subscription): subscribe trendbar {Period} {Account ID} {Symbol ID}\n");
-                        Console.WriteLine("For trend bar period parameter, you can use these values:");
+                        Console.WriteLine("For trend bar period parameter, you can use these values:\n");
 
-                        Enum.GetValues(typeof(ProtoOATrendbarPeriod)).Cast<ProtoOATrendbarPeriod>().ToList()
-                            .ForEach(iTrenBarPeriod => Console.WriteLine(iTrenBarPeriod));
+                        var trendbars = Enum.GetValues(typeof(ProtoOATrendbarPeriod)).Cast<ProtoOATrendbarPeriod>();
+
+                        var isFirst = true;
+
+                        foreach (var trendBar in trendbars)
+                        {    
+                            Console.Write(isFirst ? $"{trendBar}" : $", {trendBar}");
+
+                            if (isFirst) { isFirst = false; }
+                        }
+
+                        Console.WriteLine();
+
+                        Console.WriteLine("\nTo exit the app and disconnect the client type: disconnect\n");
+
+                        Console.WriteLine("Commands aren't case sensitive\n");
 
                         break;
 
@@ -171,7 +187,10 @@ namespace ProtobufConsoleTesterApp
                     case "subscribe":
                         ProcessSubscriptionCommand(commandSplit);
                         break;
+                    case "disconnect":
+                        Disconnect();
 
+                        break;
                     default:
                         Console.WriteLine($"'{command}' is not recognized as a command, please use help command to get all available commands list");
                         break;
@@ -306,5 +325,18 @@ namespace ProtobufConsoleTesterApp
         }
 
         private static void ShowDashLine() => Console.WriteLine("--------------------------------------------------");
+
+        private static void Disconnect()
+        {
+            Console.WriteLine("Disconnecting...");
+
+            _client.Dispose();
+
+            Console.WriteLine("Disconnected, exiting...");
+
+            Task.Delay(3000).Wait();
+
+            Environment.Exit(0);
+        }
     }
 }

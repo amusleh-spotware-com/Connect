@@ -22,7 +22,7 @@ namespace Connect.Protobuf
 
         private SslStream _stream;
 
-        private bool _stopSendingHeartbeats, _stopListening, _isDisposed;
+        private bool _stopSendingHeartbeats, _stopListening;
 
         private ProcessStatus _listeningStatus, _sendingHeartbeatsStatus;
 
@@ -101,12 +101,16 @@ namespace Connect.Protobuf
 
         public Events Events { get; }
 
+        public bool IsDisposed { get; private set; }
+
         #endregion Other properties
 
         #region Connection
 
         public async Task Connect(Mode mode)
         {
+            CheckIsDisposed();
+
             Mode = mode;
 
             _client = new TcpClient
@@ -139,20 +143,15 @@ namespace Connect.Protobuf
 
         public async Task DisposeAsync()
         {
-            if (_isDisposed)
-            {
-                return;
-            }
+            CheckIsDisposed();
 
             await StoptListening();
 
             await StoptSendingHeartbeats();
 
-            await _stream.FlushAsync();
-
-            _isDisposed = true;
-
             _stream?.Dispose();
+
+            IsDisposed = true;
         }
 
         #endregion Disposing
@@ -161,6 +160,8 @@ namespace Connect.Protobuf
 
         private void StartSendingHeartbeats()
         {
+            CheckIsDisposed();
+
             _sendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
 
             System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000);
@@ -203,6 +204,8 @@ namespace Connect.Protobuf
 
         private async Task StoptSendingHeartbeats()
         {
+            CheckIsDisposed();
+
             _sendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
 
             _stopSendingHeartbeats = true;
@@ -219,6 +222,8 @@ namespace Connect.Protobuf
 
         public void StartListening()
         {
+            CheckIsDisposed();
+
             _listeningStatus = ProcessStatus.WaitingToRun;
 
 #pragma warning disable 4014
@@ -290,6 +295,8 @@ namespace Connect.Protobuf
 
         public async Task StoptListening()
         {
+            CheckIsDisposed();
+
             _listeningStatus = ProcessStatus.WaitingToStop;
 
             _stopListening = true;
@@ -306,6 +313,8 @@ namespace Connect.Protobuf
 
         public async Task SendMessage(ProtoMessage message)
         {
+            CheckIsDisposed();
+
             try
             {
                 byte[] messageByte = message.ToByteArray();
@@ -636,6 +645,14 @@ namespace Connect.Protobuf
                 exception is InvalidOperationException || exception is ArgumentException ||
                 exception is NotSupportedException || exception is IOException || exception is ObjectDisposedException ||
                 exception.InnerException is Google.Protobuf.InvalidProtocolBufferException;
+        }
+
+        private void CheckIsDisposed()
+        {
+            if (IsDisposed)
+            {
+                throw new ObjectDisposedException("Client is disposed, you cannot access a disposed object");
+            }
         }
 
         #endregion Others
