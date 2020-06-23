@@ -1,10 +1,8 @@
 ﻿using Connect.Common.Enums;
 using Connect.Common.Helpers;
-using Connect.Protobuf.Factories;
 using Connect.Protobuf.Helpers;
-using Connect.Protobuf.Models.Parameters;
-using Connect.Protobuf.Models.Parameters.Abstractions;
 using Connect.Protobuf.Streams;
+using Google.Protobuf;
 using System;
 using System.IO;
 using System.Linq;
@@ -168,9 +166,8 @@ namespace Connect.Protobuf
 
             System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000);
 
-            var messageArgs = new HeartbeatEventParameters();
-
-            var message = MessagesFactory.CreateHeartbeatEvent(messageArgs);
+            var protoMessage = ProtoMessageGenerator.GetProtoMessage(ProtoPayloadType.HeartbeatEvent,
+                new ProtoHeartbeatEvent().ToByteString());
 
             heartbeatTimer.Elapsed += async (object sender, System.Timers.ElapsedEventArgs e) =>
             {
@@ -182,7 +179,7 @@ namespace Connect.Protobuf
                     {
                         if (DateTime.Now - _lastSentMessageTime >= TimeSpan.FromSeconds(10))
                         {
-                            await SendMessage(message);
+                            await SendMessage(protoMessage);
                         }
 
                         (sender as System.Timers.Timer).Start();
@@ -308,13 +305,6 @@ namespace Connect.Protobuf
 
         #region Send message
 
-        public async Task SendMessage(IParameters parameters)
-        {
-            ProtoMessage protoMessage = MessagesFactory.CreateMessage(parameters);
-
-            await SendMessage(protoMessage);
-        }
-
         public async Task SendMessage(ProtoMessage message)
         {
             try
@@ -344,41 +334,43 @@ namespace Connect.Protobuf
 
         #region Others
 
-        private void InvokeMessageEvent(byte[] message)
+        private void InvokeMessageEvent(byte[] data)
         {
-            ProtoMessage protoMessage = MessagesFactory.GetMessage(message);
+            var protoMessage = ProtoMessage.Parser.ParseFrom(data);
+
+            var payload = protoMessage.Payload;
 
             Events.OnMessageReceived(this, protoMessage);
 
             switch (protoMessage.PayloadType)
             {
-                case (int)ProtoOAPayloadType.PROTO_OA_ERROR_RES:
+                case (int)ProtoOAPayloadType.ProtoOaErrorRes:
                     {
-                        ProtoOAErrorRes protoErrorRes = MessagesFactory.GetErrorResponse(protoMessage.Payload);
+                        var protoErrorRes = ProtoOAErrorRes.Parser.ParseFrom(payload);
 
                         Events.OnError(this, protoErrorRes);
 
                         break;
                     }
-                case (int)ProtoPayloadType.HEARTBEAT_EVENT:
+                case (int)ProtoPayloadType.HeartbeatEvent:
                     {
-                        ProtoHeartbeatEvent protoHeartbeatEvent = MessagesFactory.GetHeartbeatEvent(protoMessage.Payload);
+                        var protoHeartbeatEvent = ProtoHeartbeatEvent.Parser.ParseFrom(payload);
 
                         Events.OnHeartbeat(this, protoHeartbeatEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_AUTH_RES:
+                case (int)ProtoOAPayloadType.ProtoOaAccountAuthRes:
                     {
-                        ProtoOAAccountAuthRes protoOAAccountAuthRes = MessagesFactory.GetAccountAuthorizationResponse(protoMessage.Payload);
+                        var protoOAAccountAuthRes = ProtoOAAccountAuthRes.Parser.ParseFrom(payload);
 
                         Events.OnAccountAuthorizationResponse(this, protoOAAccountAuthRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_APPLICATION_AUTH_RES:
+                case (int)ProtoOAPayloadType.ProtoOaApplicationAuthRes:
                     {
-                        ProtoOAApplicationAuthRes protoOAApplicationAuthRes = MessagesFactory.GetApplicationAuthorizationResponse(protoMessage.Payload);
+                        var protoOAApplicationAuthRes = ProtoOAApplicationAuthRes.Parser.ParseFrom(payload);
 
                         IsAuthorized = true;
 
@@ -386,249 +378,249 @@ namespace Connect.Protobuf
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_CLIENT_DISCONNECT_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaClientDisconnectEvent:
                     {
-                        ProtoOAClientDisconnectEvent protoOAClientDisconnect = MessagesFactory.GetClientDisconnectEvent(protoMessage.Payload);
+                        var protoOAClientDisconnect = ProtoOAClientDisconnectEvent.Parser.ParseFrom(payload);
 
                         Events.OnClientDisconnected(this, protoOAClientDisconnect);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_DEAL_LIST_RES:
+                case (int)ProtoOAPayloadType.ProtoOaDealListRes:
                     {
-                        ProtoOADealListRes protoOADealListRes = MessagesFactory.GetDealListResponse(protoMessage.Payload);
+                        var protoOADealListRes = ProtoOADealListRes.Parser.ParseFrom(payload);
 
                         Events.OnDealListResponse(this, protoOADealListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_ASSET_LIST_RES:
+                case (int)ProtoOAPayloadType.ProtoOaAssetListRes:
                     {
-                        ProtoOAAssetListRes protoOAAssetListRes = MessagesFactory.GetAssetListResponse(protoMessage.Payload);
+                        var protoOAAssetListRes = ProtoOAAssetListRes.Parser.ParseFrom(payload);
 
                         Events.OnAssetListResponse(this, protoOAAssetListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_ASSET_CLASS_LIST_RES:
+                case (int)ProtoOAPayloadType.ProtoOaAssetClassListRes:
                     {
-                        ProtoOAAssetClassListRes protoOAAssetClassListRes = MessagesFactory.GetAssetClassListResponse(protoMessage.Payload);
+                        var protoOAAssetClassListRes = ProtoOAAssetClassListRes.Parser.ParseFrom(payload);
 
                         Events.OnAssetClassListResponse(this, protoOAAssetClassListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNTS_TOKEN_INVALIDATED_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaAccountsTokenInvalidatedEvent:
                     {
-                        ProtoOAAccountsTokenInvalidatedEvent protoOAAccountsTokenInvalidatedEvent = MessagesFactory.GetAccountsTokenInvalidatedEvent(protoMessage.Payload);
+                        var protoOAAccountsTokenInvalidatedEvent = ProtoOAAccountsTokenInvalidatedEvent.Parser.ParseFrom(payload);
 
                         Events.OnAccountsTokenInvalidated(this, protoOAAccountsTokenInvalidatedEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_CASH_FLOW_HISTORY_LIST_RES:
+                case (int)ProtoOAPayloadType.ProtoOaCashFlowHistoryListRes:
                     {
-                        ProtoOACashFlowHistoryListRes protoOACashFlowHistoryListRes = MessagesFactory.GetCashFlowHistoryListResponse(protoMessage.Payload);
+                        var protoOACashFlowHistoryListRes = ProtoOACashFlowHistoryListRes.Parser.ParseFrom(payload);
 
                         Events.OnCashFlowHistoryListResponse(this, protoOACashFlowHistoryListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_EXECUTION_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaExecutionEvent:
                     {
-                        ProtoOAExecutionEvent protoOAExecutionEvent = MessagesFactory.GetExecutionEvent(protoMessage.Payload);
+                        var protoOAExecutionEvent = ProtoOAExecutionEvent.Parser.ParseFrom(payload);
 
                         Events.OnExecution(this, protoOAExecutionEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_EXPECTED_MARGIN_RES:
+                case (int)ProtoOAPayloadType.ProtoOaExpectedMarginRes:
                     {
-                        ProtoOAExpectedMarginRes protoOAExpectedMarginRes = MessagesFactory.GetExpectedMarginResponse(protoMessage.Payload);
+                        var protoOAExpectedMarginRes = ProtoOAExpectedMarginRes.Parser.ParseFrom(payload);
 
                         Events.OnExpectedMarginResponse(this, protoOAExpectedMarginRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES:
+                case (int)ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenRes:
                     {
-                        ProtoOAGetAccountListByAccessTokenRes protoOAGetAccountListByAccessTokenRes = MessagesFactory.GetAccountListResponse(protoMessage.Payload);
+                        var protoOAGetAccountListByAccessTokenRes = ProtoOAGetAccountListByAccessTokenRes.Parser.ParseFrom(payload);
 
                         Events.OnAccountListResponse(this, protoOAGetAccountListByAccessTokenRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_GET_TICKDATA_RES:
+                case (int)ProtoOAPayloadType.ProtoOaGetTickdataRes:
                     {
-                        ProtoOAGetTickDataRes protoOAGetTickDataRes = MessagesFactory.GetTickDataResponse(protoMessage.Payload);
+                        var protoOAGetTickDataRes = ProtoOAGetTickDataRes.Parser.ParseFrom(payload);
 
                         Events.OnTickDataResponse(this, protoOAGetTickDataRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_GET_TRENDBARS_RES:
+                case (int)ProtoOAPayloadType.ProtoOaGetTrendbarsRes:
                     {
-                        ProtoOAGetTrendbarsRes protoOAGetTrendbarsRes = MessagesFactory.GetTrendbarsResponse(protoMessage.Payload);
+                        var protoOAGetTrendbarsRes = ProtoOAGetTrendbarsRes.Parser.ParseFrom(payload);
 
                         Events.OnTrendbarsResponse(this, protoOAGetTrendbarsRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_MARGIN_CHANGED_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaMarginChangedEvent:
                     {
-                        ProtoOAMarginChangedEvent protoOAMarginChangedEvent = MessagesFactory.GetMarginChangedEvent(protoMessage.Payload);
+                        var protoOAMarginChangedEvent = ProtoOAMarginChangedEvent.Parser.ParseFrom(payload);
 
                         Events.OnMarginChanged(this, protoOAMarginChangedEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_ORDER_ERROR_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaOrderErrorEvent:
                     {
-                        ProtoOAOrderErrorEvent protoOAOrderErrorEvent = MessagesFactory.GetOrderErrorEvent(protoMessage.Payload);
+                        var protoOAOrderErrorEvent = ProtoOAOrderErrorEvent.Parser.ParseFrom(payload);
 
                         Events.OnOrderError(this, protoOAOrderErrorEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_RECONCILE_RES:
+                case (int)ProtoOAPayloadType.ProtoOaReconcileRes:
                     {
-                        ProtoOAReconcileRes protoOAReconcileRes = MessagesFactory.GetReconcileResponse(protoMessage.Payload);
+                        var protoOAReconcileRes = ProtoOAReconcileRes.Parser.ParseFrom(payload);
 
                         Events.OnReconcileResponse(this, protoOAReconcileRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SPOT_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaSpotEvent:
                     {
-                        ProtoOASpotEvent protoOASpotEvent = MessagesFactory.GetSpotEvent(protoMessage.Payload);
+                        var protoOASpotEvent = ProtoOASpotEvent.Parser.ParseFrom(payload);
 
                         Events.OnSpot(this, protoOASpotEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_SPOTS_RES:
+                case (int)ProtoOAPayloadType.ProtoOaSubscribeSpotsRes:
                     {
-                        ProtoOASubscribeSpotsRes protoOASubscribeSpotsRes = MessagesFactory.GetSubscribeSpotsResponse(protoMessage.Payload);
+                        var protoOASubscribeSpotsRes = ProtoOASubscribeSpotsRes.Parser.ParseFrom(payload);
 
                         Events.OnSubscribeSpotsResponse(this, protoOASubscribeSpotsRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_FOR_CONVERSION_RES:
+                case (int)ProtoOAPayloadType.ProtoOaSymbolsForConversionRes:
                     {
-                        ProtoOASymbolsForConversionRes protoOASymbolsForConversionRes = MessagesFactory.GetSymbolsForConversionResponse(protoMessage.Payload);
+                        var protoOASymbolsForConversionRes = ProtoOASymbolsForConversionRes.Parser.ParseFrom(payload);
 
                         Events.OnSymbolsForConversionResponse(this, protoOASymbolsForConversionRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SYMBOLS_LIST_RES:
+                case (int)ProtoOAPayloadType.ProtoOaSymbolsListRes:
                     {
-                        ProtoOASymbolsListRes protoOASymbolsListRes = MessagesFactory.GetSymbolsListResponse(protoMessage.Payload);
+                        var protoOASymbolsListRes = ProtoOASymbolsListRes.Parser.ParseFrom(payload);
 
                         Events.OnSymbolsListResponse(this, protoOASymbolsListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_BY_ID_RES:
+                case (int)ProtoOAPayloadType.ProtoOaSymbolByIdRes:
                     {
-                        ProtoOASymbolByIdRes protoOASymbolByIdRes = MessagesFactory.GetSymbolByIdResponse(protoMessage.Payload);
+                        var protoOASymbolByIdRes = ProtoOASymbolByIdRes.Parser.ParseFrom(payload);
 
                         Events.OnSymbolByIdResponse(this, protoOASymbolByIdRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CHANGED_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaSymbolChangedEvent:
                     {
-                        ProtoOASymbolChangedEvent protoOASymbolChangedEvent = MessagesFactory.GetSymbolChangedEvent(protoMessage.Payload);
+                        var protoOASymbolChangedEvent = ProtoOASymbolChangedEvent.Parser.ParseFrom(payload);
 
                         Events.OnSymbolChanged(this, protoOASymbolChangedEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_TRADER_RES:
+                case (int)ProtoOAPayloadType.ProtoOaTraderRes:
                     {
-                        ProtoOATraderRes protoOATraderRes = MessagesFactory.GetTraderResponse(protoMessage.Payload);
+                        var protoOATraderRes = ProtoOATraderRes.Parser.ParseFrom(payload);
 
                         Events.OnTraderResponse(this, protoOATraderRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_TRADER_UPDATE_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaTraderUpdateEvent:
                     {
-                        ProtoOATraderUpdatedEvent protoOATraderUpdatedEvent = MessagesFactory.GetTraderUpdatedEvent(protoMessage.Payload);
+                        var protoOATraderUpdatedEvent = ProtoOATraderUpdatedEvent.Parser.ParseFrom(payload);
 
                         Events.OnTraderUpdated(this, protoOATraderUpdatedEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_TRAILING_SL_CHANGED_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaTrailingSlChangedEvent:
                     {
-                        ProtoOATrailingSLChangedEvent protoOATrailingSLChangedEvent = MessagesFactory.GetTrailingSLChangedEvent(protoMessage.Payload);
+                        var protoOATrailingSLChangedEvent = ProtoOATrailingSLChangedEvent.Parser.ParseFrom(payload);
 
                         Events.OnTrailingSLChanged(this, protoOATrailingSLChangedEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_SPOTS_RES:
+                case (int)ProtoOAPayloadType.ProtoOaUnsubscribeSpotsRes:
                     {
-                        ProtoOAUnsubscribeSpotsRes protoOAUnsubscribeSpotsRes = MessagesFactory.GetUnsubscribeSpotsResponse(protoMessage.Payload);
+                        var protoOAUnsubscribeSpotsRes = ProtoOAUnsubscribeSpotsRes.Parser.ParseFrom(payload);
 
                         Events.OnUnsubscribeSpotsResponse(this, protoOAUnsubscribeSpotsRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_VERSION_RES:
+                case (int)ProtoOAPayloadType.ProtoOaVersionRes:
                     {
-                        ProtoOAVersionRes protoOAVersionRes = MessagesFactory.GetVersionResponse(protoMessage.Payload);
+                        var protoOAVersionRes = ProtoOAVersionRes.Parser.ParseFrom(payload);
 
                         Events.OnVersionResponse(this, protoOAVersionRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES:
+                case (int)ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenRes:
                     {
-                        ProtoOAGetCtidProfileByTokenRes ctidProfileRes = MessagesFactory.GetCtidProfileResponse(protoMessage.Payload);
+                        var ctidProfileRes = ProtoOAGetCtidProfileByTokenRes.Parser.ParseFrom(payload);
 
                         Events.OnCtidProfileResponse(this, ctidProfileRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SYMBOL_CATEGORY_RES:
+                case (int)ProtoOAPayloadType.ProtoOaSymbolCategoryRes:
                     {
-                        ProtoOASymbolCategoryListRes symbolCategoryListRes = MessagesFactory.GetSymbolCategoryListResponse(protoMessage.Payload);
+                        var symbolCategoryListRes = ProtoOASymbolCategoryListRes.Parser.ParseFrom(payload);
 
                         Events.OnSymbolCategoryListResponse(this, symbolCategoryListRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_DEPTH_EVENT:
+                case (int)ProtoOAPayloadType.ProtoOaDepthEvent:
                     {
-                        ProtoOADepthEvent depthEvent = MessagesFactory.GetDepthEvent(protoMessage.Payload);
+                        var depthEvent = ProtoOADepthEvent.Parser.ParseFrom(payload);
 
                         Events.OnDepthQuotes(this, depthEvent);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES:
+                case (int)ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesRes:
                     {
-                        ProtoOASubscribeDepthQuotesRes subscribeDepthQuotesRes = MessagesFactory.GetSubscribeDepthQuotesResponse(protoMessage.Payload);
+                        var subscribeDepthQuotesRes = ProtoOASubscribeDepthQuotesRes.Parser.ParseFrom(payload);
 
                         Events.OnSubscribeDepthQuotesResponse(this, subscribeDepthQuotesRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES:
+                case (int)ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesRes:
                     {
-                        ProtoOAUnsubscribeDepthQuotesRes unsubscribeDepthQuotesRes = MessagesFactory.GetUnsubscribeDepthQuotesResponse(protoMessage.Payload);
+                        var unsubscribeDepthQuotesRes = ProtoOAUnsubscribeDepthQuotesRes.Parser.ParseFrom(payload);
 
                         Events.OnUnsubscribeDepthQuotesResponse(this, unsubscribeDepthQuotesRes, protoMessage.ClientMsgId);
 
                         break;
                     }
-                case (int)ProtoOAPayloadType.PROTO_OA_ACCOUNT_LOGOUT_RES:
+                case (int)ProtoOAPayloadType.ProtoOaAccountLogoutRes:
                     {
-                        ProtoOAAccountLogoutRes accountLogoutRes = MessagesFactory.GetAccountLogoutResponse(protoMessage.Payload);
+                        var accountLogoutRes = ProtoOAAccountLogoutRes.Parser.ParseFrom(payload);
 
                         Events.OnAccountLogoutResponse(this, accountLogoutRes, protoMessage.ClientMsgId);
 
@@ -649,7 +641,7 @@ namespace Connect.Protobuf
             return exception is ArgumentNullException || exception is ArgumentOutOfRangeException ||
                 exception is InvalidOperationException || exception is ArgumentException ||
                 exception is NotSupportedException || exception is IOException || exception is ObjectDisposedException ||
-                exception.InnerException is Google.ProtocolBuffers.UninitializedMessageException;
+                exception.InnerException is Google.Protobuf.InvalidProtocolBufferException;
         }
 
         #endregion Others

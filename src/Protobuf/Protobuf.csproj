@@ -7,12 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Messages\Old\**" />
+    <EmbeddedResource Remove="Messages\Old\**" />
+    <None Remove="Messages\Old\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Messages\CommonMessages.cs" />
     <Compile Remove="Messages\CommonModelMessages.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.ProtocolBuffers" Version="2.4.1.555" />
+    <PackageReference Include="Google.Protobuf" Version="3.12.3" />
     <PackageReference Include="System.Reactive" Version="4.4.1" />
   </ItemGroup>
 
