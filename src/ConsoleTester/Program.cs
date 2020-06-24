@@ -93,10 +93,7 @@ namespace ConsoleTester
                 ClientSecret = _app.Secret,
             };
 
-            var protoMessage = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaApplicationAuthReq,
-                applicationAuthReq.ToByteString());
-
-            await _client.SendMessage(protoMessage);
+            await _client.SendMessage(applicationAuthReq, ProtoOAPayloadType.ProtoOaApplicationAuthReq);
 
             await Task.Delay(5000);
 
@@ -242,10 +239,7 @@ namespace ConsoleTester
                 SymbolId = long.Parse(commandSplit[4]),
             };
 
-            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarReq,
-                subscribeLiveTrendbarReq.ToByteString());
-
-            await _client.SendMessage(message);
+            await _client.SendMessage(subscribeLiveTrendbarReq, ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarReq);
         }
 
         private async static void SubscribeToSymbolSpot(string[] commandSplit)
@@ -259,10 +253,7 @@ namespace ConsoleTester
 
             subscribeSpotsReq.SymbolId.AddRange(commandSplit.Skip(3).Select(iSymbolId => long.Parse(iSymbolId)));
 
-            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaSubscribeSpotsReq,
-                subscribeSpotsReq.ToByteString());
-
-            await _client.SendMessage(message);
+            await _client.SendMessage(subscribeSpotsReq, ProtoOAPayloadType.ProtoOaSubscribeSpotsReq);
         }
 
         private async static void SymbolListRequest(string[] commandSplit)
@@ -276,10 +267,7 @@ namespace ConsoleTester
                 CtidTraderAccountId = accountId,
             };
 
-            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaSymbolsListReq,
-                symbolsListReq.ToByteString());
-
-            await _client.SendMessage(message);
+            await _client.SendMessage(symbolsListReq, ProtoOAPayloadType.ProtoOaSymbolsListReq);
         }
 
         private async static void AccountListRequest()
@@ -291,10 +279,7 @@ namespace ConsoleTester
                 AccessToken = _token.AccessToken,
             };
 
-            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenReq,
-                accountListByAccessTokenReq.ToByteString());
-
-            await _client.SendMessage(message);
+            await _client.SendMessage(accountListByAccessTokenReq, ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenReq);
         }
 
         private async static void AccountAuthRequest(string[] commandSplit)
@@ -309,10 +294,7 @@ namespace ConsoleTester
                 AccessToken = _token.AccessToken
             };
 
-            var message = ProtoMessageGenerator.GetProtoMessage(ProtoOAPayloadType.ProtoOaAccountAuthReq,
-                accountAuthReq.ToByteString());
-
-            await _client.SendMessage(message);
+            await _client.SendMessage(accountAuthReq, ProtoOAPayloadType.ProtoOaAccountAuthReq);
         }
 
         private static void GetCommand()

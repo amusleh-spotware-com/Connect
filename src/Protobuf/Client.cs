@@ -311,6 +311,22 @@ namespace Connect.Protobuf
 
         #region Send message
 
+        public Task SendMessage<T>(T message, ProtoPayloadType payloadType, string clientMsgId = null) where T:
+            IMessage<T>
+        {
+            var protoMessage = ProtoMessageGenerator.GetProtoMessage(payloadType, message.ToByteString(), clientMsgId);
+
+            return SendMessage(protoMessage);
+        }
+
+        public Task SendMessage<T>(T message, ProtoOAPayloadType payloadType, string clientMsgId = null) where T :
+            IMessage<T>
+        {
+            var protoMessage = ProtoMessageGenerator.GetProtoMessage(payloadType, message.ToByteString(), clientMsgId);
+
+            return SendMessage(protoMessage);
+        }
+
         public async Task SendMessage(ProtoMessage message)
         {
             CheckIsDisposed();
