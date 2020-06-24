@@ -2,7 +2,7 @@
 {
     public class HeartbeatStream : StreamBase<ProtoHeartbeatEvent>
     {
-        public HeartbeatStream(Events events) : base()
+        public HeartbeatStream(EventsContainer events) : base()
         {
             events.HeartbeatEvent += EventHandler;
         }

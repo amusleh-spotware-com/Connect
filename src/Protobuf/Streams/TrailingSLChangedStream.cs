@@ -2,7 +2,7 @@
 {
     public class TrailingSLChangedStream : StreamBase<ProtoOATrailingSLChangedEvent>
     {
-        public TrailingSLChangedStream(Events events) : base()
+        public TrailingSLChangedStream(EventsContainer events) : base()
         {
             events.TrailingSLChangedEvent += EventHandler;
         }

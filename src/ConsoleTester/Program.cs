@@ -3,20 +3,22 @@ using Connect.Oauth.Factories;
 using Connect.Oauth.Models;
 using Connect.Protobuf;
 using Connect.Protobuf.Helpers;
-using Google.Protobuf;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ConsoleTester
 {
-    class Program
+    internal class Program
     {
         private static App _app;
 
         private static Token _token;
 
         private static Client _client;
+
+        private static readonly List<IDisposable> _streamDisposables = new List<IDisposable>();
 
         private static async Task Main()
         {
@@ -67,9 +69,11 @@ namespace ConsoleTester
 
             _client = new Client();
 
-            _client.Events.MessageReceivedEvent += Events_MessageReceivedEvent;
-            _client.Events.ErrorEvent += Events_ErrorEvent;
+            _streamDisposables.Add(_client.Streams.MessageStream.Subscribe(OnMessageReceived));
+            _streamDisposables.Add(_client.Streams.ErrorStream.Subscribe(OnError));
+
             _client.Events.ListenerExceptionEvent += Events_ListenerExceptionEvent;
+            _client.Events.SenderExceptionEvent += Events_SenderExceptionEvent;
 
             Console.WriteLine("Connecting Client...");
 
@@ -106,7 +110,7 @@ namespace ConsoleTester
             GetCommand();
         }
 
-        private static void Events_MessageReceivedEvent(object sender, ProtoMessage e)
+        private static void OnMessageReceived(ProtoMessage e)
         {
             if (e.PayloadType == (int)ProtoPayloadType.HeartbeatEvent)
             {
@@ -126,7 +130,15 @@ namespace ConsoleTester
             ShowDashLine();
         }
 
-        private static void Events_ErrorEvent(object sender, ProtoOAErrorRes e)
+        private static void Events_SenderExceptionEvent(object sender, Exception ex)
+        {
+            Console.WriteLine($"SenderExceptionEvent");
+            Console.WriteLine($"Exception\n: {ex}");
+
+            ShowDashLine();
+        }
+
+        private static void OnError(ProtoOAErrorRes e)
         {
             Console.WriteLine($"Error:\n{e}");
 
@@ -184,10 +196,12 @@ namespace ConsoleTester
                     case "subscribe":
                         ProcessSubscriptionCommand(commandSplit);
                         break;
+
                     case "disconnect":
                         Disconnect();
 
                         break;
+
                     default:
                         Console.WriteLine($"'{command}' is not recognized as a command, please use help command to get all available commands list");
                         break;
@@ -311,6 +325,8 @@ namespace ConsoleTester
         private static void Disconnect()
         {
             Console.WriteLine("Disconnecting...");
+
+            _streamDisposables.ForEach(iDisposable => iDisposable.Dispose());
 
             _client.Dispose();
 

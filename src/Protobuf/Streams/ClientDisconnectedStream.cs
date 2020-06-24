@@ -2,7 +2,7 @@
 {
     public class ClientDisconnectedStream : StreamBase<ProtoOAClientDisconnectEvent>
     {
-        public ClientDisconnectedStream(Events events) : base()
+        public ClientDisconnectedStream(EventsContainer events) : base()
         {
             events.ClientDisconnectedEvent += EventHandler;
         }

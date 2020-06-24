@@ -1,11 +1,10 @@
-﻿using Connect.Common.Enums;
+﻿using Connect.Common.Helpers;
 using Connect.Oauth.Models;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Net;
 using System.Threading.Tasks;
-using Connect.Common.Helpers;
 
 namespace Connect.Oauth.Factories
 {
@@ -19,7 +18,7 @@ namespace Connect.Oauth.Factories
 
             RestRequest request = GetTokenRequest(authCode);
 
-            IRestResponse response = await client.ExecuteGetAsync(request);
+            IRestResponse response = await client.ExecuteGetAsync(request).ConfigureAwait(false);
 
             Token token = DeserializeToken(response);
 
@@ -49,7 +48,7 @@ namespace Connect.Oauth.Factories
 
             RestRequest request = GetRefreshTokenRequest(app, token.RefreshToken);
 
-            IRestResponse response = await client.ExecuteGetAsync(request);
+            IRestResponse response = await client.ExecuteGetAsync(request).ConfigureAwait(false);
 
             Token newToken = DeserializeToken(response);
 

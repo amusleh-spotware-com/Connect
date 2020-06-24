@@ -2,7 +2,7 @@
 {
     public class OrderErrorStream : StreamBase<ProtoOAOrderErrorEvent>
     {
-        public OrderErrorStream(Events events) : base()
+        public OrderErrorStream(EventsContainer events) : base()
         {
             events.OrderErrorEvent += EventHandler;
         }

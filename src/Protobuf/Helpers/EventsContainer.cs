@@ -2,7 +2,7 @@
 
 namespace Connect.Protobuf
 {
-    public class Events
+    public class EventsContainer
     {
         #region Events
 
@@ -123,19 +123,52 @@ namespace Connect.Protobuf
             UnsubscribeDepthQuotesResponseEvent?.Invoke(sender, e, clientMsgId);
         }
 
-        internal void OnListenerException(object sender, Exception ex)
+        internal bool OnListenerException(object sender, Exception ex)
         {
-            ListenerExceptionEvent?.Invoke(sender, ex);
+            var handler = ListenerExceptionEvent;
+
+            if (handler == null)
+            {
+                return false;
+            }
+            else
+            {
+                handler.Invoke(sender, ex);
+
+                return true;
+            }
         }
 
-        internal void OnSenderException(object sender, Exception ex)
+        internal bool OnSenderException(object sender, Exception ex)
         {
-            SenderExceptionEvent?.Invoke(sender, ex);
+            var handler = SenderExceptionEvent;
+
+            if (handler == null)
+            {
+                return false;
+            }
+            else
+            {
+                handler.Invoke(sender, ex);
+
+                return true;
+            }
         }
 
-        internal void OnHeartbeatSendingException(object sender, Exception ex)
+        internal bool OnHeartbeatSendingException(object sender, Exception ex)
         {
-            HeartbeatSendingExceptionEvent?.Invoke(sender, ex);
+            var handler = HeartbeatSendingExceptionEvent;
+
+            if (handler == null)
+            {
+                return false;
+            }
+            else
+            {
+                handler.Invoke(sender, ex);
+
+                return true;
+            }
         }
 
         internal void OnHeartbeat(object sender, ProtoHeartbeatEvent e)

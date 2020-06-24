@@ -2,7 +2,7 @@
 {
     public class TraderUpdateStream : StreamBase<ProtoOATraderUpdatedEvent>
     {
-        public TraderUpdateStream(Events events) : base()
+        public TraderUpdateStream(EventsContainer events) : base()
         {
             events.TraderUpdatedEvent += EventHandler;
         }

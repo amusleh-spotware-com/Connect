@@ -2,7 +2,7 @@
 {
     public class MessageStream : StreamBase<ProtoMessage>
     {
-        public MessageStream(Events events) : base()
+        public MessageStream(EventsContainer events) : base()
         {
             events.MessageReceivedEvent += EventHandler;
         }

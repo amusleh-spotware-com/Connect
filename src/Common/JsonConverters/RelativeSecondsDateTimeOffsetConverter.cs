@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
-using System.Globalization;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Connect.Common.JsonConverters
 {

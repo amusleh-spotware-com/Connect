@@ -2,7 +2,7 @@
 {
     public class TokenInvalidatedStream : StreamBase<ProtoOAAccountsTokenInvalidatedEvent>
     {
-        public TokenInvalidatedStream(Events events) : base()
+        public TokenInvalidatedStream(EventsContainer events) : base()
         {
             events.AccountsTokenInvalidatedEvent += EventHandler;
         }

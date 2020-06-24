@@ -2,7 +2,7 @@
 {
     public class SpotStream : StreamBase<ProtoOASpotEvent>
     {
-        public SpotStream(Events events) : base()
+        public SpotStream(EventsContainer events) : base()
         {
             events.SpotEvent += EventHandler;
         }

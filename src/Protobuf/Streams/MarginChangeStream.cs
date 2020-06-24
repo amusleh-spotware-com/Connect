@@ -2,7 +2,7 @@
 {
     public class MarginChangeStream : StreamBase<ProtoOAMarginChangedEvent>
     {
-        public MarginChangeStream(Events events) : base()
+        public MarginChangeStream(EventsContainer events) : base()
         {
             events.MarginChangedEvent += EventHandler;
         }

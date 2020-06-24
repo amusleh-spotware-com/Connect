@@ -2,7 +2,7 @@
 {
     public class ErrorStream : StreamBase<ProtoOAErrorRes>
     {
-        public ErrorStream(Events events) : base()
+        public ErrorStream(EventsContainer events) : base()
         {
             events.ErrorEvent += EventHandler;
         }

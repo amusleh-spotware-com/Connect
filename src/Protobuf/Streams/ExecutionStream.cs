@@ -2,7 +2,7 @@
 {
     public class ExecutionStream : StreamBase<ProtoOAExecutionEvent>
     {
-        public ExecutionStream(Events events) : base()
+        public ExecutionStream(EventsContainer events) : base()
         {
             events.ExecutionEvent += EventHandler;
         }

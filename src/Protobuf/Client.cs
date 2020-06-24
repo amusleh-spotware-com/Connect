@@ -1,10 +1,8 @@
 ﻿using Connect.Common.Enums;
 using Connect.Common.Helpers;
 using Connect.Protobuf.Helpers;
-using Connect.Protobuf.Streams;
 using Google.Protobuf;
 using System;
-using System.IO;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
@@ -16,7 +14,7 @@ namespace Connect.Protobuf
     {
         #region Fields
 
-        private readonly int _maxMessageSize = 1000000;
+        private readonly int _maxMessageSize;
 
         private TcpClient _client;
 
@@ -30,68 +28,16 @@ namespace Connect.Protobuf
 
         #endregion Fields
 
-        public Client()
+        public Client(int maxMessageSize = 1000000)
         {
-            Events = new Events();
+            _maxMessageSize = maxMessageSize;
 
-            SpotStream = new SpotStream(Events);
+            Events = new EventsContainer();
 
-            HeartbeatStream = new HeartbeatStream(Events);
-
-            ExecutionStream = new ExecutionStream(Events);
-
-            MessageStream = new MessageStream(Events);
-
-            DepthQuotesStream = new DepthQuotesStream(Events);
-
-            TrailingSLChangedStream = new TrailingSLChangedStream(Events);
-
-            TraderUpdateStream = new TraderUpdateStream(Events);
-
-            SymbolChangeStream = new SymbolChangeStream(Events);
-
-            OrderErrorStream = new OrderErrorStream(Events);
-
-            MarginChangeStream = new MarginChangeStream(Events);
-
-            TokenInvalidatedStream = new TokenInvalidatedStream(Events);
-
-            ClientDisconnectedStream = new ClientDisconnectedStream(Events);
-
-            ErrorStream = new ErrorStream(Events);
+            Streams = new StreamsContainer(Events);
         }
 
-        #region Streams
-
-        public SpotStream SpotStream { get; }
-
-        public HeartbeatStream HeartbeatStream { get; }
-
-        public ExecutionStream ExecutionStream { get; }
-
-        public MessageStream MessageStream { get; }
-
-        public DepthQuotesStream DepthQuotesStream { get; }
-
-        public TrailingSLChangedStream TrailingSLChangedStream { get; }
-
-        public TraderUpdateStream TraderUpdateStream { get; }
-
-        public SymbolChangeStream SymbolChangeStream { get; }
-
-        public OrderErrorStream OrderErrorStream { get; }
-
-        public MarginChangeStream MarginChangeStream { get; }
-
-        public TokenInvalidatedStream TokenInvalidatedStream { get; }
-
-        public ClientDisconnectedStream ClientDisconnectedStream { get; }
-
-        public ErrorStream ErrorStream { get; }
-
-        #endregion Streams
-
-        #region Other properties
+        #region Properties
 
         public bool IsConnected => _client?.Client != null && _client.Client.Connected;
 
@@ -99,11 +45,13 @@ namespace Connect.Protobuf
 
         public Mode Mode { get; private set; }
 
-        public Events Events { get; }
+        public EventsContainer Events { get; }
+
+        public StreamsContainer Streams { get; }
 
         public bool IsDisposed { get; private set; }
 
-        #endregion Other properties
+        #endregion Properties
 
         #region Connection
 
@@ -121,11 +69,12 @@ namespace Connect.Protobuf
 
             var url = BaseUrls.GetBaseUrl(mode);
 
-            await _client.ConnectAsync(url, BaseUrls.ProtobufPort);
+            await _client.ConnectAsync(url, BaseUrls.ProtobufPort).ConfigureAwait(false);
 
-            _stream = new SslStream(_client.GetStream(), false);
+            _stream = new SslStream(_client.GetStream(), false,
+                (sender, certificate, chain, sslPolicyErrors) => sslPolicyErrors == SslPolicyErrors.None);
 
-            await _stream.AuthenticateAsClientAsync(url);
+            await _stream.AuthenticateAsClientAsync(url).ConfigureAwait(false);
 
             StartSendingHeartbeats();
 
@@ -145,9 +94,9 @@ namespace Connect.Protobuf
         {
             CheckIsDisposed();
 
-            await StoptListening();
+            await StoptListening().ConfigureAwait(false);
 
-            await StoptSendingHeartbeats();
+            await StoptSendingHeartbeats().ConfigureAwait(false);
 
             _stream?.Dispose();
 
@@ -179,7 +128,7 @@ namespace Connect.Protobuf
                     {
                         if (DateTime.Now - _lastSentMessageTime >= TimeSpan.FromSeconds(10))
                         {
-                            await SendMessage(protoMessage);
+                            await SendMessage(protoMessage).ConfigureAwait(false);
                         }
 
                         (sender as System.Timers.Timer).Start();
@@ -195,7 +144,10 @@ namespace Connect.Protobuf
 
                     _sendingHeartbeatsStatus = ProcessStatus.Error;
 
-                    Events.OnHeartbeatSendingException(this, ex);
+                    if (!Events.OnHeartbeatSendingException(this, ex))
+                    {
+                        throw ex;
+                    }
                 }
             };
 
@@ -212,7 +164,7 @@ namespace Connect.Protobuf
 
             while (_sendingHeartbeatsStatus != ProcessStatus.Stopped)
             {
-                await Task.Delay(100);
+                await Task.Delay(100).ConfigureAwait(false);
             }
         }
 
@@ -226,16 +178,10 @@ namespace Connect.Protobuf
 
             _listeningStatus = ProcessStatus.WaitingToRun;
 
-#pragma warning disable 4014
             Task.Run(async () =>
             {
                 try
                 {
-                    if (!IsConnected)
-                    {
-                        throw new InvalidOperationException(ExceptionMessages.ClientNotConnected);
-                    }
-
                     _listeningStatus = ProcessStatus.Running;
 
                     while (!_stopListening)
@@ -246,7 +192,8 @@ namespace Connect.Protobuf
 
                         do
                         {
-                            readBytes += await _stream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes);
+                            readBytes += await _stream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes)
+                            .ConfigureAwait(false);
                         }
                         while (readBytes < lengthArray.Length);
 
@@ -269,7 +216,8 @@ namespace Connect.Protobuf
 
                         do
                         {
-                            readBytes += await _stream.ReadAsync(message, readBytes, message.Length - readBytes);
+                            readBytes += await _stream.ReadAsync(message, readBytes, message.Length - readBytes)
+                            .ConfigureAwait(false);
                         }
                         while (readBytes < length);
 
@@ -282,15 +230,12 @@ namespace Connect.Protobuf
                 {
                     _listeningStatus = ProcessStatus.Error;
 
-                    Events.OnListenerException(this, ex);
-
-                    if (!IsManagableException(ex))
+                    if (!Events.OnListenerException(this, ex))
                     {
                         throw;
                     }
                 }
             });
-#pragma warning restore 4014
         }
 
         public async Task StoptListening()
@@ -303,7 +248,7 @@ namespace Connect.Protobuf
 
             while (_listeningStatus != ProcessStatus.Stopped)
             {
-                await Task.Delay(100);
+                await Task.Delay(100).ConfigureAwait(false);
             }
         }
 
@@ -311,7 +256,7 @@ namespace Connect.Protobuf
 
         #region Send message
 
-        public Task SendMessage<T>(T message, ProtoPayloadType payloadType, string clientMsgId = null) where T:
+        public Task SendMessage<T>(T message, ProtoPayloadType payloadType, string clientMsgId = null) where T :
             IMessage<T>
         {
             var protoMessage = ProtoMessageGenerator.GetProtoMessage(payloadType, message.ToByteString(), clientMsgId);
@@ -339,15 +284,13 @@ namespace Connect.Protobuf
 
                 _lastSentMessageTime = DateTime.Now;
 
-                await _stream.WriteAsync(length, 0, length.Length);
+                await _stream.WriteAsync(length, 0, length.Length).ConfigureAwait(false);
 
-                await _stream.WriteAsync(messageByte, 0, messageByte.Length);
+                await _stream.WriteAsync(messageByte, 0, messageByte.Length).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
-                Events.OnSenderException(this, ex);
-
-                if (!IsManagableException(ex))
+                if (!Events.OnSenderException(this, ex))
                 {
                     throw;
                 }
@@ -653,14 +596,6 @@ namespace Connect.Protobuf
                 default:
                     break;
             }
-        }
-
-        private bool IsManagableException(Exception exception)
-        {
-            return exception is ArgumentNullException || exception is ArgumentOutOfRangeException ||
-                exception is InvalidOperationException || exception is ArgumentException ||
-                exception is NotSupportedException || exception is IOException || exception is ObjectDisposedException ||
-                exception.InnerException is Google.Protobuf.InvalidProtocolBufferException;
         }
 
         private void CheckIsDisposed()

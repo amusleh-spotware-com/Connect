@@ -2,7 +2,7 @@
 {
     public class SymbolChangeStream : StreamBase<ProtoOASymbolChangedEvent>
     {
-        public SymbolChangeStream(Events events) : base()
+        public SymbolChangeStream(EventsContainer events) : base()
         {
             events.SymbolChangedEvent += EventHandler;
         }

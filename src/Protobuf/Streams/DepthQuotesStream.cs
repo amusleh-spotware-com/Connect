@@ -2,7 +2,7 @@
 {
     public class DepthQuotesStream : StreamBase<ProtoOADepthEvent>
     {
-        public DepthQuotesStream(Events events) : base()
+        public DepthQuotesStream(EventsContainer events) : base()
         {
             events.DepthQuotesEvent += EventHandler;
         }
