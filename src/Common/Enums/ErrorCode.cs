@@ -6,54 +6,67 @@ namespace Connect.Common.Enums
     {
         None,
 
-        [Description("The access token provided is invalid")]
-        CH_ACCESS_TOKEN_INVALID,
-
-        [Description("Server internal error")]
+        [Description("Generic error")]
         UNKNOWN_ERROR,
 
-        [Description("Client invalid request (request validation failure)")]
+        [Description("Generic error, usually used when input value is not correct")]
         INVALID_REQUEST,
 
-        [Description("The request requires higher privileges than provided by the access token")]
-        CH_INSUFFICIENT_PERMISSIONS,
-
-        [Description("Invalid cursor")]
-        CH_CURSOR_INVALID,
-
-        [Description("cTID for the given access token or with the given userId or login(email or nickname) was not found")]
-        CH_CTID_NOT_FOUND,
-
-        [Description("Trading account with the given id was not found")]
-        CH_CTID_TRADER_ACCOUNT_NOT_FOUND,
-
-        [Description("Symbol with the given id was not found")]
-        CH_SYMBOL_NOT_FOUND,
-
-        [Description("Deposit currency with the given name is invalid")]
-        CH_DEPOSIT_CURRENCY_INVALID,
-
-        [Description("Linked trader account is not found on trading server. (e.g. it may be deleted by broker)")]
-        CH_TRADER_ACCOUNT_NOT_FOUND,
-
+        [Description("Message is not supported. Wrong message")]
         UNSUPPORTED_MESSAGE,
 
-        WRONG_PASSWORD,
-
+        [Description("Deal execution is reached timeout and rejected")]
         TIMEOUT_ERROR,
 
+        [Description("Generic error for requests by id")]
         ENTITY_NOT_FOUND,
 
+        [Description("Connection to Server is lost or not supported")]
         CANT_ROUTE_REQUEST,
 
+        [Description("Message is too large")]
         FRAME_TOO_LONG,
 
+        [Description("Market is closed")]
         MARKET_CLOSED,
 
+        [Description("Order is blocked (e.g. under execution) and change cannot be applied")]
         CONCURRENT_MODIFICATION,
 
-        TRADING_BAD_VOLUME,
+        [Description("Message is blocked by server")]
+        BLOCKED_PAYLOAD_TYPE,
 
-        ACCESS_DENIED
+        [Description("Access token is invalid")]
+        CH_ACCESS_TOKEN_INVALID,
+
+        [Description("Open API client is not activated or wrong client credentials")]
+        CH_CLIENT_AUTH_FAILURE,
+
+        [Description("When a command is sent for not authorized Open API client")]
+        CH_CLIENT_NOT_AUTHENTICATED,
+
+        [Description("Client is trying to authenticate twice")]
+        CH_CLIENT_ALREADY_AUTHENTICATED,
+
+        [Description("Trading service is not available")]
+        CH_SERVER_NOT_REACHABLE,
+
+        [Description("Trading account is not found")]
+        CH_CTID_TRADER_ACCOUNT_NOT_FOUND,
+
+        [Description("Could not find this client id")]
+        CH_OA_CLIENT_NOT_FOUND,
+
+        [Description("Request frequency is reached")]
+        REQUEST_FREQUENCY_EXCEEDED,
+
+        [Description("Server is under maintenance")]
+        SERVER_IS_UNDER_MAINTENANCE,
+
+        [Description("Operations are not allowed for this account")]
+        CHANNEL_IS_BLOCKED,
+
+        [Description("Limit of connections is reached for this Open API client")]
+        CONNECTIONS_LIMIT_EXCEEDED,
     }
 }
