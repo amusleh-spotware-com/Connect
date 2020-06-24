@@ -4,6 +4,17 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>ConnectProtobuf</AssemblyName>
     <RootNamespace>Connect.Protobuf</RootNamespace>
+    <PackageId>Connect.Protobuf</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>AlgoDeveloper</Authors>
+    <Product>Connect.Protobuf</Product>
+    <Company>AlgoDeveloper</Company>
+    <Description>This is the main package of interacting with Connect API, it allows you easily send and receive protobuf messages</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/afhacker/Connect/tree/master/src/Protobuf</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/afhacker/Connect</RepositoryUrl>
+    <PackageTags>cTrader</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Connect.Common" Version="1.0.0" />
     <PackageReference Include="Google.Protobuf" Version="3.12.3" />
     <PackageReference Include="System.Reactive" Version="4.4.1" />
   </ItemGroup>
