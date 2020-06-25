@@ -20,8 +20,10 @@ For sending messages you have to first construct the request messages by creatin
 
 Install <a href="https://www.nuget.org/packages/Connect.Oauth/">Connect.Oauth</a> and <a href="https://www.nuget.org/packages/Connect.Protobuf/">Connect.Protobuf</a> Nuget packages on your .NET app:
 
-```Install-Package Connect.Oauth``` </br>
-```Install-Package Connect.Protobuf```
+```
+Install-Package Connect.Oauth
+Install-Package Connect.Protobuf
+```
 
 ## Authentication (Connect.Oauth)
 
