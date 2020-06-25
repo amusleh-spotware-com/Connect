@@ -122,3 +122,7 @@ client.Events.ApplicationAuthResponseEvent += Events_ApplicationAuthResponseEven
 ```
 
 After you application got authenticated you can start sending request messages or subscriptions to market data, to receive the requests responses you can either use the "Client.Events" or "Client.Streams", for a complete working example please check the <a href="https://github.com/afhacker/Connect/tree/master/src/ConsoleTester">Console Tester</a> application.
+
+## Licence
+
+Connect is licenced under the [MIT licence](licence.md).
