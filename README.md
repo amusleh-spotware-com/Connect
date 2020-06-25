@@ -1,6 +1,6 @@
 # Connect
 
-This a .NET wrapper of Spotware Connect API library, it allows you yo easily interact with Spotware Connect API and perform all kind of trading operations on your cTrader trading accounts.
+This a .NET Standard library for interacting with Spotware Connect API, it allows you yo easily interact with Spotware Connect API and perform all kind of trading operations on your cTrader trading accounts.
 
 The library makes it very easy to get an access token, by generating the authentication URL and all necessary things, you just have to use the generated authentication URL and then after you authorized you have to provide back to the library the authentication code, and it will give you a token object which has both access token and refresh token.
 
@@ -122,6 +122,13 @@ client.Events.ApplicationAuthResponseEvent += Events_ApplicationAuthResponseEven
 ```
 
 After you application got authenticated you can start sending request messages or subscriptions to market data, to receive the requests responses you can either use the "Client.Events" or "Client.Streams", for a complete working example please check the <a href="https://github.com/afhacker/Connect/tree/master/src/ConsoleTester">Console Tester</a> application.
+
+## Dependencies
+
+* <a href="https://github.com/protocolbuffers/protobuf">protobuf</a>
+* <a href="https://github.com/JamesNK/Newtonsoft.Json">Newtonsoft.Json</a>
+* <a href="https://github.com/restsharp/RestSharp">RestSharp</a>
+* <a href="https://github.com/dotnet/reactive">Reactive</a>
 
 ## Licence
 
