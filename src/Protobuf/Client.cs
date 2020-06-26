@@ -115,8 +115,7 @@ namespace Connect.Protobuf
 
             System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000);
 
-            var protoMessage = ProtoMessageGenerator.GetProtoMessage(ProtoPayloadType.HeartbeatEvent,
-                new ProtoHeartbeatEvent().ToByteString());
+            var heartbeatEvent = new ProtoHeartbeatEvent();
 
             heartbeatTimer.Elapsed += async (object sender, System.Timers.ElapsedEventArgs e) =>
             {
@@ -128,7 +127,7 @@ namespace Connect.Protobuf
                     {
                         if (DateTime.Now - _lastSentMessageTime >= TimeSpan.FromSeconds(10))
                         {
-                            await SendMessage(protoMessage).ConfigureAwait(false);
+                            await SendMessage(heartbeatEvent, ProtoPayloadType.HeartbeatEvent).ConfigureAwait(false);
                         }
 
                         (sender as System.Timers.Timer).Start();
