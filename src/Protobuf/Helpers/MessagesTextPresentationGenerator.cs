@@ -85,12 +85,15 @@ namespace Connect.Protobuf.Helpers
 
                 case ProtoOAPayloadType.ProtoOaDealListRes:
                     var deal_list = ProtoOADealListRes.Parser.ParseFrom(msg.Payload);
+
                     var sbDeals = new StringBuilder();
                     foreach (var deal in deal_list.Deal)
                     {
                         sbDeals.Append("ID: " + deal.DealId + Environment.NewLine);
                         sbDeals.Append("Status: " + deal.DealStatus + Environment.NewLine);
                         sbDeals.Append("Volume: " + deal.Volume + Environment.NewLine);
+                        sbDeals.Append("Position Detail: " + GetClosePositionDetailsText(deal.ClosePositionDetail)
+                            + Environment.NewLine);
                     }
                     return "DealList{" + sbDeals.ToString() + "}";
 
@@ -172,48 +175,6 @@ namespace Connect.Protobuf.Helpers
             }
         }
 
-        private static string GetExecutionTypeText(ProtoOAExecutionType executionType)
-        {
-            switch (executionType)
-            {
-                case ProtoOAExecutionType.OrderAccepted:
-                    return "OrderAccepted";
-
-                case ProtoOAExecutionType.OrderReplaced:
-                    return "OrderAmended";
-
-                case ProtoOAExecutionType.OrderCancelRejected:
-                    return "OrderCancelRejected";
-
-                case ProtoOAExecutionType.OrderCancelled:
-                    return "OrderCancelled";
-
-                case ProtoOAExecutionType.OrderExpired:
-                    return "OrderExpired";
-
-                case ProtoOAExecutionType.OrderFilled:
-                    return "OrderFilled";
-
-                case ProtoOAExecutionType.OrderRejected:
-                    return "OrderRejected";
-
-                case ProtoOAExecutionType.Swap:
-                    return "Swap";
-
-                case ProtoOAExecutionType.OrderPartialFill:
-                    return "OrderPartialFill";
-
-                case ProtoOAExecutionType.DepositWithdraw:
-                    return "DepositWithdraw";
-
-                case ProtoOAExecutionType.BonusDepositWithdraw:
-                    return "DepositWithdraw";
-
-                default:
-                    return "unknown";
-            }
-        }
-
         private static string GetExecutionEventText(ProtoMessage msg)
         {
             if ((ProtoOAPayloadType)msg.PayloadType != ProtoOAPayloadType.ProtoOaExecutionEvent)
@@ -223,59 +184,17 @@ namespace Connect.Protobuf.Helpers
                 return "ERROR in OpenApiExecutionEvents: Corrupted execution event, no payload found";
 
             var _msg = ProtoOAExecutionEvent.Parser.ParseFrom(msg.Payload);
-            var _str = GetExecutionTypeText(_msg.ExecutionType) + "{" +
+            var _str = _msg.ExecutionType + "{" +
                 GetOrderText(_msg.Order) + ", " + GetPositionText(_msg.Position) +
                 (_msg.HasErrorCode ? ", errorCode:" + _msg.ErrorCode : "");
 
             return _str + "}";
         }
 
-        static public string GetOrderTypeText(ProtoOAOrderType orderType)
-        {
-            switch (orderType)
-            {
-                case ProtoOAOrderType.Limit:
-                    return "LIMIT";
-
-                case ProtoOAOrderType.Market:
-                    return "MARKET";
-
-                case ProtoOAOrderType.MarketRange:
-                    return "MARKET RANGE";
-
-                case ProtoOAOrderType.Stop:
-                    return "STOP";
-
-                case ProtoOAOrderType.StopLimit:
-                    return "StopLimit";
-
-                case ProtoOAOrderType.StopLossTakeProfit:
-                    return "StopLossTakeProfit";
-
-                default:
-                    return "unknown";
-            }
-        }
-
-        static public string GetTradeSideText(ProtoOATradeSide tradeSide)
-        {
-            switch (tradeSide)
-            {
-                case ProtoOATradeSide.Buy:
-                    return "BUY";
-
-                case ProtoOATradeSide.Sell:
-                    return "SELL";
-
-                default:
-                    return "unknown";
-            }
-        }
-
         static public string GetOrderText(ProtoOAOrder order)
         {
-            var _str = "Order{orderId:" + order.OrderId.ToString() + ", orderType:" + GetOrderTypeText(order.OrderType);
-            _str += ", tradeSide:" + GetTradeSideText(order.TradeData.TradeSide);
+            var _str = "Order{orderId:" + order.OrderId.ToString() + ", orderType:" + order.OrderType;
+            _str += ", tradeSide:" + order.TradeData.TradeSide;
             _str += ", symbolName:" + order.TradeData.SymbolId + ", requestedVolume:" + order.TradeData.Volume.ToString() + ", executedVolume:" + order.ExecutedVolume.ToString() + ", closingOrder:" +
                 (order.ClosingOrder ? "TRUE" : "FALSE") +
                 (order.HasExecutionPrice ? ", executionPrice:" + order.ExecutionPrice.ToString() : "") +
@@ -291,31 +210,10 @@ namespace Connect.Protobuf.Helpers
             return _str + "}";
         }
 
-        static public string GetPositionStatusText(ProtoOAPositionStatus positionStatus)
-        {
-            switch (positionStatus)
-            {
-                case ProtoOAPositionStatus.PositionStatusClosed:
-                    return "Closed";
-
-                case ProtoOAPositionStatus.PositionStatusOpen:
-                    return "Open";
-
-                case ProtoOAPositionStatus.PositionStatusCreated:
-                    return "Created";
-
-                case ProtoOAPositionStatus.PositionStatusError:
-                    return "Error";
-
-                default:
-                    return "unknown";
-            }
-        }
-
         static public string GetPositionText(ProtoOAPosition position)
         {
-            var _str = "Position{positionId:" + position.PositionId.ToString() + ", positionStatus:" + GetPositionStatusText(position.PositionStatus);
-            _str += ", tradeSide:" + GetTradeSideText(position.TradeData.TradeSide);
+            var _str = "Position{positionId:" + position.PositionId.ToString() + ", positionStatus:" + position.PositionStatus;
+            _str += ", tradeSide:" + position.TradeData.TradeSide;
             _str += ", symbolId:" + position.TradeData.SymbolId + ", volume:" + position.TradeData.Volume.ToString() + ", Price:" + position.Price.ToString() + ", swap:" + position.Swap.ToString() +
                 ", commission:" + position.Commission.ToString() + ", openTimestamp:" + position.TradeData.OpenTimestamp.ToString() +
                 (position.HasStopLoss ? ", stopLossPrice:" + position.StopLoss.ToString() : "") +
