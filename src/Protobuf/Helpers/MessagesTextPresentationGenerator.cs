@@ -34,7 +34,9 @@ namespace Connect.Protobuf.Helpers
 
         private static string GetApiMessageText(ProtoMessage msg)
         {
-            switch ((ProtoOAPayloadType)msg.PayloadType)
+            var payloadType = (ProtoOAPayloadType)msg.PayloadType;
+
+            switch (payloadType)
             {
                 case ProtoOAPayloadType.ProtoOaApplicationAuthReq:
                     var app_auth_req = ProtoOAApplicationAuthReq.Parser.ParseFrom(msg.Payload);
@@ -153,33 +155,6 @@ namespace Connect.Protobuf.Helpers
                     }
                     return "Tick Data{" + sbTickData.ToString() + "}";
 
-                case ProtoOAPayloadType.ProtoOaCancelOrderReq:
-                    return "CancelOrderRequest{}";
-
-                case ProtoOAPayloadType.ProtoOaNewOrderReq:
-                    return "CreateOrderRequest{}";
-
-                case ProtoOAPayloadType.ProtoOaClosePositionReq:
-                    return "ClosePositionRequest{}";
-
-                case ProtoOAPayloadType.ProtoOaAmendOrderReq:
-                    return "AmendOrderRequest{}";
-
-                case ProtoOAPayloadType.ProtoOaAmendPositionSltpReq:
-                    return "AmendPositionRequest{}";
-
-                case ProtoOAPayloadType.ProtoOaSubscribeSpotsReq:
-                    return "SubscribeForSpotsRequest{}";
-
-                case ProtoOAPayloadType.ProtoOaSubscribeSpotsRes:
-                    return "SubscribeForSpotsResponse{}";
-
-                case ProtoOAPayloadType.ProtoOaUnsubscribeSpotsReq:
-                    return "UnsubscribeFromSpotsRequest{}";
-
-                case ProtoOAPayloadType.ProtoOaUnsubscribeSpotsRes:
-                    return "UnsubscribeFromSpotsResponse{}";
-
                 case ProtoOAPayloadType.ProtoOaSpotEvent:
                     var _spot_event = ProtoOASpotEvent.Parser.ParseFrom(msg.Payload);
                     return "SpotEvent{symbolId:" + _spot_event.SymbolId + ", bidPrice:" + (_spot_event.HasBid ? _spot_event.Bid.ToString() : "       ") + ", askPrice:" + (_spot_event.HasAsk ? _spot_event.Ask.ToString() : "       ") + "}";
@@ -193,7 +168,7 @@ namespace Connect.Protobuf.Helpers
                     return "OrderErrorResponse{errorCode:" + _orderErr.ErrorCode + (_orderErr.HasDescription ? ", description:" + _orderErr.Description : "") + "}";
 
                 default:
-                    return "unknown";
+                    return payloadType.ToString();
             }
         }
 

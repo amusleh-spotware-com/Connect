@@ -4,6 +4,14 @@ namespace Connect.Protobuf
 {
     public class EventsContainer
     {
+        #region Fields
+
+        private readonly Client _client;
+
+        #endregion;
+
+        public EventsContainer(Client client) => _client = client;
+
         #region Events
 
         public event ApplicationAuthResponseEventHandler ApplicationAuthResponseEvent;
@@ -88,42 +96,42 @@ namespace Connect.Protobuf
 
         #region Invoking Methods
 
-        internal void OnExecution(object sender, ProtoOAExecutionEvent e)
+        internal void OnExecution(ProtoOAExecutionEvent e)
         {
-            ExecutionEvent?.Invoke(sender, e);
+            ExecutionEvent?.Invoke(_client, e);
         }
 
-        internal void OnSpot(object sender, ProtoOASpotEvent spotEvent)
+        internal void OnSpot(ProtoOASpotEvent spotEvent)
         {
-            SpotEvent?.Invoke(sender, spotEvent);
+            SpotEvent?.Invoke(_client, spotEvent);
         }
 
-        internal void OnDepthQuotes(object sender, ProtoOADepthEvent depthEvent)
+        internal void OnDepthQuotes(ProtoOADepthEvent depthEvent)
         {
-            DepthQuotesEvent?.Invoke(sender, depthEvent);
+            DepthQuotesEvent?.Invoke(_client, depthEvent);
         }
 
-        internal void OnError(object sender, ProtoOAErrorRes e)
+        internal void OnError(ProtoOAErrorRes e)
         {
-            ErrorEvent?.Invoke(sender, e);
+            ErrorEvent?.Invoke(_client, e);
         }
 
-        internal void OnApplicationAuthResponse(object sender, ProtoOAApplicationAuthRes e, string clientMsgId)
+        internal void OnApplicationAuthResponse(ProtoOAApplicationAuthRes e, string clientMsgId)
         {
-            ApplicationAuthResponseEvent?.Invoke(sender, e, clientMsgId);
+            ApplicationAuthResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnSubscribeDepthQuotesResponse(object sender, ProtoOASubscribeDepthQuotesRes e, string clientMsgId)
+        internal void OnSubscribeDepthQuotesResponse(ProtoOASubscribeDepthQuotesRes e, string clientMsgId)
         {
-            SubscribeDepthQuotesResponseEvent?.Invoke(sender, e, clientMsgId);
+            SubscribeDepthQuotesResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnUnsubscribeDepthQuotesResponse(object sender, ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId)
+        internal void OnUnsubscribeDepthQuotesResponse(ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId)
         {
-            UnsubscribeDepthQuotesResponseEvent?.Invoke(sender, e, clientMsgId);
+            UnsubscribeDepthQuotesResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal bool OnListenerException(object sender, Exception ex)
+        internal bool OnListenerException(Exception ex)
         {
             var handler = ListenerExceptionEvent;
 
@@ -133,13 +141,13 @@ namespace Connect.Protobuf
             }
             else
             {
-                handler.Invoke(sender, ex);
+                handler.Invoke(_client, ex);
 
                 return true;
             }
         }
 
-        internal bool OnSenderException(object sender, Exception ex)
+        internal bool OnSenderException(Exception ex)
         {
             var handler = SenderExceptionEvent;
 
@@ -149,13 +157,13 @@ namespace Connect.Protobuf
             }
             else
             {
-                handler.Invoke(sender, ex);
+                handler.Invoke(_client, ex);
 
                 return true;
             }
         }
 
-        internal bool OnHeartbeatSendingException(object sender, Exception ex)
+        internal bool OnHeartbeatSendingException(Exception ex)
         {
             var handler = HeartbeatSendingExceptionEvent;
 
@@ -165,155 +173,451 @@ namespace Connect.Protobuf
             }
             else
             {
-                handler.Invoke(sender, ex);
+                handler.Invoke(_client, ex);
 
                 return true;
             }
         }
 
-        internal void OnHeartbeat(object sender, ProtoHeartbeatEvent e)
+        internal void OnHeartbeat(ProtoHeartbeatEvent e)
         {
-            HeartbeatEvent?.Invoke(sender, e);
+            HeartbeatEvent?.Invoke(_client, e);
         }
 
-        internal void OnAccountAuthorizationResponse(object sender, ProtoOAAccountAuthRes e, string clientMsgId)
+        internal void OnAccountAuthorizationResponse(ProtoOAAccountAuthRes e, string clientMsgId)
         {
-            AccountAuthorizationResponseEvent?.Invoke(sender, e, clientMsgId);
+            AccountAuthorizationResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnClientDisconnected(object sender, ProtoOAClientDisconnectEvent e)
+        internal void OnClientDisconnected(ProtoOAClientDisconnectEvent e)
         {
-            ClientDisconnectedEvent?.Invoke(sender, e);
+            ClientDisconnectedEvent?.Invoke(_client, e);
         }
 
-        internal void OnDealListResponse(object sender, ProtoOADealListRes e, string clientMsgId)
+        internal void OnDealListResponse(ProtoOADealListRes e, string clientMsgId)
         {
-            DealListResponseEvent?.Invoke(sender, e, clientMsgId);
+            DealListResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnAssetListResponse(object sender, ProtoOAAssetListRes e, string clientMsgId)
+        internal void OnAssetListResponse(ProtoOAAssetListRes e, string clientMsgId)
         {
-            AssetListResponseEvent?.Invoke(sender, e, clientMsgId);
+            AssetListResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnAssetClassListResponse(object sender, ProtoOAAssetClassListRes e, string clientMsgId)
+        internal void OnAssetClassListResponse(ProtoOAAssetClassListRes e, string clientMsgId)
         {
-            AssetClassListResponseEvent?.Invoke(sender, e, clientMsgId);
+            AssetClassListResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnAccountsTokenInvalidated(object sender, ProtoOAAccountsTokenInvalidatedEvent e)
+        internal void OnAccountsTokenInvalidated(ProtoOAAccountsTokenInvalidatedEvent e)
         {
-            AccountsTokenInvalidatedEvent?.Invoke(sender, e);
+            AccountsTokenInvalidatedEvent?.Invoke(_client, e);
         }
 
-        internal void OnCashFlowHistoryListResponse(object sender, ProtoOACashFlowHistoryListRes e, string clientMsgId)
+        internal void OnCashFlowHistoryListResponse(ProtoOACashFlowHistoryListRes e, string clientMsgId)
         {
-            CashFlowHistoryListResponseEvent?.Invoke(sender, e, clientMsgId);
+            CashFlowHistoryListResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnExpectedMarginResponse(object sender, ProtoOAExpectedMarginRes e, string clientMsgId)
+        internal void OnExpectedMarginResponse(ProtoOAExpectedMarginRes e, string clientMsgId)
         {
-            ExpectedMarginResponseEvent?.Invoke(sender, e, clientMsgId);
+            ExpectedMarginResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnAccountListResponse(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId)
+        internal void OnAccountListResponse(ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId)
         {
-            AccountListResponseEvent?.Invoke(sender, e, clientMsgId);
+            AccountListResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnTickDataResponse(object sender, ProtoOAGetTickDataRes e, string clientMsgId)
+        internal void OnTickDataResponse(ProtoOAGetTickDataRes e, string clientMsgId)
         {
-            TickDataResponseEvent?.Invoke(sender, e, clientMsgId);
+            TickDataResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnTrendbarsResponse(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId)
+        internal void OnTrendbarsResponse(ProtoOAGetTrendbarsRes e, string clientMsgId)
         {
-            TrendbarsResponseEvent?.Invoke(sender, e, clientMsgId);
+            TrendbarsResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnMarginChanged(object sender, ProtoOAMarginChangedEvent e)
+        internal void OnMarginChanged(ProtoOAMarginChangedEvent e)
         {
-            MarginChangedEvent?.Invoke(sender, e);
+            MarginChangedEvent?.Invoke(_client, e);
         }
 
-        internal void OnOrderError(object sender, ProtoOAOrderErrorEvent e)
+        internal void OnOrderError(ProtoOAOrderErrorEvent e)
         {
-            OrderErrorEvent?.Invoke(sender, e);
+            OrderErrorEvent?.Invoke(_client, e);
         }
 
-        internal void OnReconcileResponse(object sender, ProtoOAReconcileRes e, string clientMsgId)
+        internal void OnReconcileResponse(ProtoOAReconcileRes e, string clientMsgId)
         {
-            ReconcileResponseEvent?.Invoke(sender, e, clientMsgId);
+            ReconcileResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnSubscribeSpotsResponse(object sender, ProtoOASubscribeSpotsRes e, string clientMsgId)
+        internal void OnSubscribeSpotsResponse(ProtoOASubscribeSpotsRes e, string clientMsgId)
         {
-            SubscribeSpotsResponseEvent?.Invoke(sender, e, clientMsgId);
+            SubscribeSpotsResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnSymbolsForConversionResponse(object sender, ProtoOASymbolsForConversionRes e, string clientMsgId)
+        internal void OnSymbolsForConversionResponse(ProtoOASymbolsForConversionRes e, string clientMsgId)
         {
-            SymbolsForConversionResponseEvent?.Invoke(sender, e, clientMsgId);
+            SymbolsForConversionResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnSymbolsListResponse(object sender, ProtoOASymbolsListRes e, string clientMsgId)
+        internal void OnSymbolsListResponse(ProtoOASymbolsListRes e, string clientMsgId)
         {
-            SymbolsListResponseEvent?.Invoke(sender, e, clientMsgId);
+            SymbolsListResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnSymbolByIdResponse(object sender, ProtoOASymbolByIdRes e, string clientMsgId)
+        internal void OnSymbolByIdResponse(ProtoOASymbolByIdRes e, string clientMsgId)
         {
-            SymbolByIdResponseEvent?.Invoke(sender, e, clientMsgId);
+            SymbolByIdResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnSymbolChanged(object sender, ProtoOASymbolChangedEvent e)
+        internal void OnSymbolChanged(ProtoOASymbolChangedEvent e)
         {
-            SymbolChangedEvent?.Invoke(sender, e);
+            SymbolChangedEvent?.Invoke(_client, e);
         }
 
-        internal void OnTraderResponse(object sender, ProtoOATraderRes e, string clientMsgId)
+        internal void OnTraderResponse(ProtoOATraderRes e, string clientMsgId)
         {
-            TraderResponseEvent?.Invoke(sender, e, clientMsgId);
+            TraderResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnTraderUpdated(object sender, ProtoOATraderUpdatedEvent e)
+        internal void OnTraderUpdated(ProtoOATraderUpdatedEvent e)
         {
-            TraderUpdatedEvent?.Invoke(sender, e);
+            TraderUpdatedEvent?.Invoke(_client, e);
         }
 
-        internal void OnTrailingSLChanged(object sender, ProtoOATrailingSLChangedEvent e)
+        internal void OnTrailingSLChanged(ProtoOATrailingSLChangedEvent e)
         {
-            TrailingSLChangedEvent?.Invoke(sender, e);
+            TrailingSLChangedEvent?.Invoke(_client, e);
         }
 
-        internal void OnUnsubscribeSpotsResponse(object sender, ProtoOAUnsubscribeSpotsRes e, string clientMsgId)
+        internal void OnUnsubscribeSpotsResponse(ProtoOAUnsubscribeSpotsRes e, string clientMsgId)
         {
-            UnsubscribeSpotsResponseEvent?.Invoke(sender, e, clientMsgId);
+            UnsubscribeSpotsResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnVersionResponse(object sender, ProtoOAVersionRes e, string clientMsgId)
+        internal void OnVersionResponse(ProtoOAVersionRes e, string clientMsgId)
         {
-            VersionResponseEvent?.Invoke(sender, e, clientMsgId);
+            VersionResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnCtidProfileResponse(object sender, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId)
+        internal void OnCtidProfileResponse(ProtoOAGetCtidProfileByTokenRes e, string clientMsgId)
         {
-            CtidProfileResponseEvent?.Invoke(sender, e, clientMsgId);
+            CtidProfileResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnSymbolCategoryListResponse(object sender, ProtoOASymbolCategoryListRes e, string clientMsgId)
+        internal void OnSymbolCategoryListResponse(ProtoOASymbolCategoryListRes e, string clientMsgId)
         {
-            SymbolCategoryListResponseEvent?.Invoke(sender, e, clientMsgId);
+            SymbolCategoryListResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnAccountLogoutResponse(object sender, ProtoOAAccountLogoutRes e, string clientMsgId)
+        internal void OnAccountLogoutResponse(ProtoOAAccountLogoutRes e, string clientMsgId)
         {
-            AccountLogoutResponseEvent?.Invoke(sender, e, clientMsgId);
+            AccountLogoutResponseEvent?.Invoke(_client, e, clientMsgId);
         }
 
-        internal void OnMessageReceived(object sender, ProtoMessage e)
+        internal void OnMessageReceived(ProtoMessage e)
         {
-            MessageReceivedEvent?.Invoke(sender, e);
+            MessageReceivedEvent?.Invoke(_client, e);
+        }
+
+        internal void InvokeMessageEvent(byte[] data)
+        {
+            var protoMessage = ProtoMessage.Parser.ParseFrom(data);
+
+            var payload = protoMessage.Payload;
+
+            OnMessageReceived(protoMessage);
+
+            switch (protoMessage.PayloadType)
+            {
+                case (int)ProtoOAPayloadType.ProtoOaErrorRes:
+                    {
+                        var protoErrorRes = ProtoOAErrorRes.Parser.ParseFrom(payload);
+
+                        OnError(protoErrorRes);
+
+                        break;
+                    }
+                case (int)ProtoPayloadType.HeartbeatEvent:
+                    {
+                        var protoHeartbeatEvent = ProtoHeartbeatEvent.Parser.ParseFrom(payload);
+
+                        OnHeartbeat(protoHeartbeatEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaAccountAuthRes:
+                    {
+                        var protoOAAccountAuthRes = ProtoOAAccountAuthRes.Parser.ParseFrom(payload);
+
+                        OnAccountAuthorizationResponse(protoOAAccountAuthRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaApplicationAuthRes:
+                    {
+                        var protoOAApplicationAuthRes = ProtoOAApplicationAuthRes.Parser.ParseFrom(payload);
+
+                        OnApplicationAuthResponse(protoOAApplicationAuthRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaClientDisconnectEvent:
+                    {
+                        var protoOAClientDisconnect = ProtoOAClientDisconnectEvent.Parser.ParseFrom(payload);
+
+                        OnClientDisconnected(protoOAClientDisconnect);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaDealListRes:
+                    {
+                        var protoOADealListRes = ProtoOADealListRes.Parser.ParseFrom(payload);
+
+                        OnDealListResponse(protoOADealListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaAssetListRes:
+                    {
+                        var protoOAAssetListRes = ProtoOAAssetListRes.Parser.ParseFrom(payload);
+
+                        OnAssetListResponse(protoOAAssetListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaAssetClassListRes:
+                    {
+                        var protoOAAssetClassListRes = ProtoOAAssetClassListRes.Parser.ParseFrom(payload);
+
+                        OnAssetClassListResponse(protoOAAssetClassListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaAccountsTokenInvalidatedEvent:
+                    {
+                        var protoOAAccountsTokenInvalidatedEvent = ProtoOAAccountsTokenInvalidatedEvent.Parser.ParseFrom(payload);
+
+                        OnAccountsTokenInvalidated(protoOAAccountsTokenInvalidatedEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaCashFlowHistoryListRes:
+                    {
+                        var protoOACashFlowHistoryListRes = ProtoOACashFlowHistoryListRes.Parser.ParseFrom(payload);
+
+                        OnCashFlowHistoryListResponse(protoOACashFlowHistoryListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaExecutionEvent:
+                    {
+                        var protoOAExecutionEvent = ProtoOAExecutionEvent.Parser.ParseFrom(payload);
+
+                        OnExecution(protoOAExecutionEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaExpectedMarginRes:
+                    {
+                        var protoOAExpectedMarginRes = ProtoOAExpectedMarginRes.Parser.ParseFrom(payload);
+
+                        OnExpectedMarginResponse(protoOAExpectedMarginRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenRes:
+                    {
+                        var protoOAGetAccountListByAccessTokenRes = ProtoOAGetAccountListByAccessTokenRes.Parser.ParseFrom(
+                            payload);
+
+                        OnAccountListResponse(protoOAGetAccountListByAccessTokenRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaGetTickdataRes:
+                    {
+                        var protoOAGetTickDataRes = ProtoOAGetTickDataRes.Parser.ParseFrom(payload);
+
+                        OnTickDataResponse(protoOAGetTickDataRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaGetTrendbarsRes:
+                    {
+                        var protoOAGetTrendbarsRes = ProtoOAGetTrendbarsRes.Parser.ParseFrom(payload);
+
+                        OnTrendbarsResponse(protoOAGetTrendbarsRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaMarginChangedEvent:
+                    {
+                        var protoOAMarginChangedEvent = ProtoOAMarginChangedEvent.Parser.ParseFrom(payload);
+
+                        OnMarginChanged(protoOAMarginChangedEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaOrderErrorEvent:
+                    {
+                        var protoOAOrderErrorEvent = ProtoOAOrderErrorEvent.Parser.ParseFrom(payload);
+
+                        OnOrderError(protoOAOrderErrorEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaReconcileRes:
+                    {
+                        var protoOAReconcileRes = ProtoOAReconcileRes.Parser.ParseFrom(payload);
+
+                        OnReconcileResponse(protoOAReconcileRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSpotEvent:
+                    {
+                        var protoOASpotEvent = ProtoOASpotEvent.Parser.ParseFrom(payload);
+
+                        OnSpot(protoOASpotEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSubscribeSpotsRes:
+                    {
+                        var protoOASubscribeSpotsRes = ProtoOASubscribeSpotsRes.Parser.ParseFrom(payload);
+
+                        OnSubscribeSpotsResponse(protoOASubscribeSpotsRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSymbolsForConversionRes:
+                    {
+                        var protoOASymbolsForConversionRes = ProtoOASymbolsForConversionRes.Parser.ParseFrom(payload);
+
+                        OnSymbolsForConversionResponse(protoOASymbolsForConversionRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSymbolsListRes:
+                    {
+                        var protoOASymbolsListRes = ProtoOASymbolsListRes.Parser.ParseFrom(payload);
+
+                        OnSymbolsListResponse(protoOASymbolsListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSymbolByIdRes:
+                    {
+                        var protoOASymbolByIdRes = ProtoOASymbolByIdRes.Parser.ParseFrom(payload);
+
+                        OnSymbolByIdResponse(protoOASymbolByIdRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSymbolChangedEvent:
+                    {
+                        var protoOASymbolChangedEvent = ProtoOASymbolChangedEvent.Parser.ParseFrom(payload);
+
+                        OnSymbolChanged(protoOASymbolChangedEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaTraderRes:
+                    {
+                        var protoOATraderRes = ProtoOATraderRes.Parser.ParseFrom(payload);
+
+                        OnTraderResponse(protoOATraderRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaTraderUpdateEvent:
+                    {
+                        var protoOATraderUpdatedEvent = ProtoOATraderUpdatedEvent.Parser.ParseFrom(payload);
+
+                        OnTraderUpdated(protoOATraderUpdatedEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaTrailingSlChangedEvent:
+                    {
+                        var protoOATrailingSLChangedEvent = ProtoOATrailingSLChangedEvent.Parser.ParseFrom(payload);
+
+                        OnTrailingSLChanged(protoOATrailingSLChangedEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaUnsubscribeSpotsRes:
+                    {
+                        var protoOAUnsubscribeSpotsRes = ProtoOAUnsubscribeSpotsRes.Parser.ParseFrom(payload);
+
+                        OnUnsubscribeSpotsResponse(protoOAUnsubscribeSpotsRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaVersionRes:
+                    {
+                        var protoOAVersionRes = ProtoOAVersionRes.Parser.ParseFrom(payload);
+
+                        OnVersionResponse(protoOAVersionRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenRes:
+                    {
+                        var ctidProfileRes = ProtoOAGetCtidProfileByTokenRes.Parser.ParseFrom(payload);
+
+                        OnCtidProfileResponse(ctidProfileRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSymbolCategoryRes:
+                    {
+                        var symbolCategoryListRes = ProtoOASymbolCategoryListRes.Parser.ParseFrom(payload);
+
+                        OnSymbolCategoryListResponse(symbolCategoryListRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaDepthEvent:
+                    {
+                        var depthEvent = ProtoOADepthEvent.Parser.ParseFrom(payload);
+
+                        OnDepthQuotes(depthEvent);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesRes:
+                    {
+                        var subscribeDepthQuotesRes = ProtoOASubscribeDepthQuotesRes.Parser.ParseFrom(payload);
+
+                        OnSubscribeDepthQuotesResponse(subscribeDepthQuotesRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesRes:
+                    {
+                        var unsubscribeDepthQuotesRes = ProtoOAUnsubscribeDepthQuotesRes.Parser.ParseFrom(payload);
+
+                        OnUnsubscribeDepthQuotesResponse(unsubscribeDepthQuotesRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaAccountLogoutRes:
+                    {
+                        var accountLogoutRes = ProtoOAAccountLogoutRes.Parser.ParseFrom(payload);
+
+                        OnAccountLogoutResponse(accountLogoutRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
 
         #endregion Invoking Methods

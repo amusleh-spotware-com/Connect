@@ -2,77 +2,77 @@
 
 namespace Connect.Protobuf
 {
-    public delegate void ExecutionEventHandler(object sender, ProtoOAExecutionEvent e);
+    public delegate void ExecutionEventHandler(Client client, ProtoOAExecutionEvent e);
 
-    public delegate void SpotEventHandler(object sender, ProtoOASpotEvent e);
+    public delegate void SpotEventHandler(Client client, ProtoOASpotEvent e);
 
-    public delegate void DepthQuotesEvnetHandler(object sender, ProtoOADepthEvent e);
+    public delegate void DepthQuotesEvnetHandler(Client client, ProtoOADepthEvent e);
 
-    public delegate void ErrorHandler(object sender, ProtoOAErrorRes e);
+    public delegate void ErrorHandler(Client client, ProtoOAErrorRes e);
 
-    public delegate void HeartbeatEventHandler(object sender, ProtoHeartbeatEvent e);
+    public delegate void HeartbeatEventHandler(Client client, ProtoHeartbeatEvent e);
 
-    public delegate void OrderErrorEventHandler(object sender, ProtoOAOrderErrorEvent e);
+    public delegate void OrderErrorEventHandler(Client client, ProtoOAOrderErrorEvent e);
 
-    public delegate void MarginChangedEventHandler(object sender, ProtoOAMarginChangedEvent e);
+    public delegate void MarginChangedEventHandler(Client client, ProtoOAMarginChangedEvent e);
 
-    public delegate void ClientDisconnectedEventHandler(object sender, ProtoOAClientDisconnectEvent e);
+    public delegate void ClientDisconnectedEventHandler(Client client, ProtoOAClientDisconnectEvent e);
 
-    public delegate void TraderUpdatedEventHandler(object sender, ProtoOATraderUpdatedEvent e);
+    public delegate void TraderUpdatedEventHandler(Client client, ProtoOATraderUpdatedEvent e);
 
-    public delegate void TrailingSLChangedEventHandler(object sender, ProtoOATrailingSLChangedEvent e);
+    public delegate void TrailingSLChangedEventHandler(Client client, ProtoOATrailingSLChangedEvent e);
 
-    public delegate void AccountsTokenInvalidatedEventHandler(object sender, ProtoOAAccountsTokenInvalidatedEvent e);
+    public delegate void AccountsTokenInvalidatedEventHandler(Client client, ProtoOAAccountsTokenInvalidatedEvent e);
 
-    public delegate void ApplicationAuthResponseEventHandler(object sender, ProtoOAApplicationAuthRes e, string clientMsgId);
+    public delegate void ApplicationAuthResponseEventHandler(Client client, ProtoOAApplicationAuthRes e, string clientMsgId);
 
-    public delegate void AccountAuthorizationResponseEventHandler(object sender, ProtoOAAccountAuthRes e, string clientMsgId);
+    public delegate void AccountAuthorizationResponseEventHandler(Client client, ProtoOAAccountAuthRes e, string clientMsgId);
 
-    public delegate void DealListResponseEventHandler(object sender, ProtoOADealListRes e, string clientMsgId);
+    public delegate void DealListResponseEventHandler(Client client, ProtoOADealListRes e, string clientMsgId);
 
-    public delegate void AssetListResponseEventHandler(object sender, ProtoOAAssetListRes e, string clientMsgId);
+    public delegate void AssetListResponseEventHandler(Client client, ProtoOAAssetListRes e, string clientMsgId);
 
-    public delegate void AssetClassListResponseEventHandler(object sender, ProtoOAAssetClassListRes e, string clientMsgId);
+    public delegate void AssetClassListResponseEventHandler(Client client, ProtoOAAssetClassListRes e, string clientMsgId);
 
-    public delegate void CashFlowHistoryListResponseEventHandler(object sender, ProtoOACashFlowHistoryListRes e, string clientMsgId);
+    public delegate void CashFlowHistoryListResponseEventHandler(Client client, ProtoOACashFlowHistoryListRes e, string clientMsgId);
 
-    public delegate void ExpectedMarginResponseEventHandler(object sender, ProtoOAExpectedMarginRes e, string clientMsgId);
+    public delegate void ExpectedMarginResponseEventHandler(Client client, ProtoOAExpectedMarginRes e, string clientMsgId);
 
-    public delegate void AccountListResponseEventHandler(object sender, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId);
+    public delegate void AccountListResponseEventHandler(Client client, ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId);
 
-    public delegate void TickDataResponseEventHandler(object sender, ProtoOAGetTickDataRes e, string clientMsgId);
+    public delegate void TickDataResponseEventHandler(Client client, ProtoOAGetTickDataRes e, string clientMsgId);
 
-    public delegate void TrendbarsResponseEventHandler(object sender, ProtoOAGetTrendbarsRes e, string clientMsgId);
+    public delegate void TrendbarsResponseEventHandler(Client client, ProtoOAGetTrendbarsRes e, string clientMsgId);
 
-    public delegate void ReconcileResponseEventHandler(object sender, ProtoOAReconcileRes e, string clientMsgId);
+    public delegate void ReconcileResponseEventHandler(Client client, ProtoOAReconcileRes e, string clientMsgId);
 
-    public delegate void SubscribeSpotsResponseEventHandler(object sender, ProtoOASubscribeSpotsRes e, string clientMsgId);
+    public delegate void SubscribeSpotsResponseEventHandler(Client client, ProtoOASubscribeSpotsRes e, string clientMsgId);
 
-    public delegate void SubscribeDepthQuotesResponseEventHandler(object sender, ProtoOASubscribeDepthQuotesRes e, string clientMsgId);
+    public delegate void SubscribeDepthQuotesResponseEventHandler(Client client, ProtoOASubscribeDepthQuotesRes e, string clientMsgId);
 
-    public delegate void SymbolsForConversionResponseEventHandler(object sender, ProtoOASymbolsForConversionRes e, string clientMsgId);
+    public delegate void SymbolsForConversionResponseEventHandler(Client client, ProtoOASymbolsForConversionRes e, string clientMsgId);
 
-    public delegate void SymbolsListResponseEventHandler(object sender, ProtoOASymbolsListRes e, string clientMsgId);
+    public delegate void SymbolsListResponseEventHandler(Client client, ProtoOASymbolsListRes e, string clientMsgId);
 
-    public delegate void SymbolByIdResponseEventHandler(object sender, ProtoOASymbolByIdRes e, string clientMsgId);
+    public delegate void SymbolByIdResponseEventHandler(Client client, ProtoOASymbolByIdRes e, string clientMsgId);
 
-    public delegate void SymbolChangedEventHandler(object sender, ProtoOASymbolChangedEvent e);
+    public delegate void SymbolChangedEventHandler(Client client, ProtoOASymbolChangedEvent e);
 
-    public delegate void TraderResponseEventHandler(object sender, ProtoOATraderRes e, string clientMsgId);
+    public delegate void TraderResponseEventHandler(Client client, ProtoOATraderRes e, string clientMsgId);
 
-    public delegate void UnsubscribeSpotsResponseEventHandler(object sender, ProtoOAUnsubscribeSpotsRes e, string clientMsgId);
+    public delegate void UnsubscribeSpotsResponseEventHandler(Client client, ProtoOAUnsubscribeSpotsRes e, string clientMsgId);
 
-    public delegate void UnsubscribeDepthQuotesResponseEventHandler(object sender, ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId);
+    public delegate void UnsubscribeDepthQuotesResponseEventHandler(Client client, ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId);
 
-    public delegate void VersionResponseEventHandler(object sender, ProtoOAVersionRes e, string clientMsgId);
+    public delegate void VersionResponseEventHandler(Client client, ProtoOAVersionRes e, string clientMsgId);
 
-    public delegate void CtidProfileResponseEventHandler(object sender, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId);
+    public delegate void CtidProfileResponseEventHandler(Client client, ProtoOAGetCtidProfileByTokenRes e, string clientMsgId);
 
-    public delegate void SymbolCategoryListResponseEventHandler(object sender, ProtoOASymbolCategoryListRes e, string clientMsgId);
+    public delegate void SymbolCategoryListResponseEventHandler(Client client, ProtoOASymbolCategoryListRes e, string clientMsgId);
 
-    public delegate void MessageReceivedEventHandler(object sender, ProtoMessage e);
+    public delegate void MessageReceivedEventHandler(Client client, ProtoMessage e);
 
-    public delegate void ExceptionEventHandler(object sender, Exception ex);
+    public delegate void ExceptionEventHandler(Client client, Exception ex);
 
-    public delegate void AccountLogoutResponseEventHandler(object sender, ProtoOAAccountLogoutRes e, string clientMsgId);
+    public delegate void AccountLogoutResponseEventHandler(Client client, ProtoOAAccountLogoutRes e, string clientMsgId);
 }
