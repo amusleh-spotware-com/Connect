@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Connect.Protobuf
@@ -14,27 +15,25 @@ namespace Connect.Protobuf
     {
         #region Fields
 
-        private readonly int _maxMessageSize;
+        private readonly CancellationTokenSource _cancellationTokenSource;
 
         private TcpClient _client;
 
         private SslStream _stream;
 
-        private bool _stopSendingHeartbeats, _stopListening;
-
-        private ProcessStatus _listeningStatus, _sendingHeartbeatsStatus;
-
-        private DateTime _lastSentMessageTime;
+        private bool _stopSendingHeartbeats;
 
         #endregion Fields
 
         public Client(int maxMessageSize = 1000000)
         {
-            _maxMessageSize = maxMessageSize;
+            MaxMessageSize = maxMessageSize;
 
             Events = new EventsContainer(this);
 
             Streams = new StreamsContainer(Events);
+
+            _cancellationTokenSource = new CancellationTokenSource();
         }
 
         #region Properties
@@ -50,6 +49,14 @@ namespace Connect.Protobuf
         public StreamsContainer Streams { get; }
 
         public bool IsDisposed { get; private set; }
+
+        public ProcessStatus ListeningStatus { get; private set; }
+
+        public ProcessStatus SendingHeartbeatsStatus { get; private set; }
+
+        public DateTimeOffset LastSentMessageTime { get; private set; }
+
+        public int MaxMessageSize { get; }
 
         #endregion Properties
 
@@ -94,7 +101,11 @@ namespace Connect.Protobuf
         {
             CheckIsDisposed();
 
-            await StoptListening().ConfigureAwait(false);
+            _cancellationTokenSource.Cancel(true);
+
+            ListeningStatus = ProcessStatus.WaitingToStop;
+
+            await WaitForListeningToStop().ConfigureAwait(false);
 
             await StoptSendingHeartbeats().ConfigureAwait(false);
 
@@ -111,7 +122,7 @@ namespace Connect.Protobuf
         {
             CheckIsDisposed();
 
-            _sendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
+            SendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
 
             System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000);
 
@@ -125,7 +136,7 @@ namespace Connect.Protobuf
 
                     if (!_stopSendingHeartbeats && IsConnected)
                     {
-                        if (DateTime.Now - _lastSentMessageTime >= TimeSpan.FromSeconds(10))
+                        if (DateTime.Now - LastSentMessageTime >= TimeSpan.FromSeconds(10))
                         {
                             await SendMessage(heartbeatEvent, ProtoPayloadType.HeartbeatEvent).ConfigureAwait(false);
                         }
@@ -134,14 +145,14 @@ namespace Connect.Protobuf
                     }
                     else
                     {
-                        _sendingHeartbeatsStatus = ProcessStatus.Stopped;
+                        SendingHeartbeatsStatus = ProcessStatus.Stopped;
                     }
                 }
                 catch (Exception ex)
                 {
                     (sender as System.Timers.Timer).Stop();
 
-                    _sendingHeartbeatsStatus = ProcessStatus.Error;
+                    SendingHeartbeatsStatus = ProcessStatus.Error;
 
                     if (!Events.OnHeartbeatSendingException(ex))
                     {
@@ -157,11 +168,11 @@ namespace Connect.Protobuf
         {
             CheckIsDisposed();
 
-            _sendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
+            SendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
 
             _stopSendingHeartbeats = true;
 
-            while (_sendingHeartbeatsStatus != ProcessStatus.Stopped)
+            while (SendingHeartbeatsStatus != ProcessStatus.Stopped)
             {
                 await Task.Delay(100).ConfigureAwait(false);
             }
@@ -171,19 +182,19 @@ namespace Connect.Protobuf
 
         #region Listener
 
-        public void StartListening()
+        private void StartListening()
         {
             CheckIsDisposed();
 
-            _listeningStatus = ProcessStatus.WaitingToRun;
+            ListeningStatus = ProcessStatus.WaitingToRun;
 
             Task.Run(async () =>
             {
                 try
                 {
-                    _listeningStatus = ProcessStatus.Running;
+                    ListeningStatus = ProcessStatus.Running;
 
-                    while (!_stopListening)
+                    while (true)
                     {
                         byte[] lengthArray = new byte[sizeof(int)];
 
@@ -191,8 +202,8 @@ namespace Connect.Protobuf
 
                         do
                         {
-                            readBytes += await _stream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes)
-                            .ConfigureAwait(false);
+                            readBytes += await _stream.ReadAsync(lengthArray, readBytes, lengthArray.Length - readBytes,
+                                _cancellationTokenSource.Token).ConfigureAwait(false);
                         }
                         while (readBytes < lengthArray.Length);
 
@@ -202,9 +213,9 @@ namespace Connect.Protobuf
                         {
                             continue;
                         }
-                        else if (length > _maxMessageSize)
+                        else if (length > MaxMessageSize)
                         {
-                            string exceptionMsg = $"Message length ({length}) is out of range (0 - {_maxMessageSize})";
+                            string exceptionMsg = $"Message length ({length}) is out of range (0 - {MaxMessageSize})";
 
                             throw new ArgumentOutOfRangeException(exceptionMsg);
                         }
@@ -215,19 +226,21 @@ namespace Connect.Protobuf
 
                         do
                         {
-                            readBytes += await _stream.ReadAsync(message, readBytes, message.Length - readBytes)
-                            .ConfigureAwait(false);
+                            readBytes += await _stream.ReadAsync(message, readBytes, message.Length - readBytes,
+                                _cancellationTokenSource.Token).ConfigureAwait(false);
                         }
                         while (readBytes < length);
 
                         Events.InvokeMessageEvent(message);
                     }
-
-                    _listeningStatus = ProcessStatus.Stopped;
+                }
+                catch (OperationCanceledException)
+                {
+                    ListeningStatus = ProcessStatus.Stopped;
                 }
                 catch (Exception ex)
                 {
-                    _listeningStatus = ProcessStatus.Error;
+                    ListeningStatus = ProcessStatus.Error;
 
                     if (!Events.OnListenerException(ex))
                     {
@@ -237,15 +250,11 @@ namespace Connect.Protobuf
             });
         }
 
-        public async Task StoptListening()
+        private async Task WaitForListeningToStop()
         {
             CheckIsDisposed();
 
-            _listeningStatus = ProcessStatus.WaitingToStop;
-
-            _stopListening = true;
-
-            while (_listeningStatus != ProcessStatus.Stopped)
+            while (ListeningStatus != ProcessStatus.Stopped)
             {
                 await Task.Delay(100).ConfigureAwait(false);
             }
@@ -281,11 +290,15 @@ namespace Connect.Protobuf
 
                 byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
 
-                _lastSentMessageTime = DateTime.Now;
+                LastSentMessageTime = DateTime.Now;
 
-                await _stream.WriteAsync(length, 0, length.Length).ConfigureAwait(false);
+                await _stream.WriteAsync(length, 0, length.Length, _cancellationTokenSource.Token).ConfigureAwait(false);
 
-                await _stream.WriteAsync(messageByte, 0, messageByte.Length).ConfigureAwait(false);
+                await _stream.WriteAsync(messageByte, 0, messageByte.Length, _cancellationTokenSource.Token)
+                    .ConfigureAwait(false);
+            }
+            catch (OperationCanceledException)
+            {
             }
             catch (Exception ex)
             {
