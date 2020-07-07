@@ -1,169 +1,251 @@
 ﻿using System;
 
-namespace Connect.Protobuf.Helpers
+namespace Connect.Protobuf.Streams
 {
-    public class StreamsContainer
+    public class ObservableStreams
     {
-        public StreamsContainer()
+        #region Fields
+
+        private readonly ObservableStream<ProtoOASpotEvent> _spotStream;
+
+        private readonly ObservableStream<ProtoHeartbeatEvent> _heartbeatStream;
+
+        private readonly ObservableStream<ProtoOAExecutionEvent> _executionStream;
+
+        private readonly ObservableStream<ProtoMessage> _messageStream;
+
+        private readonly ObservableStream<ProtoOADepthEvent> _depthQuotesStream;
+
+        private readonly ObservableStream<ProtoOATrailingSLChangedEvent> _trailingSLChangedStream;
+
+        private readonly ObservableStream<ProtoOATraderUpdatedEvent> _traderUpdateStream;
+
+        private readonly ObservableStream<ProtoOAOrderErrorEvent> _orderErrorStream;
+
+        private readonly ObservableStream<ProtoOAMarginChangedEvent> _marginChangeStream;
+
+        private readonly ObservableStream<ProtoOAAccountsTokenInvalidatedEvent> _tokenInvalidatedStream;
+
+        private readonly ObservableStream<ProtoOAClientDisconnectEvent> _clientDisconnectedStream;
+
+        private readonly ObservableStream<ProtoOAErrorRes> _errorStream;
+
+        private readonly ObservableStream<ProtoOASymbolChangedEvent> _symbolChangedStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAApplicationAuthRes>> _applicationAuthResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAAccountAuthRes>> _accountAuthorizationResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOADealListRes>> _dealListResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAAssetListRes>> _assetListResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAAssetClassListRes>> _assetClassListResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOACashFlowHistoryListRes>> _cashFlowHistoryListResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAExpectedMarginRes>> _expectedMarginResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAGetAccountListByAccessTokenRes>> _accountListResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAGetTickDataRes>> _tickDataResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAGetTrendbarsRes>> _trendbarsResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAReconcileRes>> _reconcileResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOASubscribeSpotsRes>> _subscribeSpotsResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOASubscribeDepthQuotesRes>> _subscribeDepthQuotesResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOASymbolsForConversionRes>> _symbolsForConversionResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOASymbolsListRes>> _symbolsListResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOASymbolByIdRes>> _symbolByIdResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOATraderRes>> _traderResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAUnsubscribeSpotsRes>> _unsubscribeSpotsResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAUnsubscribeDepthQuotesRes>> _unsubscribeDepthQuotesResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAVersionRes>> _versionResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAGetCtidProfileByTokenRes>> _ctidProfileResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOASymbolCategoryListRes>> _symbolCategoryListResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOAAccountLogoutRes>> _accountLogoutResponseStream;
+
+        private readonly ObservableStream<Exception> _listenerExceptionStream;
+
+        private readonly ObservableStream<Exception> _senderExceptionStream;
+
+        private readonly ObservableStream<Exception> _heartbeatSendingExceptionStream;
+
+        #endregion Fields
+
+        public ObservableStreams()
         {
-            SpotStream = new ObservableStream<ProtoOASpotEvent>();
+            _spotStream = new ObservableStream<ProtoOASpotEvent>();
 
-            HeartbeatStream = new ObservableStream<ProtoHeartbeatEvent>();
+            _heartbeatStream = new ObservableStream<ProtoHeartbeatEvent>();
 
-            ExecutionStream = new ObservableStream<ProtoOAExecutionEvent>();
+            _executionStream = new ObservableStream<ProtoOAExecutionEvent>();
 
-            MessageStream = new ObservableStream<ProtoMessage>();
+            _messageStream = new ObservableStream<ProtoMessage>();
 
-            DepthQuotesStream = new ObservableStream<ProtoOADepthEvent>();
+            _depthQuotesStream = new ObservableStream<ProtoOADepthEvent>();
 
-            TrailingSLChangedStream = new ObservableStream<ProtoOATrailingSLChangedEvent>();
+            _trailingSLChangedStream = new ObservableStream<ProtoOATrailingSLChangedEvent>();
 
-            TraderUpdateStream = new ObservableStream<ProtoOATraderUpdatedEvent>();
+            _traderUpdateStream = new ObservableStream<ProtoOATraderUpdatedEvent>();
 
-            OrderErrorStream = new ObservableStream<ProtoOAOrderErrorEvent>();
+            _orderErrorStream = new ObservableStream<ProtoOAOrderErrorEvent>();
 
-            MarginChangeStream = new ObservableStream<ProtoOAMarginChangedEvent>();
+            _marginChangeStream = new ObservableStream<ProtoOAMarginChangedEvent>();
 
-            TokenInvalidatedStream = new ObservableStream<ProtoOAAccountsTokenInvalidatedEvent>();
+            _tokenInvalidatedStream = new ObservableStream<ProtoOAAccountsTokenInvalidatedEvent>();
 
-            ClientDisconnectedStream = new ObservableStream<ProtoOAClientDisconnectEvent>();
+            _clientDisconnectedStream = new ObservableStream<ProtoOAClientDisconnectEvent>();
 
-            ErrorStream = new ObservableStream<ProtoOAErrorRes>();
+            _errorStream = new ObservableStream<ProtoOAErrorRes>();
 
-            SymbolChangedStream = new ObservableStream<ProtoOASymbolChangedEvent>();
+            _symbolChangedStream = new ObservableStream<ProtoOASymbolChangedEvent>();
 
-            ApplicationAuthResponseStream = new ObservableStream<StreamMessage<ProtoOAApplicationAuthRes>>();
+            _applicationAuthResponseStream = new ObservableStream<StreamMessage<ProtoOAApplicationAuthRes>>();
 
-            AccountAuthorizationResponseStream = new ObservableStream<StreamMessage<ProtoOAAccountAuthRes>>();
+            _accountAuthorizationResponseStream = new ObservableStream<StreamMessage<ProtoOAAccountAuthRes>>();
 
-            DealListResponseStream = new ObservableStream<StreamMessage<ProtoOADealListRes>>();
+            _dealListResponseStream = new ObservableStream<StreamMessage<ProtoOADealListRes>>();
 
-            AssetListResponseStream = new ObservableStream<StreamMessage<ProtoOAAssetListRes>>();
+            _assetListResponseStream = new ObservableStream<StreamMessage<ProtoOAAssetListRes>>();
 
-            AssetClassListResponseStream = new ObservableStream<StreamMessage<ProtoOAAssetClassListRes>>();
+            _assetClassListResponseStream = new ObservableStream<StreamMessage<ProtoOAAssetClassListRes>>();
 
-            CashFlowHistoryListResponseStream = new ObservableStream<StreamMessage<ProtoOACashFlowHistoryListRes>>();
+            _cashFlowHistoryListResponseStream = new ObservableStream<StreamMessage<ProtoOACashFlowHistoryListRes>>();
 
-            ExpectedMarginResponseStream = new ObservableStream<StreamMessage<ProtoOAExpectedMarginRes>>();
+            _expectedMarginResponseStream = new ObservableStream<StreamMessage<ProtoOAExpectedMarginRes>>();
 
-            AccountListResponseStream = new ObservableStream<StreamMessage<ProtoOAGetAccountListByAccessTokenRes>>();
+            _accountListResponseStream = new ObservableStream<StreamMessage<ProtoOAGetAccountListByAccessTokenRes>>();
 
-            TickDataResponseStream = new ObservableStream<StreamMessage<ProtoOAGetTickDataRes>>();
+            _tickDataResponseStream = new ObservableStream<StreamMessage<ProtoOAGetTickDataRes>>();
 
-            TrendbarsResponseStream = new ObservableStream<StreamMessage<ProtoOAGetTrendbarsRes>>();
+            _trendbarsResponseStream = new ObservableStream<StreamMessage<ProtoOAGetTrendbarsRes>>();
 
-            ReconcileResponseStream = new ObservableStream<StreamMessage<ProtoOAReconcileRes>>();
+            _reconcileResponseStream = new ObservableStream<StreamMessage<ProtoOAReconcileRes>>();
 
-            SubscribeSpotsResponseStream = new ObservableStream<StreamMessage<ProtoOASubscribeSpotsRes>>();
+            _subscribeSpotsResponseStream = new ObservableStream<StreamMessage<ProtoOASubscribeSpotsRes>>();
 
-            SubscribeDepthQuotesResponseStream = new ObservableStream<StreamMessage<ProtoOASubscribeDepthQuotesRes>>();
+            _subscribeDepthQuotesResponseStream = new ObservableStream<StreamMessage<ProtoOASubscribeDepthQuotesRes>>();
 
-            SymbolsForConversionResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolsForConversionRes>>();
+            _symbolsForConversionResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolsForConversionRes>>();
 
-            SymbolsListResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolsListRes>>();
+            _symbolsListResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolsListRes>>();
 
-            SymbolByIdResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolByIdRes>>();
+            _symbolByIdResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolByIdRes>>();
 
-            TraderResponseStream = new ObservableStream<StreamMessage<ProtoOATraderRes>>();
+            _traderResponseStream = new ObservableStream<StreamMessage<ProtoOATraderRes>>();
 
-            UnsubscribeSpotsResponseStream = new ObservableStream<StreamMessage<ProtoOAUnsubscribeSpotsRes>>();
+            _unsubscribeSpotsResponseStream = new ObservableStream<StreamMessage<ProtoOAUnsubscribeSpotsRes>>();
 
-            UnsubscribeDepthQuotesResponseStream = new ObservableStream<StreamMessage<ProtoOAUnsubscribeDepthQuotesRes>>();
+            _unsubscribeDepthQuotesResponseStream = new ObservableStream<StreamMessage<ProtoOAUnsubscribeDepthQuotesRes>>();
 
-            VersionResponseStream = new ObservableStream<StreamMessage<ProtoOAVersionRes>>();
+            _versionResponseStream = new ObservableStream<StreamMessage<ProtoOAVersionRes>>();
 
-            CtidProfileResponseStream = new ObservableStream<StreamMessage<ProtoOAGetCtidProfileByTokenRes>>();
+            _ctidProfileResponseStream = new ObservableStream<StreamMessage<ProtoOAGetCtidProfileByTokenRes>>();
 
-            SymbolCategoryListResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolCategoryListRes>>();
+            _symbolCategoryListResponseStream = new ObservableStream<StreamMessage<ProtoOASymbolCategoryListRes>>();
 
-            AccountLogoutResponseStream = new ObservableStream<StreamMessage<ProtoOAAccountLogoutRes>>();
+            _accountLogoutResponseStream = new ObservableStream<StreamMessage<ProtoOAAccountLogoutRes>>();
 
-            ListenerExceptionStream = new ObservableStream<Exception>();
+            _listenerExceptionStream = new ObservableStream<Exception>();
 
-            SenderExceptionStream = new ObservableStream<Exception>();
+            _senderExceptionStream = new ObservableStream<Exception>();
 
-            HeartbeatSendingExceptionStream = new ObservableStream<Exception>();
+            _heartbeatSendingExceptionStream = new ObservableStream<Exception>();
         }
 
         #region Streams
 
-        public ObservableStream<ProtoOASpotEvent> SpotStream { get; }
+        public IObservableStream<ProtoOASpotEvent> SpotStream => _spotStream;
 
-        public ObservableStream<ProtoHeartbeatEvent> HeartbeatStream { get; }
+        public IObservableStream<ProtoHeartbeatEvent> HeartbeatStream => _heartbeatStream;
 
-        public ObservableStream<ProtoOAExecutionEvent> ExecutionStream { get; }
+        public IObservableStream<ProtoOAExecutionEvent> ExecutionStream => _executionStream;
 
-        public ObservableStream<ProtoMessage> MessageStream { get; }
+        public IObservableStream<ProtoMessage> MessageStream => _messageStream;
 
-        public ObservableStream<ProtoOADepthEvent> DepthQuotesStream { get; }
+        public IObservableStream<ProtoOADepthEvent> DepthQuotesStream => _depthQuotesStream;
 
-        public ObservableStream<ProtoOATrailingSLChangedEvent> TrailingSLChangedStream { get; }
+        public IObservableStream<ProtoOATrailingSLChangedEvent> TrailingSLChangedStream => _trailingSLChangedStream;
 
-        public ObservableStream<ProtoOATraderUpdatedEvent> TraderUpdateStream { get; }
+        public IObservableStream<ProtoOATraderUpdatedEvent> TraderUpdateStream => _traderUpdateStream;
 
-        public ObservableStream<ProtoOAOrderErrorEvent> OrderErrorStream { get; }
+        public IObservableStream<ProtoOAOrderErrorEvent> OrderErrorStream => _orderErrorStream;
 
-        public ObservableStream<ProtoOAMarginChangedEvent> MarginChangeStream { get; }
+        public IObservableStream<ProtoOAMarginChangedEvent> MarginChangeStream => _marginChangeStream;
 
-        public ObservableStream<ProtoOAAccountsTokenInvalidatedEvent> TokenInvalidatedStream { get; }
+        public IObservableStream<ProtoOAAccountsTokenInvalidatedEvent> TokenInvalidatedStream => _tokenInvalidatedStream;
 
-        public ObservableStream<ProtoOAClientDisconnectEvent> ClientDisconnectedStream { get; }
+        public IObservableStream<ProtoOAClientDisconnectEvent> ClientDisconnectedStream => _clientDisconnectedStream;
 
-        public ObservableStream<ProtoOAErrorRes> ErrorStream { get; }
+        public IObservableStream<ProtoOAErrorRes> ErrorStream => _errorStream;
 
-        public ObservableStream<ProtoOASymbolChangedEvent> SymbolChangedStream { get; }
+        public IObservableStream<ProtoOASymbolChangedEvent> SymbolChangedStream => _symbolChangedStream;
 
-        public ObservableStream<StreamMessage<ProtoOAApplicationAuthRes>> ApplicationAuthResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAApplicationAuthRes>> ApplicationAuthResponseStream => _applicationAuthResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAAccountAuthRes>> AccountAuthorizationResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAAccountAuthRes>> AccountAuthorizationResponseStream => _accountAuthorizationResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOADealListRes>> DealListResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOADealListRes>> DealListResponseStream => _dealListResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAAssetListRes>> AssetListResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAAssetListRes>> AssetListResponseStream => _assetListResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAAssetClassListRes>> AssetClassListResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAAssetClassListRes>> AssetClassListResponseStream => _assetClassListResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOACashFlowHistoryListRes>> CashFlowHistoryListResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOACashFlowHistoryListRes>> CashFlowHistoryListResponseStream => _cashFlowHistoryListResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAExpectedMarginRes>> ExpectedMarginResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAExpectedMarginRes>> ExpectedMarginResponseStream => _expectedMarginResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAGetAccountListByAccessTokenRes>> AccountListResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAGetAccountListByAccessTokenRes>> AccountListResponseStream => _accountListResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAGetTickDataRes>> TickDataResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAGetTickDataRes>> TickDataResponseStream => _tickDataResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAGetTrendbarsRes>> TrendbarsResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAGetTrendbarsRes>> TrendbarsResponseStream => _trendbarsResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAReconcileRes>> ReconcileResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAReconcileRes>> ReconcileResponseStream => _reconcileResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOASubscribeSpotsRes>> SubscribeSpotsResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOASubscribeSpotsRes>> SubscribeSpotsResponseStream => _subscribeSpotsResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOASubscribeDepthQuotesRes>> SubscribeDepthQuotesResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOASubscribeDepthQuotesRes>> SubscribeDepthQuotesResponseStream => _subscribeDepthQuotesResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOASymbolsForConversionRes>> SymbolsForConversionResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOASymbolsForConversionRes>> SymbolsForConversionResponseStream => _symbolsForConversionResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOASymbolsListRes>> SymbolsListResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOASymbolsListRes>> SymbolsListResponseStream => _symbolsListResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOASymbolByIdRes>> SymbolByIdResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOASymbolByIdRes>> SymbolByIdResponseStream => _symbolByIdResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOATraderRes>> TraderResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOATraderRes>> TraderResponseStream => _traderResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAUnsubscribeSpotsRes>> UnsubscribeSpotsResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAUnsubscribeSpotsRes>> UnsubscribeSpotsResponseStream => _unsubscribeSpotsResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAUnsubscribeDepthQuotesRes>> UnsubscribeDepthQuotesResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAUnsubscribeDepthQuotesRes>> UnsubscribeDepthQuotesResponseStream => _unsubscribeDepthQuotesResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAVersionRes>> VersionResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAVersionRes>> VersionResponseStream => _versionResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAGetCtidProfileByTokenRes>> CtidProfileResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAGetCtidProfileByTokenRes>> CtidProfileResponseStream => _ctidProfileResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOASymbolCategoryListRes>> SymbolCategoryListResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOASymbolCategoryListRes>> SymbolCategoryListResponseStream => _symbolCategoryListResponseStream;
 
-        public ObservableStream<StreamMessage<ProtoOAAccountLogoutRes>> AccountLogoutResponseStream { get; }
+        public IObservableStream<StreamMessage<ProtoOAAccountLogoutRes>> AccountLogoutResponseStream => _accountLogoutResponseStream;
 
-        public ObservableStream<Exception> ListenerExceptionStream { get; }
+        public IObservableStream<Exception> ListenerExceptionStream => _listenerExceptionStream;
 
-        public ObservableStream<Exception> SenderExceptionStream { get; }
+        public IObservableStream<Exception> SenderExceptionStream => _senderExceptionStream;
 
-        public ObservableStream<Exception> HeartbeatSendingExceptionStream { get; }
+        public IObservableStream<Exception> HeartbeatSendingExceptionStream => _heartbeatSendingExceptionStream;
 
         #endregion Streams
 
@@ -173,162 +255,168 @@ namespace Connect.Protobuf.Helpers
         {
             var streamMessage = new StreamMessage<ProtoOAApplicationAuthRes>(e, clientMsgId);
 
-            ApplicationAuthResponseStream.OnNext(streamMessage);
+            _applicationAuthResponseStream.OnNext(streamMessage);
         }
 
         internal void OnSubscribeDepthQuotesResponse(ProtoOASubscribeDepthQuotesRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOASubscribeDepthQuotesRes>(e, clientMsgId);
 
-            SubscribeDepthQuotesResponseStream.OnNext(streamMessage);
+            _subscribeDepthQuotesResponseStream.OnNext(streamMessage);
         }
 
         internal void OnUnsubscribeDepthQuotesResponse(ProtoOAUnsubscribeDepthQuotesRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAUnsubscribeDepthQuotesRes>(e, clientMsgId);
 
-            UnsubscribeDepthQuotesResponseStream.OnNext(streamMessage);
+            _unsubscribeDepthQuotesResponseStream.OnNext(streamMessage);
         }
 
         internal void OnAccountAuthorizationResponse(ProtoOAAccountAuthRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAAccountAuthRes>(e, clientMsgId);
 
-            AccountAuthorizationResponseStream.OnNext(streamMessage);
+            _accountAuthorizationResponseStream.OnNext(streamMessage);
         }
 
         internal void OnDealListResponse(ProtoOADealListRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOADealListRes>(e, clientMsgId);
 
-            DealListResponseStream.OnNext(streamMessage);
+            _dealListResponseStream.OnNext(streamMessage);
         }
 
         internal void OnAssetListResponse(ProtoOAAssetListRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAAssetListRes>(e, clientMsgId);
 
-            AssetListResponseStream.OnNext(streamMessage);
+            _assetListResponseStream.OnNext(streamMessage);
         }
 
         internal void OnAssetClassListResponse(ProtoOAAssetClassListRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAAssetClassListRes>(e, clientMsgId);
 
-            AssetClassListResponseStream.OnNext(streamMessage);
+            _assetClassListResponseStream.OnNext(streamMessage);
         }
 
         internal void OnCashFlowHistoryListResponse(ProtoOACashFlowHistoryListRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOACashFlowHistoryListRes>(e, clientMsgId);
 
-            CashFlowHistoryListResponseStream.OnNext(streamMessage);
+            _cashFlowHistoryListResponseStream.OnNext(streamMessage);
         }
 
         internal void OnExpectedMarginResponse(ProtoOAExpectedMarginRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAExpectedMarginRes>(e, clientMsgId);
 
-            ExpectedMarginResponseStream.OnNext(streamMessage);
+            _expectedMarginResponseStream.OnNext(streamMessage);
         }
 
         internal void OnAccountListResponse(ProtoOAGetAccountListByAccessTokenRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAGetAccountListByAccessTokenRes>(e, clientMsgId);
 
-            AccountListResponseStream.OnNext(streamMessage);
+            _accountListResponseStream.OnNext(streamMessage);
         }
 
         internal void OnTickDataResponse(ProtoOAGetTickDataRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAGetTickDataRes>(e, clientMsgId);
 
-            TickDataResponseStream.OnNext(streamMessage);
+            _tickDataResponseStream.OnNext(streamMessage);
         }
 
         internal void OnTrendbarsResponse(ProtoOAGetTrendbarsRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAGetTrendbarsRes>(e, clientMsgId);
 
-            TrendbarsResponseStream.OnNext(streamMessage);
+            _trendbarsResponseStream.OnNext(streamMessage);
         }
 
         internal void OnReconcileResponse(ProtoOAReconcileRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAReconcileRes>(e, clientMsgId);
 
-            ReconcileResponseStream.OnNext(streamMessage);
+            _reconcileResponseStream.OnNext(streamMessage);
         }
 
         internal void OnSubscribeSpotsResponse(ProtoOASubscribeSpotsRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOASubscribeSpotsRes>(e, clientMsgId);
 
-            SubscribeSpotsResponseStream.OnNext(streamMessage);
+            _subscribeSpotsResponseStream.OnNext(streamMessage);
         }
 
         internal void OnSymbolsForConversionResponse(ProtoOASymbolsForConversionRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOASymbolsForConversionRes>(e, clientMsgId);
 
-            SymbolsForConversionResponseStream.OnNext(streamMessage);
+            _symbolsForConversionResponseStream.OnNext(streamMessage);
         }
 
         internal void OnSymbolsListResponse(ProtoOASymbolsListRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOASymbolsListRes>(e, clientMsgId);
 
-            SymbolsListResponseStream.OnNext(streamMessage);
+            _symbolsListResponseStream.OnNext(streamMessage);
         }
 
         internal void OnSymbolByIdResponse(ProtoOASymbolByIdRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOASymbolByIdRes>(e, clientMsgId);
 
-            SymbolByIdResponseStream.OnNext(streamMessage);
+            _symbolByIdResponseStream.OnNext(streamMessage);
         }
 
         internal void OnTraderResponse(ProtoOATraderRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOATraderRes>(e, clientMsgId);
 
-            TraderResponseStream.OnNext(streamMessage);
+            _traderResponseStream.OnNext(streamMessage);
         }
 
         internal void OnUnsubscribeSpotsResponse(ProtoOAUnsubscribeSpotsRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAUnsubscribeSpotsRes>(e, clientMsgId);
 
-            UnsubscribeSpotsResponseStream.OnNext(streamMessage);
+            _unsubscribeSpotsResponseStream.OnNext(streamMessage);
         }
 
         internal void OnVersionResponse(ProtoOAVersionRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAVersionRes>(e, clientMsgId);
 
-            VersionResponseStream.OnNext(streamMessage);
+            _versionResponseStream.OnNext(streamMessage);
         }
 
         internal void OnCtidProfileResponse(ProtoOAGetCtidProfileByTokenRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAGetCtidProfileByTokenRes>(e, clientMsgId);
 
-            CtidProfileResponseStream.OnNext(streamMessage);
+            _ctidProfileResponseStream.OnNext(streamMessage);
         }
 
         internal void OnSymbolCategoryListResponse(ProtoOASymbolCategoryListRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOASymbolCategoryListRes>(e, clientMsgId);
 
-            SymbolCategoryListResponseStream.OnNext(streamMessage);
+            _symbolCategoryListResponseStream.OnNext(streamMessage);
         }
 
         internal void OnAccountLogoutResponse(ProtoOAAccountLogoutRes e, string clientMsgId)
         {
             var streamMessage = new StreamMessage<ProtoOAAccountLogoutRes>(e, clientMsgId);
 
-            AccountLogoutResponseStream.OnNext(streamMessage);
+            _accountLogoutResponseStream.OnNext(streamMessage);
         }
+
+        internal void OnListenerException(Exception exception) => _listenerExceptionStream.OnNext(exception);
+
+        internal void OnSenderException(Exception exception) => _senderExceptionStream.OnNext(exception);
+
+        internal void OnHeartbeatSendingException(Exception exception) => _heartbeatSendingExceptionStream.OnNext(exception);
 
         internal void InvokeMessageStream(byte[] data)
         {
@@ -336,7 +424,7 @@ namespace Connect.Protobuf.Helpers
 
             var payload = protoMessage.Payload;
 
-            MessageStream.OnNext(protoMessage);
+            _messageStream.OnNext(protoMessage);
 
             switch (protoMessage.PayloadType)
             {
@@ -344,7 +432,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoErrorRes = ProtoOAErrorRes.Parser.ParseFrom(payload);
 
-                        ErrorStream.OnNext(protoErrorRes);
+                        _errorStream.OnNext(protoErrorRes);
 
                         break;
                     }
@@ -352,7 +440,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoHeartbeatEvent = ProtoHeartbeatEvent.Parser.ParseFrom(payload);
 
-                        HeartbeatStream.OnNext(protoHeartbeatEvent);
+                        _heartbeatStream.OnNext(protoHeartbeatEvent);
 
                         break;
                     }
@@ -376,7 +464,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOAClientDisconnect = ProtoOAClientDisconnectEvent.Parser.ParseFrom(payload);
 
-                        ClientDisconnectedStream.OnNext(protoOAClientDisconnect);
+                        _clientDisconnectedStream.OnNext(protoOAClientDisconnect);
 
                         break;
                     }
@@ -408,7 +496,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOAAccountsTokenInvalidatedEvent = ProtoOAAccountsTokenInvalidatedEvent.Parser.ParseFrom(payload);
 
-                        TokenInvalidatedStream.OnNext(protoOAAccountsTokenInvalidatedEvent);
+                        _tokenInvalidatedStream.OnNext(protoOAAccountsTokenInvalidatedEvent);
 
                         break;
                     }
@@ -424,7 +512,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOAExecutionEvent = ProtoOAExecutionEvent.Parser.ParseFrom(payload);
 
-                        ExecutionStream.OnNext(protoOAExecutionEvent);
+                        _executionStream.OnNext(protoOAExecutionEvent);
 
                         break;
                     }
@@ -465,7 +553,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOAMarginChangedEvent = ProtoOAMarginChangedEvent.Parser.ParseFrom(payload);
 
-                        MarginChangeStream.OnNext(protoOAMarginChangedEvent);
+                        _marginChangeStream.OnNext(protoOAMarginChangedEvent);
 
                         break;
                     }
@@ -473,7 +561,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOAOrderErrorEvent = ProtoOAOrderErrorEvent.Parser.ParseFrom(payload);
 
-                        OrderErrorStream.OnNext(protoOAOrderErrorEvent);
+                        _orderErrorStream.OnNext(protoOAOrderErrorEvent);
 
                         break;
                     }
@@ -489,7 +577,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOASpotEvent = ProtoOASpotEvent.Parser.ParseFrom(payload);
 
-                        SpotStream.OnNext(protoOASpotEvent);
+                        _spotStream.OnNext(protoOASpotEvent);
 
                         break;
                     }
@@ -529,7 +617,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOASymbolChangedEvent = ProtoOASymbolChangedEvent.Parser.ParseFrom(payload);
 
-                        SymbolChangedStream.OnNext(protoOASymbolChangedEvent);
+                        _symbolChangedStream.OnNext(protoOASymbolChangedEvent);
 
                         break;
                     }
@@ -545,7 +633,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOATraderUpdatedEvent = ProtoOATraderUpdatedEvent.Parser.ParseFrom(payload);
 
-                        TraderUpdateStream.OnNext(protoOATraderUpdatedEvent);
+                        _traderUpdateStream.OnNext(protoOATraderUpdatedEvent);
 
                         break;
                     }
@@ -553,7 +641,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var protoOATrailingSLChangedEvent = ProtoOATrailingSLChangedEvent.Parser.ParseFrom(payload);
 
-                        TrailingSLChangedStream.OnNext(protoOATrailingSLChangedEvent);
+                        _trailingSLChangedStream.OnNext(protoOATrailingSLChangedEvent);
 
                         break;
                     }
@@ -593,7 +681,7 @@ namespace Connect.Protobuf.Helpers
                     {
                         var depthEvent = ProtoOADepthEvent.Parser.ParseFrom(payload);
 
-                        DepthQuotesStream.OnNext(depthEvent);
+                        _depthQuotesStream.OnNext(depthEvent);
 
                         break;
                     }

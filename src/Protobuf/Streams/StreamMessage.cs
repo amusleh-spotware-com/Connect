@@ -1,6 +1,6 @@
 ﻿using Google.Protobuf;
 
-namespace Connect.Protobuf.Helpers
+namespace Connect.Protobuf.Streams
 {
     public class StreamMessage<T> where T : IMessage<T>
     {

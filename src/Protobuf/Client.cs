@@ -1,6 +1,7 @@
 ﻿using Connect.Common.Enums;
 using Connect.Common.Helpers;
 using Connect.Protobuf.Helpers;
+using Connect.Protobuf.Streams;
 using Google.Protobuf;
 using System;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace Connect.Protobuf
 
         public Mode Mode { get; private set; }
 
-        public StreamsContainer Streams { get; } = new StreamsContainer();
+        public ObservableStreams Streams { get; } = new ObservableStreams();
 
         public ProcessStatus ListeningStatus { get; private set; }
 
@@ -147,7 +148,7 @@ namespace Connect.Protobuf
                 {
                     SendingHeartbeatsStatus = ProcessStatus.Error;
 
-                    Streams.HeartbeatSendingExceptionStream.OnNext(ex);
+                    Streams.OnHeartbeatSendingException(ex);
 
                     if (!Streams.HeartbeatSendingExceptionStream.Observers.Any())
                     {
@@ -239,7 +240,7 @@ namespace Connect.Protobuf
                 {
                     ListeningStatus = ProcessStatus.Error;
 
-                    Streams.ListenerExceptionStream.OnNext(ex);
+                    Streams.OnListenerException(ex);
 
                     if (!Streams.ListenerExceptionStream.Observers.Any())
                     {
@@ -305,7 +306,7 @@ namespace Connect.Protobuf
             }
             catch (Exception ex)
             {
-                Streams.SenderExceptionStream.OnNext(ex);
+                Streams.OnSenderException(ex);
 
                 if (!Streams.SenderExceptionStream.Observers.Any())
                 {

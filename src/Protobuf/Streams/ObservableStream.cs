@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 
-namespace Connect.Protobuf.Helpers
+namespace Connect.Protobuf.Streams
 {
-    public class ObservableStream<T> : IObservable<T>
+    internal class ObservableStream<T> : IObservableStream<T>
     {
         #region Fields
 
@@ -15,20 +15,18 @@ namespace Connect.Protobuf.Helpers
 
         #endregion Fields
 
-        public ObservableStream()
+        internal ObservableStream()
         {
             _stream = Observable.Create<T>(OnSubscribe);
         }
 
-        public IEnumerable<IObserver<T>> Observers => _observers;
+        public IEnumerable<IObserver<T>> Observers => _observers.ToArray();
 
         #region OnNext, OnError, OnCompleted
 
         internal void OnNext(T value)
         {
-            var observersCopy = _observers.ToArray();
-
-            foreach (var observer in observersCopy)
+            foreach (var observer in Observers)
             {
                 if (_observers.Contains(observer))
                 {
@@ -39,9 +37,7 @@ namespace Connect.Protobuf.Helpers
 
         internal void OnError(Exception exception)
         {
-            var observersCopy = _observers.ToArray();
-
-            foreach (var observer in observersCopy)
+            foreach (var observer in Observers)
             {
                 if (_observers.Contains(observer))
                 {
@@ -52,9 +48,7 @@ namespace Connect.Protobuf.Helpers
 
         internal void OnCompleted()
         {
-            var observersCopy = _observers.ToArray();
-
-            foreach (var observer in observersCopy)
+            foreach (var observer in Observers)
             {
                 if (_observers.Contains(observer))
                 {
