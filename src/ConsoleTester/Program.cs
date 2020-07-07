@@ -72,8 +72,9 @@ namespace ConsoleTester
             _streamDisposables.Add(_client.Streams.MessageStream.Subscribe(OnMessageReceived));
             _streamDisposables.Add(_client.Streams.ErrorStream.Subscribe(OnError));
 
-            _client.Events.ListenerExceptionEvent += Events_ListenerExceptionEvent;
-            _client.Events.SenderExceptionEvent += Events_SenderExceptionEvent;
+            _streamDisposables.Add(_client.Streams.ListenerExceptionStream.Subscribe(OnListenerException));
+
+            _streamDisposables.Add(_client.Streams.SenderExceptionStream.Subscribe(OnSenderException));
 
             Console.WriteLine("Connecting Client...");
 
@@ -122,7 +123,7 @@ namespace ConsoleTester
             ShowDashLine();
         }
 
-        private static void Events_ListenerExceptionEvent(object sender, Exception ex)
+        private static void OnListenerException(Exception ex)
         {
             Console.WriteLine($"ListenerExceptionEvent");
             Console.WriteLine($"Exception\n: {ex}");
@@ -130,7 +131,7 @@ namespace ConsoleTester
             ShowDashLine();
         }
 
-        private static void Events_SenderExceptionEvent(object sender, Exception ex)
+        private static void OnSenderException(Exception ex)
         {
             Console.WriteLine($"SenderExceptionEvent");
             Console.WriteLine($"Exception\n: {ex}");

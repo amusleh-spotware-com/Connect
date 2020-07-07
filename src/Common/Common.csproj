@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/afhacker/Connect</RepositoryUrl>
     <PackageTags>cTrader</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

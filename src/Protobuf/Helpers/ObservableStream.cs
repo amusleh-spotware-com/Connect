@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 
-namespace Connect.Protobuf.Streams
+namespace Connect.Protobuf.Helpers
 {
-    public abstract class StreamBase<T> : IObservable<T>
+    public class ObservableStream<T> : IObservable<T>
     {
         #region Fields
 
@@ -15,19 +15,16 @@ namespace Connect.Protobuf.Streams
 
         #endregion Fields
 
-        public StreamBase()
+        public ObservableStream()
         {
             _stream = Observable.Create<T>(OnSubscribe);
         }
 
-        #region Methods
+        public IEnumerable<IObserver<T>> Observers => _observers;
 
-        public IDisposable Subscribe(IObserver<T> observer)
-        {
-            return _stream.Subscribe(observer);
-        }
+        #region OnNext, OnError, OnCompleted
 
-        protected void OnNext(T value)
+        internal void OnNext(T value)
         {
             var observersCopy = _observers.ToArray();
 
@@ -40,7 +37,7 @@ namespace Connect.Protobuf.Streams
             }
         }
 
-        protected void OnError(Exception exception)
+        internal void OnError(Exception exception)
         {
             var observersCopy = _observers.ToArray();
 
@@ -52,6 +49,25 @@ namespace Connect.Protobuf.Streams
                 }
             }
         }
+
+        internal void OnCompleted()
+        {
+            var observersCopy = _observers.ToArray();
+
+            foreach (var observer in observersCopy)
+            {
+                if (_observers.Contains(observer))
+                {
+                    observer.OnCompleted();
+                }
+            }
+        }
+
+        #endregion OnNext, OnError, OnCompleted
+
+        #region Other methods
+
+        public IDisposable Subscribe(IObserver<T> observer) => _stream.Subscribe(observer);
 
         private IDisposable OnSubscribe(IObserver<T> observer)
         {
@@ -71,6 +87,6 @@ namespace Connect.Protobuf.Streams
             }
         }
 
-        #endregion Methods
+        #endregion Other methods
     }
 }

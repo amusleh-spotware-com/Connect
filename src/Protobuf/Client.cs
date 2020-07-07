@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
+using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,10 +28,6 @@ namespace Connect.Protobuf
         {
             MaxMessageSize = maxMessageSize;
 
-            Events = new EventsContainer(this);
-
-            Streams = new StreamsContainer(Events);
-
             _cancellationTokenSource = new CancellationTokenSource();
         }
 
@@ -44,9 +41,7 @@ namespace Connect.Protobuf
 
         public Mode Mode { get; private set; }
 
-        public EventsContainer Events { get; }
-
-        public StreamsContainer Streams { get; }
+        public StreamsContainer Streams { get; } = new StreamsContainer();
 
         public ProcessStatus ListeningStatus { get; private set; }
 
@@ -152,7 +147,9 @@ namespace Connect.Protobuf
                 {
                     SendingHeartbeatsStatus = ProcessStatus.Error;
 
-                    if (!Events.OnHeartbeatSendingException(ex))
+                    Streams.HeartbeatSendingExceptionStream.OnNext(ex);
+
+                    if (!Streams.HeartbeatSendingExceptionStream.Observers.Any())
                     {
                         throw ex;
                     }
@@ -231,7 +228,7 @@ namespace Connect.Protobuf
                         }
                         while (readBytes < length);
 
-                        Events.InvokeMessageEvent(message);
+                        Streams.InvokeMessageStream(message);
                     }
                 }
                 catch (OperationCanceledException)
@@ -242,7 +239,9 @@ namespace Connect.Protobuf
                 {
                     ListeningStatus = ProcessStatus.Error;
 
-                    if (!Events.OnListenerException(ex))
+                    Streams.ListenerExceptionStream.OnNext(ex);
+
+                    if (!Streams.ListenerExceptionStream.Observers.Any())
                     {
                         throw;
                     }
@@ -306,7 +305,9 @@ namespace Connect.Protobuf
             }
             catch (Exception ex)
             {
-                if (!Events.OnSenderException(ex))
+                Streams.SenderExceptionStream.OnNext(ex);
+
+                if (!Streams.SenderExceptionStream.Observers.Any())
                 {
                     throw;
                 }
