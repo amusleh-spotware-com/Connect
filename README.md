@@ -4,15 +4,13 @@ This a .NET Standard library for interacting with Spotware Connect API, it allow
 
 The library makes it very easy to get an access token, by generating the authentication URL and all necessary things, you just have to use the generated authentication URL and then after you authorized you have to provide back to the library the authentication code, and it will give you a token object which has both access token and refresh token.
 
-Spotware Connect API uses Google Protobuf protocol to exchange data between client and server, and if you aren't experienced with it you will have hard time figuring out how to implement it on your .NET app, the Connect library hides all the complexities of Protobuf and allows you to easily and quickly use the API.
+Spotware Connect API uses Google Protobuf protocol to exchange data between client and server, and if you aren't experienced with it you will have hard time figuring out how to implement it on your .NET app, the Connect library hides all the complexities of Protobuf and allows you to easily and quickly use the API through observable streams.
 
-The library provides two different methods to get data from API:
+The library uses Rx observable streams to return back the data from API, it will handle everything related to reading/writing of Network streams on the backend.
 
-* Event based approach
+You can access all available streams through "Streams" property of client, there is a stream for each API event and response message.
 
-* Reactive Observable Streams
-
-You just have to handle the events or subscribe to RX streams and you will get the data from API, the library will handle everything related to reading/writing of Network streams.
+Once you consumed the data you can easily unsubscribe from stream by disposing its IDisposable object, which was returned after you called stream subscribe method.
 
 For sending messages you have to first construct the request messages by creating an instance of Connect API protobuf messages which are implemented on the library and then use the Client object SendMessage method to sent the request.
 
@@ -113,15 +111,19 @@ var applicationAuthReq = new ProtoOAApplicationAuthReq
 await client.SendMessage(applicationAuthReq, ProtoOAPayloadType.ProtoOaApplicationAuthReq);
 ```
 
-Once the authentication request sent to server, you will receive back an auth reponse, to get the auth response you can handle the "ApplicationAuthResponseEvent" before sending the authentication request message:
+Once the authentication request sent to server, you will receive back an auth reponse, to get the auth response you can subscribe to ApplicationAuthResponse stream before sending the request message:
 
 ```c#  
 
-client.Events.ApplicationAuthResponseEvent += Events_ApplicationAuthResponseEvent;
+var disposable = client.Streams.ApplicationAuthResponseStream.Subscribe(ApplicationAuthResponseStream);
 
+private void ApplicationAuthResponseStream(StreamMessage<ProtoOAApplicationAuthRes> message)
+{
+
+}
 ```
 
-After you application got authenticated you can start sending request messages or subscriptions to market data, to receive the requests responses you can either use the "Client.Events" or "Client.Streams", for a complete working example please check the <a href="https://github.com/afhacker/Connect/tree/master/src/ConsoleTester">Console Tester</a> application.
+After you application got authenticated you can start sending request messages or subscriptions to market data, to receive the requests responses you can use the "Client.Streams", for a complete working example please check the <a href="https://github.com/afhacker/Connect/tree/master/src/ConsoleTester">Console Tester</a> application.
 
 ## Dependencies
 
