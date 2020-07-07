@@ -21,8 +21,6 @@ namespace Connect.Protobuf
 
         private SslStream _stream;
 
-        private bool _stopSendingHeartbeats;
-
         #endregion Fields
 
         public Client(int maxMessageSize = 1000000)
@@ -42,13 +40,13 @@ namespace Connect.Protobuf
 
         public bool IsAppAuthorized { get; private set; }
 
+        public bool IsDisposed { get; private set; }
+
         public Mode Mode { get; private set; }
 
         public EventsContainer Events { get; }
 
         public StreamsContainer Streams { get; }
-
-        public bool IsDisposed { get; private set; }
 
         public ProcessStatus ListeningStatus { get; private set; }
 
@@ -103,13 +101,17 @@ namespace Connect.Protobuf
 
             _cancellationTokenSource.Cancel(true);
 
+            SendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
+
+            await WaitForHeartbeatsToStop().ConfigureAwait(false);
+
             ListeningStatus = ProcessStatus.WaitingToStop;
 
             await WaitForListeningToStop().ConfigureAwait(false);
 
-            await StoptSendingHeartbeats().ConfigureAwait(false);
-
             _stream?.Dispose();
+
+            _cancellationTokenSource.Dispose();
 
             IsDisposed = true;
         }
@@ -124,7 +126,7 @@ namespace Connect.Protobuf
 
             SendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
 
-            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000);
+            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000) { AutoReset = false };
 
             var heartbeatEvent = new ProtoHeartbeatEvent();
 
@@ -132,9 +134,7 @@ namespace Connect.Protobuf
             {
                 try
                 {
-                    (sender as System.Timers.Timer).Stop();
-
-                    if (!_stopSendingHeartbeats && IsConnected)
+                    if (SendingHeartbeatsStatus == ProcessStatus.Running && IsConnected)
                     {
                         if (DateTime.Now - LastSentMessageTime >= TimeSpan.FromSeconds(10))
                         {
@@ -150,8 +150,6 @@ namespace Connect.Protobuf
                 }
                 catch (Exception ex)
                 {
-                    (sender as System.Timers.Timer).Stop();
-
                     SendingHeartbeatsStatus = ProcessStatus.Error;
 
                     if (!Events.OnHeartbeatSendingException(ex))
@@ -161,18 +159,18 @@ namespace Connect.Protobuf
                 }
             };
 
+            SendingHeartbeatsStatus = ProcessStatus.Running;
+
             heartbeatTimer.Start();
         }
 
-        private async Task StoptSendingHeartbeats()
+        private async Task WaitForHeartbeatsToStop()
         {
             CheckIsDisposed();
 
-            SendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
+            var startTime = DateTime.Now;
 
-            _stopSendingHeartbeats = true;
-
-            while (SendingHeartbeatsStatus != ProcessStatus.Stopped)
+            while (SendingHeartbeatsStatus == ProcessStatus.Running && DateTime.Now < startTime.AddMinutes(1))
             {
                 await Task.Delay(100).ConfigureAwait(false);
             }
@@ -206,6 +204,8 @@ namespace Connect.Protobuf
                                 _cancellationTokenSource.Token).ConfigureAwait(false);
                         }
                         while (readBytes < lengthArray.Length);
+
+                        _cancellationTokenSource.Token.ThrowIfCancellationRequested();
 
                         int length = BitConverter.ToInt32(lengthArray.Reverse().ToArray(), 0);
 
@@ -254,9 +254,11 @@ namespace Connect.Protobuf
         {
             CheckIsDisposed();
 
-            while (ListeningStatus != ProcessStatus.Stopped)
+            var startTime = DateTime.Now;
+
+            while (ListeningStatus == ProcessStatus.Running && DateTime.Now < startTime.AddMinutes(2))
             {
-                await Task.Delay(100).ConfigureAwait(false);
+                await Task.Delay(200).ConfigureAwait(false);
             }
         }
 
@@ -293,6 +295,8 @@ namespace Connect.Protobuf
                 LastSentMessageTime = DateTime.Now;
 
                 await _stream.WriteAsync(length, 0, length.Length, _cancellationTokenSource.Token).ConfigureAwait(false);
+
+                _cancellationTokenSource.Token.ThrowIfCancellationRequested();
 
                 await _stream.WriteAsync(messageByte, 0, messageByte.Length, _cancellationTokenSource.Token)
                     .ConfigureAwait(false);
