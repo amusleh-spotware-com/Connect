@@ -2,7 +2,7 @@
 
 namespace Connect.Protobuf.Streams
 {
-    public class ObservableStreams
+    public class StreamsContainer
     {
         #region Fields
 
@@ -86,7 +86,7 @@ namespace Connect.Protobuf.Streams
 
         #endregion Fields
 
-        public ObservableStreams()
+        public StreamsContainer()
         {
             _spotStream = new ObservableStream<ProtoOASpotEvent>();
 

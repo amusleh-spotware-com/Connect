@@ -42,7 +42,7 @@ namespace Connect.Protobuf
 
         public Mode Mode { get; private set; }
 
-        public ObservableStreams Streams { get; } = new ObservableStreams();
+        public StreamsContainer Streams { get; } = new StreamsContainer();
 
         public ProcessStatus ListeningStatus { get; private set; }
 
