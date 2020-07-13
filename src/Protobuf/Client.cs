@@ -97,13 +97,13 @@ namespace Connect.Protobuf
 
             _cancellationTokenSource.Cancel(true);
 
-            SendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
-
-            await WaitForHeartbeatsToStop().ConfigureAwait(false);
-
             ListeningStatus = ProcessStatus.WaitingToStop;
 
             await WaitForListeningToStop().ConfigureAwait(false);
+
+            SendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
+
+            await WaitForHeartbeatsToStop().ConfigureAwait(false);
 
             _stream?.Dispose();
 
@@ -168,7 +168,7 @@ namespace Connect.Protobuf
 
             var startTime = DateTime.Now;
 
-            while (SendingHeartbeatsStatus == ProcessStatus.Running && DateTime.Now < startTime.AddMinutes(1))
+            while (SendingHeartbeatsStatus == ProcessStatus.WaitingToStop && DateTime.Now < startTime.AddMinutes(1))
             {
                 await Task.Delay(100).ConfigureAwait(false);
             }
@@ -190,7 +190,7 @@ namespace Connect.Protobuf
                 {
                     ListeningStatus = ProcessStatus.Running;
 
-                    while (true)
+                    while (ListeningStatus == ProcessStatus.Running)
                     {
                         byte[] lengthArray = new byte[sizeof(int)];
 
@@ -231,6 +231,8 @@ namespace Connect.Protobuf
 
                         Streams.InvokeMessageStream(message);
                     }
+
+                    ListeningStatus = ProcessStatus.Stopped;
                 }
                 catch (OperationCanceledException)
                 {
@@ -256,7 +258,7 @@ namespace Connect.Protobuf
 
             var startTime = DateTime.Now;
 
-            while (ListeningStatus == ProcessStatus.Running && DateTime.Now < startTime.AddMinutes(2))
+            while (ListeningStatus == ProcessStatus.WaitingToStop && DateTime.Now < startTime.AddMinutes(2))
             {
                 await Task.Delay(200).ConfigureAwait(false);
             }
