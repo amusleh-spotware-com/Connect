@@ -97,13 +97,19 @@ namespace Connect.Protobuf
 
             _cancellationTokenSource.Cancel(true);
 
-            ListeningStatus = ProcessStatus.WaitingToStop;
+            if (ListeningStatus == ProcessStatus.Running)
+            {
+                ListeningStatus = ProcessStatus.WaitingToStop;
 
-            await WaitForListeningToStop().ConfigureAwait(false);
+                await WaitForListeningToStop().ConfigureAwait(false);
+            }
 
-            SendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
+            if (SendingHeartbeatsStatus == ProcessStatus.Running)
+            {
+                SendingHeartbeatsStatus = ProcessStatus.WaitingToStop;
 
-            await WaitForHeartbeatsToStop().ConfigureAwait(false);
+                await WaitForHeartbeatsToStop().ConfigureAwait(false);
+            }
 
             _stream?.Dispose();
 
