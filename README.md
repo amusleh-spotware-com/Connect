@@ -71,7 +71,7 @@ Now you have a token, the token object has these properties:
 * ExpiresIn: A DateTimeOffset object that gives you the expiry time of token
 * ErrorCode: If the token generation was not successful, you can use this property to get the error code
 * ErrorDescription: The error description
-* Mode: The token mdoe, either live or demo
+* Mode: The token mode, either live or demo
 
 If your token expired you can refresh it by sending a ProtoOARefreshTokenReq.
 
