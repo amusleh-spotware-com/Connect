@@ -3,6 +3,7 @@ using Connect.Oauth.Factories;
 using Connect.Oauth.Models;
 using Connect.Protobuf;
 using Connect.Protobuf.Helpers;
+using Connect.Protobuf.Streams;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,6 +77,8 @@ namespace ConsoleTester
 
             _streamDisposables.Add(_client.Streams.SenderExceptionStream.Subscribe(OnSenderException));
 
+            _streamDisposables.Add(_client.Streams.RefreshTokenResponseStream.Subscribe(OnRefreshTokenResponse));
+
             Console.WriteLine("Connecting Client...");
 
             await _client.Connect(mode);
@@ -146,6 +149,22 @@ namespace ConsoleTester
             ShowDashLine();
         }
 
+        private static void OnRefreshTokenResponse(StreamMessage<ProtoOARefreshTokenRes> response)
+        {
+            _token = new Token
+            {
+                AccessToken = response.Message.AccessToken,
+                RefreshToken = response.Message.RefreshToken,
+                ExpiresIn = DateTimeOffset.FromUnixTimeMilliseconds(response.Message.ExpiresIn),
+                TokenType = response.Message.TokenType,
+                Mode = _token.Mode
+            };
+
+            Console.WriteLine($"New token received: {_token.AccessToken}");
+            Console.WriteLine($"As you refreshed your access token, now you have to re-authorize all previously authorized" +
+                $" trading accounts");
+        }
+
         private static void ProcessCommand(string command)
         {
             Console.WriteLine();
@@ -176,6 +195,8 @@ namespace ConsoleTester
 
                         Console.WriteLine();
 
+                        Console.WriteLine("\nTo refresh access token, type: refreshtoken\n");
+
                         Console.WriteLine("\nTo exit the app and disconnect the client type: disconnect\n");
 
                         Console.WriteLine("Commands aren't case sensitive\n");
@@ -196,6 +217,10 @@ namespace ConsoleTester
 
                     case "subscribe":
                         ProcessSubscriptionCommand(commandSplit);
+                        break;
+
+                    case "refreshtoken":
+                        RefreshToken();
                         break;
 
                     case "disconnect":
@@ -241,6 +266,18 @@ namespace ConsoleTester
                     Console.WriteLine($"'{commandSplit[1]}' is not recognized as a subscription command, please use help command to get all available commands list");
                     break;
             }
+        }
+
+        private async static void RefreshToken()
+        {
+            Console.WriteLine("Refreshing access token...");
+
+            var refreshTokenReq = new ProtoOARefreshTokenReq
+            {
+                RefreshToken = _token.RefreshToken
+            };
+
+            await _client.SendMessage(refreshTokenReq, ProtoOAPayloadType.ProtoOaRefreshTokenReq);
         }
 
         private async static void SubscribeToSymbolTrendBar(string[] commandSplit)

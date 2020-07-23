@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Connect.Protobuf.Streams
 {
@@ -77,6 +78,8 @@ namespace Connect.Protobuf.Streams
         private readonly ObservableStream<StreamMessage<ProtoOASymbolCategoryListRes>> _symbolCategoryListResponseStream;
 
         private readonly ObservableStream<StreamMessage<ProtoOAAccountLogoutRes>> _accountLogoutResponseStream;
+
+        private readonly ObservableStream<StreamMessage<ProtoOARefreshTokenRes>> _refreshTokenResponseStream;
 
         private readonly ObservableStream<Exception> _listenerExceptionStream;
 
@@ -160,6 +163,8 @@ namespace Connect.Protobuf.Streams
 
             _accountLogoutResponseStream = new ObservableStream<StreamMessage<ProtoOAAccountLogoutRes>>();
 
+            _refreshTokenResponseStream = new ObservableStream<StreamMessage<ProtoOARefreshTokenRes>>();
+
             _listenerExceptionStream = new ObservableStream<Exception>();
 
             _senderExceptionStream = new ObservableStream<Exception>();
@@ -240,6 +245,8 @@ namespace Connect.Protobuf.Streams
         public IObservableStream<StreamMessage<ProtoOASymbolCategoryListRes>> SymbolCategoryListResponseStream => _symbolCategoryListResponseStream;
 
         public IObservableStream<StreamMessage<ProtoOAAccountLogoutRes>> AccountLogoutResponseStream => _accountLogoutResponseStream;
+
+        public IObservableStream<StreamMessage<ProtoOARefreshTokenRes>> RefreshTokenResponseStream => _refreshTokenResponseStream;
 
         public IObservableStream<Exception> ListenerExceptionStream => _listenerExceptionStream;
 
@@ -410,6 +417,13 @@ namespace Connect.Protobuf.Streams
             var streamMessage = new StreamMessage<ProtoOAAccountLogoutRes>(e, clientMsgId);
 
             _accountLogoutResponseStream.OnNext(streamMessage);
+        }
+
+        internal void OnRefreshTokenResponse(ProtoOARefreshTokenRes e, string clientMsgId)
+        {
+            var streamMessage = new StreamMessage<ProtoOARefreshTokenRes>(e, clientMsgId);
+
+            _refreshTokenResponseStream.OnNext(streamMessage);
         }
 
         internal void OnListenerException(Exception exception) => _listenerExceptionStream.OnNext(exception);
@@ -706,6 +720,14 @@ namespace Connect.Protobuf.Streams
                         var accountLogoutRes = ProtoOAAccountLogoutRes.Parser.ParseFrom(payload);
 
                         OnAccountLogoutResponse(accountLogoutRes, protoMessage.ClientMsgId);
+
+                        break;
+                    }
+                case (int)ProtoOAPayloadType.ProtoOaRefreshTokenRes:
+                    {
+                        var refreshTokenRes = ProtoOARefreshTokenRes.Parser.ParseFrom(payload);
+
+                        OnRefreshTokenResponse(refreshTokenRes, protoMessage.ClientMsgId);
 
                         break;
                     }
