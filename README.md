@@ -73,17 +73,7 @@ Now you have a token, the token object has these properties:
 * ErrorDescription: The error description
 * Mode: The token mdoe, either live or demo
 
-If your token expired you can refresh it easily by using the "TokenFactory" refresh token methods:
-
-```c#
-Token newToken = await TokenFactory.RefreshTokenAsync(expiredToken, app);
-```
-
-Or:
-
-```c#
-Token newToken = TokenFactory.RefreshToken(expiredToken, app);
-```
+If your token expired you can refresh it by sending a ProtoOARefreshTokenReq.
 
 ## Sending/Receiving Messages (Connect.Protobuf)
 
