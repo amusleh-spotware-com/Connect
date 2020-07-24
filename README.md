@@ -46,7 +46,7 @@ Auth class constructor gets three arguments, the first one is an app object whic
 
 After you created the "Auth" object, you can get the authentication URL via its "AuthUri" property, open this URL on a browser to get an authentication code.
 
-Once you opened the URL on your browser you will Spotware login page, login and select the accounts that you want to authorize, then it will redirects you to your provided redirect URL, the authentication code will be appended to the end of redirect URL, ex:
+Once you opened the URL on your browser you will see Spotware login page, login and select the accounts that you want to authorize, then it will redirects you to your provided redirect URL, the authentication code will be appended to the end of redirect URL, ex:
 
 ```https://redirect_url.com/?code=here_will_be_the_code```
 
