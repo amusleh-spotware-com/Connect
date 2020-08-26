@@ -46,7 +46,7 @@ Auth class constructor gets three arguments, the first one is an app object whic
 
 After you created the "Auth" object, you can get the authentication URL via its "AuthUri" property, open this URL on a browser to get an authentication code.
 
-Once you opened the URL on your browser you will Spotware login page, login and select the accounts that you want to authorize, then it will redirects you to your provided redirect URL, the authentication code will be appended to the end of redirect URL, ex:
+Once you opened the URL on your browser you will see Spotware login page, login and select the accounts that you want to authorize, then it will redirects you to your provided redirect URL, the authentication code will be appended to the end of redirect URL, ex:
 
 ```https://redirect_url.com/?code=here_will_be_the_code```
 
@@ -71,7 +71,7 @@ Now you have a token, the token object has these properties:
 * ExpiresIn: A DateTimeOffset object that gives you the expiry time of token
 * ErrorCode: If the token generation was not successful, you can use this property to get the error code
 * ErrorDescription: The error description
-* Mode: The token mdoe, either live or demo
+* Mode: The token mode, either live or demo
 
 If your token expired you can refresh it by sending a ProtoOARefreshTokenReq.
 
