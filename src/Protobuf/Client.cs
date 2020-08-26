@@ -17,7 +17,9 @@ namespace Connect.Protobuf
     {
         #region Fields
 
-        private readonly CancellationTokenSource _cancellationTokenSource;
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+
+        private readonly SemaphoreSlim _streamWriteSemaphoreSlim = new SemaphoreSlim(1, 1);
 
         private TcpClient _client;
 
@@ -28,8 +30,6 @@ namespace Connect.Protobuf
         public Client(int maxMessageSize = 1000000)
         {
             MaxMessageSize = maxMessageSize;
-
-            _cancellationTokenSource = new CancellationTokenSource();
         }
 
         #region Properties
@@ -114,6 +114,8 @@ namespace Connect.Protobuf
             _stream?.Dispose();
 
             _cancellationTokenSource.Dispose();
+
+            _streamWriteSemaphoreSlim.Dispose();
 
             IsDisposed = true;
         }
@@ -302,12 +304,7 @@ namespace Connect.Protobuf
 
                 LastSentMessageTime = DateTime.Now;
 
-                await _stream.WriteAsync(length, 0, length.Length, _cancellationTokenSource.Token).ConfigureAwait(false);
-
-                _cancellationTokenSource.Token.ThrowIfCancellationRequested();
-
-                await _stream.WriteAsync(messageByte, 0, messageByte.Length, _cancellationTokenSource.Token)
-                    .ConfigureAwait(false);
+                await Write(messageByte, length);
             }
             catch (OperationCanceledException)
             {
@@ -320,6 +317,35 @@ namespace Connect.Protobuf
                 {
                     throw;
                 }
+            }
+        }
+
+        private async Task Write(byte[] messageByte, byte[] length)
+        {
+            var isSemaphoreEntered = await _streamWriteSemaphoreSlim.WaitAsync(TimeSpan.FromMinutes(1),
+                _cancellationTokenSource.Token);
+
+            if (isSemaphoreEntered)
+            {
+                try
+                {
+                    await _stream.WriteAsync(length, 0, length.Length, _cancellationTokenSource.Token).ConfigureAwait(false);
+
+                    _cancellationTokenSource.Token.ThrowIfCancellationRequested();
+
+                    await _stream.WriteAsync(messageByte, 0, messageByte.Length, _cancellationTokenSource.Token)
+                        .ConfigureAwait(false);
+                }
+                finally
+                {
+                    _streamWriteSemaphoreSlim.Release();
+                }
+            }
+            else
+            {
+                _cancellationTokenSource.Token.ThrowIfCancellationRequested();
+
+                throw new TimeoutException(ExceptionMessages.SemaphoreEnteryTimedOut);
             }
         }
 
