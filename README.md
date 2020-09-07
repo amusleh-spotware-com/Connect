@@ -1,6 +1,6 @@
 # Connect
 
-This a .NET Standard library for interacting with Spotware Connect API, it allows you yo easily interact with Spotware Connect API and perform all kind of trading operations on your cTrader trading accounts.
+This is a .NET Standard library for interacting with Spotware Connect API, it allows you yo easily interact with Spotware Connect API and perform all kind of trading operations on your cTrader trading accounts.
 
 The library makes it very easy to get an access token, by generating the authentication URL and all necessary things, you just have to use the generated authentication URL and then after you authorized you have to provide back to the library the authentication code, and it will give you a token object which has both access token and refresh token.
 
