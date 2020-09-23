@@ -115,6 +115,14 @@ private void ApplicationAuthResponseStream(StreamMessage<ProtoOAApplicationAuthR
 
 After you application got authenticated you can start sending request messages or subscriptions to market data, to receive the requests responses you can use the "Client.Streams", for a complete working example please check the <a href="https://github.com/afhacker/Connect/tree/master/src/ConsoleTester">Console Tester</a> application.
 
+## Keeping Connection Alive
+
+You don't have to send any heartbeat request, the client itself automatically send heartbeat requests based on your latest message sent time and it keeps the connection alive until you call client dispose method.
+
+## Disposing Client
+
+When you finsihed working with client you must call either Dispose or DisposeAsync method, or put the client inside a using block, otherwise the connection will remain open.
+
 ## Dependencies
 
 * <a href="https://github.com/protocolbuffers/protobuf">protobuf</a>
