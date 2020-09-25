@@ -2,7 +2,7 @@
 {
     public static class MonetaryConverter
     {
-        public static long FromMonetary(long monetaryValue) => monetaryValue / 100;
+        public static double FromMonetary(long monetaryValue) => monetaryValue / 100.0;
 
         public static long ToMonetary(long value) => value * 100;
     }
