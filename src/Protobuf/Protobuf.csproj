@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/afhacker/Connect</RepositoryUrl>
     <PackageTags>cTrader</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.0.2.5</Version>
+    <Version>1.0.2.6</Version>
   </PropertyGroup>
 
   <ItemGroup>
