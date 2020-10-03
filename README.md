@@ -140,8 +140,9 @@ We recommend you to use our compiling instruction instead of Spotware documentat
 3. Extract the Google Protobuf, there will be a "bin" folder, copy the ".proto" files there
 4. Open "CMD", go to bin folder location, and type:
 
+```
 protoc --csharp_out=. ./proto_file_name.proto
-
+```
 Instead of "proto_file_name.proto" you have to provide each of the proto files names, you have to execute this command for each proto file.
 
 After executing the command there will be a ".cs" file for the proto file, you can use those files instead of library default message files.
