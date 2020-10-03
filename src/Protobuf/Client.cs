@@ -250,12 +250,12 @@ namespace Connect.Protobuf
                 {
                     ListeningStatus = ProcessStatus.Error;
 
-                    Streams.OnListenerException(ex);
-
                     if (!Streams.ListenerExceptionStream.Observers.Any())
                     {
                         throw;
                     }
+
+                    Streams.OnListenerException(ex);
                 }
             });
         }
@@ -311,12 +311,12 @@ namespace Connect.Protobuf
             }
             catch (Exception ex)
             {
-                Streams.OnSenderException(ex);
-
                 if (!Streams.SenderExceptionStream.Observers.Any())
                 {
                     throw;
                 }
+
+                Streams.OnSenderException(ex);
             }
         }
 
