@@ -4,6 +4,8 @@ This is a .NET Standard library for interacting with Spotware Connect API, it al
 
 The library makes it very easy to get an access token, by generating the authentication URL and all necessary things, you just have to use the generated authentication URL and then after you authorized you have to provide back to the library the authentication code, and it will give you a token object which has both access token and refresh token.
 
+The Connect library come with compiled files of Open API proto files, so you don't have to compile the files by your self, in case you want to there is an instruction at the end of this readme file, the files are compiled by Protobuf 3 not 2 so you can use this library on your .NET Core apps.
+
 Spotware Connect API uses Google Protobuf protocol to exchange data between client and server, and if you aren't experienced with it you will have hard time figuring out how to implement it on your .NET app, the Connect library hides all the complexities of Protobuf and allows you to easily and quickly use the API through observable streams.
 
 The library uses Rx observable streams to return back the data from API, it will handle everything related to reading/writing of Network streams on the backend.
