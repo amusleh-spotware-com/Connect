@@ -44,7 +44,11 @@ public static partial class OpenApiCommonMessagesReflection {
 
 }
 #region Messages
-public sealed partial class ProtoMessage : pb::IMessage<ProtoMessage> {
+public sealed partial class ProtoMessage : pb::IMessage<ProtoMessage>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoMessage> _parser = new pb::MessageParser<ProtoMessage>(() => new ProtoMessage());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -199,6 +203,9 @@ public sealed partial class ProtoMessage : pb::IMessage<ProtoMessage> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteUInt32(PayloadType);
@@ -214,7 +221,29 @@ public sealed partial class ProtoMessage : pb::IMessage<ProtoMessage> {
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteUInt32(PayloadType);
+    }
+    if (HasPayload) {
+      output.WriteRawTag(18);
+      output.WriteBytes(Payload);
+    }
+    if (HasClientMsgId) {
+      output.WriteRawTag(26);
+      output.WriteString(ClientMsgId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -253,6 +282,9 @@ public sealed partial class ProtoMessage : pb::IMessage<ProtoMessage> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -273,11 +305,42 @@ public sealed partial class ProtoMessage : pb::IMessage<ProtoMessage> {
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = input.ReadUInt32();
+          break;
+        }
+        case 18: {
+          Payload = input.ReadBytes();
+          break;
+        }
+        case 26: {
+          ClientMsgId = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
-public sealed partial class ProtoErrorRes : pb::IMessage<ProtoErrorRes> {
+public sealed partial class ProtoErrorRes : pb::IMessage<ProtoErrorRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoErrorRes> _parser = new pb::MessageParser<ProtoErrorRes>(() => new ProtoErrorRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -459,6 +522,9 @@ public sealed partial class ProtoErrorRes : pb::IMessage<ProtoErrorRes> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -478,7 +544,33 @@ public sealed partial class ProtoErrorRes : pb::IMessage<ProtoErrorRes> {
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasErrorCode) {
+      output.WriteRawTag(18);
+      output.WriteString(ErrorCode);
+    }
+    if (HasDescription) {
+      output.WriteRawTag(26);
+      output.WriteString(Description);
+    }
+    if (HasMaintenanceEndTimestamp) {
+      output.WriteRawTag(32);
+      output.WriteUInt64(MaintenanceEndTimestamp);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -523,6 +615,9 @@ public sealed partial class ProtoErrorRes : pb::IMessage<ProtoErrorRes> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -547,14 +642,49 @@ public sealed partial class ProtoErrorRes : pb::IMessage<ProtoErrorRes> {
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          ErrorCode = input.ReadString();
+          break;
+        }
+        case 26: {
+          Description = input.ReadString();
+          break;
+        }
+        case 32: {
+          MaintenanceEndTimestamp = input.ReadUInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent from Open API proxy and can be used as criteria that connection is healthy when no other messages are sent by cTrader platform. Open API client can send this message when he needs to keep the connection open for a period without other messages longer than 30 seconds 
 /// </summary>
-public sealed partial class ProtoHeartbeatEvent : pb::IMessage<ProtoHeartbeatEvent> {
+public sealed partial class ProtoHeartbeatEvent : pb::IMessage<ProtoHeartbeatEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoHeartbeatEvent> _parser = new pb::MessageParser<ProtoHeartbeatEvent>(() => new ProtoHeartbeatEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -648,6 +778,9 @@ public sealed partial class ProtoHeartbeatEvent : pb::IMessage<ProtoHeartbeatEve
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -655,7 +788,21 @@ public sealed partial class ProtoHeartbeatEvent : pb::IMessage<ProtoHeartbeatEve
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -682,6 +829,9 @@ public sealed partial class ProtoHeartbeatEvent : pb::IMessage<ProtoHeartbeatEve
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -694,7 +844,26 @@ public sealed partial class ProtoHeartbeatEvent : pb::IMessage<ProtoHeartbeatEve
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoPayloadType) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 

@@ -20,8 +20,11 @@
 
   <ItemGroup>
     <Compile Remove="Messages\Old\**" />
+    <Compile Remove="Messages\Ol\**" />
     <EmbeddedResource Remove="Messages\Old\**" />
+    <EmbeddedResource Remove="Messages\Ol\**" />
     <None Remove="Messages\Old\**" />
+    <None Remove="Messages\Ol\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +34,7 @@
 
   <ItemGroup>
     <PackageReference Include="Connect.Common" Version="1.0.2.3" />
-    <PackageReference Include="Google.Protobuf" Version="3.12.3" />
+    <PackageReference Include="Google.Protobuf" Version="3.13.0" />
     <PackageReference Include="System.Reactive" Version="4.4.1" />
   </ItemGroup>
 

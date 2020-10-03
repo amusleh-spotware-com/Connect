@@ -108,216 +108,220 @@ public static partial class OpenApiMessagesReflection {
           "GwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKTAQoTUHJvdG9PQUFzc2V0",
           "TGlzdFJlcxJBCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2Fk",
           "VHlwZToXUFJPVE9fT0FfQVNTRVRfTElTVF9SRVMSGwoTY3RpZFRyYWRlckFj",
-          "Y291bnRJZBgCIAIoAxIcCgVhc3NldBgDIAMoCzINLlByb3RvT0FBc3NldCJ5",
-          "ChVQcm90b09BU3ltYm9sc0xpc3RSZXESQwoLcGF5bG9hZFR5cGUYASABKA4y",
-          "Ey5Qcm90b09BUGF5bG9hZFR5cGU6GVBST1RPX09BX1NZTUJPTFNfTElTVF9S",
-          "RVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKeAQoVUHJvdG9PQVN5",
-          "bWJvbHNMaXN0UmVzEkMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBh",
-          "eWxvYWRUeXBlOhlQUk9UT19PQV9TWU1CT0xTX0xJU1RfUkVTEhsKE2N0aWRU",
-          "cmFkZXJBY2NvdW50SWQYAiACKAMSIwoGc3ltYm9sGAMgAygLMhMuUHJvdG9P",
-          "QUxpZ2h0U3ltYm9sIooBChRQcm90b09BU3ltYm9sQnlJZFJlcRJDCgtwYXls",
-          "b2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToZUFJPVE9fT0Ff",
-          "U1lNQk9MX0JZX0lEX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigD",
-          "EhAKCHN5bWJvbElkGAMgAygDIpgBChRQcm90b09BU3ltYm9sQnlJZFJlcxJD",
-          "CgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToZUFJP",
-          "VE9fT0FfU1lNQk9MX0JZX0lEX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElk",
-          "GAIgAigDEh4KBnN5bWJvbBgDIAMoCzIOLlByb3RvT0FTeW1ib2witwEKHlBy",
-          "b3RvT0FTeW1ib2xzRm9yQ29udmVyc2lvblJlcRJNCgtwYXlsb2FkVHlwZRgB",
-          "IAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTojUFJPVE9fT0FfU1lNQk9MU19G",
-          "T1JfQ09OVkVSU0lPTl9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIo",
-          "AxIUCgxmaXJzdEFzc2V0SWQYAyACKAMSEwoLbGFzdEFzc2V0SWQYBCACKAMi",
-          "sQEKHlByb3RvT0FTeW1ib2xzRm9yQ29udmVyc2lvblJlcxJNCgtwYXlsb2Fk",
-          "VHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTojUFJPVE9fT0FfU1lN",
-          "Qk9MU19GT1JfQ09OVkVSU0lPTl9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJ",
-          "ZBgCIAIoAxIjCgZzeW1ib2wYAyADKAsyEy5Qcm90b09BTGlnaHRTeW1ib2wi",
-          "kwEKGVByb3RvT0FTeW1ib2xDaGFuZ2VkRXZlbnQSRwoLcGF5bG9hZFR5cGUY",
-          "ASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HVBST1RPX09BX1NZTUJPTF9D",
-          "SEFOR0VEX0VWRU5UEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSEAoI",
-          "c3ltYm9sSWQYAyADKAMigAEKGFByb3RvT0FBc3NldENsYXNzTGlzdFJlcRJH",
-          "CgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTodUFJP",
-          "VE9fT0FfQVNTRVRfQ0xBU1NfTElTVF9SRVESGwoTY3RpZFRyYWRlckFjY291",
-          "bnRJZBgCIAIoAyKoAQoYUHJvdG9PQUFzc2V0Q2xhc3NMaXN0UmVzEkcKC3Bh",
-          "eWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOh1QUk9UT19P",
-          "QV9BU1NFVF9DTEFTU19MSVNUX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElk",
-          "GAIgAigDEiYKCmFzc2V0Q2xhc3MYAyADKAsyEi5Qcm90b09BQXNzZXRDbGFz",
-          "cyJuChBQcm90b09BVHJhZGVyUmVxEj0KC3BheWxvYWRUeXBlGAEgASgOMhMu",
-          "UHJvdG9PQVBheWxvYWRUeXBlOhNQUk9UT19PQV9UUkFERVJfUkVREhsKE2N0",
-          "aWRUcmFkZXJBY2NvdW50SWQYAiACKAMijgEKEFByb3RvT0FUcmFkZXJSZXMS",
-          "PQoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6E1BS",
-          "T1RPX09BX1RSQURFUl9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIo",
-          "AxIeCgZ0cmFkZXIYAyACKAsyDi5Qcm90b09BVHJhZGVyIqABChlQcm90b09B",
-          "VHJhZGVyVXBkYXRlZEV2ZW50EkYKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJv",
-          "dG9PQVBheWxvYWRUeXBlOhxQUk9UT19PQV9UUkFERVJfVVBEQVRFX0VWRU5U",
-          "EhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSHgoGdHJhZGVyGAMgAigL",
-          "Mg4uUHJvdG9PQVRyYWRlciJ0ChNQcm90b09BUmVjb25jaWxlUmVxEkAKC3Bh",
-          "eWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhZQUk9UT19P",
-          "QV9SRUNPTkNJTEVfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMi",
-          "tgEKE1Byb3RvT0FSZWNvbmNpbGVSZXMSQAoLcGF5bG9hZFR5cGUYASABKA4y",
-          "Ey5Qcm90b09BUGF5bG9hZFR5cGU6FlBST1RPX09BX1JFQ09OQ0lMRV9SRVMS",
-          "GwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIiCghwb3NpdGlvbhgDIAMo",
-          "CzIQLlByb3RvT0FQb3NpdGlvbhIcCgVvcmRlchgEIAMoCzINLlByb3RvT0FP",
-          "cmRlciLIAQoWUHJvdG9PQU9yZGVyRXJyb3JFdmVudBJECgtwYXlsb2FkVHlw",
-          "ZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToaUFJPVE9fT0FfT1JERVJf",
-          "RVJST1JfRVZFTlQSGwoTY3RpZFRyYWRlckFjY291bnRJZBgFIAIoAxIRCgll",
-          "cnJvckNvZGUYAiACKAkSDwoHb3JkZXJJZBgDIAEoAxISCgpwb3NpdGlvbklk",
-          "GAYgASgDEhMKC2Rlc2NyaXB0aW9uGAcgASgJIrABChJQcm90b09BRGVhbExp",
-          "c3RSZXESQAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5",
-          "cGU6FlBST1RPX09BX0RFQUxfTElTVF9SRVESGwoTY3RpZFRyYWRlckFjY291",
-          "bnRJZBgCIAIoAxIVCg1mcm9tVGltZXN0YW1wGAMgAigDEhMKC3RvVGltZXN0",
-          "YW1wGAQgAigDEg8KB21heFJvd3MYBSABKAUioAEKElByb3RvT0FEZWFsTGlz",
-          "dFJlcxJACgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlw",
-          "ZToWUFJPVE9fT0FfREVBTF9MSVNUX1JFUxIbChNjdGlkVHJhZGVyQWNjb3Vu",
-          "dElkGAIgAigDEhoKBGRlYWwYAyADKAsyDC5Qcm90b09BRGVhbBIPCgdoYXNN",
-          "b3JlGAQgAigIIqEBChhQcm90b09BRXhwZWN0ZWRNYXJnaW5SZXESRgoLcGF5",
-          "bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HFBST1RPX09B",
-          "X0VYUEVDVEVEX01BUkdJTl9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgC",
-          "IAIoAxIQCghzeW1ib2xJZBgDIAIoAxIOCgZ2b2x1bWUYBCADKAMipwEKGFBy",
-          "b3RvT0FFeHBlY3RlZE1hcmdpblJlcxJGCgtwYXlsb2FkVHlwZRgBIAEoDjIT",
-          "LlByb3RvT0FQYXlsb2FkVHlwZTocUFJPVE9fT0FfRVhQRUNURURfTUFSR0lO",
-          "X1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEiYKBm1hcmdpbhgD",
-          "IAMoCzIWLlByb3RvT0FFeHBlY3RlZE1hcmdpbiKpAQoZUHJvdG9PQU1hcmdp",
-          "bkNoYW5nZWRFdmVudBJHCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQ",
-          "YXlsb2FkVHlwZTodUFJPVE9fT0FfTUFSR0lOX0NIQU5HRURfRVZFTlQSGwoT",
-          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxISCgpwb3NpdGlvbklkGAMgAigE",
-          "EhIKCnVzZWRNYXJnaW4YBCACKAQitwEKHVByb3RvT0FDYXNoRmxvd0hpc3Rv",
-          "cnlMaXN0UmVxEk0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxv",
-          "YWRUeXBlOiNQUk9UT19PQV9DQVNIX0ZMT1dfSElTVE9SWV9MSVNUX1JFURIb",
-          "ChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhUKDWZyb21UaW1lc3RhbXAY",
-          "AyACKAMSEwoLdG9UaW1lc3RhbXAYBCACKAMivQEKHVByb3RvT0FDYXNoRmxv",
-          "d0hpc3RvcnlMaXN0UmVzEk0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9P",
-          "QVBheWxvYWRUeXBlOiNQUk9UT19PQV9DQVNIX0ZMT1dfSElTVE9SWV9MSVNU",
-          "X1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEjAKD2RlcG9zaXRX",
-          "aXRoZHJhdxgDIAMoCzIXLlByb3RvT0FEZXBvc2l0V2l0aGRyYXcikQEKJVBy",
-          "b3RvT0FHZXRBY2NvdW50TGlzdEJ5QWNjZXNzVG9rZW5SZXESUwoLcGF5bG9h",
-          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6KVBST1RPX09BX0dF",
-          "VF9BQ0NPVU5UU19CWV9BQ0NFU1NfVE9LRU5fUkVREhMKC2FjY2Vzc1Rva2Vu",
-          "GAIgAigJIv8BCiVQcm90b09BR2V0QWNjb3VudExpc3RCeUFjY2Vzc1Rva2Vu",
-          "UmVzElMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBl",
-          "OilQUk9UT19PQV9HRVRfQUNDT1VOVFNfQllfQUNDRVNTX1RPS0VOX1JFUxIT",
-          "CgthY2Nlc3NUb2tlbhgCIAIoCRI2Cg9wZXJtaXNzaW9uU2NvcGUYAyABKA4y",
-          "HS5Qcm90b09BQ2xpZW50UGVybWlzc2lvblNjb3BlEjQKEWN0aWRUcmFkZXJB",
-          "Y2NvdW50GAQgAygLMhkuUHJvdG9PQUN0aWRUcmFkZXJBY2NvdW50InQKFlBy",
-          "b3RvT0FSZWZyZXNoVG9rZW5SZXESRAoLcGF5bG9hZFR5cGUYASABKA4yEy5Q",
-          "cm90b09BUGF5bG9hZFR5cGU6GlBST1RPX09BX1JFRlJFU0hfVE9LRU5fUkVR",
-          "EhQKDHJlZnJlc2hUb2tlbhgCIAIoCSKvAQoWUHJvdG9PQVJlZnJlc2hUb2tl",
-          "blJlcxJECgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlw",
-          "ZToaUFJPVE9fT0FfUkVGUkVTSF9UT0tFTl9SRVMSEwoLYWNjZXNzVG9rZW4Y",
-          "AiACKAkSEQoJdG9rZW5UeXBlGAMgAigJEhEKCWV4cGlyZXNJbhgEIAIoAxIU",
-          "CgxyZWZyZXNoVG9rZW4YBSACKAkikQEKGFByb3RvT0FTdWJzY3JpYmVTcG90",
-          "c1JlcRJGCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlw",
-          "ZTocUFJPVE9fT0FfU1VCU0NSSUJFX1NQT1RTX1JFURIbChNjdGlkVHJhZGVy",
-          "QWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAygDIn8KGFByb3RvT0FT",
-          "dWJzY3JpYmVTcG90c1JlcxJGCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3Rv",
-          "T0FQYXlsb2FkVHlwZTocUFJPVE9fT0FfU1VCU0NSSUJFX1NQT1RTX1JFUxIb",
-          "ChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDIpUBChpQcm90b09BVW5zdWJz",
-          "Y3JpYmVTcG90c1JlcRJICgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQ",
-          "YXlsb2FkVHlwZToeUFJPVE9fT0FfVU5TVUJTQ1JJQkVfU1BPVFNfUkVREhsK",
-          "E2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSEAoIc3ltYm9sSWQYAyADKAMi",
-          "gwEKGlByb3RvT0FVbnN1YnNjcmliZVNwb3RzUmVzEkgKC3BheWxvYWRUeXBl",
-          "GAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOh5QUk9UT19PQV9VTlNVQlND",
-          "UklCRV9TUE9UU19SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyLU",
-          "AQoQUHJvdG9PQVNwb3RFdmVudBI9CgtwYXlsb2FkVHlwZRgBIAEoDjITLlBy",
-          "b3RvT0FQYXlsb2FkVHlwZToTUFJPVE9fT0FfU1BPVF9FVkVOVBIbChNjdGlk",
-          "VHJhZGVyQWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAigDEgsKA2Jp",
-          "ZBgEIAEoBBILCgNhc2sYBSABKAQSIgoIdHJlbmRiYXIYBiADKAsyEC5Qcm90",
-          "b09BVHJlbmRiYXISFAoMc2Vzc2lvbkNsb3NlGAcgASgEIsgBCh9Qcm90b09B",
-          "U3Vic2NyaWJlTGl2ZVRyZW5kYmFyUmVxEk4KC3BheWxvYWRUeXBlGAEgASgO",
-          "MhMuUHJvdG9PQVBheWxvYWRUeXBlOiRQUk9UT19PQV9TVUJTQ1JJQkVfTElW",
-          "RV9UUkVOREJBUl9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIm",
-          "CgZwZXJpb2QYAyACKA4yFi5Qcm90b09BVHJlbmRiYXJQZXJpb2QSEAoIc3lt",
-          "Ym9sSWQYBCACKAMijgEKH1Byb3RvT0FTdWJzY3JpYmVMaXZlVHJlbmRiYXJS",
-          "ZXMSTgoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6",
-          "JFBST1RPX09BX1NVQlNDUklCRV9MSVZFX1RSRU5EQkFSX1JFUxIbChNjdGlk",
-          "VHJhZGVyQWNjb3VudElkGAIgAigDIswBCiFQcm90b09BVW5zdWJzY3JpYmVM",
-          "aXZlVHJlbmRiYXJSZXESUAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09B",
-          "UGF5bG9hZFR5cGU6JlBST1RPX09BX1VOU1VCU0NSSUJFX0xJVkVfVFJFTkRC",
-          "QVJfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSJgoGcGVyaW9k",
-          "GAMgAigOMhYuUHJvdG9PQVRyZW5kYmFyUGVyaW9kEhAKCHN5bWJvbElkGAQg",
-          "AigDIpIBCiFQcm90b09BVW5zdWJzY3JpYmVMaXZlVHJlbmRiYXJSZXMSUAoL",
-          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6JlBST1RP",
-          "X09BX1VOU1VCU0NSSUJFX0xJVkVfVFJFTkRCQVJfUkVTEhsKE2N0aWRUcmFk",
-          "ZXJBY2NvdW50SWQYAiACKAMi4QEKFlByb3RvT0FHZXRUcmVuZGJhcnNSZXES",
-          "RAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GlBS",
-          "T1RPX09BX0dFVF9UUkVOREJBUlNfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50",
-          "SWQYAiACKAMSFQoNZnJvbVRpbWVzdGFtcBgDIAIoAxITCgt0b1RpbWVzdGFt",
-          "cBgEIAIoAxImCgZwZXJpb2QYBSACKA4yFi5Qcm90b09BVHJlbmRiYXJQZXJp",
-          "b2QSEAoIc3ltYm9sSWQYBiACKAMi7AEKFlByb3RvT0FHZXRUcmVuZGJhcnNS",
+          "Y291bnRJZBgCIAIoAxIcCgVhc3NldBgDIAMoCzINLlByb3RvT0FBc3NldCKg",
+          "AQoVUHJvdG9PQVN5bWJvbHNMaXN0UmVxEkMKC3BheWxvYWRUeXBlGAEgASgO",
+          "MhMuUHJvdG9PQVBheWxvYWRUeXBlOhlQUk9UT19PQV9TWU1CT0xTX0xJU1Rf",
+          "UkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSJQoWaW5jbHVkZUFy",
+          "Y2hpdmVkU3ltYm9scxgDIAEoCDoFZmFsc2UizgEKFVByb3RvT0FTeW1ib2xz",
+          "TGlzdFJlcxJDCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2Fk",
+          "VHlwZToZUFJPVE9fT0FfU1lNQk9MU19MSVNUX1JFUxIbChNjdGlkVHJhZGVy",
+          "QWNjb3VudElkGAIgAigDEiMKBnN5bWJvbBgDIAMoCzITLlByb3RvT0FMaWdo",
+          "dFN5bWJvbBIuCg5hcmNoaXZlZFN5bWJvbBgEIAMoCzIWLlByb3RvT0FBcmNo",
+          "aXZlZFN5bWJvbCKKAQoUUHJvdG9PQVN5bWJvbEJ5SWRSZXESQwoLcGF5bG9h",
+          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GVBST1RPX09BX1NZ",
+          "TUJPTF9CWV9JRF9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIQ",
+          "CghzeW1ib2xJZBgDIAMoAyLIAQoUUHJvdG9PQVN5bWJvbEJ5SWRSZXMSQwoL",
+          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GVBST1RP",
+          "X09BX1NZTUJPTF9CWV9JRF9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgC",
+          "IAIoAxIeCgZzeW1ib2wYAyADKAsyDi5Qcm90b09BU3ltYm9sEi4KDmFyY2hp",
+          "dmVkU3ltYm9sGAQgAygLMhYuUHJvdG9PQUFyY2hpdmVkU3ltYm9sIrcBCh5Q",
+          "cm90b09BU3ltYm9sc0ZvckNvbnZlcnNpb25SZXESTQoLcGF5bG9hZFR5cGUY",
+          "ASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6I1BST1RPX09BX1NZTUJPTFNf",
+          "Rk9SX0NPTlZFUlNJT05fUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiAC",
+          "KAMSFAoMZmlyc3RBc3NldElkGAMgAigDEhMKC2xhc3RBc3NldElkGAQgAigD",
+          "IrEBCh5Qcm90b09BU3ltYm9sc0ZvckNvbnZlcnNpb25SZXMSTQoLcGF5bG9h",
+          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6I1BST1RPX09BX1NZ",
+          "TUJPTFNfRk9SX0NPTlZFUlNJT05fUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50",
+          "SWQYAiACKAMSIwoGc3ltYm9sGAMgAygLMhMuUHJvdG9PQUxpZ2h0U3ltYm9s",
+          "IpMBChlQcm90b09BU3ltYm9sQ2hhbmdlZEV2ZW50EkcKC3BheWxvYWRUeXBl",
+          "GAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOh1QUk9UT19PQV9TWU1CT0xf",
+          "Q0hBTkdFRF9FVkVOVBIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhAK",
+          "CHN5bWJvbElkGAMgAygDIoABChhQcm90b09BQXNzZXRDbGFzc0xpc3RSZXES",
+          "RwoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HVBS",
+          "T1RPX09BX0FTU0VUX0NMQVNTX0xJU1RfUkVREhsKE2N0aWRUcmFkZXJBY2Nv",
+          "dW50SWQYAiACKAMiqAEKGFByb3RvT0FBc3NldENsYXNzTGlzdFJlcxJHCgtw",
+          "YXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTodUFJPVE9f",
+          "T0FfQVNTRVRfQ0xBU1NfTElTVF9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJ",
+          "ZBgCIAIoAxImCgphc3NldENsYXNzGAMgAygLMhIuUHJvdG9PQUFzc2V0Q2xh",
+          "c3MibgoQUHJvdG9PQVRyYWRlclJlcRI9CgtwYXlsb2FkVHlwZRgBIAEoDjIT",
+          "LlByb3RvT0FQYXlsb2FkVHlwZToTUFJPVE9fT0FfVFJBREVSX1JFURIbChNj",
+          "dGlkVHJhZGVyQWNjb3VudElkGAIgAigDIo4BChBQcm90b09BVHJhZGVyUmVz",
+          "Ej0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhNQ",
+          "Uk9UT19PQV9UUkFERVJfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiAC",
+          "KAMSHgoGdHJhZGVyGAMgAigLMg4uUHJvdG9PQVRyYWRlciKgAQoZUHJvdG9P",
+          "QVRyYWRlclVwZGF0ZWRFdmVudBJGCgtwYXlsb2FkVHlwZRgBIAEoDjITLlBy",
+          "b3RvT0FQYXlsb2FkVHlwZTocUFJPVE9fT0FfVFJBREVSX1VQREFURV9FVkVO",
+          "VBIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEh4KBnRyYWRlchgDIAIo",
+          "CzIOLlByb3RvT0FUcmFkZXIidAoTUHJvdG9PQVJlY29uY2lsZVJlcRJACgtw",
+          "YXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToWUFJPVE9f",
+          "T0FfUkVDT05DSUxFX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigD",
+          "IrYBChNQcm90b09BUmVjb25jaWxlUmVzEkAKC3BheWxvYWRUeXBlGAEgASgO",
+          "MhMuUHJvdG9PQVBheWxvYWRUeXBlOhZQUk9UT19PQV9SRUNPTkNJTEVfUkVT",
+          "EhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSIgoIcG9zaXRpb24YAyAD",
+          "KAsyEC5Qcm90b09BUG9zaXRpb24SHAoFb3JkZXIYBCADKAsyDS5Qcm90b09B",
+          "T3JkZXIiyAEKFlByb3RvT0FPcmRlckVycm9yRXZlbnQSRAoLcGF5bG9hZFR5",
+          "cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6GlBST1RPX09BX09SREVS",
+          "X0VSUk9SX0VWRU5UEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYBSACKAMSEQoJ",
+          "ZXJyb3JDb2RlGAIgAigJEg8KB29yZGVySWQYAyABKAMSEgoKcG9zaXRpb25J",
+          "ZBgGIAEoAxITCgtkZXNjcmlwdGlvbhgHIAEoCSKwAQoSUHJvdG9PQURlYWxM",
+          "aXN0UmVxEkAKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRU",
+          "eXBlOhZQUk9UT19PQV9ERUFMX0xJU1RfUkVREhsKE2N0aWRUcmFkZXJBY2Nv",
+          "dW50SWQYAiACKAMSFQoNZnJvbVRpbWVzdGFtcBgDIAIoAxITCgt0b1RpbWVz",
+          "dGFtcBgEIAIoAxIPCgdtYXhSb3dzGAUgASgFIqABChJQcm90b09BRGVhbExp",
+          "c3RSZXMSQAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5",
+          "cGU6FlBST1RPX09BX0RFQUxfTElTVF9SRVMSGwoTY3RpZFRyYWRlckFjY291",
+          "bnRJZBgCIAIoAxIaCgRkZWFsGAMgAygLMgwuUHJvdG9PQURlYWwSDwoHaGFz",
+          "TW9yZRgEIAIoCCKhAQoYUHJvdG9PQUV4cGVjdGVkTWFyZ2luUmVxEkYKC3Bh",
+          "eWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhxQUk9UT19P",
+          "QV9FWFBFQ1RFRF9NQVJHSU5fUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQY",
+          "AiACKAMSEAoIc3ltYm9sSWQYAyACKAMSDgoGdm9sdW1lGAQgAygDIrwBChhQ",
+          "cm90b09BRXhwZWN0ZWRNYXJnaW5SZXMSRgoLcGF5bG9hZFR5cGUYASABKA4y",
+          "Ey5Qcm90b09BUGF5bG9hZFR5cGU6HFBST1RPX09BX0VYUEVDVEVEX01BUkdJ",
+          "Tl9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxImCgZtYXJnaW4Y",
+          "AyADKAsyFi5Qcm90b09BRXhwZWN0ZWRNYXJnaW4SEwoLbW9uZXlEaWdpdHMY",
+          "BCABKA0ivgEKGVByb3RvT0FNYXJnaW5DaGFuZ2VkRXZlbnQSRwoLcGF5bG9h",
+          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HVBST1RPX09BX01B",
+          "UkdJTl9DSEFOR0VEX0VWRU5UEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiAC",
+          "KAMSEgoKcG9zaXRpb25JZBgDIAIoBBISCgp1c2VkTWFyZ2luGAQgAigEEhMK",
+          "C21vbmV5RGlnaXRzGAUgASgNIrcBCh1Qcm90b09BQ2FzaEZsb3dIaXN0b3J5",
+          "TGlzdFJlcRJNCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2Fk",
+          "VHlwZTojUFJPVE9fT0FfQ0FTSF9GTE9XX0hJU1RPUllfTElTVF9SRVESGwoT",
+          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIVCg1mcm9tVGltZXN0YW1wGAMg",
+          "AigDEhMKC3RvVGltZXN0YW1wGAQgAigDIr0BCh1Qcm90b09BQ2FzaEZsb3dI",
+          "aXN0b3J5TGlzdFJlcxJNCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQ",
+          "YXlsb2FkVHlwZTojUFJPVE9fT0FfQ0FTSF9GTE9XX0hJU1RPUllfTElTVF9S",
+          "RVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIwCg9kZXBvc2l0V2l0",
+          "aGRyYXcYAyADKAsyFy5Qcm90b09BRGVwb3NpdFdpdGhkcmF3IpEBCiVQcm90",
+          "b09BR2V0QWNjb3VudExpc3RCeUFjY2Vzc1Rva2VuUmVxElMKC3BheWxvYWRU",
+          "eXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOilQUk9UT19PQV9HRVRf",
+          "QUNDT1VOVFNfQllfQUNDRVNTX1RPS0VOX1JFURITCgthY2Nlc3NUb2tlbhgC",
+          "IAIoCSL/AQolUHJvdG9PQUdldEFjY291bnRMaXN0QnlBY2Nlc3NUb2tlblJl",
+          "cxJTCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTop",
+          "UFJPVE9fT0FfR0VUX0FDQ09VTlRTX0JZX0FDQ0VTU19UT0tFTl9SRVMSEwoL",
+          "YWNjZXNzVG9rZW4YAiACKAkSNgoPcGVybWlzc2lvblNjb3BlGAMgASgOMh0u",
+          "UHJvdG9PQUNsaWVudFBlcm1pc3Npb25TY29wZRI0ChFjdGlkVHJhZGVyQWNj",
+          "b3VudBgEIAMoCzIZLlByb3RvT0FDdGlkVHJhZGVyQWNjb3VudCJ0ChZQcm90",
+          "b09BUmVmcmVzaFRva2VuUmVxEkQKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJv",
+          "dG9PQVBheWxvYWRUeXBlOhpQUk9UT19PQV9SRUZSRVNIX1RPS0VOX1JFURIU",
+          "CgxyZWZyZXNoVG9rZW4YAiACKAkirwEKFlByb3RvT0FSZWZyZXNoVG9rZW5S",
           "ZXMSRAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6",
-          "GlBST1RPX09BX0dFVF9UUkVOREJBUlNfUkVTEhsKE2N0aWRUcmFkZXJBY2Nv",
-          "dW50SWQYAiACKAMSJgoGcGVyaW9kGAMgAigOMhYuUHJvdG9PQVRyZW5kYmFy",
-          "UGVyaW9kEhEKCXRpbWVzdGFtcBgEIAIoAxIiCgh0cmVuZGJhchgFIAMoCzIQ",
-          "LlByb3RvT0FUcmVuZGJhchIQCghzeW1ib2xJZBgGIAEoAyLYAQoVUHJvdG9P",
-          "QUdldFRpY2tEYXRhUmVxEkMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9P",
-          "QVBheWxvYWRUeXBlOhlQUk9UT19PQV9HRVRfVElDS0RBVEFfUkVREhsKE2N0",
-          "aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSEAoIc3ltYm9sSWQYAyACKAMSHwoE",
-          "dHlwZRgEIAIoDjIRLlByb3RvT0FRdW90ZVR5cGUSFQoNZnJvbVRpbWVzdGFt",
-          "cBgFIAIoAxITCgt0b1RpbWVzdGFtcBgGIAIoAyKuAQoVUHJvdG9PQUdldFRp",
-          "Y2tEYXRhUmVzEkMKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxv",
-          "YWRUeXBlOhlQUk9UT19PQV9HRVRfVElDS0RBVEFfUkVTEhsKE2N0aWRUcmFk",
-          "ZXJBY2NvdW50SWQYAiACKAMSIgoIdGlja0RhdGEYAyADKAsyEC5Qcm90b09B",
-          "VGlja0RhdGESDwoHaGFzTW9yZRgEIAIoCCKIAQofUHJvdG9PQUdldEN0aWRQ",
-          "cm9maWxlQnlUb2tlblJlcRJQCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3Rv",
-          "T0FQYXlsb2FkVHlwZTomUFJPVE9fT0FfR0VUX0NUSURfUFJPRklMRV9CWV9U",
-          "T0tFTl9SRVESEwoLYWNjZXNzVG9rZW4YAiACKAkimQEKH1Byb3RvT0FHZXRD",
-          "dGlkUHJvZmlsZUJ5VG9rZW5SZXMSUAoLcGF5bG9hZFR5cGUYASABKA4yEy5Q",
-          "cm90b09BUGF5bG9hZFR5cGU6JlBST1RPX09BX0dFVF9DVElEX1BST0ZJTEVf",
-          "QllfVE9LRU5fUkVTEiQKB3Byb2ZpbGUYAiACKAsyEy5Qcm90b09BQ3RpZFBy",
-          "b2ZpbGUixAEKEVByb3RvT0FEZXB0aEV2ZW50Ej4KC3BheWxvYWRUeXBlGAEg",
-          "ASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhRQUk9UT19PQV9ERVBUSF9FVkVO",
-          "VBIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMg",
-          "AigEEiUKCW5ld1F1b3RlcxgEIAMoCzISLlByb3RvT0FEZXB0aFF1b3RlEhkK",
-          "DWRlbGV0ZWRRdW90ZXMYBSADKARCAhABIp4BCh5Qcm90b09BU3Vic2NyaWJl",
-          "RGVwdGhRdW90ZXNSZXESTQoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09B",
-          "UGF5bG9hZFR5cGU6I1BST1RPX09BX1NVQlNDUklCRV9ERVBUSF9RVU9URVNf",
-          "UkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSEAoIc3ltYm9sSWQY",
-          "AyADKAMijAEKHlByb3RvT0FTdWJzY3JpYmVEZXB0aFF1b3Rlc1JlcxJNCgtw",
-          "YXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTojUFJPVE9f",
-          "T0FfU1VCU0NSSUJFX0RFUFRIX1FVT1RFU19SRVMSGwoTY3RpZFRyYWRlckFj",
-          "Y291bnRJZBgCIAIoAyKiAQogUHJvdG9PQVVuc3Vic2NyaWJlRGVwdGhRdW90",
-          "ZXNSZXESTwoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5",
-          "cGU6JVBST1RPX09BX1VOU1VCU0NSSUJFX0RFUFRIX1FVT1RFU19SRVESGwoT",
-          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAMoAyKQ",
-          "AQogUHJvdG9PQVVuc3Vic2NyaWJlRGVwdGhRdW90ZXNSZXMSTwoLcGF5bG9h",
-          "ZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6JVBST1RPX09BX1VO",
-          "U1VCU0NSSUJFX0RFUFRIX1FVT1RFU19SRVMSGwoTY3RpZFRyYWRlckFjY291",
-          "bnRJZBgCIAIoAyKDAQocUHJvdG9PQVN5bWJvbENhdGVnb3J5TGlzdFJlcRJG",
-          "CgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTocUFJP",
-          "VE9fT0FfU1lNQk9MX0NBVEVHT1JZX1JFURIbChNjdGlkVHJhZGVyQWNjb3Vu",
-          "dElkGAIgAigDIrMBChxQcm90b09BU3ltYm9sQ2F0ZWdvcnlMaXN0UmVzEkYK",
-          "C3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhxQUk9U",
-          "T19PQV9TWU1CT0xfQ0FURUdPUllfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50",
-          "SWQYAiACKAMSLgoOc3ltYm9sQ2F0ZWdvcnkYAyADKAsyFi5Qcm90b09BU3lt",
-          "Ym9sQ2F0ZWdvcnkifQoXUHJvdG9PQUFjY291bnRMb2dvdXRSZXESRQoLcGF5",
-          "bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6G1BST1RPX09B",
-          "X0FDQ09VTlRfTE9HT1VUX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIg",
-          "AigDIn0KF1Byb3RvT0FBY2NvdW50TG9nb3V0UmVzEkUKC3BheWxvYWRUeXBl",
-          "GAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhtQUk9UT19PQV9BQ0NPVU5U",
-          "X0xPR09VVF9SRVMSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKJAQod",
-          "UHJvdG9PQUFjY291bnREaXNjb25uZWN0RXZlbnQSSwoLcGF5bG9hZFR5cGUY",
-          "ASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6IVBST1RPX09BX0FDQ09VTlRf",
-          "RElTQ09OTkVDVF9FVkVOVBIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigD",
-          "IoABChhQcm90b09BTWFyZ2luQ2FsbExpc3RSZXESRwoLcGF5bG9hZFR5cGUY",
-          "ASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HVBST1RPX09BX01BUkdJTl9D",
-          "QUxMX0xJU1RfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMiiwEK",
-          "GFByb3RvT0FNYXJnaW5DYWxsTGlzdFJlcxJHCgtwYXlsb2FkVHlwZRgBIAEo",
-          "DjITLlByb3RvT0FQYXlsb2FkVHlwZTodUFJPVE9fT0FfTUFSR0lOX0NBTExf",
-          "TElTVF9SRVMSJgoKbWFyZ2luQ2FsbBgCIAMoCzISLlByb3RvT0FNYXJnaW5D",
-          "YWxsIqwBChpQcm90b09BTWFyZ2luQ2FsbFVwZGF0ZVJlcRJJCgtwYXlsb2Fk",
-          "VHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTofUFJPVE9fT0FfTUFS",
-          "R0lOX0NBTExfVVBEQVRFX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIg",
-          "AigDEiYKCm1hcmdpbkNhbGwYAyACKAsyEi5Qcm90b09BTWFyZ2luQ2FsbCJn",
-          "ChpQcm90b09BTWFyZ2luQ2FsbFVwZGF0ZVJlcxJJCgtwYXlsb2FkVHlwZRgB",
-          "IAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTofUFJPVE9fT0FfTUFSR0lOX0NB",
-          "TExfVVBEQVRFX1JFUyKwAQocUHJvdG9PQU1hcmdpbkNhbGxVcGRhdGVFdmVu",
-          "dBJLCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToh",
-          "UFJPVE9fT0FfTUFSR0lOX0NBTExfVVBEQVRFX0VWRU5UEhsKE2N0aWRUcmFk",
-          "ZXJBY2NvdW50SWQYAiACKAMSJgoKbWFyZ2luQ2FsbBgDIAIoCzISLlByb3Rv",
-          "T0FNYXJnaW5DYWxsIrIBCh1Qcm90b09BTWFyZ2luQ2FsbFRyaWdnZXJFdmVu",
-          "dBJMCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToi",
-          "UFJPVE9fT0FfTUFSR0lOX0NBTExfVFJJR0dFUl9FVkVOVBIbChNjdGlkVHJh",
-          "ZGVyQWNjb3VudElkGAIgAigDEiYKCm1hcmdpbkNhbGwYAyACKAsyEi5Qcm90",
-          "b09BTWFyZ2luQ2FsbEJCCh9jb20ueHRyYWRlci5wcm90b2NvbC5vcGVuYXBp",
-          "LnYyQhpDb250YWluZXJPcGVuQXBpVjJNZXNzYWdlc1ABoAEB"));
+          "GlBST1RPX09BX1JFRlJFU0hfVE9LRU5fUkVTEhMKC2FjY2Vzc1Rva2VuGAIg",
+          "AigJEhEKCXRva2VuVHlwZRgDIAIoCRIRCglleHBpcmVzSW4YBCACKAMSFAoM",
+          "cmVmcmVzaFRva2VuGAUgAigJIpEBChhQcm90b09BU3Vic2NyaWJlU3BvdHNS",
+          "ZXESRgoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6",
+          "HFBST1RPX09BX1NVQlNDUklCRV9TUE9UU19SRVESGwoTY3RpZFRyYWRlckFj",
+          "Y291bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAMoAyJ/ChhQcm90b09BU3Vi",
+          "c2NyaWJlU3BvdHNSZXMSRgoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09B",
+          "UGF5bG9hZFR5cGU6HFBST1RPX09BX1NVQlNDUklCRV9TUE9UU19SRVMSGwoT",
+          "Y3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKVAQoaUHJvdG9PQVVuc3Vic2Ny",
+          "aWJlU3BvdHNSZXESSAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5",
+          "bG9hZFR5cGU6HlBST1RPX09BX1VOU1VCU0NSSUJFX1NQT1RTX1JFURIbChNj",
+          "dGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAygDIoMB",
+          "ChpQcm90b09BVW5zdWJzY3JpYmVTcG90c1JlcxJICgtwYXlsb2FkVHlwZRgB",
+          "IAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZToeUFJPVE9fT0FfVU5TVUJTQ1JJ",
+          "QkVfU1BPVFNfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMi1AEK",
+          "EFByb3RvT0FTcG90RXZlbnQSPQoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90",
+          "b09BUGF5bG9hZFR5cGU6E1BST1RPX09BX1NQT1RfRVZFTlQSGwoTY3RpZFRy",
+          "YWRlckFjY291bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAIoAxILCgNiaWQY",
+          "BCABKAQSCwoDYXNrGAUgASgEEiIKCHRyZW5kYmFyGAYgAygLMhAuUHJvdG9P",
+          "QVRyZW5kYmFyEhQKDHNlc3Npb25DbG9zZRgHIAEoBCLIAQofUHJvdG9PQVN1",
+          "YnNjcmliZUxpdmVUcmVuZGJhclJlcRJOCgtwYXlsb2FkVHlwZRgBIAEoDjIT",
+          "LlByb3RvT0FQYXlsb2FkVHlwZTokUFJPVE9fT0FfU1VCU0NSSUJFX0xJVkVf",
+          "VFJFTkRCQVJfUkVREhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSJgoG",
+          "cGVyaW9kGAMgAigOMhYuUHJvdG9PQVRyZW5kYmFyUGVyaW9kEhAKCHN5bWJv",
+          "bElkGAQgAigDIo4BCh9Qcm90b09BU3Vic2NyaWJlTGl2ZVRyZW5kYmFyUmVz",
+          "Ek4KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOiRQ",
+          "Uk9UT19PQV9TVUJTQ1JJQkVfTElWRV9UUkVOREJBUl9SRVMSGwoTY3RpZFRy",
+          "YWRlckFjY291bnRJZBgCIAIoAyLMAQohUHJvdG9PQVVuc3Vic2NyaWJlTGl2",
+          "ZVRyZW5kYmFyUmVxElAKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBh",
+          "eWxvYWRUeXBlOiZQUk9UT19PQV9VTlNVQlNDUklCRV9MSVZFX1RSRU5EQkFS",
+          "X1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEiYKBnBlcmlvZBgD",
+          "IAIoDjIWLlByb3RvT0FUcmVuZGJhclBlcmlvZBIQCghzeW1ib2xJZBgEIAIo",
+          "AyKSAQohUHJvdG9PQVVuc3Vic2NyaWJlTGl2ZVRyZW5kYmFyUmVzElAKC3Bh",
+          "eWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOiZQUk9UT19P",
+          "QV9VTlNVQlNDUklCRV9MSVZFX1RSRU5EQkFSX1JFUxIbChNjdGlkVHJhZGVy",
+          "QWNjb3VudElkGAIgAigDIuEBChZQcm90b09BR2V0VHJlbmRiYXJzUmVxEkQK",
+          "C3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhpQUk9U",
+          "T19PQV9HRVRfVFJFTkRCQVJTX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElk",
+          "GAIgAigDEhUKDWZyb21UaW1lc3RhbXAYAyACKAMSEwoLdG9UaW1lc3RhbXAY",
+          "BCACKAMSJgoGcGVyaW9kGAUgAigOMhYuUHJvdG9PQVRyZW5kYmFyUGVyaW9k",
+          "EhAKCHN5bWJvbElkGAYgAigDIuwBChZQcm90b09BR2V0VHJlbmRiYXJzUmVz",
+          "EkQKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhpQ",
+          "Uk9UT19PQV9HRVRfVFJFTkRCQVJTX1JFUxIbChNjdGlkVHJhZGVyQWNjb3Vu",
+          "dElkGAIgAigDEiYKBnBlcmlvZBgDIAIoDjIWLlByb3RvT0FUcmVuZGJhclBl",
+          "cmlvZBIRCgl0aW1lc3RhbXAYBCACKAMSIgoIdHJlbmRiYXIYBSADKAsyEC5Q",
+          "cm90b09BVHJlbmRiYXISEAoIc3ltYm9sSWQYBiABKAMi2AEKFVByb3RvT0FH",
+          "ZXRUaWNrRGF0YVJlcRJDCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQ",
+          "YXlsb2FkVHlwZToZUFJPVE9fT0FfR0VUX1RJQ0tEQVRBX1JFURIbChNjdGlk",
+          "VHJhZGVyQWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMgAigDEh8KBHR5",
+          "cGUYBCACKA4yES5Qcm90b09BUXVvdGVUeXBlEhUKDWZyb21UaW1lc3RhbXAY",
+          "BSACKAMSEwoLdG9UaW1lc3RhbXAYBiACKAMirgEKFVByb3RvT0FHZXRUaWNr",
+          "RGF0YVJlcxJDCgtwYXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2Fk",
+          "VHlwZToZUFJPVE9fT0FfR0VUX1RJQ0tEQVRBX1JFUxIbChNjdGlkVHJhZGVy",
+          "QWNjb3VudElkGAIgAigDEiIKCHRpY2tEYXRhGAMgAygLMhAuUHJvdG9PQVRp",
+          "Y2tEYXRhEg8KB2hhc01vcmUYBCACKAgiiAEKH1Byb3RvT0FHZXRDdGlkUHJv",
+          "ZmlsZUJ5VG9rZW5SZXESUAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09B",
+          "UGF5bG9hZFR5cGU6JlBST1RPX09BX0dFVF9DVElEX1BST0ZJTEVfQllfVE9L",
+          "RU5fUkVREhMKC2FjY2Vzc1Rva2VuGAIgAigJIpkBCh9Qcm90b09BR2V0Q3Rp",
+          "ZFByb2ZpbGVCeVRva2VuUmVzElAKC3BheWxvYWRUeXBlGAEgASgOMhMuUHJv",
+          "dG9PQVBheWxvYWRUeXBlOiZQUk9UT19PQV9HRVRfQ1RJRF9QUk9GSUxFX0JZ",
+          "X1RPS0VOX1JFUxIkCgdwcm9maWxlGAIgAigLMhMuUHJvdG9PQUN0aWRQcm9m",
+          "aWxlIsQBChFQcm90b09BRGVwdGhFdmVudBI+CgtwYXlsb2FkVHlwZRgBIAEo",
+          "DjITLlByb3RvT0FQYXlsb2FkVHlwZToUUFJPVE9fT0FfREVQVEhfRVZFTlQS",
+          "GwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAxIQCghzeW1ib2xJZBgDIAIo",
+          "BBIlCgluZXdRdW90ZXMYBCADKAsyEi5Qcm90b09BRGVwdGhRdW90ZRIZCg1k",
+          "ZWxldGVkUXVvdGVzGAUgAygEQgIQASKeAQoeUHJvdG9PQVN1YnNjcmliZURl",
+          "cHRoUXVvdGVzUmVxEk0KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBh",
+          "eWxvYWRUeXBlOiNQUk9UT19PQV9TVUJTQ1JJQkVfREVQVEhfUVVPVEVTX1JF",
+          "URIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDEhAKCHN5bWJvbElkGAMg",
+          "AygDIowBCh5Qcm90b09BU3Vic2NyaWJlRGVwdGhRdW90ZXNSZXMSTQoLcGF5",
+          "bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6I1BST1RPX09B",
+          "X1NVQlNDUklCRV9ERVBUSF9RVU9URVNfUkVTEhsKE2N0aWRUcmFkZXJBY2Nv",
+          "dW50SWQYAiACKAMiogEKIFByb3RvT0FVbnN1YnNjcmliZURlcHRoUXVvdGVz",
+          "UmVxEk8KC3BheWxvYWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBl",
+          "OiVQUk9UT19PQV9VTlNVQlNDUklCRV9ERVBUSF9RVU9URVNfUkVREhsKE2N0",
+          "aWRUcmFkZXJBY2NvdW50SWQYAiACKAMSEAoIc3ltYm9sSWQYAyADKAMikAEK",
+          "IFByb3RvT0FVbnN1YnNjcmliZURlcHRoUXVvdGVzUmVzEk8KC3BheWxvYWRU",
+          "eXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOiVQUk9UT19PQV9VTlNV",
+          "QlNDUklCRV9ERVBUSF9RVU9URVNfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50",
+          "SWQYAiACKAMigwEKHFByb3RvT0FTeW1ib2xDYXRlZ29yeUxpc3RSZXESRgoL",
+          "cGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6HFBST1RP",
+          "X09BX1NZTUJPTF9DQVRFR09SWV9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJ",
+          "ZBgCIAIoAyKzAQocUHJvdG9PQVN5bWJvbENhdGVnb3J5TGlzdFJlcxJGCgtw",
+          "YXlsb2FkVHlwZRgBIAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTocUFJPVE9f",
+          "T0FfU1lNQk9MX0NBVEVHT1JZX1JFUxIbChNjdGlkVHJhZGVyQWNjb3VudElk",
+          "GAIgAigDEi4KDnN5bWJvbENhdGVnb3J5GAMgAygLMhYuUHJvdG9PQVN5bWJv",
+          "bENhdGVnb3J5In0KF1Byb3RvT0FBY2NvdW50TG9nb3V0UmVxEkUKC3BheWxv",
+          "YWRUeXBlGAEgASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOhtQUk9UT19PQV9B",
+          "Q0NPVU5UX0xPR09VVF9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIo",
+          "AyJ9ChdQcm90b09BQWNjb3VudExvZ291dFJlcxJFCgtwYXlsb2FkVHlwZRgB",
+          "IAEoDjITLlByb3RvT0FQYXlsb2FkVHlwZTobUFJPVE9fT0FfQUNDT1VOVF9M",
+          "T0dPVVRfUkVTEhsKE2N0aWRUcmFkZXJBY2NvdW50SWQYAiACKAMiiQEKHVBy",
+          "b3RvT0FBY2NvdW50RGlzY29ubmVjdEV2ZW50EksKC3BheWxvYWRUeXBlGAEg",
+          "ASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOiFQUk9UT19PQV9BQ0NPVU5UX0RJ",
+          "U0NPTk5FQ1RfRVZFTlQSGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIoAyKA",
+          "AQoYUHJvdG9PQU1hcmdpbkNhbGxMaXN0UmVxEkcKC3BheWxvYWRUeXBlGAEg",
+          "ASgOMhMuUHJvdG9PQVBheWxvYWRUeXBlOh1QUk9UT19PQV9NQVJHSU5fQ0FM",
+          "TF9MSVNUX1JFURIbChNjdGlkVHJhZGVyQWNjb3VudElkGAIgAigDIosBChhQ",
+          "cm90b09BTWFyZ2luQ2FsbExpc3RSZXMSRwoLcGF5bG9hZFR5cGUYASABKA4y",
+          "Ey5Qcm90b09BUGF5bG9hZFR5cGU6HVBST1RPX09BX01BUkdJTl9DQUxMX0xJ",
+          "U1RfUkVTEiYKCm1hcmdpbkNhbGwYAiADKAsyEi5Qcm90b09BTWFyZ2luQ2Fs",
+          "bCKsAQoaUHJvdG9PQU1hcmdpbkNhbGxVcGRhdGVSZXESSQoLcGF5bG9hZFR5",
+          "cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6H1BST1RPX09BX01BUkdJ",
+          "Tl9DQUxMX1VQREFURV9SRVESGwoTY3RpZFRyYWRlckFjY291bnRJZBgCIAIo",
+          "AxImCgptYXJnaW5DYWxsGAMgAigLMhIuUHJvdG9PQU1hcmdpbkNhbGwiZwoa",
+          "UHJvdG9PQU1hcmdpbkNhbGxVcGRhdGVSZXMSSQoLcGF5bG9hZFR5cGUYASAB",
+          "KA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6H1BST1RPX09BX01BUkdJTl9DQUxM",
+          "X1VQREFURV9SRVMisAEKHFByb3RvT0FNYXJnaW5DYWxsVXBkYXRlRXZlbnQS",
+          "SwoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6IVBS",
+          "T1RPX09BX01BUkdJTl9DQUxMX1VQREFURV9FVkVOVBIbChNjdGlkVHJhZGVy",
+          "QWNjb3VudElkGAIgAigDEiYKCm1hcmdpbkNhbGwYAyACKAsyEi5Qcm90b09B",
+          "TWFyZ2luQ2FsbCKyAQodUHJvdG9PQU1hcmdpbkNhbGxUcmlnZ2VyRXZlbnQS",
+          "TAoLcGF5bG9hZFR5cGUYASABKA4yEy5Qcm90b09BUGF5bG9hZFR5cGU6IlBS",
+          "T1RPX09BX01BUkdJTl9DQUxMX1RSSUdHRVJfRVZFTlQSGwoTY3RpZFRyYWRl",
+          "ckFjY291bnRJZBgCIAIoAxImCgptYXJnaW5DYWxsGAMgAigLMhIuUHJvdG9P",
+          "QU1hcmdpbkNhbGxCQgofY29tLnh0cmFkZXIucHJvdG9jb2wub3BlbmFwaS52",
+          "MkIaQ29udGFpbmVyT3BlbkFwaVYyTWVzc2FnZXNQAaABAQ=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::OpenApiModelMessagesReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -339,10 +343,10 @@ public static partial class OpenApiMessagesReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOATrailingSLChangedEvent), global::ProtoOATrailingSLChangedEvent.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "PositionId", "OrderId", "StopPrice", "UtcLastUpdateTimestamp" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAAssetListReq), global::ProtoOAAssetListReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAAssetListRes), global::ProtoOAAssetListRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Asset" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolsListReq), global::ProtoOASymbolsListReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolsListRes), global::ProtoOASymbolsListRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Symbol" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolsListReq), global::ProtoOASymbolsListReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "IncludeArchivedSymbols" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolsListRes), global::ProtoOASymbolsListRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Symbol", "ArchivedSymbol" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolByIdReq), global::ProtoOASymbolByIdReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "SymbolId" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolByIdRes), global::ProtoOASymbolByIdRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Symbol" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolByIdRes), global::ProtoOASymbolByIdRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Symbol", "ArchivedSymbol" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolsForConversionReq), global::ProtoOASymbolsForConversionReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "FirstAssetId", "LastAssetId" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolsForConversionRes), global::ProtoOASymbolsForConversionRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Symbol" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOASymbolChangedEvent), global::ProtoOASymbolChangedEvent.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "SymbolId" }, null, null, null, null),
@@ -357,8 +361,8 @@ public static partial class OpenApiMessagesReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOADealListReq), global::ProtoOADealListReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "FromTimestamp", "ToTimestamp", "MaxRows" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOADealListRes), global::ProtoOADealListRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Deal", "HasMore" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAExpectedMarginReq), global::ProtoOAExpectedMarginReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "SymbolId", "Volume" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAExpectedMarginRes), global::ProtoOAExpectedMarginRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Margin" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAMarginChangedEvent), global::ProtoOAMarginChangedEvent.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "PositionId", "UsedMargin" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAExpectedMarginRes), global::ProtoOAExpectedMarginRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "Margin", "MoneyDigits" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAMarginChangedEvent), global::ProtoOAMarginChangedEvent.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "PositionId", "UsedMargin", "MoneyDigits" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOACashFlowHistoryListReq), global::ProtoOACashFlowHistoryListReq.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "FromTimestamp", "ToTimestamp" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOACashFlowHistoryListRes), global::ProtoOACashFlowHistoryListRes.Parser, new[]{ "PayloadType", "CtidTraderAccountId", "DepositWithdraw" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ProtoOAGetAccountListByAccessTokenReq), global::ProtoOAGetAccountListByAccessTokenReq.Parser, new[]{ "PayloadType", "AccessToken" }, null, null, null, null),
@@ -405,7 +409,11 @@ public static partial class OpenApiMessagesReflection {
 /// <summary>
 ///* Request for the authorizing an application to work with the cTrader platform Proxies. 
 /// </summary>
-public sealed partial class ProtoOAApplicationAuthReq : pb::IMessage<ProtoOAApplicationAuthReq> {
+public sealed partial class ProtoOAApplicationAuthReq : pb::IMessage<ProtoOAApplicationAuthReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAApplicationAuthReq> _parser = new pb::MessageParser<ProtoOAApplicationAuthReq>(() => new ProtoOAApplicationAuthReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -557,6 +565,9 @@ public sealed partial class ProtoOAApplicationAuthReq : pb::IMessage<ProtoOAAppl
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -572,7 +583,29 @@ public sealed partial class ProtoOAApplicationAuthReq : pb::IMessage<ProtoOAAppl
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasClientId) {
+      output.WriteRawTag(18);
+      output.WriteString(ClientId);
+    }
+    if (HasClientSecret) {
+      output.WriteRawTag(26);
+      output.WriteString(ClientSecret);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -611,6 +644,9 @@ public sealed partial class ProtoOAApplicationAuthReq : pb::IMessage<ProtoOAAppl
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -631,14 +667,45 @@ public sealed partial class ProtoOAApplicationAuthReq : pb::IMessage<ProtoOAAppl
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          ClientId = input.ReadString();
+          break;
+        }
+        case 26: {
+          ClientSecret = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAApplicationAuthReq request. 
 /// </summary>
-public sealed partial class ProtoOAApplicationAuthRes : pb::IMessage<ProtoOAApplicationAuthRes> {
+public sealed partial class ProtoOAApplicationAuthRes : pb::IMessage<ProtoOAApplicationAuthRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAApplicationAuthRes> _parser = new pb::MessageParser<ProtoOAApplicationAuthRes>(() => new ProtoOAApplicationAuthRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -732,6 +799,9 @@ public sealed partial class ProtoOAApplicationAuthRes : pb::IMessage<ProtoOAAppl
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -739,7 +809,21 @@ public sealed partial class ProtoOAApplicationAuthRes : pb::IMessage<ProtoOAAppl
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -766,6 +850,9 @@ public sealed partial class ProtoOAApplicationAuthRes : pb::IMessage<ProtoOAAppl
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -778,14 +865,37 @@ public sealed partial class ProtoOAApplicationAuthRes : pb::IMessage<ProtoOAAppl
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for the authorizing trading account session. Requires established authorized connection with the client application using ProtoOAApplicationAuthReq. 
 /// </summary>
-public sealed partial class ProtoOAAccountAuthReq : pb::IMessage<ProtoOAAccountAuthReq> {
+public sealed partial class ProtoOAAccountAuthReq : pb::IMessage<ProtoOAAccountAuthReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAccountAuthReq> _parser = new pb::MessageParser<ProtoOAAccountAuthReq>(() => new ProtoOAAccountAuthReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -938,6 +1048,9 @@ public sealed partial class ProtoOAAccountAuthReq : pb::IMessage<ProtoOAAccountA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -953,7 +1066,29 @@ public sealed partial class ProtoOAAccountAuthReq : pb::IMessage<ProtoOAAccountA
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasAccessToken) {
+      output.WriteRawTag(26);
+      output.WriteString(AccessToken);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -992,6 +1127,9 @@ public sealed partial class ProtoOAAccountAuthReq : pb::IMessage<ProtoOAAccountA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -1012,14 +1150,45 @@ public sealed partial class ProtoOAAccountAuthReq : pb::IMessage<ProtoOAAccountA
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          AccessToken = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAApplicationAuthRes request. 
 /// </summary>
-public sealed partial class ProtoOAAccountAuthRes : pb::IMessage<ProtoOAAccountAuthRes> {
+public sealed partial class ProtoOAAccountAuthRes : pb::IMessage<ProtoOAAccountAuthRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAccountAuthRes> _parser = new pb::MessageParser<ProtoOAAccountAuthRes>(() => new ProtoOAAccountAuthRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -1143,6 +1312,9 @@ public sealed partial class ProtoOAAccountAuthRes : pb::IMessage<ProtoOAAccountA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -1154,7 +1326,25 @@ public sealed partial class ProtoOAAccountAuthRes : pb::IMessage<ProtoOAAccountA
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -1187,6 +1377,9 @@ public sealed partial class ProtoOAAccountAuthRes : pb::IMessage<ProtoOAAccountA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -1203,14 +1396,41 @@ public sealed partial class ProtoOAAccountAuthRes : pb::IMessage<ProtoOAAccountA
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Generic response when an ERROR occurred. 
 /// </summary>
-public sealed partial class ProtoOAErrorRes : pb::IMessage<ProtoOAErrorRes> {
+public sealed partial class ProtoOAErrorRes : pb::IMessage<ProtoOAErrorRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAErrorRes> _parser = new pb::MessageParser<ProtoOAErrorRes>(() => new ProtoOAErrorRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -1422,6 +1642,9 @@ public sealed partial class ProtoOAErrorRes : pb::IMessage<ProtoOAErrorRes> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -1445,7 +1668,37 @@ public sealed partial class ProtoOAErrorRes : pb::IMessage<ProtoOAErrorRes> {
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasErrorCode) {
+      output.WriteRawTag(26);
+      output.WriteString(ErrorCode);
+    }
+    if (HasDescription) {
+      output.WriteRawTag(34);
+      output.WriteString(Description);
+    }
+    if (HasMaintenanceEndTimestamp) {
+      output.WriteRawTag(40);
+      output.WriteInt64(MaintenanceEndTimestamp);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -1496,6 +1749,9 @@ public sealed partial class ProtoOAErrorRes : pb::IMessage<ProtoOAErrorRes> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -1524,14 +1780,53 @@ public sealed partial class ProtoOAErrorRes : pb::IMessage<ProtoOAErrorRes> {
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          ErrorCode = input.ReadString();
+          break;
+        }
+        case 34: {
+          Description = input.ReadString();
+          break;
+        }
+        case 40: {
+          MaintenanceEndTimestamp = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when the connection with the client application is cancelled by the server. All the sessions for the traders' accounts will be terminated. 
 /// </summary>
-public sealed partial class ProtoOAClientDisconnectEvent : pb::IMessage<ProtoOAClientDisconnectEvent> {
+public sealed partial class ProtoOAClientDisconnectEvent : pb::IMessage<ProtoOAClientDisconnectEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAClientDisconnectEvent> _parser = new pb::MessageParser<ProtoOAClientDisconnectEvent>(() => new ProtoOAClientDisconnectEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -1654,6 +1949,9 @@ public sealed partial class ProtoOAClientDisconnectEvent : pb::IMessage<ProtoOAC
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -1665,7 +1963,25 @@ public sealed partial class ProtoOAClientDisconnectEvent : pb::IMessage<ProtoOAC
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasReason) {
+      output.WriteRawTag(18);
+      output.WriteString(Reason);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -1698,6 +2014,9 @@ public sealed partial class ProtoOAClientDisconnectEvent : pb::IMessage<ProtoOAC
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -1714,14 +2033,41 @@ public sealed partial class ProtoOAClientDisconnectEvent : pb::IMessage<ProtoOAC
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          Reason = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when a session to a specific trader's account is terminated by the server but the existing connections with the other trader's accounts are maintained. 
 /// </summary>
-public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::IMessage<ProtoOAAccountsTokenInvalidatedEvent> {
+public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::IMessage<ProtoOAAccountsTokenInvalidatedEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAccountsTokenInvalidatedEvent> _parser = new pb::MessageParser<ProtoOAAccountsTokenInvalidatedEvent>(() => new ProtoOAAccountsTokenInvalidatedEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -1860,6 +2206,9 @@ public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::IMessage<
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -1872,7 +2221,26 @@ public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::IMessage<
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    ctidTraderAccountIds_.WriteTo(ref output, _repeated_ctidTraderAccountIds_codec);
+    if (HasReason) {
+      output.WriteRawTag(26);
+      output.WriteString(Reason);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -1907,6 +2275,9 @@ public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::IMessage<
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -1928,14 +2299,46 @@ public sealed partial class ProtoOAAccountsTokenInvalidatedEvent : pb::IMessage<
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18:
+        case 16: {
+          ctidTraderAccountIds_.AddEntriesFrom(ref input, _repeated_ctidTraderAccountIds_codec);
+          break;
+        }
+        case 26: {
+          Reason = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting the proxy version. Can be used to check the current version of the Open API scheme. 
 /// </summary>
-public sealed partial class ProtoOAVersionReq : pb::IMessage<ProtoOAVersionReq> {
+public sealed partial class ProtoOAVersionReq : pb::IMessage<ProtoOAVersionReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAVersionReq> _parser = new pb::MessageParser<ProtoOAVersionReq>(() => new ProtoOAVersionReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -2029,6 +2432,9 @@ public sealed partial class ProtoOAVersionReq : pb::IMessage<ProtoOAVersionReq> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -2036,7 +2442,21 @@ public sealed partial class ProtoOAVersionReq : pb::IMessage<ProtoOAVersionReq> 
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -2063,6 +2483,9 @@ public sealed partial class ProtoOAVersionReq : pb::IMessage<ProtoOAVersionReq> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -2075,14 +2498,37 @@ public sealed partial class ProtoOAVersionReq : pb::IMessage<ProtoOAVersionReq> 
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAVersionReq request. 
 /// </summary>
-public sealed partial class ProtoOAVersionRes : pb::IMessage<ProtoOAVersionRes> {
+public sealed partial class ProtoOAVersionRes : pb::IMessage<ProtoOAVersionRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAVersionRes> _parser = new pb::MessageParser<ProtoOAVersionRes>(() => new ProtoOAVersionRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -2205,6 +2651,9 @@ public sealed partial class ProtoOAVersionRes : pb::IMessage<ProtoOAVersionRes> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -2216,7 +2665,25 @@ public sealed partial class ProtoOAVersionRes : pb::IMessage<ProtoOAVersionRes> 
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasVersion) {
+      output.WriteRawTag(18);
+      output.WriteString(Version);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -2249,6 +2716,9 @@ public sealed partial class ProtoOAVersionRes : pb::IMessage<ProtoOAVersionRes> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -2265,14 +2735,41 @@ public sealed partial class ProtoOAVersionRes : pb::IMessage<ProtoOAVersionRes> 
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          Version = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for sending a new trading order. Allowed only if the accessToken has the "trade" permissions for the trading account. 
 /// </summary>
-public sealed partial class ProtoOANewOrderReq : pb::IMessage<ProtoOANewOrderReq> {
+public sealed partial class ProtoOANewOrderReq : pb::IMessage<ProtoOANewOrderReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOANewOrderReq> _parser = new pb::MessageParser<ProtoOANewOrderReq>(() => new ProtoOANewOrderReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -3023,6 +3520,9 @@ public sealed partial class ProtoOANewOrderReq : pb::IMessage<ProtoOANewOrderReq
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -3118,7 +3618,109 @@ public sealed partial class ProtoOANewOrderReq : pb::IMessage<ProtoOANewOrderReq
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(SymbolId);
+    }
+    if (HasOrderType) {
+      output.WriteRawTag(32);
+      output.WriteEnum((int) OrderType);
+    }
+    if (HasTradeSide) {
+      output.WriteRawTag(40);
+      output.WriteEnum((int) TradeSide);
+    }
+    if (HasVolume) {
+      output.WriteRawTag(48);
+      output.WriteInt64(Volume);
+    }
+    if (HasLimitPrice) {
+      output.WriteRawTag(57);
+      output.WriteDouble(LimitPrice);
+    }
+    if (HasStopPrice) {
+      output.WriteRawTag(65);
+      output.WriteDouble(StopPrice);
+    }
+    if (HasTimeInForce) {
+      output.WriteRawTag(72);
+      output.WriteEnum((int) TimeInForce);
+    }
+    if (HasExpirationTimestamp) {
+      output.WriteRawTag(80);
+      output.WriteInt64(ExpirationTimestamp);
+    }
+    if (HasStopLoss) {
+      output.WriteRawTag(89);
+      output.WriteDouble(StopLoss);
+    }
+    if (HasTakeProfit) {
+      output.WriteRawTag(97);
+      output.WriteDouble(TakeProfit);
+    }
+    if (HasComment) {
+      output.WriteRawTag(106);
+      output.WriteString(Comment);
+    }
+    if (HasBaseSlippagePrice) {
+      output.WriteRawTag(113);
+      output.WriteDouble(BaseSlippagePrice);
+    }
+    if (HasSlippageInPoints) {
+      output.WriteRawTag(120);
+      output.WriteInt32(SlippageInPoints);
+    }
+    if (HasLabel) {
+      output.WriteRawTag(130, 1);
+      output.WriteString(Label);
+    }
+    if (HasPositionId) {
+      output.WriteRawTag(136, 1);
+      output.WriteInt64(PositionId);
+    }
+    if (HasClientOrderId) {
+      output.WriteRawTag(146, 1);
+      output.WriteString(ClientOrderId);
+    }
+    if (HasRelativeStopLoss) {
+      output.WriteRawTag(152, 1);
+      output.WriteInt64(RelativeStopLoss);
+    }
+    if (HasRelativeTakeProfit) {
+      output.WriteRawTag(160, 1);
+      output.WriteInt64(RelativeTakeProfit);
+    }
+    if (HasGuaranteedStopLoss) {
+      output.WriteRawTag(168, 1);
+      output.WriteBool(GuaranteedStopLoss);
+    }
+    if (HasTrailingStopLoss) {
+      output.WriteRawTag(176, 1);
+      output.WriteBool(TrailingStopLoss);
+    }
+    if (HasStopTriggerMethod) {
+      output.WriteRawTag(184, 1);
+      output.WriteEnum((int) StopTriggerMethod);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -3277,6 +3879,9 @@ public sealed partial class ProtoOANewOrderReq : pb::IMessage<ProtoOANewOrderReq
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -3377,14 +3982,125 @@ public sealed partial class ProtoOANewOrderReq : pb::IMessage<ProtoOANewOrderReq
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          OrderType = (global::ProtoOAOrderType) input.ReadEnum();
+          break;
+        }
+        case 40: {
+          TradeSide = (global::ProtoOATradeSide) input.ReadEnum();
+          break;
+        }
+        case 48: {
+          Volume = input.ReadInt64();
+          break;
+        }
+        case 57: {
+          LimitPrice = input.ReadDouble();
+          break;
+        }
+        case 65: {
+          StopPrice = input.ReadDouble();
+          break;
+        }
+        case 72: {
+          TimeInForce = (global::ProtoOATimeInForce) input.ReadEnum();
+          break;
+        }
+        case 80: {
+          ExpirationTimestamp = input.ReadInt64();
+          break;
+        }
+        case 89: {
+          StopLoss = input.ReadDouble();
+          break;
+        }
+        case 97: {
+          TakeProfit = input.ReadDouble();
+          break;
+        }
+        case 106: {
+          Comment = input.ReadString();
+          break;
+        }
+        case 113: {
+          BaseSlippagePrice = input.ReadDouble();
+          break;
+        }
+        case 120: {
+          SlippageInPoints = input.ReadInt32();
+          break;
+        }
+        case 130: {
+          Label = input.ReadString();
+          break;
+        }
+        case 136: {
+          PositionId = input.ReadInt64();
+          break;
+        }
+        case 146: {
+          ClientOrderId = input.ReadString();
+          break;
+        }
+        case 152: {
+          RelativeStopLoss = input.ReadInt64();
+          break;
+        }
+        case 160: {
+          RelativeTakeProfit = input.ReadInt64();
+          break;
+        }
+        case 168: {
+          GuaranteedStopLoss = input.ReadBool();
+          break;
+        }
+        case 176: {
+          TrailingStopLoss = input.ReadBool();
+          break;
+        }
+        case 184: {
+          StopTriggerMethod = (global::ProtoOAOrderTriggerMethod) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent following the successful order acceptance or execution by the server. Acts as response to the ProtoOANewOrderReq, ProtoOACancelOrderReq, ProtoOAAmendOrderReq, ProtoOAAmendPositionSLTPReq, ProtoOAClosePositionReq requests. Also, the event is sent when a Deposit/Withdrawal took place. 
 /// </summary>
-public sealed partial class ProtoOAExecutionEvent : pb::IMessage<ProtoOAExecutionEvent> {
+public sealed partial class ProtoOAExecutionEvent : pb::IMessage<ProtoOAExecutionEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAExecutionEvent> _parser = new pb::MessageParser<ProtoOAExecutionEvent>(() => new ProtoOAExecutionEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -3682,6 +4398,9 @@ public sealed partial class ProtoOAExecutionEvent : pb::IMessage<ProtoOAExecutio
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -3725,7 +4444,57 @@ public sealed partial class ProtoOAExecutionEvent : pb::IMessage<ProtoOAExecutio
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasExecutionType) {
+      output.WriteRawTag(24);
+      output.WriteEnum((int) ExecutionType);
+    }
+    if (position_ != null) {
+      output.WriteRawTag(34);
+      output.WriteMessage(Position);
+    }
+    if (order_ != null) {
+      output.WriteRawTag(42);
+      output.WriteMessage(Order);
+    }
+    if (deal_ != null) {
+      output.WriteRawTag(50);
+      output.WriteMessage(Deal);
+    }
+    if (bonusDepositWithdraw_ != null) {
+      output.WriteRawTag(58);
+      output.WriteMessage(BonusDepositWithdraw);
+    }
+    if (depositWithdraw_ != null) {
+      output.WriteRawTag(66);
+      output.WriteMessage(DepositWithdraw);
+    }
+    if (HasErrorCode) {
+      output.WriteRawTag(74);
+      output.WriteString(ErrorCode);
+    }
+    if (HasIsServerEvent) {
+      output.WriteRawTag(80);
+      output.WriteBool(IsServerEvent);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -3821,6 +4590,9 @@ public sealed partial class ProtoOAExecutionEvent : pb::IMessage<ProtoOAExecutio
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -3884,14 +4656,88 @@ public sealed partial class ProtoOAExecutionEvent : pb::IMessage<ProtoOAExecutio
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          ExecutionType = (global::ProtoOAExecutionType) input.ReadEnum();
+          break;
+        }
+        case 34: {
+          if (position_ == null) {
+            Position = new global::ProtoOAPosition();
+          }
+          input.ReadMessage(Position);
+          break;
+        }
+        case 42: {
+          if (order_ == null) {
+            Order = new global::ProtoOAOrder();
+          }
+          input.ReadMessage(Order);
+          break;
+        }
+        case 50: {
+          if (deal_ == null) {
+            Deal = new global::ProtoOADeal();
+          }
+          input.ReadMessage(Deal);
+          break;
+        }
+        case 58: {
+          if (bonusDepositWithdraw_ == null) {
+            BonusDepositWithdraw = new global::ProtoOABonusDepositWithdraw();
+          }
+          input.ReadMessage(BonusDepositWithdraw);
+          break;
+        }
+        case 66: {
+          if (depositWithdraw_ == null) {
+            DepositWithdraw = new global::ProtoOADepositWithdraw();
+          }
+          input.ReadMessage(DepositWithdraw);
+          break;
+        }
+        case 74: {
+          ErrorCode = input.ReadString();
+          break;
+        }
+        case 80: {
+          IsServerEvent = input.ReadBool();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for cancelling existing pending order. Allowed only if the accessToken has "trade" permissions for the trading account. 
 /// </summary>
-public sealed partial class ProtoOACancelOrderReq : pb::IMessage<ProtoOACancelOrderReq> {
+public sealed partial class ProtoOACancelOrderReq : pb::IMessage<ProtoOACancelOrderReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOACancelOrderReq> _parser = new pb::MessageParser<ProtoOACancelOrderReq>(() => new ProtoOACancelOrderReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -4045,6 +4891,9 @@ public sealed partial class ProtoOACancelOrderReq : pb::IMessage<ProtoOACancelOr
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -4060,7 +4909,29 @@ public sealed partial class ProtoOACancelOrderReq : pb::IMessage<ProtoOACancelOr
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasOrderId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(OrderId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -4099,6 +4970,9 @@ public sealed partial class ProtoOACancelOrderReq : pb::IMessage<ProtoOACancelOr
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -4119,14 +4993,45 @@ public sealed partial class ProtoOACancelOrderReq : pb::IMessage<ProtoOACancelOr
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          OrderId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for amending the existing pending order. Allowed only if the Access Token has "trade" permissions for the trading account. 
 /// </summary>
-public sealed partial class ProtoOAAmendOrderReq : pb::IMessage<ProtoOAAmendOrderReq> {
+public sealed partial class ProtoOAAmendOrderReq : pb::IMessage<ProtoOAAmendOrderReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAmendOrderReq> _parser = new pb::MessageParser<ProtoOAAmendOrderReq>(() => new ProtoOAAmendOrderReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -4640,6 +5545,9 @@ public sealed partial class ProtoOAAmendOrderReq : pb::IMessage<ProtoOAAmendOrde
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -4703,7 +5611,77 @@ public sealed partial class ProtoOAAmendOrderReq : pb::IMessage<ProtoOAAmendOrde
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasOrderId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(OrderId);
+    }
+    if (HasVolume) {
+      output.WriteRawTag(32);
+      output.WriteInt64(Volume);
+    }
+    if (HasLimitPrice) {
+      output.WriteRawTag(41);
+      output.WriteDouble(LimitPrice);
+    }
+    if (HasStopPrice) {
+      output.WriteRawTag(49);
+      output.WriteDouble(StopPrice);
+    }
+    if (HasExpirationTimestamp) {
+      output.WriteRawTag(56);
+      output.WriteInt64(ExpirationTimestamp);
+    }
+    if (HasStopLoss) {
+      output.WriteRawTag(65);
+      output.WriteDouble(StopLoss);
+    }
+    if (HasTakeProfit) {
+      output.WriteRawTag(73);
+      output.WriteDouble(TakeProfit);
+    }
+    if (HasSlippageInPoints) {
+      output.WriteRawTag(80);
+      output.WriteInt32(SlippageInPoints);
+    }
+    if (HasRelativeStopLoss) {
+      output.WriteRawTag(88);
+      output.WriteInt64(RelativeStopLoss);
+    }
+    if (HasRelativeTakeProfit) {
+      output.WriteRawTag(96);
+      output.WriteInt64(RelativeTakeProfit);
+    }
+    if (HasGuaranteedStopLoss) {
+      output.WriteRawTag(104);
+      output.WriteBool(GuaranteedStopLoss);
+    }
+    if (HasTrailingStopLoss) {
+      output.WriteRawTag(112);
+      output.WriteBool(TrailingStopLoss);
+    }
+    if (HasStopTriggerMethod) {
+      output.WriteRawTag(120);
+      output.WriteEnum((int) StopTriggerMethod);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -4814,6 +5792,9 @@ public sealed partial class ProtoOAAmendOrderReq : pb::IMessage<ProtoOAAmendOrde
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -4882,14 +5863,93 @@ public sealed partial class ProtoOAAmendOrderReq : pb::IMessage<ProtoOAAmendOrde
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          OrderId = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          Volume = input.ReadInt64();
+          break;
+        }
+        case 41: {
+          LimitPrice = input.ReadDouble();
+          break;
+        }
+        case 49: {
+          StopPrice = input.ReadDouble();
+          break;
+        }
+        case 56: {
+          ExpirationTimestamp = input.ReadInt64();
+          break;
+        }
+        case 65: {
+          StopLoss = input.ReadDouble();
+          break;
+        }
+        case 73: {
+          TakeProfit = input.ReadDouble();
+          break;
+        }
+        case 80: {
+          SlippageInPoints = input.ReadInt32();
+          break;
+        }
+        case 88: {
+          RelativeStopLoss = input.ReadInt64();
+          break;
+        }
+        case 96: {
+          RelativeTakeProfit = input.ReadInt64();
+          break;
+        }
+        case 104: {
+          GuaranteedStopLoss = input.ReadBool();
+          break;
+        }
+        case 112: {
+          TrailingStopLoss = input.ReadBool();
+          break;
+        }
+        case 120: {
+          StopTriggerMethod = (global::ProtoOAOrderTriggerMethod) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for amending StopLoss and TakeProfit of existing position. Allowed only if the accessToken has "trade" permissions for the trading account. 
 /// </summary>
-public sealed partial class ProtoOAAmendPositionSLTPReq : pb::IMessage<ProtoOAAmendPositionSLTPReq> {
+public sealed partial class ProtoOAAmendPositionSLTPReq : pb::IMessage<ProtoOAAmendPositionSLTPReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAmendPositionSLTPReq> _parser = new pb::MessageParser<ProtoOAAmendPositionSLTPReq>(() => new ProtoOAAmendPositionSLTPReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -5193,6 +6253,9 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::IMessage<ProtoOAAm
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -5228,7 +6291,49 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::IMessage<ProtoOAAm
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPositionId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(PositionId);
+    }
+    if (HasStopLoss) {
+      output.WriteRawTag(33);
+      output.WriteDouble(StopLoss);
+    }
+    if (HasTakeProfit) {
+      output.WriteRawTag(41);
+      output.WriteDouble(TakeProfit);
+    }
+    if (HasGuaranteedStopLoss) {
+      output.WriteRawTag(56);
+      output.WriteBool(GuaranteedStopLoss);
+    }
+    if (HasTrailingStopLoss) {
+      output.WriteRawTag(64);
+      output.WriteBool(TrailingStopLoss);
+    }
+    if (HasStopLossTriggerMethod) {
+      output.WriteRawTag(72);
+      output.WriteEnum((int) StopLossTriggerMethod);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -5297,6 +6402,9 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::IMessage<ProtoOAAm
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -5337,14 +6445,65 @@ public sealed partial class ProtoOAAmendPositionSLTPReq : pb::IMessage<ProtoOAAm
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          PositionId = input.ReadInt64();
+          break;
+        }
+        case 33: {
+          StopLoss = input.ReadDouble();
+          break;
+        }
+        case 41: {
+          TakeProfit = input.ReadDouble();
+          break;
+        }
+        case 56: {
+          GuaranteedStopLoss = input.ReadBool();
+          break;
+        }
+        case 64: {
+          TrailingStopLoss = input.ReadBool();
+          break;
+        }
+        case 72: {
+          StopLossTriggerMethod = (global::ProtoOAOrderTriggerMethod) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for closing or partially closing of an existing position. Allowed only if the accessToken has "trade" permissions for the trading account. 
 /// </summary>
-public sealed partial class ProtoOAClosePositionReq : pb::IMessage<ProtoOAClosePositionReq> {
+public sealed partial class ProtoOAClosePositionReq : pb::IMessage<ProtoOAClosePositionReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAClosePositionReq> _parser = new pb::MessageParser<ProtoOAClosePositionReq>(() => new ProtoOAClosePositionReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -5528,6 +6687,9 @@ public sealed partial class ProtoOAClosePositionReq : pb::IMessage<ProtoOACloseP
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -5547,7 +6709,33 @@ public sealed partial class ProtoOAClosePositionReq : pb::IMessage<ProtoOACloseP
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPositionId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(PositionId);
+    }
+    if (HasVolume) {
+      output.WriteRawTag(32);
+      output.WriteInt64(Volume);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -5592,6 +6780,9 @@ public sealed partial class ProtoOAClosePositionReq : pb::IMessage<ProtoOACloseP
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -5616,14 +6807,49 @@ public sealed partial class ProtoOAClosePositionReq : pb::IMessage<ProtoOACloseP
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          PositionId = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          Volume = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when the level of the Trailing Stop Loss is changed due to the price level changes. 
 /// </summary>
-public sealed partial class ProtoOATrailingSLChangedEvent : pb::IMessage<ProtoOATrailingSLChangedEvent> {
+public sealed partial class ProtoOATrailingSLChangedEvent : pb::IMessage<ProtoOATrailingSLChangedEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOATrailingSLChangedEvent> _parser = new pb::MessageParser<ProtoOATrailingSLChangedEvent>(() => new ProtoOATrailingSLChangedEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -5867,6 +7093,9 @@ public sealed partial class ProtoOATrailingSLChangedEvent : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -5894,7 +7123,41 @@ public sealed partial class ProtoOATrailingSLChangedEvent : pb::IMessage<ProtoOA
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPositionId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(PositionId);
+    }
+    if (HasOrderId) {
+      output.WriteRawTag(32);
+      output.WriteInt64(OrderId);
+    }
+    if (HasStopPrice) {
+      output.WriteRawTag(41);
+      output.WriteDouble(StopPrice);
+    }
+    if (HasUtcLastUpdateTimestamp) {
+      output.WriteRawTag(48);
+      output.WriteInt64(UtcLastUpdateTimestamp);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -5951,6 +7214,9 @@ public sealed partial class ProtoOATrailingSLChangedEvent : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -5983,14 +7249,57 @@ public sealed partial class ProtoOATrailingSLChangedEvent : pb::IMessage<ProtoOA
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          PositionId = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          OrderId = input.ReadInt64();
+          break;
+        }
+        case 41: {
+          StopPrice = input.ReadDouble();
+          break;
+        }
+        case 48: {
+          UtcLastUpdateTimestamp = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for the list of assets available for a trader's account. 
 /// </summary>
-public sealed partial class ProtoOAAssetListReq : pb::IMessage<ProtoOAAssetListReq> {
+public sealed partial class ProtoOAAssetListReq : pb::IMessage<ProtoOAAssetListReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAssetListReq> _parser = new pb::MessageParser<ProtoOAAssetListReq>(() => new ProtoOAAssetListReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -6114,6 +7423,9 @@ public sealed partial class ProtoOAAssetListReq : pb::IMessage<ProtoOAAssetListR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -6125,7 +7437,25 @@ public sealed partial class ProtoOAAssetListReq : pb::IMessage<ProtoOAAssetListR
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -6158,6 +7488,9 @@ public sealed partial class ProtoOAAssetListReq : pb::IMessage<ProtoOAAssetListR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -6174,14 +7507,41 @@ public sealed partial class ProtoOAAssetListReq : pb::IMessage<ProtoOAAssetListR
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAAssetListReq request. 
 /// </summary>
-public sealed partial class ProtoOAAssetListRes : pb::IMessage<ProtoOAAssetListRes> {
+public sealed partial class ProtoOAAssetListRes : pb::IMessage<ProtoOAAssetListRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAssetListRes> _parser = new pb::MessageParser<ProtoOAAssetListRes>(() => new ProtoOAAssetListRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -6321,6 +7681,9 @@ public sealed partial class ProtoOAAssetListRes : pb::IMessage<ProtoOAAssetListR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -6333,7 +7696,26 @@ public sealed partial class ProtoOAAssetListRes : pb::IMessage<ProtoOAAssetListR
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    asset_.WriteTo(ref output, _repeated_asset_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -6368,6 +7750,9 @@ public sealed partial class ProtoOAAssetListRes : pb::IMessage<ProtoOAAssetListR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -6388,14 +7773,45 @@ public sealed partial class ProtoOAAssetListRes : pb::IMessage<ProtoOAAssetListR
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          asset_.AddEntriesFrom(ref input, _repeated_asset_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for a list of symbols available for a trading account. Symbol entries are returned with the limited set of fields. 
 /// </summary>
-public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsListReq> {
+public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsListReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolsListReq> _parser = new pb::MessageParser<ProtoOASymbolsListReq>(() => new ProtoOASymbolsListReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -6424,6 +7840,7 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
     _hasBits0 = other._hasBits0;
     payloadType_ = other.payloadType_;
     ctidTraderAccountId_ = other.ctidTraderAccountId_;
+    includeArchivedSymbols_ = other.includeArchivedSymbols_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -6483,6 +7900,30 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
     _hasBits0 &= ~2;
   }
 
+  /// <summary>Field number for the "includeArchivedSymbols" field.</summary>
+  public const int IncludeArchivedSymbolsFieldNumber = 3;
+  private readonly static bool IncludeArchivedSymbolsDefaultValue = false;
+
+  private bool includeArchivedSymbols_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool IncludeArchivedSymbols {
+    get { if ((_hasBits0 & 4) != 0) { return includeArchivedSymbols_; } else { return IncludeArchivedSymbolsDefaultValue; } }
+    set {
+      _hasBits0 |= 4;
+      includeArchivedSymbols_ = value;
+    }
+  }
+  /// <summary>Gets whether the "includeArchivedSymbols" field is set</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool HasIncludeArchivedSymbols {
+    get { return (_hasBits0 & 4) != 0; }
+  }
+  /// <summary>Clears the value of the "includeArchivedSymbols" field</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void ClearIncludeArchivedSymbols() {
+    _hasBits0 &= ~4;
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ProtoOASymbolsListReq);
@@ -6498,6 +7939,7 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
     }
     if (PayloadType != other.PayloadType) return false;
     if (CtidTraderAccountId != other.CtidTraderAccountId) return false;
+    if (IncludeArchivedSymbols != other.IncludeArchivedSymbols) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -6506,6 +7948,7 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
     int hash = 1;
     if (HasPayloadType) hash ^= PayloadType.GetHashCode();
     if (HasCtidTraderAccountId) hash ^= CtidTraderAccountId.GetHashCode();
+    if (HasIncludeArchivedSymbols) hash ^= IncludeArchivedSymbols.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -6519,6 +7962,9 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -6527,10 +7973,36 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
       output.WriteRawTag(16);
       output.WriteInt64(CtidTraderAccountId);
     }
+    if (HasIncludeArchivedSymbols) {
+      output.WriteRawTag(24);
+      output.WriteBool(IncludeArchivedSymbols);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasIncludeArchivedSymbols) {
+      output.WriteRawTag(24);
+      output.WriteBool(IncludeArchivedSymbols);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -6540,6 +8012,9 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
     }
     if (HasCtidTraderAccountId) {
       size += 1 + pb::CodedOutputStream.ComputeInt64Size(CtidTraderAccountId);
+    }
+    if (HasIncludeArchivedSymbols) {
+      size += 1 + 1;
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -6558,11 +8033,17 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
     if (other.HasCtidTraderAccountId) {
       CtidTraderAccountId = other.CtidTraderAccountId;
     }
+    if (other.HasIncludeArchivedSymbols) {
+      IncludeArchivedSymbols = other.IncludeArchivedSymbols;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -6577,16 +8058,51 @@ public sealed partial class ProtoOASymbolsListReq : pb::IMessage<ProtoOASymbolsL
           CtidTraderAccountId = input.ReadInt64();
           break;
         }
+        case 24: {
+          IncludeArchivedSymbols = input.ReadBool();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          IncludeArchivedSymbols = input.ReadBool();
+          break;
+        }
       }
     }
   }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASymbolsListReq request. 
 /// </summary>
-public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsListRes> {
+public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsListRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolsListRes> _parser = new pb::MessageParser<ProtoOASymbolsListRes>(() => new ProtoOASymbolsListRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -6616,6 +8132,7 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
     payloadType_ = other.payloadType_;
     ctidTraderAccountId_ = other.ctidTraderAccountId_;
     symbol_ = other.symbol_.Clone();
+    archivedSymbol_ = other.archivedSymbol_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -6688,6 +8205,19 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
     get { return symbol_; }
   }
 
+  /// <summary>Field number for the "archivedSymbol" field.</summary>
+  public const int ArchivedSymbolFieldNumber = 4;
+  private static readonly pb::FieldCodec<global::ProtoOAArchivedSymbol> _repeated_archivedSymbol_codec
+      = pb::FieldCodec.ForMessage(34, global::ProtoOAArchivedSymbol.Parser);
+  private readonly pbc::RepeatedField<global::ProtoOAArchivedSymbol> archivedSymbol_ = new pbc::RepeatedField<global::ProtoOAArchivedSymbol>();
+  /// <summary>
+  /// The list of archived symbols.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::ProtoOAArchivedSymbol> ArchivedSymbol {
+    get { return archivedSymbol_; }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ProtoOASymbolsListRes);
@@ -6704,6 +8234,7 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
     if (PayloadType != other.PayloadType) return false;
     if (CtidTraderAccountId != other.CtidTraderAccountId) return false;
     if(!symbol_.Equals(other.symbol_)) return false;
+    if(!archivedSymbol_.Equals(other.archivedSymbol_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -6713,6 +8244,7 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
     if (HasPayloadType) hash ^= PayloadType.GetHashCode();
     if (HasCtidTraderAccountId) hash ^= CtidTraderAccountId.GetHashCode();
     hash ^= symbol_.GetHashCode();
+    hash ^= archivedSymbol_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -6726,6 +8258,9 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -6735,10 +8270,31 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
       output.WriteInt64(CtidTraderAccountId);
     }
     symbol_.WriteTo(output, _repeated_symbol_codec);
+    archivedSymbol_.WriteTo(output, _repeated_archivedSymbol_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbol_.WriteTo(ref output, _repeated_symbol_codec);
+    archivedSymbol_.WriteTo(ref output, _repeated_archivedSymbol_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -6750,6 +8306,7 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
       size += 1 + pb::CodedOutputStream.ComputeInt64Size(CtidTraderAccountId);
     }
     size += symbol_.CalculateSize(_repeated_symbol_codec);
+    size += archivedSymbol_.CalculateSize(_repeated_archivedSymbol_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -6768,11 +8325,15 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
       CtidTraderAccountId = other.CtidTraderAccountId;
     }
     symbol_.Add(other.symbol_);
+    archivedSymbol_.Add(other.archivedSymbol_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -6791,16 +8352,55 @@ public sealed partial class ProtoOASymbolsListRes : pb::IMessage<ProtoOASymbolsL
           symbol_.AddEntriesFrom(input, _repeated_symbol_codec);
           break;
         }
+        case 34: {
+          archivedSymbol_.AddEntriesFrom(input, _repeated_archivedSymbol_codec);
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          symbol_.AddEntriesFrom(ref input, _repeated_symbol_codec);
+          break;
+        }
+        case 34: {
+          archivedSymbol_.AddEntriesFrom(ref input, _repeated_archivedSymbol_codec);
+          break;
+        }
       }
     }
   }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting a full symbol entity. 
 /// </summary>
-public sealed partial class ProtoOASymbolByIdReq : pb::IMessage<ProtoOASymbolByIdReq> {
+public sealed partial class ProtoOASymbolByIdReq : pb::IMessage<ProtoOASymbolByIdReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolByIdReq> _parser = new pb::MessageParser<ProtoOASymbolByIdReq>(() => new ProtoOASymbolByIdReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -6940,6 +8540,9 @@ public sealed partial class ProtoOASymbolByIdReq : pb::IMessage<ProtoOASymbolByI
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -6952,7 +8555,26 @@ public sealed partial class ProtoOASymbolByIdReq : pb::IMessage<ProtoOASymbolByI
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbolId_.WriteTo(ref output, _repeated_symbolId_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -6987,6 +8609,9 @@ public sealed partial class ProtoOASymbolByIdReq : pb::IMessage<ProtoOASymbolByI
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -7008,14 +8633,46 @@ public sealed partial class ProtoOASymbolByIdReq : pb::IMessage<ProtoOASymbolByI
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26:
+        case 24: {
+          symbolId_.AddEntriesFrom(ref input, _repeated_symbolId_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASymbolByIdReq request. 
 /// </summary>
-public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByIdRes> {
+public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByIdRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolByIdRes> _parser = new pb::MessageParser<ProtoOASymbolByIdRes>(() => new ProtoOASymbolByIdRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -7045,6 +8702,7 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
     payloadType_ = other.payloadType_;
     ctidTraderAccountId_ = other.ctidTraderAccountId_;
     symbol_ = other.symbol_.Clone();
+    archivedSymbol_ = other.archivedSymbol_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -7117,6 +8775,19 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
     get { return symbol_; }
   }
 
+  /// <summary>Field number for the "archivedSymbol" field.</summary>
+  public const int ArchivedSymbolFieldNumber = 4;
+  private static readonly pb::FieldCodec<global::ProtoOAArchivedSymbol> _repeated_archivedSymbol_codec
+      = pb::FieldCodec.ForMessage(34, global::ProtoOAArchivedSymbol.Parser);
+  private readonly pbc::RepeatedField<global::ProtoOAArchivedSymbol> archivedSymbol_ = new pbc::RepeatedField<global::ProtoOAArchivedSymbol>();
+  /// <summary>
+  /// Archived symbols.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::ProtoOAArchivedSymbol> ArchivedSymbol {
+    get { return archivedSymbol_; }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ProtoOASymbolByIdRes);
@@ -7133,6 +8804,7 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
     if (PayloadType != other.PayloadType) return false;
     if (CtidTraderAccountId != other.CtidTraderAccountId) return false;
     if(!symbol_.Equals(other.symbol_)) return false;
+    if(!archivedSymbol_.Equals(other.archivedSymbol_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -7142,6 +8814,7 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
     if (HasPayloadType) hash ^= PayloadType.GetHashCode();
     if (HasCtidTraderAccountId) hash ^= CtidTraderAccountId.GetHashCode();
     hash ^= symbol_.GetHashCode();
+    hash ^= archivedSymbol_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -7155,6 +8828,9 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -7164,10 +8840,31 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
       output.WriteInt64(CtidTraderAccountId);
     }
     symbol_.WriteTo(output, _repeated_symbol_codec);
+    archivedSymbol_.WriteTo(output, _repeated_archivedSymbol_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbol_.WriteTo(ref output, _repeated_symbol_codec);
+    archivedSymbol_.WriteTo(ref output, _repeated_archivedSymbol_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -7179,6 +8876,7 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
       size += 1 + pb::CodedOutputStream.ComputeInt64Size(CtidTraderAccountId);
     }
     size += symbol_.CalculateSize(_repeated_symbol_codec);
+    size += archivedSymbol_.CalculateSize(_repeated_archivedSymbol_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -7197,11 +8895,15 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
       CtidTraderAccountId = other.CtidTraderAccountId;
     }
     symbol_.Add(other.symbol_);
+    archivedSymbol_.Add(other.archivedSymbol_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -7220,16 +8922,55 @@ public sealed partial class ProtoOASymbolByIdRes : pb::IMessage<ProtoOASymbolByI
           symbol_.AddEntriesFrom(input, _repeated_symbol_codec);
           break;
         }
+        case 34: {
+          archivedSymbol_.AddEntriesFrom(input, _repeated_archivedSymbol_codec);
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          symbol_.AddEntriesFrom(ref input, _repeated_symbol_codec);
+          break;
+        }
+        case 34: {
+          archivedSymbol_.AddEntriesFrom(ref input, _repeated_archivedSymbol_codec);
+          break;
+        }
       }
     }
   }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting a conversion chain between two assets that consists of several symbols. Use when no direct quote is available 
 /// </summary>
-public sealed partial class ProtoOASymbolsForConversionReq : pb::IMessage<ProtoOASymbolsForConversionReq> {
+public sealed partial class ProtoOASymbolsForConversionReq : pb::IMessage<ProtoOASymbolsForConversionReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolsForConversionReq> _parser = new pb::MessageParser<ProtoOASymbolsForConversionReq>(() => new ProtoOASymbolsForConversionReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -7413,6 +9154,9 @@ public sealed partial class ProtoOASymbolsForConversionReq : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -7432,7 +9176,33 @@ public sealed partial class ProtoOASymbolsForConversionReq : pb::IMessage<ProtoO
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasFirstAssetId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(FirstAssetId);
+    }
+    if (HasLastAssetId) {
+      output.WriteRawTag(32);
+      output.WriteInt64(LastAssetId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -7477,6 +9247,9 @@ public sealed partial class ProtoOASymbolsForConversionReq : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -7501,14 +9274,49 @@ public sealed partial class ProtoOASymbolsForConversionReq : pb::IMessage<ProtoO
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          FirstAssetId = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          LastAssetId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASymbolsForConversionReq request. 
 /// </summary>
-public sealed partial class ProtoOASymbolsForConversionRes : pb::IMessage<ProtoOASymbolsForConversionRes> {
+public sealed partial class ProtoOASymbolsForConversionRes : pb::IMessage<ProtoOASymbolsForConversionRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolsForConversionRes> _parser = new pb::MessageParser<ProtoOASymbolsForConversionRes>(() => new ProtoOASymbolsForConversionRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -7648,6 +9456,9 @@ public sealed partial class ProtoOASymbolsForConversionRes : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -7660,7 +9471,26 @@ public sealed partial class ProtoOASymbolsForConversionRes : pb::IMessage<ProtoO
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbol_.WriteTo(ref output, _repeated_symbol_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -7695,6 +9525,9 @@ public sealed partial class ProtoOASymbolsForConversionRes : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -7715,14 +9548,45 @@ public sealed partial class ProtoOASymbolsForConversionRes : pb::IMessage<ProtoO
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          symbol_.AddEntriesFrom(ref input, _repeated_symbol_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when the symbol is changed on the Server side. 
 /// </summary>
-public sealed partial class ProtoOASymbolChangedEvent : pb::IMessage<ProtoOASymbolChangedEvent> {
+public sealed partial class ProtoOASymbolChangedEvent : pb::IMessage<ProtoOASymbolChangedEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolChangedEvent> _parser = new pb::MessageParser<ProtoOASymbolChangedEvent>(() => new ProtoOASymbolChangedEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -7862,6 +9726,9 @@ public sealed partial class ProtoOASymbolChangedEvent : pb::IMessage<ProtoOASymb
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -7874,7 +9741,26 @@ public sealed partial class ProtoOASymbolChangedEvent : pb::IMessage<ProtoOASymb
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbolId_.WriteTo(ref output, _repeated_symbolId_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -7909,6 +9795,9 @@ public sealed partial class ProtoOASymbolChangedEvent : pb::IMessage<ProtoOASymb
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -7930,14 +9819,46 @@ public sealed partial class ProtoOASymbolChangedEvent : pb::IMessage<ProtoOASymb
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26:
+        case 24: {
+          symbolId_.AddEntriesFrom(ref input, _repeated_symbolId_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for a list of asset classes available for the trader's account. 
 /// </summary>
-public sealed partial class ProtoOAAssetClassListReq : pb::IMessage<ProtoOAAssetClassListReq> {
+public sealed partial class ProtoOAAssetClassListReq : pb::IMessage<ProtoOAAssetClassListReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAssetClassListReq> _parser = new pb::MessageParser<ProtoOAAssetClassListReq>(() => new ProtoOAAssetClassListReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -8061,6 +9982,9 @@ public sealed partial class ProtoOAAssetClassListReq : pb::IMessage<ProtoOAAsset
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -8072,7 +9996,25 @@ public sealed partial class ProtoOAAssetClassListReq : pb::IMessage<ProtoOAAsset
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -8105,6 +10047,9 @@ public sealed partial class ProtoOAAssetClassListReq : pb::IMessage<ProtoOAAsset
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -8121,14 +10066,41 @@ public sealed partial class ProtoOAAssetClassListReq : pb::IMessage<ProtoOAAsset
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAAssetListReq request. 
 /// </summary>
-public sealed partial class ProtoOAAssetClassListRes : pb::IMessage<ProtoOAAssetClassListRes> {
+public sealed partial class ProtoOAAssetClassListRes : pb::IMessage<ProtoOAAssetClassListRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAssetClassListRes> _parser = new pb::MessageParser<ProtoOAAssetClassListRes>(() => new ProtoOAAssetClassListRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -8268,6 +10240,9 @@ public sealed partial class ProtoOAAssetClassListRes : pb::IMessage<ProtoOAAsset
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -8280,7 +10255,26 @@ public sealed partial class ProtoOAAssetClassListRes : pb::IMessage<ProtoOAAsset
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    assetClass_.WriteTo(ref output, _repeated_assetClass_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -8315,6 +10309,9 @@ public sealed partial class ProtoOAAssetClassListRes : pb::IMessage<ProtoOAAsset
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -8335,14 +10332,45 @@ public sealed partial class ProtoOAAssetClassListRes : pb::IMessage<ProtoOAAsset
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          assetClass_.AddEntriesFrom(ref input, _repeated_assetClass_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting data of Trader's Account. 
 /// </summary>
-public sealed partial class ProtoOATraderReq : pb::IMessage<ProtoOATraderReq> {
+public sealed partial class ProtoOATraderReq : pb::IMessage<ProtoOATraderReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOATraderReq> _parser = new pb::MessageParser<ProtoOATraderReq>(() => new ProtoOATraderReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -8466,6 +10494,9 @@ public sealed partial class ProtoOATraderReq : pb::IMessage<ProtoOATraderReq> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -8477,7 +10508,25 @@ public sealed partial class ProtoOATraderReq : pb::IMessage<ProtoOATraderReq> {
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -8510,6 +10559,9 @@ public sealed partial class ProtoOATraderReq : pb::IMessage<ProtoOATraderReq> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -8526,14 +10578,41 @@ public sealed partial class ProtoOATraderReq : pb::IMessage<ProtoOATraderReq> {
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOATraderReq request. 
 /// </summary>
-public sealed partial class ProtoOATraderRes : pb::IMessage<ProtoOATraderRes> {
+public sealed partial class ProtoOATraderRes : pb::IMessage<ProtoOATraderRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOATraderRes> _parser = new pb::MessageParser<ProtoOATraderRes>(() => new ProtoOATraderRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -8674,6 +10753,9 @@ public sealed partial class ProtoOATraderRes : pb::IMessage<ProtoOATraderRes> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -8689,7 +10771,29 @@ public sealed partial class ProtoOATraderRes : pb::IMessage<ProtoOATraderRes> {
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (trader_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(Trader);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -8731,6 +10835,9 @@ public sealed partial class ProtoOATraderRes : pb::IMessage<ProtoOATraderRes> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -8754,14 +10861,48 @@ public sealed partial class ProtoOATraderRes : pb::IMessage<ProtoOATraderRes> {
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          if (trader_ == null) {
+            Trader = new global::ProtoOATrader();
+          }
+          input.ReadMessage(Trader);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when a Trader is updated on Server side. 
 /// </summary>
-public sealed partial class ProtoOATraderUpdatedEvent : pb::IMessage<ProtoOATraderUpdatedEvent> {
+public sealed partial class ProtoOATraderUpdatedEvent : pb::IMessage<ProtoOATraderUpdatedEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOATraderUpdatedEvent> _parser = new pb::MessageParser<ProtoOATraderUpdatedEvent>(() => new ProtoOATraderUpdatedEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -8902,6 +11043,9 @@ public sealed partial class ProtoOATraderUpdatedEvent : pb::IMessage<ProtoOATrad
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -8917,7 +11061,29 @@ public sealed partial class ProtoOATraderUpdatedEvent : pb::IMessage<ProtoOATrad
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (trader_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(Trader);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -8959,6 +11125,9 @@ public sealed partial class ProtoOATraderUpdatedEvent : pb::IMessage<ProtoOATrad
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -8982,14 +11151,48 @@ public sealed partial class ProtoOATraderUpdatedEvent : pb::IMessage<ProtoOATrad
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          if (trader_ == null) {
+            Trader = new global::ProtoOATrader();
+          }
+          input.ReadMessage(Trader);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting Trader's current open positions and pending orders data. 
 /// </summary>
-public sealed partial class ProtoOAReconcileReq : pb::IMessage<ProtoOAReconcileReq> {
+public sealed partial class ProtoOAReconcileReq : pb::IMessage<ProtoOAReconcileReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAReconcileReq> _parser = new pb::MessageParser<ProtoOAReconcileReq>(() => new ProtoOAReconcileReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -9113,6 +11316,9 @@ public sealed partial class ProtoOAReconcileReq : pb::IMessage<ProtoOAReconcileR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -9124,7 +11330,25 @@ public sealed partial class ProtoOAReconcileReq : pb::IMessage<ProtoOAReconcileR
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -9157,6 +11381,9 @@ public sealed partial class ProtoOAReconcileReq : pb::IMessage<ProtoOAReconcileR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -9173,14 +11400,41 @@ public sealed partial class ProtoOAReconcileReq : pb::IMessage<ProtoOAReconcileR
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* The response to the ProtoOAReconcileReq request. 
 /// </summary>
-public sealed partial class ProtoOAReconcileRes : pb::IMessage<ProtoOAReconcileRes> {
+public sealed partial class ProtoOAReconcileRes : pb::IMessage<ProtoOAReconcileRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAReconcileRes> _parser = new pb::MessageParser<ProtoOAReconcileRes>(() => new ProtoOAReconcileRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -9336,6 +11590,9 @@ public sealed partial class ProtoOAReconcileRes : pb::IMessage<ProtoOAReconcileR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -9349,7 +11606,27 @@ public sealed partial class ProtoOAReconcileRes : pb::IMessage<ProtoOAReconcileR
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    position_.WriteTo(ref output, _repeated_position_codec);
+    order_.WriteTo(ref output, _repeated_order_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -9386,6 +11663,9 @@ public sealed partial class ProtoOAReconcileRes : pb::IMessage<ProtoOAReconcileR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -9410,14 +11690,49 @@ public sealed partial class ProtoOAReconcileRes : pb::IMessage<ProtoOAReconcileR
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          position_.AddEntriesFrom(ref input, _repeated_position_codec);
+          break;
+        }
+        case 34: {
+          order_.AddEntriesFrom(ref input, _repeated_order_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when errors occur during the order requests. 
 /// </summary>
-public sealed partial class ProtoOAOrderErrorEvent : pb::IMessage<ProtoOAOrderErrorEvent> {
+public sealed partial class ProtoOAOrderErrorEvent : pb::IMessage<ProtoOAOrderErrorEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAOrderErrorEvent> _parser = new pb::MessageParser<ProtoOAOrderErrorEvent>(() => new ProtoOAOrderErrorEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -9659,6 +11974,9 @@ public sealed partial class ProtoOAOrderErrorEvent : pb::IMessage<ProtoOAOrderEr
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -9686,7 +12004,41 @@ public sealed partial class ProtoOAOrderErrorEvent : pb::IMessage<ProtoOAOrderEr
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasErrorCode) {
+      output.WriteRawTag(18);
+      output.WriteString(ErrorCode);
+    }
+    if (HasOrderId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(OrderId);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(40);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPositionId) {
+      output.WriteRawTag(48);
+      output.WriteInt64(PositionId);
+    }
+    if (HasDescription) {
+      output.WriteRawTag(58);
+      output.WriteString(Description);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -9743,6 +12095,9 @@ public sealed partial class ProtoOAOrderErrorEvent : pb::IMessage<ProtoOAOrderEr
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -9775,14 +12130,57 @@ public sealed partial class ProtoOAOrderErrorEvent : pb::IMessage<ProtoOAOrderEr
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          ErrorCode = input.ReadString();
+          break;
+        }
+        case 24: {
+          OrderId = input.ReadInt64();
+          break;
+        }
+        case 40: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 48: {
+          PositionId = input.ReadInt64();
+          break;
+        }
+        case 58: {
+          Description = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting Trader's deals historical data (execution details). 
 /// </summary>
-public sealed partial class ProtoOADealListReq : pb::IMessage<ProtoOADealListReq> {
+public sealed partial class ProtoOADealListReq : pb::IMessage<ProtoOADealListReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOADealListReq> _parser = new pb::MessageParser<ProtoOADealListReq>(() => new ProtoOADealListReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -9996,6 +12394,9 @@ public sealed partial class ProtoOADealListReq : pb::IMessage<ProtoOADealListReq
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -10019,7 +12420,37 @@ public sealed partial class ProtoOADealListReq : pb::IMessage<ProtoOADealListReq
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasFromTimestamp) {
+      output.WriteRawTag(24);
+      output.WriteInt64(FromTimestamp);
+    }
+    if (HasToTimestamp) {
+      output.WriteRawTag(32);
+      output.WriteInt64(ToTimestamp);
+    }
+    if (HasMaxRows) {
+      output.WriteRawTag(40);
+      output.WriteInt32(MaxRows);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -10070,6 +12501,9 @@ public sealed partial class ProtoOADealListReq : pb::IMessage<ProtoOADealListReq
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -10098,14 +12532,53 @@ public sealed partial class ProtoOADealListReq : pb::IMessage<ProtoOADealListReq
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          FromTimestamp = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          ToTimestamp = input.ReadInt64();
+          break;
+        }
+        case 40: {
+          MaxRows = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* The response to the ProtoOADealListRes request. 
 /// </summary>
-public sealed partial class ProtoOADealListRes : pb::IMessage<ProtoOADealListRes> {
+public sealed partial class ProtoOADealListRes : pb::IMessage<ProtoOADealListRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOADealListRes> _parser = new pb::MessageParser<ProtoOADealListRes>(() => new ProtoOADealListRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -10275,6 +12748,9 @@ public sealed partial class ProtoOADealListRes : pb::IMessage<ProtoOADealListRes
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -10291,7 +12767,30 @@ public sealed partial class ProtoOADealListRes : pb::IMessage<ProtoOADealListRes
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    deal_.WriteTo(ref output, _repeated_deal_codec);
+    if (HasHasMore) {
+      output.WriteRawTag(32);
+      output.WriteBool(HasMore);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -10332,6 +12831,9 @@ public sealed partial class ProtoOADealListRes : pb::IMessage<ProtoOADealListRes
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -10356,14 +12858,49 @@ public sealed partial class ProtoOADealListRes : pb::IMessage<ProtoOADealListRes
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          deal_.AddEntriesFrom(ref input, _repeated_deal_codec);
+          break;
+        }
+        case 32: {
+          HasMore = input.ReadBool();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting the margin estimate. Can be used before sending a new order request. 
 /// </summary>
-public sealed partial class ProtoOAExpectedMarginReq : pb::IMessage<ProtoOAExpectedMarginReq> {
+public sealed partial class ProtoOAExpectedMarginReq : pb::IMessage<ProtoOAExpectedMarginReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAExpectedMarginReq> _parser = new pb::MessageParser<ProtoOAExpectedMarginReq>(() => new ProtoOAExpectedMarginReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -10533,6 +13070,9 @@ public sealed partial class ProtoOAExpectedMarginReq : pb::IMessage<ProtoOAExpec
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -10549,7 +13089,30 @@ public sealed partial class ProtoOAExpectedMarginReq : pb::IMessage<ProtoOAExpec
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(SymbolId);
+    }
+    volume_.WriteTo(ref output, _repeated_volume_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -10590,6 +13153,9 @@ public sealed partial class ProtoOAExpectedMarginReq : pb::IMessage<ProtoOAExpec
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -10615,14 +13181,50 @@ public sealed partial class ProtoOAExpectedMarginReq : pb::IMessage<ProtoOAExpec
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+        case 34:
+        case 32: {
+          volume_.AddEntriesFrom(ref input, _repeated_volume_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///*The response to the ProtoOAExpectedMarginReq request. 
 /// </summary>
-public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpectedMarginRes> {
+public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpectedMarginRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAExpectedMarginRes> _parser = new pb::MessageParser<ProtoOAExpectedMarginRes>(() => new ProtoOAExpectedMarginRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -10652,6 +13254,7 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
     payloadType_ = other.payloadType_;
     ctidTraderAccountId_ = other.ctidTraderAccountId_;
     margin_ = other.margin_.Clone();
+    moneyDigits_ = other.moneyDigits_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -10724,6 +13327,33 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
     get { return margin_; }
   }
 
+  /// <summary>Field number for the "moneyDigits" field.</summary>
+  public const int MoneyDigitsFieldNumber = 4;
+  private readonly static uint MoneyDigitsDefaultValue = 0;
+
+  private uint moneyDigits_;
+  /// <summary>
+  /// Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects margin.buyMargin, margin.sellMargin.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public uint MoneyDigits {
+    get { if ((_hasBits0 & 4) != 0) { return moneyDigits_; } else { return MoneyDigitsDefaultValue; } }
+    set {
+      _hasBits0 |= 4;
+      moneyDigits_ = value;
+    }
+  }
+  /// <summary>Gets whether the "moneyDigits" field is set</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool HasMoneyDigits {
+    get { return (_hasBits0 & 4) != 0; }
+  }
+  /// <summary>Clears the value of the "moneyDigits" field</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void ClearMoneyDigits() {
+    _hasBits0 &= ~4;
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ProtoOAExpectedMarginRes);
@@ -10740,6 +13370,7 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
     if (PayloadType != other.PayloadType) return false;
     if (CtidTraderAccountId != other.CtidTraderAccountId) return false;
     if(!margin_.Equals(other.margin_)) return false;
+    if (MoneyDigits != other.MoneyDigits) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -10749,6 +13380,7 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
     if (HasPayloadType) hash ^= PayloadType.GetHashCode();
     if (HasCtidTraderAccountId) hash ^= CtidTraderAccountId.GetHashCode();
     hash ^= margin_.GetHashCode();
+    if (HasMoneyDigits) hash ^= MoneyDigits.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -10762,6 +13394,9 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -10771,10 +13406,37 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
       output.WriteInt64(CtidTraderAccountId);
     }
     margin_.WriteTo(output, _repeated_margin_codec);
+    if (HasMoneyDigits) {
+      output.WriteRawTag(32);
+      output.WriteUInt32(MoneyDigits);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    margin_.WriteTo(ref output, _repeated_margin_codec);
+    if (HasMoneyDigits) {
+      output.WriteRawTag(32);
+      output.WriteUInt32(MoneyDigits);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -10786,6 +13448,9 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
       size += 1 + pb::CodedOutputStream.ComputeInt64Size(CtidTraderAccountId);
     }
     size += margin_.CalculateSize(_repeated_margin_codec);
+    if (HasMoneyDigits) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MoneyDigits);
+    }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -10804,11 +13469,17 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
       CtidTraderAccountId = other.CtidTraderAccountId;
     }
     margin_.Add(other.margin_);
+    if (other.HasMoneyDigits) {
+      MoneyDigits = other.MoneyDigits;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -10827,16 +13498,55 @@ public sealed partial class ProtoOAExpectedMarginRes : pb::IMessage<ProtoOAExpec
           margin_.AddEntriesFrom(input, _repeated_margin_codec);
           break;
         }
+        case 32: {
+          MoneyDigits = input.ReadUInt32();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          margin_.AddEntriesFrom(ref input, _repeated_margin_codec);
+          break;
+        }
+        case 32: {
+          MoneyDigits = input.ReadUInt32();
+          break;
+        }
       }
     }
   }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when the margin allocated to a specific position is changed. 
 /// </summary>
-public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarginChangedEvent> {
+public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarginChangedEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAMarginChangedEvent> _parser = new pb::MessageParser<ProtoOAMarginChangedEvent>(() => new ProtoOAMarginChangedEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -10867,6 +13577,7 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
     ctidTraderAccountId_ = other.ctidTraderAccountId_;
     positionId_ = other.positionId_;
     usedMargin_ = other.usedMargin_;
+    moneyDigits_ = other.moneyDigits_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -10980,6 +13691,33 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
     _hasBits0 &= ~8;
   }
 
+  /// <summary>Field number for the "moneyDigits" field.</summary>
+  public const int MoneyDigitsFieldNumber = 5;
+  private readonly static uint MoneyDigitsDefaultValue = 0;
+
+  private uint moneyDigits_;
+  /// <summary>
+  /// Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects usedMargin.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public uint MoneyDigits {
+    get { if ((_hasBits0 & 16) != 0) { return moneyDigits_; } else { return MoneyDigitsDefaultValue; } }
+    set {
+      _hasBits0 |= 16;
+      moneyDigits_ = value;
+    }
+  }
+  /// <summary>Gets whether the "moneyDigits" field is set</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool HasMoneyDigits {
+    get { return (_hasBits0 & 16) != 0; }
+  }
+  /// <summary>Clears the value of the "moneyDigits" field</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void ClearMoneyDigits() {
+    _hasBits0 &= ~16;
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ProtoOAMarginChangedEvent);
@@ -10997,6 +13735,7 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
     if (CtidTraderAccountId != other.CtidTraderAccountId) return false;
     if (PositionId != other.PositionId) return false;
     if (UsedMargin != other.UsedMargin) return false;
+    if (MoneyDigits != other.MoneyDigits) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -11007,6 +13746,7 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
     if (HasCtidTraderAccountId) hash ^= CtidTraderAccountId.GetHashCode();
     if (HasPositionId) hash ^= PositionId.GetHashCode();
     if (HasUsedMargin) hash ^= UsedMargin.GetHashCode();
+    if (HasMoneyDigits) hash ^= MoneyDigits.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -11020,6 +13760,9 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -11036,10 +13779,44 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
       output.WriteRawTag(32);
       output.WriteUInt64(UsedMargin);
     }
+    if (HasMoneyDigits) {
+      output.WriteRawTag(40);
+      output.WriteUInt32(MoneyDigits);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPositionId) {
+      output.WriteRawTag(24);
+      output.WriteUInt64(PositionId);
+    }
+    if (HasUsedMargin) {
+      output.WriteRawTag(32);
+      output.WriteUInt64(UsedMargin);
+    }
+    if (HasMoneyDigits) {
+      output.WriteRawTag(40);
+      output.WriteUInt32(MoneyDigits);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -11055,6 +13832,9 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
     }
     if (HasUsedMargin) {
       size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UsedMargin);
+    }
+    if (HasMoneyDigits) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MoneyDigits);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -11079,11 +13859,17 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
     if (other.HasUsedMargin) {
       UsedMargin = other.UsedMargin;
     }
+    if (other.HasMoneyDigits) {
+      MoneyDigits = other.MoneyDigits;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -11106,16 +13892,59 @@ public sealed partial class ProtoOAMarginChangedEvent : pb::IMessage<ProtoOAMarg
           UsedMargin = input.ReadUInt64();
           break;
         }
+        case 40: {
+          MoneyDigits = input.ReadUInt32();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          PositionId = input.ReadUInt64();
+          break;
+        }
+        case 32: {
+          UsedMargin = input.ReadUInt64();
+          break;
+        }
+        case 40: {
+          MoneyDigits = input.ReadUInt32();
+          break;
+        }
       }
     }
   }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting Trader's historical data of deposits and withdrawals. 
 /// </summary>
-public sealed partial class ProtoOACashFlowHistoryListReq : pb::IMessage<ProtoOACashFlowHistoryListReq> {
+public sealed partial class ProtoOACashFlowHistoryListReq : pb::IMessage<ProtoOACashFlowHistoryListReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOACashFlowHistoryListReq> _parser = new pb::MessageParser<ProtoOACashFlowHistoryListReq>(() => new ProtoOACashFlowHistoryListReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -11299,6 +14128,9 @@ public sealed partial class ProtoOACashFlowHistoryListReq : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -11318,7 +14150,33 @@ public sealed partial class ProtoOACashFlowHistoryListReq : pb::IMessage<ProtoOA
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasFromTimestamp) {
+      output.WriteRawTag(24);
+      output.WriteInt64(FromTimestamp);
+    }
+    if (HasToTimestamp) {
+      output.WriteRawTag(32);
+      output.WriteInt64(ToTimestamp);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -11363,6 +14221,9 @@ public sealed partial class ProtoOACashFlowHistoryListReq : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -11387,14 +14248,49 @@ public sealed partial class ProtoOACashFlowHistoryListReq : pb::IMessage<ProtoOA
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          FromTimestamp = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          ToTimestamp = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOACashFlowHistoryListReq request. 
 /// </summary>
-public sealed partial class ProtoOACashFlowHistoryListRes : pb::IMessage<ProtoOACashFlowHistoryListRes> {
+public sealed partial class ProtoOACashFlowHistoryListRes : pb::IMessage<ProtoOACashFlowHistoryListRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOACashFlowHistoryListRes> _parser = new pb::MessageParser<ProtoOACashFlowHistoryListRes>(() => new ProtoOACashFlowHistoryListRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -11534,6 +14430,9 @@ public sealed partial class ProtoOACashFlowHistoryListRes : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -11546,7 +14445,26 @@ public sealed partial class ProtoOACashFlowHistoryListRes : pb::IMessage<ProtoOA
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    depositWithdraw_.WriteTo(ref output, _repeated_depositWithdraw_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -11581,6 +14499,9 @@ public sealed partial class ProtoOACashFlowHistoryListRes : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -11601,14 +14522,45 @@ public sealed partial class ProtoOACashFlowHistoryListRes : pb::IMessage<ProtoOA
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          depositWithdraw_.AddEntriesFrom(ref input, _repeated_depositWithdraw_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting the list of granted trader's account for the access token. 
 /// </summary>
-public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::IMessage<ProtoOAGetAccountListByAccessTokenReq> {
+public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::IMessage<ProtoOAGetAccountListByAccessTokenReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetAccountListByAccessTokenReq> _parser = new pb::MessageParser<ProtoOAGetAccountListByAccessTokenReq>(() => new ProtoOAGetAccountListByAccessTokenReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -11731,6 +14683,9 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::IMessage
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -11742,7 +14697,25 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::IMessage
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasAccessToken) {
+      output.WriteRawTag(18);
+      output.WriteString(AccessToken);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -11775,6 +14748,9 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::IMessage
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -11791,14 +14767,41 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenReq : pb::IMessage
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          AccessToken = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAGetAccountListByAccessTokenReq request. 
 /// </summary>
-public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::IMessage<ProtoOAGetAccountListByAccessTokenRes> {
+public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::IMessage<ProtoOAGetAccountListByAccessTokenRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetAccountListByAccessTokenRes> _parser = new pb::MessageParser<ProtoOAGetAccountListByAccessTokenRes>(() => new ProtoOAGetAccountListByAccessTokenRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -11967,6 +14970,9 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::IMessage
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -11983,7 +14989,30 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::IMessage
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasAccessToken) {
+      output.WriteRawTag(18);
+      output.WriteString(AccessToken);
+    }
+    if (HasPermissionScope) {
+      output.WriteRawTag(24);
+      output.WriteEnum((int) PermissionScope);
+    }
+    ctidTraderAccount_.WriteTo(ref output, _repeated_ctidTraderAccount_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -12024,6 +15053,9 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::IMessage
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -12048,14 +15080,49 @@ public sealed partial class ProtoOAGetAccountListByAccessTokenRes : pb::IMessage
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          AccessToken = input.ReadString();
+          break;
+        }
+        case 24: {
+          PermissionScope = (global::ProtoOAClientPermissionScope) input.ReadEnum();
+          break;
+        }
+        case 34: {
+          ctidTraderAccount_.AddEntriesFrom(ref input, _repeated_ctidTraderAccount_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request to refresh the access token using refresh token of granted trader's account. 
 /// </summary>
-public sealed partial class ProtoOARefreshTokenReq : pb::IMessage<ProtoOARefreshTokenReq> {
+public sealed partial class ProtoOARefreshTokenReq : pb::IMessage<ProtoOARefreshTokenReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOARefreshTokenReq> _parser = new pb::MessageParser<ProtoOARefreshTokenReq>(() => new ProtoOARefreshTokenReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -12178,6 +15245,9 @@ public sealed partial class ProtoOARefreshTokenReq : pb::IMessage<ProtoOARefresh
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -12189,7 +15259,25 @@ public sealed partial class ProtoOARefreshTokenReq : pb::IMessage<ProtoOARefresh
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasRefreshToken) {
+      output.WriteRawTag(18);
+      output.WriteString(RefreshToken);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -12222,6 +15310,9 @@ public sealed partial class ProtoOARefreshTokenReq : pb::IMessage<ProtoOARefresh
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -12238,14 +15329,41 @@ public sealed partial class ProtoOARefreshTokenReq : pb::IMessage<ProtoOARefresh
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          RefreshToken = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOARefreshTokenReq request. 
 /// </summary>
-public sealed partial class ProtoOARefreshTokenRes : pb::IMessage<ProtoOARefreshTokenRes> {
+public sealed partial class ProtoOARefreshTokenRes : pb::IMessage<ProtoOARefreshTokenRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOARefreshTokenRes> _parser = new pb::MessageParser<ProtoOARefreshTokenRes>(() => new ProtoOARefreshTokenRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -12453,6 +15571,9 @@ public sealed partial class ProtoOARefreshTokenRes : pb::IMessage<ProtoOARefresh
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -12476,7 +15597,37 @@ public sealed partial class ProtoOARefreshTokenRes : pb::IMessage<ProtoOARefresh
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasAccessToken) {
+      output.WriteRawTag(18);
+      output.WriteString(AccessToken);
+    }
+    if (HasTokenType) {
+      output.WriteRawTag(26);
+      output.WriteString(TokenType);
+    }
+    if (HasExpiresIn) {
+      output.WriteRawTag(32);
+      output.WriteInt64(ExpiresIn);
+    }
+    if (HasRefreshToken) {
+      output.WriteRawTag(42);
+      output.WriteString(RefreshToken);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -12527,6 +15678,9 @@ public sealed partial class ProtoOARefreshTokenRes : pb::IMessage<ProtoOARefresh
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -12555,14 +15709,53 @@ public sealed partial class ProtoOARefreshTokenRes : pb::IMessage<ProtoOARefresh
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          AccessToken = input.ReadString();
+          break;
+        }
+        case 26: {
+          TokenType = input.ReadString();
+          break;
+        }
+        case 32: {
+          ExpiresIn = input.ReadInt64();
+          break;
+        }
+        case 42: {
+          RefreshToken = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for subscribing on spot events of the specified symbol. 
 /// </summary>
-public sealed partial class ProtoOASubscribeSpotsReq : pb::IMessage<ProtoOASubscribeSpotsReq> {
+public sealed partial class ProtoOASubscribeSpotsReq : pb::IMessage<ProtoOASubscribeSpotsReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASubscribeSpotsReq> _parser = new pb::MessageParser<ProtoOASubscribeSpotsReq>(() => new ProtoOASubscribeSpotsReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -12702,6 +15895,9 @@ public sealed partial class ProtoOASubscribeSpotsReq : pb::IMessage<ProtoOASubsc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -12714,7 +15910,26 @@ public sealed partial class ProtoOASubscribeSpotsReq : pb::IMessage<ProtoOASubsc
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbolId_.WriteTo(ref output, _repeated_symbolId_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -12749,6 +15964,9 @@ public sealed partial class ProtoOASubscribeSpotsReq : pb::IMessage<ProtoOASubsc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -12770,14 +15988,46 @@ public sealed partial class ProtoOASubscribeSpotsReq : pb::IMessage<ProtoOASubsc
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26:
+        case 24: {
+          symbolId_.AddEntriesFrom(ref input, _repeated_symbolId_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASubscribeSpotsReq request. 
 /// </summary>
-public sealed partial class ProtoOASubscribeSpotsRes : pb::IMessage<ProtoOASubscribeSpotsRes> {
+public sealed partial class ProtoOASubscribeSpotsRes : pb::IMessage<ProtoOASubscribeSpotsRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASubscribeSpotsRes> _parser = new pb::MessageParser<ProtoOASubscribeSpotsRes>(() => new ProtoOASubscribeSpotsRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -12901,6 +16151,9 @@ public sealed partial class ProtoOASubscribeSpotsRes : pb::IMessage<ProtoOASubsc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -12912,7 +16165,25 @@ public sealed partial class ProtoOASubscribeSpotsRes : pb::IMessage<ProtoOASubsc
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -12945,6 +16216,9 @@ public sealed partial class ProtoOASubscribeSpotsRes : pb::IMessage<ProtoOASubsc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -12961,14 +16235,41 @@ public sealed partial class ProtoOASubscribeSpotsRes : pb::IMessage<ProtoOASubsc
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for unsubscribing from the spot events of the specified symbol. 
 /// </summary>
-public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::IMessage<ProtoOAUnsubscribeSpotsReq> {
+public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::IMessage<ProtoOAUnsubscribeSpotsReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAUnsubscribeSpotsReq> _parser = new pb::MessageParser<ProtoOAUnsubscribeSpotsReq>(() => new ProtoOAUnsubscribeSpotsReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -13108,6 +16409,9 @@ public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::IMessage<ProtoOAUns
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -13120,7 +16424,26 @@ public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::IMessage<ProtoOAUns
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbolId_.WriteTo(ref output, _repeated_symbolId_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -13155,6 +16478,9 @@ public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::IMessage<ProtoOAUns
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -13176,14 +16502,46 @@ public sealed partial class ProtoOAUnsubscribeSpotsReq : pb::IMessage<ProtoOAUns
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26:
+        case 24: {
+          symbolId_.AddEntriesFrom(ref input, _repeated_symbolId_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASubscribeSpotsRes request. 
 /// </summary>
-public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::IMessage<ProtoOAUnsubscribeSpotsRes> {
+public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::IMessage<ProtoOAUnsubscribeSpotsRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAUnsubscribeSpotsRes> _parser = new pb::MessageParser<ProtoOAUnsubscribeSpotsRes>(() => new ProtoOAUnsubscribeSpotsRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -13307,6 +16665,9 @@ public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::IMessage<ProtoOAUns
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -13318,7 +16679,25 @@ public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::IMessage<ProtoOAUns
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -13351,6 +16730,9 @@ public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::IMessage<ProtoOAUns
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -13367,14 +16749,41 @@ public sealed partial class ProtoOAUnsubscribeSpotsRes : pb::IMessage<ProtoOAUns
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when a new spot event is generated on the server side. Requires subscription on the spot events, see ProtoOASubscribeSpotsReq. 
 /// </summary>
-public sealed partial class ProtoOASpotEvent : pb::IMessage<ProtoOASpotEvent> {
+public sealed partial class ProtoOASpotEvent : pb::IMessage<ProtoOASpotEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASpotEvent> _parser = new pb::MessageParser<ProtoOASpotEvent>(() => new ProtoOASpotEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -13634,6 +17043,9 @@ public sealed partial class ProtoOASpotEvent : pb::IMessage<ProtoOASpotEvent> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -13662,7 +17074,42 @@ public sealed partial class ProtoOASpotEvent : pb::IMessage<ProtoOASpotEvent> {
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(SymbolId);
+    }
+    if (HasBid) {
+      output.WriteRawTag(32);
+      output.WriteUInt64(Bid);
+    }
+    if (HasAsk) {
+      output.WriteRawTag(40);
+      output.WriteUInt64(Ask);
+    }
+    trendbar_.WriteTo(ref output, _repeated_trendbar_codec);
+    if (HasSessionClose) {
+      output.WriteRawTag(56);
+      output.WriteUInt64(SessionClose);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -13721,6 +17168,9 @@ public sealed partial class ProtoOASpotEvent : pb::IMessage<ProtoOASpotEvent> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -13757,14 +17207,61 @@ public sealed partial class ProtoOASpotEvent : pb::IMessage<ProtoOASpotEvent> {
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          Bid = input.ReadUInt64();
+          break;
+        }
+        case 40: {
+          Ask = input.ReadUInt64();
+          break;
+        }
+        case 50: {
+          trendbar_.AddEntriesFrom(ref input, _repeated_trendbar_codec);
+          break;
+        }
+        case 56: {
+          SessionClose = input.ReadUInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for subscribing for live trend bars. Requires subscription on the spot events, see ProtoOASubscribeSpotsReq. 
 /// </summary>
-public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::IMessage<ProtoOASubscribeLiveTrendbarReq> {
+public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::IMessage<ProtoOASubscribeLiveTrendbarReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASubscribeLiveTrendbarReq> _parser = new pb::MessageParser<ProtoOASubscribeLiveTrendbarReq>(() => new ProtoOASubscribeLiveTrendbarReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -13948,6 +17445,9 @@ public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -13967,7 +17467,33 @@ public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::IMessage<Proto
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPeriod) {
+      output.WriteRawTag(24);
+      output.WriteEnum((int) Period);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(32);
+      output.WriteInt64(SymbolId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -14012,6 +17538,9 @@ public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -14036,14 +17565,49 @@ public sealed partial class ProtoOASubscribeLiveTrendbarReq : pb::IMessage<Proto
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          Period = (global::ProtoOATrendbarPeriod) input.ReadEnum();
+          break;
+        }
+        case 32: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASubscribeLiveTrendbarReq request. 
 /// </summary>
-public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::IMessage<ProtoOASubscribeLiveTrendbarRes> {
+public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::IMessage<ProtoOASubscribeLiveTrendbarRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASubscribeLiveTrendbarRes> _parser = new pb::MessageParser<ProtoOASubscribeLiveTrendbarRes>(() => new ProtoOASubscribeLiveTrendbarRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -14167,6 +17731,9 @@ public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -14178,7 +17745,25 @@ public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::IMessage<Proto
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -14211,6 +17796,9 @@ public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -14227,14 +17815,41 @@ public sealed partial class ProtoOASubscribeLiveTrendbarRes : pb::IMessage<Proto
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for unsubscribing from the live trend bars. 
 /// </summary>
-public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::IMessage<ProtoOAUnsubscribeLiveTrendbarReq> {
+public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::IMessage<ProtoOAUnsubscribeLiveTrendbarReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAUnsubscribeLiveTrendbarReq> _parser = new pb::MessageParser<ProtoOAUnsubscribeLiveTrendbarReq>(() => new ProtoOAUnsubscribeLiveTrendbarReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -14418,6 +18033,9 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::IMessage<Pro
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -14437,7 +18055,33 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::IMessage<Pro
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPeriod) {
+      output.WriteRawTag(24);
+      output.WriteEnum((int) Period);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(32);
+      output.WriteInt64(SymbolId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -14482,6 +18126,9 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::IMessage<Pro
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -14506,14 +18153,49 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarReq : pb::IMessage<Pro
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          Period = (global::ProtoOATrendbarPeriod) input.ReadEnum();
+          break;
+        }
+        case 32: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASubscribeLiveTrendbarReq request. 
 /// </summary>
-public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::IMessage<ProtoOAUnsubscribeLiveTrendbarRes> {
+public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::IMessage<ProtoOAUnsubscribeLiveTrendbarRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAUnsubscribeLiveTrendbarRes> _parser = new pb::MessageParser<ProtoOAUnsubscribeLiveTrendbarRes>(() => new ProtoOAUnsubscribeLiveTrendbarRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -14637,6 +18319,9 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::IMessage<Pro
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -14648,7 +18333,25 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::IMessage<Pro
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -14681,6 +18384,9 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::IMessage<Pro
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -14697,14 +18403,41 @@ public sealed partial class ProtoOAUnsubscribeLiveTrendbarRes : pb::IMessage<Pro
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting historical trend bars for the symbol. 
 /// </summary>
-public sealed partial class ProtoOAGetTrendbarsReq : pb::IMessage<ProtoOAGetTrendbarsReq> {
+public sealed partial class ProtoOAGetTrendbarsReq : pb::IMessage<ProtoOAGetTrendbarsReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetTrendbarsReq> _parser = new pb::MessageParser<ProtoOAGetTrendbarsReq>(() => new ProtoOAGetTrendbarsReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -14948,6 +18681,9 @@ public sealed partial class ProtoOAGetTrendbarsReq : pb::IMessage<ProtoOAGetTren
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -14975,7 +18711,41 @@ public sealed partial class ProtoOAGetTrendbarsReq : pb::IMessage<ProtoOAGetTren
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasFromTimestamp) {
+      output.WriteRawTag(24);
+      output.WriteInt64(FromTimestamp);
+    }
+    if (HasToTimestamp) {
+      output.WriteRawTag(32);
+      output.WriteInt64(ToTimestamp);
+    }
+    if (HasPeriod) {
+      output.WriteRawTag(40);
+      output.WriteEnum((int) Period);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(48);
+      output.WriteInt64(SymbolId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -15032,6 +18802,9 @@ public sealed partial class ProtoOAGetTrendbarsReq : pb::IMessage<ProtoOAGetTren
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -15064,14 +18837,57 @@ public sealed partial class ProtoOAGetTrendbarsReq : pb::IMessage<ProtoOAGetTren
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          FromTimestamp = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          ToTimestamp = input.ReadInt64();
+          break;
+        }
+        case 40: {
+          Period = (global::ProtoOATrendbarPeriod) input.ReadEnum();
+          break;
+        }
+        case 48: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAGetTrendbarsReq request. 
 /// </summary>
-public sealed partial class ProtoOAGetTrendbarsRes : pb::IMessage<ProtoOAGetTrendbarsRes> {
+public sealed partial class ProtoOAGetTrendbarsRes : pb::IMessage<ProtoOAGetTrendbarsRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetTrendbarsRes> _parser = new pb::MessageParser<ProtoOAGetTrendbarsRes>(() => new ProtoOAGetTrendbarsRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -15301,6 +19117,9 @@ public sealed partial class ProtoOAGetTrendbarsRes : pb::IMessage<ProtoOAGetTren
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -15325,7 +19144,38 @@ public sealed partial class ProtoOAGetTrendbarsRes : pb::IMessage<ProtoOAGetTren
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasPeriod) {
+      output.WriteRawTag(24);
+      output.WriteEnum((int) Period);
+    }
+    if (HasTimestamp) {
+      output.WriteRawTag(32);
+      output.WriteInt64(Timestamp);
+    }
+    trendbar_.WriteTo(ref output, _repeated_trendbar_codec);
+    if (HasSymbolId) {
+      output.WriteRawTag(48);
+      output.WriteInt64(SymbolId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -15378,6 +19228,9 @@ public sealed partial class ProtoOAGetTrendbarsRes : pb::IMessage<ProtoOAGetTren
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -15410,14 +19263,57 @@ public sealed partial class ProtoOAGetTrendbarsRes : pb::IMessage<ProtoOAGetTren
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          Period = (global::ProtoOATrendbarPeriod) input.ReadEnum();
+          break;
+        }
+        case 32: {
+          Timestamp = input.ReadInt64();
+          break;
+        }
+        case 42: {
+          trendbar_.AddEntriesFrom(ref input, _repeated_trendbar_codec);
+          break;
+        }
+        case 48: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting historical tick data for the symbol. 
 /// </summary>
-public sealed partial class ProtoOAGetTickDataReq : pb::IMessage<ProtoOAGetTickDataReq> {
+public sealed partial class ProtoOAGetTickDataReq : pb::IMessage<ProtoOAGetTickDataReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetTickDataReq> _parser = new pb::MessageParser<ProtoOAGetTickDataReq>(() => new ProtoOAGetTickDataReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -15661,6 +19557,9 @@ public sealed partial class ProtoOAGetTickDataReq : pb::IMessage<ProtoOAGetTickD
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -15688,7 +19587,41 @@ public sealed partial class ProtoOAGetTickDataReq : pb::IMessage<ProtoOAGetTickD
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(24);
+      output.WriteInt64(SymbolId);
+    }
+    if (HasType) {
+      output.WriteRawTag(32);
+      output.WriteEnum((int) Type);
+    }
+    if (HasFromTimestamp) {
+      output.WriteRawTag(40);
+      output.WriteInt64(FromTimestamp);
+    }
+    if (HasToTimestamp) {
+      output.WriteRawTag(48);
+      output.WriteInt64(ToTimestamp);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -15745,6 +19678,9 @@ public sealed partial class ProtoOAGetTickDataReq : pb::IMessage<ProtoOAGetTickD
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -15777,14 +19713,57 @@ public sealed partial class ProtoOAGetTickDataReq : pb::IMessage<ProtoOAGetTickD
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          SymbolId = input.ReadInt64();
+          break;
+        }
+        case 32: {
+          Type = (global::ProtoOAQuoteType) input.ReadEnum();
+          break;
+        }
+        case 40: {
+          FromTimestamp = input.ReadInt64();
+          break;
+        }
+        case 48: {
+          ToTimestamp = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAGetTickDataReq request. 
 /// </summary>
-public sealed partial class ProtoOAGetTickDataRes : pb::IMessage<ProtoOAGetTickDataRes> {
+public sealed partial class ProtoOAGetTickDataRes : pb::IMessage<ProtoOAGetTickDataRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetTickDataRes> _parser = new pb::MessageParser<ProtoOAGetTickDataRes>(() => new ProtoOAGetTickDataRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -15954,6 +19933,9 @@ public sealed partial class ProtoOAGetTickDataRes : pb::IMessage<ProtoOAGetTickD
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -15970,7 +19952,30 @@ public sealed partial class ProtoOAGetTickDataRes : pb::IMessage<ProtoOAGetTickD
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    tickData_.WriteTo(ref output, _repeated_tickData_codec);
+    if (HasHasMore) {
+      output.WriteRawTag(32);
+      output.WriteBool(HasMore);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -16011,6 +20016,9 @@ public sealed partial class ProtoOAGetTickDataRes : pb::IMessage<ProtoOAGetTickD
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -16035,14 +20043,49 @@ public sealed partial class ProtoOAGetTickDataRes : pb::IMessage<ProtoOAGetTickD
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          tickData_.AddEntriesFrom(ref input, _repeated_tickData_codec);
+          break;
+        }
+        case 32: {
+          HasMore = input.ReadBool();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for getting details of Trader's profile. Limited due to GDRP requirements. 
 /// </summary>
-public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::IMessage<ProtoOAGetCtidProfileByTokenReq> {
+public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::IMessage<ProtoOAGetCtidProfileByTokenReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetCtidProfileByTokenReq> _parser = new pb::MessageParser<ProtoOAGetCtidProfileByTokenReq>(() => new ProtoOAGetCtidProfileByTokenReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -16165,6 +20208,9 @@ public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -16176,7 +20222,25 @@ public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::IMessage<Proto
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasAccessToken) {
+      output.WriteRawTag(18);
+      output.WriteString(AccessToken);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -16209,6 +20273,9 @@ public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -16225,14 +20292,41 @@ public sealed partial class ProtoOAGetCtidProfileByTokenReq : pb::IMessage<Proto
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          AccessToken = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAGetCtidProfileByTokenReq request. 
 /// </summary>
-public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::IMessage<ProtoOAGetCtidProfileByTokenRes> {
+public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::IMessage<ProtoOAGetCtidProfileByTokenRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAGetCtidProfileByTokenRes> _parser = new pb::MessageParser<ProtoOAGetCtidProfileByTokenRes>(() => new ProtoOAGetCtidProfileByTokenRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -16343,6 +20437,9 @@ public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -16354,7 +20451,25 @@ public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::IMessage<Proto
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (profile_ != null) {
+      output.WriteRawTag(18);
+      output.WriteMessage(Profile);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -16390,6 +20505,9 @@ public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::IMessage<Proto
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -16409,14 +20527,44 @@ public sealed partial class ProtoOAGetCtidProfileByTokenRes : pb::IMessage<Proto
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          if (profile_ == null) {
+            Profile = new global::ProtoOACtidProfile();
+          }
+          input.ReadMessage(Profile);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when the structure of depth of market is changed. Requires subscription on the depth of markets for the symbol, see ProtoOASubscribeDepthQuotesReq. 
 /// </summary>
-public sealed partial class ProtoOADepthEvent : pb::IMessage<ProtoOADepthEvent> {
+public sealed partial class ProtoOADepthEvent : pb::IMessage<ProtoOADepthEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOADepthEvent> _parser = new pb::MessageParser<ProtoOADepthEvent>(() => new ProtoOADepthEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -16602,6 +20750,9 @@ public sealed partial class ProtoOADepthEvent : pb::IMessage<ProtoOADepthEvent> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -16619,7 +20770,31 @@ public sealed partial class ProtoOADepthEvent : pb::IMessage<ProtoOADepthEvent> 
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (HasSymbolId) {
+      output.WriteRawTag(24);
+      output.WriteUInt64(SymbolId);
+    }
+    newQuotes_.WriteTo(ref output, _repeated_newQuotes_codec);
+    deletedQuotes_.WriteTo(ref output, _repeated_deletedQuotes_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -16662,6 +20837,9 @@ public sealed partial class ProtoOADepthEvent : pb::IMessage<ProtoOADepthEvent> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -16691,14 +20869,54 @@ public sealed partial class ProtoOADepthEvent : pb::IMessage<ProtoOADepthEvent> 
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 24: {
+          SymbolId = input.ReadUInt64();
+          break;
+        }
+        case 34: {
+          newQuotes_.AddEntriesFrom(ref input, _repeated_newQuotes_codec);
+          break;
+        }
+        case 42:
+        case 40: {
+          deletedQuotes_.AddEntriesFrom(ref input, _repeated_deletedQuotes_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for subscribing on depth of market of the specified symbol. 
 /// </summary>
-public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::IMessage<ProtoOASubscribeDepthQuotesReq> {
+public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::IMessage<ProtoOASubscribeDepthQuotesReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASubscribeDepthQuotesReq> _parser = new pb::MessageParser<ProtoOASubscribeDepthQuotesReq>(() => new ProtoOASubscribeDepthQuotesReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -16838,6 +21056,9 @@ public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -16850,7 +21071,26 @@ public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::IMessage<ProtoO
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbolId_.WriteTo(ref output, _repeated_symbolId_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -16885,6 +21125,9 @@ public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -16906,14 +21149,46 @@ public sealed partial class ProtoOASubscribeDepthQuotesReq : pb::IMessage<ProtoO
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26:
+        case 24: {
+          symbolId_.AddEntriesFrom(ref input, _repeated_symbolId_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOASubscribeDepthQuotesReq request. 
 /// </summary>
-public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::IMessage<ProtoOASubscribeDepthQuotesRes> {
+public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::IMessage<ProtoOASubscribeDepthQuotesRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASubscribeDepthQuotesRes> _parser = new pb::MessageParser<ProtoOASubscribeDepthQuotesRes>(() => new ProtoOASubscribeDepthQuotesRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -17037,6 +21312,9 @@ public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -17048,7 +21326,25 @@ public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::IMessage<ProtoO
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -17081,6 +21377,9 @@ public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::IMessage<ProtoO
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -17097,14 +21396,41 @@ public sealed partial class ProtoOASubscribeDepthQuotesRes : pb::IMessage<ProtoO
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for unsubscribing from the depth of market of the specified symbol. 
 /// </summary>
-public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::IMessage<ProtoOAUnsubscribeDepthQuotesReq> {
+public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::IMessage<ProtoOAUnsubscribeDepthQuotesReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAUnsubscribeDepthQuotesReq> _parser = new pb::MessageParser<ProtoOAUnsubscribeDepthQuotesReq>(() => new ProtoOAUnsubscribeDepthQuotesReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -17244,6 +21570,9 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::IMessage<Prot
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -17256,7 +21585,26 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::IMessage<Prot
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbolId_.WriteTo(ref output, _repeated_symbolId_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -17291,6 +21639,9 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::IMessage<Prot
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -17312,14 +21663,46 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesReq : pb::IMessage<Prot
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26:
+        case 24: {
+          symbolId_.AddEntriesFrom(ref input, _repeated_symbolId_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOAUnsubscribeDepthQuotesReq request. 
 /// </summary>
-public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::IMessage<ProtoOAUnsubscribeDepthQuotesRes> {
+public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::IMessage<ProtoOAUnsubscribeDepthQuotesRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAUnsubscribeDepthQuotesRes> _parser = new pb::MessageParser<ProtoOAUnsubscribeDepthQuotesRes>(() => new ProtoOAUnsubscribeDepthQuotesRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -17443,6 +21826,9 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::IMessage<Prot
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -17454,7 +21840,25 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::IMessage<Prot
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -17487,6 +21891,9 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::IMessage<Prot
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -17503,14 +21910,41 @@ public sealed partial class ProtoOAUnsubscribeDepthQuotesRes : pb::IMessage<Prot
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for a list of symbol categories available for a trading account. 
 /// </summary>
-public sealed partial class ProtoOASymbolCategoryListReq : pb::IMessage<ProtoOASymbolCategoryListReq> {
+public sealed partial class ProtoOASymbolCategoryListReq : pb::IMessage<ProtoOASymbolCategoryListReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolCategoryListReq> _parser = new pb::MessageParser<ProtoOASymbolCategoryListReq>(() => new ProtoOASymbolCategoryListReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -17634,6 +22068,9 @@ public sealed partial class ProtoOASymbolCategoryListReq : pb::IMessage<ProtoOAS
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -17645,7 +22082,25 @@ public sealed partial class ProtoOASymbolCategoryListReq : pb::IMessage<ProtoOAS
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -17678,6 +22133,9 @@ public sealed partial class ProtoOASymbolCategoryListReq : pb::IMessage<ProtoOAS
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -17694,14 +22152,41 @@ public sealed partial class ProtoOASymbolCategoryListReq : pb::IMessage<ProtoOAS
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoSymbolCategoryListReq request. 
 /// </summary>
-public sealed partial class ProtoOASymbolCategoryListRes : pb::IMessage<ProtoOASymbolCategoryListRes> {
+public sealed partial class ProtoOASymbolCategoryListRes : pb::IMessage<ProtoOASymbolCategoryListRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOASymbolCategoryListRes> _parser = new pb::MessageParser<ProtoOASymbolCategoryListRes>(() => new ProtoOASymbolCategoryListRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -17841,6 +22326,9 @@ public sealed partial class ProtoOASymbolCategoryListRes : pb::IMessage<ProtoOAS
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -17853,7 +22341,26 @@ public sealed partial class ProtoOASymbolCategoryListRes : pb::IMessage<ProtoOAS
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    symbolCategory_.WriteTo(ref output, _repeated_symbolCategory_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -17888,6 +22395,9 @@ public sealed partial class ProtoOASymbolCategoryListRes : pb::IMessage<ProtoOAS
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -17908,14 +22418,45 @@ public sealed partial class ProtoOASymbolCategoryListRes : pb::IMessage<ProtoOAS
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          symbolCategory_.AddEntriesFrom(ref input, _repeated_symbolCategory_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for logout of  trading account session.
 /// </summary>
-public sealed partial class ProtoOAAccountLogoutReq : pb::IMessage<ProtoOAAccountLogoutReq> {
+public sealed partial class ProtoOAAccountLogoutReq : pb::IMessage<ProtoOAAccountLogoutReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAccountLogoutReq> _parser = new pb::MessageParser<ProtoOAAccountLogoutReq>(() => new ProtoOAAccountLogoutReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -18039,6 +22580,9 @@ public sealed partial class ProtoOAAccountLogoutReq : pb::IMessage<ProtoOAAccoun
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -18050,7 +22594,25 @@ public sealed partial class ProtoOAAccountLogoutReq : pb::IMessage<ProtoOAAccoun
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -18083,6 +22645,9 @@ public sealed partial class ProtoOAAccountLogoutReq : pb::IMessage<ProtoOAAccoun
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -18099,14 +22664,41 @@ public sealed partial class ProtoOAAccountLogoutReq : pb::IMessage<ProtoOAAccoun
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response to the ProtoOATraderLogoutReq request. 
 /// </summary>
-public sealed partial class ProtoOAAccountLogoutRes : pb::IMessage<ProtoOAAccountLogoutRes> {
+public sealed partial class ProtoOAAccountLogoutRes : pb::IMessage<ProtoOAAccountLogoutRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAccountLogoutRes> _parser = new pb::MessageParser<ProtoOAAccountLogoutRes>(() => new ProtoOAAccountLogoutRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -18230,6 +22822,9 @@ public sealed partial class ProtoOAAccountLogoutRes : pb::IMessage<ProtoOAAccoun
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -18241,7 +22836,25 @@ public sealed partial class ProtoOAAccountLogoutRes : pb::IMessage<ProtoOAAccoun
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -18274,6 +22887,9 @@ public sealed partial class ProtoOAAccountLogoutRes : pb::IMessage<ProtoOAAccoun
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -18290,7 +22906,30 @@ public sealed partial class ProtoOAAccountLogoutRes : pb::IMessage<ProtoOAAccoun
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
@@ -18298,7 +22937,11 @@ public sealed partial class ProtoOAAccountLogoutRes : pb::IMessage<ProtoOAAccoun
 ///* Event that is sent when the established session for an account is dropped on the server side.
 ///A new session must be authorized for the account.  
 /// </summary>
-public sealed partial class ProtoOAAccountDisconnectEvent : pb::IMessage<ProtoOAAccountDisconnectEvent> {
+public sealed partial class ProtoOAAccountDisconnectEvent : pb::IMessage<ProtoOAAccountDisconnectEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAAccountDisconnectEvent> _parser = new pb::MessageParser<ProtoOAAccountDisconnectEvent>(() => new ProtoOAAccountDisconnectEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -18422,6 +23065,9 @@ public sealed partial class ProtoOAAccountDisconnectEvent : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -18433,7 +23079,25 @@ public sealed partial class ProtoOAAccountDisconnectEvent : pb::IMessage<ProtoOA
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -18466,6 +23130,9 @@ public sealed partial class ProtoOAAccountDisconnectEvent : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -18482,14 +23149,41 @@ public sealed partial class ProtoOAAccountDisconnectEvent : pb::IMessage<ProtoOA
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request for a list of existing margin call thresholds configured for a user. 
 /// </summary>
-public sealed partial class ProtoOAMarginCallListReq : pb::IMessage<ProtoOAMarginCallListReq> {
+public sealed partial class ProtoOAMarginCallListReq : pb::IMessage<ProtoOAMarginCallListReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAMarginCallListReq> _parser = new pb::MessageParser<ProtoOAMarginCallListReq>(() => new ProtoOAMarginCallListReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -18610,6 +23304,9 @@ public sealed partial class ProtoOAMarginCallListReq : pb::IMessage<ProtoOAMargi
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -18621,7 +23318,25 @@ public sealed partial class ProtoOAMarginCallListReq : pb::IMessage<ProtoOAMargi
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -18654,6 +23369,9 @@ public sealed partial class ProtoOAMarginCallListReq : pb::IMessage<ProtoOAMargi
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -18670,14 +23388,41 @@ public sealed partial class ProtoOAMarginCallListReq : pb::IMessage<ProtoOAMargi
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Response with a list of existing user Margin Calls, usually contains 3 items. 
 /// </summary>
-public sealed partial class ProtoOAMarginCallListRes : pb::IMessage<ProtoOAMarginCallListRes> {
+public sealed partial class ProtoOAMarginCallListRes : pb::IMessage<ProtoOAMarginCallListRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAMarginCallListRes> _parser = new pb::MessageParser<ProtoOAMarginCallListRes>(() => new ProtoOAMarginCallListRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -18784,6 +23529,9 @@ public sealed partial class ProtoOAMarginCallListRes : pb::IMessage<ProtoOAMargi
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -18792,7 +23540,22 @@ public sealed partial class ProtoOAMarginCallListRes : pb::IMessage<ProtoOAMargi
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    marginCall_.WriteTo(ref output, _repeated_marginCall_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -18821,6 +23584,9 @@ public sealed partial class ProtoOAMarginCallListRes : pb::IMessage<ProtoOAMargi
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -18837,14 +23603,41 @@ public sealed partial class ProtoOAMarginCallListRes : pb::IMessage<ProtoOAMargi
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          marginCall_.AddEntriesFrom(ref input, _repeated_marginCall_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Request to modify marginLevelThreshold of specified marginCallType for ctidTraderAccountId. 
 /// </summary>
-public sealed partial class ProtoOAMarginCallUpdateReq : pb::IMessage<ProtoOAMarginCallUpdateReq> {
+public sealed partial class ProtoOAMarginCallUpdateReq : pb::IMessage<ProtoOAMarginCallUpdateReq>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAMarginCallUpdateReq> _parser = new pb::MessageParser<ProtoOAMarginCallUpdateReq>(() => new ProtoOAMarginCallUpdateReq());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -18979,6 +23772,9 @@ public sealed partial class ProtoOAMarginCallUpdateReq : pb::IMessage<ProtoOAMar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -18994,7 +23790,29 @@ public sealed partial class ProtoOAMarginCallUpdateReq : pb::IMessage<ProtoOAMar
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (marginCall_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(MarginCall);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -19036,6 +23854,9 @@ public sealed partial class ProtoOAMarginCallUpdateReq : pb::IMessage<ProtoOAMar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -19059,14 +23880,48 @@ public sealed partial class ProtoOAMarginCallUpdateReq : pb::IMessage<ProtoOAMar
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          if (marginCall_ == null) {
+            MarginCall = new global::ProtoOAMarginCall();
+          }
+          input.ReadMessage(MarginCall);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* If this response received, it means that margin call was successfully updated. 
 /// </summary>
-public sealed partial class ProtoOAMarginCallUpdateRes : pb::IMessage<ProtoOAMarginCallUpdateRes> {
+public sealed partial class ProtoOAMarginCallUpdateRes : pb::IMessage<ProtoOAMarginCallUpdateRes>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAMarginCallUpdateRes> _parser = new pb::MessageParser<ProtoOAMarginCallUpdateRes>(() => new ProtoOAMarginCallUpdateRes());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -19160,6 +24015,9 @@ public sealed partial class ProtoOAMarginCallUpdateRes : pb::IMessage<ProtoOAMar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -19167,7 +24025,21 @@ public sealed partial class ProtoOAMarginCallUpdateRes : pb::IMessage<ProtoOAMar
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -19194,6 +24066,9 @@ public sealed partial class ProtoOAMarginCallUpdateRes : pb::IMessage<ProtoOAMar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -19206,14 +24081,37 @@ public sealed partial class ProtoOAMarginCallUpdateRes : pb::IMessage<ProtoOAMar
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when a Margin Call threshold configuration is updated. 
 /// </summary>
-public sealed partial class ProtoOAMarginCallUpdateEvent : pb::IMessage<ProtoOAMarginCallUpdateEvent> {
+public sealed partial class ProtoOAMarginCallUpdateEvent : pb::IMessage<ProtoOAMarginCallUpdateEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAMarginCallUpdateEvent> _parser = new pb::MessageParser<ProtoOAMarginCallUpdateEvent>(() => new ProtoOAMarginCallUpdateEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -19348,6 +24246,9 @@ public sealed partial class ProtoOAMarginCallUpdateEvent : pb::IMessage<ProtoOAM
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -19363,7 +24264,29 @@ public sealed partial class ProtoOAMarginCallUpdateEvent : pb::IMessage<ProtoOAM
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (marginCall_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(MarginCall);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -19405,6 +24328,9 @@ public sealed partial class ProtoOAMarginCallUpdateEvent : pb::IMessage<ProtoOAM
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -19428,14 +24354,48 @@ public sealed partial class ProtoOAMarginCallUpdateEvent : pb::IMessage<ProtoOAM
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          if (marginCall_ == null) {
+            MarginCall = new global::ProtoOAMarginCall();
+          }
+          input.ReadMessage(MarginCall);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
 /// <summary>
 ///* Event that is sent when account margin level reaches target marginLevelThreshold. Event is sent no more than once every 10 minutes to avoid spamming. 
 /// </summary>
-public sealed partial class ProtoOAMarginCallTriggerEvent : pb::IMessage<ProtoOAMarginCallTriggerEvent> {
+public sealed partial class ProtoOAMarginCallTriggerEvent : pb::IMessage<ProtoOAMarginCallTriggerEvent>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<ProtoOAMarginCallTriggerEvent> _parser = new pb::MessageParser<ProtoOAMarginCallTriggerEvent>(() => new ProtoOAMarginCallTriggerEvent());
   private pb::UnknownFieldSet _unknownFields;
   private int _hasBits0;
@@ -19570,6 +24530,9 @@ public sealed partial class ProtoOAMarginCallTriggerEvent : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (HasPayloadType) {
       output.WriteRawTag(8);
       output.WriteEnum((int) PayloadType);
@@ -19585,7 +24548,29 @@ public sealed partial class ProtoOAMarginCallTriggerEvent : pb::IMessage<ProtoOA
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (HasPayloadType) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) PayloadType);
+    }
+    if (HasCtidTraderAccountId) {
+      output.WriteRawTag(16);
+      output.WriteInt64(CtidTraderAccountId);
+    }
+    if (marginCall_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(MarginCall);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -19627,6 +24612,9 @@ public sealed partial class ProtoOAMarginCallTriggerEvent : pb::IMessage<ProtoOA
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -19650,7 +24638,37 @@ public sealed partial class ProtoOAMarginCallTriggerEvent : pb::IMessage<ProtoOA
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          PayloadType = (global::ProtoOAPayloadType) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          CtidTraderAccountId = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          if (marginCall_ == null) {
+            MarginCall = new global::ProtoOAMarginCall();
+          }
+          input.ReadMessage(MarginCall);
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 
