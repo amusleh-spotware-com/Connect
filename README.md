@@ -147,7 +147,7 @@ Instead of "proto_file_name.proto" you have to provide each of the proto files n
 
 After executing the command there will be a ".cs" file for the proto file, you can use those files instead of library default message files.
 
-Don't forget to update the library Google Protobuf library to the version that you used for compiling the proto files, otherwise you will see lots of errors and you will not be able to build the project.
+Don't forget to update the library Google Protobuf Nuget package to the version that you used for compiling the proto files, otherwise you will see lots of errors and you will not be able to build the project.
 
 ## Dependencies
 
