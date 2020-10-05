@@ -32,7 +32,7 @@ namespace Connect.Common.JsonConverters
             {
                 TimeSpan timeDiff = time.Value - DateTimeOffset.UtcNow;
 
-                writer.WriteValue(timeDiff.TotalMilliseconds);
+                writer.WriteValue(timeDiff.TotalSeconds);
             }
             else
             {
