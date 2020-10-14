@@ -12,9 +12,9 @@ namespace Connect.Oauth.Factories
     {
         #region Methods
 
-        public static async Task<Token> GetTokenAsync(AuthCode authCode)
+        public static async Task<Token> GetTokenAsync(AuthCode authCode, string authUri = BaseUrls.OauthUrl)
         {
-            RestClient client = new RestClient(BaseUrls.OauthUrl);
+            RestClient client = new RestClient(authUri);
 
             RestRequest request = GetTokenRequest(authCode);
 
@@ -27,9 +27,9 @@ namespace Connect.Oauth.Factories
             return token;
         }
 
-        public static Token GetToken(AuthCode authCode)
+        public static Token GetToken(AuthCode authCode, string authUri = BaseUrls.OauthUrl)
         {
-            RestClient client = new RestClient(BaseUrls.OauthUrl);
+            RestClient client = new RestClient(authUri);
 
             RestRequest request = GetTokenRequest(authCode);
 

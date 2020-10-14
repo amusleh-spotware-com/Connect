@@ -62,20 +62,27 @@ namespace Connect.Protobuf
 
             Mode = mode;
 
+            var host = BaseUrls.GetBaseUrl(mode);
+
+            await Connect(host);
+        }
+
+        public async Task Connect(string host, int port = BaseUrls.ProtobufPort)
+        {
+            CheckIsDisposed();
+
             _client = new TcpClient
             {
                 ReceiveTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds,
                 SendTimeout = (int)TimeSpan.FromSeconds(20).TotalMilliseconds
             };
 
-            var url = BaseUrls.GetBaseUrl(mode);
-
-            await _client.ConnectAsync(url, BaseUrls.ProtobufPort).ConfigureAwait(false);
+            await _client.ConnectAsync(host, port).ConfigureAwait(false);
 
             _stream = new SslStream(_client.GetStream(), false,
                 (sender, certificate, chain, sslPolicyErrors) => sslPolicyErrors == SslPolicyErrors.None);
 
-            await _stream.AuthenticateAsClientAsync(url).ConfigureAwait(false);
+            await _stream.AuthenticateAsClientAsync(host).ConfigureAwait(false);
 
             StartSendingHeartbeats();
 

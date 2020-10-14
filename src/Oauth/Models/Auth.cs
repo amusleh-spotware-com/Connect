@@ -8,13 +8,13 @@ namespace Connect.Oauth.Models
 {
     public class Auth
     {
-        public Auth(App app, Scope scope = Scope.Trading, Mode mode = Mode.Live)
+        public Auth(App app, string authUri = BaseUrls.OauthUrl, Scope scope = Scope.Trading, Mode mode = Mode.Live)
         {
             App = app;
             Scope = scope;
             Mode = mode;
 
-            var authURIBuilder = new UriBuilder(BaseUrls.OauthUrl);
+            var authURIBuilder = new UriBuilder(authUri);
 
             authURIBuilder.Path += "auth";
 
