@@ -12,7 +12,7 @@ namespace Connect.Common.JsonConverters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            long? milliseconds = (long?)reader.Value;
+            var milliseconds = (long?)reader.Value;
 
             if (milliseconds.HasValue)
             {
@@ -26,7 +26,7 @@ namespace Connect.Common.JsonConverters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            DateTimeOffset? time = (DateTimeOffset?)value;
+            var time = (DateTimeOffset?)value;
 
             if (time.HasValue)
             {

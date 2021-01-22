@@ -7,9 +7,9 @@ using System;
 using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
-using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Timer = System.Timers.Timer;
 
 namespace Connect.Protobuf
 {
@@ -35,8 +35,6 @@ namespace Connect.Protobuf
         #region Properties
 
         public bool IsConnected => _client?.Client != null && _client.Client.Connected;
-
-        public bool IsAppAuthorized { get; private set; }
 
         public bool IsDisposed { get; private set; }
 
@@ -137,11 +135,11 @@ namespace Connect.Protobuf
 
             SendingHeartbeatsStatus = ProcessStatus.WaitingToRun;
 
-            System.Timers.Timer heartbeatTimer = new System.Timers.Timer(1000) { AutoReset = false };
+            var heartbeatTimer = new Timer(1000) { AutoReset = false };
 
             var heartbeatEvent = new ProtoHeartbeatEvent();
 
-            heartbeatTimer.Elapsed += async (object sender, System.Timers.ElapsedEventArgs e) =>
+            heartbeatTimer.Elapsed += async (sender, e) =>
             {
                 try
                 {
@@ -152,7 +150,7 @@ namespace Connect.Protobuf
                             await SendMessage(heartbeatEvent, ProtoPayloadType.HeartbeatEvent).ConfigureAwait(false);
                         }
 
-                        (sender as System.Timers.Timer).Start();
+                        ((Timer) sender).Start();
                     }
                     else
                     {
@@ -167,7 +165,7 @@ namespace Connect.Protobuf
 
                     if (!Streams.HeartbeatSendingExceptionStream.Observers.Any())
                     {
-                        throw ex;
+                        throw;
                     }
                 }
             };
@@ -207,9 +205,9 @@ namespace Connect.Protobuf
 
                     while (ListeningStatus == ProcessStatus.Running)
                     {
-                        byte[] lengthArray = new byte[sizeof(int)];
+                        var lengthArray = new byte[sizeof(int)];
 
-                        int readBytes = 0;
+                        var readBytes = 0;
 
                         do
                         {
@@ -220,20 +218,21 @@ namespace Connect.Protobuf
 
                         _cancellationTokenSource.Token.ThrowIfCancellationRequested();
 
-                        int length = BitConverter.ToInt32(lengthArray.Reverse().ToArray(), 0);
+                        var length = BitConverter.ToInt32(lengthArray.Reverse().ToArray(), 0);
 
                         if (length <= 0)
                         {
                             continue;
                         }
-                        else if (length > MaxMessageSize)
+
+                        if (length > MaxMessageSize)
                         {
-                            string exceptionMsg = $"Message length ({length}) is out of range (0 - {MaxMessageSize})";
+                            var exceptionMsg = $"Message length ({length}) is out of range (0 - {MaxMessageSize})";
 
                             throw new ArgumentOutOfRangeException(exceptionMsg);
                         }
 
-                        byte[] message = new byte[length];
+                        var message = new byte[length];
 
                         readBytes = 0;
 
@@ -305,9 +304,9 @@ namespace Connect.Protobuf
 
             try
             {
-                byte[] messageByte = message.ToByteArray();
+                var messageByte = message.ToByteArray();
 
-                byte[] length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
+                var length = BitConverter.GetBytes(messageByte.Length).Reverse().ToArray();
 
                 LastSentMessageTime = DateTime.Now;
 

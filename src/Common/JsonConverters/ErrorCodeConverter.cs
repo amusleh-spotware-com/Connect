@@ -14,7 +14,7 @@ namespace Connect.Common.JsonConverters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            string value = reader.Value != null ? reader.Value.ToString() : string.Empty;
+            var value = reader.Value != null ? reader.Value.ToString() : string.Empty;
 
             if (string.IsNullOrEmpty(value))
             {
@@ -28,7 +28,7 @@ namespace Connect.Common.JsonConverters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            ErrorCode errorCode = (ErrorCode)value;
+            var errorCode = (ErrorCode)value;
 
             writer.WriteValue(errorCode.ToString());
         }

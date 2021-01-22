@@ -21,9 +21,9 @@ namespace Connect.Oauth.Factories
         /// <exception cref="ArgumentNullException">The query of URL is null</exception>
         public static AuthCode GetAutoCode(string url, App app, Scope scope, Mode mode)
         {
-            Uri codeUri = new Uri(url);
+            var codeUri = new Uri(url);
 
-            string code = HttpUtility.ParseQueryString(codeUri.Query).Get("code");
+            var code = HttpUtility.ParseQueryString(codeUri.Query).Get("code");
 
             if (string.IsNullOrEmpty(code))
             {

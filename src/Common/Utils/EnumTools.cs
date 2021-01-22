@@ -8,9 +8,9 @@ namespace Connect.Common.Utils
     {
         public static string GetEnumDescription(object enumObject)
         {
-            FieldInfo field = enumObject.GetType().GetField(enumObject.ToString());
+            var field = enumObject.GetType().GetField(enumObject.ToString());
 
-            DescriptionAttribute descriptionAttribute = field.GetCustomAttribute<DescriptionAttribute>(false);
+            var descriptionAttribute = field.GetCustomAttribute<DescriptionAttribute>(false);
 
             if (descriptionAttribute != null && !string.IsNullOrEmpty(descriptionAttribute.Description))
             {
@@ -22,7 +22,7 @@ namespace Connect.Common.Utils
 
         public static TEnum ParseEnum<TEnum>(string text, TEnum defaultValue, bool ignoreCase = true) where TEnum : struct
         {
-            TEnum result = defaultValue;
+            var result = defaultValue;
 
             if (!string.IsNullOrEmpty(text))
             {

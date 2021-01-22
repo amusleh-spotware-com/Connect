@@ -14,13 +14,13 @@ namespace Connect.Oauth.Factories
 
         public static async Task<Token> GetTokenAsync(AuthCode authCode, string authUri = BaseUrls.OauthUrl)
         {
-            RestClient client = new RestClient(authUri);
+            var client = new RestClient(authUri);
 
-            RestRequest request = GetTokenRequest(authCode);
+            var request = GetTokenRequest(authCode);
 
-            IRestResponse response = await client.ExecuteGetAsync(request).ConfigureAwait(false);
+            var response = await client.ExecuteGetAsync(request).ConfigureAwait(false);
 
-            Token token = DeserializeToken(response);
+            var token = DeserializeToken(response);
 
             token.Mode = authCode.Mode;
 
@@ -29,13 +29,13 @@ namespace Connect.Oauth.Factories
 
         public static Token GetToken(AuthCode authCode, string authUri = BaseUrls.OauthUrl)
         {
-            RestClient client = new RestClient(authUri);
+            var client = new RestClient(authUri);
 
-            RestRequest request = GetTokenRequest(authCode);
+            var request = GetTokenRequest(authCode);
 
-            IRestResponse response = client.Execute(request);
+            var response = client.Execute(request);
 
-            Token token = DeserializeToken(response);
+            var token = DeserializeToken(response);
 
             token.Mode = authCode.Mode;
 
@@ -44,7 +44,7 @@ namespace Connect.Oauth.Factories
 
         private static RestRequest GetTokenRequest(AuthCode authCode)
         {
-            RestRequest request = new RestRequest("token");
+            var request = new RestRequest("token");
 
             request.AddParameter("grant_type", "authorization_code");
             request.AddParameter("code", authCode.Code);

@@ -25,21 +25,21 @@ namespace ConsoleTester
         {
             Console.Write("Enter App ID: ");
 
-            string appId = Console.ReadLine();
+            var appId = Console.ReadLine();
 
             Console.Write("Enter App Secret: ");
 
-            string appSecret = Console.ReadLine();
+            var appSecret = Console.ReadLine();
 
             Console.Write("Enter App Redirect URL: ");
 
-            string redirectUrl = Console.ReadLine();
+            var redirectUrl = Console.ReadLine();
 
             _app = new App(appId, appSecret, redirectUrl);
 
             Console.Write("Enter Connection Mode (Live or Demo): ");
 
-            string connectionMode = Console.ReadLine();
+            var connectionMode = Console.ReadLine();
 
             var mode = (Mode)Enum.Parse(typeof(Mode), connectionMode, true);
 
@@ -58,9 +58,9 @@ namespace ConsoleTester
 
             Console.Write("Enter Authentication Code: ");
 
-            string code = Console.ReadLine();
+            var code = Console.ReadLine();
 
-            AuthCode authCode = new AuthCode(code, _app);
+            var authCode = new AuthCode(code, _app);
 
             _token = TokenFactory.GetToken(authCode);
 
@@ -207,6 +207,10 @@ namespace ConsoleTester
                         AccountListRequest();
                         break;
 
+                    case "reconcile":
+                        ReconcileRequest(commandSplit);
+                        break;
+
                     case "accountauth":
                         AccountAuthRequest(commandSplit);
                         break;
@@ -322,6 +326,19 @@ namespace ConsoleTester
             await _client.SendMessage(symbolsListReq, ProtoOAPayloadType.ProtoOaSymbolsListReq);
         }
 
+        private async static void ReconcileRequest(string[] commandSplit)
+        {
+            var accountId = long.Parse(commandSplit[1]);
+
+            Console.WriteLine("Sending reconcile req...");
+
+            var reconcileReq = new ProtoOAReconcileReq
+            {
+                CtidTraderAccountId = accountId,
+            };
+
+            await _client.SendMessage(reconcileReq, ProtoOAPayloadType.ProtoOaReconcileReq);
+        }
         private async static void AccountListRequest()
         {
             Console.WriteLine("Sending account list req...");
@@ -353,7 +370,7 @@ namespace ConsoleTester
         {
             Console.Write("Enter command: ");
 
-            string command = Console.ReadLine();
+            var command = Console.ReadLine();
 
             ProcessCommand(command);
         }
