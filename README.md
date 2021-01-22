@@ -127,7 +127,7 @@ When you finsihed working with client you must call either Dispose or DisposeAsy
 
 ## Compiling Proto Files
 
-If you are using this library it came with compiled proto files of Spotware Open API and we do our best to keep the files update, in case there was a new version of proto files available and we weren't updated the files in library you can clone the library and compile the new proto files, then replace the library proto files with your compiled ones, the message files are located at Protobuf project inside Messages directory.
+If you are using this library it comes with compiled proto files of Spotware Open API and we do our best to keep the files update, in case there was a new version of proto files available and we weren't updated the files in library you can clone the library and compile the new proto files, then replace the library proto files with your compiled ones, the message files are located at Protobuf project inside Messages directory.
 
 For compiling the proto files there is a guide available on Spotware Open API documentation but that is out dated and if you compile the files by following their instruction you will endup with Protobuf 2.0 which is old version and not supported anymore by Google, the new Protobuf 3 compiler can compile the old version files, Open API uses 2.0 but you can use the new version compiler and benifit from all the new features of version 3.
 
